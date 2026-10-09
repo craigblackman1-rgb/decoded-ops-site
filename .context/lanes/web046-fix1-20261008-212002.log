@@ -1,0 +1,105 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead app/blog/[slug]/page.tsx[90m [offset=200, limit=60][0m
+[0m
+[0m$ [0mgit status --porcelain && git log --oneline -3
+M data/route-slugs.json
+?? .context/lane-briefs/web046-fix1.md
+19c150e chore: lane report for web046-art-sizing
+5ee13c2 fix(art): cap blog post hero image at 960px centred with explicit dimensions (BUG-WEB-046)
+f8cff48 fix(art): clamp grid children and chart tracks causing mobile horizontal overflow (BUG-WEB-046)
+[0m
+[0m← [0mEdit app/blog/[slug]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\blog\[slug]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\blog\[slug]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\blog\[slug]\page.tsx
+@@ -232,9 +232,11 @@
+ height={675}
+ className="rounded-2xl shadow-sm"
+ style={{
+   border: '1px solid var(--do-border-subtle)',
++  width: '100%',
+   maxWidth: 960,
++  display: 'block',
+   marginInline: 'auto',
+   aspectRatio: '16 / 9',
+   objectFit: 'cover',
+   height: 'auto',
+
+[0m
+[0m$ [0mnpx tsc --noEmit
+(no output)
+[0m
+[0m$ [0mgit add "app/blog/[slug]/page.tsx" && git commit -m "fix(art): blog hero full-width up to 960px, block display (BUG-WEB-046)" && git log --oneline -1
+[lane/web046-art-sizing 0c01482] fix(art): blog hero full-width up to 960px, block display (BUG-WEB-046)
+ 1 file changed, 2 insertions(+)
+0c01482 fix(art): blog hero full-width up to 960px, block display (BUG-WEB-046)
+[0m
+[0m→ [0mRead .context/lane-reports/LANE-RESULT-web046-art-sizing.md
+[0m
+[0m← [0mEdit .context/lane-reports/LANE-RESULT-web046-art-sizing.md
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\.context\lane-reports\LANE-RESULT-web046-art-sizing.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\.context\lane-reports\LANE-RESULT-web046-art-sizing.md
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\.context\lane-reports\LANE-RESULT-web046-art-sizing.md
+@@ -95,4 +95,18 @@
+ - `node .context/price-audit.mjs --check` exits 1 on pre-existing "vest" word hits in
+   five files this lane did not touch.
+ - No dev server / browser measurement was run (lane contract); fix-3 height reductions
+   are CSS-reasoned, not re-measured.
++
++## fix1 (lane web046-fix1) — blog hero mobile overflow, follow-up
++
++Fix 5 capped the hero with `maxWidth:960` but omitted `width:'100%'` and
++`display:'block'`. The `<img>` is a replaced element sized by its width/height
++attributes, so on a 390px phone it still rendered 960px wide and overflowed the
++page; `marginInline:auto` also had no effect because an inline image is not a
++block box.
++
++`app/blog/[slug]/page.tsx` (style object on the hero `<img>`) gained exactly two
++declarations: `width: '100%'` and `display: 'block'`. `maxWidth:960`,
++`marginInline:auto`, `aspectRatio:'16 / 9'`, `objectFit:cover` and `height:auto`
++are unchanged. The image now fills its container up to the 960px cap and centres
++as a block. `npx tsc --noEmit` clean. No other lines touched.
+
+[0m
+[0m$ [0mgit show --stat --format= 0c01482
+app/blog/[slug]/page.tsx | 2 ++
+ 1 file changed, 2 insertions(+)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web046-art-sizing\.context\lane-reports already exists.
+[0m
+[0m$ [0mgit diff --stat data/route-slugs.json && git diff data/route-slugs.json | Select-Object -First 30
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web046-fix1.json
+Wrote file successfully.
+[0m
+`data/route-slugs.json` shows only LF/CRLF warning noise with an empty content diff — nothing to worry about. Writing the lane report files now.
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web046-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web046-art-sizing.md .context/lane-reports/LANE-RESULT-web046-fix1.json .context/lane-reports/LANE-NOTES-web046-fix1.md && git commit -m "docs: lane report + exit files for web046-fix1" && git status --porcelain && git log --oneline -3
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web046-art-sizing.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web046-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web046-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[lane/web046-art-sizing 7fc4d89] docs: lane report + exit files for web046-fix1
+ 3 files changed, 60 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web046-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web046-fix1.json
+ M data/route-slugs.json
+?? .context/lane-briefs/web046-fix1.md
+7fc4d89 docs: lane report + exit files for web046-fix1
+0c01482 fix(art): blog hero full-width up to 960px, block display (BUG-WEB-046)
+19c150e chore: lane report for web046-art-sizing
+[0m
+Done. Work committed on `lane/web046-art-sizing`:
+
+- **0c01482** — `fix(art): blog hero full-width up to 960px, block display (BUG-WEB-046)`: added `width: '100%'` and `display: 'block'` to the hero `<img>` style object in `app/blog/[slug]/page.tsx` (kept maxWidth 960, marginInline auto, aspectRatio 16/9, objectFit cover, height auto). `npx tsc --noEmit` clean; escape grep — only that one file changed, 2 insertions.
+- **7fc4d89** — lane report `fix1` section + exit files (`LANE-RESULT-web046-fix1.json`, `LANE-NOTES-web046-fix1.md`) committed.
+
+Remaining uncommitted items are pre-existing and untouched: `data/route-slugs.json` (LF/CRLF-only, empty content diff) and the untracked lane brief.

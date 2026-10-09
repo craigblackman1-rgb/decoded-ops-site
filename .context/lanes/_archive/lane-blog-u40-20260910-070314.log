@@ -1,0 +1,64 @@
+
+> build ┬╖ mimo-v2.5
+
+ΓåÆ Read app/blog/page.tsx [offset=110, limit=15]
+
+ΓåÉ Edit app/blog/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\blog\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\blog\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\blog\page.tsx
+@@ -115,9 +115,8 @@
+         </p>
+         <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
+           Book a free discovery call
+         </Link>
+-        <Link href="/contact" className="text-sm font-medium inline-flex items-center gap-1 mt-3" style={{ color: 'var(--do-sky-blue)' }}>Or book a call directly</Link>
+       </div>
+     </div>
+   </section>
+ </>
+
+
+ΓåÆ Read app/blog/page.tsx [limit=15, offset=110]
+
+$ git status --short
+M app/blog/page.tsx
+ M tsconfig.json
+?? LANE-BRIEF-U40.md
+
+Edit applied correctly. Now verify:
+$ rg -c "Or book a call directly" app/blog/page.tsx
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg -c 'href="/contact"' app/blog/page.tsx
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ npx tsc --noEmit 2>&1
+(no output)
+
+$ Select-String -Path "app/blog/page.tsx" -Pattern "Or book a call directly" | Measure-Object | Select-Object -ExpandProperty Count
+0
+
+$ Select-String -Path "app/blog/page.tsx" -Pattern 'href="/contact"' | Measure-Object | Select-Object -ExpandProperty Count
+1
+
+All verification passes. Now commit only `app/blog/page.tsx`:
+$ git add app/blog/page.tsx && git commit -m "CR-WEB-028 u40: drop the duplicate call-to-action from the /blog CTA block
+
+Two links pointed at /contact with near-identical copy, and the second one
+rendered glued to the right edge of the button. One primary action, one button."
+warning: in the working copy of 'app/blog/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[lane/blog-orphan-purge c23e470] CR-WEB-028 u40: drop the duplicate call-to-action from the /blog CTA block
+ 1 file changed, 1 deletion(-)
+
+Committed. Verification summary:
+
+- **tsc**: passes (no errors)
+- **git status**: only `app/blog/page.tsx` staged and committed
+- **"Or book a call directly"**: 0 matches (removed)
+- **`href="/contact"`**: exactly 1 match (the amber button preserved)
+
+Commit `c23e470` on `lane/blog-orphan-purge`. 1 file changed, 1 deletion. Not pushed, not merged.

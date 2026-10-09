@@ -1,0 +1,391 @@
+
+> build · mimo-v2.5
+
+→ Read D:/apps/design-systems/decoded-marketing/blog/orphan-delete-list.txt
+
+$ ls public/images/blog/ | sort
+Directory: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\public\images\blog
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          09/09/2026    16:35           1838 5-questions-vendors-wont-like-img-1.svg
+-a---          09/09/2026    16:35           1950 5-questions-vendors-wont-like-img-2.svg
+-a---          09/09/2026    16:35           2108 5-questions-vendors-wont-like-thumb.svg
+-a---          09/09/2026    16:35           1586 ai-isn-t-your-problem-your-processes-are-img-1.svg
+-a---          09/09/2026    16:35           1823 ai-isn-t-your-problem-your-processes-are-img-2.svg
+-a---          09/09/2026    16:35           1972 ai-isn-t-your-problem-your-processes-are-thumb.svg
+-a---          09/09/2026    16:35           1768 ai-isnt-your-problem-your-processes-are-img-1.svg
+-a---          09/09/2026    16:35           2008 ai-isnt-your-problem-your-processes-are-img-2.svg
+-a---          09/09/2026    16:35           2154 ai-isnt-your-problem-your-processes-are-thumb.svg
+-a---          09/09/2026    16:35           1894 artwork-approval-process-img-1.svg
+-a---          09/09/2026    16:35           2134 artwork-approval-process-img-2.svg
+-a---          09/09/2026    16:35           2161 artwork-approval-process-thumb.svg
+-a---          09/09/2026    16:35           1889 artwork-approval-workflow-brief-to-sign-off-24-hours-img-1.svg
+-a---          09/09/2026    16:35           2115 artwork-approval-workflow-brief-to-sign-off-24-hours-img-2.svg
+-a---          09/09/2026    16:35           2149 artwork-approval-workflow-brief-to-sign-off-24-hours-thumb.svg
+-a---          09/09/2026    16:35           1894 artwork-approval-workflow-stop-losing-days-to-email-ping-pong-img-1.s
+                                                  vg
+-a---          09/09/2026    16:35           2138 artwork-approval-workflow-stop-losing-days-to-email-ping-pong-img-2.s
+                                                  vg
+-a---          09/09/2026    16:35           2163 artwork-approval-workflow-stop-losing-days-to-email-ping-pong-thumb.s
+                                                  vg
+-a---          09/09/2026    16:35           1758 b2b-portal-down-on-christmas-jumper-day-cartoon-img-1.svg
+-a---          09/09/2026    16:35           2006 b2b-portal-down-on-christmas-jumper-day-cartoon-img-2.svg
+-a---          09/09/2026    16:35           2144 b2b-portal-down-on-christmas-jumper-day-cartoon-thumb.svg
+-a---          09/09/2026    16:35           1895 bulk-order-management-how-to-buy-smart-without-tying-up-cash-img-1.sv
+                                                  g
+-a---          09/09/2026    16:35           2162 bulk-order-management-how-to-buy-smart-without-tying-up-cash-img-2.sv
+                                                  g
+-a---          09/09/2026    16:35           2156 bulk-order-management-how-to-buy-smart-without-tying-up-cash-thumb.sv
+                                                  g
+-a---          09/09/2026    16:35           1889 bulk-order-management-img-1.svg
+-a---          09/09/2026    16:35           2001 bulk-order-management-img-2.svg
+-a---          09/09/2026    16:35           2161 bulk-order-management-thumb.svg
+-a---          09/09/2026    16:35           1881 bulk-order-management-wholesale-decorated-goods-img-1.svg
+-a---          09/09/2026    16:35           2125 bulk-order-management-wholesale-decorated-goods-img-2.svg
+-a---          09/09/2026    16:35           2151 bulk-order-management-wholesale-decorated-goods-thumb.svg
+-a---          09/09/2026    16:35           2287 cloud-erp-print-business-thumb.svg
+-a---          09/09/2026    16:35           1879 crm-adoption-failure-why-it-happens-and-how-to-fix-it-img-1.svg
+-a---          09/09/2026    16:35           1998 crm-adoption-failure-why-it-happens-and-how-to-fix-it-img-2.svg
+-a---          09/09/2026    16:35           2151 crm-adoption-failure-why-it-happens-and-how-to-fix-it-thumb.svg
+-a---          09/09/2026    16:35        1021857 decoded-method-operations-framework-img-1.png
+-a---          09/09/2026    16:35         372407 decoded-method-operations-framework-thumb.png
+-a---          09/09/2026    16:36           1750 ecommerce-integration-trap-img-1.svg
+-a---          09/09/2026    16:36           2121 ecommerce-integration-trap-img-2.svg
+-a---          09/09/2026    16:36           2010 ecommerce-integration-trap-thumb.svg
+-a---          09/09/2026    16:36           1930 embroidery-quality-standards-how-to-know-what-good-actually-looks-lik
+                                                  e-img-1.svg
+-a---          09/09/2026    16:36           2170 embroidery-quality-standards-how-to-know-what-good-actually-looks-lik
+                                                  e-img-2.svg
+-a---          09/09/2026    16:36           2186 embroidery-quality-standards-how-to-know-what-good-actually-looks-lik
+                                                  e-thumb.svg
+-a---          09/09/2026    16:36           1913 embroidery-quality-standards-img-1.svg
+-a---          09/09/2026    16:36           2142 embroidery-quality-standards-img-2.svg
+-a---          09/09/2026    16:36           1878 embroidery-quality-standards-stitch-density-thread-durability-img-1.s
+                                                  vg
+-a---          09/09/2026    16:36           1973 embroidery-quality-standards-stitch-density-thread-durability-img-2.s
+                                                  vg
+-a---          09/09/2026    16:36           2265 embroidery-quality-standards-stitch-density-thread-durability-thumb.s
+                                                  vg
+-a---          09/09/2026    16:36           2178 embroidery-quality-standards-thumb.svg
+-a---          09/09/2026    16:36           1906 embroidery-stitch-density-how-it-affects-quality-cost-and-durability-
+                                                  img-1.svg
+-a---          09/09/2026    16:36           2168 embroidery-stitch-density-how-it-affects-quality-cost-and-durability-
+                                                  img-2.svg
+-a---          09/09/2026    16:36           2170 embroidery-stitch-density-how-it-affects-quality-cost-and-durability-
+                                                  thumb.svg
+-a---          09/09/2026    16:36           1894 embroidery-stitch-density-img-1.svg
+-a---          09/09/2026    16:36           2165 embroidery-stitch-density-img-2.svg
+-a---          09/09/2026    16:36           1885 embroidery-stitch-density-quality-speed-cost-img-1.svg
+-a---          09/09/2026    16:36           1992 embroidery-stitch-density-quality-speed-cost-img-2.svg
+-a---          09/09/2026    16:36           2155 embroidery-stitch-density-quality-speed-cost-thumb.svg
+-a---          09/09/2026    16:36           2166 embroidery-stitch-density-thumb.svg
+-a---          09/09/2026    16:36           2031 erp-selection-decorated-goods-thumb.svg
+-a---          09/09/2026    16:36           1874 heat-press-temperature-dwell-time-operations-guide-img-1.svg
+-a---          09/09/2026    16:36           1977 heat-press-temperature-dwell-time-operations-guide-img-2.svg
+-a---          09/09/2026    16:36           2144 heat-press-temperature-dwell-time-operations-guide-thumb.svg
+-a---          09/09/2026    16:36           1885 heat-press-temperature-dwell-time-the-operations-guide-img-1.svg
+-a---          09/09/2026    16:36           2167 heat-press-temperature-dwell-time-the-operations-guide-img-2.svg
+-a---          09/09/2026    16:36           2157 heat-press-temperature-dwell-time-the-operations-guide-thumb.svg
+-a---          09/09/2026    16:36           1896 heat-press-temperature-settings-img-1.svg
+-a---          09/09/2026    16:36           2122 heat-press-temperature-settings-img-2.svg
+-a---          09/09/2026    16:36           2158 heat-press-temperature-settings-thumb.svg
+-a---          09/09/2026    16:36           2035 hire-fractional-cto-thumb.svg
+-a---          09/09/2026    16:36           1890 how-to-evaluate-an-ai-tool-without-getting-sold-to-img-1.svg
+-a---          09/09/2026    16:36           2013 how-to-evaluate-an-ai-tool-without-getting-sold-to-img-2.svg
+-a---          09/09/2026    16:36           2162 how-to-evaluate-an-ai-tool-without-getting-sold-to-thumb.svg
+-a---          09/09/2026    16:36           2024 lean-six-sigma-small-business-thumb.svg
+-a---          09/09/2026    16:36           2306 local-seo-print-shop-thumb.svg
+-a---          09/09/2026    16:36           1872 orderwise-what-it-does-well-what-it-doesn-t-img-1.svg
+-a---          09/09/2026    16:36           1995 orderwise-what-it-does-well-what-it-doesn-t-img-2.svg
+-a---          09/09/2026    16:36           2144 orderwise-what-it-does-well-what-it-doesn-t-thumb.svg
+-a---          09/09/2026    16:36           1912 print-production-scheduling-img-1.svg
+-a---          09/09/2026    16:36           2142 print-production-scheduling-img-2.svg
+-a---          09/09/2026    16:36           1920 print-production-scheduling-stop-promising-delivery-dates-you-can-t-k
+                                                  eep-img-1.svg
+-a---          09/09/2026    16:36           2160 print-production-scheduling-stop-promising-delivery-dates-you-can-t-k
+                                                  eep-img-2.svg
+-a---          09/09/2026    16:36           2285 print-production-scheduling-stop-promising-delivery-dates-you-can-t-k
+                                                  eep-thumb.svg
+-a---          09/09/2026    16:36           2290 print-production-scheduling-thumb.svg
+-a---          09/09/2026    16:36           1723 process-before-platform-img-1.svg
+-a---          09/09/2026    16:36           1987 process-before-platform-img-2.svg
+-a---          09/09/2026    16:36           1995 process-before-platform-thumb.svg
+-a---          09/09/2026    16:36           1891 production-scheduling-print-embroidery-capacity-quality-rush-img-1.sv
+                                                  g
+-a---          09/09/2026    16:36           1987 production-scheduling-print-embroidery-capacity-quality-rush-img-2.sv
+                                                  g
+-a---          09/09/2026    16:36           2284 production-scheduling-print-embroidery-capacity-quality-rush-thumb.sv
+                                                  g
+-a---          09/09/2026    16:36           1902 ralawise-integration-automating-bulk-orders-without-the-chaos-img-1.s
+                                                  vg
+-a---          09/09/2026    16:36           2140 ralawise-integration-automating-bulk-orders-without-the-chaos-img-2.s
+                                                  vg
+-a---          09/09/2026    16:36           2154 ralawise-integration-automating-bulk-orders-without-the-chaos-thumb.s
+                                                  vg
+-a---          09/09/2026    16:36           1888 ralawise-integration-bulk-orders-stock-management-img-1.svg
+-a---          09/09/2026    16:36           1996 ralawise-integration-bulk-orders-stock-management-img-2.svg
+-a---          09/09/2026    16:36           2158 ralawise-integration-bulk-orders-stock-management-thumb.svg
+-a---          09/09/2026    16:36           1895 ralawise-integration-img-1.svg
+-a---          09/09/2026    16:36           2120 ralawise-integration-img-2.svg
+-a---          09/09/2026    16:36           2154 ralawise-integration-thumb.svg
+-a---          09/09/2026    16:36           1922 screen-printing-vs-heat-transfer-img-1.svg
+-a---          09/09/2026    16:36           2134 screen-printing-vs-heat-transfer-img-2.svg
+-a---          09/09/2026    16:36           1882 screen-printing-vs-heat-transfer-scale-your-business-img-1.svg
+-a---          09/09/2026    16:36           1994 screen-printing-vs-heat-transfer-scale-your-business-img-2.svg
+-a---          09/09/2026    16:36           2152 screen-printing-vs-heat-transfer-scale-your-business-thumb.svg
+-a---          09/09/2026    16:36           2289 screen-printing-vs-heat-transfer-thumb.svg
+-a---          09/09/2026    16:36           1927 screen-printing-vs-heat-transfer-which-method-actually-makes-sense-fo
+                                                  r-your-shop-img-1.svg
+-a---          09/09/2026    16:36           2170 screen-printing-vs-heat-transfer-which-method-actually-makes-sense-fo
+                                                  r-your-shop-img-2.svg
+-a---          09/09/2026    16:36           2297 screen-printing-vs-heat-transfer-which-method-actually-makes-sense-fo
+                                                  r-your-shop-thumb.svg
+-a---          09/09/2026    16:36           2046 sop-template-decorated-goods-thumb.svg
+-a---          09/09/2026    16:36           1751 the-artwork-file-that-broke-the-erp-cartoon-img-1.svg
+-a---          09/09/2026    16:36           2126 the-artwork-file-that-broke-the-erp-cartoon-img-2.svg
+-a---          09/09/2026    16:36           2010 the-artwork-file-that-broke-the-erp-cartoon-thumb.svg
+-a---          09/09/2026    16:36           1761 the-hidden-cost-of-running-legacy-systems-img-1.svg
+-a---          09/09/2026    16:36           2121 the-hidden-cost-of-running-legacy-systems-img-2.svg
+-a---          09/09/2026    16:36           2141 the-hidden-cost-of-running-legacy-systems-thumb.svg
+-a---          09/09/2026    16:36           1847 the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-i
+                                                  mg-1.svg
+-a---          09/09/2026    16:36           1951 the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-i
+                                                  mg-2.svg
+-a---          09/09/2026    16:36           2119 the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-t
+                                                  humb.svg
+-a---          09/09/2026    16:36           1743 the-real-cost-of-a-failed-erp-project-img-1.svg
+-a---          09/09/2026    16:36           2121 the-real-cost-of-a-failed-erp-project-img-2.svg
+-a---          09/09/2026    16:36           2006 the-real-cost-of-a-failed-erp-project-thumb.svg
+-a---          09/09/2026    16:36           1751 what-good-operations-actually-looks-like-img-1.svg
+-a---          09/09/2026    16:36           2112 what-good-operations-actually-looks-like-img-2.svg
+-a---          09/09/2026    16:36           2128 what-good-operations-actually-looks-like-thumb.svg
+-a---          09/09/2026    16:36           1716 what-happens-to-your-business-when-your-systems-go-down-img-1.svg
+-a---          09/09/2026    16:36           1831 what-happens-to-your-business-when-your-systems-go-down-img-2.svg
+-a---          09/09/2026    16:36           1988 what-happens-to-your-business-when-your-systems-go-down-thumb.svg
+-a---          09/09/2026    16:36           1877 what-happens-when-your-systems-go-down-img-1.svg
+-a---          09/09/2026    16:36           1995 what-happens-when-your-systems-go-down-img-2.svg
+-a---          09/09/2026    16:36           2147 what-happens-when-your-systems-go-down-thumb.svg
+-a---          09/09/2026    16:36           2310 what-is-erp-decorated-goods-thumb.svg
+-a---          09/09/2026    16:36           1738 when-it-support-is-the-problem-img-1.svg
+-a---          09/09/2026    16:36           2129 when-it-support-is-the-problem-img-2.svg
+-a---          09/09/2026    16:36           2010 when-it-support-is-the-problem-thumb.svg
+-a---          09/09/2026    16:36           1911 why-systems-dont-talk-img-1.svg
+-a---          09/09/2026    16:36           2132 why-systems-dont-talk-img-2.svg
+-a---          09/09/2026    16:36           2166 why-systems-dont-talk-thumb.svg
+
+$ ls public/images/blog/ | wc -l
+wc: The term 'wc' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ (Get-ChildItem public/images/blog/).Count
+135
+
+135 files confirmed. Now I'll verify every file on the list exists before deleting.
+$ $list = Get-Content "D:\apps\design-systems\decoded-marketing\blog\orphan-delete-list.txt" | Where-Object { $_.Trim() -ne "" }; $missing = @(); foreach ($f in $list) { if (!(Test-Path "public/images/blog/$f")) { $missing += $f } }; if ($missing.Count -gt 0) { Write-Host "MISSING:"; $missing | ForEach-Object { Write-Host "  $_" }; exit 1 } else { Write-Host "All $($list.Count) files found on disk." }
+All 57 files found on disk.
+
+All 57 files verified present. Deleting them now.
+$ $list = Get-Content "D:\apps\design-systems\decoded-marketing\blog\orphan-delete-list.txt" | Where-Object { $_.Trim() -ne "" }; $paths = $list | ForEach-Object { "public/images/blog/$_" }; git rm $paths
+rm 'public/images/blog/ai-isn-t-your-problem-your-processes-are-img-1.svg'
+rm 'public/images/blog/ai-isn-t-your-problem-your-processes-are-img-2.svg'
+rm 'public/images/blog/ai-isn-t-your-problem-your-processes-are-thumb.svg'
+rm 'public/images/blog/artwork-approval-process-img-1.svg'
+rm 'public/images/blog/artwork-approval-process-img-2.svg'
+rm 'public/images/blog/artwork-approval-process-thumb.svg'
+rm 'public/images/blog/artwork-approval-workflow-stop-losing-days-to-email-ping-pong-img-1.svg'
+rm 'public/images/blog/artwork-approval-workflow-stop-losing-days-to-email-ping-pong-img-2.svg'
+rm 'public/images/blog/artwork-approval-workflow-stop-losing-days-to-email-ping-pong-thumb.svg'
+rm 'public/images/blog/bulk-order-management-how-to-buy-smart-without-tying-up-cash-img-1.svg'
+rm 'public/images/blog/bulk-order-management-how-to-buy-smart-without-tying-up-cash-img-2.svg'
+rm 'public/images/blog/bulk-order-management-how-to-buy-smart-without-tying-up-cash-thumb.svg'
+rm 'public/images/blog/bulk-order-management-img-1.svg'
+rm 'public/images/blog/bulk-order-management-img-2.svg'
+rm 'public/images/blog/bulk-order-management-thumb.svg'
+rm 'public/images/blog/embroidery-quality-standards-how-to-know-what-good-actually-looks-like-img-1.svg'
+rm 'public/images/blog/embroidery-quality-standards-how-to-know-what-good-actually-looks-like-img-2.svg'
+rm 'public/images/blog/embroidery-quality-standards-how-to-know-what-good-actually-looks-like-thumb.svg'
+rm 'public/images/blog/embroidery-quality-standards-img-1.svg'
+rm 'public/images/blog/embroidery-quality-standards-img-2.svg'
+rm 'public/images/blog/embroidery-quality-standards-thumb.svg'
+rm 'public/images/blog/embroidery-stitch-density-how-it-affects-quality-cost-and-durability-img-1.svg'
+rm 'public/images/blog/embroidery-stitch-density-how-it-affects-quality-cost-and-durability-img-2.svg'
+rm 'public/images/blog/embroidery-stitch-density-how-it-affects-quality-cost-and-durability-thumb.svg'
+rm 'public/images/blog/embroidery-stitch-density-img-1.svg'
+rm 'public/images/blog/embroidery-stitch-density-img-2.svg'
+rm 'public/images/blog/embroidery-stitch-density-thumb.svg'
+rm 'public/images/blog/heat-press-temperature-dwell-time-the-operations-guide-img-1.svg'
+rm 'public/images/blog/heat-press-temperature-dwell-time-the-operations-guide-img-2.svg'
+rm 'public/images/blog/heat-press-temperature-dwell-time-the-operations-guide-thumb.svg'
+rm 'public/images/blog/heat-press-temperature-settings-img-1.svg'
+rm 'public/images/blog/heat-press-temperature-settings-img-2.svg'
+rm 'public/images/blog/heat-press-temperature-settings-thumb.svg'
+rm 'public/images/blog/print-production-scheduling-img-1.svg'
+rm 'public/images/blog/print-production-scheduling-img-2.svg'
+rm 'public/images/blog/print-production-scheduling-stop-promising-delivery-dates-you-can-t-keep-img-1.svg'
+rm 'public/images/blog/print-production-scheduling-stop-promising-delivery-dates-you-can-t-keep-img-2.svg'
+rm 'public/images/blog/print-production-scheduling-stop-promising-delivery-dates-you-can-t-keep-thumb.svg'
+rm 'public/images/blog/print-production-scheduling-thumb.svg'
+rm 'public/images/blog/ralawise-integration-automating-bulk-orders-without-the-chaos-img-1.svg'
+rm 'public/images/blog/ralawise-integration-automating-bulk-orders-without-the-chaos-img-2.svg'
+rm 'public/images/blog/ralawise-integration-automating-bulk-orders-without-the-chaos-thumb.svg'
+rm 'public/images/blog/ralawise-integration-img-1.svg'
+rm 'public/images/blog/ralawise-integration-img-2.svg'
+rm 'public/images/blog/ralawise-integration-thumb.svg'
+rm 'public/images/blog/screen-printing-vs-heat-transfer-img-1.svg'
+rm 'public/images/blog/screen-printing-vs-heat-transfer-img-2.svg'
+rm 'public/images/blog/screen-printing-vs-heat-transfer-thumb.svg'
+rm 'public/images/blog/screen-printing-vs-heat-transfer-which-method-actually-makes-sense-for-your-shop-img-1.svg'
+rm 'public/images/blog/screen-printing-vs-heat-transfer-which-method-actually-makes-sense-for-your-shop-img-2.svg'
+rm 'public/images/blog/screen-printing-vs-heat-transfer-which-method-actually-makes-sense-for-your-shop-thumb.svg'
+rm 'public/images/blog/the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-img-1.svg'
+rm 'public/images/blog/the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-img-2.svg'
+rm 'public/images/blog/the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-thumb.svg'
+rm 'public/images/blog/what-happens-to-your-business-when-your-systems-go-down-img-1.svg'
+rm 'public/images/blog/what-happens-to-your-business-when-your-systems-go-down-img-2.svg'
+rm 'public/images/blog/what-happens-to-your-business-when-your-systems-go-down-thumb.svg'
+
+Now verify before committing.
+$ (Get-ChildItem public/images/blog/).Count
+78
+
+$ git status --short
+D  public/images/blog/ai-isn-t-your-problem-your-processes-are-img-1.svg
+D  public/images/blog/ai-isn-t-your-problem-your-processes-are-img-2.svg
+D  public/images/blog/ai-isn-t-your-problem-your-processes-are-thumb.svg
+D  public/images/blog/artwork-approval-process-img-1.svg
+D  public/images/blog/artwork-approval-process-img-2.svg
+D  public/images/blog/artwork-approval-process-thumb.svg
+D  public/images/blog/artwork-approval-workflow-stop-losing-days-to-email-ping-pong-img-1.svg
+D  public/images/blog/artwork-approval-workflow-stop-losing-days-to-email-ping-pong-img-2.svg
+D  public/images/blog/artwork-approval-workflow-stop-losing-days-to-email-ping-pong-thumb.svg
+D  public/images/blog/bulk-order-management-how-to-buy-smart-without-tying-up-cash-img-1.svg
+D  public/images/blog/bulk-order-management-how-to-buy-smart-without-tying-up-cash-img-2.svg
+D  public/images/blog/bulk-order-management-how-to-buy-smart-without-tying-up-cash-thumb.svg
+D  public/images/blog/bulk-order-management-img-1.svg
+D  public/images/blog/bulk-order-management-img-2.svg
+D  public/images/blog/bulk-order-management-thumb.svg
+D  public/images/blog/embroidery-quality-standards-how-to-know-what-good-actually-looks-like-img-1.svg
+D  public/images/blog/embroidery-quality-standards-how-to-know-what-good-actually-looks-like-img-2.svg
+D  public/images/blog/embroidery-quality-standards-how-to-know-what-good-actually-looks-like-thumb.svg
+D  public/images/blog/embroidery-quality-standards-img-1.svg
+D  public/images/blog/embroidery-quality-standards-img-2.svg
+D  public/images/blog/embroidery-quality-standards-thumb.svg
+D  public/images/blog/embroidery-stitch-density-how-it-affects-quality-cost-and-durability-img-1.svg
+D  public/images/blog/embroidery-stitch-density-how-it-affects-quality-cost-and-durability-img-2.svg
+D  public/images/blog/embroidery-stitch-density-how-it-affects-quality-cost-and-durability-thumb.svg
+D  public/images/blog/embroidery-stitch-density-img-1.svg
+D  public/images/blog/embroidery-stitch-density-img-2.svg
+D  public/images/blog/embroidery-stitch-density-thumb.svg
+D  public/images/blog/heat-press-temperature-dwell-time-the-operations-guide-img-1.svg
+D  public/images/blog/heat-press-temperature-dwell-time-the-operations-guide-img-2.svg
+D  public/images/blog/heat-press-temperature-dwell-time-the-operations-guide-thumb.svg
+D  public/images/blog/heat-press-temperature-settings-img-1.svg
+D  public/images/blog/heat-press-temperature-settings-img-2.svg
+D  public/images/blog/heat-press-temperature-settings-thumb.svg
+D  public/images/blog/print-production-scheduling-img-1.svg
+D  public/images/blog/print-production-scheduling-img-2.svg
+D  public/images/blog/print-production-scheduling-stop-promising-delivery-dates-you-can-t-keep-img-1.svg
+D  public/images/blog/print-production-scheduling-stop-promising-delivery-dates-you-can-t-keep-img-2.svg
+D  public/images/blog/print-production-scheduling-stop-promising-delivery-dates-you-can-t-keep-thumb.svg
+D  public/images/blog/print-production-scheduling-thumb.svg
+D  public/images/blog/ralawise-integration-automating-bulk-orders-without-the-chaos-img-1.svg
+D  public/images/blog/ralawise-integration-automating-bulk-orders-without-the-chaos-img-2.svg
+D  public/images/blog/ralawise-integration-automating-bulk-orders-without-the-chaos-thumb.svg
+D  public/images/blog/ralawise-integration-img-1.svg
+D  public/images/blog/ralawise-integration-img-2.svg
+D  public/images/blog/ralawise-integration-thumb.svg
+D  public/images/blog/screen-printing-vs-heat-transfer-img-1.svg
+D  public/images/blog/screen-printing-vs-heat-transfer-img-2.svg
+D  public/images/blog/screen-printing-vs-heat-transfer-thumb.svg
+D  public/images/blog/screen-printing-vs-heat-transfer-which-method-actually-makes-sense-for-your-shop-img-1.svg
+D  public/images/blog/screen-printing-vs-heat-transfer-which-method-actually-makes-sense-for-your-shop-img-2.svg
+D  public/images/blog/screen-printing-vs-heat-transfer-which-method-actually-makes-sense-for-your-shop-thumb.svg
+D  public/images/blog/the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-img-1.svg
+D  public/images/blog/the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-img-2.svg
+D  public/images/blog/the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-thumb.svg
+D  public/images/blog/what-happens-to-your-business-when-your-systems-go-down-img-1.svg
+D  public/images/blog/what-happens-to-your-business-when-your-systems-go-down-img-2.svg
+D  public/images/blog/what-happens-to-your-business-when-your-systems-go-down-thumb.svg
+?? LANE-BRIEF.md
+
+$ git diff --cached --stat | Select-Object -Last 1
+57 files changed, 1570 deletions(-)
+
+All three verifications pass. Committing now.
+$ git commit -m "CR-WEB-028 u1: delete 57 orphaned blog SVGs from superseded post slugs
+
+Verified unreferenced against the live hub content index
+(https://hub.decodedops.co.uk/api/content/index, 33 posts) — not the stale
+local data/blog-index.json. Zero broken references before or after."
+[lane/blog-orphan-purge ebf089f] CR-WEB-028 u1: delete 57 orphaned blog SVGs from superseded post slugs
+ 57 files changed, 1570 deletions(-)
+ delete mode 100644 public/images/blog/ai-isn-t-your-problem-your-processes-are-img-1.svg
+ delete mode 100644 public/images/blog/ai-isn-t-your-problem-your-processes-are-img-2.svg
+ delete mode 100644 public/images/blog/ai-isn-t-your-problem-your-processes-are-thumb.svg
+ delete mode 100644 public/images/blog/artwork-approval-process-img-1.svg
+ delete mode 100644 public/images/blog/artwork-approval-process-img-2.svg
+ delete mode 100644 public/images/blog/artwork-approval-process-thumb.svg
+ delete mode 100644 public/images/blog/artwork-approval-workflow-stop-losing-days-to-email-ping-pong-img-1.svg
+ delete mode 100644 public/images/blog/artwork-approval-workflow-stop-losing-days-to-email-ping-pong-img-2.svg
+ delete mode 100644 public/images/blog/artwork-approval-workflow-stop-losing-days-to-email-ping-pong-thumb.svg
+ delete mode 100644 public/images/blog/bulk-order-management-how-to-buy-smart-without-tying-up-cash-img-1.svg
+ delete mode 100644 public/images/blog/bulk-order-management-how-to-buy-smart-without-tying-up-cash-img-2.svg
+ delete mode 100644 public/images/blog/bulk-order-management-how-to-buy-smart-without-tying-up-cash-thumb.svg
+ delete mode 100644 public/images/blog/bulk-order-management-img-1.svg
+ delete mode 100644 public/images/blog/bulk-order-management-img-2.svg
+ delete mode 100644 public/images/blog/bulk-order-management-thumb.svg
+ delete mode 100644 public/images/blog/embroidery-quality-standards-how-to-know-what-good-actually-looks-like-img-1.svg
+ delete mode 100644 public/images/blog/embroidery-quality-standards-how-to-know-what-good-actually-looks-like-img-2.svg
+ delete mode 100644 public/images/blog/embroidery-quality-standards-how-to-know-what-good-actually-looks-like-thumb.svg
+ delete mode 100644 public/images/blog/embroidery-quality-standards-img-1.svg
+ delete mode 100644 public/images/blog/embroidery-quality-standards-img-2.svg
+ delete mode 100644 public/images/blog/embroidery-quality-standards-thumb.svg
+ delete mode 100644 public/images/blog/embroidery-stitch-density-how-it-affects-quality-cost-and-durability-img-1.svg
+ delete mode 100644 public/images/blog/embroidery-stitch-density-how-it-affects-quality-cost-and-durability-img-2.svg
+ delete mode 100644 public/images/blog/embroidery-stitch-density-how-it-affects-quality-cost-and-durability-thumb.svg
+ delete mode 100644 public/images/blog/embroidery-stitch-density-img-1.svg
+ delete mode 100644 public/images/blog/embroidery-stitch-density-img-2.svg
+ delete mode 100644 public/images/blog/embroidery-stitch-density-thumb.svg
+ delete mode 100644 public/images/blog/heat-press-temperature-dwell-time-the-operations-guide-img-1.svg
+ delete mode 100644 public/images/blog/heat-press-temperature-dwell-time-the-operations-guide-img-2.svg
+ delete mode 100644 public/images/blog/heat-press-temperature-dwell-time-the-operations-guide-thumb.svg
+ delete mode 100644 public/images/blog/heat-press-temperature-settings-img-1.svg
+ delete mode 100644 public/images/blog/heat-press-temperature-settings-img-2.svg
+ delete mode 100644 public/images/blog/heat-press-temperature-settings-thumb.svg
+ delete mode 100644 public/images/blog/print-production-scheduling-img-1.svg
+ delete mode 100644 public/images/blog/print-production-scheduling-img-2.svg
+ delete mode 100644 public/images/blog/print-production-scheduling-stop-promising-delivery-dates-you-can-t-keep-img-1.svg
+ delete mode 100644 public/images/blog/print-production-scheduling-stop-promising-delivery-dates-you-can-t-keep-img-2.svg
+ delete mode 100644 public/images/blog/print-production-scheduling-stop-promising-delivery-dates-you-can-t-keep-thumb.svg
+ delete mode 100644 public/images/blog/print-production-scheduling-thumb.svg
+ delete mode 100644 public/images/blog/ralawise-integration-automating-bulk-orders-without-the-chaos-img-1.svg
+ delete mode 100644 public/images/blog/ralawise-integration-automating-bulk-orders-without-the-chaos-img-2.svg
+ delete mode 100644 public/images/blog/ralawise-integration-automating-bulk-orders-without-the-chaos-thumb.svg
+ delete mode 100644 public/images/blog/ralawise-integration-img-1.svg
+ delete mode 100644 public/images/blog/ralawise-integration-img-2.svg
+ delete mode 100644 public/images/blog/ralawise-integration-thumb.svg
+ delete mode 100644 public/images/blog/screen-printing-vs-heat-transfer-img-1.svg
+ delete mode 100644 public/images/blog/screen-printing-vs-heat-transfer-img-2.svg
+ delete mode 100644 public/images/blog/screen-printing-vs-heat-transfer-thumb.svg
+ delete mode 100644 public/images/blog/screen-printing-vs-heat-transfer-which-method-actually-makes-sense-for-your-shop-img-1.svg
+ delete mode 100644 public/images/blog/screen-printing-vs-heat-transfer-which-method-actually-makes-sense-for-your-shop-img-2.svg
+ delete mode 100644 public/images/blog/screen-printing-vs-heat-transfer-which-method-actually-makes-sense-for-your-shop-thumb.svg
+ delete mode 100644 public/images/blog/the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-img-1.svg
+ delete mode 100644 public/images/blog/the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-img-2.svg
+ delete mode 100644 public/images/blog/the-real-cost-of-a-failed-erp-project-and-why-no-one-talks-about-it-thumb.svg
+ delete mode 100644 public/images/blog/what-happens-to-your-business-when-your-systems-go-down-img-1.svg
+ delete mode 100644 public/images/blog/what-happens-to-your-business-when-your-systems-go-down-img-2.svg
+ delete mode 100644 public/images/blog/what-happens-to-your-business-when-your-systems-go-down-thumb.svg
+
+**CR-WEB-028 u1 — complete.**
+
+| Metric | Value |
+|---|---|
+| Files deleted | 57 |
+| Files remaining | 78 |
+| Commit | `ebf089f` |
+| Branch | `lane/blog-orphan-purge` |
+| Files on list not found | 0 |
+
+All 57 orphaned SVGs removed via `git rm`, staged, and committed. No files outside `public/images/blog/` were touched. Not pushed, merged, or PR'd.

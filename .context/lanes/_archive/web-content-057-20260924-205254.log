@@ -1,0 +1,607 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-content-057.md
+[0m
+[0m$ [0mls -la .context/lane-briefs/cr-web-057/
+Get-ChildItem: A parameter cannot be found that matches parameter name 'la'.
+[0m
+[0m$ [0mcat .context/lane-briefs/cr-web-057/copy-spec.json | head -100
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m✱ [0mGlob ".context/lane-briefs/cr-web-057/*"[90m in . · 0 matches[0m
+[0m→ [0mRead .context/lane-briefs/cr-web-057
+[0m→ [0mRead .context/lane-briefs/cr-web-057/copy-spec.json
+[0m→ [0mRead .context/lane-briefs/cr-web-057/copy-spec-resources-later.json
+[0m→ [0mRead .context/lane-briefs/cr-web-057/structural.md
+[0m→ [0mRead .context/lane-briefs/cr-web-057/copy-spec.json[90m [offset=315][0m
+[0m→ [0mRead .context/lane-briefs/cr-web-057/apply_spec.py
+[0m
+[0m# [0mTodos
+[•] Run apply_spec.py for copy-spec.json (96 changes)
+[ ] Run apply_spec.py for copy-spec-resources-later.json (3 changes)
+[ ] Structural: git mv route moves + canonical/url updates
+[ ] Structural: update all internal hrefs, sitemap, redirects
+[ ] Final sweep: grep for remaining old names
+[ ] Run tsc --noEmit
+[ ] Commit + lane exit contract
+[0m
+[0m$ [0mpython .context/lane-briefs/cr-web-057/apply_spec.py .context/lane-briefs/cr-web-057/copy-spec.json
+applied 96/96, skipped 0
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py for copy-spec.json (96 changes)
+[•] Run apply_spec.py for copy-spec-resources-later.json (3 changes)
+[ ] Structural: git mv route moves + canonical/url updates
+[ ] Structural: update all internal hrefs, sitemap, redirects
+[ ] Final sweep: grep for remaining old names
+[ ] Run tsc --noEmit
+[ ] Commit + lane exit contract
+[0m
+[0m$ [0mpython .context/lane-briefs/cr-web-057/apply_spec.py .context/lane-briefs/cr-web-057/copy-spec-resources-later.json
+applied 3/3, skipped 0
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py for copy-spec.json (96 changes)
+[✓] Run apply_spec.py for copy-spec-resources-later.json (3 changes)
+[•] Structural: git mv route moves + canonical/url updates
+[ ] Structural: update all internal hrefs, sitemap, redirects
+[ ] Final sweep: grep for remaining old names
+[ ] Run tsc --noEmit
+[ ] Commit + lane exit contract
+[0m
+Now the structural changes — git mv the routes:
+[0m$ [0mgit mv app/apps/data-app app/apps/works && git mv app/apps/artwork-manager app/apps/proof
+(no output)
+[0m
+[0m→ [0mRead app/apps/works/page.tsx[90m [limit=25][0m
+Now update canonical/url in the moved files. Let me read the current state:
+[0m→ [0mRead app/apps/proof/page.tsx[90m [limit=25][0m
+[0m
+[0m← [0mEdit app/apps/works/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\works\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\works\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\works\page.tsx
+@@ -7,14 +7,14 @@
+ 
+ export const metadata: Metadata = {
+   title: 'Decoded Works: Decoded Ops',
+   description: 'Sales, stock, purchasing, production and channels, in one system, built for decorated goods. Live at Hanicks: 317,812 products, 154,518 matched to a supplier automatically. Runs alongside your platform or replaces it.',
+-  alternates: { canonical: '/apps/data-app' },
++  alternates: { canonical: '/apps/works' },
+   openGraph: {
+     type: 'website',
+     title: 'Decoded Works: Decoded Ops',
+     description: 'Sales, stock, purchasing, production and channels, in one system, built for decorated goods. Live at Hanicks: 317,812 products, 154,518 matched to a supplier automatically. Runs alongside your platform or replaces it.',
+-    url: 'https://decodedops.co.uk/apps/data-app',
++    url: 'https://decodedops.co.uk/apps/works',
+   },
+   twitter: {
+     card: 'summary_large_image',
+     title: 'Decoded Works: Decoded Ops',
+
+[0m
+[0m← [0mEdit app/apps/proof/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\proof\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\proof\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\proof\page.tsx
+@@ -7,14 +7,14 @@
+ 
+ export const metadata: Metadata = {
+   title: 'Decoded Proof: Decoded Ops',
+   description: 'Revision control for embroidery and print artwork: every version, every colourway, one audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',
+-  alternates: { canonical: '/apps/artwork-manager' },
++  alternates: { canonical: '/apps/proof' },
+   openGraph: {
+     type: 'website',
+     title: 'Decoded Proof: Decoded Ops',
+     description: 'Revision control for embroidery and print artwork: every version, every colourway, one audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',
+-    url: 'https://decodedops.co.uk/apps/artwork-manager',
++    url: 'https://decodedops.co.uk/apps/proof',
+   },
+   twitter: {
+     card: 'summary_large_image',
+     title: 'Decoded Proof: Decoded Ops',
+
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py for copy-spec.json (96 changes)
+[✓] Run apply_spec.py for copy-spec-resources-later.json (3 changes)
+[✓] Structural: git mv route moves + canonical/url updates
+[•] Structural: update all internal hrefs, sitemap, redirects
+[ ] Final sweep: grep for remaining old names
+[ ] Run tsc --noEmit
+[ ] Commit + lane exit contract
+[0m
+[0m✱ [0mGrep "/apps/data-app|/apps/artwork-manager"[90m in app · 10 matches[0m
+[0m✱ [0mGrep "/apps/data-app|/apps/artwork-manager"[90m in components · 4 matches[0m
+[0m✱ [0mGrep "/apps/data-app|/apps/artwork-manager"[90m in data · 0 matches[0m
+[0m✱ [0mGrep "/apps/data-app|/apps/artwork-manager"[90m in lib · 0 matches[0m
+[0m→ [0mRead components/Footer.tsx[90m [offset=25, limit=10][0m
+[0m→ [0mRead components/Header.tsx[90m [offset=58, limit=10][0m
+[0m→ [0mRead app/sitemap.ts[90m [offset=58, limit=15][0m
+Now let me read the files that need href updates and also check sitemap and next.config.ts:
+[0m→ [0mRead next.config.ts
+[0m
+[0m← [0mEdit components/Footer.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\components\Footer.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\components\Footer.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\components\Footer.tsx
+@@ -23,10 +23,10 @@
+   { label: 'How I build software', href: '/how-i-build' },
+ ];
+ 
+ const appsLinks: FooterLink[] = [
+-  { label: 'Works', href: '/apps/data-app' },
+-  { label: 'Proof', href: '/apps/artwork-manager' },
++  { label: 'Works', href: '/apps/works' },
++  { label: 'Proof', href: '/apps/proof' },
+   { label: 'Commerce', href: '/apps/commerce' },
+   { label: 'All apps', href: '/apps' },
+ ];
+ 
+
+[0m
+[0m← [0mEdit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\components\Header.tsx
+@@ -56,10 +56,10 @@
+ ];
+ const helpBuilt: NavGroup = {
+   title: 'Software I’ve already built',
+   items: [
+-    { label: 'Works', sub: 'The ERP for decorated goods', href: '/apps/data-app' },
+-    { label: 'Proof', sub: 'Versions, approvals and delivery', href: '/apps/artwork-manager' },
++    { label: 'Works', sub: 'The ERP for decorated goods', href: '/apps/works' },
++    { label: 'Proof', sub: 'Versions, approvals and delivery', href: '/apps/proof' },
+     { label: 'Commerce', sub: 'B2B ordering for your customers', href: '/apps/commerce' },
+     { label: 'All apps', sub: "What's ready to buy today", href: '/apps' },
+   ],
+ };
+
+[0m
+Now I'll batch all the href updates. Let me do them systematically:
+[0m→ [0mRead app/apps/page.tsx[90m [limit=20, offset=93][0m
+[0m
+[0m← [0mEdit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\page.tsx
+@@ -93,9 +93,9 @@
+ <p className="eyebrow">What I build</p>
+ <h2>Built for the job.</h2>
+ 
+ <div className="log-list">
+-  <Link className="log-row" href="/apps/data-app">
++  <Link className="log-row" href="/apps/works">
+     <div>
+       <span className="chip chip--live">Live &middot; running the operation</span>
+       <h3 style={{ marginTop: 14 }}>Decoded Works</h3>
+     </div>
+
+[0m
+[0m← [0mEdit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\apps\page.tsx
+@@ -104,9 +104,9 @@
+     build.</p>
+   <span className="go">See how it works</span>
+ </Link>
+ 
+-<Link className="log-row" href="/apps/artwork-manager">
++<Link className="log-row" href="/apps/proof">
+   <div>
+     <span className="chip chip--pre">Founding clients</span>
+     <h3 style={{ marginTop: 14 }}>Decoded Proof</h3>
+   </div>
+
+[0m
+[0m→ [0mRead app/case-studies/case-study-01/page.tsx[90m [limit=5, offset=304][0m
+[0m→ [0mRead app/case-studies/case-study-02/page.tsx[90m [limit=5, offset=235][0m
+[0m→ [0mRead app/pricing/page.tsx[90m [limit=10, offset=250][0m
+[0m
+[0m← [0mEdit app/case-studies/case-study-01/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\case-studies\case-study-01\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\case-studies\case-study-01\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\case-studies\case-study-01\page.tsx
+@@ -302,9 +302,9 @@
+   <div className="hero-cta">
+     <Link href="/contact" className="btn btn--primary">
+       Book a free discovery call <ArrowRight size={18} />
+     </Link>
+-    <Link href="/apps/data-app" className="btn btn-ghost btn-arrow">
++    <Link href="/apps/works" className="btn btn-ghost btn-arrow">
+       See Works
+     </Link>
+   </div>
+ </div>
+
+[0m
+[0m← [0mEdit app/case-studies/case-study-02/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\case-studies\case-study-02\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\case-studies\case-study-02\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\case-studies\case-study-02\page.tsx
+@@ -233,9 +233,9 @@
+   <div className="hero-cta">
+     <Link href="/contact" className="btn btn--primary">
+       Book a free discovery call <ArrowRight size={18} />
+     </Link>
+-    <Link href="/apps/data-app" className="btn btn-ghost btn-arrow">
++    <Link href="/apps/works" className="btn btn-ghost btn-arrow">
+       See Works
+     </Link>
+   </div>
+ </div>
+
+[0m
+[0m← [0mEdit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\pricing\page.tsx
+@@ -249,13 +249,13 @@
+ <p className="eyebrow">Systems</p>
+ <h2>Three products. Scoped and quoted per business.</h2>
+ 
+ <div className="grid grid--3" style={{ marginTop: 28 }}>
+-  <Link className="card" href="/apps/data-app">
++  <Link className="card" href="/apps/works">
+     <span className="kicker">Works</span>
+     <h3>The ERP for decorated goods</h3>
+   </Link>
+-  <Link className="card" href="/apps/artwork-manager">
++  <Link className="card" href="/apps/proof">
+     <span className="kicker">Proof</span>
+     <h3>Versions, approvals and delivery</h3>
+   </Link>
+   <Link className="card" href="/apps/commerce">
+
+[0m
+[0m← [0mEdit app/problems/data-scattered/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\data-scattered\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\data-scattered\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\data-scattered\page.tsx
+@@ -285,9 +285,9 @@
+  <p className="lede">A Clarity Audit maps every source you&apos;re running today and what it would
+   take to get them all reading from the same data.</p>
+  <div className="hero-cta">
+   <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
+-  <Link className="btn-ghost btn-arrow" href="/apps/data-app">See Works</Link>
++  <Link className="btn-ghost btn-arrow" href="/apps/works">See Works</Link>
+  </div>
+ </div>
+ </section>
+ <D17Motion />
+
+[0m
+[0m← [0mEdit app/problems/legacy-system/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\legacy-system\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\legacy-system\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\legacy-system\page.tsx
+@@ -315,9 +315,9 @@
+  <p className="lede">A Clarity Audit scopes the gap and prices the fix, before anything gets
+   ripped out.</p>
+  <div className="hero-cta">
+   <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
+-  <Link className="btn-ghost btn-arrow" href="/apps/data-app">See Works</Link>
++  <Link className="btn-ghost btn-arrow" href="/apps/works">See Works</Link>
+  </div>
+ </div>
+ </section>
+ <D17Motion />
+
+[0m
+[0m← [0mEdit app/problems/seasonal-peaks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\seasonal-peaks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\seasonal-peaks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\seasonal-peaks\page.tsx
+@@ -269,9 +269,9 @@
+  <p className="lede">A Clarity Audit quantifies the gap between your peak demand and your current
+   capacity, and prices the fix before the next spike hits.</p>
+  <div className="hero-cta">
+   <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
+-  <Link className="btn btn-ghost btn-arrow" href="/apps/data-app">See Works</Link>
++  <Link className="btn btn-ghost btn-arrow" href="/apps/works">See Works</Link>
+  </div>
+ </div>
+ </section>
+ <D17Motion />
+
+[0m
+[0m← [0mEdit app/problems/inventory-blind/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\inventory-blind\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\inventory-blind\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\problems\inventory-blind\page.tsx
+@@ -244,9 +244,9 @@
+  <p className="lede">A Clarity Audit maps your current stock picture and what it would take to
+   make it real-time.</p>
+  <div className="hero-cta">
+   <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
+-  <Link className="btn-ghost btn-arrow" href="/apps/data-app">See Works</Link>
++  <Link className="btn-ghost btn-arrow" href="/apps/works">See Works</Link>
+  </div>
+ </div>
+ </section>
+ <D17Motion />
+
+[0m
+[0m← [0mEdit app/sitemap.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\sitemap.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\sitemap.ts
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\sitemap.ts
+@@ -59,10 +59,10 @@
+ { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+ { url: `${BASE_URL}/cookies`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.4 },
+ { url: `${BASE_URL}/deliver`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+ { url: `${BASE_URL}/apps`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+-{ url: `${BASE_URL}/apps/data-app`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+-{ url: `${BASE_URL}/apps/artwork-manager`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
++{ url: `${BASE_URL}/apps/works`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
++{ url: `${BASE_URL}/apps/proof`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
+ { url: `${BASE_URL}/apps/commerce`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
+ { url: `${BASE_URL}/how-i-build`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+ 
+ { url: `${BASE_URL}/process-quality-system`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+
+[0m
+[0m← [0mEdit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\next.config.ts
+@@ -14,9 +14,9 @@
+ // DS implementation work order (2026-07-31), Lane 0: old URLs being
+ // retired in favour of new DS-ported routes built by later lanes.
+ // Targets don't exist yet — that's expected, the other lanes build
+ // them; the redirect just needs to be ready ahead of that landing.
+-{ source: '/decoded-data-app', destination: '/apps/data-app', permanent: true },
++{ source: '/decoded-data-app', destination: '/apps/works', permanent: true },
+ { source: '/resources/software-reviews', destination: '/resources', permanent: true },
+ { source: '/decoded-method', destination: '/resources/decoded-method', permanent: true },
+ { source: '/tools/ai-readiness-check', destination: '/tools/ops-health-score', permanent: true },
+ { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
+
+[0m
+[0m← [0mEdit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\next.config.ts
+@@ -23,8 +23,10 @@
+ { source: '/case-studies/hanicks', destination: '/case-studies/case-study-01', permanent: true },
+ { source: '/case-studies/tacklebag', destination: '/case-studies/case-study-02', permanent: true },
+ { source: '/case-studies/cobra-workwear', destination: '/case-studies/case-study-03', permanent: true },
+ { source: '/apps/crm', destination: '/apps', permanent: true },
++{ source: '/apps/data-app', destination: '/apps/works', permanent: true },
++{ source: '/apps/artwork-manager', destination: '/apps/proof', permanent: true },
+ // BUG-WEB-017: blog slugs renamed during relaunch — preserve Search Console equity
+ { source: '/blog/artwork-approval-process', destination: '/blog/artwork-approval-workflow-brief-to-sign-off-24-hours', permanent: true },
+ { source: '/blog/embroidery-quality-standards', destination: '/blog/embroidery-quality-standards-stitch-density-thread-durability', permanent: true },
+ { source: '/blog/orderwise-what-it-does-well-what-it-doesn-t', destination: '/blog/erp-gaps-decorated-goods-business', permanent: true },
+
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py for copy-spec.json (96 changes)
+[✓] Run apply_spec.py for copy-spec-resources-later.json (3 changes)
+[✓] Structural: git mv route moves + canonical/url updates
+[✓] Structural: update all internal hrefs, sitemap, redirects
+[•] Final sweep: grep for remaining old names
+[ ] Run tsc --noEmit
+[ ] Commit + lane exit contract
+[0m
+[0m✱ [0mGrep "/apps/data-app|/apps/artwork-manager"[90m in app · 0 matches[0m
+[0m✱ [0mGrep "/apps/data-app|/apps/artwork-manager"[90m in components · 0 matches[0m
+Good — no remaining hrefs in app/components. Now the broader user-visible sweep:
+[0m
+[0m$ [0mgit grep -n "Data App\|Artwork Manager" -- app components data lib ':!app/blog' ':!app/clients'
+app/page.tsx:275:                      aria-label="Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
+app/page.tsx:279:                  <div className={`${d17.k} ${d17.d17Mono}`}>The Data App <span>&middot; at Hanicks</span></div>
+app/page.tsx:363:                      aria-label="Evidence piece DO-ART-918. A teamwear business on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
+data/problem-routing.ts:275:      label: 'Data App and supplier integration',
+[0m
+[0m→ [0mRead app/page.tsx[90m [limit=15, offset=272][0m
+[0m→ [0mRead app/page.tsx[90m [limit=10, offset=360][0m
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\page.tsx
+@@ -271,9 +271,9 @@
+      figures (SQL, 23 Sep 2026). In-page draw: cards rise, the meters
+      fill, the feeds list in, and the amber lands on &quot;matched&quot; last. */}
+ <figure className={`${d17.d17} ${d17.a917}`} data-od-id="plate-measure" data-motion
+         data-no="DO-ART-917" data-rev="01" data-tx="photo"
+-        aria-label="Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
++        aria-label="Product screen DO-ART-917. Decoded Works catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
+   <div className={d17.d17Ph}><img src="/images/d17/thread-spools.jpg" alt="" width={1300} height={867} /></div>
+   <div className={d17.d17Scan} aria-hidden="true" />
+   <figcaption className={d17.cap}>
+     <div className={`${d17.k} ${d17.d17Mono}`}>The Data App <span>&middot; at Hanicks</span></div>
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\page.tsx
+@@ -275,9 +275,9 @@
+       aria-label="Product screen DO-ART-917. Decoded Works catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
+ <div className={d17.d17Ph}><img src="/images/d17/thread-spools.jpg" alt="" width={1300} height={867} /></div>
+ <div className={d17.d17Scan} aria-hidden="true" />
+ <figcaption className={d17.cap}>
+-  <div className={`${d17.k} ${d17.d17Mono}`}>The Data App <span>&middot; at Hanicks</span></div>
++  <div className={`${d17.k} ${d17.d17Mono}`}>Works <span>&middot; at Hanicks</span></div>
+   <div className={d17.bar} aria-hidden="true" />
+   <h3>Forty suppliers. One catalogue.</h3>
+   <p>Every supplier feed brought into one place, and matched to its supplier before anyone has to touch it.</p>
+   <div className={`${d17.live} ${d17.d17Mono}`}>Live system, September 2026</div>
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-057\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-057\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-057\app\page.tsx
+@@ -359,9 +359,9 @@
+      live system, SQL 23 Sep 2026. In-page draw: the ledger line runs
+      down and the figures land in order, amber on &quot;binned&quot; last. */}
+ <figure className={`${d17.d17} ${d17.a918}`} data-od-id="plate-evidence" data-motion
+         data-no="DO-ART-918" data-rev="01" data-tx="photo"
+-        aria-label="Evidence piece DO-ART-918. A teamwear business on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
++        aria-label="Evidence piece DO-ART-918. A teamwear business on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
+   <div className={d17.d17Ph}><img src="/images/d17/cat-workwear.jpg" alt="" width={900} height={596} /></div>
+   <div className={d17.d17Scan} aria-hidden="true" />
+   <figcaption className={d17.copy}>
+     <div className={`${d17.k} ${d17.d17Mono}`}>A teamwear business <span>&middot; live system, Sept 2026</span></div>
+
+[0m
+[0m$ [0mgit grep -n "Data App\|Artwork Manager" -- app components data lib ':!app/blog' ':!app/clients'
+data/problem-routing.ts:275:      label: 'Data App and supplier integration',
+[0m
+[0m$ [0mgit grep -n "/apps/data-app\|/apps/artwork-manager" -- app components data lib
+(no output)
+[0m
+[0m$ [0mgit grep -n "/apps/data-app\|/apps/artwork-manager" -- next.config.ts
+next.config.ts:27:      { source: '/apps/data-app', destination: '/apps/works', permanent: true },
+next.config.ts:28:      { source: '/apps/artwork-manager', destination: '/apps/proof', permanent: true },
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py for copy-spec.json (96 changes)
+[✓] Run apply_spec.py for copy-spec-resources-later.json (3 changes)
+[✓] Structural: git mv route moves + canonical/url updates
+[✓] Structural: update all internal hrefs, sitemap, redirects
+[✓] Final sweep: grep for remaining old names
+[•] Run tsc --noEmit
+[ ] Commit + lane exit contract
+[0m
+Clean — only the redirect sources remain. Now tsc:
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py for copy-spec.json (96 changes)
+[✓] Run apply_spec.py for copy-spec-resources-later.json (3 changes)
+[✓] Structural: git mv route moves + canonical/url updates
+[✓] Structural: update all internal hrefs, sitemap, redirects
+[✓] Final sweep: grep for remaining old names
+[✓] Run tsc --noEmit
+[•] Commit + lane exit contract
+[0m
+Clean — zero errors. Now commit:
+[0m$ [0mgit add -A && git commit -m "content(web): Decoded Works + Proof naming and ERP positioning (CR-WEB-057, CR-WEB-056)
+
+- Applied 99 copy-spec replacements (96 + 3) across 22 files
+- Renamed Decoded Data App -> Decoded Works, Artwork Manager -> Decoded Proof
+- Updated ERP positioning, hero copy, FAQ schemas, alt text, SVG labels
+- Renamed pricing tiers Standard -> Connected, Extended -> Scaled (Commerce + Proof)
+- Rewrote Proof hero, terms section, and Commerce founding-client notice
+- Updated ERP selection playbook to vendor-neutral framing"
+[web-content-057 be121d3] content(web): Decoded Works + Proof naming and ERP positioning (CR-WEB-057, CR-WEB-056)
+ 28 files changed, 222 insertions(+), 218 deletions(-)
+ rename app/apps/{artwork-manager => proof}/page.tsx (74%)
+ rename app/apps/{data-app => works}/page.tsx (83%)
+ create mode 100644 public/newsletter/nl-001/works-hanicks-v3.png
+[0m
+[0m$ [0mgit show --stat HEAD
+commit be121d3113612fb343f893578371162e8d492612
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Thu Sep 24 20:58:58 2026 +0100
+
+    content(web): Decoded Works + Proof naming and ERP positioning (CR-WEB-057, CR-WEB-056)
+    
+    - Applied 99 copy-spec replacements (96 + 3) across 22 files
+    - Renamed Decoded Data App -> Decoded Works, Artwork Manager -> Decoded Proof
+    - Updated ERP positioning, hero copy, FAQ schemas, alt text, SVG labels
+    - Renamed pricing tiers Standard -> Connected, Extended -> Scaled (Commerce + Proof)
+    - Rewrote Proof hero, terms section, and Commerce founding-client notice
+    - Updated ERP selection playbook to vendor-neutral framing
+
+ app/about/page.tsx                               |   2 +-
+ app/apps/commerce/page.tsx                       |  57 +++++++-------
+ app/apps/page.tsx                                |  68 ++++++++--------
+ app/apps/{artwork-manager => proof}/page.tsx     |  95 ++++++++++++-----------
+ app/apps/{data-app => works}/page.tsx            |  66 ++++++++--------
+ app/case-studies/case-study-01/page.tsx          |  10 +--
+ app/case-studies/case-study-02/page.tsx          |  10 +--
+ app/page.tsx                                     |   6 +-
+ app/pricing/page.tsx                             |  16 ++--
+ app/problems/buy-vs-build/page.tsx               |   4 +-
+ app/problems/cant-scale-operations/page.tsx      |   2 +-
+ app/problems/data-scattered/page.tsx             |  20 ++---
+ app/problems/erp-implementation-failure/page.tsx |   4 +-
+ app/problems/inventory-blind/page.tsx            |  16 ++--
+ app/problems/legacy-system/page.tsx              |   4 +-
+ app/problems/manual-workarounds/page.tsx         |   2 +-
+ app/problems/seasonal-peaks/page.tsx             |   8 +-
+ app/problems/spreadsheet-addiction/page.tsx      |   4 +-
+ app/resources/erp-selection-playbook/page.tsx    |  16 ++--
+ app/sectors/garment-decoration/page.tsx          |   2 +-
+ app/sectors/print-promotional/page.tsx           |   2 +-
+ app/sectors/promotional-merchandise/page.tsx     |   4 +-
+ app/sectors/schoolwear/page.tsx                  |   6 +-
+ app/sitemap.ts                                   |   4 +-
+ components/Footer.tsx                            |   4 +-
+ components/Header.tsx                            |   4 +-
+ next.config.ts                                   |   4 +-
+ public/newsletter/nl-001/works-hanicks-v3.png    | Bin 0 -> 306937 bytes
+ 28 files changed, 222 insertions(+), 218 deletions(-)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-content-057\.context\lane-reports already exists.
+[0m
+[0m$ [0mgit log --oneline -1
+be121d3 content(web): Decoded Works + Proof naming and ERP positioning (CR-WEB-057, CR-WEB-056)
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-content-057.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-content-057.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "docs: lane report for web-content-057"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-content-057.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-content-057.json', LF will be replaced by CRLF the next time Git touches it
+[web-content-057 5865ebd] docs: lane report for web-content-057
+ 2 files changed, 43 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-content-057.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-content-057.json
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py for copy-spec.json (96 changes)
+[✓] Run apply_spec.py for copy-spec-resources-later.json (3 changes)
+[✓] Structural: git mv route moves + canonical/url updates
+[✓] Structural: update all internal hrefs, sitemap, redirects
+[✓] Final sweep: grep for remaining old names
+[✓] Run tsc --noEmit
+[✓] Commit + lane exit contract
+[0m
+Lane complete. Two commits:
+
+**be121d3** — `content(web): Decoded Works + Proof naming and ERP positioning (CR-WEB-057, CR-WEB-056)`
+- 99 copy-spec replacements applied (96 + 3) across 22 files
+- Route moves: `/apps/data-app` → `/apps/works`, `/apps/artwork-manager` → `/apps/proof`
+- 14 internal hrefs, sitemap, and redirects updated
+- 3 stale "Data App" references on homepage caught in final sweep
+
+**5865ebd** — `docs: lane report for web-content-057`
+
+**tsc: clean (0 errors)**
+
+**Escape grep:** 1 hit — `data/problem-routing.ts:275` ("Data App and supplier integration" label) — owned by separate lane, out of scope per brief.

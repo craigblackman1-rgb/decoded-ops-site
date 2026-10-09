@@ -1,0 +1,394 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] BUG-WEB-023: Find and fix hamburger nav clipped to 88px on mobile/tablet
+[ ] BUG-WEB-024: Fix hero images loading w=3840 variants on mobile
+[ ] Verify: tsc --noEmit and npm run build pass
+[ ] Commit all changes
+
+• Find nav component and CSS Explore Agent
+✓ Find nav component and CSS Explore Agent
+→ Read app/design-system/ds-nav.css
+→ Read app/design-system/ds-marketing.css
+→ Read app/page.tsx
+Let me read the key CSS files to understand the exact issue.
+→ Read components/Header.tsx
+→ Read app/design-system/colors_and_type.css [limit=100]
+Let me read the Header component and the CSS token file to understand the exact values.
+✱ Grep "--do-header-h|--do-z-sticky|--do-z-sticky|--sidebar-w" in app/design-system · 10 matches
+✱ Grep "position:\s*fixed|overflow:\s*hidden|height:|max-height:" in app/design-system/ds-nav.css · 63 matches
+→ Read app/design-system/ds-layer.css
+✱ Grep "\.site-nav" in app · 20 matches
+→ Read app/globals.css [limit=100]
+✱ Grep "site-nav.*height|site-nav.*max-height" in app · 1 match
+→ Read app/globals.css [offset=100]
+
+← Edit app/design-system/ds-nav.css
+Index: D:\apps\worktrees\decoded-ops-website\lane-mobile-nav-fix\app\design-system\ds-nav.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-mobile-nav-fix\app\design-system\ds-nav.css
++++ D:\apps\worktrees\decoded-ops-website\lane-mobile-nav-fix\app\design-system\ds-nav.css
+@@ -223,9 +223,11 @@
+ /* ── mobile nav ────────────────────────────────────────────────────── */
+ @media(max-width:1100px){
+   .site-head--mega .nav-toggle{ display:inline-flex }
+   .site-head--mega .site-nav{ display:none; position:fixed;
+-    inset:var(--do-header-h) 0 0; flex-direction:column; align-items:stretch;
++    top:var(--do-header-h); left:0; right:0;
++    height:calc(100dvh - var(--do-header-h));
++    flex-direction:column; align-items:stretch;
+     gap:0; margin:0; padding:24px 24px 64px; overflow-y:auto;
+     background:var(--do-surface-raised); border:0; box-shadow:none;
+     z-index:var(--do-z-sticky) }
+   .site-head--mega .site-nav.is-open{ display:flex }
+
+
+Now I understand the issue. The mobile nav uses `position: fixed` with `inset: var(--do-header-h) 0 0` but is being constrained by the sticky parent header. Let me fix this by using explicit height calculation instead of `inset`.
+← Edit app/design-system/ds-nav.css
+Index: D:\apps\worktrees\decoded-ops-website\lane-mobile-nav-fix\app\design-system\ds-nav.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-mobile-nav-fix\app\design-system\ds-nav.css
++++ D:\apps\worktrees\decoded-ops-website\lane-mobile-nav-fix\app\design-system\ds-nav.css
+@@ -214,9 +214,10 @@
+   color:var(--do-text-primary); text-decoration:underline;
+   text-underline-offset:3px }
+ 
+ /* the scrim sits under the header but over the page — and over the rail */
+-.scrim{ position:fixed; inset:var(--do-header-h) 0 0;
++.scrim{ position:fixed; top:var(--do-header-h); left:0; right:0;
++  height:calc(100dvh - var(--do-header-h));
+   z-index:calc(var(--do-z-dropdown) + 1);
+   background:color-mix(in srgb, var(--do-prussian-blue) 28%, transparent) }
+ .scrim[hidden]{ display:none }
+ 
+
+
+Also fix the scrim which uses the same `inset` pattern:
+Now commit the nav fix:
+$ git add app/design-system/ds-nav.css && git commit -m "fix: mobile nav height — replace inset shorthand with explicit top/left/right/height calc
+
+BUG-WEB-023: The mobile nav used `position:fixed; inset:var(--do-header-h) 0 0`
+which rendered as an 88px clipped strip instead of filling the viewport below
+the header. Replaced with explicit top/left/right + height:calc(100dvh - var(--do-header-h))
+so the panel fills the remaining viewport. Also fixed the scrim overlay with
+the same pattern."
+[lane/mobile-nav-fix c7329ed] fix: mobile nav height — replace inset shorthand with explicit top/left/right/height calc
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+# Todos
+[✓] BUG-WEB-023: Find and fix hamburger nav clipped to 88px on mobile/tablet
+[•] BUG-WEB-024: Fix hero images loading w=3840 variants on mobile
+[ ] Verify: tsc --noEmit and npm run build pass
+[ ] Commit all changes
+
+→ Read app/homepage.css
+
+← Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-mobile-nav-fix\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-mobile-nav-fix\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-mobile-nav-fix\app\page.tsx
+@@ -167,9 +167,9 @@
+   from the one before it. Almost everyone starts with a Clarity Audit, because until somebody
+   has followed your processes from start to finish, everything after that is guesswork.</p>
+ 
+ <figure className="band" data-od-id="help-photo">
+-  <Image src="/images/sectors/thread-spools.jpg" fill sizes="1200px" className="p-photo"
++  <Image src="/images/sectors/thread-spools.jpg" fill sizes="(max-width: 1200px) 100vw, 1152px" className="p-photo"
+     style={{ objectFit: 'cover', objectPosition: '50% 58%' }}
+     alt="A row of coloured thread cones loaded on an embroidery machine head." />
+   <figcaption className="stamp">DO-ART-906 &middot; Materials</figcaption>
+ </figure>
+
+
+Now fix the hero images. The `thread-spools.jpg` has `sizes="1200px"` which forces the largest variant on all screens:
+• Audit next/image sizes attrs Explore Agent
+Now let me audit other pages for the same `next/image` `sizes` issue:
+✓ Audit next/image sizes attrs Explore Agent
+→ Read app/page.tsx [offset=114, limit=10]
+The `thread-spools.jpg` was the main offender with `sizes="1200px"` forcing the largest variant. The `hero-craft.jpg` sizes look correct. Let me also check if the `hero-craft.jpg` needs any adjustment — the `45vw` on desktop could be too generous:
+The `hero-craft.jpg` sizes look correct for its layout context. The `thread-spools.jpg` was the clear offender with `sizes="1200px"`. Let me commit this fix:
+
+$ git add app/page.tsx && git commit -m "fix: hero image sizes — thread-spools was loading w=3840 on mobile
+
+BUG-WEB-024: thread-spools.jpg had sizes=\"1200px\" which told the browser
+the image was always 1200px wide, forcing the largest Next.js variant
+(w=3840) even on 375px viewports. Changed to sizes=\"(max-width: 1200px)
+100vw, 1152px\" — the breakpoint matches the .wrap max-width and 1152px
+is the exact inner content width (1200 - 24*2 padding).
+
+hero-craft.jpg already had correct sizes: (max-width: 1040px) 100vw, 45vw.
+No other next/image fill usages found in app/."
+ParserError: 
+Line |
+   6 |  100vw, 1152px\" - the breakpoint matches the .wrap max-width and 1152 .
+     |       ~
+     | Missing argument in parameter list.
+
+$ git add app/page.tsx && git commit -m "fix: hero image sizes - thread-spools loading w=3840 on mobile
+
+BUG-WEB-024: thread-spools.jpg had sizes=1200px which forced the largest
+Next.js variant on all viewports. Changed to responsive sizes that match
+the .wrap max-width container. hero-craft.jpg already correct."
+[lane/mobile-nav-fix 2426fc9] fix: hero image sizes - thread-spools loading w=3840 on mobile
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+# Todos
+[✓] BUG-WEB-023: Find and fix hamburger nav clipped to 88px on mobile/tablet
+[✓] BUG-WEB-024: Fix hero images loading w=3840 variants on mobile
+[•] Verify: tsc --noEmit and npm run build pass
+[ ] Commit all changes
+
+$ Test-Path node_modules
+False
+
+$ npm install
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 412 packages, and audited 413 packages in 19s
+npm warn allow-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+150 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ npx tsc --noEmit
+(no output)
+
+$ npm run build
+> decoded-ops-next@0.1.0 prebuild
+> node scripts/generate-route-slugs.mjs
+
+[route-slugs] 18 problems, 9 sectors, 6 tools
+
+> decoded-ops-next@0.1.0 build
+> next build
+
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 31ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 21.4s
+  Running TypeScript ...
+  Finished TypeScript in 6.9s ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/165) ...
+  Generating static pages using 15 workers (41/165) 
+  Generating static pages using 15 workers (82/165) 
+  Generating static pages using 15 workers (123/165) 
+✓ Generating static pages using 15 workers (165/165) in 3.9s
+  Finalizing page optimization ...
+
+Route (app)                                              Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/auth/login
+├ ƒ /api/clients/documents/[id]/questionnaire
+├ ƒ /api/clients/documents/[id]/sign
+├ ƒ /api/clients/uploads
+├ ƒ /api/contact
+├ ƒ /api/tools/capture
+├ ○ /apps
+├ ○ /apps/artwork-manager
+├ ○ /apps/commerce
+├ ○ /apps/data-app
+├ ○ /blog                                                        5m      1y
+├   /blog/[slug]
+│ ├ ● /blog/orderwise-what-it-does-well-what-it-doesn-t          5m      1y
+│ ├ ● /blog/the-real-cost-of-a-failed-erp-project                5m      1y
+│ ├ ● /blog/5-questions-vendors-wont-like                        5m      1y
+│ └ ● [+26 more paths]
+├ ○ /case-studies
+├ ○ /case-studies/case-study-01
+├ ○ /case-studies/case-study-02
+├ ○ /case-studies/case-study-03
+├ ○ /case-studies/eternal-fitness
+├ ○ /clarity
+├ ƒ /clients/[clientId]
+├ ƒ /clients/dashboard
+├ ƒ /clients/documents
+├ ƒ /clients/documents/view/[id]
+├ ○ /clients/login
+├ ƒ /clients/project
+├ ○ /contact
+├ ○ /cookies
+├ ○ /deliver
+├ ○ /how-i-build
+├ ○ /locations/fractional-cto
+├   /locations/fractional-cto/[location]
+│ ├ ● /locations/fractional-cto/chichester
+│ ├ ● /locations/fractional-cto/worthing
+│ ├ ● /locations/fractional-cto/horsham
+│ └ ● [+24 more paths]
+├ ○ /locations/tech-audit
+├   /locations/tech-audit/[location]
+│ ├ ● /locations/tech-audit/chichester
+│ ├ ● /locations/tech-audit/worthing
+│ ├ ● /locations/tech-audit/horsham
+│ └ ● [+24 more paths]
+├ ƒ /opengraph-image
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /problems
+├ ○ /problems/ai-paralysis
+├ ○ /problems/bottleneck-growth
+├ ○ /problems/buy-vs-build
+├ ○ /problems/cant-scale-operations
+├ ○ /problems/data-scattered
+├ ○ /problems/disaster-recovery
+├ ○ /problems/ecommerce-not-connected
+├ ○ /problems/erp-implementation-failure
+├ ○ /problems/inventory-blind
+├ ○ /problems/legacy-system
+├ ○ /problems/manual-workarounds
+├ ○ /problems/no-ops-owner
+├ ○ /problems/ops-in-owners-head
+├ ○ /problems/seasonal-peaks
+├ ○ /problems/slow-processes
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/artwork-approval-playbook
+├ ○ /resources/audit-checklist
+├ ○ /resources/capacity-planner
+├ ○ /resources/decoded-method
+├ ○ /resources/erp-selection-playbook
+├ ○ /resources/seasonal-capacity
+├ ○ /resources/six-sigma
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ƒ /robots.txt
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ƒ /sitemap.xml
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/ai-readiness-check
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+Both verification steps pass. Let me confirm the final state of changes:
+$ git log --oneline -5
+2426fc9 fix: hero image sizes - thread-spools loading w=3840 on mobile
+c7329ed fix: mobile nav height — replace inset shorthand with explicit top/left/right/height calc
+4f59cc1 chore: drop LANE-REPORT.md — lane working notes, not product; the record lives in the work order
+c23e470 CR-WEB-028 u40: drop the duplicate call-to-action from the /blog CTA block
+38a4e2e CR-WEB-028 u35: DO-ART-633 artwork set for the Decoded Method post
+
+$ git diff HEAD~2 --stat
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+ app/design-system/ds-nav.css | 7 +++++--
+ app/page.tsx                 | 2 +-
+ 2 files changed, 6 insertions(+), 3 deletions(-)
+
+$ git diff HEAD~2
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+diff --git a/app/design-system/ds-nav.css b/app/design-system/ds-nav.css
+index 5e44f14..e788914 100644
+--- a/app/design-system/ds-nav.css
++++ b/app/design-system/ds-nav.css
+@@ -215,7 +215,8 @@
+   text-underline-offset:3px }
+ 
+ /* the scrim sits under the header but over the page — and over the rail */
+-.scrim{ position:fixed; inset:var(--do-header-h) 0 0;
++.scrim{ position:fixed; top:var(--do-header-h); left:0; right:0;
++  height:calc(100dvh - var(--do-header-h));
+   z-index:calc(var(--do-z-dropdown) + 1);
+   background:color-mix(in srgb, var(--do-prussian-blue) 28%, transparent) }
+ .scrim[hidden]{ display:none }
+@@ -224,7 +225,9 @@
+ @media(max-width:1100px){
+   .site-head--mega .nav-toggle{ display:inline-flex }
+   .site-head--mega .site-nav{ display:none; position:fixed;
+-    inset:var(--do-header-h) 0 0; flex-direction:column; align-items:stretch;
++    top:var(--do-header-h); left:0; right:0;
++    height:calc(100dvh - var(--do-header-h));
++    flex-direction:column; align-items:stretch;
+     gap:0; margin:0; padding:24px 24px 64px; overflow-y:auto;
+     background:var(--do-surface-raised); border:0; box-shadow:none;
+     z-index:var(--do-z-sticky) }
+diff --git a/app/page.tsx b/app/page.tsx
+index 4dd08fc..a1dd0dd 100644
+--- a/app/page.tsx
++++ b/app/page.tsx
+@@ -168,7 +168,7 @@ export default function HomePage() {
+               has followed your processes from start to finish, everything after that is guesswork.</p>
+ 
+             <figure className="band" data-od-id="help-photo">
+-              <Image src="/images/sectors/thread-spools.jpg" fill sizes="1200px" className="p-photo"
++              <Image src="/images/sectors/thread-spools.jpg" fill sizes="(max-width: 1200px) 100vw, 1152px" className="p-photo"
+                 style={{ objectFit: 'cover', objectPosition: '50% 58%' }}
+                 alt="A row of coloured thread cones loaded on an embroidery machine head." />
+               <figcaption className="stamp">DO-ART-906 &middot; Materials</figcaption>
+
+# Todos
+[✓] BUG-WEB-023: Find and fix hamburger nav clipped to 88px on mobile/tablet
+[✓] BUG-WEB-024: Fix hero images loading w=3840 variants on mobile
+[✓] Verify: tsc --noEmit and npm run build pass
+[✓] Commit all changes
+
+Done. Both bugs fixed, verified, committed.
+
+## Summary
+
+### BUG-WEB-023: Mobile nav clipped to 88px
+**File:** `app/design-system/ds-nav.css` (lines 218, 226-229)
+
+**Root cause:** The mobile nav and scrim used `position:fixed; inset:var(--do-header-h) 0 0` — a CSS `inset` shorthand that should have expanded the panel from below the header to the viewport bottom, but rendered as an 88px strip instead.
+
+**Fix:** Replaced `inset` with explicit properties: `top:var(--do-header-h); left:0; right:0; height:calc(100dvh - var(--do-header-h))`. Applied to both `.site-nav` (mobile panel) and `.scrim` (overlay).
+
+### BUG-WEB-024: Hero images loading w=3840 on mobile
+**File:** `app/page.tsx` (line 171)
+
+**Root cause:** `thread-spools.jpg` had `sizes="1200px"`, telling the browser the image was always 1200px wide regardless of viewport — forcing the largest Next.js variant (w=3840).
+
+**Fix:** Changed to `sizes="(max-width: 1200px) 100vw, 1152px"` — responsive sizes matching the `.wrap` container's max-width (1200px) and inner content width (1152px = 1200 - 24*2 padding). `hero-craft.jpg` already had correct sizes.
+
+### Verification
+- `npx tsc --noEmit` — clean
+- `npm run build` — compiled successfully (165 static pages)
+
+### Files changed
+| File | Selectors/props touched |
+|---|---|
+| `app/design-system/ds-nav.css` | `.scrim`, `.site-head--mega .site-nav` (mobile `@media(max-width:1100px)`) |
+| `app/page.tsx` | `thread-spools.jpg` `sizes` attribute |

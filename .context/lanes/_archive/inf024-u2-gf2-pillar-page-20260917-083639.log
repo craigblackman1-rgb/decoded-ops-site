@@ -1,0 +1,334 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0m# [0mTodos
+[ΓÇó] Explore existing sector/pillar pages to understand patterns
+[ ] Create the new pillar page
+[ ] Add internal links from existing sector pages
+[ ] Verify build, metadata, internal links
+[ ] Commit all work and write lane reports
+[0m
+[0mΓåÆ [0mRead app/sectors
+[0mΓ£▒ [0mGlob "app/sectors/*/page.tsx"[90m in . ┬╖ 10 matches[0m
+[0mΓåÆ [0mRead data/sector-routing.ts
+[0mΓåÆ [0mRead app/sectors/operations-consultant-print-embroidery/page.tsx
+[0mΓåÆ [0mRead app/sectors/garment-decoration/page.tsx
+[0mΓåÆ [0mRead app/sectors/workwear/page.tsx
+The `operations-consultant-print-embroidery` directory already exists. Let me check what's in it and compare with a reference sector page.
+[0mΓ£▒ [0mGlob "components/schematics/sectors/PrintEmbroideryOpsConsultant*"[90m in . ┬╖ 1 match[0m
+[0mΓåÆ [0mRead app/sitemap.ts
+The page already exists and looks fully built. Let me check what's missing ΓÇö the schematic component, sitemap inclusion, and cross-links from other sector pages.
+[0mΓ£▒ [0mGrep "operations-consultant-print-embroidery"[90m in . ┬╖ 11 matches[0m
+[0m
+[0m# [0mTodos
+[Γ£ô] Explore existing sector/pillar pages to understand patterns
+[Γ£ô] Create the new pillar page
+[Γ£ô] Add internal links from existing sector pages
+[ΓÇó] Verify build, metadata, internal links
+[ ] Commit all work and write lane reports
+[0m
+The page already exists with full content, metadata, sitemap entry, routing, and cross-links from `garment-decoration` and `print-promotional`. Let me verify the build and check for any issues.
+[0mΓåÆ [0mRead components/schematics/sectors/PrintEmbroideryOpsConsultantSchematic.tsx
+[0m
+[0m$ [0mTest-Path "D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\node_modules"
+False
+[0m
+[0m$ [0mnpm install 2>&1 | Select-Object -Last 20
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 440 packages, and audited 441 packages in 16s
+
+158 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0mΓåÆ [0mRead data/route-slugs.json
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -Last 30
+(no output)
+[0m
+tsc passes cleanly. The page already exists with all required elements. Let me verify the build completes.
+[0m$ [0mnpm run build 2>&1 | Select-Object -Last 40
+Γö£ Γùï /resources
+Γö£ Γùï /resources/5-warning-signs
+Γö£ Γùï /resources/artwork-approval-playbook
+Γö£ Γùï /resources/audit-checklist
+Γö£ Γùï /resources/capacity-planner
+Γö£ Γùï /resources/decoded-method
+Γö£ Γùï /resources/erp-selection-playbook
+Γö£ Γùï /resources/seasonal-capacity
+Γö£ Γùï /resources/six-sigma
+Γö£ Γùï /resources/sop-template
+Γö£ Γùï /retained
+Γö£ ╞Æ /robots.txt
+Γö£ Γùï /sectors/awards-engraving
+Γö£ Γùï /sectors/garment-decoration
+Γö£ Γùï /sectors/labels-packaging
+Γö£ Γùï /sectors/operations-consultant-print-embroidery
+Γö£ Γùï /sectors/print-promotional
+Γö£ Γùï /sectors/promotional-merchandise
+Γö£ Γùï /sectors/schoolwear
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/teamwear-clubwear
+Γö£ Γùï /sectors/workwear
+Γö£ ╞Æ /sitemap.xml
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/ai-readiness-check
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+[0m
+Build passes. Page is prerendered as static content. Let me check git status and commit.
+[0m$ [0mgit status
+On branch lane/inf024-u2-gf2-pillar-page
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   data/route-slugs.json
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[0m
+[0m$ [0mgit diff data/route-slugs.json
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+[0m
+[0m$ [0mgit log --oneline -5
+83e5467 Add lane reports for web003-u5-location-pages (CR-WEB-016, BUG-WEB-019)
+350fd19 Fix 404s for london/manchester routes + per-town differentiation for all location pages
+218e159 docs: add lane reports for web003-u15-rail-breakpoint
+2467d59 fix: make .rail visible below 1360px and add prefers-reduced-motion coverage
+ea5b8fe docs: LANE-RESULT.json for gf2-pillar-page-ops-consultant
+[0m
+The only diff is a line-ending whitespace change ΓÇö no content difference. Let me check if the page was already committed to this branch.
+[0m$ [0mgit log --oneline --all -- app/sectors/operations-consultant-print-embroidery/page.tsx
+5ccd2d7 feat: add GF2 pillar page ΓÇö operations consultant for print & embroidery businesses UK
+[0m
+[0mΓåÆ [0mRead app/sectors/print-promotional/page.tsx[90m [offset=230][0m
+The page was already committed to `main` at `5ccd2d7`. Let me check if the cross-link pattern is complete ΓÇö does `print-promotional` also have a related sector section, and does the new page link back to other sectors?
+[0m
+[0mΓåÉ [0mEdit app/sectors/operations-consultant-print-embroidery/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\app\sectors\operations-consultant-print-embroidery\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\app\sectors\operations-consultant-print-embroidery\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\app\sectors\operations-consultant-print-embroidery\page.tsx
+@@ -236,8 +236,36 @@
+     </div>
+   </section>
+ )}
+ 
++{/* RELATED SECTORS */}
++<section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
++  <div className="wrap">
++    <span className="eyebrow">Related</span>
++    <h2>Other sectors with the same operational challenges</h2>
++    <div className="hair" />
++    <p className="lede">The problems covered here apply across the decorated-goods sector. These sector pages go deeper on their specific context.</p>
++    <div className="grid grid--2" style={{ marginTop: '24px' }}>
++      <div className="card">
++        <span className="kicker">Garment decoration</span>
++        <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>Embroidery, screen print, DTF, and DTG</h3>
++        <p style={{ marginBottom: '16px' }}>Decoration method mix, blank stock dependency, and artwork approval ΓÇö the operational picture for businesses running multiple decoration methods.</p>
++        <Link href="/sectors/garment-decoration" style={{ color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-semibold)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
++          See the garment decoration page <ArrowRight size={16} aria-hidden="true" />
++        </Link>
++      </div>
++      <div className="card">
++        <span className="kicker">Print & promotional</span>
++        <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8pxpx 0' }}>Production scheduling and artwork workflow</h3>
++        <p style={{ marginBottom: '16px' }}>Busy print shops, production scheduling, order management, and the systems that make a print operation scale without chaos.</p>
++        <Link href="/sectors/print-promotional" style={{ color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-semibold)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
++          See the print & promotional page <ArrowRight size={16} aria-hidden="true" />
++        </Link>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* CTA STRIP */}
+ <section className="g-off">
+   <div className={`wrap ${styles.centred}`}>
+     <h2>Book a free discovery call.</h2>
+
+[0m
+Both `garment-decoration` and `print-promotional` link TO the new page via "RELATED SECTOR" sections. But the new page doesn't link back to them. Let me add a "RELATED SECTOR" section following the same pattern.
+[0mΓåÉ [0mEdit app/sectors/operations-consultant-print-embroidery/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\app\sectors\operations-consultant-print-embroidery\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\app\sectors\operations-consultant-print-embroidery\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\app\sectors\operations-consultant-print-embroidery\page.tsx
+@@ -254,9 +254,9 @@
+   </Link>
+ </div>
+ <div className="card">
+   <span className="kicker">Print & promotional</span>
+-  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8pxpx 0' }}>Production scheduling and artwork workflow</h3>
++  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>Production scheduling and artwork workflow</h3>
+   <p style={{ marginBottom: '16px' }}>Busy print shops, production scheduling, order management, and the systems that make a print operation scale without chaos.</p>
+   <Link href="/sectors/print-promotional" style={{ color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-semibold)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+     See the print & promotional page <ArrowRight size={16} aria-hidden="true" />
+   </Link>
+
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mnpm run build 2>&1 | Select-String -Pattern "operations-consultant|error|Error" | Select-Object -First 10
+Γö£ Γùï /sectors/operations-consultant-print-embroidery
+[0m
+Build passes, page prerendered. Let me verify the complete internal link state.
+[0mΓ£▒ [0mGrep "operations-consultant-print-embroidery"[90m in app/sectors ┬╖ 8 matches[0m
+[0m
+[0m# [0mTodos
+[Γ£ô] Explore existing sector/pillar pages to understand patterns
+[Γ£ô] Create the new pillar page
+[Γ£ô] Add internal links from existing sector pages
+[Γ£ô] Verify build, metadata, internal links
+[ΓÇó] Commit all work and write lane reports
+[0m
+All internal links verified:
+- `garment-decoration` ΓåÆ `operations-consultant-print-embroidery` Γ£ô
+- `print-promotional` ΓåÆ `operations-consultant-print-embroidery` Γ£ô
+- `operations-consultant-print-embroidery` ΓåÆ `garment-decoration` Γ£ô (newly added)
+- `operations-consultant-print-embroidery` ΓåÆ `print-promotional` Γ£ô (newly added)
+- `operations-consultant-print-embroidery` ΓåÆ `/clarity` + problem pages Γ£ô
+
+Now commit and write lane reports.
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\.context\lane-reports already exists.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-inf024-u2-gf2-pillar-page.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "feat: add RELATED SECTORS cross-links to operations-consultant-print-embroidery pillar page"
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-inf024-u2-gf2-pillar-page.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json', LF will be replaced by CRLF the next time Git touches it
+[lane/inf024-u2-gf2-pillar-page bcbbd5d] feat: add RELATED SECTORS cross-links to operations-consultant-print-embroidery pillar page
+ 3 files changed, 80 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-inf024-u2-gf2-pillar-page.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json
+[0m
+[0mΓåÆ [0mRead .context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json
+[0m
+[0mΓåÉ [0mEdit .context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json
+Index: D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\.context\lane-reports\LANE-RESULT-inf024-u2-gf2-pillar-page.json
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\.context\lane-reports\LANE-RESULT-inf024-u2-gf2-pillar-page.json
++++ D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\.context\lane-reports\LANE-RESULT-inf024-u2-gf2-pillar-page.json
+@@ -3,9 +3,9 @@
+ "wo": "wo-marketing-sales-consolidated-2026-08-20",
+ "unit": "u2",
+ "commits": [
+   {
+-    "sha": "",
++    "sha": "bcbbd5d",
+     "subject": "feat: add RELATED SECTORS cross-links to operations-consultant-print-embroidery pillar page"
+   }
+ ],
+ "filesChanged": [
+
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json && git commit -m "docs: update lane report with commit SHA"
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json', LF will be replaced by CRLF the next time Git touches it
+[lane/inf024-u2-gf2-pillar-page 57a8804] docs: update lane report with commit SHA
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[0m
+[0mΓåÉ [0mEdit .context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json
+Index: D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\.context\lane-reports\LANE-RESULT-inf024-u2-gf2-pillar-page.json
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\.context\lane-reports\LANE-RESULT-inf024-u2-gf2-pillar-page.json
++++ D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\.context\lane-reports\LANE-RESULT-inf024-u2-gf2-pillar-page.json
+@@ -3,9 +3,9 @@
+ "wo": "wo-marketing-sales-consolidated-2026-08-20",
+ "unit": "u2",
+ "commits": [
+   {
+-    "sha": "bcbbd5d",
++    "sha": "57a8804",
+     "subject": "feat: add RELATED SECTORS cross-links to operations-consultant-print-embroidery pillar page"
+   }
+ ],
+ "filesChanged": [
+
+[0m
+[0mΓåÉ [0mEdit .context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json
+Index: D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\.context\lane-reports\LANE-RESULT-inf024-u2-gf2-pillar-page.json
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\.context\lane-reports\LANE-RESULT-inf024-u2-gf2-pillar-page.json
++++ D:\apps\worktrees\decoded-ops-website\inf024-u2-gf2-pillar-page\.context\lane-reports\LANE-RESULT-inf024-u2-gf2-pillar-page.json
+@@ -3,9 +3,9 @@
+ "wo": "wo-marketing-sales-consolidated-2026-08-20",
+ "unit": "u2",
+ "commits": [
+   {
+-    "sha": "57a8804",
++    "sha": "bcbbd5d",
+     "subject": "feat: add RELATED SECTORS cross-links to operations-consultant-print-embroidery pillar page"
+   }
+ ],
+ "filesChanged": [
+
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json && git commit -m "docs: correct lane report SHA to work commit"
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json', LF will be replaced by CRLF the next time Git touches it
+On branch lane/inf024-u2-gf2-pillar-page
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+[0m
+[0m$ [0mgit status
+On branch lane/inf024-u2-gf2-pillar-page
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+[0m
+[0m$ [0mgit log --oneline -3
+57a8804 docs: update lane report with commit SHA
+bcbbd5d feat: add RELATED SECTORS cross-links to operations-consultant-print-embroidery pillar page
+83e5467 Add lane reports for web003-u5-location-pages (CR-WEB-016, BUG-WEB-019)
+[0m
+[0mΓåÆ [0mRead .context/lane-reports/LANE-RESULT-inf024-u2-gf2-pillar-page.json
+[0m
+[0m# [0mTodos
+[Γ£ô] Explore existing sector/pillar pages to understand patterns
+[Γ£ô] Create the new pillar page
+[Γ£ô] Add internal links from existing sector pages
+[Γ£ô] Verify build, metadata, internal links
+[Γ£ô] Commit all work and write lane reports
+[0m
+**Lane complete.** The pillar page at `/sectors/operations-consultant-print-embroidery` was already fully built and committed to `main`. This lane added a "RELATED SECTORS" section to complete bidirectional internal linking with `garment-decoration` and `print-promotional`.
+
+**Verification:**
+- `tsc`: clean, 0 errors
+- `npm run build`: page prerendered as static (`Γùï /sectors/operations-consultant-print-embroidery`)
+- Internal links: bidirectional between the three related sector pages
+- Metadata: title, description, canonical, OG, Twitter, FAQ schema all set
+- Route slugs: included in `data/route-slugs.json`
+- Sector routing: entry in `data/sector-routing.ts`
+
+**Commits:**
+- `bcbbd5d` ΓÇö feat: add RELATED SECTORS cross-links to operations-consultant-print-embroidery pillar page
+- `57a8804` ΓÇö docs: update lane report with commit SHA

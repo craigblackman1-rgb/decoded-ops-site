@@ -1,0 +1,354 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead app/d17-apps-cases.css
+[0m✱ [0mGlob "app/d17-art.module.css"[90m 1 match[0m
+[0m✱ [0mGrep "a939|a966|a904|a831"[90m in app · 100 matches[0m
+[0m→ [0mRead app/d17-problems.css[90m [offset=120, limit=60][0m
+[0m→ [0mRead app/d17-art.module.css[90m [offset=200, limit=200][0m
+[0m✱ [0mGrep "a966|ecommerce"[90m in app · 38 matches[0m
+[0m→ [0mRead app/d17-problems.css[90m [limit=120][0m
+[0m→ [0mRead app/problems/ecommerce-not-connected/page.tsx[90m [limit=120, offset=80][0m
+[0m→ [0mRead app/d17-problems.css[90m [limit=100, offset=400][0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=160, offset=40][0m
+[0m→ [0mRead app/apps/page.tsx[90m [limit=140, offset=30][0m
+[0m✱ [0mGrep "^\.d17\{|\.d17 \{|\.sx\{|\.sx |container-type|--u:"[90m in app · 0 matches[0m
+[0m✱ [0mGlob "app/d17*.css"[90m 6 matches[0m
+[0m✱ [0mGrep "\.d17\{|\.sx\{|\.sx |\.sw\{|container-type|--u|\.sx-top|\.sx-foot|\.sx-say|\.sx-bar"[90m in app/d17-global.css · 100 matches[0m
+[0m✱ [0mGrep "^\.d17\{|^\.sx|^\.sw|--u:|container-type|sx-top|sx-foot|sx-say|sx-bar|\.sw "[90m in app/d17-global.css · 100 matches[0m
+Now I have the full picture. Making the edits:
+[0m
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
+@@ -77,33 +77,35 @@
+ .tile .act span+span{ background:var(--do-amber); border-color:var(--do-amber) }
+ .tile .stock{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:var(--do-text-cerulean) }
+ 
+ /* ─── DO-ART-939 · apps hero · the three apps, three real screens over the floor ───
+-   BUG-WEB-046: no self min-height — the in-flow content (top + 560u screens + under + base)
+-   already exceeds 640u at every width, so a correctly-resolved min-height never bound; the
+-   cqw copy only inflated the piece against viewport width. Content defines the height. */
+-.a939{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); display:flex; flex-direction:column }
++   BUG-WEB-046: no self min-height — content defines the height. CR-WEB-075 fix1:
++   the screens band, its labels and the base now run on a tighter scale (--v =
++   100cqw / 1400, re-centred) so the piece lands ≤630px at 1152 wide; tile images
++   crop 2:1. Figure-level spacing stays in --u / percent. */
++.a939{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); --v:calc(100cqw / 1400); display:flex; flex-direction:column }
+ .a939 .d17-ph img{ object-position:50% 58%; --d17-grade:saturate(.6) contrast(1.06) brightness(.78) }
+ .a939::before{ content:''; position:absolute; inset:0; z-index:-1;
+   background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 35%, transparent) 30%,
+     color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) 70%, var(--do-prussian-blue) 100%) }
+-.a939 .top{ display:flex; justify-content:space-between; gap:12px; padding:calc(26 * var(--u)) calc(40 * var(--u)) 0;
++.a939 .top{ display:flex; justify-content:space-between; gap:12px; padding:calc(16 * var(--u)) calc(40 * var(--u)) 0;
+   font-size:max(9px, calc(12 * var(--u))); color:var(--do-off-white) }
+ .a939 .top span+span{ color:var(--do-sky-blue) }
+-.a939 .screens{ position:relative; height:calc(560 * var(--u)); margin-top:calc(14 * var(--u)) }
++.a939 .screens{ --u:var(--v); position:relative; height:calc(490 * var(--u)); margin-top:calc(10 * var(--u)) }
+ .a939 .mw{ position:absolute; width:calc(356 * var(--u)) }
+-.a939 .s1{ left:calc(44 * var(--u)); top:calc(26 * var(--u)); transform:rotate(-2.2deg) }
+-.a939 .s2{ left:calc(398 * var(--u)); top:0; z-index:2 }
+-.a939 .s3{ left:calc(752 * var(--u)); top:calc(26 * var(--u)); transform:rotate(2.2deg) }
+-.a939 .under{ display:grid; grid-template-columns:repeat(3, calc(356 * var(--u))); margin-top:calc(22 * var(--u));
+-  padding:0 0 0 calc(44 * var(--u)); gap:0 calc(-2 * var(--u)) }
++.a939 .s1{ left:calc(168 * var(--u)); top:calc(22 * var(--u)); transform:rotate(-2.2deg) }
++.a939 .s2{ left:calc(522 * var(--u)); top:0; z-index:2 }
++.a939 .s3{ left:calc(876 * var(--u)); top:calc(22 * var(--u)); transform:rotate(2.2deg) }
++.a939 .tile img{ aspect-ratio:2 / 1 }
++.a939 .under{ --u:var(--v); display:grid; grid-template-columns:repeat(3, calc(356 * var(--u))); margin-top:calc(14 * var(--u));
++  padding:0 0 0 calc(168 * var(--u)); gap:0 calc(-2 * var(--u)) }
+ .a939 .under span{ font-size:max(9px, calc(11.5 * var(--u))); color:var(--do-sky-blue); text-align:center }
+ .a939 .under span b{ display:block; font-family:var(--do-font-heading); font-size:max(13px, calc(19 * var(--u))); letter-spacing:-.01em;
+   text-transform:none; color:var(--do-white); margin-top:4px }
+ .a939 .base{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; gap:20px;
+-  padding:calc(10 * var(--u)) calc(44 * var(--u)) calc(30 * var(--u)) }
+-.a939 .base .bar{ width:calc(56 * var(--u)); height:5px; border-radius:3px; background:var(--do-amber); margin-bottom:calc(14 * var(--u)) }
+-.a939 .base p{ margin:0; font-family:var(--do-font-heading); font-weight:700; font-size:max(17px, calc(30 * var(--u))); line-height:1.12;
++  padding:calc(8 * var(--u)) calc(44 * var(--u)) calc(22 * var(--u)) }
++.a939 .base .bar{ width:calc(56 * var(--u)); height:5px; border-radius:3px; background:var(--do-amber); margin-bottom:calc(10 * var(--u)) }
++.a939 .base p{ margin:0; font-family:var(--do-font-heading); font-weight:700; font-size:max(17px, calc(26 * var(--u))); line-height:1.12;
+   letter-spacing:-.02em; color:var(--do-white); max-width:26ch }
+ .a939 .base p em{ font-style:normal; color:var(--do-amber) }
+ @media (max-width: 760px){
+   .a939{ --u:.9px; min-height:0 }
+
+[0m
+Now the ≤640px block for 939, appended after the existing ≤760 block:
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
+@@ -117,8 +117,20 @@
+   .a939 .mw::after{ content:attr(data-cap); display:block; padding:9px 14px; background:var(--do-prussian-blue); color:var(--do-sky-blue);
+     font-family:var(--do-font-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase }
+   .a939 .base{ padding:26px 18px 20px; flex-direction:column; align-items:flex-start }
+ }
++/* CR-WEB-075 fix1 · ≤640px ceiling for DO-ART-939: smaller screen scale, tighter
++   stack, and the storefront tile grid drops out (the data-cap line under each
++   window keeps the three-apps argument; no claim text is hidden) so the stacked
++   piece lands ≤800px at 342px wide. */
++@media (max-width: 640px){
++  .a939{ --u:.72px }
++  .a939 .top{ padding:14px 14px 0 }
++  .a939 .screens{ gap:12px; margin-top:12px; padding:0 14px }
++  .a939 .s3 .tiles{ display:none }
++  .a939 .mw::after{ padding:7px 12px }
++  .a939 .base{ padding:18px 14px 16px }
++}
+ 
+ /* ─── DO-ART-940 · apps inline · three gaps, one platform (drawn plate) ─── */
+ .a940{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(40 * var(--pu)) calc(30 * var(--pu)) }
+ .a940 .v-tall{ display:none }
+
+[0m
+[0m← [0mEdit app/d17-problems.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+@@ -438,8 +438,18 @@
+ .a966 .gapr{ position:relative; display:flex; justify-content:center; padding:calc(10 * var(--u)) 0 }
+ .a966 .gapr::before{ content:''; position:absolute; left:50%; top:0; bottom:0; border-left:2px dashed var(--do-amber) }
+ .a966 .gapr span{ position:relative; font-family:var(--do-font-mono); font-weight:700; font-size:max(9px, calc(10.5 * var(--u))); letter-spacing:.14em;
+   text-transform:uppercase; color:var(--do-prussian-blue); background:var(--do-amber); padding:calc(4 * var(--u)) calc(10 * var(--u)); border-radius:99px; white-space:nowrap }
++/* CR-WEB-075 fix1 · tighten the flow stack (pair padding, window bodies, the gap
++   strip, column gutters and the foot) to bring the hero ≤630px at 1440; every
++   figure, job card and label stays. */
++.a966 .pair{ padding:calc(8 * var(--u)) calc(22 * var(--u)) 0 }
++.a966 .win-flat{ padding:calc(12 * var(--u)) calc(20 * var(--u)) calc(14 * var(--u)) }
++.a966 .gapr{ padding:calc(6 * var(--u)) 0 }
++.a966 .cols{ margin-top:calc(6 * var(--u)) }
++.a966 .sx-foot{ padding:calc(12 * var(--u)) calc(26 * var(--u)) calc(14 * var(--u)) }
++.a966 .sx-bar{ margin-bottom:calc(10 * var(--u)) }
++.a966 .sx-say{ margin-bottom:calc(10 * var(--u)) }
+ /* 973: season bands over the chart */
+ .seasons{ display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(6 * var(--u)); margin-top:calc(12 * var(--u)) }
+ .seasons span{ text-align:center; font-family:var(--do-font-mono); font-weight:600; font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase;
+   padding:2px 0; border-radius:99px; background:color-mix(in srgb, var(--do-sky-blue) 26%, transparent); color:var(--do-prussian-blue); white-space:nowrap; overflow:hidden }
+
+[0m
+Now DO-ART-966 cuts in d17-problems.css:
+[0m← [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-art.module.css
+@@ -201,10 +201,13 @@
+ .a918 .print .bc { margin-top: calc(8 * var(--u)); height: calc(34 * var(--u));
+   background: repeating-linear-gradient(90deg, var(--do-prussian-blue) 0 2px, transparent 2px 4px, var(--do-prussian-blue) 4px 5px, transparent 5px 8px, var(--do-prussian-blue) 8px 11px, transparent 11px 12px) }
+ .a918 .print .s { margin-top: calc(6 * var(--u)); font-family: var(--do-font-mono); font-size: max(7px, calc(9.5 * var(--u))); letter-spacing: .12em; text-transform: uppercase }
+ 
+-/* ─── DO-ART-831 · About · the route, website cut + in-page draw ─── */
+-.a831 { --u: calc(100cqw / 1600); aspect-ratio: 1600 / 900; margin-top: 44px;
++/* ─── DO-ART-831 · About · the route, website cut + in-page draw ───
++   CR-WEB-075 fix1: artboard height 900 → 860 units so the piece lands ≤630px
++   at 1152 wide; the route svg viewBox follows (see about/page.tsx) so the
++   drawing keeps its uniform scale against the u-positioned stations. */
++.a831 { --u: calc(100cqw / 1600); aspect-ratio: 1600 / 860; margin-top: 44px;
+   background:
+     radial-gradient(60% 70% at 88% 18%, color-mix(in srgb, var(--do-cerulean) 20%, transparent), transparent 70%),
+     linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 80%, var(--do-cerulean)) 0%, var(--do-prussian-blue) 55%,
+       color-mix(in srgb, var(--do-prussian-blue) 78%, #000) 100%) }
+
+[0m
+Now DO-ART-904 and DO-ART-831 in the CSS module:
+[0m← [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-art.module.css
+@@ -239,10 +239,11 @@
+   font-family: var(--do-font-mono); font-size: calc(12 * var(--u)); line-height: 1.3; letter-spacing: .06em; text-transform: uppercase;
+   color: color-mix(in srgb, var(--do-prussian-blue) 85%, transparent) }
+ .a831 .d17Mark { left: calc(26 * var(--u)); bottom: calc(24 * var(--u)); font-size: calc(18 * var(--u)) }
+ 
+-/* ─── DO-ART-904 r03 · About hero portrait, photo-led ─── */
+-.a904 { --u: calc(100cqw / 560); aspect-ratio: 14 / 15 }
++/* ─── DO-ART-904 r03 · About hero portrait, photo-led ───
++   CR-WEB-075 fix1: 14/15 → 1/1 so the plate lands ≤630px at its 625px column. */
++.a904 { --u: calc(100cqw / 560); aspect-ratio: 1 / 1 }
+ .a904 .d17Ph img { object-position: 44% 30%; --d17Grade: saturate(.9) contrast(1.04) brightness(.97) }
+ .a904::before { content: ''; position: absolute; inset: 0; z-index: -1;
+   background: linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 0%, transparent 22%,
+     transparent 58%, color-mix(in srgb, var(--do-prussian-blue) 82%, transparent) 88%, var(--do-prussian-blue) 100%),
+
+[0m
+[0m← [0mEdit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\about\page.tsx
+@@ -86,9 +86,9 @@
+ <div className={d17.gridl} aria-hidden="true" />
+ <p className={`${d17.eb} ${d17.d17Mono}`}>The route</p>
+ <p className={d17.hd}>How I got here</p>
+ <p className={d17.stand}>Every level of these businesses, one stop at a time.</p>
+-<svg className="route" viewBox="0 0 1600 900" aria-hidden="true">
++<svg className="route" viewBox="0 0 1600 860" aria-hidden="true">
+   <defs><filter id="rt-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10" /></filter></defs>
+   <g stroke="rgba(142,202,230,.55)" strokeWidth="2" strokeDasharray="4 6" fill="none" className={d17.mFade} style={{ animationDelay: '1.6s' }}>
+     <path d="M470 572 V 596" /><path d="M1080 392 V 436" /></g>
+   <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="rgba(33,158,188,.5)" strokeWidth="30" strokeLinejoin="round" strokeLinecap="round" filter="url(#rt-glow)" className={d17.mDraw} />
+
+[0m
+Important fix: the `.screens { --u: var(--v) }` override must be neutralised on phone so the stacked layout keeps its phone scale:
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
+@@ -109,9 +109,9 @@
+ .a939 .base p em{ font-style:normal; color:var(--do-amber) }
+ @media (max-width: 760px){
+   .a939{ --u:.9px; min-height:0 }
+   .a939 .top{ padding:18px 18px 0; flex-direction:column; gap:4px }
+-  .a939 .screens{ height:auto; margin-top:16px; padding:0 16px; display:flex; flex-direction:column; gap:26px }
++  .a939 .screens{ --u:.9px; height:auto; margin-top:16px; padding:0 16px; display:flex; flex-direction:column; gap:26px }
+   .a939 .mw{ position:relative; left:auto; top:auto; width:auto; transform:none }
+   .a939 .s1 .mw-hide, .a939 .s2 .mw-hide, .a939 .s3 .mw-hide{ display:none }
+   .a939 .under{ display:none }
+   .a939 .mw::after{ content:attr(data-cap); display:block; padding:9px 14px; background:var(--do-prussian-blue); color:var(--do-sky-blue);
+
+[0m
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-apps-cases.css
+@@ -124,9 +124,9 @@
+    piece lands ≤800px at 342px wide. */
+ @media (max-width: 640px){
+   .a939{ --u:.72px }
+   .a939 .top{ padding:14px 14px 0 }
+-  .a939 .screens{ gap:12px; margin-top:12px; padding:0 14px }
++  .a939 .screens{ --u:.72px; gap:12px; margin-top:12px; padding:0 14px }
+   .a939 .s3 .tiles{ display:none }
+   .a939 .mw::after{ padding:7px 12px }
+   .a939 .base{ padding:18px 14px 16px }
+ }
+
+[0m
+[0m→ [0mRead app/d17-apps-cases.css[90m [limit=55, offset=80][0m
+[0m→ [0mRead .context/lane-reports/LANE-RESULT-web075-art-followup.md
+Let me verify the final state of the a939 block and check the lane-report file:
+Committing the artwork changes first, then verifying:
+[0m
+[0m$ [0mgit status --porcelain && git log --oneline -3
+M app/about/page.tsx
+ M app/d17-apps-cases.css
+ M app/d17-art.module.css
+ M app/d17-problems.css
+ M data/route-slugs.json
+?? .context/lane-briefs/web075-fix1.md
+147a84e docs: lane notes + exit files for web075-art-followup (CR-WEB-075)
+ac180ab feat(art): height polish for 11 D17 pieces to <=630px at 1440x900 (CR-WEB-075)
+3c4db31 feat(art): add DO-ART-1014 rate-card hero to quoting-takes-too-long (CR-WEB-075)
+[0m
+[0m$ [0mgit add app/about/page.tsx app/d17-apps-cases.css app/d17-art.module.css app/d17-problems.css && git commit -m "fix(art): bring 939/966/904/831 under 70svh at 1440, 939 phone fit (CR-WEB-075)" && git log --oneline -1
+[lane/web075-art-followup 3ef441e] fix(art): bring 939/966/904/831 under 70svh at 1440, 939 phone fit (CR-WEB-075)
+ 4 files changed, 48 insertions(+), 20 deletions(-)
+3ef441e fix(art): bring 939/966/904/831 under 70svh at 1440, 939 phone fit (CR-WEB-075)
+[0m
+[0m$ [0mnpx tsc --noEmit; echo "tsc exit: $LASTEXITCODE"
+tsc exit: 0
+[0m
+[0m$ [0mnpx eslint app/about/page.tsx; echo "eslint exit: $LASTEXITCODE"
+D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\about\page.tsx
+   56:42  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  111:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  114:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  137:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  152:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  194:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 6 problems (0 errors, 6 warnings)
+
+eslint exit: 0
+[0m
+tsc clean, eslint 0 errors (pre-existing img warnings only). Now the lane report and exit-contract files:
+[0m← [0mEdit .context/lane-reports/LANE-RESULT-web075-art-followup.md
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\.context\lane-reports\LANE-RESULT-web075-art-followup.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\.context\lane-reports\LANE-RESULT-web075-art-followup.md
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\.context\lane-reports\LANE-RESULT-web075-art-followup.md
+@@ -59,4 +59,26 @@
+ - `npx eslint` on the touched TS/TSX — 0 errors (4 pre-existing warnings in `app/page.tsx`, none introduced).
+ - `\uXXXX` escape grep across every changed file — 0 hits.
+ - Grep-verified: DO-ART-719 on buy-vs-build/about/legacy-system only; 948 and 999 on exactly two pages each; 1014 unique; 1015-1019 free; no `inlineArt719` references remain; no repeated `/images/d17/problems/` photo across two problem-page figures.
+ - `node .context/price-audit.mjs --check` exits non-zero, but the 31 FAIL lines are all pre-existing on origin/main (forbidden-word hits on "vest" etc. on lines this lane did not touch); none reference the new 948/999/1014 copy.
++
++## fix1 — last pieces over the height limit (commit 3ef441e)
++
++Files: `app/d17-apps-cases.css`, `app/d17-problems.css`, `app/d17-art.module.css`, `app/about/page.tsx`.
++
++Playwright measurements after step 4 found four pieces still over the ceiling; this section tightens each without clipping or hiding argument text. Heights below are static estimates from the CSS arithmetic (no render — see "Not verified"), with the before figures taken from the measured values in the brief.
++
++| Piece | Page | Before | After (est.) | What changed |
++|---|---|---|---|---|
++| DO-ART-939 | /apps | 1152×816 @1440 · 342×1246 phone | ~595–630 @1152 · ~735 phone | Desktop: screens band + under labels now run on a tighter scale (`--v: calc(100cqw / 1400)` on `.screens`/`.under`, trio re-centred at lefts 168/522/876u-v), screens height 560→490v, tile images crop 2:1, top/base padding and base p 30→26u trimmed. Phone ≤640: `--u` .9→.72px, stack gap 26→12px, and `.s3 .tiles` (storefront product mock — decorative; the `data-cap` line under each window keeps the three-apps argument) drops out. |
++| DO-ART-966 | /problems/ecommerce-not-connected | 552×660 @1440 | ~596–620 | Scoped flow-stack trims: `.pair` padding-top 16→8u, `.win-flat` padding 18/20→12/14u (both windows), `.gapr` padding 10→6u, `.cols` margin-top 10→6u, plus the shared-foot treatment (`.sx-foot`/`.sx-bar`/.sx-say) now scoped to `.a966`. Every order figure, job card and label stays. |
++| DO-ART-904 | /about | 625×670 @1440 | 625×625 | Module aspect-ratio 14/15 → 1/1. Absolute-positioned note/mark reflow against the new bottom edge; nothing overlaps (note sits ~78–182px above bottom, top labels ~27px). |
++| DO-ART-831 | /about | 1152×648 @1440 | 1152×619 | Module aspect-ratio 1600/900 → 1600/860, and the route svg viewBox in `about/page.tsx` 1600×900 → 1600×860 so the drawing keeps a uniform w/1600 scale against the u-positioned stations (no letterbox drift). Bottom-most station ends ~554px, inside the 619. Existing ≤700/≤640 phone blocks untouched. |
++
++Notes:
++- The `d17-global.css` copies of `.a831`/`.a904` were left alone — /about consumes the hashed CSS-module classes (`d17.a831`/`d17.a904` from `d17-art.module.css`); the global copies match no element on any page.
++- No `calc(N*var(--u))` min-height/padding on any `.d17` figure; figure-level values stay in `--pu`/aspect-ratio.
++- `.a939 .screens { --u }` is re-pinned to the phone scale in both phone blocks (≤760 and ≤640) so the new desktop scale does not collapse stacked internals to px floors.
++
++## Not verified (fix1)
++
++- No render was produced (dev servers / Playwright / curl hard-forbidden). The "after" heights are arithmetic estimates; the ≤630/≤800 claims need a Playwright re-measure before release sign-off.
+
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web075-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web075-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mrg -c '\\u[0-9a-fA-F]{4}' app/about/page.tsx app/d17-apps-cases.css app/d17-problems.css app/d17-art.module.css; if ($LASTEXITCODE -eq 1) { 'escape grep: 0 hits' } else { "escape grep exit $LASTEXITCODE" }
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+escape grep exit 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0m$files = 'app/about/page.tsx','app/d17-apps-cases.css','app/d17-problems.css','app/d17-art.module.css'; $hits = Select-String -Path $files -Pattern '\\u[0-9a-fA-F]{4}' ; if ($hits) { $hits | ForEach-Object { $_.ToString() } } else { 'escape grep: 0 hits' }
+escape grep: 0 hits
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web075-art-followup.md .context/lane-reports/LANE-RESULT-web075-fix1.json .context/lane-reports/LANE-NOTES-web075-fix1.md && git commit -m "docs: lane report fix1 section + exit files for web075-fix1 (CR-WEB-075)" && git status --porcelain && git log --oneline -3
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web075-art-followup.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web075-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web075-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[lane/web075-art-followup 76ec19b] docs: lane report fix1 section + exit files for web075-fix1 (CR-WEB-075)
+ 3 files changed, 87 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web075-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web075-fix1.json
+ M data/route-slugs.json
+?? .context/lane-briefs/web075-fix1.md
+76ec19b docs: lane report fix1 section + exit files for web075-fix1 (CR-WEB-075)
+3ef441e fix(art): bring 939/966/904/831 under 70svh at 1440, 939 phone fit (CR-WEB-075)
+147a84e docs: lane notes + exit files for web075-art-followup (CR-WEB-075)
+[0m
+[0m$ [0mgit add .context/lane-briefs/web075-fix1.md && git commit -m "docs: lane brief for web075-fix1 (CR-WEB-075)" && git status --porcelain
+warning: in the working copy of '.context/lane-briefs/web075-fix1.md', LF will be replaced by CRLF the next time Git touches it
+[lane/web075-art-followup 099b689] docs: lane brief for web075-fix1 (CR-WEB-075)
+ 1 file changed, 10 insertions(+)
+ create mode 100644 .context/lane-briefs/web075-fix1.md
+ M data/route-slugs.json
+[0m
+Lane complete. Summary:
+
+**Commits** (branch `lane/web075-art-followup`):
+- `3ef441e` — the art fix
+- `76ec19b` — lane report fix1 section + exit-contract files
+- `099b689` — lane brief archived
+
+**Changes:**
+- **939** (`d17-apps-cases.css`): screens band/under labels re-scaled to `--v: calc(100cqw/1400)`, trio re-centred, screens 560→490v, tile images 2:1, paddings/base claim trimmed (~595–630 est. vs measured 816). Phone ≤640: `--u` .72px, gap 12px, decorative storefront tiles dropped, caption lines keep the argument (~735 est. vs 1246).
+- **966** (`d17-problems.css`): scoped pair/win-flat/gapr/cols/foot trims (~600 est. vs 660).
+- **904** (`d17-art.module.css`): aspect 14/15 → 1/1 → 625×625.
+- **831** (module + `about/page.tsx`): aspect 1600/900 → 1600/860 + matching svg viewBox so the route keeps uniform scale against the u-positioned stations → ~619 at 1152.
+
+**Verify:** tsc clean · eslint 0 errors · escape grep 0 hits. Heights are CSS-arithmetic estimates — no render was produced (hard-forbidden); Playwright re-measure flagged in the report as the outstanding check. `data/route-slugs.json` left dirty, unstaged, per the standing rule.

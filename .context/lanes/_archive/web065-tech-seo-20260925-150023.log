@@ -1,0 +1,2001 @@
+2026-09-25 15:47:35 [truncated to last 2000 lines]
+-  { url: `${BASE_URL}/resources/six-sigma`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.65 },
+-  { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.4 },
+-  { url: `${BASE_URL}/pricing`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+-  { url: `${BASE_URL}/resources`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+-  { url: `${BASE_URL}/resources/audit-checklist`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
+-  { url: `${BASE_URL}/resources/5-warning-signs`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+-  { url: `${BASE_URL}/resources/sop-template`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
+-  { url: `${BASE_URL}/resources/erp-selection-playbook`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
+-  { url: `${BASE_URL}/resources/artwork-approval-playbook`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
+-  { url: `${BASE_URL}/resources/decoded-method`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
++  { url: `${BASE_URL}/process-quality-system`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.7 },
++  { url: `${BASE_URL}/problems`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.75 },
++  { url: `${BASE_URL}/resources/six-sigma`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.65 },
++  { url: `${BASE_URL}/privacy`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.4 },
++  { url: `${BASE_URL}/pricing`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.85 },
++  { url: `${BASE_URL}/resources`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.7 },
++  { url: `${BASE_URL}/resources/audit-checklist`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.7 },
++  { url: `${BASE_URL}/resources/5-warning-signs`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.7 },
++  { url: `${BASE_URL}/resources/sop-template`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.7 },
++  { url: `${BASE_URL}/resources/erp-selection-playbook`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.7 },
++  { url: `${BASE_URL}/resources/artwork-approval-playbook`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.7 },
++  { url: `${BASE_URL}/resources/decoded-method`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.7 },
++  { url: `${BASE_URL}/resources/capacity-planner`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.6 },
++  { url: `${BASE_URL}/resources/seasonal-capacity`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.6 },
+ 
+-  { url: `${BASE_URL}/retained`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+-  { url: `${BASE_URL}/small-business`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+-  { url: `${BASE_URL}/transform`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+-  { url: `${BASE_URL}/tools`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+-  { url: `${BASE_URL}/case-studies`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+-  { url: `${BASE_URL}/case-studies/case-study-01`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+-  { url: `${BASE_URL}/case-studies/case-study-02`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+-  { url: `${BASE_URL}/case-studies/case-study-03`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+-  { url: `${BASE_URL}/case-studies/eternal-fitness`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
++  { url: `${BASE_URL}/retained`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
++  { url: `${BASE_URL}/small-business`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
++  { url: `${BASE_URL}/transform`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
++  { url: `${BASE_URL}/tools`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
++  { url: `${BASE_URL}/case-studies`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
++  { url: `${BASE_URL}/case-studies/case-study-01`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
++  { url: `${BASE_URL}/case-studies/case-study-02`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
++  { url: `${BASE_URL}/case-studies/case-study-03`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
++  { url: `${BASE_URL}/case-studies/eternal-fitness`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+ ]
+ 
+ // Blog posts
+ const blogPages: MetadataRoute.Sitemap = posts.map((post: any) => ({
+
+[0m
+[0m← [0mEdit app/sitemap.ts
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sitemap.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sitemap.ts
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sitemap.ts
+@@ -101,23 +101,23 @@
+ }))
+ 
+ const problemPages = problemSlugs.map(slug => ({
+   url: `${BASE_URL}/problems/${slug}`,
+-  lastModified: new Date(),
++  lastModified: new Date(SITE_CONTENT_UPDATED),
+   changeFrequency: 'yearly' as const,
+   priority: 0.65,
+ }))
+ 
+ const sectorPages = sectorSlugs.map(slug => ({
+   url: `${BASE_URL}/sectors/${slug}`,
+-  lastModified: new Date(),
++  lastModified: new Date(SITE_CONTENT_UPDATED),
+   changeFrequency: 'yearly' as const,
+   priority: 0.7,
+ }))
+ 
+ const toolPages = toolSlugs.map(slug => ({
+   url: `${BASE_URL}/tools/${slug}`,
+-  lastModified: new Date(),
++  lastModified: new Date(SITE_CONTENT_UPDATED),
+   changeFrequency: 'monthly' as const,
+   priority: 0.7,
+ }))
+ 
+
+[0m
+[0m← [0mEdit app/sitemap.ts
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sitemap.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sitemap.ts
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sitemap.ts
+@@ -126,24 +126,24 @@
+   { url: `${BASE_URL}/locations/fractional-cto`, priority: 0.75 },
+   { url: `${BASE_URL}/locations/tech-audit`, priority: 0.75 },
+ ].map(hub => ({
+   url: hub.url,
+-  lastModified: new Date(),
++  lastModified: new Date(SITE_CONTENT_UPDATED),
+   changeFrequency: 'monthly' as const,
+   priority: hub.priority,
+ }))
+ 
+ // Location pages
+ const locationPages = locations.flatMap(loc => [
+   {
+     url: `${BASE_URL}/locations/fractional-cto/${loc.slug}`,
+-    lastModified: new Date(),
++    lastModified: new Date(SITE_CONTENT_UPDATED),
+     changeFrequency: 'monthly' as const,
+     priority: 0.7,
+   },
+   {
+     url: `${BASE_URL}/locations/tech-audit/${loc.slug}`,
+-    lastModified: new Date(),
++    lastModified: new Date(SITE_CONTENT_UPDATED),
+     changeFrequency: 'monthly' as const,
+     priority: 0.7,
+   },
+ ])
+
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(seo): stable lastmod dates + add calculator pages to sitemap (CR-WEB-065 #3)"
+[web065-tech-seo 8d4dd1f] fix(seo): stable lastmod dates + add calculator pages to sitemap (CR-WEB-065 #3)
+ 1 file changed, 44 insertions(+), 41 deletions(-)
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[•] 4. Missing og:image on 28 pages — create helper + apply
+[ ] 5. Fix og:url on 3 tools pages
+[ ] 6. Replace /fractional links with /retained
+[ ] 7. Fix SVG template bug in coverage-map.ts
+[ ] 8. Image optimization (WebP, sizes, caching headers)
+[ ] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[ ] 10. Colour contrast (WCAG AA) — accessible text shades
+[ ] 11. Fix heading order (footer + location art labels)
+[ ] 12. Fix duplicate organisation schema on town pages
+[ ] Run tsc + npm run build verification
+[ ] Write lane report files + commit
+[0m
+[0m← [0mWrite lib/seo.ts
+Wrote file successfully.
+[0m
+[0m• [0mFind pages missing og:image[90m Explore Agent[0m
+[0m✓ [0mFind pages missing og:image[90m Explore Agent[0m
+[0m
+[0m← [0mWrite scripts/fix-og-images.mjs
+Wrote file successfully.
+[0m
+[0m← [0mWrite scripts/fix-og-images.mjs
+Wrote file successfully.
+[0m
+[0m$ [0mnode scripts/fix-og-images.mjs
+Fixed: app/about/page.tsx
+Fixed: app/blog/page.tsx
+Fixed: app/clarity/page.tsx
+Fixed: app/contact/page.tsx
+Fixed: app/cookies/page.tsx
+Fixed: app/deliver/page.tsx
+Fixed: app/apps/page.tsx
+Fixed: app/apps/works/page.tsx
+Fixed: app/apps/proof/page.tsx
+Fixed: app/apps/commerce/page.tsx
+Fixed: app/how-i-build/page.tsx
+Fixed: app/process-quality-system/page.tsx
+Fixed: app/resources/six-sigma/page.tsx
+Fixed: app/privacy/page.tsx
+Fixed: app/pricing/page.tsx
+Fixed: app/resources/audit-checklist/page.tsx
+Fixed: app/resources/sop-template/page.tsx
+Fixed: app/resources/erp-selection-playbook/page.tsx
+Fixed: app/resources/artwork-approval-playbook/page.tsx
+Fixed: app/resources/decoded-method/page.tsx
+Fixed: app/retained/page.tsx
+Fixed: app/transform/page.tsx
+Fixed: app/tools/page.tsx
+Fixed: app/case-studies/page.tsx
+Fixed: app/case-studies/case-study-01/page.tsx
+Fixed: app/case-studies/case-study-02/page.tsx
+Fixed: app/case-studies/case-study-03/page.tsx
+Fixed: app/case-studies/eternal-fitness/page.tsx
+
+Fixed 28 files
+[0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=30][0m
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(seo): add missing og:image to 28 pages (CR-WEB-065 #4)"
+warning: in the working copy of 'app/about/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/apps/commerce/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/apps/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/apps/proof/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/apps/works/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/blog/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/case-study-01/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/case-study-02/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/case-study-03/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/eternal-fitness/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/clarity/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/contact/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/cookies/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/deliver/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/how-i-build/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/pricing/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/privacy/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/process-quality-system/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/artwork-approval-playbook/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/audit-checklist/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/decoded-method/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/erp-selection-playbook/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/six-sigma/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/sop-template/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/retained/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/transform/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'lib/seo.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/fix-og-images.mjs', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo e79357d] fix(seo): add missing og:image to 28 pages (CR-WEB-065 #4)
+ 30 files changed, 248 insertions(+)
+ create mode 100644 lib/seo.ts
+ create mode 100644 scripts/fix-og-images.mjs
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[✓] 4. Missing og:image on 28 pages — create helper + apply
+[•] 5. Fix og:url on 3 tools pages
+[ ] 6. Replace /fractional links with /retained
+[ ] 7. Fix SVG template bug in coverage-map.ts
+[ ] 8. Image optimization (WebP, sizes, caching headers)
+[ ] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[ ] 10. Colour contrast (WCAG AA) — accessible text shades
+[ ] 11. Fix heading order (footer + location art labels)
+[ ] 12. Fix duplicate organisation schema on town pages
+[ ] Run tsc + npm run build verification
+[ ] Write lane report files + commit
+[0m
+[0m✱ [0mGlob "app/tools/*/page.tsx"[90m in . · 5 matches[0m
+[0m→ [0mRead app/tools/automation-roi-calculator/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/tools/downtime-cost-calculator/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/tools/rto-calculator/page.tsx[90m [limit=30][0m
+[0m
+[0m← [0mEdit app/tools/automation-roi-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\automation-roi-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\automation-roi-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\automation-roi-calculator\page.tsx
+@@ -3,8 +3,9 @@
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
+ import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
++import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
+ 
+ const jsonLd = {
+   '@context': 'https://schema.org',
+   '@type': 'WebApplication',
+
+[0m
+[0m← [0mEdit app/tools/automation-roi-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\automation-roi-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\automation-roi-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\automation-roi-calculator\page.tsx
+@@ -21,8 +21,21 @@
+   title: 'Automation ROI Calculator: Decoded Ops',
+   description:
+     'Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods.',
+   alternates: { canonical: '/tools/automation-roi-calculator' },
++  openGraph: {
++    type: 'website',
++    title: 'Automation ROI Calculator: Decoded Ops',
++    description: 'Calculate when automating a manual process pays for itself and what the 3-year return looks like.',
++    url: 'https://decodedops.co.uk/tools/automation-roi-calculator',
++    images: OG_IMAGE,
++  },
++  twitter: {
++    card: 'summary_large_image',
++    title: 'Automation ROI Calculator: Decoded Ops',
++    description: 'Calculate when automating a manual process pays for itself and what the 3-year return looks like.',
++    images: [OG_IMAGE_PATH],
++  },
+ };
+ 
+ export default function AutomationRoiCalculatorPage() {
+   return (
+
+[0m
+[0m← [0mEdit app/tools/downtime-cost-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\downtime-cost-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\downtime-cost-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\downtime-cost-calculator\page.tsx
+@@ -4,8 +4,9 @@
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
+ import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
++import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
+ 
+ const jsonLd = {
+   '@context': 'https://schema.org',
+   '@type': 'WebApplication',
+
+[0m
+[0m← [0mEdit app/tools/downtime-cost-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\downtime-cost-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\downtime-cost-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\downtime-cost-calculator\page.tsx
+@@ -22,8 +22,21 @@
+   title: 'Downtime Cost Calculator: Decoded Ops',
+   description:
+     'Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods.',
+   alternates: { canonical: '/tools/downtime-cost-calculator' },
++  openGraph: {
++    type: 'website',
++    title: 'Downtime Cost Calculator: Decoded Ops',
++    description: 'Calculate the annual cost of system downtime across labour and lost revenue.',
++    url: 'https://decodedops.co.uk/tools/downtime-cost-calculator',
++    images: OG_IMAGE,
++  },
++  twitter: {
++    card: 'summary_large_image',
++    title: 'Downtime Cost Calculator: Decoded Ops',
++    description: 'Calculate the annual cost of system downtime across labour and lost revenue.',
++    images: [OG_IMAGE_PATH],
++  },
+ };
+ 
+ export default function DowntimeCostCalculatorPage() {
+   return (
+
+[0m
+[0m← [0mEdit app/tools/rto-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\rto-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\rto-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\rto-calculator\page.tsx
+@@ -3,8 +3,9 @@
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
+ import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
++import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
+ 
+ const jsonLd = {
+   '@context': 'https://schema.org',
+   '@type': 'WebApplication',
+
+[0m
+[0m← [0mEdit app/tools/rto-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\rto-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\rto-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\rto-calculator\page.tsx
+@@ -21,8 +21,21 @@
+   title: 'RTO Calculator: Decoded Ops',
+   description:
+     'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders.',
+   alternates: { canonical: '/tools/rto-calculator' },
++  openGraph: {
++    type: 'website',
++    title: 'RTO Calculator: Decoded Ops',
++    description: 'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth.',
++    url: 'https://decodedops.co.uk/tools/rto-calculator',
++    images: OG_IMAGE,
++  },
++  twitter: {
++    card: 'summary_large_image',
++    title: 'RTO Calculator: Decoded Ops',
++    description: 'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth.',
++    images: [OG_IMAGE_PATH],
++  },
+ };
+ 
+ export default function RtoCalculatorPage() {
+   return (
+
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(seo): correct og:url on 3 tools pages (CR-WEB-065 #5)"
+[web065-tech-seo fc74bf3] fix(seo): correct og:url on 3 tools pages (CR-WEB-065 #5)
+ 3 files changed, 42 insertions(+)
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[✓] 4. Missing og:image on 28 pages — create helper + apply
+[✓] 5. Fix og:url on 3 tools pages
+[•] 6. Replace /fractional links with /retained
+[ ] 7. Fix SVG template bug in coverage-map.ts
+[ ] 8. Image optimization (WebP, sizes, caching headers)
+[ ] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[ ] 10. Colour contrast (WCAG AA) — accessible text shades
+[ ] 11. Fix heading order (footer + location art labels)
+[ ] 12. Fix duplicate organisation schema on town pages
+[ ] Run tsc + npm run build verification
+[ ] Write lane report files + commit
+[0m
+[0m$ [0mrg --type-add 'code:*.{ts,tsx,js,jsx,json,css}' -t code '/fractional[^-]' --glob '!.context/*' --glob '!node_modules/*' --glob '!.next/*' -n
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mSelect-String -Path "app/**/*.{ts,tsx}" -Pattern '/fractional(?!-cto)' -Recurse -ErrorAction SilentlyContinue | ForEach-Object { $_.RelativePath = $_.Path -replace [regex]::Escape((Get-Location).Path + '\'), ''; "$($_.RelativePath):$($_.LineNumber): $($_.Line.Trim())" }
+Select-String: A parameter cannot be found that matches parameter name 'Recurse'.
+[0m
+[0m✱ [0mGrep "/fractional[^-]|/fractional['"]"[90m in app · 2 matches[0m
+[0m✱ [0mGrep "/fractional[^-]|/fractional['"]"[90m in components · 0 matches[0m
+[0m✱ [0mGrep "/fractional[^-]|/fractional['"]"[90m in lib · 0 matches[0m
+[0m✱ [0mGrep "/fractional[^-]|/fractional['"]"[90m in data · 0 matches[0m
+[0m→ [0mRead app/locations/fractional-cto/[location]/page.tsx[90m [offset=218, limit=35][0m
+[0m
+[0m← [0mEdit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+@@ -218,9 +218,9 @@
+       '@type': 'Offer',
+       itemOffered: {
+         '@type': 'Service',
+         name: 'Fractional CTO',
+-        url: 'https://decodedops.co.uk/fractional',
++        url: 'https://decodedops.co.uk/retained',
+       },
+     },
+   ],
+ },
+
+[0m
+[0m← [0mEdit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+@@ -244,9 +244,9 @@
+ regionalChallenge={loc.regionalChallenge}
+ painPoints={painPoints}
+ whatIdo={whatIdo}
+ cta={`Find out if a fractional CTO is right for your ${loc.name} business`}
+-serviceUrl="/fractional"
++serviceUrl="/retained"
+ serviceLabel="See how fractional CTO works"
+ heroArtHtml={heroArt}
+ coverageMapHtml={coverageMap}
+ stepsArtHtml={stepsArt}
+
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(seo): replace /fractional links with /retained in location template (CR-WEB-065 #6)"
+[web065-tech-seo e117342] fix(seo): replace /fractional links with /retained in location template (CR-WEB-065 #6)
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[✓] 4. Missing og:image on 28 pages — create helper + apply
+[✓] 5. Fix og:url on 3 tools pages
+[✓] 6. Replace /fractional links with /retained
+[•] 7. Fix SVG template bug in coverage-map.ts
+[ ] 8. Image optimization (WebP, sizes, caching headers)
+[ ] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[ ] 10. Colour contrast (WCAG AA) — accessible text shades
+[ ] 11. Fix heading order (footer + location art labels)
+[ ] 12. Fix duplicate organisation schema on town pages
+[ ] Run tsc + npm run build verification
+[ ] Write lane report files + commit
+[0m
+[0m← [0mEdit lib/coverage-map.ts
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\lib\coverage-map.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\lib\coverage-map.ts
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\lib\coverage-map.ts
+@@ -122,9 +122,9 @@
+ 
+   // Base
+   lines.push(`<circle class="cov-base-ring" cx="${wx}" cy="${wy}" r="22"/><circle class="cov-base" cx="${wx}" cy="${wy}" r="11"/>`);
+   lines.push(`<text class="t-h cov-base-l" x="${wx + 16}" y="${wy + 44}" text-anchor="middle">Worthing</text>`);
+-  lines.push('<text class="t-m cov-base-s" x="${wx + 16}" y="${wy + 64}" text-anchor="middle">Base</text>');
++  lines.push(`<text class="t-m cov-base-s" x="${wx + 16}" y="${wy + 64}" text-anchor="middle">Base</text>`);
+   lines.push('</svg>');
+ 
+   return lines.join('\n');
+ }
+
+[0m
+[0m✗ [0mInvalid Tool
+The arguments provided to the tool are invalid: Model tried to call unavailable tool 'commit'. Available tools: bash, edit, glob, grep, invalid, read, skill, task, todowrite, webfetch, websearch, write.
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(seo): fix SVG template literal bug in coverage-map.ts (CR-WEB-065 #7)"
+[web065-tech-seo c0a9506] fix(seo): fix SVG template literal bug in coverage-map.ts (CR-WEB-065 #7)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[✓] 4. Missing og:image on 28 pages — create helper + apply
+[✓] 5. Fix og:url on 3 tools pages
+[✓] 6. Replace /fractional links with /retained
+[✓] 7. Fix SVG template bug in coverage-map.ts
+[•] 8. Image optimization (WebP, sizes, caching headers)
+[ ] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[ ] 10. Colour contrast (WCAG AA) — accessible text shades
+[ ] 11. Fix heading order (footer + location art labels)
+[ ] 12. Fix duplicate organisation schema on town pages
+[ ] Run tsc + npm run build verification
+[ ] Write lane report files + commit
+[0m
+[0m$ [0mnode -e "require('sharp'); console.log('sharp available')" 2>&1
+sharp available
+[0m
+[0m$ [0mGet-ChildItem -Path public/images -Recurse -Include *.jpg,*.jpeg,*.png | Measure-Object | Select-Object -ExpandProperty Count
+116
+[0m
+[0m← [0mWrite scripts/optimise-images.mjs
+Wrote file successfully.
+[0m
+[0m$ [0mnode scripts/optimise-images.mjs
+Created: apps/artwork-approval.webp (from 3200x2000, resized to 1600w)
+Created: apps/artwork-manager-hero.webp (from 1600x2397)
+Created: apps/commerce-pdp.webp (from 3200x2000, resized to 1600w)
+Created: apps/commerce-plp.webp (from 2160x3816, resized to 1600w)
+Created: apps/data-app-catalogue.webp (from 3200x2000, resized to 1600w)
+Created: apps/data-app-dashboard.webp (from 3200x3072, resized to 1600w)
+Created: apps/data-app-hero.webp (from 2160x1215, resized to 1600w)
+Created: apps/data-app-supplier-import.webp (from 3200x2000, resized to 1600w)
+Created: apps/prod-hivis.webp (from 900x1348)
+Created: blog/decoded-method-operations-framework-img-1.webp (from 2400x1350, resized to 1600w)
+Created: blog/decoded-method-operations-framework-img-2.webp (from 2400x1350, resized to 1600w)
+Created: blog/decoded-method-operations-framework-thumb.webp (from 1200x675)
+Created: blog/erp-gaps-decorated-goods-business-img-1.webp (from 2400x1350, resized to 1600w)
+Created: blog/erp-gaps-decorated-goods-business-img-2.webp (from 2400x1350, resized to 1600w)
+Created: blog/erp-gaps-decorated-goods-business-thumb.webp (from 1200x675)
+Created: craig-blackman.webp (from 1600x1067)
+Created: d17/apps-cases/cat-packaging-2b20a6.webp (from 900x800)
+Created: d17/apps-cases/cat-promo-89c58a.webp (from 320x213)
+Created: d17/apps-cases/cat-workwear-679f8b.webp (from 900x596)
+Created: d17/apps-cases/cat-workwear-d86bf7.webp (from 900x596)
+Created: d17/apps-cases/gen-bench-flatlay-dea11a.webp (from 1024x1024)
+Created: d17/apps-cases/gen-bench-flatlay-v2-6f5bfe.webp (from 1024x1024)
+Created: d17/apps-cases/gen-press-hall-03697e.webp (from 900x900)
+Created: d17/apps-cases/hero-workshop-187638.webp (from 600x450)
+Created: d17/apps-cases/hero-workshop-38370e.webp (from 1100x688)
+Created: d17/apps-cases/hero-workshop-44196e.webp (from 1400x875)
+Created: d17/apps-cases/prod-hivis-392a14.webp (from 900x1018)
+Created: d17/apps-cases/prod-hivis-47c1d3.webp (from 700x311)
+Created: d17/apps-cases/prod-hivis-c5b3cd.webp (from 320x240)
+Created: d17/apps-cases/prod-mailer-9c1448.webp (from 320x213)
+Created: d17/apps-cases/prod-polo-34c129.webp (from 700x311)
+Created: d17/apps-cases/prod-polo-80aad7.webp (from 360x360)
+Created: d17/apps-cases/prod-polo-a16032.webp (from 320x240)
+Created: d17/apps-cases/thread-spools-ba5d03.webp (from 900x600)
+Created: d17/apps-cases/thread-spools-dada9d.webp (from 600x440)
+Created: d17/cat-workwear.webp (from 900x596)
+Created: d17/craig-blackman.webp (from 1600x1067)
+Created: d17/fill-the-gap.webp (from 1600x900)
+Created: d17/gen-bench-flatlay-v2.webp (from 1024x1024)
+Created: d17/gen-press-hall.webp (from 1024x1024)
+Created: d17/hero-workshop.webp (from 1600x2397)
+Created: d17/home/hero-workshop-32a6d0.webp (from 520x324)
+Created: d17/locations/gen-bench-flatlay-v2-fa6a3a.webp (from 420x569)
+Created: d17/locations/gen-press-hall-82ca78.webp (from 1024x1024)
+Created: d17/locations/hero-workshop-99888d.webp (from 500x500)
+Created: d17/locations/hero-workshop-db78aa.webp (from 1400x934)
+Created: d17/problems/cat-awards-70dc2f.webp (from 900x1200)
+Created: d17/problems/cat-packaging-48f149.webp (from 900x950)
+Created: d17/problems/cat-promo-6d25d2.webp (from 900x600)
+Created: d17/problems/cat-signage-58e48c.webp (from 900x600)
+Created: d17/problems/cat-workwear-12941c.webp (from 240x208)
+Created: d17/problems/cat-workwear-401e08.webp (from 900x596)
+Created: d17/problems/gen-bench-flatlay-v2-215572.webp (from 900x900)
+Created: d17/problems/gen-press-hall-3d9e01.webp (from 1000x883)
+Created: d17/problems/gen-press-hall-7c2764.webp (from 1000x1000)
+Created: d17/problems/hero-workshop-037adf.webp (from 1100x962)
+Created: d17/problems/hero-workshop-783ec1.webp (from 520x455)
+Created: d17/problems/hero-workshop-8bff06.webp (from 1100x1224)
+Created: d17/problems/prod-mailer-f70773.webp (from 900x600)
+Created: d17/problems/prod-polo-5947fe.webp (from 900x905)
+Created: d17/problems/thread-spools-1b64ac.webp (from 1300x867)
+Created: d17/problems/thread-spools-1c52d7.webp (from 1000x889)
+Created: d17/problems/thread-spools-2195b5.webp (from 520x462)
+Created: d17/prod-mailer.webp (from 900x600)
+Created: d17/resources/cat-promo-264d08.webp (from 900x600)
+Created: d17/resources/cat-workwear-ce9fb8.webp (from 900x596)
+Created: d17/resources/gen-bench-flatlay-v2-215572.webp (from 900x900)
+Created: d17/resources/gen-bench-flatlay-v2-6b4161.webp (from 900x756)
+Created: d17/resources/gen-bench-flatlay-v2-79b455.webp (from 900x742)
+Created: d17/resources/gen-press-hall-a6acf5.webp (from 900x761)
+Created: d17/resources/gen-press-hall-c85ac6.webp (from 900x900)
+Created: d17/resources/hero-workshop-23d6be.webp (from 900x842)
+Created: d17/resources/hero-workshop-5bb1b8.webp (from 900x900)
+Created: d17/resources/hero-workshop-ad3944.webp (from 900x900)
+Created: d17/resources/hero-workshop-c19d7e.webp (from 900x844)
+Created: d17/resources/prod-mailer-259a39.webp (from 900x600)
+Created: d17/resources/prod-polo-5947fe.webp (from 900x905)
+Created: d17/resources/thread-spools-a145a8.webp (from 900x873)
+Created: d17/resources/thread-spools-ba5d03.webp (from 900x600)
+Created: d17/sectors/cat-awards-70dc2f.webp (from 900x1200)
+Created: d17/sectors/cat-packaging-48f149.webp (from 900x950)
+Created: d17/sectors/cat-promo-6d25d2.webp (from 900x600)
+Created: d17/sectors/cat-promo-96b20f.webp (from 700x600)
+Created: d17/sectors/cat-signage-2bf918.webp (from 320x165)
+Created: d17/sectors/cat-signage-58e48c.webp (from 900x600)
+Created: d17/sectors/cat-signage-982ce6.webp (from 770x600)
+Created: d17/sectors/gen-bench-flatlay-v2-215572.webp (from 900x900)
+Created: d17/sectors/gen-press-hall-40f9e1.webp (from 520x327)
+Created: d17/sectors/gen-press-hall-7c2764.webp (from 1000x1000)
+Created: d17/sectors/hero-workshop-037adf.webp (from 1100x962)
+Created: d17/sectors/hero-workshop-783ec1.webp (from 520x455)
+Created: d17/sectors/prod-hivis-7a7ace.webp (from 900x1220)
+Created: d17/sectors/prod-polo-5947fe.webp (from 900x905)
+Created: d17/sectors/thread-spools-1c52d7.webp (from 1000x889)
+Created: d17/thread-spools.webp (from 1600x1067)
+Created: decoded-method-cover.webp (from 1075x1521)
+Created: hero-craft.webp (from 1600x1076)
+Created: money/cat-promo-2026-09.webp (from 900x600)
+Created: money/cat-workwear-2026-09.webp (from 900x596)
+Created: money/hero-workshop-2026-09.webp (from 1600x2397)
+Created: money/press-transfer-2026-09.webp (from 1600x1067)
+Created: money/prod-hivis-2026-09.webp (from 900x1348)
+Created: money/prod-mailer-2026-09.webp (from 900x600)
+Created: money/prod-polo-2026-09.webp (from 900x1125)
+Created: money/thread-spools-2026-09.webp (from 1600x1067)
+Created: real-example.webp (from 1600x1067)
+Created: sector-credibility.webp (from 1600x1067)
+Created: sectors/cat-awards.webp (from 900x1350)
+Created: sectors/cat-packaging.webp (from 900x1200)
+Created: sectors/cat-print.webp (from 900x1200)
+Created: sectors/cat-promo.webp (from 900x600)
+Created: sectors/cat-signage.webp (from 900x600)
+Created: sectors/cat-workwear.webp (from 900x596)
+Created: sectors/prod-polo.webp (from 900x1125)
+Created: sectors/thread-spools.webp (from 1600x1067)
+Created: six-sigma-cover.webp (from 1075x1521)
+
+Processed 116 images (116 total files found)
+
+Dimensions:
+┌─────────┬──────────────────────────────────────────────────────┬───────────────────────────────────────────────────────┬───────┬────────┬─────────┐
+│ (index) │ original                                             │ webp                                                  │ width │ height │ resized │
+├─────────┼──────────────────────────────────────────────────────┼───────────────────────────────────────────────────────┼───────┼────────┼─────────┤
+│ 0       │ 'apps/artwork-approval.png'                          │ 'apps/artwork-approval.webp'                          │ 3200  │ 2000   │ true    │
+│ 1       │ 'apps/artwork-manager-hero.jpg'                      │ 'apps/artwork-manager-hero.webp'                      │ 1600  │ 2397   │ false   │
+│ 2       │ 'apps/commerce-pdp.png'                              │ 'apps/commerce-pdp.webp'                              │ 3200  │ 2000   │ true    │
+│ 3       │ 'apps/commerce-plp.png'                              │ 'apps/commerce-plp.webp'                              │ 2160  │ 3816   │ true    │
+│ 4       │ 'apps/data-app-catalogue.png'                        │ 'apps/data-app-catalogue.webp'                        │ 3200  │ 2000   │ true    │
+│ 5       │ 'apps/data-app-dashboard.png'                        │ 'apps/data-app-dashboard.webp'                        │ 3200  │ 3072   │ true    │
+│ 6       │ 'apps/data-app-hero.png'                             │ 'apps/data-app-hero.webp'                             │ 2160  │ 1215   │ true    │
+│ 7       │ 'apps/data-app-supplier-import.png'                  │ 'apps/data-app-supplier-import.webp'                  │ 3200  │ 2000   │ true    │
+│ 8       │ 'apps/prod-hivis.jpg'                                │ 'apps/prod-hivis.webp'                                │ 900   │ 1348   │ false   │
+│ 9       │ 'blog/decoded-method-operations-framework-img-1.png' │ 'blog/decoded-method-operations-framework-img-1.webp' │ 2400  │ 1350   │ true    │
+│ 10      │ 'blog/decoded-method-operations-framework-img-2.png' │ 'blog/decoded-method-operations-framework-img-2.webp' │ 2400  │ 1350   │ true    │
+│ 11      │ 'blog/decoded-method-operations-framework-thumb.png' │ 'blog/decoded-method-operations-framework-thumb.webp' │ 1200  │ 675    │ false   │
+│ 12      │ 'blog/erp-gaps-decorated-goods-business-img-1.png'   │ 'blog/erp-gaps-decorated-goods-business-img-1.webp'   │ 2400  │ 1350   │ true    │
+│ 13      │ 'blog/erp-gaps-decorated-goods-business-img-2.png'   │ 'blog/erp-gaps-decorated-goods-business-img-2.webp'   │ 2400  │ 1350   │ true    │
+│ 14      │ 'blog/erp-gaps-decorated-goods-business-thumb.png'   │ 'blog/erp-gaps-decorated-goods-business-thumb.webp'   │ 1200  │ 675    │ false   │
+│ 15      │ 'craig-blackman.jpg'                                 │ 'craig-blackman.webp'                                 │ 1600  │ 1067   │ false   │
+│ 16      │ 'd17/apps-cases/cat-packaging-2b20a6.jpg'            │ 'd17/apps-cases/cat-packaging-2b20a6.webp'            │ 900   │ 800    │ false   │
+│ 17      │ 'd17/apps-cases/cat-promo-89c58a.jpg'                │ 'd17/apps-cases/cat-promo-89c58a.webp'                │ 320   │ 213    │ false   │
+│ 18      │ 'd17/apps-cases/cat-workwear-679f8b.jpg'             │ 'd17/apps-cases/cat-workwear-679f8b.webp'             │ 900   │ 596    │ false   │
+│ 19      │ 'd17/apps-cases/cat-workwear-d86bf7.jpg'             │ 'd17/apps-cases/cat-workwear-d86bf7.webp'             │ 900   │ 596    │ false   │
+│ 20      │ 'd17/apps-cases/gen-bench-flatlay-dea11a.jpg'        │ 'd17/apps-cases/gen-bench-flatlay-dea11a.webp'        │ 1024  │ 1024   │ false   │
+│ 21      │ 'd17/apps-cases/gen-bench-flatlay-v2-6f5bfe.jpg'     │ 'd17/apps-cases/gen-bench-flatlay-v2-6f5bfe.webp'     │ 1024  │ 1024   │ false   │
+│ 22      │ 'd17/apps-cases/gen-press-hall-03697e.jpg'           │ 'd17/apps-cases/gen-press-hall-03697e.webp'           │ 900   │ 900    │ false   │
+│ 23      │ 'd17/apps-cases/hero-workshop-187638.jpg'            │ 'd17/apps-cases/hero-workshop-187638.webp'            │ 600   │ 450    │ false   │
+│ 24      │ 'd17/apps-cases/hero-workshop-38370e.jpg'            │ 'd17/apps-cases/hero-workshop-38370e.webp'            │ 1100  │ 688    │ false   │
+│ 25      │ 'd17/apps-cases/hero-workshop-44196e.jpg'            │ 'd17/apps-cases/hero-workshop-44196e.webp'            │ 1400  │ 875    │ false   │
+│ 26      │ 'd17/apps-cases/prod-hivis-392a14.jpg'               │ 'd17/apps-cases/prod-hivis-392a14.webp'               │ 900   │ 1018   │ false   │
+│ 27      │ 'd17/apps-cases/prod-hivis-47c1d3.jpg'               │ 'd17/apps-cases/prod-hivis-47c1d3.webp'               │ 700   │ 311    │ false   │
+│ 28      │ 'd17/apps-cases/prod-hivis-c5b3cd.jpg'               │ 'd17/apps-cases/prod-hivis-c5b3cd.webp'               │ 320   │ 240    │ false   │
+│ 29      │ 'd17/apps-cases/prod-mailer-9c1448.jpg'              │ 'd17/apps-cases/prod-mailer-9c1448.webp'              │ 320   │ 213    │ false   │
+│ 30      │ 'd17/apps-cases/prod-polo-34c129.jpg'                │ 'd17/apps-cases/prod-polo-34c129.webp'                │ 700   │ 311    │ false   │
+│ 31      │ 'd17/apps-cases/prod-polo-80aad7.jpg'                │ 'd17/apps-cases/prod-polo-80aad7.webp'                │ 360   │ 360    │ false   │
+│ 32      │ 'd17/apps-cases/prod-polo-a16032.jpg'                │ 'd17/apps-cases/prod-polo-a16032.webp'                │ 320   │ 240    │ false   │
+│ 33      │ 'd17/apps-cases/thread-spools-ba5d03.jpg'            │ 'd17/apps-cases/thread-spools-ba5d03.webp'            │ 900   │ 600    │ false   │
+│ 34      │ 'd17/apps-cases/thread-spools-dada9d.jpg'            │ 'd17/apps-cases/thread-spools-dada9d.webp'            │ 600   │ 440    │ false   │
+│ 35      │ 'd17/cat-workwear.jpg'                               │ 'd17/cat-workwear.webp'                               │ 900   │ 596    │ false   │
+│ 36      │ 'd17/craig-blackman.jpg'                             │ 'd17/craig-blackman.webp'                             │ 1600  │ 1067   │ false   │
+│ 37      │ 'd17/fill-the-gap.png'                               │ 'd17/fill-the-gap.webp'                               │ 1600  │ 900    │ false   │
+│ 38      │ 'd17/gen-bench-flatlay-v2.jpg'                       │ 'd17/gen-bench-flatlay-v2.webp'                       │ 1024  │ 1024   │ false   │
+│ 39      │ 'd17/gen-press-hall.jpg'                             │ 'd17/gen-press-hall.webp'                             │ 1024  │ 1024   │ false   │
+│ 40      │ 'd17/hero-workshop.jpg'                              │ 'd17/hero-workshop.webp'                              │ 1600  │ 2397   │ false   │
+│ 41      │ 'd17/home/hero-workshop-32a6d0.jpg'                  │ 'd17/home/hero-workshop-32a6d0.webp'                  │ 520   │ 324    │ false   │
+│ 42      │ 'd17/locations/gen-bench-flatlay-v2-fa6a3a.jpg'      │ 'd17/locations/gen-bench-flatlay-v2-fa6a3a.webp'      │ 420   │ 569    │ false   │
+│ 43      │ 'd17/locations/gen-press-hall-82ca78.jpg'            │ 'd17/locations/gen-press-hall-82ca78.webp'            │ 1024  │ 1024   │ false   │
+│ 44      │ 'd17/locations/hero-workshop-99888d.jpg'             │ 'd17/locations/hero-workshop-99888d.webp'             │ 500   │ 500    │ false   │
+│ 45      │ 'd17/locations/hero-workshop-db78aa.jpg'             │ 'd17/locations/hero-workshop-db78aa.webp'             │ 1400  │ 934    │ false   │
+│ 46      │ 'd17/problems/cat-awards-70dc2f.jpg'                 │ 'd17/problems/cat-awards-70dc2f.webp'                 │ 900   │ 1200   │ false   │
+│ 47      │ 'd17/problems/cat-packaging-48f149.jpg'              │ 'd17/problems/cat-packaging-48f149.webp'              │ 900   │ 950    │ false   │
+│ 48      │ 'd17/problems/cat-promo-6d25d2.jpg'                  │ 'd17/problems/cat-promo-6d25d2.webp'                  │ 900   │ 600    │ false   │
+│ 49      │ 'd17/problems/cat-signage-58e48c.jpg'                │ 'd17/problems/cat-signage-58e48c.webp'                │ 900   │ 600    │ false   │
+│ 50      │ 'd17/problems/cat-workwear-12941c.jpg'               │ 'd17/problems/cat-workwear-12941c.webp'               │ 240   │ 208    │ false   │
+│ 51      │ 'd17/problems/cat-workwear-401e08.jpg'               │ 'd17/problems/cat-workwear-401e08.webp'               │ 900   │ 596    │ false   │
+│ 52      │ 'd17/problems/gen-bench-flatlay-v2-215572.jpg'       │ 'd17/problems/gen-bench-flatlay-v2-215572.webp'       │ 900   │ 900    │ false   │
+│ 53      │ 'd17/problems/gen-press-hall-3d9e01.jpg'             │ 'd17/problems/gen-press-hall-3d9e01.webp'             │ 1000  │ 883    │ false   │
+│ 54      │ 'd17/problems/gen-press-hall-7c2764.jpg'             │ 'd17/problems/gen-press-hall-7c2764.webp'             │ 1000  │ 1000   │ false   │
+│ 55      │ 'd17/problems/hero-workshop-037adf.jpg'              │ 'd17/problems/hero-workshop-037adf.webp'              │ 1100  │ 962    │ false   │
+│ 56      │ 'd17/problems/hero-workshop-783ec1.jpg'              │ 'd17/problems/hero-workshop-783ec1.webp'              │ 520   │ 455    │ false   │
+│ 57      │ 'd17/problems/hero-workshop-8bff06.jpg'              │ 'd17/problems/hero-workshop-8bff06.webp'              │ 1100  │ 1224   │ false   │
+│ 58      │ 'd17/problems/prod-mailer-f70773.jpg'                │ 'd17/problems/prod-mailer-f70773.webp'                │ 900   │ 600    │ false   │
+│ 59      │ 'd17/problems/prod-polo-5947fe.jpg'                  │ 'd17/problems/prod-polo-5947fe.webp'                  │ 900   │ 905    │ false   │
+│ 60      │ 'd17/problems/thread-spools-1b64ac.jpg'              │ 'd17/problems/thread-spools-1b64ac.webp'              │ 1300  │ 867    │ false   │
+│ 61      │ 'd17/problems/thread-spools-1c52d7.jpg'              │ 'd17/problems/thread-spools-1c52d7.webp'              │ 1000  │ 889    │ false   │
+│ 62      │ 'd17/problems/thread-spools-2195b5.jpg'              │ 'd17/problems/thread-spools-2195b5.webp'              │ 520   │ 462    │ false   │
+│ 63      │ 'd17/prod-mailer.jpg'                                │ 'd17/prod-mailer.webp'                                │ 900   │ 600    │ false   │
+│ 64      │ 'd17/resources/cat-promo-264d08.jpg'                 │ 'd17/resources/cat-promo-264d08.webp'                 │ 900   │ 600    │ false   │
+│ 65      │ 'd17/resources/cat-workwear-ce9fb8.jpg'              │ 'd17/resources/cat-workwear-ce9fb8.webp'              │ 900   │ 596    │ false   │
+│ 66      │ 'd17/resources/gen-bench-flatlay-v2-215572.jpg'      │ 'd17/resources/gen-bench-flatlay-v2-215572.webp'      │ 900   │ 900    │ false   │
+│ 67      │ 'd17/resources/gen-bench-flatlay-v2-6b4161.jpg'      │ 'd17/resources/gen-bench-flatlay-v2-6b4161.webp'      │ 900   │ 756    │ false   │
+│ 68      │ 'd17/resources/gen-bench-flatlay-v2-79b455.jpg'      │ 'd17/resources/gen-bench-flatlay-v2-79b455.webp'      │ 900   │ 742    │ false   │
+│ 69      │ 'd17/resources/gen-press-hall-a6acf5.jpg'            │ 'd17/resources/gen-press-hall-a6acf5.webp'            │ 900   │ 761    │ false   │
+│ 70      │ 'd17/resources/gen-press-hall-c85ac6.jpg'            │ 'd17/resources/gen-press-hall-c85ac6.webp'            │ 900   │ 900    │ false   │
+│ 71      │ 'd17/resources/hero-workshop-23d6be.jpg'             │ 'd17/resources/hero-workshop-23d6be.webp'             │ 900   │ 842    │ false   │
+│ 72      │ 'd17/resources/hero-workshop-5bb1b8.jpg'             │ 'd17/resources/hero-workshop-5bb1b8.webp'             │ 900   │ 900    │ false   │
+│ 73      │ 'd17/resources/hero-workshop-ad3944.jpg'             │ 'd17/resources/hero-workshop-ad3944.webp'             │ 900   │ 900    │ false   │
+│ 74      │ 'd17/resources/hero-workshop-c19d7e.jpg'             │ 'd17/resources/hero-workshop-c19d7e.webp'             │ 900   │ 844    │ false   │
+│ 75      │ 'd17/resources/prod-mailer-259a39.jpg'               │ 'd17/resources/prod-mailer-259a39.webp'               │ 900   │ 600    │ false   │
+│ 76      │ 'd17/resources/prod-polo-5947fe.jpg'                 │ 'd17/resources/prod-polo-5947fe.webp'                 │ 900   │ 905    │ false   │
+│ 77      │ 'd17/resources/thread-spools-a145a8.jpg'             │ 'd17/resources/thread-spools-a145a8.webp'             │ 900   │ 873    │ false   │
+│ 78      │ 'd17/resources/thread-spools-ba5d03.jpg'             │ 'd17/resources/thread-spools-ba5d03.webp'             │ 900   │ 600    │ false   │
+│ 79      │ 'd17/sectors/cat-awards-70dc2f.jpg'                  │ 'd17/sectors/cat-awards-70dc2f.webp'                  │ 900   │ 1200   │ false   │
+│ 80      │ 'd17/sectors/cat-packaging-48f149.jpg'               │ 'd17/sectors/cat-packaging-48f149.webp'               │ 900   │ 950    │ false   │
+│ 81      │ 'd17/sectors/cat-promo-6d25d2.jpg'                   │ 'd17/sectors/cat-promo-6d25d2.webp'                   │ 900   │ 600    │ false   │
+│ 82      │ 'd17/sectors/cat-promo-96b20f.jpg'                   │ 'd17/sectors/cat-promo-96b20f.webp'                   │ 700   │ 600    │ false   │
+│ 83      │ 'd17/sectors/cat-signage-2bf918.jpg'                 │ 'd17/sectors/cat-signage-2bf918.webp'                 │ 320   │ 165    │ false   │
+│ 84      │ 'd17/sectors/cat-signage-58e48c.jpg'                 │ 'd17/sectors/cat-signage-58e48c.webp'                 │ 900   │ 600    │ false   │
+│ 85      │ 'd17/sectors/cat-signage-982ce6.jpg'                 │ 'd17/sectors/cat-signage-982ce6.webp'                 │ 770   │ 600    │ false   │
+│ 86      │ 'd17/sectors/gen-bench-flatlay-v2-215572.jpg'        │ 'd17/sectors/gen-bench-flatlay-v2-215572.webp'        │ 900   │ 900    │ false   │
+│ 87      │ 'd17/sectors/gen-press-hall-40f9e1.jpg'              │ 'd17/sectors/gen-press-hall-40f9e1.webp'              │ 520   │ 327    │ false   │
+│ 88      │ 'd17/sectors/gen-press-hall-7c2764.jpg'              │ 'd17/sectors/gen-press-hall-7c2764.webp'              │ 1000  │ 1000   │ false   │
+│ 89      │ 'd17/sectors/hero-workshop-037adf.jpg'               │ 'd17/sectors/hero-workshop-037adf.webp'               │ 1100  │ 962    │ false   │
+│ 90      │ 'd17/sectors/hero-workshop-783ec1.jpg'               │ 'd17/sectors/hero-workshop-783ec1.webp'               │ 520   │ 455    │ false   │
+│ 91      │ 'd17/sectors/prod-hivis-7a7ace.jpg'                  │ 'd17/sectors/prod-hivis-7a7ace.webp'                  │ 900   │ 1220   │ false   │
+│ 92      │ 'd17/sectors/prod-polo-5947fe.jpg'                   │ 'd17/sectors/prod-polo-5947fe.webp'                   │ 900   │ 905    │ false   │
+│ 93      │ 'd17/sectors/thread-spools-1c52d7.jpg'               │ 'd17/sectors/thread-spools-1c52d7.webp'               │ 1000  │ 889    │ false   │
+│ 94      │ 'd17/thread-spools.jpg'                              │ 'd17/thread-spools.webp'                              │ 1600  │ 1067   │ false   │
+│ 95      │ 'decoded-method-cover.png'                           │ 'decoded-method-cover.webp'                           │ 1075  │ 1521   │ false   │
+│ 96      │ 'hero-craft.jpg'                                     │ 'hero-craft.webp'                                     │ 1600  │ 1076   │ false   │
+│ 97      │ 'money/cat-promo-2026-09.jpg'                        │ 'money/cat-promo-2026-09.webp'                        │ 900   │ 600    │ false   │
+│ 98      │ 'money/cat-workwear-2026-09.jpg'                     │ 'money/cat-workwear-2026-09.webp'                     │ 900   │ 596    │ false   │
+│ 99      │ 'money/hero-workshop-2026-09.jpg'                    │ 'money/hero-workshop-2026-09.webp'                    │ 1600  │ 2397   │ false   │
+│ 100     │ 'money/press-transfer-2026-09.jpg'                   │ 'money/press-transfer-2026-09.webp'                   │ 1600  │ 1067   │ false   │
+│ 101     │ 'money/prod-hivis-2026-09.jpg'                       │ 'money/prod-hivis-2026-09.webp'                       │ 900   │ 1348   │ false   │
+│ 102     │ 'money/prod-mailer-2026-09.jpg'                      │ 'money/prod-mailer-2026-09.webp'                      │ 900   │ 600    │ false   │
+│ 103     │ 'money/prod-polo-2026-09.jpg'                        │ 'money/prod-polo-2026-09.webp'                        │ 900   │ 1125   │ false   │
+│ 104     │ 'money/thread-spools-2026-09.jpg'                    │ 'money/thread-spools-2026-09.webp'                    │ 1600  │ 1067   │ false   │
+│ 105     │ 'real-example.jpg'                                   │ 'real-example.webp'                                   │ 1600  │ 1067   │ false   │
+│ 106     │ 'sector-credibility.jpg'                             │ 'sector-credibility.webp'                             │ 1600  │ 1067   │ false   │
+│ 107     │ 'sectors/cat-awards.jpg'                             │ 'sectors/cat-awards.webp'                             │ 900   │ 1350   │ false   │
+│ 108     │ 'sectors/cat-packaging.jpg'                          │ 'sectors/cat-packaging.webp'                          │ 900   │ 1200   │ false   │
+│ 109     │ 'sectors/cat-print.jpg'                              │ 'sectors/cat-print.webp'                              │ 900   │ 1200   │ false   │
+│ 110     │ 'sectors/cat-promo.jpg'                              │ 'sectors/cat-promo.webp'                              │ 900   │ 600    │ false   │
+│ 111     │ 'sectors/cat-signage.jpg'                            │ 'sectors/cat-signage.webp'                            │ 900   │ 600    │ false   │
+│ 112     │ 'sectors/cat-workwear.jpg'                           │ 'sectors/cat-workwear.webp'                           │ 900   │ 596    │ false   │
+│ 113     │ 'sectors/prod-polo.jpg'                              │ 'sectors/prod-polo.webp'                              │ 900   │ 1125   │ false   │
+│ 114     │ 'sectors/thread-spools.jpg'                          │ 'sectors/thread-spools.webp'                          │ 1600  │ 1067   │ false   │
+│ 115     │ 'six-sigma-cover.png'                                │ 'six-sigma-cover.webp'                                │ 1075  │ 1521   │ false   │
+└─────────┴──────────────────────────────────────────────────────┴───────────────────────────────────────────────────────┴───────┴────────┴─────────┘
+[0m
+[0m← [0mWrite scripts/replace-img-refs.mjs
+Wrote file successfully.
+[0m
+Now let me replace image references and add cache headers. I'll write a script to swap .jpg/.jpeg/.png to .webp in code references, then add the cache headers.
+[0m← [0mWrite scripts/replace-img-refs.mjs
+Wrote file successfully.
+[0m
+[0m← [0mWrite scripts/replace-img-refs.mjs
+Wrote file successfully.
+[0m
+[0m$ [0mnode scripts/replace-img-refs.mjs
+Replaced: app\about\page.tsx
+Replaced: app\apps\commerce\page.tsx
+Replaced: app\apps\page.tsx
+Replaced: app\apps\proof\page.tsx
+Replaced: app\apps\works\page.tsx
+Replaced: app\case-studies\case-study-02\page.tsx
+Replaced: app\case-studies\case-study-03\page.tsx
+Replaced: app\case-studies\page.tsx
+Replaced: app\clarity\page.tsx
+Replaced: app\contact\ContactClient.tsx
+Replaced: app\deliver\page.tsx
+Replaced: app\how-i-build\page.tsx
+Replaced: app\locations\fractional-cto\[location]\page.tsx
+Replaced: app\locations\tech-audit\[location]\page.tsx
+Replaced: app\page.tsx
+Replaced: app\pricing\page.tsx
+Replaced: app\problems\ai-paralysis\page.tsx
+Replaced: app\problems\bottleneck-growth\page.tsx
+Replaced: app\problems\buy-vs-build\page.tsx
+Replaced: app\problems\cant-scale-operations\page.tsx
+Replaced: app\problems\data-scattered\page.tsx
+Replaced: app\problems\disaster-recovery\page.tsx
+Replaced: app\problems\ecommerce-not-connected\page.tsx
+Replaced: app\problems\erp-implementation-failure\page.tsx
+Replaced: app\problems\inventory-blind\page.tsx
+Replaced: app\problems\legacy-system\page.tsx
+Replaced: app\problems\manual-workarounds\page.tsx
+Replaced: app\problems\no-ops-owner\page.tsx
+Replaced: app\problems\ops-in-owners-head\page.tsx
+Replaced: app\problems\seasonal-peaks\page.tsx
+Replaced: app\problems\slow-processes\page.tsx
+Replaced: app\problems\spreadsheet-addiction\page.tsx
+Replaced: app\problems\wrong-erp-software\page.tsx
+Replaced: app\process-quality-system\page.tsx
+Replaced: app\resources\5-warning-signs\page.tsx
+Replaced: app\resources\artwork-approval-playbook\page.tsx
+Replaced: app\resources\audit-checklist\page.tsx
+Replaced: app\resources\capacity-planner\page.tsx
+Replaced: app\resources\decoded-method\page.tsx
+Replaced: app\resources\erp-selection-playbook\page.tsx
+Replaced: app\resources\page.tsx
+Replaced: app\resources\seasonal-capacity\page.tsx
+Replaced: app\resources\six-sigma\page.tsx
+Replaced: app\resources\sop-template\page.tsx
+Replaced: app\retained\page.tsx
+Replaced: app\sectors\awards-engraving\page.tsx
+Replaced: app\sectors\garment-decoration\page.tsx
+Replaced: app\sectors\labels-packaging\page.tsx
+Replaced: app\sectors\print-promotional\page.tsx
+Replaced: app\sectors\promotional-merchandise\page.tsx
+Replaced: app\sectors\schoolwear\page.tsx
+Replaced: app\sectors\signs-graphics\page.tsx
+Replaced: app\sectors\teamwear-clubwear\page.tsx
+Replaced: app\sectors\workwear\page.tsx
+Replaced: app\small-business\page.tsx
+Replaced: app\tools\automation-roi-calculator\page.tsx
+Replaced: app\tools\downtime-cost-calculator\page.tsx
+Replaced: app\tools\ops-health-score\page.tsx
+Replaced: app\tools\page.tsx
+Replaced: app\tools\should-i-replace-erp\page.tsx
+Replaced: app\transform\page.tsx
+
+Replaced image extensions in 61 files
+[0m
+[0m← [0mEdit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\next.config.ts
+@@ -60,8 +60,14 @@
+           { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+           { key: 'Cache-Control', value: 'no-store, max-age=0' },
+         ],
+       },
++      {
++        source: '/images/:path*',
++        headers: [
++          { key: 'Cache-Control', value: 'public, max-age=2592000, stale-while-revalidate=86400' },
++        ],
++      },
+     ];
+   },
+   poweredByHeader: false,
+ };
+
+[0m
+Now let me add the cache headers for images in next.config.ts:
+[0m$ [0mgit add -A && git commit -m "fix(seo): WebP images, update refs, add cache headers (CR-WEB-065 #8)"
+warning: in the working copy of 'app/about/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/apps/commerce/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/apps/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/apps/proof/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/apps/works/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/case-study-02/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/case-study-03/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/clarity/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/deliver/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/how-i-build/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/pricing/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/process-quality-system/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/artwork-approval-playbook/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/audit-checklist/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/decoded-method/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/erp-selection-playbook/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/six-sigma/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/sop-template/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/retained/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/transform/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/optimise-images.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/replace-img-refs.mjs', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo 34eaae3] fix(seo): WebP images, update refs, add cache headers (CR-WEB-065 #8)
+ 180 files changed, 207 insertions(+), 106 deletions(-)
+ create mode 100644 public/images/apps/artwork-approval.webp
+ create mode 100644 public/images/apps/artwork-manager-hero.webp
+ create mode 100644 public/images/apps/commerce-pdp.webp
+ create mode 100644 public/images/apps/commerce-plp.webp
+ create mode 100644 public/images/apps/data-app-catalogue.webp
+ create mode 100644 public/images/apps/data-app-dashboard.webp
+ create mode 100644 public/images/apps/data-app-hero.webp
+ create mode 100644 public/images/apps/data-app-supplier-import.webp
+ create mode 100644 public/images/apps/prod-hivis.webp
+ create mode 100644 public/images/blog/decoded-method-operations-framework-img-1.webp
+ create mode 100644 public/images/blog/decoded-method-operations-framework-img-2.webp
+ create mode 100644 public/images/blog/decoded-method-operations-framework-thumb.webp
+ create mode 100644 public/images/blog/erp-gaps-decorated-goods-business-img-1.webp
+ create mode 100644 public/images/blog/erp-gaps-decorated-goods-business-img-2.webp
+ create mode 100644 public/images/blog/erp-gaps-decorated-goods-business-thumb.webp
+ create mode 100644 public/images/craig-blackman.webp
+ create mode 100644 public/images/d17/apps-cases/cat-packaging-2b20a6.webp
+ create mode 100644 public/images/d17/apps-cases/cat-promo-89c58a.webp
+ create mode 100644 public/images/d17/apps-cases/cat-workwear-679f8b.webp
+ create mode 100644 public/images/d17/apps-cases/cat-workwear-d86bf7.webp
+ create mode 100644 public/images/d17/apps-cases/gen-bench-flatlay-dea11a.webp
+ create mode 100644 public/images/d17/apps-cases/gen-bench-flatlay-v2-6f5bfe.webp
+ create mode 100644 public/images/d17/apps-cases/gen-press-hall-03697e.webp
+ create mode 100644 public/images/d17/apps-cases/hero-workshop-187638.webp
+ create mode 100644 public/images/d17/apps-cases/hero-workshop-38370e.webp
+ create mode 100644 public/images/d17/apps-cases/hero-workshop-44196e.webp
+ create mode 100644 public/images/d17/apps-cases/prod-hivis-392a14.webp
+ create mode 100644 public/images/d17/apps-cases/prod-hivis-47c1d3.webp
+ create mode 100644 public/images/d17/apps-cases/prod-hivis-c5b3cd.webp
+ create mode 100644 public/images/d17/apps-cases/prod-mailer-9c1448.webp
+ create mode 100644 public/images/d17/apps-cases/prod-polo-34c129.webp
+ create mode 100644 public/images/d17/apps-cases/prod-polo-80aad7.webp
+ create mode 100644 public/images/d17/apps-cases/prod-polo-a16032.webp
+ create mode 100644 public/images/d17/apps-cases/thread-spools-ba5d03.webp
+ create mode 100644 public/images/d17/apps-cases/thread-spools-dada9d.webp
+ create mode 100644 public/images/d17/cat-workwear.webp
+ create mode 100644 public/images/d17/craig-blackman.webp
+ create mode 100644 public/images/d17/fill-the-gap.webp
+ create mode 100644 public/images/d17/gen-bench-flatlay-v2.webp
+ create mode 100644 public/images/d17/gen-press-hall.webp
+ create mode 100644 public/images/d17/hero-workshop.webp
+ create mode 100644 public/images/d17/home/hero-workshop-32a6d0.webp
+ create mode 100644 public/images/d17/locations/gen-bench-flatlay-v2-fa6a3a.webp
+ create mode 100644 public/images/d17/locations/gen-press-hall-82ca78.webp
+ create mode 100644 public/images/d17/locations/hero-workshop-99888d.webp
+ create mode 100644 public/images/d17/locations/hero-workshop-db78aa.webp
+ create mode 100644 public/images/d17/problems/cat-awards-70dc2f.webp
+ create mode 100644 public/images/d17/problems/cat-packaging-48f149.webp
+ create mode 100644 public/images/d17/problems/cat-promo-6d25d2.webp
+ create mode 100644 public/images/d17/problems/cat-signage-58e48c.webp
+ create mode 100644 public/images/d17/problems/cat-workwear-12941c.webp
+ create mode 100644 public/images/d17/problems/cat-workwear-401e08.webp
+ create mode 100644 public/images/d17/problems/gen-bench-flatlay-v2-215572.webp
+ create mode 100644 public/images/d17/problems/gen-press-hall-3d9e01.webp
+ create mode 100644 public/images/d17/problems/gen-press-hall-7c2764.webp
+ create mode 100644 public/images/d17/problems/hero-workshop-037adf.webp
+ create mode 100644 public/images/d17/problems/hero-workshop-783ec1.webp
+ create mode 100644 public/images/d17/problems/hero-workshop-8bff06.webp
+ create mode 100644 public/images/d17/problems/prod-mailer-f70773.webp
+ create mode 100644 public/images/d17/problems/prod-polo-5947fe.webp
+ create mode 100644 public/images/d17/problems/thread-spools-1b64ac.webp
+ create mode 100644 public/images/d17/problems/thread-spools-1c52d7.webp
+ create mode 100644 public/images/d17/problems/thread-spools-2195b5.webp
+ create mode 100644 public/images/d17/prod-mailer.webp
+ create mode 100644 public/images/d17/resources/cat-promo-264d08.webp
+ create mode 100644 public/images/d17/resources/cat-workwear-ce9fb8.webp
+ create mode 100644 public/images/d17/resources/gen-bench-flatlay-v2-215572.webp
+ create mode 100644 public/images/d17/resources/gen-bench-flatlay-v2-6b4161.webp
+ create mode 100644 public/images/d17/resources/gen-bench-flatlay-v2-79b455.webp
+ create mode 100644 public/images/d17/resources/gen-press-hall-a6acf5.webp
+ create mode 100644 public/images/d17/resources/gen-press-hall-c85ac6.webp
+ create mode 100644 public/images/d17/resources/hero-workshop-23d6be.webp
+ create mode 100644 public/images/d17/resources/hero-workshop-5bb1b8.webp
+ create mode 100644 public/images/d17/resources/hero-workshop-ad3944.webp
+ create mode 100644 public/images/d17/resources/hero-workshop-c19d7e.webp
+ create mode 100644 public/images/d17/resources/prod-mailer-259a39.webp
+ create mode 100644 public/images/d17/resources/prod-polo-5947fe.webp
+ create mode 100644 public/images/d17/resources/thread-spools-a145a8.webp
+ create mode 100644 public/images/d17/resources/thread-spools-ba5d03.webp
+ create mode 100644 public/images/d17/sectors/cat-awards-70dc2f.webp
+ create mode 100644 public/images/d17/sectors/cat-packaging-48f149.webp
+ create mode 100644 public/images/d17/sectors/cat-promo-6d25d2.webp
+ create mode 100644 public/images/d17/sectors/cat-promo-96b20f.webp
+ create mode 100644 public/images/d17/sectors/cat-signage-2bf918.webp
+ create mode 100644 public/images/d17/sectors/cat-signage-58e48c.webp
+ create mode 100644 public/images/d17/sectors/cat-signage-982ce6.webp
+ create mode 100644 public/images/d17/sectors/gen-bench-flatlay-v2-215572.webp
+ create mode 100644 public/images/d17/sectors/gen-press-hall-40f9e1.webp
+ create mode 100644 public/images/d17/sectors/gen-press-hall-7c2764.webp
+ create mode 100644 public/images/d17/sectors/hero-workshop-037adf.webp
+ create mode 100644 public/images/d17/sectors/hero-workshop-783ec1.webp
+ create mode 100644 public/images/d17/sectors/prod-hivis-7a7ace.webp
+ create mode 100644 public/images/d17/sectors/prod-polo-5947fe.webp
+ create mode 100644 public/images/d17/sectors/thread-spools-1c52d7.webp
+ create mode 100644 public/images/d17/thread-spools.webp
+ create mode 100644 public/images/decoded-method-cover.webp
+ create mode 100644 public/images/hero-craft.webp
+ create mode 100644 public/images/money/cat-promo-2026-09.webp
+ create mode 100644 public/images/money/cat-workwear-2026-09.webp
+ create mode 100644 public/images/money/hero-workshop-2026-09.webp
+ create mode 100644 public/images/money/press-transfer-2026-09.webp
+ create mode 100644 public/images/money/prod-hivis-2026-09.webp
+ create mode 100644 public/images/money/prod-mailer-2026-09.webp
+ create mode 100644 public/images/money/prod-polo-2026-09.webp
+ create mode 100644 public/images/money/thread-spools-2026-09.webp
+ create mode 100644 public/images/real-example.webp
+ create mode 100644 public/images/sector-credibility.webp
+ create mode 100644 public/images/sectors/cat-awards.webp
+ create mode 100644 public/images/sectors/cat-packaging.webp
+ create mode 100644 public/images/sectors/cat-print.webp
+ create mode 100644 public/images/sectors/cat-promo.webp
+ create mode 100644 public/images/sectors/cat-signage.webp
+ create mode 100644 public/images/sectors/cat-workwear.webp
+ create mode 100644 public/images/sectors/prod-polo.webp
+ create mode 100644 public/images/sectors/thread-spools.webp
+ create mode 100644 public/images/six-sigma-cover.webp
+ create mode 100644 scripts/optimise-images.mjs
+ create mode 100644 scripts/replace-img-refs.mjs
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[✓] 4. Missing og:image on 28 pages — create helper + apply
+[✓] 5. Fix og:url on 3 tools pages
+[✓] 6. Replace /fractional links with /retained
+[✓] 7. Fix SVG template bug in coverage-map.ts
+[✓] 8. Image optimization (WebP, sizes, caching headers)
+[•] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[ ] 10. Colour contrast (WCAG AA) — accessible text shades
+[ ] 11. Fix heading order (footer + location art labels)
+[ ] 12. Fix duplicate organisation schema on town pages
+[ ] Run tsc + npm run build verification
+[ ] Write lane report files + commit
+[0m
+[0m✱ [0mGrep "tx-photo__shot"[90m in app · 0 matches[0m
+[0m✱ [0mGrep "loading="lazy""[90m in app · 2 matches[0m
+[0m✱ [0mGrep "tx-photo__shot"[90m in . · 1 match[0m
+[0m→ [0mRead app/retained/page.tsx[90m [limit=60][0m
+[0m→ [0mRead components/PhotoPiece.tsx
+[0m→ [0mRead app/retained/page.tsx[90m [limit=50, offset=80][0m
+[0m→ [0mRead app/page.tsx[90m [limit=80][0m
+[0m→ [0mRead app/retained/page.tsx[90m [limit=25, offset=60][0m
+[0m✱ [0mGrep "<img"[90m in app · 100 matches[0m
+[0m
+[0m← [0mEdit components/PhotoPiece.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\PhotoPiece.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\PhotoPiece.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\PhotoPiece.tsx
+@@ -13,8 +13,9 @@
+   eyebrow?: string;
+   caption?: string;
+   focus?: string;
+   cls?: string;
++  priority?: boolean;
+ }
+ 
+ declare global {
+   interface Window {
+
+[0m
+[0m← [0mEdit components/PhotoPiece.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\PhotoPiece.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\PhotoPiece.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\PhotoPiece.tsx
+@@ -33,8 +33,9 @@
+   eyebrow = '',
+   caption = '',
+   focus = '50% 50%',
+   cls = '',
++  priority = false,
+ }: PhotoPieceProps) {
+   useEffect(() => {
+     const register = (window.DO_ARTWORK = window.DO_ARTWORK || []);
+     if (register.some((item) => item.no === no)) {
+
+[0m
+[0m← [0mEdit components/PhotoPiece.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\PhotoPiece.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\PhotoPiece.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\PhotoPiece.tsx
+@@ -66,9 +66,11 @@
+   src={src}
+   width={width}
+   height={height}
+   alt={alt}
+-  loading="lazy"
++  loading={priority ? 'eager' : 'lazy'}
++  decoding="async"
++  {...(priority ? { fetchPriority: 'high' } : {})}
+ />
+ <div className="tx-photo__tint" />
+ <div className="tx-photo__scanline" />
+ <div className="tx-photo__scrim-b" />
+
+[0m
+[0m← [0mEdit app/retained/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\retained\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\retained\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\retained\page.tsx
+@@ -99,8 +99,9 @@
+       rev="01"
+       eyebrow="Evidence · Retained"
+       caption="Stock that is always there"
+       focus="50% 55%"
++      priority
+     />
+   </div>
+ </section>
+ 
+
+[0m
+[0m✱ [0mGrep "m-draw|opacity:\s*0|visibility:\s*hidden"[90m in app · 100 matches[0m
+[0m→ [0mRead app/page.tsx[90m [limit=40, offset=95][0m
+[0m→ [0mRead app/homepage.css[90m [limit=80][0m
+[0m→ [0mRead components/D17Motion.tsx
+[0m→ [0mRead app/d17-global.css[90m [limit=30, offset=340][0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=20, offset=50][0m
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(seo): add fetchpriority=high to hero images via PhotoPiece priority prop (CR-WEB-065 #9)"
+warning: in the working copy of 'app/retained/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo b6c70f6] fix(seo): add fetchpriority=high to hero images via PhotoPiece priority prop (CR-WEB-065 #9)
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[✓] 4. Missing og:image on 28 pages — create helper + apply
+[✓] 5. Fix og:url on 3 tools pages
+[✓] 6. Replace /fractional links with /retained
+[✓] 7. Fix SVG template bug in coverage-map.ts
+[✓] 8. Image optimization (WebP, sizes, caching headers)
+[✓] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[•] 10. Colour contrast (WCAG AA) — accessible text shades
+[ ] 11. Fix heading order (footer + location art labels)
+[ ] 12. Fix duplicate organisation schema on town pages
+[ ] Run tsc + npm run build verification
+[ ] Write lane report files + commit
+[0m
+First, let me add the new token and update the subtle text token in the design system:
+[0m← [0mEdit app/design-system/colors_and_type.css
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\colors_and_type.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\colors_and_type.css
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\colors_and_type.css
+@@ -176,9 +176,9 @@
+    --do-text-accent is retained for large display type only.    */
+ --do-text-primary:       var(--do-prussian-blue);  /* 13.14:1 on Off-White */
+ --do-text-secondary:     #3a5f74;
+ --do-text-muted:         #3e6274;
+---do-text-subtle:        #5a7d8f;                  /* placeholders/disabled ONLY */
++--do-text-subtle:        #486a7b;                  /* placeholders/disabled ONLY */
+ --do-text-on-dark:       var(--do-off-white);      /* 13.14:1 on Prussian Blue */
+ --do-text-muted-on-dark: var(--do-sky-blue);       /* 7.74:1 — the muted tier on dark */
+ --do-text-accent:        var(--do-cerulean);       /* ≥24px display only */
+ 
+
+[0m
+[0m← [0mEdit app/design-system/colors_and_type.css
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\colors_and_type.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\colors_and_type.css
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\colors_and_type.css
+@@ -180,8 +180,9 @@
+ --do-text-subtle:        #486a7b;                  /* placeholders/disabled ONLY */
+ --do-text-on-dark:       var(--do-off-white);      /* 13.14:1 on Prussian Blue */
+ --do-text-muted-on-dark: var(--do-sky-blue);       /* 7.74:1 — the muted tier on dark */
+ --do-text-accent:        var(--do-cerulean);       /* ≥24px display only */
++--do-text-cerulean:      #176f86;                  /* 5.45:1 on Off-White — cerulean for text/links */
+ 
+ /* --- Borders --- */
+ --do-border-subtle:  #d4e8f0;                      /* the quiet default */
+ --do-border-default: var(--do-sky-blue);           /* real dividers */
+
+[0m
+[0m→ [0mRead app/globals.css[90m [limit=100][0m
+[0m
+[0m← [0mEdit app/globals.css
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
+@@ -37,9 +37,10 @@
+ 
+ /* Semantic */
+ --do-text-primary:        var(--do-prussian-blue);
+ --do-text-accent:         var(--do-cerulean);
+---do-text-muted:          #5a7d8f;
++--do-text-cerulean:       #176f86;
++--do-text-muted:          #486a7b;
+ --do-text-on-dark:        var(--do-off-white);
+ --do-surface-page:        var(--do-off-white);
+ --do-surface-dark:        var(--do-prussian-blue);
+ --do-border-default:      var(--do-sky-blue);
+
+[0m
+[0m← [0mEdit app/globals.css
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
+@@ -80,8 +80,9 @@
+ /* ── Tailwind CSS v4 theme extension ── */
+ @theme {
+   --color-prussian-blue: #023047;
+   --color-cerulean:      #219EBC;
++  --color-cerulean-text: #176f86;
+   --color-sky-blue:      #8ECAE6;
+   --color-amber:         #FFB703;
+   --color-orange-brand:  #FB8500;
+   --color-off-white:     #F8F9FA;
+
+[0m
+[0m• [0mFind cerulean text CSS[90m Explore Agent[0m
+[0m✓ [0mFind cerulean text CSS[90m Explore Agent[0m
+The key changes needed are:
+1. Make `text-cerulean` Tailwind class use the accessible text shade
+2. Fix the specific CSS rules mentioned in the brief
+3. Fix inline styles in LocationPage.tsx
+
+Let me make these changes:
+[0m
+[0m← [0mEdit app/globals.css
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
+@@ -79,9 +79,10 @@
+ 
+ /* ── Tailwind CSS v4 theme extension ── */
+ @theme {
+   --color-prussian-blue: #023047;
+-  --color-cerulean:      #219EBC;
++  --color-cerulean:      #176f86;
++  --color-cerulean-fill: #219EBC;
+   --color-cerulean-text: #176f86;
+   --color-sky-blue:      #8ECAE6;
+   --color-amber:         #FFB703;
+   --color-orange-brand:  #FB8500;
+
+[0m
+[0m← [0mEdit app/globals.css
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
+@@ -79,10 +79,9 @@
+ 
+ /* ── Tailwind CSS v4 theme extension ── */
+ @theme {
+   --color-prussian-blue: #023047;
+-  --color-cerulean:      #176f86;
+-  --color-cerulean-fill: #219EBC;
++  --color-cerulean:      #219EBC;
+   --color-cerulean-text: #176f86;
+   --color-sky-blue:      #8ECAE6;
+   --color-amber:         #FFB703;
+   --color-orange-brand:  #FB8500;
+
+[0m
+[0m→ [0mRead app/d17-locations.css[90m [limit=30, offset=20][0m
+Let me fix the specific contrast issues mentioned in the brief:
+[0m✱ [0mGrep "class.*logo|className.*logo"[90m in components · 2 matches[0m
+[0m✱ [0mGrep "\.logo\s+span"[90m in app/design-system · 2 matches[0m
+[0m
+[0m← [0mEdit app/design-system/ds-marketing.css
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\ds-marketing.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\ds-marketing.css
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\ds-marketing.css
+@@ -88,9 +88,9 @@
+   border-bottom:1px solid color-mix(in srgb, var(--do-sky-blue) 35%, transparent) }
+ .site-head .wrap{ display:flex; align-items:center; justify-content:space-between; height:76px }
+ .logo{ font-family:var(--do-font-heading); font-weight:var(--do-weight-extrabold);
+   font-size:21px; letter-spacing:-0.01em; text-decoration:none; color:var(--do-text-primary) }
+-.logo span{ color:var(--do-cerulean) }
++.logo span{ color:var(--do-text-cerulean) }
+ /* On a dark ground the logotype inverts, exactly as the SVG asset draws it:
+    Off-White "Decoded", Amber "Ops" (7.93:1). Without this, .logo's
+    --do-text-primary wins over `footer a` on specificity and "Decoded"
+    renders Prussian Blue on Prussian Blue — invisible. Fixed 31 Jul 2026. */
+
+[0m
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=50, offset=155][0m
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+@@ -162,9 +162,9 @@
+   <div
+     key={p.title}
+     className="card"
+   >
+-    <div style={{ fontSize: 'var(--do-text-3xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)', marginBottom: 16 }}>{String(i + 1).padStart(2, '0')}</div>
++    <div style={{ fontSize: 'var(--do-text-3xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)', marginBottom: 16 }}>{String(i + 1).padStart(2, '0')}</div>
+     <h3 className="h3" style={{ marginBottom: 8 }}>{p.title}</h3>
+     <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)', lineHeight: 1.75, marginBottom: 0 }}>{p.body}</p>
+   </div>
+ ))}
+
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+@@ -191,9 +191,9 @@
+       >
+         <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
+           <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+         </div>
+-        <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72, lineHeight: 1.75, marginBottom: 0 }}>{item}</p>
++        <p style={{ fontSize: 'var(--do-text-sm)', color: '#a7b8c1', lineHeight: 1.75, marginBottom: 0 }}>{item}</p>
+       </div>
+     ))}
+   </div>
+ </div>
+
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+@@ -189,9 +189,9 @@
+     className="card"
+     style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}
+   >
+     <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
+-      <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: '#a7b8c1' }}>{String(i + 1).padStart(2, '0')}</span>
+     </div>
+     <p style={{ fontSize: 'var(--do-text-sm)', color: '#a7b8c1', lineHeight: 1.75, marginBottom: 0 }}>{item}</p>
+   </div>
+ ))}
+
+[0m
+[0m← [0mEdit app/d17-locations.css
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css
+@@ -44,9 +44,9 @@
+ .steps li{ counter-increment:s; display:grid; grid-template-columns:40px 1fr; gap:10px; padding:16px 0;
+   border-top:1px solid color-mix(in srgb, var(--do-sky-blue) 30%, transparent);
+   font-size:var(--do-text-base); line-height:1.5; color:var(--do-text-secondary) }
+ .steps li::before{ content:'0' counter(s); font-family:var(--do-font-heading); font-weight:800;
+-  color:var(--do-cerulean); font-size:var(--do-text-sm); padding-top:2px }
++  color:var(--do-text-cerulean); font-size:var(--do-text-sm); padding-top:2px }
+ .trust{ list-style:none; padding:0; margin:0 auto 30px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px 26px }
+ .trust li{ display:flex; gap:9px; align-items:center; font-size:var(--do-text-sm); color:var(--do-text-muted-on-dark) }
+ .trust li::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--do-sky-blue); flex:none }
+ .cta-strip .direct{ color:var(--do-text-muted-on-dark) } .cta-strip .direct a{ color:var(--do-off-white) }
+
+[0m
+[0m← [0mEdit app/d17-locations.css
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css
+@@ -21,9 +21,9 @@
+ .hero-center .eyebrow{ margin-inline:auto }
+ .hero-center .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:28px }
+ .hero-art{ margin-top:44px; max-width:880px; margin-inline:auto }
+ .direct{ display:block; margin-top:14px; font-size:var(--do-text-sm); color:var(--do-text-subtle) }
+-.direct a{ color:var(--do-text-primary); font-weight:600 }
++.direct a{ color:var(--do-text-primary); font-weight:600; text-decoration: underline; text-underline-offset: 2px }
+ .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 0; padding:0; list-style:none }
+ .chips li{ font-size:var(--do-text-xs); font-weight:600; color:var(--do-text-primary);
+   border:1px solid color-mix(in srgb, var(--do-cerulean) 40%, transparent);
+   background:color-mix(in srgb, var(--do-sky-blue) 14%, transparent); border-radius:99px; padding:6px 12px }
+
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(seo): WCAG AA contrast — cerulean-text token, subtle text, location numbers + dark text (CR-WEB-065 #10)"
+[web065-tech-seo 42c17f3] fix(seo): WCAG AA contrast — cerulean-text token, subtle text, location numbers + dark text (CR-WEB-065 #10)
+ 5 files changed, 11 insertions(+), 8 deletions(-)
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[✓] 4. Missing og:image on 28 pages — create helper + apply
+[✓] 5. Fix og:url on 3 tools pages
+[✓] 6. Replace /fractional links with /retained
+[✓] 7. Fix SVG template bug in coverage-map.ts
+[✓] 8. Image optimization (WebP, sizes, caching headers)
+[✓] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[✓] 10. Colour contrast (WCAG AA) — accessible text shades
+[•] 11. Fix heading order (footer + location art labels)
+[ ] 12. Fix duplicate organisation schema on town pages
+[ ] Run tsc + npm run build verification
+[ ] Write lane report files + commit
+[0m
+[0m→ [0mRead components/Footer.tsx[90m [limit=60, offset=60][0m
+[0m
+[0m← [0mEdit components/Footer.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\Footer.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\Footer.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\Footer.tsx
+@@ -77,9 +77,9 @@
+ 
+ function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
+   return (
+     <div className="f-col">
+-      <h4>{title}</h4>
++      <p className="f-col-title">{title}</p>
+       {links.map(link => (
+         <Link key={link.href + link.label} href={link.href}>{link.label}</Link>
+       ))}
+     </div>
+
+[0m
+[0m✱ [0mGrep "\.f-col\s+h4|\.f-col h4"[90m in app/design-system · 0 matches[0m
+[0m✱ [0mGrep "f-col"[90m in app/design-system · 2 matches[0m
+[0m→ [0mRead app/design-system/ds-footer.css
+[0m
+[0m← [0mEdit app/design-system/ds-footer.css
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\ds-footer.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\ds-footer.css
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\design-system\ds-footer.css
+@@ -35,9 +35,9 @@
+   border-color:var(--do-sky-blue); color:var(--do-off-white) }
+ .f-reach .f-cta:focus-visible, .f-contact a:focus-visible{ outline:2px solid var(--do-sky-blue);
+   outline-offset:3px; border-radius:var(--do-radius-sm) }
+ 
+-footer.f-tight h4{ font-size:var(--do-text-xs); font-weight:var(--do-weight-semibold);
++footer.f-tight h4, footer.f-tight .f-col-title{ font-size:var(--do-text-xs); font-weight:var(--do-weight-semibold);
+   letter-spacing:var(--do-tracking-wider); text-transform:uppercase;
+   color:color-mix(in srgb, var(--do-off-white) 58%, transparent); margin:0 0 12px }
+ footer.f-tight .f-col a{ display:block; font-size:var(--do-text-sm); text-decoration:none;
+   margin:0 0 8px; color:var(--do-text-muted-on-dark) }
+
+[0m
+[0m✱ [0mGrep "\.foot\s+h3|\.stations.*h4"[90m in app/locations · 0 matches[0m
+[0m✱ [0mGrep "class.*foot.*h3|class.*stations.*h4"[90m in . · 0 matches[0m
+[0m✱ [0mGrep "\.foot\b|\.stations\b"[90m in . · 69 matches[0m
+[0m✱ [0mGrep "\.foot|className.*foot"[90m in app/locations · 0 matches[0m
+[0m✱ [0mGrep "<h3|<h4"[90m in app/locations · 13 matches[0m
+[0m→ [0mRead app/locations/fractional-cto/[location]/page.tsx[90m [limit=20, offset=147][0m
+[0m
+[0m← [0mEdit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+@@ -147,13 +147,13 @@
+           </g>
+           <circle cx="894" cy="328" r="14" fill="var(--do-amber)" stroke="var(--do-prussian-blue)" stroke-width="5" class="m-pop" style="animation-delay:2.2s"/>
+         </svg>
+         <div class="stations">
+-          <div class="st m-fade" style="left:calc(60 * var(--u)); top:calc(354 * var(--u)); animation-delay:.3s"><span class="n">Week 1</span><h4>Leadership meeting</h4><p>In the room, present and accountable.</p></div>
+-          <div class="st m-fade" style="left:calc(264 * var(--u)); top:calc(414 * var(--u)); animation-delay:.6s"><span class="n">Week 2</span><h4>Vendor conversations</h4><p>Your technology voice. No commission.</p></div>
+-          <div class="st m-fade" style="left:calc(470 * var(--u)); top:calc(354 * var(--u)); animation-delay:.9s"><span class="n">Week 3</span><h4>Roadmap reviewed</h4><p>What moved, what's next, in order.</p></div>
+-          <div class="st m-fade" style="left:calc(676 * var(--u)); top:calc(414 * var(--u)); animation-delay:1.2s"><span class="n">Week 4</span><h4>Team capability</h4><p>Less dependent every month, not more.</p></div>
+-          <div class="st st--end m-fade" style="left:calc(882 * var(--u)); top:calc(354 * var(--u)); width:calc(240 * var(--u)); animation-delay:2.2s"><span class="n">Every month</span><h4>Decisions owned</h4><p>Written down, in the pack, month after month.</p></div>
++          <div class="st m-fade" style="left:calc(60 * var(--u)); top:calc(354 * var(--u)); animation-delay:.3s"><span class="n">Week 1</span><b>Leadership meeting</b><p>In the room, present and accountable.</p></div>
++          <div class="st m-fade" style="left:calc(264 * var(--u)); top:calc(414 * var(--u)); animation-delay:.6s"><span class="n">Week 2</span><b>Vendor conversations</b><p>Your technology voice. No commission.</p></div>
++          <div class="st m-fade" style="left:calc(470 * var(--u)); top:calc(354 * var(--u)); animation-delay:.9s"><span class="n">Week 3</span><b>Roadmap reviewed</b><p>What moved, what's next, in order.</p></div>
++          <div class="st m-fade" style="left:calc(676 * var(--u)); top:calc(414 * var(--u)); animation-delay:1.2s"><span class="n">Week 4</span><b>Team capability</b><p>Less dependent every month, not more.</p></div>
++          <div class="st st--end m-fade" style="left:calc(882 * var(--u)); top:calc(354 * var(--u)); width:calc(240 * var(--u)); animation-delay:2.2s"><span class="n">Every month</span><b>Decisions owned</b><p>Written down, in the pack, month after month.</p></div>
+         </div>
+         <span class="d17-mark d17-mark--abs">decodedops.co.uk · DO-ART-1003 · Rev 01</span>
+       </figure>`;
+ }
+
+[0m
+[0m← [0mEdit lib/coverage-map.ts
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\lib\coverage-map.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\lib\coverage-map.ts
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\lib\coverage-map.ts
+@@ -154,9 +154,9 @@
+ <div class="q-grid" aria-hidden="true"></div>
+ <figcaption class="sw-cap">
+   <div class="k d17-mono">${escapeHtml(service)} <span>· where I work</span></div>
+   <div class="bar" aria-hidden="true"></div>
+-  <h3>Worthing-based. On site where the work needs it.</h3>
++  <b>Worthing-based. On site where the work needs it.</b>
+   <ul class="legend">
+     <li><i class="base"></i>Base: Worthing, West Sussex</li>
+     <li><i></i>On site across Sussex and Surrey</li>
+     <li><i></i>Greater London</li>
+
+[0m
+[0m→ [0mRead app/locations/tech-audit/[location]/page.tsx[90m [limit=30, offset=78][0m
+[0m
+[0m← [0mEdit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+@@ -77,9 +77,9 @@
+ <div class="d17-scan" aria-hidden="true"></div>
+ <figcaption class="sw-cap">
+   <div class="k d17-mono">Clarity Audit <span>· what you get</span></div>
+   <div class="bar" aria-hidden="true"></div>
+-  <h3>Where the cost is hiding, and what to change first.</h3>
++  <b>Where the cost is hiding, and what to change first.</b>
+   <p>One day on site. A written report within five working days: specific, costed, with
+     independent vendor recommendations.</p>
+   <span class="d17-mark">decodedops.co.uk · DO-ART-1004 · Rev 01</span>
+ </figcaption>
+
+[0m
+[0m← [0mEdit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+@@ -85,9 +85,9 @@
+ </figcaption>
+ <div class="stage" aria-hidden="true">
+   <div class="d17-doc doc-f m-drop" style="animation-delay:.1s"><span class="tab">REPORT</span>
+     <span class="ref">Clarity Audit · findings</span>
+-    <h4>Where the cost is hiding</h4>
++    <b>Where the cost is hiding</b>
+     <p class="sub">A <span class="tv">${t}</span> business · one day on site</p>
+     <div class="fx">
+       <div class="r top"><span>Orders keyed in twice</span><i class="m-fill" style="--w:100%;animation-delay:.9s"></i><em>Costed</em></div>
+       <div class="r"><span>Stock counted in two places</span><i class="m-fill" style="--w:78%;animation-delay:1s"></i><em>Costed</em></div>
+
+[0m
+[0m← [0mEdit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+@@ -97,9 +97,9 @@
+   </div>
+   <div class="doc-foot">Every manual handoff documented · costed line by line</div></div>
+ <div class="d17-doc doc-m m-drop" style="animation-delay:.45s"><span class="tab">ROADMAP</span>
+   <span class="ref">The changes, in order</span>
+-  <h4>Three to five changes</h4>
++  <b>Three to five changes</b>
+   <ol class="chg">
+     <li>One stock figure<span class="st-chip st-chip--a">Now</span></li>
+     <li>Orders entered once<span class="st-chip st-chip--a">Now</span></li>
+     <li>Reports that build themselves<span class="st-chip">Next</span></li>
+
+[0m
+[0m→ [0mRead app/locations/fractional-cto/[location]/page.tsx[90m [limit=10, offset=113][0m
+[0m
+[0m← [0mEdit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+@@ -114,9 +114,9 @@
+ <div class="foot">
+   <div>
+     <div class="k d17-mono">Fractional CTO <span>· the monthly pack</span></div>
+     <div class="bar" aria-hidden="true"></div>
+-    <h3>A standing decision-maker. Every decision written down.</h3>
++    <b>A standing decision-maker. Every decision written down.</b>
+   </div>
+   <div>
+     <p>Present in the room, your voice with vendors, and a roadmap you can act on,
+       reviewed every month rather than rebuilt every time something breaks.</p>
+
+[0m
+[0m→ [0mRead app/locations/fractional-cto/[location]/page.tsx[90m [limit=20, offset=78][0m
+[0m
+[0m← [0mEdit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+@@ -79,9 +79,9 @@
+ <div class="sx-tag t1 m-pop" style="animation-delay:1.2s"><small>Every month</small>In the leadership meeting</div>
+ <div class="sx-tag sx-tag--a t2 m-pop" style="animation-delay:1.4s"><small>Standing</small>Not just on call</div>
+ <div class="d17-doc doc-c m-drop" style="animation-delay:.1s"><span class="tab">PACK</span>
+   <span class="ref">Monthly technology review</span>
+-  <h4>Leadership meeting pack</h4>
++  <b>Leadership meeting pack</b>
+   <p class="sub">Prepared for the <span class="tv">${t}</span> leadership team</p>
+   <ol class="pk">
+     <li>Decisions due this month</li>
+     <li>Vendor renewals and contracts</li>
+
+[0m
+[0m← [0mEdit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+@@ -91,9 +91,9 @@
+   </ol>
+   <div class="doc-foot">Independent · no vendor commission</div></div>
+ <div class="d17-doc doc-d m-drop" style="animation-delay:.35s"><span class="tab">DECISIONS</span>
+   <span class="ref">Decision log</span>
+-  <h4>Owned, dated, written down</h4>
++  <b>Owned, dated, written down</b>
+   <div class="dl">
+     <div class="r h"><span>Decision</span><span>Owner</span><span>Status</span></div>
+     <div class="r"><span>Replace the order spreadsheet</span><span class="who">MD</span><span class="st-chip">Agreed</span></div>
+     <div class="r"><span>Supplier feed contract renewal</span><span class="who">Ops lead</span><span class="st-chip st-chip--o">In review</span></div>
+
+[0m
+[0m→ [0mRead app/locations/fractional-cto/[location]/page.tsx[90m [limit=15, offset=100][0m
+[0m
+[0m← [0mEdit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+@@ -102,9 +102,9 @@
+     <div class="r"><span>Backup and restore test</span><span class="who">CTO</span><span class="st-chip st-chip--o">Booked</span></div>
+   </div></div>
+ <div class="d17-doc doc-r m-drop" style="animation-delay:.6s"><span class="tab">ROADMAP</span>
+   <span class="ref">Next 90 days</span>
+-  <h4>Now, next, later</h4>
++  <b>Now, next, later</b>
+   <div class="rm">
+     <div class="c"><b>Now</b><span class="a">One stock figure</span><span>Order entry, once</span></div>
+     <div class="c"><b>Next</b><span>Supplier feeds</span><span>Weekly reporting</span></div>
+     <div class="c"><b>Later</b><span>Web platform</span><span>Team training</span></div>
+
+[0m
+[0m→ [0mRead app/locations/tech-audit/[location]/page.tsx[90m [limit=10, offset=119][0m
+[0m
+[0m← [0mEdit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+@@ -119,9 +119,9 @@
+ <div class="q-grid" aria-hidden="true"></div>
+ <figcaption class="sw-cap">
+   <div class="k d17-mono">Clarity Audit <span>· example day plan</span></div>
+   <div class="bar" aria-hidden="true"></div>
+-  <h3>One day on site. A written report within five.</h3>
++  <b>One day on site. A written report within five.</b>
+   <p>Talking to the people doing the work, not just the people managing it.</p>
+   <span class="d17-mark">decodedops.co.uk · DO-ART-1005 · Rev 01</span>
+ </figcaption>
+ <div class="plan" aria-hidden="true">
+
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(a11y): heading order — footer h4→p, artwork h3/h4→b (CR-WEB-065 #11)"
+[web065-tech-seo 4a7eb0f] fix(a11y): heading order — footer h4→p, artwork h3/h4→b (CR-WEB-065 #11)
+ 5 files changed, 16 insertions(+), 16 deletions(-)
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[✓] 4. Missing og:image on 28 pages — create helper + apply
+[✓] 5. Fix og:url on 3 tools pages
+[✓] 6. Replace /fractional links with /retained
+[✓] 7. Fix SVG template bug in coverage-map.ts
+[✓] 8. Image optimization (WebP, sizes, caching headers)
+[✓] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[✓] 10. Colour contrast (WCAG AA) — accessible text shades
+[✓] 11. Fix heading order (footer + location art labels)
+[•] 12. Fix duplicate organisation schema on town pages
+[ ] Run tsc + npm run build verification
+[ ] Write lane report files + commit
+[0m
+[0m→ [0mRead app/locations/fractional-cto/[location]/page.tsx[90m [limit=40, offset=210][0m
+[0m→ [0mRead app/locations/fractional-cto/[location]/page.tsx[90m [limit=40, offset=180][0m
+[0m
+[0m← [0mEdit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\fractional-cto\[location]\page.tsx
+@@ -188,13 +188,12 @@
+   type="application/ld+json"
+   dangerouslySetInnerHTML={{
+     __html: JSON.stringify({
+       '@context': 'https://schema.org',
+-      '@type': 'ProfessionalService',
+-      name: 'Decoded Ops',
++      '@type': 'Service',
++      name: 'Fractional CTO',
+       description: `Fractional CTO services for businesses in ${loc.name}, ${loc.county}`,
+-      address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' },
+-      telephone: '07735 620 603',
++      provider: { '@id': 'https://decodedops.co.uk/#organisation' },
+       areaServed: [
+         {
+           '@type': 'City',
+           name: loc.name,
+@@ -208,24 +207,9 @@
+           geoMidpoint: { '@type': 'GeoCoordinates', latitude: 50.8179, longitude: -0.3729 },
+           geoRadius: '160000',
+         },
+       ],
+-      geo: { '@type': 'GeoCoordinates', latitude: 50.8179, longitude: -0.3729 },
+-      hasOfferCatalog: {
+-        '@type': 'OfferCatalog',
+-        name: 'Fractional CTO',
+-        itemListElement: [
+-          {
+-            '@type': 'Offer',
+-            itemOffered: {
+-              '@type': 'Service',
+-              name: 'Fractional CTO',
+-              url: 'https://decodedops.co.uk/retained',
+-            },
+-          },
+-        ],
+-      },
+-      parentOrganization: { '@id': 'https://decodedops.co.uk/#organisation' },
++      serviceType: 'Fractional CTO',
+       url: `https://decodedops.co.uk/locations/fractional-cto/${loc.slug}`,
+     }),
+   }}
+ />
+
+[0m
+[0m→ [0mRead app/locations/tech-audit/[location]/page.tsx[90m [limit=60, offset=130][0m
+[0m→ [0mRead app/locations/tech-audit/[location]/page.tsx[90m [limit=40, offset=188][0m
+[0m
+[0m← [0mEdit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+@@ -176,13 +176,12 @@
+   type="application/ld+json"
+   dangerouslySetInnerHTML={{
+     __html: JSON.stringify({
+       '@context': 'https://schema.org',
+-      '@type': 'ProfessionalService',
+-      name: 'Decoded Ops',
++      '@type': 'Service',
++      name: 'Technology Audit',
+       description: `Technology audit services for small businesses in ${loc.name}, ${loc.county}`,
+-      address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' },
+-      telephone: '07735 620 603',
++      provider: { '@id': 'https://decodedops.co.uk/#organisation' },
+       areaServed: [
+         {
+           '@type': 'City',
+           name: loc.name,
+@@ -196,24 +195,9 @@
+           geoMidpoint: { '@type': 'GeoCoordinates', latitude: 50.8179, longitude: -0.3729 },
+           geoRadius: '160000',
+         },
+       ],
+-      geo: { '@type': 'GeoCoordinates', latitude: 50.8179, longitude: -0.3729 },
+-      hasOfferCatalog: {
+-        '@type': 'OfferCatalog',
+-        name: 'Technology Audit',
+-        itemListElement: [
+-          {
+-            '@type': 'Offer',
+-            itemOffered: {
+-              '@type': 'Service',
+-              name: 'Technology Audit',
+-              url: 'https://decodedops.co.uk/clarity',
+-            },
+-          },
+-        ],
+-      },
+-      parentOrganization: { '@id': 'https://decodedops.co.uk/#organisation' },
++      serviceType: 'Technology Audit',
+       url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}`,
+     }),
+   }}
+ />
+
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(seo): deduplicate organisation schema on location pages — Service type with provider @id (CR-WEB-065 #12)"
+[web065-tech-seo e1e33ca] fix(seo): deduplicate organisation schema on location pages — Service type with provider @id (CR-WEB-065 #12)
+ 2 files changed, 8 insertions(+), 40 deletions(-)
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[✓] 4. Missing og:image on 28 pages — create helper + apply
+[✓] 5. Fix og:url on 3 tools pages
+[✓] 6. Replace /fractional links with /retained
+[✓] 7. Fix SVG template bug in coverage-map.ts
+[✓] 8. Image optimization (WebP, sizes, caching headers)
+[✓] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[✓] 10. Colour contrast (WCAG AA) — accessible text shades
+[✓] 11. Fix heading order (footer + location art labels)
+[✓] 12. Fix duplicate organisation schema on town pages
+[•] Run tsc + npm run build verification
+[ ] Write lane report files + commit
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mnpm run build 2>&1
+> decoded-ops-next@0.1.0 prebuild
+> node scripts/generate-route-slugs.mjs
+
+[route-slugs] 18 problems, 10 sectors, 5 tools
+
+> decoded-ops-next@0.1.0 build
+> next build
+
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 153ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 15.7s
+  Running TypeScript ...
+  Finished TypeScript in 7.5s ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/173) ...
+  Generating static pages using 15 workers (43/173) 
+  Generating static pages using 15 workers (86/173) 
+  Generating static pages using 15 workers (129/173) 
+✓ Generating static pages using 15 workers (173/173) in 1027ms
+  Finalizing page optimization ...
+
+Route (app)                                          Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/auth/login
+├ ƒ /api/clients/documents/[id]/questionnaire
+├ ƒ /api/clients/documents/[id]/sign
+├ ƒ /api/clients/uploads
+├ ƒ /api/contact
+├ ƒ /api/tools/capture
+├ ○ /apps
+├ ○ /apps/commerce
+├ ○ /apps/proof
+├ ○ /apps/works
+├ ○ /blog                                                    5m      1y
+├ ƒ /blog/[slug]
+├ ○ /case-studies
+├ ○ /case-studies/case-study-01
+├ ○ /case-studies/case-study-02
+├ ○ /case-studies/case-study-03
+├ ○ /case-studies/eternal-fitness
+├ ○ /clarity
+├ ƒ /clients/[clientId]
+├ ƒ /clients/dashboard
+├ ƒ /clients/documents
+├ ƒ /clients/documents/view/[id]
+├ ○ /clients/login
+├ ƒ /clients/project
+├ ○ /contact
+├ ○ /cookies
+├ ○ /deliver
+├ ○ /how-i-build
+├ ○ /locations/fractional-cto
+├   /locations/fractional-cto/[location]
+│ ├ ● /locations/fractional-cto/chichester
+│ ├ ● /locations/fractional-cto/worthing
+│ ├ ● /locations/fractional-cto/horsham
+│ └ ● [+26 more paths]
+├ ○ /locations/tech-audit
+├   /locations/tech-audit/[location]
+│ ├ ● /locations/tech-audit/chichester
+│ ├ ● /locations/tech-audit/worthing
+│ ├ ● /locations/tech-audit/horsham
+│ └ ● [+26 more paths]
+├ ƒ /opengraph-image
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /problems
+├ ○ /problems/ai-paralysis
+├ ○ /problems/bottleneck-growth
+├ ○ /problems/buy-vs-build
+├ ○ /problems/cant-scale-operations
+├ ○ /problems/data-scattered
+├ ○ /problems/disaster-recovery
+├ ○ /problems/ecommerce-not-connected
+├ ○ /problems/erp-implementation-failure
+├ ○ /problems/inventory-blind
+├ ○ /problems/legacy-system
+├ ○ /problems/manual-workarounds
+├ ○ /problems/no-ops-owner
+├ ○ /problems/ops-in-owners-head
+├ ○ /problems/seasonal-peaks
+├ ○ /problems/slow-processes
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/artwork-approval-playbook
+├ ○ /resources/audit-checklist
+├ ○ /resources/capacity-planner
+├ ○ /resources/decoded-method
+├ ○ /resources/erp-selection-playbook
+├ ○ /resources/seasonal-capacity
+├ ○ /resources/six-sigma
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ƒ /robots.txt
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/operations-consultant-print-embroidery
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ƒ /sitemap.xml
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[✓] 4. Missing og:image on 28 pages — create helper + apply
+[✓] 5. Fix og:url on 3 tools pages
+[✓] 6. Replace /fractional links with /retained
+[✓] 7. Fix SVG template bug in coverage-map.ts
+[✓] 8. Image optimization (WebP, sizes, caching headers)
+[✓] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[✓] 10. Colour contrast (WCAG AA) — accessible text shades
+[✓] 11. Fix heading order (footer + location art labels)
+[✓] 12. Fix duplicate organisation schema on town pages
+[✓] Run tsc + npm run build verification
+[•] Write lane report files + commit
+[0m
+[0m$ [0mgit log --oneline -10
+e1e33ca fix(seo): deduplicate organisation schema on location pages — Service type with provider @id (CR-WEB-065 #12)
+4a7eb0f fix(a11y): heading order — footer h4→p, artwork h3/h4→b (CR-WEB-065 #11)
+42c17f3 fix(seo): WCAG AA contrast — cerulean-text token, subtle text, location numbers + dark text (CR-WEB-065 #10)
+b6c70f6 fix(seo): add fetchpriority=high to hero images via PhotoPiece priority prop (CR-WEB-065 #9)
+34eaae3 fix(seo): WebP images, update refs, add cache headers (CR-WEB-065 #8)
+c0a9506 fix(seo): fix SVG template literal bug in coverage-map.ts (CR-WEB-065 #7)
+e117342 fix(seo): replace /fractional links with /retained in location template (CR-WEB-065 #6)
+fc74bf3 fix(seo): correct og:url on 3 tools pages (CR-WEB-065 #5)
+e79357d fix(seo): add missing og:image to 28 pages (CR-WEB-065 #4)
+8d4dd1f fix(seo): stable lastmod dates + add calculator pages to sitemap (CR-WEB-065 #3)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web065-tech-seo.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web065-tech-seo.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "docs: lane report for web065-tech-seo (CR-WEB-065)"
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web065-tech-seo.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web065-tech-seo.json', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo 7348066] docs: lane report for web065-tech-seo (CR-WEB-065)
+ 2 files changed, 88 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web065-tech-seo.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web065-tech-seo.json
+[0m
+[0m# [0mTodos
+[✓] 1. HTML lang: en → en-GB in app/layout.tsx
+[✓] 2. Remove double font loading (@import from CSS + any other google fonts refs)
+[✓] 3. Sitemap lastmod: stable dates + add calculator pages
+[✓] 4. Missing og:image on 28 pages — create helper + apply
+[✓] 5. Fix og:url on 3 tools pages
+[✓] 6. Replace /fractional links with /retained
+[✓] 7. Fix SVG template bug in coverage-map.ts
+[✓] 8. Image optimization (WebP, sizes, caching headers)
+[✓] 9. Fix LCP (lazy loading, fetchpriority, hero visibility)
+[✓] 10. Colour contrast (WCAG AA) — accessible text shades
+[✓] 11. Fix heading order (footer + location art labels)
+[✓] 12. Fix duplicate organisation schema on town pages
+[✓] Run tsc + npm run build verification
+[✓] Write lane report files + commit
+[0m
+[0m$ [0mgit log --oneline -12
+7348066 docs: lane report for web065-tech-seo (CR-WEB-065)
+e1e33ca fix(seo): deduplicate organisation schema on location pages — Service type with provider @id (CR-WEB-065 #12)
+4a7eb0f fix(a11y): heading order — footer h4→p, artwork h3/h4→b (CR-WEB-065 #11)
+42c17f3 fix(seo): WCAG AA contrast — cerulean-text token, subtle text, location numbers + dark text (CR-WEB-065 #10)
+b6c70f6 fix(seo): add fetchpriority=high to hero images via PhotoPiece priority prop (CR-WEB-065 #9)
+34eaae3 fix(seo): WebP images, update refs, add cache headers (CR-WEB-065 #8)
+c0a9506 fix(seo): fix SVG template literal bug in coverage-map.ts (CR-WEB-065 #7)
+e117342 fix(seo): replace /fractional links with /retained in location template (CR-WEB-065 #6)
+fc74bf3 fix(seo): correct og:url on 3 tools pages (CR-WEB-065 #5)
+e79357d fix(seo): add missing og:image to 28 pages (CR-WEB-065 #4)
+8d4dd1f fix(seo): stable lastmod dates + add calculator pages to sitemap (CR-WEB-065 #3)
+7c675e2 fix(seo): html lang en-GB + remove double font loading (CR-WEB-065 #1,#2)
+[0m
+[0m$ [0mgit status --short
+(no output)
+[0m
+Lane complete. 12 commits, `tsc` clean, `npm run build` passes (173 pages). Report files committed at `.context/lane-reports/`.

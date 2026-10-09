@@ -1,0 +1,186 @@
+
+> build · mimo-v2.5
+
+# Todos
+[ ] Fix decoded-method hero grid inline style → hero-split class
+[ ] Fix six-sigma hero grid inline style → hero-split class
+[ ] Fix about page portrait alt text
+[ ] Verify tsc clean + git diff stat
+[ ] Commit fixes
+[ ] Write lane result JSON + notes MD, commit both
+
+→ Read app/resources/decoded-method/page.tsx
+→ Read app/resources/six-sigma/page.tsx
+→ Read app/about/page.tsx
+
+# Todos
+[•] Fix decoded-method hero grid inline style → hero-split class
+[ ] Fix six-sigma hero grid inline style → hero-split class
+[ ] Fix about page portrait alt text
+[ ] Verify tsc clean + git diff stat
+[ ] Commit fixes
+[ ] Write lane result JSON + notes MD, commit both
+
+Now I have all three files. Let me make the edits in parallel.
+← Edit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\resources\decoded-method\page.tsx
+@@ -104,9 +104,9 @@
+ <>
+   <JsonLd data={schema} />
+ 
+   <section className="g-off">
+-    <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
++    <div className="wrap hero-split">
+       <div>
+         <span className="eyebrow">Free playbook</span>
+         <h1>The Decoded Method</h1>
+         <p className="lede">
+
+
+← Edit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\resources\six-sigma\page.tsx
+@@ -50,9 +50,9 @@
+ <JsonLd data={schema} />
+ 
+ {/* HERO, dark ground */}
+ <section className="g-off">
+-  <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
++  <div className="wrap hero-split">
+     <div>
+       <span className="eyebrow">Free playbook · Garment decoration</span>
+       <h1>What 5 &amp; 6 Sigma mean for your print &amp; embroidery operation</h1>
+       <div className="hair" />
+
+
+← Edit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\about\page.tsx
+@@ -47,9 +47,9 @@
+ 
+ <div className={s.heroShot}>
+   <div className={s.photo} data-od-id="about-visual">
+     <img src="/images/craig-blackman.jpg" width="1400" height="1500"
+-         alt="Craig Blackman, founder of Decoded Ops, photographed in a garment decoration workshop." />
++         alt="Craig Blackman, founder of Decoded Ops." />
+   </div>
+   <p className={s.shotCaption}>Twenty-five years in rooms like this one, on both sides of the
+     system that runs them.</p>
+ </div>
+
+
+# Todos
+[✓] Fix decoded-method hero grid inline style → hero-split class
+[✓] Fix six-sigma hero grid inline style → hero-split class
+[✓] Fix about page portrait alt text
+[•] Verify tsc clean + git diff stat
+[ ] Commit fixes
+[ ] Write lane result JSON + notes MD, commit both
+
+All three edits applied. Now verify.
+$ git diff --stat HEAD~1
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+ .../LANE-NOTES-artwork-refresh-batch-a.md          | 27 ++++++++++++++++
+ .../LANE-RESULT-artwork-refresh-batch-a.json       | 36 ++++++++++++++++++++++
+ app/about/page.tsx                                 |  2 +-
+ app/resources/decoded-method/page.tsx              |  2 +-
+ app/resources/six-sigma/page.tsx                   |  2 +-
+ 5 files changed, 66 insertions(+), 3 deletions(-)
+
+$ npx tsc --noEmit 2>&1
+(no output)
+
+tsc is clean. `git diff --stat HEAD~1` shows the 3 app files plus 2 pre-existing lane-report files from the previous commit — that's expected since HEAD~1 is before the previous work. Let me verify only my 3 files are in the current working tree diff.
+$ git diff --stat
+app/about/page.tsx                    | 2 +-
+ app/resources/decoded-method/page.tsx | 2 +-
+ app/resources/six-sigma/page.tsx      | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+# Todos
+[✓] Fix decoded-method hero grid inline style → hero-split class
+[✓] Fix six-sigma hero grid inline style → hero-split class
+[✓] Fix about page portrait alt text
+[✓] Verify tsc clean + git diff stat
+[•] Commit fixes
+[ ] Write lane result JSON + notes MD, commit both
+
+Exactly 3 files. Now commit.
+$ git log --oneline -5
+51ecc35 chore: lane reports for artwork-refresh-batch-a
+1ac7251 feat(CR-WEB-030): batch A photo swaps — about portrait, 4 sector heros, decoded-method cover, data-app hero, commerce product photo
+ea5b8fe docs: LANE-RESULT.json for gf2-pillar-page-ops-consultant
+5ccd2d7 feat: add GF2 pillar page — operations consultant for print & embroidery businesses UK
+d12eac7 docs: lane briefs for CR-WEB-031 build + CSP fix
+
+$ git branch --show-current
+artwork-refresh-batch-a
+
+$ git add app/about/page.tsx app/resources/decoded-method/page.tsx app/resources/six-sigma/page.tsx && git commit -m "fix(CR-WEB-030): responsive hero-split on playbook covers; accurate about portrait alt"
+[artwork-refresh-batch-a e1024db] fix(CR-WEB-030): responsive hero-split on playbook covers; accurate about portrait alt
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+# Todos
+[✓] Fix decoded-method hero grid inline style → hero-split class
+[✓] Fix six-sigma hero grid inline style → hero-split class
+[✓] Fix about page portrait alt text
+[✓] Verify tsc clean + git diff stat
+[✓] Commit fixes
+[•] Write lane result JSON + notes MD, commit both
+
+Committed `e1024db`. Now write the lane reports.
+✱ Glob ".context/lane-reports/*" in . · 0 matches
+
+$ mkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\.context\lane-reports already exists.
+
+✱ Glob ".context/lane-reports/**/*" in . · 0 matches
+
+$ git show 51ecc35 --name-only --oneline
+51ecc35 chore: lane reports for artwork-refresh-batch-a
+.context/lane-reports/LANE-NOTES-artwork-refresh-batch-a.md
+.context/lane-reports/LANE-RESULT-artwork-refresh-batch-a.json
+
+← Write .context/lane-reports/LANE-RESULT-artwork-refresh-batch-a-fix1.json
+Wrote file successfully.
+
+← Write .context/lane-reports/LANE-NOTES-artwork-refresh-batch-a-fix1.md
+Wrote file successfully.
+
+$ git add .context/lane-reports/LANE-RESULT-artwork-refresh-batch-a-fix1.json .context/lane-reports/LANE-NOTES-artwork-refresh-batch-a-fix1.md && git commit -m "chore: lane reports for artwork-refresh-batch-a fix round 1"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-artwork-refresh-batch-a-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-artwork-refresh-batch-a-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[artwork-refresh-batch-a fc4a974] chore: lane reports for artwork-refresh-batch-a fix round 1
+ 2 files changed, 40 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-artwork-refresh-batch-a-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-artwork-refresh-batch-a-fix1.json
+
+# Todos
+[✓] Fix decoded-method hero grid inline style → hero-split class
+[✓] Fix six-sigma hero grid inline style → hero-split class
+[✓] Fix about page portrait alt text
+[✓] Verify tsc clean + git diff stat
+[✓] Commit fixes
+[✓] Write lane result JSON + notes MD, commit both
+
+$ git log --oneline -4
+fc4a974 chore: lane reports for artwork-refresh-batch-a fix round 1
+e1024db fix(CR-WEB-030): responsive hero-split on playbook covers; accurate about portrait alt
+51ecc35 chore: lane reports for artwork-refresh-batch-a
+1ac7251 feat(CR-WEB-030): batch A photo swaps — about portrait, 4 sector heros, decoded-method cover, data-app hero, commerce product photo
+
+Done. Two commits on `artwork-refresh-batch-a`:
+
+1. **`e1024db`** — `fix(CR-WEB-030): responsive hero-split on playbook covers; accurate about portrait alt` — 3 files, `npx tsc --noEmit` clean
+2. **`fc4a974`** — lane reports committed per exit contract
+
+**What changed:**
+- `decoded-method/page.tsx:108` and `six-sigma/page.tsx:54`: inline non-responsive grid replaced with `className="wrap hero-split"`
+- `about/page.tsx:51`: alt text trimmed to `"Craig Blackman, founder of Decoded Ops."`

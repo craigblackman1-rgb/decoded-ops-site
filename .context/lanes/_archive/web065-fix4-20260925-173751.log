@@ -1,0 +1,1111 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/BRIEF-web065-fix4.md
+[0m
+[0m$ [0mls -la .context/lane-briefs/
+Get-ChildItem: A parameter cannot be found that matches parameter name 'la'.
+[0m
+[0m$ [0mls .context/lane-briefs/
+Directory: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-briefs
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          25/09/2026    14:59                cr-web-056
+d----          25/09/2026    14:59                cr-web-057
+d----          25/09/2026    14:59                cr-web-059
+d----          25/09/2026    14:59                cr-web-060
+d----          25/09/2026    14:59                d17-apps-cases
+d----          25/09/2026    14:59                d17-locations
+d----          25/09/2026    14:59                d17-problems
+d----          25/09/2026    14:59                d17-resources
+d----          25/09/2026    14:59                d17-sectors
+-a---          25/09/2026    15:47           2759 BRIEF-web058-onpage.md
+-a---          25/09/2026    16:33           2226 BRIEF-web065-fix1.md
+-a---          25/09/2026    16:47           3433 BRIEF-web065-fix2-contrast.md
+-a---          25/09/2026    17:14           2327 BRIEF-web065-fix3-contrast.md
+-a---          25/09/2026    17:37           1681 BRIEF-web065-fix4.md
+-a---          25/09/2026    14:59           9536 BRIEF-web065-tech-seo.md
+-a---          25/09/2026    14:59           6683 CASE_STUDIES_COPY_2026-09-23.md
+-a---          25/09/2026    14:59           2417 cr-web-048-fix1.md
+-a---          25/09/2026    14:59            845 cr-web-048-fix2.md
+-a---          25/09/2026    14:59           2429 cr-web-048.md
+-a---          25/09/2026    14:59            364 cr-web-050-fix1.md
+-a---          25/09/2026    14:59           1194 cr-web-050-fix2.md
+-a---          25/09/2026    14:59            456 cr-web-050-fix3.md
+-a---          25/09/2026    14:59           5478 cr-web-050.md
+-a---          25/09/2026    14:59           1604 cr-web-060-build.md
+-a---          25/09/2026    15:47         102693 onpage-web058.json
+-a---          25/09/2026    14:59           3846 web-apps-cases-build.md
+-a---          25/09/2026    14:59            805 web-c-build-d17-fix2.md
+-a---          25/09/2026    14:59            475 web-content-056-fix1.md
+-a---          25/09/2026    14:59           1672 web-content-056.md
+-a---          25/09/2026    14:59            468 web-content-057-fix1.md
+-a---          25/09/2026    14:59            364 web-content-057-fix2.md
+-a---          25/09/2026    14:59           2235 web-content-057.md
+-a---          25/09/2026    14:59            429 web-content-059.md
+-a---          25/09/2026    14:59           2247 web-d-build-d17-fix1.md
+-a---          25/09/2026    14:59           2911 web-d-build-d17.md
+-a---          25/09/2026    14:59            879 web-e-build-d17-fix1.md
+-a---          25/09/2026    14:59           1356 web-f-build-d17-fix1.md
+-a---          25/09/2026    14:59            583 web-f-img-map.txt
+-a---          25/09/2026    14:59           3451 web-g-build-d17-fix1.md
+-a---          25/09/2026    14:59           1214 web-g-build-d17-fix2.md
+-a---          25/09/2026    14:59           2151 web-h-build-d17-fix1.md
+-a---          25/09/2026    14:59           1348 web-h-build-d17-fix2.md
+-a---          25/09/2026    14:59           3643 web-locations-build.md
+-a---          25/09/2026    14:59           5117 web-problems-build.md
+-a---          25/09/2026    14:59           3931 web-resources-build.md
+[0m
+[0m→ [0mRead app/globals.css[90m [offset=35, limit=20][0m
+[0m
+[0m$ [0mgit show da21301 --stat
+commit da213016f328057c946fecb4f742648bfbaa3f26
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Fri Sep 25 17:09:06 2026 +0100
+
+    fix(a11y): cerulean text shade + remaining low-contrast greys (CR-WEB-065)
+    
+    Replace var(--do-cerulean) with var(--do-text-cerulean) (#176f86, 5.45:1)
+    for all text on light backgrounds across marketing site. Cerulean stays
+    unchanged for backgrounds, borders, fills, strokes, icons and dark-bg use.
+    
+    - globals.css: .do-blog-prose a, .vid-len, new .text-cerulean utility
+    - d17 CSS (global, apps-cases, art, locations, problems, resources):
+      all color:var(--do-cerulean) text instances → --do-text-cerulean
+    - 10 sector pages: numbered badge + ArrowRight icon colors
+    - 6 resource pages: CheckCircle2/Check icons + link text
+    - LocationPage: h1 accent span, card labels, #a7b8c1 → #c3d0d6
+    - Pricing/apps: paragraph link colors
+    - Locations pages: book-a-call links + MapPin/ArrowRight icons
+    - BlogList, SectorPageDS, SeasonalCapacityCalculator, ToolLeadCapture
+    - Design-system marketing-pages-extra: .log-row .go text color
+    
+    Also: GA4 + Ahrefs analytics Script tags strategy afterInteractive → lazyOnload
+    to stop competing with first paint.
+    
+    tsc: clean. npm run build: clean (173 pages, 0 errors).
+
+ app/apps/commerce/page.tsx                         |  2 +-
+ app/apps/proof/page.tsx                            |  2 +-
+ app/apps/works/page.tsx                            |  2 +-
+ app/blog/page.tsx                                  |  2 +-
+ app/case-studies/eternal-fitness/page.tsx          |  2 +-
+ app/d17-apps-cases.css                             | 26 +++++++++++-----------
+ app/d17-art.module.css                             |  4 ++--
+ app/d17-global.css                                 | 12 +++++-----
+ app/d17-locations.css                              | 14 ++++++------
+ app/d17-problems.css                               | 10 ++++-----
+ app/d17-resources.css                              | 10 ++++-----
+ app/design-system/marketing-pages-extra.css        |  2 +-
+ app/globals.css                                    |  7 ++++--
+ app/layout.tsx                                     |  6 ++---
+ app/locations/fractional-cto/page.tsx              |  6 ++---
+ app/locations/tech-audit/page.tsx                  |  6 ++---
+ app/pricing/page.tsx                               |  4 ++--
+ app/resources/artwork-approval-playbook/page.tsx   | 14 ++++++------
+ app/resources/audit-checklist/page.tsx             | 10 ++++-----
+ app/resources/capacity-planner/page.tsx            |  2 +-
+ app/resources/decoded-method/page.tsx              |  6 ++---
+ app/resources/erp-selection-playbook/page.tsx      | 18 +++++++--------
+ app/resources/page.tsx                             |  4 ++--
+ app/resources/seasonal-capacity/page.tsx           |  2 +-
+ app/resources/six-sigma/page.tsx                   |  2 +-
+ app/resources/sop-template/page.tsx                | 12 +++++-----
+ app/sectors/awards-engraving/page.tsx              |  6 ++---
+ app/sectors/garment-decoration/page.tsx            |  8 +++----
+ app/sectors/labels-packaging/page.tsx              |  6 ++---
+ .../page.tsx                                       |  6 ++---
+ app/sectors/print-promotional/page.tsx             |  8 +++----
+ app/sectors/promotional-merchandise/page.tsx       |  8 +++----
+ app/sectors/schoolwear/page.tsx                    | 10 ++++-----
+ app/sectors/signs-graphics/page.tsx                |  6 ++---
+ app/sectors/teamwear-clubwear/page.tsx             |  8 +++----
+ app/sectors/workwear/page.tsx                      |  8 +++----
+ app/small-business/page.tsx                        |  2 +-
+ app/tools/should-i-replace-erp/page.tsx            |  4 ++--
+ components/BlogList.tsx                            |  4 ++--
+ components/LocationPage.tsx                        | 12 +++++-----
+ components/SectorPageDS.module.css                 |  2 +-
+ components/ToolLeadCapture.tsx                     |  2 +-
+ .../calculators/SeasonalCapacityCalculator.tsx     |  2 +-
+ 43 files changed, 146 insertions(+), 143 deletions(-)
+[0m
+[0m# [0mTodos
+[•] Fix --do-text-muted token in globals.css (#486a7b → #3e6274)
+[ ] Fix sector page badge colors on dark backgrounds
+[ ] Check all other do-text-cerulean from da21301 on dark backgrounds
+[ ] Run tsc and npm run build
+[ ] Commit changes
+[ ] Write lane report files and commit
+[0m
+[0m← [0mEdit app/globals.css
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\globals.css
+@@ -38,9 +38,9 @@
+ /* Semantic */
+ --do-text-primary:        var(--do-prussian-blue);
+ --do-text-accent:         var(--do-cerulean);
+ --do-text-cerulean:       #176f86;
+---do-text-muted:          #486a7b;
++--do-text-muted:          #3e6274;
+ --do-text-on-dark:        var(--do-off-white);
+ --do-surface-page:        var(--do-off-white);
+ --do-surface-dark:        var(--do-prussian-blue);
+ --do-border-default:      var(--do-sky-blue);
+
+[0m
+[0m# [0mTodos
+[✓] Fix --do-text-muted token in globals.css (#486a7b → #3e6274)
+[•] Fix sector page badge colors on dark backgrounds
+[ ] Check all other do-text-cerulean from da21301 on dark backgrounds
+[ ] Run tsc and npm run build
+[ ] Commit changes
+[ ] Write lane report files and commit
+[0m
+[0m→ [0mRead app/sectors/awards-engraving/page.tsx[90m [offset=200, limit=20][0m
+[0m→ [0mRead app/sectors/garment-decoration/page.tsx[90m [offset=195, limit=20][0m
+[0m→ [0mRead app/sectors/labels-packaging/page.tsx[90m [offset=238, limit=20][0m
+[0m→ [0mRead app/sectors/operations-consultant-print-embroidery/page.tsx[90m [offset=188, limit=20][0m
+[0m→ [0mRead app/sectors/print-promotional/page.tsx[90m [offset=265, limit=20][0m
+[0m✱ [0mGrep "do-text-cerulean"[90m in app/sectors · 37 matches[0m
+I see the badges in the five files. Let me check if these are in a `g-navy` section by looking at more context, and also search for all `do-text-cerulean` instances across the codebase.
+[0m
+[0m$ [0mgit show da21301 | rg "^\+" | rg "do-text-cerulean" --no-line-number
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mgit show da21301 -- app/sectors/awards-engraving/page.tsx
+commit da213016f328057c946fecb4f742648bfbaa3f26
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Fri Sep 25 17:09:06 2026 +0100
+
+    fix(a11y): cerulean text shade + remaining low-contrast greys (CR-WEB-065)
+    
+    Replace var(--do-cerulean) with var(--do-text-cerulean) (#176f86, 5.45:1)
+    for all text on light backgrounds across marketing site. Cerulean stays
+    unchanged for backgrounds, borders, fills, strokes, icons and dark-bg use.
+    
+    - globals.css: .do-blog-prose a, .vid-len, new .text-cerulean utility
+    - d17 CSS (global, apps-cases, art, locations, problems, resources):
+      all color:var(--do-cerulean) text instances → --do-text-cerulean
+    - 10 sector pages: numbered badge + ArrowRight icon colors
+    - 6 resource pages: CheckCircle2/Check icons + link text
+    - LocationPage: h1 accent span, card labels, #a7b8c1 → #c3d0d6
+    - Pricing/apps: paragraph link colors
+    - Locations pages: book-a-call links + MapPin/ArrowRight icons
+    - BlogList, SectorPageDS, SeasonalCapacityCalculator, ToolLeadCapture
+    - Design-system marketing-pages-extra: .log-row .go text color
+    
+    Also: GA4 + Ahrefs analytics Script tags strategy afterInteractive → lazyOnload
+    to stop competing with first paint.
+    
+    tsc: clean. npm run build: clean (173 pages, 0 errors).
+
+diff --git a/app/sectors/awards-engraving/page.tsx b/app/sectors/awards-engraving/page.tsx
+index bb5c2fb..0c52fba 100644
+--- a/app/sectors/awards-engraving/page.tsx
++++ b/app/sectors/awards-engraving/page.tsx
+@@ -205,7 +205,7 @@ export default function AwardsEngravingPage() {
+           <div className="grid grid--2" style={{ marginTop: '32px' }}>
+             {whatIdo.map((item, i) => (
+               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+                 <p>{item}</p>
+               </div>
+             ))}
+@@ -236,7 +236,7 @@ export default function AwardsEngravingPage() {
+                     {route.relatedProblems.map((p) => (
+                       <li key={p.href} style={{ marginBottom: '10px' }}>
+                         <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+-                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
++                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-text-cerulean)' }} aria-hidden="true" />
+                           <span>{p.label}</span>
+                         </Link>
+                       </li>
+@@ -252,7 +252,7 @@ export default function AwardsEngravingPage() {
+                     {route.relatedResources.map((r) => (
+                       <li key={r.href} style={{ marginBottom: '10px' }}>
+                         <Link href={r.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+-                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
++                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-text-cerulean)' }} aria-hidden="true" />
+                           <span>{r.label}</span>
+                         </Link>
+                       </li>
+[0m
+[0m✱ [0mGrep "g-navy"[90m in app/sectors · 21 matches[0m
+[0m→ [0mRead app/sectors/awards-engraving/page.tsx[90m [limit=25, offset=195][0m
+[0m→ [0mRead app/sectors/garment-decoration/page.tsx[90m [limit=25, offset=190][0m
+[0m→ [0mRead app/sectors/labels-packaging/page.tsx[90m [limit=25, offset=232][0m
+[0m→ [0mRead app/sectors/operations-consultant-print-embroidery/page.tsx[90m [limit=25, offset=183][0m
+[0m→ [0mRead app/sectors/print-promotional/page.tsx[90m [limit=25, offset=259][0m
+[0m
+[0m← [0mEdit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\awards-engraving\page.tsx
+@@ -204,9 +204,9 @@
+ <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+ <div className="grid grid--2" style={{ marginTop: '32px' }}>
+   {whatIdo.map((item, i) => (
+     <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)' }}>{String(i + 1).padStart(2, '0')}</span>
+       <p>{item}</p>
+     </div>
+   ))}
+ </div>
+
+[0m
+[0m← [0mEdit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\garment-decoration\page.tsx
+@@ -199,9 +199,9 @@
+ <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+ <div className="grid grid--2" style={{ marginTop: '32px' }}>
+   {whatIdo.map((item, i) => (
+     <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)' }}>{String(i + 1).padStart(2, '0')}</span>
+       <p>{item}</p>
+     </div>
+   ))}
+ </div>
+
+[0m
+[0m← [0mEdit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\labels-packaging\page.tsx
+@@ -241,9 +241,9 @@
+ <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+ <div className="grid grid--2" style={{ marginTop: '32px' }}>
+   {whatIdo.map((item, i) => (
+     <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)' }}>{String(i + 1).padStart(2, '0')}</span>
+       <p>{item}</p>
+     </div>
+   ))}
+ </div>
+
+[0m
+[0m← [0mEdit app/sectors/operations-consultant-print-embroidery/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\operations-consultant-print-embroidery\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\operations-consultant-print-embroidery\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\operations-consultant-print-embroidery\page.tsx
+@@ -192,9 +192,9 @@
+ <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+ <div className="grid grid--2" style={{ marginTop: '32px' }}>
+   {whatIdo.map((item, i) => (
+     <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)' }}>{String(i + 1).padStart(2, '0')}</span>
+       <p>{item}</p>
+     </div>
+   ))}
+ </div>
+
+[0m
+Good, confirmed: the numbered badges are inside `<section className="g-navy">` dark sections. Let me now fix all five sector pages' numbered badges, then check the other `do-text-cerulean` instances.
+[0m← [0mEdit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\print-promotional\page.tsx
+@@ -268,9 +268,9 @@
+ <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+ <div className="grid grid--2" style={{ marginTop: '32px' }}>
+   {whatIdo.map((item, i) => (
+     <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)' }}>{String(i + 1).padStart(2, '0')}</span>
+       <p>{item}</p>
+     </div>
+   ))}
+ </div>
+
+[0m
+[0m✱ [0mGrep "do-text-cerulean"[90m in . · 90 matches[0m
+[0m✱ [0mGrep "do-text-cerulean"[90m in . · 47 matches[0m
+Now let me check all `do-text-cerulean` instances across the entire codebase (not just sectors) to see which ones are on dark backgrounds.
+[0m→ [0mRead app/sectors/workwear/page.tsx[90m [limit=30, offset=200][0m
+[0m→ [0mRead app/sectors/workwear/page.tsx[90m [limit=10, offset=108][0m
+[0m→ [0mRead app/sectors/teamwear-clubwear/page.tsx[90m [limit=30, offset=203][0m
+[0m→ [0mRead app/sectors/teamwear-clubwear/page.tsx[90m [limit=10, offset=117][0m
+Now I need to check the other sector pages that were also modified by da21301 and still have `do-text-cerulean`. Let me check workwear, teamwear-clubwear, promotional-merchandise, signs-graphics, and schoolwear.
+[0m→ [0mRead app/sectors/promotional-merchandise/page.tsx[90m [limit=30, offset=211][0m
+Let me check if the other 5 sector pages were also modified by da21301, and also check the promotional-merchandise, schoolwear, etc. for the same issue.
+[0m
+[0m$ [0mgit diff da21301^..da21301 --name-only | Select-String "sectors"
+app/sectors/awards-engraving/page.tsx
+app/sectors/garment-decoration/page.tsx
+app/sectors/labels-packaging/page.tsx
+app/sectors/operations-consultant-print-embroidery/page.tsx
+app/sectors/print-promotional/page.tsx
+app/sectors/promotional-merchandise/page.tsx
+app/sectors/schoolwear/page.tsx
+app/sectors/signs-graphics/page.tsx
+app/sectors/teamwear-clubwear/page.tsx
+app/sectors/workwear/page.tsx
+[0m
+[0m← [0mEdit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\workwear\page.tsx
+@@ -205,9 +205,9 @@
+     'Assess how your online shop connects to production',
+     'Put a number on every finding in time, headcount, and money',
+   ].map((item, i) => (
+     <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)' }}>{String(i + 1).padStart(2, '0')}</span>
+       <p>{item}</p>
+     </div>
+   ))}
+ </div>
+
+[0m
+[0m← [0mEdit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\teamwear-clubwear\page.tsx
+@@ -208,9 +208,9 @@
+     'See how seasonal deadlines sit against production capacity',
+     'Put a number on every finding in time, admin cost, and rework',
+   ].map((item, i) => (
+     <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)' }}>{String(i + 1).padStart(2, '0')}</span>
+       <p>{item}</p>
+     </div>
+   ))}
+ </div>
+
+[0m
+[0m← [0mEdit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\promotional-merchandise\page.tsx
+@@ -216,9 +216,9 @@
+     'Review quoting accuracy and quote-to-order costs',
+     'Put a number on every finding in time, margin, and admin cost',
+   ].map((item, i) => (
+     <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)' }}>{String(i + 1).padStart(2, '0')}</span>
+       <p>{item}</p>
+     </div>
+   ))}
+ </div>
+
+[0m
+[0m← [0mEdit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\signs-graphics\page.tsx
+@@ -214,9 +214,9 @@
+ <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+ <div className="grid grid--2" style={{ marginTop: '32px' }}>
+   {whatIdo.map((item, i) => (
+     <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)' }}>{String(i + 1).padStart(2, '0')}</span>
+       <p>{item}</p>
+     </div>
+   ))}
+ </div>
+
+[0m
+All 10 sector pages were modified by da21301. The brief listed 5 but the other 5 have the same issue. Let me fix them all.
+[0m✗ [0mEdit app/sectors/schoolwear/page.tsx failed
+[91m[1mError: [0mFound multiple matches for oldString. Provide more surrounding context to make the match unique.
+[0m→ [0mRead app/sectors/schoolwear/page.tsx[90m [limit=20, offset=200][0m
+[0m→ [0mRead app/sectors/schoolwear/page.tsx[90m [limit=20, offset=250][0m
+[0m→ [0mRead app/sectors/schoolwear/page.tsx[90m [limit=10, offset=240][0m
+[0m
+[0m← [0mEdit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\schoolwear\page.tsx
+@@ -202,9 +202,9 @@
+       body: "Decoded Works runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: 17 supplier feeds automated, a projected 20 to 40 hours a week.",
+     },
+   ].map((f, i) => (
+     <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)' }}>{String(i + 1).padStart(2, '0')}</span>
+       <div>
+         <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '0 0 8px' }}>{f.title}</h3>
+         <p>{f.body}</p>
+       </div>
+@@ -253,9 +253,9 @@
+     'See how parent orders flow from portal to production floor',
+     'Put a number on every finding in time, stockout cost, and admin overhead',
+   ].map((item, i) => (
+     <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+-      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++      <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)' }}>{String(i + 1).padStart(2, '0')}</span>
+       <p>{item}</p>
+     </div>
+   ))}
+ </div>
+
+[0m
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=30, offset=155][0m
+Now let me check the other `do-text-cerulean` instances from da21301 that might be on dark backgrounds. Let me check the LocationPage.tsx numbered badge and the SectorPageDS.module.css.
+[0m→ [0mRead components/SectorPageDS.module.css[90m [limit=20, offset=58][0m
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=15, offset=148][0m
+[0m→ [0mRead components/BlogList.tsx[90m [limit=20, offset=55][0m
+[0m→ [0mRead components/BlogList.tsx[90m [limit=20, offset=148][0m
+[0m→ [0mRead components/calculators/SeasonalCapacityCalculator.tsx[90m [limit=15, offset=83][0m
+[0m→ [0mRead components/ToolLeadCapture.tsx[90m [limit=15, offset=1][0m
+[0m✱ [0mGrep "do-text-cerulean"[90m in components/ToolLeadCapture.tsx · 8 matches[0m
+Let me check what da21301 changed in the d17 CSS files to understand if any of those are on dark backgrounds.
+[0m
+[0m$ [0mgit diff da21301^..da21301 -- "app/d17-*.css" "app/design-system/*.css" | Select-String -Pattern "do-text-cerulean" -Context 3,3
+font-size:max(10.5px, calc(12 * var(--u))); font-style:italic }
+   .ver .say small{ display:block; font-style:normal; font-family:var(--do-font-mono); font-size:max(8px, calc(9 * 
+var(--u)));
+  -  letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean); margin-bottom:2px }
+> +  letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean); margin-bottom:2px }
+   /* storefront product tiles */
+   .tiles{ display:grid; grid-template-columns:1fr 1fr; gap:calc(10 * var(--u)); margin-top:calc(12 * var(--u)) }
+   .tile{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent); 
+border-radius:calc(8 * var(--u)); overflow:hidden }
+     font-size:max(8.5px, calc(9.5 * var(--u))); font-weight:700; border:1.5px solid var(--do-cerulean); 
+color:var(--do-prussian-blue) }
+   .tile .act span+span{ background:var(--do-amber); border-color:var(--do-amber) }
+  -.tile .stock{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.1em; 
+text-transform:uppercase; color:var(--do-cerulean) }
+> +.tile .stock{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.1em; 
+text-transform:uppercase; color:var(--do-text-cerulean) }
+   
+   /* ─── DO-ART-939 · apps hero · the three apps, three real screens over the floor ─── */
+   .a939{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); min-height:calc(640 * var(--u)); display:flex; 
+flex-direction:column }
+   .a943 .ph-row b{ display:block; font-family:var(--do-font-heading); font-size:max(11px, calc(14 * var(--u))) }
+   .a943 .ph-row--ok{ border:2px solid var(--do-amber) }
+  -.a943 .ph-row .l{ font-family:var(--do-font-mono); font-size:max(7px, calc(8 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-cerulean) }
+> +.a943 .ph-row .l{ font-family:var(--do-font-mono); font-size:max(7px, calc(8 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-text-cerulean) }
+   .a943 .cap3{ position:absolute; right:calc(44 * var(--u)); top:calc(56 * var(--u)); width:calc(250 * var(--u)) }
+   .a943 .cap3 ol{ list-style:none; margin:0; padding:0; counter-reset:c }
+   .a943 .cap3 li{ counter-increment:c; padding:calc(14 * var(--u)) 0; border-top:1px solid color-mix(in srgb, 
+var(--do-sky-blue) 25%, transparent);
+   .a946 .acct{ display:flex; justify-content:space-between; align-items:center; gap:10px; padding:calc(7 * var(--u)) 
+calc(14 * var(--u));
+     background:color-mix(in srgb, var(--do-sky-blue) 22%, var(--do-white)); font-size:max(9.5px, calc(11 * 
+var(--u))); font-weight:600 }
+  -.a946 .acct b{ font-family:var(--do-font-mono); font-weight:600; font-size:max(8px, calc(9 * var(--u))); 
+letter-spacing:.12em; text-transform:uppercase; color:var(--do-cerulean) }
+> +.a946 .acct b{ font-family:var(--do-font-mono); font-weight:600; font-size:max(8px, calc(9 * var(--u))); 
+letter-spacing:.12em; text-transform:uppercase; color:var(--do-text-cerulean) }
+   .a946 .shop{ display:grid; grid-template-columns:calc(118 * var(--u)) 1fr; gap:calc(14 * var(--u)) }
+   .a946 .facets{ font-size:max(9.5px, calc(11 * var(--u))) }
+   .a946 .facets .fh{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); 
+letter-spacing:.14em; text-transform:uppercase;
+   .a946 .facets label.on i{ background:var(--do-cerulean); border-color:var(--do-cerulean) }
+   .a946 .tile .pr{ display:flex; justify-content:space-between; align-items:baseline; margin-top:calc(5 * var(--u)); 
+font-size:max(9px, calc(10 * var(--u))) }
+  -.a946 .tile .pr b{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); 
+letter-spacing:.1em; text-transform:uppercase; color:var(--do-cerulean) }
+> +.a946 .tile .pr b{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); 
+letter-spacing:.1em; text-transform:uppercase; color:var(--do-text-cerulean) }
+   .a946 .tile .pr i{ display:block; width:40%; height:7px; border-radius:9px; background:color-mix(in srgb, 
+var(--do-prussian-blue) 18%, transparent) }
+   .a946 .quote{ position:absolute; right:calc(4 * var(--u)); bottom:calc(-26 * var(--u)); z-index:3; width:calc(210 * 
+var(--u));
+     background:var(--do-white); color:var(--do-prussian-blue); border-radius:calc(8 * var(--u)); padding:calc(12 * 
+var(--u)) calc(14 * var(--u));
+     border:2px solid var(--do-amber); box-shadow:0 calc(18 * var(--u)) calc(36 * var(--u)) color-mix(in srgb, #000 
+45%, transparent); transform:rotate(2deg) }
+  -.a946 .quote .l{ font-family:var(--do-font-mono); font-size:max(8px, calc(9 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-cerulean) }
+> +.a946 .quote .l{ font-family:var(--do-font-mono); font-size:max(8px, calc(9 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-text-cerulean) }
+   .a946 .quote b{ display:block; margin-top:2px; font-family:var(--do-font-heading); font-size:max(12px, calc(15 * 
+var(--u))) }
+   .a946 .quote p{ margin:3px 0 0; font-size:max(10px, calc(11 * var(--u))); line-height:1.35; color:color-mix(in 
+srgb, var(--do-prussian-blue) 72%, transparent) }
+   .a946 .sx-foot{ padding-top:calc(44 * var(--u)) }
+   .a948 .doc-o{ left:calc(390 * var(--u)); top:calc(150 * var(--u)); width:calc(300 * var(--u)); 
+transform:rotate(3deg) }
+   .a948 .d17-doc ol li{ grid-template-columns:calc(24 * var(--u)) 1fr auto; white-space:normal }
+  -.a948 .d17-doc li em{ font-style:normal; justify-self:end; font-family:var(--do-font-mono); font-size:max(6px, 
+calc(9.5 * var(--u))); letter-spacing:.08em; color:var(--do-cerulean) }
+> +.a948 .d17-doc li em{ font-style:normal; justify-self:end; font-family:var(--do-font-mono); font-size:max(6px, 
+calc(9.5 * var(--u))); letter-spacing:.08em; color:var(--do-text-cerulean) }
+   .a948 .d17-doc li.hit em{ color:var(--do-prussian-blue); background:color-mix(in srgb, var(--do-amber) 35%, 
+transparent); padding:2px 6px; border-radius:4px }
+   .a948 .opt{ display:grid; grid-template-columns:1fr auto; gap:calc(4 * var(--u)) calc(12 * var(--u)); 
+margin-top:calc(10 * var(--u)); font-size:max(7px, calc(11.5 * var(--u))) }
+   .a948 .opt span{ padding:calc(6 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, 
+transparent); font-weight:600 }
+   .d17-doc .figs li b{ color:var(--do-prussian-blue); font-family:var(--do-font-heading); font-weight:800; 
+font-size:max(10px, calc(19 * var(--u))); letter-spacing:-.02em; min-width:4.4ch; font-variant-numeric:tabular-nums }
+   .figs--none li{ color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+  -.d17-doc .figs--none li b{ font-family:var(--do-font-mono); font-weight:600; font-size:max(7px, calc(10 * 
+var(--u))); letter-spacing:.1em; min-width:0; color:var(--do-cerulean) }
+> +.d17-doc .figs--none li b{ font-family:var(--do-font-mono); font-weight:600; font-size:max(7px, calc(10 * 
+var(--u))); letter-spacing:.1em; min-width:0; color:var(--do-text-cerulean) }
+   .stamp2{ display:inline-block; margin-top:calc(10 * var(--u)); padding:calc(4 * var(--u)) calc(9 * var(--u)); 
+transform:rotate(-3deg);
+     border:2px solid var(--do-cerulean); border-radius:calc(4 * var(--u)); font-family:var(--do-font-mono); 
+font-weight:700;
+     font-size:max(7px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; 
+color:var(--do-prussian-blue);
+   /* related cards on the case study pages (live IA, 23 Sep copy) */
+   [data-od-id="related"] .card{ display:flex; flex-direction:column }
+  -[data-od-id="related"] .card .kicker{ display:block; font-family:var(--do-font-mono); font-size:11px; 
+letter-spacing:.16em; text-transform:uppercase; color:var(--do-cerulean); margin-bottom:10px }
+> +[data-od-id="related"] .card .kicker{ display:block; font-family:var(--do-font-mono); font-size:11px; 
+letter-spacing:.16em; text-transform:uppercase; color:var(--do-text-cerulean); margin-bottom:10px }
+   [data-od-id="related"] .card h3{ margin:0 0 8px }
+   [data-od-id="related"] .card p{ flex:1; margin:0 0 16px; color:var(--do-text-secondary); 
+font-size:var(--do-text-sm) }
+   [data-od-id="related"] .card .readmore{ font-size:var(--do-text-sm); font-weight:700; color:var(--do-text-primary); 
+text-decoration:none }
+   .a954 .proj{ margin-top:calc(10 * var(--u)); padding:calc(8 * var(--u)) calc(10 * var(--u)); border:1.5px dashed 
+var(--do-cerulean); border-radius:calc(4 * var(--u));
+     font-size:max(7px, calc(10.5 * var(--u))); line-height:1.35 }
+  -.a954 .proj b{ display:block; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u))); 
+letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+> +.a954 .proj b{ display:block; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u))); 
+letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
+   @media (max-width: 760px){
+     .a954 .stage .d17-doc{ --u:.72px }
+     .d17-doc .pair li{ font-size:11px } .d17-doc .pair li b{ font-size:13px } .a954 .proj{ font-size:10.5px } .a954 
+.proj b{ font-size:9px }
+   .a955 .doc-e{ left:calc(262 * var(--u)); top:calc(120 * var(--u)); width:calc(274 * var(--u)); 
+transform:rotate(2.5deg) }
+   .a955 .d17-doc li{ grid-template-columns:calc(34 * var(--u)) 1fr auto; white-space:normal }
+  -.a955 .d17-doc li em{ font-style:normal; justify-self:end; font-family:var(--do-font-mono); font-size:max(6px, 
+calc(9 * var(--u))); letter-spacing:.08em; color:var(--do-cerulean) }
+> +.a955 .d17-doc li em{ font-style:normal; justify-self:end; font-family:var(--do-font-mono); font-size:max(6px, 
+calc(9 * var(--u))); letter-spacing:.08em; color:var(--do-text-cerulean) }
+   .a955 dl.shape{ margin:calc(10 * var(--u)) 0 0; display:grid; gap:calc(8 * var(--u)) }
+   .a955 dl.shape div{ border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); 
+padding-top:calc(6 * var(--u)) }
+   .a955 dl.shape dt{ font-family:var(--do-font-mono); font-size:max(7px, calc(9.5 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+     border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 9%, transparent); font-size:max(11px, calc(13 * 
+var(--u))) }
+   .a957 .ex b{ margin:0; font-family:var(--do-font-mono); font-weight:500; font-size:max(9px, calc(10.5 * var(--u))); 
+color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+  -.a957 .ex em{ font-style:normal; font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); 
+color:var(--do-cerulean) }
+> +.a957 .ex em{ font-style:normal; font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); 
+color:var(--do-text-cerulean) }
+   .a957 .draft{ display:inline-block; margin-top:calc(10 * var(--u)); padding:3px 10px; border-radius:99px; 
+font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.12em;
+     background:color-mix(in srgb, var(--do-prussian-blue) 8%, transparent) }
+   .a957 .gate{ border:2px solid var(--do-amber); box-shadow:0 0 0 4px color-mix(in srgb, var(--do-amber) 18%, 
+transparent) }
+   .a957 .btns span{ flex:1; text-align:center; padding:calc(7 * var(--u)) 0; border-radius:calc(6 * var(--u)); 
+font-weight:700; font-size:max(10.5px, calc(12 * var(--u))); border:1.5px solid var(--do-cerulean) }
+   .a957 .btns span:first-child{ background:var(--do-amber); border-color:var(--do-amber) }
+  -.a957 .lock{ margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); font-size:max(9px, calc(10 * 
+var(--u))); letter-spacing:.1em; text-transform:uppercase; color:var(--do-cerulean) }
+> +.a957 .lock{ margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); font-size:max(9px, calc(10 * 
+var(--u))); letter-spacing:.1em; text-transform:uppercase; color:var(--do-text-cerulean) }
+   @media (max-width: 760px){
+     .a957{ padding:22px 14px 20px }
+     .a957 .hd{ flex-direction:column; align-items:flex-start }
+     background: color-mix(in srgb, var(--do-prussian-blue) 11%, transparent) }
+   .d17Doc .phase { margin-top: calc(11 * var(--u)); font-family: var(--do-font-mono); font-weight: 700;
+  -  font-size: max(6px, calc(10 * var(--u))); letter-spacing: .14em; text-transform: uppercase; color: 
+var(--do-cerulean) }
+> +  font-size: max(6px, calc(10 * var(--u))); letter-spacing: .14em; text-transform: uppercase; color: 
+var(--do-text-cerulean) }
+   
+   /* ─── DO-ART-916 · home hero · document mock-ups over the workshop floor ─── */
+   .a916 { --u: calc(100cqw / 560); display: flex; flex-direction: column }
+     border-top: 1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+     font-size: max(12px, calc(14 * var(--u))); line-height: 1.35; font-weight: 600 }
+  -.a920 .note li::before { content: '0' counter(c); font-family: var(--do-font-mono); font-size: 10px; color: 
+var(--do-cerulean); padding-top: 3px }
+> +.a920 .note li::before { content: '0' counter(c); font-family: var(--do-font-mono); font-size: 10px; color: 
+var(--do-text-cerulean); padding-top: 3px }
+   .a920 .d17MarkAbs { left: calc(56 * var(--u)); bottom: calc(28 * var(--u)) }
+   
+   /* ─── motion: in-page draw (D16/D17). Resting state = the still. ─── */
+     background:color-mix(in srgb, var(--do-prussian-blue) 11%, transparent) }
+   .d17-doc .phase{ margin-top:calc(11 * var(--u)); font-family:var(--do-font-mono); font-weight:700;
+  -  font-size:max(6px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) 
+}
+> +  font-size:max(6px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; 
+color:var(--do-text-cerulean) }
+   
+   /* ─── DO-ART-916 · home hero · document mock-ups over the workshop floor ─── */
+   .a916{ --u:calc(100cqw / 560); display:flex; flex-direction:column }
+     border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+     font-size:max(12px, calc(14 * var(--u))); line-height:1.35; font-weight:600 }
+  -.a920 .note li::before{ content:'0' counter(c); font-family:var(--do-font-mono); font-size:10px; 
+color:var(--do-cerulean); padding-top:3px }
+> +.a920 .note li::before{ content:'0' counter(c); font-family:var(--do-font-mono); font-size:10px; 
+color:var(--do-text-cerulean); padding-top:3px }
+   .a920 .d17-mark--abs{ left:calc(56 * var(--u)); bottom:calc(28 * var(--u)) }
+   @media (max-width: 760px){
+     .a920{ grid-template-columns:1fr; min-height:0 }
+     font-size:max(10px, calc(13 * var(--u))); font-weight:700; line-height:1.25; white-space:nowrap }
+   .sx-tag small{ display:block; font-family:var(--do-font-mono); font-weight:600; font-size:max(7.5px, calc(9.5 * 
+var(--u)));
+  -  letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean); margin-bottom:2px }
+> +  letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean); margin-bottom:2px }
+   .sx-tag--a{ border:2px solid var(--do-amber) }
+   .sx-dot{ position:absolute; z-index:4; width:max(10px, calc(14 * var(--u))); height:max(10px, calc(14 * var(--u)));
+     margin:calc(-7 * var(--u)) 0 0 calc(-7 * var(--u)); border-radius:50%; background:var(--do-off-white);
+   .a921 li{ grid-template-columns:calc(20 * var(--u)) auto 1fr }
+   .a921 li em{ font-style:normal; justify-self:end; font-family:var(--do-font-mono); font-size:max(6px, calc(9.5 * 
+var(--u)));
+  -  color:var(--do-cerulean); letter-spacing:.08em }
+> +  color:var(--do-text-cerulean); letter-spacing:.08em }
+   .plaque{ margin-top:calc(12 * var(--u)); border:1.5px solid color-mix(in srgb, var(--do-prussian-blue) 30%, 
+transparent);
+     border-radius:calc(4 * var(--u)); padding:calc(14 * var(--u)) calc(14 * var(--u)) calc(12 * var(--u)); 
+text-align:center }
+   .plaque .l{ display:block; height:calc(6 * var(--u)); border-radius:9px; margin:calc(7 * var(--u)) auto 0;
+     border-radius:calc(7 * var(--u)); padding:calc(10 * var(--u)) calc(11 * var(--u)); margin-bottom:calc(8 * 
+var(--u));
+     box-shadow:0 2px 4px color-mix(in srgb, var(--do-prussian-blue) 8%, transparent) }
+  -.card-j .r{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); letter-spacing:.1em; 
+color:var(--do-cerulean) }
+> +.card-j .r{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); letter-spacing:.1em; 
+color:var(--do-text-cerulean) }
+   .card-j b{ display:block; margin-top:3px; font-size:max(11px, calc(13.5 * var(--u))); line-height:1.25 }
+   .card-j .m{ display:flex; flex-wrap:wrap; gap:4px; margin-top:calc(7 * var(--u)) }
+   .card-j .m span{ font-size:max(9px, calc(10.5 * var(--u))); padding:1px 7px; border-radius:99px;
+   .a1008 .docmini .row:first-of-type{ border-top:0; padding-top:0; margin-top:calc(10 * var(--u)) }
+   .a1008 .docmini .row b{ font-family:var(--do-font-mono); font-weight:700; font-size:max(8px, calc(11 * var(--u)));
+  -  color:var(--do-cerulean) }
+> +  color:var(--do-text-cerulean) }
+   .a1008 .photopin{ position:absolute; padding:calc(9 * var(--u)) calc(9 * var(--u)) calc(34 * var(--u));
+     background:var(--do-off-white); box-shadow:0 calc(20 * var(--u)) calc(40 * var(--u)) color-mix(in srgb, #000 45%, 
+transparent) }
+   .a1008 .photopin img{ display:block; width:100%; height:100%; object-fit:cover;
+     padding:calc(7 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+     font-size:max(7px, calc(12.5 * var(--u))); font-weight:600; line-height:1.25 }
+  -.pk li::before{ content:'0' counter(p); font-family:var(--do-font-mono); font-size:max(6px, calc(10 * var(--u))); 
+color:var(--do-cerulean); padding-top:1px }
+> +.pk li::before{ content:'0' counter(p); font-family:var(--do-font-mono); font-size:max(6px, calc(10 * var(--u))); 
+color:var(--do-text-cerulean); padding-top:1px }
+   .dl{ margin-top:calc(12 * var(--u)) }
+   .dl .r{ display:grid; grid-template-columns:1fr auto auto; gap:calc(10 * var(--u)); align-items:center;
+     padding:calc(8 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+   .rm{ display:grid; grid-template-columns:repeat(3, 1fr); gap:calc(8 * var(--u)); margin-top:calc(12 * var(--u)) }
+   .rm .c b{ display:block; font-family:var(--do-font-mono); font-size:max(6px, calc(9.5 * var(--u))); 
+letter-spacing:.14em;
+  -  text-transform:uppercase; color:var(--do-cerulean); padding-bottom:calc(5 * var(--u));
+> +  text-transform:uppercase; color:var(--do-text-cerulean); padding-bottom:calc(5 * var(--u));
+     border-bottom:2px solid color-mix(in srgb, var(--do-cerulean) 40%, transparent) }
+   .rm .c span{ display:block; margin-top:calc(7 * var(--u)); padding:calc(6 * var(--u)) calc(7 * var(--u)); 
+border-radius:calc(4 * var(--u));
+     background:color-mix(in srgb, var(--do-sky-blue) 22%, transparent); font-size:max(6.5px, calc(10.5 * var(--u))); 
+font-weight:600; line-height:1.2 }
+   .a1002 .pin .tv{ display:inline; background:color-mix(in srgb, var(--do-amber) 30%, transparent) }
+   .a1002 .pin small{ display:block; font-family:var(--do-font-mono); font-weight:600; font-size:max(9px, calc(10 * 
+var(--u)));
+  -  letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+> +  letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
+   .a1002 .pin b{ display:block; margin-top:2px; font-family:var(--do-font-heading); font-weight:800; 
+font-size:max(15px, calc(20 * var(--u))) }
+   .a1002 .pin > span{ display:block; margin-top:3px; font-size:max(11px, calc(13 * var(--u))) }
+   @media (max-width: 760px){
+     padding:calc(12 * var(--u)) calc(14 * var(--u)); box-shadow:0 calc(16 * var(--u)) calc(34 * var(--u)) 
+color-mix(in srgb, #000 45%, transparent);
+     border:2px solid var(--do-amber); transform:rotate(1.5deg) }
+  -.five .rep .ref{ font-family:var(--do-font-mono); font-size:max(8px, calc(10 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-cerulean) }
+> +.five .rep .ref{ font-family:var(--do-font-mono); font-size:max(8px, calc(10 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-text-cerulean) }
+   .five .rep b{ display:block; margin-top:4px; font-family:var(--do-font-heading); font-weight:800; 
+font-size:max(14px, calc(18 * var(--u))); line-height:1.1 }
+   .five .rep ul{ margin:calc(6 * var(--u)) 0 0; padding:0; list-style:none }
+   .five .rep li{ font-size:max(11px, calc(12.5 * var(--u))); line-height:1.3; padding:calc(3 * var(--u)) 0 calc(3 * 
+var(--u)) 14px; position:relative }
+   .keep .cd + .cd::before{ content:''; position:absolute; left:calc(-34 * var(--u)); top:50%; width:calc(34 * 
+var(--u)); height:2px;
+     background:var(--do-sky-blue) }
+  -.keep .cd .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-cerulean) }
+> +.keep .cd .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-text-cerulean) }
+   .keep .cd b{ display:block; margin-top:3px; font-family:var(--do-font-heading); font-weight:800; 
+font-size:max(15px, calc(18 * var(--u))) }
+   .keep .cd ul{ list-style:none; margin:calc(8 * var(--u)) 0 0; padding:0 }
+   .keep .cd li{ font-size:max(12px, calc(13 * var(--u))); line-height:1.35; padding:calc(4 * var(--u)) 0;
+   .ck .panel{ background:var(--do-off-white); color:var(--do-prussian-blue); border-radius:calc(8 * var(--u));
+     padding:calc(12 * var(--u)) calc(16 * var(--u)) calc(14 * var(--u)); box-shadow:0 calc(18 * var(--u)) calc(36 * 
+var(--u)) color-mix(in srgb, #000 40%, transparent) }
+  -.ck .panel .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-cerulean) }
+> +.ck .panel .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-text-cerulean) }
+   .ck .row{ display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center; padding:calc(9 * var(--u)) 0;
+     border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
+   .ck .row:first-of-type{ margin-top:calc(8 * var(--u)) }
+   .sw-t.on{ background:var(--do-prussian-blue); border-color:var(--do-prussian-blue) }
+   .sw-t.on::after{ left:23px; background:var(--do-sky-blue) }
+  -.sw-t.lock::before{ content:'ALWAYS'; position:absolute; right:54px; top:4px; font-family:var(--do-font-mono); 
+font-size:9px; letter-spacing:.14em; color:var(--do-cerulean) }
+> +.sw-t.lock::before{ content:'ALWAYS'; position:absolute; right:54px; top:4px; font-family:var(--do-font-mono); 
+font-size:9px; letter-spacing:.14em; color:var(--do-text-cerulean) }
+   .ck .say h3{ margin:calc(12 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; 
+color:var(--do-white);
+     font-size:max(20px, calc(28 * var(--u))); line-height:1.1; letter-spacing:-.02em }
+   .ck .say p{ margin:calc(10 * var(--u)) 0 0; font-size:max(13px, calc(15 * var(--u))); line-height:1.45; 
+color:color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+   .srcs div.x{ border:2px solid var(--do-amber); background:color-mix(in srgb, var(--do-amber) 12%, var(--do-white)) }
+   .typing{ display:inline-flex; gap:4px; margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); 
+font-size:max(9px, calc(10 * var(--u)));
+  -  letter-spacing:.12em; text-transform:uppercase; color:var(--do-cerulean) }
+> +  letter-spacing:.12em; text-transform:uppercase; color:var(--do-text-cerulean) }
+   
+   /* ─── DO-ART-961 · bottleneck hero · machines ready, every tag waiting on the owner (photo-led) ─── 
+*/
+   .a961 .stage{ aspect-ratio:560 / 470 }
+     font-size:max(8px, calc(11 * var(--u))); font-weight:600; line-height:1.3; white-space:normal }
+   .q-list li span{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(6.5px, calc(9 * 
+var(--u))); letter-spacing:.08em;
+  -  text-transform:uppercase; color:var(--do-cerulean) }
+> +  text-transform:uppercase; color:var(--do-text-cerulean) }
+   .q-list li.hot span{ color:color-mix(in srgb, var(--do-amber) 55%, var(--do-prussian-blue)) }
+   
+   /* ─── DO-ART-963 · cant-scale hero · the flow and where the queues pile up (drawn plate) ─── */
+   .cols .j{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, 
+transparent); border-radius:calc(4 * var(--u));
+     padding:calc(6 * var(--u)) calc(7 * var(--u)); margin-bottom:calc(5 * var(--u)); font-size:max(9.5px, calc(11 * 
+var(--u))); font-weight:700; line-height:1.25 }
+  -.cols .j small{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(7.5px, calc(8.5 * 
+var(--u))); letter-spacing:.08em; color:var(--do-cerulean) }
+> +.cols .j small{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(7.5px, calc(8.5 * 
+var(--u))); letter-spacing:.08em; color:var(--do-text-cerulean) }
+   .cols .j.miss{ border:2px dashed var(--do-amber); background:color-mix(in srgb, var(--do-amber) 10%, 
+var(--do-white)); color:color-mix(in srgb, var(--do-prussian-blue) 80%, transparent) }
+   .a966 .gap-l{ position:absolute; z-index:5; left:50%; transform:translateX(-50%); display:flex; align-items:center; 
+gap:8px;
+     font-family:var(--do-font-mono); font-weight:700; font-size:max(9px, calc(10.5 * var(--u))); 
+letter-spacing:.14em; text-transform:uppercase;
+   .reg td + td{ font-weight:500 }
+  -.reg td.s{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); color:var(--do-cerulean) }
+  -.sop .h{ margin:calc(9 * var(--u)) 0 0; font-family:var(--do-font-mono); font-weight:700; font-size:max(7px, 
+calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+> +.reg td.s{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); color:var(--do-text-cerulean) }
+> +.sop .h{ margin:calc(9 * var(--u)) 0 0; font-family:var(--do-font-mono); font-weight:700; font-size:max(7px, 
+calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
+   .sop .h i{ font-style:normal; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); margin-right:6px }
+   .sop .p{ margin:calc(3 * var(--u)) 0 0; font-size:max(8.5px, calc(11.5 * var(--u))); line-height:1.35 }
+   .sop .line{ height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(6 * var(--u)); background:color-mix(in 
+srgb, var(--do-prussian-blue) 12%, transparent) }
+   .d17-doc .tl li.h{ background:color-mix(in srgb, var(--do-amber) 18%, transparent) }
+   .d17-doc .tl li em{ font-style:normal; font-family:var(--do-font-mono); font-weight:500; font-size:max(6.5px, 
+calc(9.5 * var(--u)));
+  -  letter-spacing:.06em; color:var(--do-cerulean); margin-left:.5em }
+> +  letter-spacing:.06em; color:var(--do-text-cerulean); margin-left:.5em }
+   /* sticky note */
+   .note-y{ position:absolute; z-index:5; width:calc(170 * var(--u)); padding:calc(12 * var(--u)) calc(13 * var(--u));
+     background:color-mix(in srgb, var(--do-amber) 88%, var(--do-white)); color:var(--do-prussian-blue);
+   .fld span{ display:block; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u))); 
+letter-spacing:.14em; text-transform:uppercase;
+     color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+  -.fld b{ display:block; margin-top:2px; font-size:max(8.5px, calc(12 * var(--u))); font-weight:700; 
+color:var(--do-cerulean) }
+> +.fld b{ display:block; margin-top:2px; font-size:max(8.5px, calc(12 * var(--u))); font-weight:700; 
+color:var(--do-text-cerulean) }
+   .fld.two{ display:grid; grid-template-columns:1fr 1fr; gap:8px }
+   .fld.ex b{ color:color-mix(in srgb, var(--do-amber) 45%, var(--do-prussian-blue)) }
+   .d17-doc ol.st{ list-style:none; counter-reset:s; margin:calc(4 * var(--u)) 0 0; padding:0 }
+   .d17-doc ol.st li{ counter-increment:s; display:grid; grid-template-columns:calc(16 * var(--u)) 1fr; gap:calc(6 * 
+var(--u)); white-space:normal;
+  -  padding:calc(3 * var(--u)) 0; border:0; font-size:max(8.5px, calc(11 * var(--u))); font-weight:600; 
+color:var(--do-cerulean) }
+> +  padding:calc(3 * var(--u)) 0; border:0; font-size:max(8.5px, calc(11 * var(--u))); font-weight:600; 
+color:var(--do-text-cerulean) }
+   .d17-doc ol.st li::before{ content:counter(s); font-family:var(--do-font-mono); color:color-mix(in srgb, 
+var(--do-prussian-blue) 50%, transparent) }
+   .a987 .nt-987{ left:calc(356 * var(--u)); top:calc(318 * var(--u)); width:calc(170 * var(--u)) }
+   
+     color:color-mix(in srgb, var(--do-prussian-blue) 58%, transparent); text-align:center; padding:0 0 calc(5 * 
+var(--u)) }
+   .vb th:first-child{ text-align:left }
+  -.vb th.us{ color:var(--do-cerulean) }
+> +.vb th.us{ color:var(--do-text-cerulean) }
+   .vb td{ padding:calc(5 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, 
+transparent); font-weight:600; text-align:center }
+   .vb td:first-child{ text-align:left }
+   .vb i, .d17-doc .key i{ display:inline-block; width:calc(11 * var(--u)); height:calc(11 * var(--u)); 
+border-radius:50%; vertical-align:middle }
+     background:var(--do-white); color:var(--do-prussian-blue); padding:calc(12 * var(--u)) calc(14 * var(--u)); 
+border-radius:calc(4 * var(--u));
+     transform:rotate(-2.5deg); box-shadow:0 calc(18 * var(--u)) calc(34 * var(--u)) color-mix(in srgb, #000 50%, 
+transparent) }
+  -.a996 .slip .ref{ display:block; font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); 
+letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+> +.a996 .slip .ref{ display:block; font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); 
+letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
+   .a996 .slip b{ display:inline-block; margin-top:4px; font-family:var(--do-font-heading); font-weight:800; 
+font-size:max(22px, calc(40 * var(--u))); line-height:1;
+     letter-spacing:-.03em; background:color-mix(in srgb, var(--do-amber) 55%, transparent); padding:0 6px; 
+border-radius:4px }
+   .a996 .slip .s{ display:block; margin-top:4px; font-size:max(10px, calc(12 * var(--u))); font-weight:600 }
+   .log-row:hover h3{ color:var(--do-cerulean) }
+   .log-row p{ margin:0; color:var(--do-text-secondary); font-size:var(--do-text-sm); max-width:56ch }
+  -.log-row .go{ align-self:center; font-weight:var(--do-weight-semibold); font-size:var(--do-text-sm); 
+color:var(--do-cerulean);
+> +.log-row .go{ align-self:center; font-weight:var(--do-weight-semibold); font-size:var(--do-text-sm); 
+color:var(--do-text-cerulean);
+     white-space:nowrap }
+   .log-row .go::after{ content:'\2192'; display:inline-block; margin-left:7px; transition:transform 
+var(--do-duration-normal) }
+   .log-row:hover .go::after{ transform:translateX(3px) }
+[0m
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=15, offset=125][0m
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=10, offset=65][0m
+[0m→ [0mRead app/globals.css[90m [limit=10, offset=270][0m
+[0m→ [0mRead app/globals.css[90m [limit=10, offset=420][0m
+All non-sector `do-text-cerulean` instances are on light backgrounds. The only dark-background issue is the sector page numbered badges, which I've now fixed in all 10 files. Let me also check the design-system marketing-pages-extra change.
+[0m→ [0mRead app/design-system/marketing-pages-extra.css[90m [limit=10, offset=125][0m
+[0m
+[0m# [0mTodos
+[✓] Fix --do-text-muted token in globals.css (#486a7b → #3e6274)
+[✓] Fix sector page badge colors on dark backgrounds
+[✓] Check all other do-text-cerulean from da21301 on dark backgrounds
+[•] Run tsc and npm run build
+[ ] Commit changes
+[ ] Write lane report files and commit
+[0m
+All other `do-text-cerulean` instances are on light backgrounds — no changes needed. Now let me verify with tsc and build.
+[0m$ [0mTest-Path node_modules
+True
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mnpm run build 2>&1
+> decoded-ops-next@0.1.0 prebuild
+> node scripts/generate-route-slugs.mjs
+
+[route-slugs] 18 problems, 10 sectors, 5 tools
+
+> decoded-ops-next@0.1.0 build
+> next build
+
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 22ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.3s
+  Running TypeScript ...
+  Finished TypeScript in 2.5s ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/173) ...
+  Generating static pages using 15 workers (43/173) 
+  Generating static pages using 15 workers (86/173) 
+  Generating static pages using 15 workers (129/173) 
+✓ Generating static pages using 15 workers (173/173) in 985ms
+  Finalizing page optimization ...
+
+Route (app)                                          Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/auth/login
+├ ƒ /api/clients/documents/[id]/questionnaire
+├ ƒ /api/clients/documents/[id]/sign
+├ ƒ /api/clients/uploads
+├ ƒ /api/contact
+├ ƒ /api/tools/capture
+├ ○ /apps
+├ ○ /apps/commerce
+├ ○ /apps/proof
+├ ○ /apps/works
+├ ○ /blog                                                    5m      1y
+├ ƒ /blog/[slug]
+├ ○ /case-studies
+├ ○ /case-studies/case-study-01
+├ ○ /case-studies/case-study-02
+├ ○ /case-studies/case-study-03
+├ ○ /case-studies/eternal-fitness
+├ ○ /clarity
+├ ƒ /clients/[clientId]
+├ ƒ /clients/dashboard
+├ ƒ /clients/documents
+├ ƒ /clients/documents/view/[id]
+├ ○ /clients/login
+├ ƒ /clients/project
+├ ○ /contact
+├ ○ /cookies
+├ ○ /deliver
+├ ○ /how-i-build
+├ ○ /locations/fractional-cto
+├   /locations/fractional-cto/[location]
+│ ├ ● /locations/fractional-cto/chichester
+│ ├ ● /locations/fractional-cto/worthing
+│ ├ ● /locations/fractional-cto/horsham
+│ └ ● [+26 more paths]
+├ ○ /locations/tech-audit
+├   /locations/tech-audit/[location]
+│ ├ ● /locations/tech-audit/chichester
+│ ├ ● /locations/tech-audit/worthing
+│ ├ ● /locations/tech-audit/horsham
+│ └ ● [+26 more paths]
+├ ƒ /opengraph-image
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /problems
+├ ○ /problems/ai-paralysis
+├ ○ /problems/bottleneck-growth
+├ ○ /problems/buy-vs-build
+├ ○ /problems/cant-scale-operations
+├ ○ /problems/data-scattered
+├ ○ /problems/disaster-recovery
+├ ○ /problems/ecommerce-not-connected
+├ ○ /problems/erp-implementation-failure
+├ ○ /problems/inventory-blind
+├ ○ /problems/legacy-system
+├ ○ /problems/manual-workarounds
+├ ○ /problems/no-ops-owner
+├ ○ /problems/ops-in-owners-head
+├ ○ /problems/seasonal-peaks
+├ ○ /problems/slow-processes
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/artwork-approval-playbook
+├ ○ /resources/audit-checklist
+├ ○ /resources/capacity-planner
+├ ○ /resources/decoded-method
+├ ○ /resources/erp-selection-playbook
+├ ○ /resources/seasonal-capacity
+├ ○ /resources/six-sigma
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ƒ /robots.txt
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/operations-consultant-print-embroidery
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ƒ /sitemap.xml
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+[0m
+[0m# [0mTodos
+[✓] Fix --do-text-muted token in globals.css (#486a7b → #3e6274)
+[✓] Fix sector page badge colors on dark backgrounds
+[✓] Check all other do-text-cerulean from da21301 on dark backgrounds
+[✓] Run tsc and npm run build
+[•] Commit changes
+[ ] Write lane report files and commit
+[0m
+tsc clean, build clean (173 pages, 0 errors). Now let me commit and write the reports.
+[0m$ [0mgit add app/globals.css app/sectors/awards-engraving/page.tsx app/sectors/garment-decoration/page.tsx app/sectors/labels-packaging/page.tsx app/sectors/operations-consultant-print-embroidery/page.tsx app/sectors/print-promotional/page.tsx app/sectors/workwear/page.tsx app/sectors/teamwear-clubwear/page.tsx app/sectors/promotional-merchandise/page.tsx app/sectors/signs-graphics/page.tsx app/sectors/schoolwear/page.tsx && git commit -m "fix(a11y): muted token + cerulean on dark sections (CR-WEB-065)
+
+- globals.css: --do-text-muted #486a7b → #3e6274 to match design system
+- 10 sector pages: numbered badge color var(--do-text-cerulean) → var(--do-sky-blue)
+  inside g-navy dark sections (5.1:1 on #124e66, up from 1.58:1)
+- All other do-text-cerulean instances verified on light backgrounds, no change
+
+tsc: clean. npm run build: clean (173 pages, 0 errors)."
+[web065-tech-seo 1ecffd9] fix(a11y): muted token + cerulean on dark sections (CR-WEB-065)
+ 11 files changed, 12 insertions(+), 12 deletions(-)
+[0m
+[0m$ [0mgit log --oneline -1
+1ecffd9 fix(a11y): muted token + cerulean on dark sections (CR-WEB-065)
+[0m
+[0m$ [0mgit diff --stat HEAD~1
+app/globals.css                                             | 2 +-
+ app/sectors/awards-engraving/page.tsx                       | 2 +-
+ app/sectors/garment-decoration/page.tsx                     | 2 +-
+ app/sectors/labels-packaging/page.tsx                       | 2 +-
+ app/sectors/operations-consultant-print-embroidery/page.tsx | 2 +-
+ app/sectors/print-promotional/page.tsx                      | 2 +-
+ app/sectors/promotional-merchandise/page.tsx                | 2 +-
+ app/sectors/schoolwear/page.tsx                             | 4 ++--
+ app/sectors/signs-graphics/page.tsx                         | 2 +-
+ app/sectors/teamwear-clubwear/page.tsx                      | 2 +-
+ app/sectors/workwear/page.tsx                               | 2 +-
+ 11 files changed, 12 insertions(+), 12 deletions(-)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web065-fix4.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web065-fix4.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web065-fix4.json .context/lane-reports/LANE-NOTES-web065-fix4.md && git commit -m "docs: lane report for web065-fix4"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web065-fix4.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web065-fix4.json', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo 748102e] docs: lane report for web065-fix4
+ 2 files changed, 78 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web065-fix4.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web065-fix4.json
+[0m
+[0m# [0mTodos
+[✓] Fix --do-text-muted token in globals.css (#486a7b → #3e6274)
+[✓] Fix sector page badge colors on dark backgrounds
+[✓] Check all other do-text-cerulean from da21301 on dark backgrounds
+[✓] Run tsc and npm run build
+[✓] Commit changes
+[✓] Write lane report files and commit
+[0m
+Lane complete. Two commits on `web065-tech-seo`:
+
+1. **`1ecffd9`** — `fix(a11y): muted token + cerulean on dark sections (CR-WEB-065)` — 11 files
+2. **`748102e`** — `docs: lane report for web065-fix4` — 2 files
+
+**Changes:**
+- `globals.css`: `--do-text-muted` corrected from `#486a7b` → `#3e6274`
+- 10 sector pages: numbered badge `color` changed from `var(--do-text-cerulean)` (1.58:1) to `var(--do-sky-blue)` (5.1:1) on `g-navy` dark backgrounds
+- Scope expanded from 5 to 10 files (brief listed 5, all 10 had the same issue)
+- All other `do-text-cerulean` instances audited — all on light backgrounds, no change needed
+
+**Verification:** `npx tsc --noEmit` clean, `npm run build` clean (173 pages, 0 errors).

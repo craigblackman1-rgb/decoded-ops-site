@@ -1,0 +1,335 @@
+
+> build ┬╖ mimo-v2.5
+
+# Todos
+[ΓÇó] Read canonical mockup and current BlogList.tsx implementation
+[ ] FIX 1: Lead post mobile breakpoint (move to CSS/Tailwind)
+[ ] FIX 2: Filter pills hover state
+[ ] FIX 3: CTA links ΓÇö remove icons, fix secondary link target
+[ ] FIX 4: Filter rail z-index
+[ ] Run tsc --noEmit to verify
+[ ] Self-verify all fixes in final code
+[ ] Append LANE-REPORT.md
+
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/blog/blog-landing-v1.html
+ΓåÆ Read components/BlogList.tsx
+ΓåÆ Read app/globals.css
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/blog/blog-landing-v1.html [offset=980]
+Γ£▒ Grep "ArrowRight|CTA|cta|BOOKING_URL" 0 matches
+Let me also check the mockup's CTA block and see if there's a CTA section in BlogList.tsx or a separate component.
+Γ£▒ Grep "ArrowRight|cta|BOOKING_URL" in app/blog ┬╖ 8 matches
+Let me read the blog page.tsx to see the CTA block:
+ΓåÆ Read app/blog/page.tsx
+
+# Todos
+[Γ£ô] Read canonical mockup and current BlogList.tsx implementation
+[ΓÇó] FIX 1: Lead post mobile breakpoint (move to CSS/Tailwind)
+[ ] FIX 2: Filter pills hover state
+[ ] FIX 3: CTA links ΓÇö remove icons, fix secondary link target
+[ ] FIX 4: Filter rail z-index
+[ ] Run tsc --noEmit to verify
+[ ] Self-verify all fixes in final code
+[ ] Append LANE-REPORT.md
+
+Now I have full context. Let me update todos and start making fixes.
+**FIX 1:** Add CSS classes for the lead post (with responsive breakpoint) and filter pill hover state (FIX 2) in `globals.css`:
+ΓåÉ Edit app/globals.css
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\globals.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\globals.css
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\globals.css
+@@ -346,4 +346,68 @@
+ }
+ .footer-drawer-chevron {
+   transition: transform 200ms ease;
+ }
++
++/* ΓöÇΓöÇ Blog landing ΓÇö lead post ΓöÇΓöÇ */
++.blog-lead {
++  display: grid;
++  grid-template-columns: 1.15fr 1fr;
++  align-items: stretch;
++  background: var(--do-surface-raised);
++  border: 1px solid var(--do-border-subtle);
++  border-radius: var(--do-radius-2xl);
++  overflow: hidden;
++  text-decoration: none;
++  color: inherit;
++  transition: border-color var(--do-duration-normal) var(--do-ease-default),
++             box-shadow var(--do-duration-normal) var(--do-ease-default);
++}
++.blog-lead:hover { border-color: var(--do-cerulean); box-shadow: var(--do-shadow-md); }
++.blog-lead:focus-visible { outline: 3px solid var(--do-cerulean); outline-offset: 3px; }
++.blog-lead .lead-art {
++  width: 100%;
++  height: 100%;
++  display: block;
++  aspect-ratio: 16/9;
++  object-fit: cover;
++}
++.blog-lead .lead-body {
++  padding: 40px 44px;
++  display: flex;
++  flex-direction: column;
++  justify-content: center;
++}
++@media (max-width: 900px) {
++  .blog-lead { grid-template-columns: 1fr; }
++  .blog-lead .lead-body { padding: 28px 26px; }
++}
++
++/* ΓöÇΓöÇ Blog landing ΓÇö filter rail ΓöÇΓöÇ */
++.blog-filter-pill {
++  font-family: var(--do-font-body);
++  font-size: var(--do-text-sm);
++  font-weight: 600;
++  padding: 8px 16px;
++  border-radius: 9999px;
++  cursor: pointer;
++  min-height: 38px;
++  background: transparent;
++  color: var(--do-text-secondary);
++  border: 1px solid var(--do-border-subtle);
++  transition: background-color var(--do-duration-fast) var(--do-ease-default),
++             border-color var(--do-duration-fast) var(--do-ease-default);
++}
++.blog-filter-pill:hover {
++  background: color-mix(in srgb, var(--do-cerulean) 10%, transparent);
++  border-color: var(--do-cerulean);
++  color: var(--do-text-primary);
++}
++.blog-filter-pill:focus-visible {
++  outline: 3px solid var(--do-cerulean);
++  outline-offset: 2px;
++}
++.blog-filter-pill[aria-pressed="true"] {
++  background: var(--do-prussian-blue);
++  color: var(--do-off-white);
++  border-color: var(--do-prussian-blue);
++}
+
+
+ΓåÉ Edit components/BlogList.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+@@ -46,38 +46,18 @@
+ {leadPost && (
+   <div style={{ marginBottom: 56 }}>
+     <Link
+       href={`/blog/${leadPost.slug}`}
+-      className="focus-visible:outline-3 focus-visible:outline-[var(--do-cerulean)] focus-visible:outline-offset-3"
+-      style={{
+-        display: 'grid',
+-        gridTemplateColumns: '1.15fr 1fr',
+-        alignItems: 'stretch',
+-        background: 'var(--do-surface-raised)',
+-        border: '1px solid var(--do-border-subtle)',
+-        borderRadius: 'var(--do-radius-2xl)',
+-        overflow: 'hidden',
+-        textDecoration: 'none',
+-        color: 'inherit',
+-        transition: 'border-color var(--do-duration-normal) var(--do-ease-default), box-shadow var(--do-duration-normal) var(--do-ease-default)',
+-      }}
+-      onMouseEnter={(e) => {
+-        e.currentTarget.style.borderColor = 'var(--do-cerulean)';
+-        e.currentTarget.style.boxShadow = 'var(--do-shadow-md)';
+-      }}
+-      onMouseLeave={(e) => {
+-        e.currentTarget.style.borderColor = 'var(--do-border-subtle)';
+-        e.currentTarget.style.boxShadow = 'none';
+-      }}
++      className="blog-lead"
+     >
+       {leadPost.featuredImage && (
+         <img
+           src={leadPost.featuredImage}
+           alt=""
+-          style={{ width: '100%', height: '100%', display: 'block', aspectRatio: '16/9', objectFit: 'cover' }}
++          className="lead-art"
+         />
+       )}
+-      <div style={{ padding: '40px 44px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
++      <div className="lead-body">
+         <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ alignSelf: 'flex-start', color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
+           {leadPost.category}
+         </span>
+         <h2 className="font-bold leading-tight" style={{ fontFamily: 'var(--font-outfit), sans-serif', fontSize: 'var(--do-text-3xl)', color: 'var(--do-text-primary)', margin: '14px 0' }}>
+
+
+Now update `BlogList.tsx` ΓÇö FIX 1 (lead post uses CSS class with breakpoint), FIX 2 (filter pills use CSS class with hover), FIX 4 (z-index):
+ΓåÉ Edit components/BlogList.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+@@ -84,9 +84,9 @@
+ aria-label="Filter by category"
+ style={{
+   position: 'sticky',
+   top: 0,
+-  zIndex: 10,
++  zIndex: 5,
+   margin: '0 0 28px',
+   padding: '16px 0',
+   background: 'var(--do-surface-page)',
+   borderBottom: '1px solid var(--do-border-subtle)',
+@@ -97,22 +97,9 @@
+     key={cat}
+     type="button"
+     aria-pressed={activeCategory === cat}
+     onClick={() => setActiveCategory(cat)}
+-    className="focus-visible:outline-3 focus-visible:outline-[var(--do-cerulean)] focus-visible:outline-offset-2"
+-    style={{
+-      fontFamily: 'var(--do-font-body)',
+-      fontSize: 'var(--do-text-sm)',
+-      fontWeight: 600,
+-      padding: '8px 16px',
+-      borderRadius: 9999,
+-      cursor: 'pointer',
+-      minHeight: 38,
+-      background: activeCategory === cat ? 'var(--do-prussian-blue)' : 'transparent',
+-      color: activeCategory === cat ? 'var(--do-off-white)' : 'var(--do-text-secondary)',
+-      border: activeCategory === cat ? '1px solid var(--do-prussian-blue)' : '1px solid var(--do-border-subtle)',
+-      transition: 'background-color var(--do-duration-fast) var(--do-ease-default), border-color var(--do-duration-fast) var(--do-ease-default)',
+-    }}
++    className="blog-filter-pill"
+   >
+     {cat}
+   </button>
+ ))}
+
+
+Now FIX 2 (filter pill hover) and FIX 4 (z-index):
+ΓåÉ Edit app/blog/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\blog\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\blog\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\blog\page.tsx
+@@ -114,11 +114,11 @@
+         <p className="leading-relaxed mb-6" style={{ color: 'var(--do-sky-blue)' }}>
+           These resources are free. An audit is where things get specific. I quantify every finding, cost every recommendation, and map your next steps.
+         </p>
+         <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
+-          Book a free discovery call <ArrowRight size={18} />
++          Book a free discovery call
+         </Link>
+-        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium inline-flex items-center gap-1 mt-3" style={{ color: 'var(--do-sky-blue)' }}>Or book a call directly <ArrowRight size={14} /></a>
++        <Link href="/contact" className="text-sm font-medium inline-flex items-center gap-1 mt-3" style={{ color: 'var(--do-sky-blue)' }}>Or book a call directly</Link>
+       </div>
+     </div>
+   </section>
+ </>
+
+
+Now FIX 3: Remove ArrowRight icons from CTA and fix secondary link target in `page.tsx`:
+Γ£▒ Grep "BOOKING_URL" in app/blog ┬╖ 1 match
+Let me check if `BOOKING_URL` is still used anywhere in page.tsx after my edit:
+
+ΓåÉ Edit app/blog/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\blog\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\blog\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\blog\page.tsx
+@@ -1,7 +1,6 @@
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+-import { BOOKING_URL } from '@/lib/constants';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import BlogList from '@/components/BlogList';
+ import type { Metadata } from 'next';
+
+
+Remove the unused `BOOKING_URL` import:
+Now let me run the type check:
+$ npx tsc --noEmit 2>&1
+(no output)
+
+# Todos
+[Γ£ô] Read canonical mockup and current BlogList.tsx implementation
+[Γ£ô] FIX 1: Lead post mobile breakpoint (move to CSS/Tailwind)
+[Γ£ô] FIX 2: Filter pills hover state
+[Γ£ô] FIX 3: CTA links ΓÇö remove icons, fix secondary link target
+[Γ£ô] FIX 4: Filter rail z-index
+[Γ£ô] Run tsc --noEmit to verify
+[ΓÇó] Self-verify all fixes in final code
+[ ] Append LANE-REPORT.md
+
+Clean. Now let me verify all four fixes by re-reading the final files:
+ΓåÆ Read components/BlogList.tsx
+ΓåÆ Read app/blog/page.tsx [offset=110]
+ΓåÆ Read app/globals.css [offset=344]
+All four fixes verified element-by-element. Now commit:
+
+$ git add app/globals.css components/BlogList.tsx app/blog/page.tsx && git commit -m "fix(blog): parity fixes for lead post, filter pills, CTA, z-index
+
+FIX 1: Lead post mobile breakpoint ΓÇö moved grid layout from inline
+styles to CSS class .blog-lead with @media (max-width: 900px) that
+collapses to single column and reduces body padding from 40px 44px
+to 28px 26px, matching the mockup.
+
+FIX 2: Filter pill hover state ΓÇö added .blog-filter-pill CSS class
+with :hover rule: cerulean tint background, cerulean border, primary
+text color. Active state unchanged.
+
+FIX 3: CTA links ΓÇö removed ArrowRight icons from both CTA links
+(mockup has text-only buttons). Changed secondary link from external
+BOOKING_URL with target=_blank to internal /contact Link, same tab.
+
+FIX 4: Filter rail z-index ΓÇö changed from 10 to 5 to match mockup."
+warning: in the working copy of 'app/blog/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/BlogList.tsx', LF will be replaced by CRLF the next time Git touches it
+[lane/blog-orphan-purge e5db627] fix(blog): parity fixes for lead post, filter pills, CTA, z-index
+ 3 files changed, 71 insertions(+), 41 deletions(-)
+
+# Todos
+[Γ£ô] Read canonical mockup and current BlogList.tsx implementation
+[Γ£ô] FIX 1: Lead post mobile breakpoint (move to CSS/Tailwind)
+[Γ£ô] FIX 2: Filter pills hover state
+[Γ£ô] FIX 3: CTA links ΓÇö remove icons, fix secondary link target
+[Γ£ô] FIX 4: Filter rail z-index
+[Γ£ô] Run tsc --noEmit to verify
+[Γ£ô] Self-verify all fixes in final code
+[ΓÇó] Append LANE-REPORT.md
+
+Now append the LANE-REPORT:
+Γ£▒ Glob "LANE-REPORT.md" in . ┬╖ 0 matches
+
+ΓåÉ Write LANE-REPORT.md
+Wrote file successfully.
+
+$ git add LANE-REPORT.md && git commit -m "docs: add LANE-REPORT for blog landing parity fixes"
+warning: in the working copy of 'LANE-REPORT.md', LF will be replaced by CRLF the next time Git touches it
+[lane/blog-orphan-purge 05acb1c] docs: add LANE-REPORT for blog landing parity fixes
+ 1 file changed, 48 insertions(+)
+ create mode 100644 LANE-REPORT.md
+
+$ git log --oneline -5
+05acb1c docs: add LANE-REPORT for blog landing parity fixes
+e5db627 fix(blog): parity fixes for lead post, filter pills, CTA, z-index
+d38aac6 CR-WEB-028 u4: rebuild /blog landing to the signed-off v1 mockup
+ebf089f CR-WEB-028 u1: delete 57 orphaned blog SVGs from superseded post slugs
+da4c493 updates
+
+# Todos
+[Γ£ô] Read canonical mockup and current BlogList.tsx implementation
+[Γ£ô] FIX 1: Lead post mobile breakpoint (move to CSS/Tailwind)
+[Γ£ô] FIX 2: Filter pills hover state
+[Γ£ô] FIX 3: CTA links ΓÇö remove icons, fix secondary link target
+[Γ£ô] FIX 4: Filter rail z-index
+[Γ£ô] Run tsc --noEmit to verify
+[Γ£ô] Self-verify all fixes in final code
+[Γ£ô] Append LANE-REPORT.md
+
+All four parity fixes committed. Summary:
+
+| Fix | What | Commit |
+|---|---|---|
+| **1** | Lead post: moved to CSS `.blog-lead` class with `@media (max-width: 900px)` ΓÇö single column + padding change on mobile | `e5db627` |
+| **2** | Filter pills: `.blog-filter-pill` CSS class with `:hover` ΓÇö cerulean tint bg, cerulean border, primary text | `e5db627` |
+| **3** | CTA: removed `ArrowRight` icons from both links; secondary link changed from external `BOOKING_URL` to internal `/contact` | `e5db627` |
+| **4** | Filter rail z-index: `10` ΓåÆ `5` | `e5db627` |
+
+`tsc --noEmit` clean. `LANE-REPORT.md` appended (`05acb1c`). Not pushed.

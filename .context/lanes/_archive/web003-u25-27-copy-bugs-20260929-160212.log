@@ -1,0 +1,193 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0m# [0mTodos
+[ ] BUG-WEB-042: Fix ops health score page meta description (says five dimensions, lists four)
+[ ] BUG-WEB-043: Fix /problems/cant-scale-operations 4th cause card heading
+[ ] BUG-WEB-044: Fix audit checklist question count inconsistency (20 vs 36)
+[ ] Run npx tsc --noEmit
+[ ] Commit all changes with specified message
+[ ] Write lane reports and commit
+[0m
+[0mΓ£▒ [0mGrep "cant-scale-operations"[90m in . ┬╖ 100 matches[0m
+[0mΓ£▒ [0mGrep "audit.checklist"[90m in . ┬╖ 100 matches[0m
+[0mΓ£▒ [0mGrep "health score"[90m in . ┬╖ 34 matches[0m
+[0mΓåÆ [0mRead app/tools/ops-health-score/page.tsx
+[0mΓåÆ [0mRead app/problems/cant-scale-operations/page.tsx
+[0mΓåÆ [0mRead app/resources/audit-checklist/page.tsx
+[0mΓåÆ [0mRead app/blog/page.tsx
+[0mΓ£▒ [0mGlob "app/tools/ops-health-score/**"[90m in . ┬╖ 2 matches[0m
+[0mΓ£▒ [0mGrep "description"[90m in app/tools ┬╖ 33 matches[0m
+[0mΓåÆ [0mRead app/tools/ops-health-score/layout.tsx
+[0mΓåÆ [0mRead app/tools/page.tsx
+[0m
+[0m# [0mTodos
+[ΓÇó] BUG-WEB-042: Fix ops health score page meta description (says five dimensions, lists four)
+[ ] BUG-WEB-043: Fix /problems/cant-scale-operations 4th cause card heading
+[ ] BUG-WEB-044: Fix audit checklist question count inconsistency (20 vs 36)
+[ ] Run npx tsc --noEmit
+[ ] Commit all changes with specified message
+[ ] Write lane reports and commit
+[0m
+Now I have all three bugs identified. Let me make the fixes.
+
+**BUG-WEB-042**: `app/tools/ops-health-score/layout.tsx:5,10,17` ΓÇö description says "five dimensions: systems integration, process, data quality and team capability" (four listed, missing Technology Strategy).
+
+**BUG-WEB-043**: `app/problems/cant-scale-operations/page.tsx:211` ΓÇö cause heading is a page title: 'Business Growing, Operations Not Scaling | Decoded Ops'.
+
+**BUG-WEB-044**: The checklist source has 36 questions (6+5+5+6+5+5+4). Blog page already says 36. Audit checklist page says 36. No stale "20" found in live source. Let me verify.
+[0mΓ£▒ [0mGrep "\b20 questions?\b"[90m in . ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGrep "20.?question"[90m in . ┬╖ 0 matches[0m
+[0mΓ£ù [0mEdit app/tools/ops-health-score/layout.tsx failed
+[91m[1mError: [0mFound multiple matches for oldString. Provide more surrounding context to make the match unique.
+[0mΓ£ù [0mEdit app/tools/ops-health-score/layout.tsx failed
+[91m[1mError: [0mFound multiple matches for oldString. Provide more surrounding context to make the match unique.
+BUG-WEB-044 appears already resolved ΓÇö all references say 36. Now applying the two real fixes.
+
+**Fix 1: BUG-WEB-042** ΓÇö Add "Technology Strategy" to the meta description.
+[0mΓåÆ [0mRead app/tools/ops-health-score/layout.tsx
+[0m
+[0mΓåÉ [0mEdit app/tools/ops-health-score/layout.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u25-27-copy-bugs\app\tools\ops-health-score\layout.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u25-27-copy-bugs\app\tools\ops-health-score\layout.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u25-27-copy-bugs\app\tools\ops-health-score\layout.tsx
+@@ -1,21 +1,21 @@
+ import type { Metadata } from 'next';
+ 
+ export const metadata: Metadata = {
+   title: 'Operations Audit, Free Ops Health Score | Decoded Ops',
+-  description: 'This free operations audit rates your business across five dimensions: systems integration, process, data quality and team capability. Get your score now.',
++  description: 'This free operations audit rates your business across five dimensions: systems integration, process documentation, data quality, team capability and technology strategy. Get your score now.',
+   alternates: { canonical: '/tools/ops-health-score' },
+   openGraph: {
+     type: 'website',
+     title: 'Operations Audit, Free Ops Health Score | Decoded Ops',
+-    description: 'This free operations audit rates your business across five dimensions: systems integration, process, data quality and team capability. Get your score now.',
++    description: 'This free operations audit rates your business across five dimensions: systems integration, process documentation, data quality, team capability and technology strategy. Get your score now.',
+     url: 'https://decodedops.co.uk/tools/ops-health-score',
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+     card: 'summary_large_image',
+     title: 'Operations Audit, Free Ops Health Score | Decoded Ops',
+-    description: 'This free operations audit rates your business across five dimensions: systems integration, process, data quality and team capability. Get your score now.',
++    description: 'This free operations audit rates your business across five dimensions: systems integration, process documentation, data quality, team capability and technology strategy. Get your score now.',
+   },
+ };
+ 
+ export default function OpsHealthScoreLayout({ children }: { children: React.ReactNode }) {
+
+[0m
+[0m# [0mTodos
+[Γ£ô] BUG-WEB-042: Fix ops health score page meta description (says five dimensions, lists four)
+[ΓÇó] BUG-WEB-043: Fix /problems/cant-scale-operations 4th cause card heading
+[Γ£ô] BUG-WEB-044: Fix audit checklist question count inconsistency (20 vs 36)
+[ ] Run npx tsc --noEmit
+[ ] Commit all changes with specified message
+[ ] Write lane reports and commit
+[0m
+**Fix 2: BUG-WEB-043** ΓÇö Fix the 4th cause card heading.
+[0mΓåÉ [0mEdit app/problems/cant-scale-operations/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u25-27-copy-bugs\app\problems\cant-scale-operations\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u25-27-copy-bugs\app\problems\cant-scale-operations\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u25-27-copy-bugs\app\problems\cant-scale-operations\page.tsx
+@@ -207,9 +207,9 @@
+   title: "Growth happened before the operational foundation was ready",
+   body: "It's easy to take on new contracts, products, or markets without asking whether the operation is ready. The revenue looks good on paper. The margin doesn't, because the cost of a stretched operation hides in rework, mistakes, and overtime.",
+  },
+  {
+-  title: 'Business Growing, Operations Not Scaling | Decoded Ops',
++  title: 'Nobody owns the end-to-end process',
+   body: "People own their own department, but nobody owns the full run from order in to invoice out. Problems at the handoffs between teams are nobody's job to fix, so they stay and get worse.",
+  },
+ ]}
+ howIHelp="I come on site and follow how work moves through your business, from the moment an order arrives to the moment it's invoiced and out the door. I map what's there, spot what's missing, and put a cost on it in time, margin, and risk. Within five days you get a written report with every finding and every fix prioritised. Quick wins are separated from bigger changes, so you know what to do this week and what to plan for. If you need help making the changes, I run a structured Deliver engagement to do the work with you. And if you're scaling a business and need ongoing operational leadership, there's a retained option: monthly support without the cost of a full-time hire."
+
+[0m
+[0m# [0mTodos
+[Γ£ô] BUG-WEB-042: Fix ops health score page meta description (says five dimensions, lists four)
+[Γ£ô] BUG-WEB-043: Fix /problems/cant-scale-operations 4th cause card heading
+[Γ£ô] BUG-WEB-044: Fix audit checklist question count inconsistency (20 vs 36)
+[ΓÇó] Run npx tsc --noEmit
+[ ] Commit all changes with specified message
+[ ] Write lane reports and commit
+[0m
+[0m$ [0mcd D:\apps\worktrees\decoded-ops-website\web003-u25-27-copy-bugs && npm install 2>&1 | tail -5
+tail: The term 'tail' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mnpm install
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 440 packages, and audited 441 packages in 33s
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+
+158 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+[0m
+[0m$ [0mnpx tsc --noEmit
+(no output)
+[0m
+tsc is clean. Now committing.
+[0m$ [0mgit add app/tools/ops-health-score/layout.tsx app/problems/cant-scale-operations/page.tsx && git commit -m "fix(web): BUG-WEB-042/043/044 copy consistency"
+[web003-u25-27-copy-bugs 1c75e87] fix(web): BUG-WEB-042/043/044 copy consistency
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+[0m
+[0m# [0mTodos
+[Γ£ô] BUG-WEB-042: Fix ops health score page meta description (says five dimensions, lists four)
+[Γ£ô] BUG-WEB-043: Fix /problems/cant-scale-operations 4th cause card heading
+[Γ£ô] BUG-WEB-044: Fix audit checklist question count inconsistency (20 vs 36)
+[Γ£ô] Run npx tsc --noEmit
+[Γ£ô] Commit all changes with specified message
+[ΓÇó] Write lane reports and commit
+[0m
+[0m$ [0mgit log --oneline -1
+1c75e87 fix(web): BUG-WEB-042/043/044 copy consistency
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web003-u25-27-copy-bugs\.context\lane-reports already exists.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web003-u25-27-copy-bugs.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web003-u25-27-copy-bugs.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web003-u25-27-copy-bugs.json .context/lane-reports/LANE-NOTES-web003-u25-27-copy-bugs.md && git commit -m "chore: lane reports for web003-u25-27-copy-bugs"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web003-u25-27-copy-bugs.md', LF will be replaced by CRLF the next time Git touches it
+[web003-u25-27-copy-bugs 81fe3a4] chore: lane reports for web003-u25-27-copy-bugs
+ 2 files changed, 37 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web003-u25-27-copy-bugs.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web003-u25-27-copy-bugs.json
+[0m
+[0m# [0mTodos
+[Γ£ô] BUG-WEB-042: Fix ops health score page meta description (says five dimensions, lists four)
+[Γ£ô] BUG-WEB-043: Fix /problems/cant-scale-operations 4th cause card heading
+[Γ£ô] BUG-WEB-044: Fix audit checklist question count inconsistency (20 vs 36)
+[Γ£ô] Run npx tsc --noEmit
+[Γ£ô] Commit all changes with specified message
+[Γ£ô] Write lane reports and commit
+[0m
+Lane complete. Two commits on `web003-u25-27-copy-bugs`:
+
+1. **`1c75e87`** ΓÇö `fix(web): BUG-WEB-042/043/044 copy consistency`
+   - **BUG-WEB-042**: `app/tools/ops-health-score/layout.tsx` ΓÇö meta description now lists all five dimensions (added "process documentation" wording fix + "and technology strategy") across metadata, openGraph, and twitter.
+   - **BUG-WEB-043**: `app/problems/cant-scale-operations/page.tsx:211` ΓÇö 4th cause heading changed from `'Business Growing, Operations Not Scaling | Decoded Ops'` to `'Nobody owns the end-to-end process'`.
+   - **BUG-WEB-044**: Already consistent at 36 across all live source files. No change needed.
+
+2. **`81fe3a4`** ΓÇö Lane reports committed.
+
+`npx tsc --noEmit`: clean (0 errors).

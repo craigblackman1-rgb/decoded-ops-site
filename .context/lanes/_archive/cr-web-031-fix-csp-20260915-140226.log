@@ -1,0 +1,82 @@
+
+> build · mimo-v2.5
+
+→ Read next.config.ts [offset=40, limit=20]
+
+← Edit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-031-video-embed\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-031-video-embed\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\cr-web-031-video-embed\next.config.ts
+@@ -43,9 +43,9 @@
+       // 'unsafe-eval' is added in development ONLY. Webpack dev mode (`next dev --webpack`)
+       // uses eval for HMR and source maps, and without this React never hydrates locally,
+       // which makes every interactive component look broken while testing. Production
+       // headers are unchanged.
+-      value: `default-src 'self'; script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://analytics.ahrefs.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net https://analytics.ahrefs.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'`,
++      value: `default-src 'self'; script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://analytics.ahrefs.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net https://analytics.ahrefs.com; frame-src 'self' https://www.youtube-nocookie.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'`,
+     },
+   ],
+ },
+ {
+
+
+$ git diff --cached --stat
+(no output)
+
+$ npx tsc --noEmit
+(no output)
+
+$ git add next.config.ts && git commit -m "fix(csp): add frame-src for youtube-nocookie embed
+
+Add explicit frame-src directive allowing 'self' and
+https://www.youtube-nocookie.com to the Content-Security-Policy header,
+resolving the CSP violation when playing embedded YouTube videos.
+
+Co-Authored-By: Claude Opencode <noreply@anthropic.com>"
+[cr-web-031-video-embed a4f8157] fix(csp): add frame-src for youtube-nocookie embed
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git log --oneline -1
+a4f8157 fix(csp): add frame-src for youtube-nocookie embed
+
+$ git diff HEAD~1 --stat
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+ data/problem-videos.ts | 2 ++
+ next.config.ts         | 2 +-
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+$ ls .context/lane-reports/ 2>$null || echo "directory does not exist"
+Directory: D:\apps\worktrees\decoded-ops-website\cr-web-031-video-embed\.context\lane-reports
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          15/09/2026    12:09           1531 LANE-NOTES-u12-blog-index-sync.md
+-a---          15/09/2026    12:09           2472 LANE-NOTES-u4-discovery-day-rename.md
+-a---          15/09/2026    12:09           2849 LANE-NOTES-u6-tool-lead-alert.md
+-a---          15/09/2026    13:50           1756 LANE-RESULT.json
+
+→ Read .context/lane-reports/LANE-RESULT.json
+
+← Write .context/lane-reports/LANE-RESULT.json
+Wrote file successfully.
+
+$ git add .context/lane-reports/LANE-RESULT.json && git commit -m "docs: update LANE-RESULT.json for cr-web-031-fix-csp
+
+Co-Authored-By: Claude Opencode <noreply@anthropic.com>"
+warning: in the working copy of '.context/lane-reports/LANE-RESULT.json', LF will be replaced by CRLF the next time Git touches it
+[cr-web-031-video-embed 56f16d9] docs: update LANE-RESULT.json for cr-web-031-fix-csp
+ 1 file changed, 8 insertions(+), 29 deletions(-)
+
+$ git log --oneline -3
+56f16d9 docs: update LANE-RESULT.json for cr-web-031-fix-csp
+a4f8157 fix(csp): add frame-src for youtube-nocookie embed
+70642ab chore: revert incidental typescript range bump (out of scope for CR-WEB-031)
+
+→ Read next.config.ts [limit=5, offset=46]
+Lane complete. Two commits:
+
+- `a4f8157` — `fix(csp): add frame-src for youtube-nocookie embed` — adds `frame-src 'self' https://www.youtube-nocookie.com` to the CSP header in `next.config.ts`
+- `56f16d9` — `docs: update LANE-RESULT.json for cr-web-031-fix-csp`
+
+`npx tsc --noEmit` clean. Only `next.config.ts` staged; `data/problem-videos.ts` untouched.

@@ -1,0 +1,90 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓåÆ [0mRead .context/lane-briefs/inf070-u3-fix-390.md
+[0mΓåÆ [0mRead components/DownloadOptIn.module.css
+[0m
+[0mΓåÉ [0mEdit components/DownloadOptIn.module.css
+Index: D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.module.css
++++ D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.module.css
+@@ -74,9 +74,9 @@
+ 
+ .meta { margin: 12px 0 22px; font-size: 15px; line-height: 1.55; color: var(--do-text-secondary); }
+ .meta b { color: var(--do-text-primary); font-weight: 700; }
+ 
+-.dlBtn { gap: 10px; }
++.dlBtn { gap: 10px; max-width: 100%; box-sizing: border-box; }
+ .dlBtn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+ 
+ .note { margin: 12px 0 0; font-size: 13px; color: var(--do-text-muted); }
+ 
+
+[0m
+I can see the issue. The `.dlBtn` at line 78 has no width constraints, and the compact variant at line 161 only sets `width: 100%` without `max-width` or `box-sizing`. Adding the fixes:
+[0mΓåÉ [0mEdit components/DownloadOptIn.module.css
+Index: D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.module.css
++++ D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.module.css
+@@ -157,6 +157,6 @@
+   .doc { height: 260px; max-width: none }
+   .formPage { left: auto; right: 22px }
+   .dlBtn { width: 100%; white-space: normal; text-align: center; padding-inline: 14px; font-size: 15px; gap: 8px }
+   .miniRow { padding: 20px 18px }
+-  .mini .dlBtn { width: 100% }
++  .mini .dlBtn { width: 100%; max-width: 100%; white-space: normal; text-align: center }
+ }
+
+[0m
+Now the compact variant's `.mini .dlBtn` rule needs the same overflow protections:
+[0mΓåÆ [0mRead components/DownloadOptIn.module.css[90m [offset=75, limit=10][0m
+[0mΓåÆ [0mRead components/DownloadOptIn.module.css[90m [offset=155, limit=10][0m
+Let me verify the changes:
+Changes look correct. Now committing:
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup" && git add components/DownloadOptIn.module.css && git commit -m "fix(web): DownloadOptIn compact button overflow at 390px (CR-WEB-061)"
+[inf070-u3-sop-signup 4daf32f] fix(web): DownloadOptIn compact button overflow at 390px (CR-WEB-061)
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup" && git log --oneline -1 --format=%H
+4daf32f0372712345a6f6a6603f4d5b835bcbf87
+[0m
+[0m$ [0mmkdir -p "D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\.context\lane-reports"
+(no output)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup" && git diff HEAD~1 --name-only
+components/DownloadOptIn.module.css
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup" && npx tsc --noEmit 2>&1 | tail -5
+(no output)
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-inf070-u3-fix-390-retry.json
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup" && npx tsc --noEmit 2>&1; echo "EXIT:$?"
+EXIT:0
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-inf070-u3-fix-390-retry.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup" && git add .context/lane-reports/LANE-RESULT-inf070-u3-fix-390-retry.json .context/lane-reports/LANE-NOTES-inf070-u3-fix-390-retry.md && git commit -m "chore: lane report for inf070-u3-fix-390-retry"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-inf070-u3-fix-390-retry.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-inf070-u3-fix-390-retry.json', LF will be replaced by CRLF the next time Git touches it
+[inf070-u3-sop-signup 53752a0] chore: lane report for inf070-u3-fix-390-retry
+ 2 files changed, 19 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-inf070-u3-fix-390-retry.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-inf070-u3-fix-390-retry.json
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup" && git log --oneline -3
+53752a0 chore: lane report for inf070-u3-fix-390-retry
+4daf32f fix(web): DownloadOptIn compact button overflow at 390px (CR-WEB-061)
+4487974 chore: lane report inf070-u3-sop-signup
+[0m
+Lane complete. Two commits landed:
+
+1. `4daf32f` ΓÇö CSS fix: added `max-width: 100%` and `box-sizing: border-box` to `.dlBtn`, plus `white-space: normal` and `text-align: center` to the compact variant's `.mini .dlBtn` at Γëñ480px. Only `components/DownloadOptIn.module.css` touched.
+2. `53752a0` ΓÇö Lane report and notes committed.
+
+tsc: clean (0 errors). No other files changed.

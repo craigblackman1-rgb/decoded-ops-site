@@ -1,0 +1,1446 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m# [0mTodos
+[•] Explore codebase: find all <img> usage, heavy assets, config
+[ ] Add images config to next.config.ts
+[ ] Optimize heavy images (create -v2 files)
+[ ] Switch <img> to next/image in app/apps/*/page.tsx
+[ ] Verify: grep for old <img>, tsc, lint, build
+[ ] Commit and write lane reports
+[0m
+[0m• [0mExplore image usage patterns[90m Explore Agent[0m
+[0m✓ [0mExplore image usage patterns[90m Explore Agent[0m
+[0m→ [0mRead app/apps/data-app/page.tsx
+[0m→ [0mRead app/apps/commerce/page.tsx
+[0m→ [0mRead app/apps/artwork-manager/page.tsx
+Good research. Now let me read all the files I need to edit.
+[0m→ [0mRead next.config.ts
+Now let me read the problem pages that have `<img>` tags for heavy assets, and check what images are available for optimization.
+[0m• [0mRead problem pages with img[90m General Agent[0m
+[0m✓ [0mRead problem pages with img[90m General Agent[0m
+Now let me check what's available for image processing and understand the container widths.
+[0m
+[0m$ [0mnode -e "try { require('sharp'); console.log('sharp available'); } catch(e) { console.log('sharp not available: ' + e.message); }"
+sharp not available: Cannot find module 'sharp'
+Require stack:
+- D:\apps\worktrees\decoded-ops-website\web011-u4-images\[eval]
+[0m
+[0m$ [0mnpx --yes sharp-cli --version 2>&1 || echo "sharp-cli not available"
+6.1.0
+[0m
+[0m# [0mTodos
+[✓] Explore codebase: find all <img> usage, heavy assets, config
+[•] Add images config to next.config.ts
+[ ] Optimize heavy images (create -v2 files)
+[ ] Switch <img> to next/image in app/apps/*/page.tsx
+[ ] Update blog images with -v2.webp copies
+[ ] Verify: grep for old <img>, tsc, lint, build
+[ ] Commit and write lane reports
+[0m
+First, let me check the current git state and commit a clean baseline.
+[0m$ [0mgit status --short
+(no output)
+[0m
+Clean tree. Let me start with the config change and image optimization in parallel.
+[0m← [0mEdit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\next.config.ts
+@@ -1,8 +1,11 @@
+ import type { NextConfig } from "next";
+ 
+ const nextConfig: NextConfig = {
+   output: 'standalone',
++  images: {
++    formats: ['image/avif', 'image/webp'],
++  },
+   async redirects() {
+     return [
+       { source: '/audit', destination: '/clarity', permanent: true },
+       { source: '/fractional', destination: '/retained', permanent: true },
+
+[0m
+Now let me check actual image dimensions and start optimizing. I'll run the sharp-cli commands to create all the -v2 files.
+[0m$ [0mnpx sharp-cli --info public/images/apps/commerce-pdp.png public/images/apps/commerce-plp.png public/images/apps/data-app-dashboard.png public/images/apps/data-app-catalogue.png public/images/apps/data-app-supplier-import.png public/images/apps/data-app-hero.png public/images/apps/artwork-approval.png public/images/apps/artwork-manager-hero.jpg public/images/hero-craft.jpg public/images/sectors/thread-spools.jpg public/images/blog/decoded-method-operations-framework-img-1.png public/images/blog/decoded-method-operations-framework-thumb.png public/assets/screens/data-app-hero.png public/images/sector-credibility.jpg public/images/real-example.jpg 2>&1
+Unknown arguments: info, public/images/apps/commerce-plp.png, public/images/apps/data-app-dashboard.png, public/images/apps/data-app-catalogue.png, public/images/apps/data-app-supplier-import.png, public/images/apps/data-app-hero.png, public/images/apps/artwork-approval.png, public/images/apps/artwork-manager-hero.jpg, public/images/hero-craft.jpg, public/images/sectors/thread-spools.jpg, public/images/blog/decoded-method-operations-framework-img-1.png, public/images/blog/decoded-method-operations-framework-thumb.png, public/assets/screens/data-app-hero.png, public/images/sector-credibility.jpg, public/images/real-example.jpg
+
+Specify --help for available options
+[0m
+[0m$ [0mnpx sharp-cli --help 2>&1 | head -30
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mnpx sharp-cli --help 2>&1 | Select-Object -First 40
+cli.js <options> [command..]
+
+Commands:
+  cli.js affine <matrix..>                      Perform an affine transform on an image
+  cli.js bandbool <operator>                    Perform a bitwise boolean operation on all input ima
+                                                ge channels (bands) to produce a single channel outp
+                                                ut image
+  cli.js blur [sigma]                           Blur the image
+  cli.js boolean <operand> <operator>           Perform a bitwise boolean operation with operand ima
+                                                ge
+  cli.js clahe <width> <height>                 Perform contrast limiting adaptive histogram equaliz
+                                                ation CLAHE
+  cli.js composite [images..]                   Composite image(s) over the processed (resized, extr
+                                                acted etc.) image
+  cli.js convolve <width> <height> <kernel..>   Convolve the image with the specified kernel
+  cli.js dilate [width]                         Expand foreground objects using the dilate morpholog
+                                                ical operator
+  cli.js ensureAlpha [alpha]                    Ensure the output image has an alpha transparency ch
+                                                annel
+  cli.js erode [width]                          Shrink foreground objects using the erode morphologi
+                                                cal operator
+  cli.js extend <top> <bottom> <left> <right>   Extends/pads the edges of the image with the provide
+                                                d background colour
+  cli.js extract <top> <left> <width> <height>  Extract a region of the image
+  cli.js extractChannel <channel>               Extract a single channel from a multi-channel image
+  cli.js flatten [background]                   Merge alpha transparency channel, if any, with a bac
+                                                kground
+  cli.js flip                                   Flip the image about the vertical Y axis
+  cli.js flop                                   Flop the image about the horizontal X axis
+  cli.js gamma [gamma] [gammaOut]               Apply a gamma correction by reducing the encoding (d
+                                                arken) pre-resize then increasing the encoding (brig
+                                                hten) post-resize
+  cli.js greyscale                              Convert to 8-bit greyscale; 256 shades of grey
+                                                                                [aliases: grayscale]
+  cli.js joinChannel <images..>                 Join one or more channels to the image
+  cli.js linear [multiplier..]                  Apply the linear formula a × input + b to the image
+                                                to adjust image levels
+  cli.js median [size]                          Apply median filter
+  cli.js modulate                               Transforms the image using brightness, saturation, h
+                                                ue rotation, and lightness
+[0m
+Let me use a node script to get dimensions, then batch the sharp-cli conversions.
+[0m$ [0mnode -e "
+const files = [
+  'public/images/apps/commerce-pdp.png',
+  'public/images/apps/commerce-plp.png',
+  'public/images/apps/data-app-dashboard.png',
+  'public/images/apps/data-app-catalogue.png',
+  'public/images/apps/data-app-supplier-import.png',
+  'public/images/apps/data-app-hero.png',
+  'public/images/apps/artwork-approval.png',
+  'public/images/apps/artwork-manager-hero.jpg',
+  'public/images/hero-craft.jpg',
+  'public/images/sectors/thread-spools.jpg',
+  'public/images/blog/decoded-method-operations-framework-img-1.png',
+  'public/images/blog/decoded-method-operations-framework-thumb.png',
+  'public/assets/screens/data-app-hero.png',
+  'public/images/sector-credibility.jpg'
+];
+const fs = require('fs');
+for (const f of files) {
+  try {
+    const s = fs.statSync(f);
+    console.log(f + ' | ' + Math.round(s.size/1024) + 'KB');
+  } catch(e) {
+    console.log(f + ' | NOT FOUND');
+  }
+}
+"
+public/images/apps/commerce-pdp.png | 1556KB
+public/images/apps/commerce-plp.png | 1401KB
+public/images/apps/data-app-dashboard.png | 603KB
+public/images/apps/data-app-catalogue.png | 493KB
+public/images/apps/data-app-supplier-import.png | 269KB
+public/images/apps/data-app-hero.png | 243KB
+public/images/apps/artwork-approval.png | 497KB
+public/images/apps/artwork-manager-hero.jpg | 334KB
+public/images/hero-craft.jpg | 119KB
+public/images/sectors/thread-spools.jpg | 159KB
+public/images/blog/decoded-method-operations-framework-img-1.png | 998KB
+public/images/blog/decoded-method-operations-framework-thumb.png | 99KB
+public/assets/screens/data-app-hero.png | 243KB
+public/images/sector-credibility.jpg | 133KB
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/commerce-pdp.png -o public/images/apps/commerce-pdp-v2.webp --format webp --quality 82 --width 1600 2>&1
+Unknown argument: width
+
+Specify --help for available options
+[0m
+Now let me run all the image optimizations. I'll batch them for efficiency.
+[0m$ [0mnpx sharp-cli -i public/images/apps/commerce-plp.png -o public/images/apps/commerce-plp-v2.webp --format webp --quality 82 --width 1600 2>&1
+Unknown argument: width
+
+Specify --help for available options
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/data-app-dashboard.png -o public/images/apps/data-app-dashboard-v2.webp --format webp --quality 82 --width 1600 2>&1
+Unknown argument: width
+
+Specify --help for available options
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/data-app-catalogue.png -o public/images/apps/data-app-catalogue-v2.webp --format webp --quality 82 --width 1600 2>&1
+Unknown argument: width
+
+Specify --help for available options
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/data-app-supplier-import.png -o public/images/apps/data-app-supplier-import-v2.webp --format webp --quality 82 --width 1600 2>&1
+Unknown argument: width
+
+Specify --help for available options
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/data-app-hero.png -o public/images/apps/data-app-hero-v2.webp --format webp --quality 82 --width 1600 2>&1
+Unknown argument: width
+
+Specify --help for available options
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/artwork-approval.png -o public/images/apps/artwork-approval-v2.webp --format webp --quality 82 --width 1600 2>&1
+Unknown argument: width
+
+Specify --help for available options
+[0m
+[0m$ [0mnpx sharp-cli --help 2>&1 | Select-Object -First 60
+cli.js <options> [command..]
+
+Commands:
+  cli.js affine <matrix..>                      Perform an affine transform on an image
+  cli.js bandbool <operator>                    Perform a bitwise boolean operation on all input ima
+                                                ge channels (bands) to produce a single channel outp
+                                                ut image
+  cli.js blur [sigma]                           Blur the image
+  cli.js boolean <operand> <operator>           Perform a bitwise boolean operation with operand ima
+                                                ge
+  cli.js clahe <width> <height>                 Perform contrast limiting adaptive histogram equaliz
+                                                ation CLAHE
+  cli.js composite [images..]                   Composite image(s) over the processed (resized, extr
+                                                acted etc.) image
+  cli.js convolve <width> <height> <kernel..>   Convolve the image with the specified kernel
+  cli.js dilate [width]                         Expand foreground objects using the dilate morpholog
+                                                ical operator
+  cli.js ensureAlpha [alpha]                    Ensure the output image has an alpha transparency ch
+                                                annel
+  cli.js erode [width]                          Shrink foreground objects using the erode morphologi
+                                                cal operator
+  cli.js extend <top> <bottom> <left> <right>   Extends/pads the edges of the image with the provide
+                                                d background colour
+  cli.js extract <top> <left> <width> <height>  Extract a region of the image
+  cli.js extractChannel <channel>               Extract a single channel from a multi-channel image
+  cli.js flatten [background]                   Merge alpha transparency channel, if any, with a bac
+                                                kground
+  cli.js flip                                   Flip the image about the vertical Y axis
+  cli.js flop                                   Flop the image about the horizontal X axis
+  cli.js gamma [gamma] [gammaOut]               Apply a gamma correction by reducing the encoding (d
+                                                arken) pre-resize then increasing the encoding (brig
+                                                hten) post-resize
+  cli.js greyscale                              Convert to 8-bit greyscale; 256 shades of grey
+                                                                                [aliases: grayscale]
+  cli.js joinChannel <images..>                 Join one or more channels to the image
+  cli.js linear [multiplier..]                  Apply the linear formula a × input + b to the image
+                                                to adjust image levels
+  cli.js median [size]                          Apply median filter
+  cli.js modulate                               Transforms the image using brightness, saturation, h
+                                                ue rotation, and lightness
+  cli.js negate                                 Produce the "negative" of the image
+  cli.js normalise                              Enhance output image contrast by stretching its lumi
+                                                nance to cover the full dynamic range
+                                                                                [aliases: normalize]
+  cli.js pipelineColourspace <colourspace>      Set the pipeline colourspace
+                                                                       [aliases: pipelineColorspace]
+  cli.js recomb <matrix..>                      Recomb the image with the specified matrix
+  cli.js removeAlpha                            Remove alpha channel, if any
+  cli.js resize [width] [height]                Resize image to width, height, or width × height
+  cli.js rotate [angle]                         Rotate the output image
+  cli.js sharpen [sigma]                        Sharpen the image
+  cli.js threshold [value]                      Any pixel value greater than or equal to the thresho
+                                                ld value will be set to 255, otherwise it will be se
+                                                t to 0
+  cli.js tint <rgb>                             Tint the image using the provided chroma while prese
+                                                rving the image luminance
+  cli.js tile [size]                            Use tile-based deep zoom (image pyramid) output
+  cli.js toColourspace <colourspace>            Set the output colourspace   [aliases: toColorspace]
+  cli.js trim [threshold]                       Trim pixels from all edges that contain values simil
+                                                ar to the given background color, which defaults to
+[0m
+[0m$ [0mnpx sharp-cli resize --help 2>&1
+cli.js resize [width] [height]
+
+Resize image to width, height, or width × height
+
+Positionals:
+  width   Pixels or percentage wide the resultant image should be           [string] [default: null]
+  height  Pixels or percentage high the resultant image should be           [string] [default: null]
+
+Command Options
+      --background          Background colour when fit is contain, parsed by the color module.
+                                                                [string] [default: rgba(0, 0, 0, 1)]
+      --fastShrinkOnLoad    Take greater advantage of the JPEG and WebP shrink-on-load feature
+                                                                           [boolean] [default: true]
+      --fit                 How the image should be resized to fit both provided dimensions
+                         [choices: "contain", "cover", "fill", "inside", "outside"] [default: cover]
+      --kernel              The kernel to use for image reduction and the inferred interpolator to u
+                            se for upsampling
+   [choices: "nearest", "linear", "cubic", "mitchell", "lanczos2", "lanczos3", "mks2013", "mks2021"]
+                                                                                 [default: lanczos3]
+      --position            Position, gravity, or strategy to use when fit is cover or contain
+  [choices: "center", "centre", "north", "east", "south", "west", "northeast", "southeast", "southwe
+  st", "northwest", "top", "right", "bottom", "left", "right top", "right bottom", "left bottom", "l
+                                                 eft top", "entropy", "attention"] [default: centre]
+      --withoutEnlargement  Do not enlarge if the width or height are already less than the specifie
+                            d dimensions                                                   [boolean]
+      --withoutReduction    Do not reduce if the width or height are already greater than the specif
+                            ied dimensions                                                 [boolean]
+
+Global Options
+  -n, --dry      Process images without writing output files                               [boolean]
+      --print    Print input and output metadata as JSON                                   [boolean]
+  -i, --input    Path to (an) image file(s)                                 [array] [default: stdin]
+  -o, --output   Directory or URI template to write the image files to    [string] [default: stdout]
+      --timeout  Number of seconds after which processing will be stopped                   [number]
+
+Input Options
+      --animated            Read all frames/pages of an animated image                     [boolean]
+      --autoOrient          Rotate/flip the image to match EXIF Orientation, if any        [boolean]
+      --density             DPI for vector images                             [number] [default: 72]
+      --failOn              Level of sensitivity to invalid images
+                               [choices: "none", "truncated", "error", "warning"] [default: warning]
+      --ignoreIcc           Should the embedded ICC profile, if any, be ignored
+                                                                          [boolean] [default: false]
+      --level               Level to extract from a multi-level input (OpenSlide), zero based
+                                                                                            [number]
+      --limitInputPixels    Do not process input images where the number of pixels (width x height)
+                            exceeds this limit                         [number] [default: 268402689]
+      --limitInputChannels  Do not process input images where the number of channels exceeds this li
+                            mit                                                [number] [default: 5]
+      --page                Page number to start extracting from for multi-page input       [number]
+      --pages               Number of pages to extract for multi-page input    [number] [default: 1]
+      --pdfBackground       Background colour to use when PDF is partially transparent      [string]
+      --sequentialRead      Use sequential rather than random access where possible
+                                                                          [boolean] [default: false]
+      --subifd              subIFD to extract for OME-TIFF                    [number] [default: -1]
+      --unlimited           Remove safety features that help prevent memory exhaustion     [boolean]
+
+Output Options
+      --bigtiff                   Use BigTIFF variant                                      [boolean]
+  -c, --compressionLevel          zlib compression level                       [number] [default: 6]
+  -f, --format                    Force output to a given format
+                    [choices: "avif", "gif", "heif", "jpeg", "png", "tiff", "webp"] [default: input]
+      --keepDuplicateFrames       Keep duplicate frames in the output instead of combining them
+                                                                                           [boolean]
+      --keepGainMap               Attempt to process the image and gain map separately, recombining
+                                  them into a single output image                          [boolean]
+  -m, --metadata, --withMetadata  Include all metadata (EXIF, XMP, IPTC) from the input image in the
+                                   output image                                            [boolean]
+      --metadata.density          Number of pixels per inch (DPI)                           [number]
+      --metadata.exif             Object keyed by IFD0, IFD1 etc. of key/value string pairs to write
+                                   as EXIF data                                        [default: {}]
+      --metadata.icc              Filesystem path to output ICC profile     [string] [default: sRGB]
+      --metadata.orientation      Used to update the EXIF Orientation tag                   [number]
+      --withDensity               Set output density (DPI) in EXIF metadata                 [number]
+      --withGainMap               Convert the main image to HDR (High Dynamic Range) before further
+                                  processing                                               [boolean]
+  -p, --progressive               Use progressive (interlace) scan                         [boolean]
+  -q, --quality                   Quality                                     [number] [default: 80]
+
+Optimization Options
+      --adaptiveFiltering                       Use adaptive row filtering                 [boolean]
+      --alphaQuality                            Quality of alpha layer        [number] [default: 80]
+      --bitdepth                                Reduce bitdepth to 1, 2, or 4 bit
+                                                                  [choices: 1, 2, 4, 8] [default: 8]
+      --chromaSubsampling                       Set to "4:4:4" to prevent chroma subsampling when qu
+                                                ality <= 90 [string] [default: 4:4:4 (AVIF) / 4:2:0]
+      --colors, --colours                       Maximum number of palette entries
+                                                                             [number] [default: 256]
+      --compression                             Compression options
+  [choices: "ccittfax4", "deflate", "jpeg", "jp2k", "lzw", "none", "packbits", "webp", "zstd"] [defa
+                                                                                        ult: "jpeg"]
+      --delay                                   Delay(s) between animation frames           [number]
+      --dither                                  Level of Floyd-Steinberg error diffusion
+                                                                             [number] [default: 1.0]
+      --effort                                  Level of CPU effort to reduce file size
+                                                                [number] [default: 7 (GIF, PNG) / 4]
+      --exact                                   Preserve the colour data in transparent pixels
+                                                                                           [boolean]
+      --hbitdepth                               Set bitdepth to 8, 10, or 12 bit
+                                                                   [choices: 8, 10, 12] [default: 8]
+      --hcompression                            Compression format
+                                                           [choices: "hevc", "av1"] [default: "av1"]
+      --interFrameMaxError                      Maximum inter-frame error for transparency  [number]
+      --interPaletteMaxError                    Maximum inter-palette error for palette reuse
+                                                                                            [number]
+      --loop                                    Number of animation iterations [number] [default: 0]
+      --lossless                                Use lossless compression mode              [boolean]
+      --miniswhite                              Write 1-bit images as miniswhite           [boolean]
+      --minSize                                 Prevent use of animation key frames to minimize file
+                                                 size                                      [boolean]
+      --mixed                                   Allow mixture of lossy and lossless animation frames
+                                                                                           [boolean]
+      --mozjpeg                                 Use mozjpeg defaults                       [boolean]
+      --nearLossless                            Use near_lossless compression mode         [boolean]
+      --optimise, --optimize                    Apply optimiseScans, overshootDeringing, and trellis
+                                                Quantisation                               [boolean]
+      --optimiseCoding, --optimizeCoding        Optimise Huffman coding tables
+                                                                           [boolean] [default: true]
+      --optimiseScans, --optimizeScans          Optimise progressive scans                 [boolean]
+      --overshootDeringing                      Apply overshoot deringing                  [boolean]
+      --palette                                 Quantise to a palette-based image with alpha transpa
+                                                rency support                              [boolean]
+      --predictor                               Compression predictor
+                                    [choices: "float", "horizontal", "none"] [default: "horizontal"]
+      --preset                                  Named preset for preprocessing/filtering
+            [choices: "default", "photo", "picture", "drawing", "icon", "text"] [default: "default"]
+      --pyramid                                 Write an image pyramid                     [boolean]
+      --quantisationTable, --quantizationTable  Quantization table to use      [number] [default: 0]
+      --reuse, --reoptimise, --reoptimize       Always generate new palettes (slow)        [boolean]
+      --resolutionUnit                          Resolution unit
+                                                             [choices: "cm", "inch"] [default: inch]
+      --smartDeblock                            Auto-adjust the deblocking filter, can improve low c
+                                                ontrast edges                              [boolean]
+      --smartSubsample                          High quality chroma subsampling            [boolean]
+      --tileBackground                          Background colour, parsed by the color module
+                                                          [string] [default: rgba(255, 255, 255, 1)]
+      --tileHeight                              Vertical tile size                          [number]
+      --tileWidth                               Horizontal tile size                        [number]
+      --trellisQuantisation                     Apply trellis quantisation                 [boolean]
+      --tune                                    Tune output for a quality metric
+                                             [choices: "auto", "iq", "psnr", "ssim"] [default: auto]
+      --xres                                    Horizontal resolution        [number] [default: 1.0]
+      --yres                                    Vertical resolution          [number] [default: 1.0]
+
+Misc. Options
+  -h, --help     Show help                                                                 [boolean]
+  -v, --version  Show version number                                                       [boolean]
+
+Examples:
+  cli.js resize 100                                   The output will be 100 pixels wide, auto-scale
+                                                      d height
+  cli.js resize --height 100                          The output will be 100 pixels high, auto-scale
+                                                      d width
+  cli.js resize 50%                                   The output will be 50% of the input width, aut
+                                                      o-scaled height
+  cli.js resize 200 300 --background rgba(255,255,25  The output will be 200 pixels wide and 300 pix
+  5,0.5) --fit contain --kernel nearest --position "  els high containing a nearest-neighbour scaled
+  right top"                                           version contained within the north-east corne
+                                                      r of a semi-transparent white canvas
+  cli.js resize 200 200 --fit cover --position entro  The output will be a 200px square auto-cropped
+  py                                                   image
+  cli.js resize 200 200 --withoutEnlargement          The output will be no wider and no higher than
+                                                       200 pixels, and no larger than the input imag
+                                                      e
+  cli.js resize 200 200 --withoutReduction            The output will be at least 200 pixels wide an
+                                                      d 200 pixels high while maintaining aspect rat
+                                                      io, and no smaller than the input image
+
+For more information on available options, please visit https://sharp.pixelplumbing.com/api-resize/
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/commerce-pdp.png -o public/images/apps/commerce-pdp-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 82 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\apps\commerce-pdp-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/commerce-plp.png -o public/images/apps/commerce-plp-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 82 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\apps\commerce-plp-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/data-app-dashboard.png -o public/images/apps/data-app-dashboard-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 82 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\apps\data-app-dashboard-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/data-app-catalogue.png -o public/images/apps/data-app-catalogue-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 82 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\apps\data-app-catalogue-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/data-app-supplier-import.png -o public/images/apps/data-app-supplier-import-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 82 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\apps\data-app-supplier-import-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/data-app-hero.png -o public/images/apps/data-app-hero-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 82 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\apps\data-app-hero-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/artwork-approval.png -o public/images/apps/artwork-approval-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 82 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\apps\artwork-approval-v2.webp
+[0m
+Now the JPG photos and blog images:
+[0m$ [0mnpx sharp-cli -i public/images/blog/decoded-method-operations-framework-img-1.png -o public/images/blog/decoded-method-operations-framework-img-1-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 82 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\blog\decoded-method-operations-framework-img-1-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/blog/decoded-method-operations-framework-thumb.png -o public/images/blog/decoded-method-operations-framework-thumb-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 82 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\blog\decoded-method-operations-framework-thumb-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/hero-craft.jpg -o public/images/hero-craft-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 78 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\hero-craft-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/sectors/thread-spools.jpg -o public/images/sectors/thread-spools-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 78 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\sectors\thread-spools-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/apps/artwork-manager-hero.jpg -o public/images/apps/artwork-manager-hero-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 78 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\apps\artwork-manager-hero-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/assets/screens/data-app-hero.png -o public/assets/screens/data-app-hero-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 82 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\assets\screens\data-app-hero-v2.webp
+[0m
+[0m$ [0mnpx sharp-cli -i public/images/sector-credibility.jpg -o public/images/sector-credibility-v2.webp resize 1600 --fit inside --withoutEnlargement -f webp -q 78 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\images\sector-credibility-v2.webp
+[0m
+All WebP files created. Let me check the sizes:
+[0m$ [0mnode -e "
+const fs = require('fs');
+const files = [
+  ['public/images/apps/commerce-pdp.png', 'public/images/apps/commerce-pdp-v2.webp'],
+  ['public/images/apps/commerce-plp.png', 'public/images/apps/commerce-plp-v2.webp'],
+  ['public/images/apps/data-app-dashboard.png', 'public/images/apps/data-app-dashboard-v2.webp'],
+  ['public/images/apps/data-app-catalogue.png', 'public/images/apps/data-app-catalogue-v2.webp'],
+  ['public/images/apps/data-app-supplier-import.png', 'public/images/apps/data-app-supplier-import-v2.webp'],
+  ['public/images/apps/data-app-hero.png', 'public/images/apps/data-app-hero-v2.webp'],
+  ['public/images/apps/artwork-approval.png', 'public/images/apps/artwork-approval-v2.webp'],
+  ['public/images/apps/artwork-manager-hero.jpg', 'public/images/apps/artwork-manager-hero-v2.webp'],
+  ['public/images/hero-craft.jpg', 'public/images/hero-craft-v2.webp'],
+  ['public/images/sectors/thread-spools.jpg', 'public/images/sectors/thread-spools-v2.webp'],
+  ['public/images/blog/decoded-method-operations-framework-img-1.png', 'public/images/blog/decoded-method-operations-framework-img-1-v2.webp'],
+  ['public/images/blog/decoded-method-operations-framework-thumb.png', 'public/images/blog/decoded-method-operations-framework-thumb-v2.webp'],
+  ['public/assets/screens/data-app-hero.png', 'public/assets/screens/data-app-hero-v2.webp'],
+  ['public/images/sector-credibility.jpg', 'public/images/sector-credibility-v2.webp'],
+];
+for (const [orig, v2] of files) {
+  const o = fs.statSync(orig).size;
+  const v = fs.statSync(v2).size;
+  const ratio = ((1 - v/o) * 100).toFixed(0);
+  console.log(orig.split('/').pop() + ': ' + Math.round(o/1024) + 'KB -> ' + Math.round(v/1024) + 'KB (' + ratio + '% reduction)');
+}
+"
+commerce-pdp.png: 1556KB -> 100KB (94% reduction)
+commerce-plp.png: 1401KB -> 245KB (82% reduction)
+data-app-dashboard.png: 603KB -> 118KB (80% reduction)
+data-app-catalogue.png: 493KB -> 82KB (83% reduction)
+data-app-supplier-import.png: 269KB -> 46KB (83% reduction)
+data-app-hero.png: 243KB -> 72KB (70% reduction)
+artwork-approval.png: 497KB -> 97KB (81% reduction)
+artwork-manager-hero.jpg: 334KB -> 164KB (51% reduction)
+hero-craft.jpg: 119KB -> 46KB (62% reduction)
+thread-spools.jpg: 159KB -> 75KB (53% reduction)
+decoded-method-operations-framework-img-1.png: 998KB -> 64KB (94% reduction)
+decoded-method-operations-framework-thumb.png: 99KB -> 22KB (78% reduction)
+data-app-hero.png: 243KB -> 72KB (70% reduction)
+sector-credibility.jpg: 133KB -> 57KB (57% reduction)
+[0m
+[0m# [0mTodos
+[✓] Explore codebase: find all <img> usage, heavy assets, config
+[✓] Add images config to next.config.ts
+[✓] Optimize heavy images (create -v2 files)
+[•] Switch <img> to next/image in app/apps/*/page.tsx
+[✓] Update blog images with -v2.webp copies
+[ ] Verify: grep for old <img>, tsc, lint, build
+[ ] Commit and write lane reports
+[0m
+All images optimized successfully. Now let me update the code. I'll commit the config change first, then do the app page conversions.
+Now editing the three app pages. Starting with data-app:
+[0m← [0mEdit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\data-app\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import Image from 'next/image';
+ import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+   title: 'Decoded Data App: Decoded Ops',
+
+[0m
+[0m← [0mEdit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\data-app\page.tsx
+@@ -41,12 +41,12 @@
+     <Link className="btn btn--ghost btn-arrow" href="/clarity">See how a Clarity Audit works</Link>
+   </div>
+ </div>
+ 
+-<div className="hero-shot">
++ <div className="hero-shot">
+   <div className="evidence evidence--screen">
+-     {/* eslint-disable-next-line @next/next/no-img-element */}
+-     <img src="/images/apps/data-app-hero.png" width={2160} height={1215}
++     <Image src="/images/apps/data-app-hero-v2.webp" width={2160} height={1215}
++         sizes="(max-width: 768px) 100vw, 50vw" priority
+          alt="Decoded Data App: product catalogue dashboard with supplier feeds and channel status." />
+     <span className="stamp">Case study 01 &middot; Data App</span>
+   </div>
+   <p className="shot-caption">A live client system. Feeds in on the left, one clean catalogue out
+
+[0m
+[0m← [0mEdit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\data-app\page.tsx
+@@ -139,26 +139,29 @@
+ <section className="g-white">
+   <div className="wrap">
+     <p className="eyebrow">The screens</p>
+     <h2>What it looks like in practice.</h2>
+-    <div className="grid grid--2" style={{ marginTop: 34, gap: 24 }}>
++     <div className="grid grid--2" style={{ marginTop: 34, gap: 24 }}>
+       <div>
+         <div className="evidence evidence--screen">
+-          <img src="/images/apps/data-app-dashboard.png" width={3200} height={3072}
++          <Image src="/images/apps/data-app-dashboard-v2.webp" width={3200} height={3072}
++               sizes="(max-width: 768px) 100vw, 50vw"
+                alt="The Decoded Data App dashboard: supplier feed imports listed by source with row counts, a variant matching panel, and a stock export queue." loading="lazy" />
+           <span className="stamp">Dashboard</span>
+         </div>
+       </div>
+       <div>
+         <div className="evidence evidence--screen">
+-          <img src="/images/apps/data-app-catalogue.png" width={3200} height={2000}
++          <Image src="/images/apps/data-app-catalogue-v2.webp" width={3200} height={2000}
++               sizes="(max-width: 768px) 100vw, 50vw"
+                alt="Parent products catalogue in the Data App" loading="lazy" />
+           <span className="stamp">Catalogue view</span>
+         </div>
+       </div>
+       <div>
+         <div className="evidence evidence--screen">
+-          <img src="/images/apps/data-app-supplier-import.png" width={3200} height={2000}
++          <Image src="/images/apps/data-app-supplier-import-v2.webp" width={3200} height={2000}
++               sizes="(max-width: 768px) 100vw, 50vw"
+                alt="Supplier CSV import screen" loading="lazy" />
+           <span className="stamp">Supplier import</span>
+         </div>
+       </div>
+
+[0m
+Now commerce page:
+[0m← [0mEdit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\commerce\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import Image from 'next/image';
+ import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+   title: 'Decoded Commerce: Decoded Ops',
+
+[0m
+[0m← [0mEdit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\commerce\page.tsx
+@@ -45,9 +45,10 @@
+ </div>
+ 
+ <div className="hero-shot">
+   <div className="evidence evidence--screen">
+-    <img src="/images/apps/commerce-plp.png" width={2160} height={3816}
++    <Image src="/images/apps/commerce-plp-v2.webp" width={2160} height={3816}
++         sizes="(max-width: 768px) 100vw, 50vw" priority
+          alt="A B2B trade storefront product listing page: decorated garments in a filtered grid with trade pricing shown per account, size and colour facets down the left, and a quote-request action alongside add to basket." />
+     <span className="stamp">decoded commerce &middot; trade storefront</span>
+   </div>
+   <p className="shot-caption">Trade pricing per account, quote requests alongside the basket, and
+
+[0m
+[0m← [0mEdit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\commerce\page.tsx
+@@ -116,15 +116,16 @@
+ <section className="g-tint">
+   <div className="wrap" style={{ maxWidth: 900 }}>
+     <div className="grid grid--2" style={{ gap: 24 }}>
+       <div className="evidence evidence--screen">
+-        <img src="/images/apps/commerce-pdp.png" width={3200} height={2000}
++        <Image src="/images/apps/commerce-pdp-v2.webp" width={3200} height={2000}
++             sizes="(max-width: 768px) 100vw, 50vw"
+              alt="Product page with trade pricing and decoration options" loading="lazy" />
+         <span className="stamp">decoded commerce &middot; product page</span>
+       </div>
+       <div className="evidence evidence--screen">
+-        {/* eslint-disable-next-line @next/next/no-img-element */}
+-        <img src="/images/apps/prod-hivis.jpg" width={900} height={1348}
++        <Image src="/images/apps/prod-hivis.jpg" width={900} height={1348}
++             sizes="(max-width: 768px) 100vw, 50vw"
+              alt="Hi-vis workwear product detail as sold through a Decoded Commerce trade storefront" loading="lazy" />
+         <span className="stamp">decoded commerce &middot; product detail</span>
+       </div>
+     </div>
+
+[0m
+[0m← [0mEdit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\artwork-manager\page.tsx
+===================================================================
+Now artwork-manager page:
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\artwork-manager\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import Image from 'next/image';
+ import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+   title: 'Decoded Artwork Manager: Decoded Ops',
+
+[0m
+[0m← [0mEdit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\apps\artwork-manager\page.tsx
+@@ -41,9 +41,10 @@
+ </div>
+ 
+ <div className="hero-shot">
+   <div className="evidence">
+-    <img src="/images/apps/artwork-approval.png" width={3200} height={2000}
++    <Image src="/images/apps/artwork-approval-v2.webp" width={3200} height={2000}
++         sizes="(max-width: 768px) 100vw, 50vw" priority
+          alt="Artwork approval screen — stitch file preview and sign-off" />
+   </div>
+   <p className="shot-caption">Customers approve their own proofs against the exact version
+     that was shown. No email chain, no lost approvals.</p>
+
+[0m
+[0m→ [0mRead components/HeroVisual.tsx
+[0m→ [0mRead components/SectorCredibilityPhoto.tsx
+[0m→ [0mRead app/page.tsx[90m [offset=110, limit=70][0m
+Now let me update the components and other pages that already use `<Image>` to point to the optimized versions:
+[0m→ [0mRead app/sectors/schoolwear/page.tsx[90m [offset=45, limit=20][0m
+[0m
+[0m← [0mEdit components/HeroVisual.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\HeroVisual.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\HeroVisual.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\HeroVisual.tsx
+@@ -12,9 +12,9 @@
+ return (
+   <div className="relative w-full pb-12 pr-6">
+     <div className="relative w-full aspect-[4/3.2] rounded-2xl overflow-hidden shadow-xl">
+       <Image
+-        src="/images/hero-craft.jpg"
++        src="/images/hero-craft-v2.webp"
+         alt="Hands preparing a garment on a heat press"
+         fill
+         priority
+         sizes="(max-width: 1024px) 100vw, 50vw"
+
+[0m
+[0m← [0mEdit components/SectorCredibilityPhoto.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\SectorCredibilityPhoto.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\SectorCredibilityPhoto.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\SectorCredibilityPhoto.tsx
+@@ -18,9 +18,9 @@
+ return (
+   <div className="relative pb-10 sm:pb-12">
+     <div className="relative aspect-[4/3.1] rounded-2xl overflow-hidden shadow-xl">
+       <Image
+-        src="/images/sector-credibility.jpg"
++        src="/images/sector-credibility-v2.webp"
+         alt="Garment decoration production floor"
+         fill
+         sizes="(max-width: 1024px) 100vw, 50vw"
+         className="object-cover [filter:grayscale(0.5)_sepia(0.18)_contrast(1.05)_brightness(0.92)]"
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\page.tsx
+@@ -112,9 +112,9 @@
+   </div>
+ </div>
+ 
+ <figure className="shot" data-od-id="hero-photo">
+-  <Image className="p-photo" src="/images/hero-craft.jpg" fill sizes="(max-width: 1040px) 100vw, 45vw"
++  <Image className="p-photo" src="/images/hero-craft-v2.webp" fill sizes="(max-width: 1040px) 100vw, 45vw"
+     style={{ objectFit: 'cover', objectPosition: '52% 42%' }}
+     alt="Two multi-head embroidery machines running garments on a decoration floor." />
+   <figcaption className="stamp">DO-ART-905 &middot; Decoration floor</figcaption>
+ </figure>
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\page.tsx
+@@ -167,9 +167,9 @@
+   from the one before it. Almost everyone starts with a Clarity Audit, because until somebody
+   has followed your processes from start to finish, everything after that is guesswork.</p>
+ 
+ <figure className="band" data-od-id="help-photo">
+-  <Image src="/images/sectors/thread-spools.jpg" fill sizes="(max-width: 1200px) 100vw, 1152px" className="p-photo"
++  <Image src="/images/sectors/thread-spools-v2.webp" fill sizes="(max-width: 1200px) 100vw, 1152px" className="p-photo"
+     style={{ objectFit: 'cover', objectPosition: '50% 58%' }}
+     alt="A row of coloured thread cones loaded on an embroidery machine head." />
+   <figcaption className="stamp">DO-ART-906 &middot; Materials</figcaption>
+ </figure>
+
+[0m
+[0m← [0mEdit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\sectors\schoolwear\page.tsx
+@@ -48,9 +48,9 @@
+   'The businesses that get this right have their supplier data and sizing sorted well before the rush starts.',
+ ]}
+ heroSecondaryCta={{ label: 'See how the audit works', href: '/clarity' }}
+ heroImage={{
+-  src: '/images/sectors/thread-spools.jpg',
++  src: '/images/sectors/thread-spools-v2.webp',
+   width: 1600,
+   height: 1067,
+   alt: 'A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor.',
+ }}
+
+[0m
+Let me check for any other sector page references to thread-spools:
+[0m✱ [0mGrep "thread-spools\.jpg"[90m in app · 1 match[0m
+Good — only the problem page `<img>` tag remains, which we can't change. Now let me verify the edits and run the checks.
+[0m
+[0m$ [0mgit diff --stat
+warning: in the working copy of 'app/apps/data-app/page.tsx', LF will be replaced by CRLF the next time Git touches it
+ app/apps/artwork-manager/page.tsx     |  4 +++-
+ app/apps/commerce/page.tsx            | 11 +++++++----
+ app/apps/data-app/page.tsx            | 18 +++++++++++-------
+ app/page.tsx                          |  4 ++--
+ app/sectors/schoolwear/page.tsx       |  2 +-
+ components/HeroVisual.tsx             |  2 +-
+ components/SectorCredibilityPhoto.tsx |  2 +-
+ next.config.ts                        |  3 +++
+ 8 files changed, 29 insertions(+), 17 deletions(-)
+[0m
+[0m$ [0mgit status --short
+M app/apps/artwork-manager/page.tsx
+ M app/apps/commerce/page.tsx
+ M app/apps/data-app/page.tsx
+ M app/page.tsx
+ M app/sectors/schoolwear/page.tsx
+ M components/HeroVisual.tsx
+ M components/SectorCredibilityPhoto.tsx
+ M next.config.ts
+?? public/assets/screens/data-app-hero-v2.webp
+?? public/images/apps/artwork-approval-v2.webp
+?? public/images/apps/artwork-manager-hero-v2.webp
+?? public/images/apps/commerce-pdp-v2.webp
+?? public/images/apps/commerce-plp-v2.webp
+?? public/images/apps/data-app-catalogue-v2.webp
+?? public/images/apps/data-app-dashboard-v2.webp
+?? public/images/apps/data-app-hero-v2.webp
+?? public/images/apps/data-app-supplier-import-v2.webp
+?? public/images/blog/decoded-method-operations-framework-img-1-v2.webp
+?? public/images/blog/decoded-method-operations-framework-thumb-v2.webp
+?? public/images/hero-craft-v2.webp
+?? public/images/sector-credibility-v2.webp
+?? public/images/sectors/thread-spools-v2.webp
+[0m
+[0m$ [0mrg "<img src=\"/images/apps" app components --no-heading 2>&1
+(no output)
+[0m
+Now let me run the verification checks:
+[0m$ [0mrg "<img src=\"/images/" app components --no-heading 2>&1
+(no output)
+[0m
+Zero `<img>` tags remaining in app/ and components/. Now let me install deps and run type/lint checks:
+[0m$ [0mnpm install 2>&1 | Select-Object -Last 10
+158 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mnpx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web011-u4-images\lint
+[0m
+[0m$ [0mnpx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web011-u4-images\lint
+[0m
+[0m$ [0mnpx --next lint 2>&1; echo "EXIT: $LASTEXITCODE"
+npm warn "lint" is being parsed as a normal command line argument.
+npm warn Unknown cli config "--next". This will stop working in the next major version of npm.
+npm warn exec The following package was not found and will be installed: lint@1.2.2
+No files to lint.
+EXIT: 0
+[0m
+[0m$ [0mnode_modules/.bin/next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web011-u4-images\lint
+[0m
+[0m$ [0mnode node_modules/next/dist/bin/next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web011-u4-images\lint
+[0m
+[0m$ [0mnode -e "const p = require('./package.json'); console.log(JSON.stringify(p.scripts, null, 2))"
+{
+  "dev": "node scripts/generate-route-slugs.mjs && next dev -p 8765",
+  "prebuild": "node scripts/generate-route-slugs.mjs",
+  "build": "next build",
+  "start": "next start",
+  "lint": "eslint",
+  "check:nav": "node .context/check-nav-coverage.mjs",
+  "check:price": "node .context/price-audit.mjs",
+  "copy:extract": "node .context/extract-copy.mjs",
+  "check:premerge": "npm run check:nav && npm run check:price",
+  "test": "vitest run",
+  "sync:blog-index": "node scripts/sync-blog-index.mjs"
+}
+[0m
+[0m$ [0mnpx eslint 2>&1
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\.context\mockup-vs-app.mjs
+  5:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\.context\plate-audit.mjs
+   8:31  warning  'dirname' is defined but never used     @typescript-eslint/no-unused-vars
+  67:14  warning  'm' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\.context\slot-audit.mjs
+   7:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+  43:21  warning  't' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\.context\tools\verify-pages.js
+  5:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  6:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  7:22  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\about\page.tsx
+   50:16   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  103:160  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+  117:121  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+  152:116  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\api\auth\login\route.ts
+  81:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  82:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\blog\[slug]\page.tsx
+  46:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\blog\page.tsx
+  40:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  53:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\case-studies\eternal-fitness\page.tsx
+  156:123  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\clients\[clientId]\components\AcceptanceSection.tsx
+  101:84  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  256:39  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\clients\[clientId]\components\DemoSection.tsx
+  126:27  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         @typescript-eslint/no-explicit-any
+  128:3   error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\clients\[clientId]\components\DemoSection.tsx:128:3
+  126 |   const chartRef = useRef<any>(null);
+  127 |   const stocksRef = useRef(stocks);
+> 128 |   stocksRef.current = stocks;
+      |   ^^^^^^^^^^^^^^^^^ Cannot update ref during render
+  129 |
+  130 |   function statusFor(stock: number, min: number) {
+  131 |     return stock === 0 ? 'out' : stock < min ? 'low' : 'ok';                                                                                                                                                                                                                                                          react-hooks/refs
+  245:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\clients\[clientId]\components\DemoSection.tsx:245:5
+  243 |
+  244 |   useEffect(() => {
+> 245 |     updateAlerts(stocks);
+      |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  246 |   }, []);
+  247 |
+  248 |   const filteredStocks = filter === 'all'  react-hooks/set-state-in-effect
+  246:6   warning  React Hook useEffect has missing dependencies: 'stocks' and 'updateAlerts'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\clients\[clientId]\components\PricingSection.tsx
+   83:19  warning  'isA' is assigned a value but never used                         @typescript-eslint/no-unused-vars
+  309:77  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\clients\[clientId]\components\SystemsDiagram.tsx
+  83:5  error    Error: Cannot access variable before it is declared
+
+`buildSVG` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\clients\[clientId]\components\SystemsDiagram.tsx:83:5
+  81 |
+  82 |   useEffect(() => {
+> 83 |     buildSVG(mode);
+     |     ^^^^^^^^ `buildSVG` accessed before it is declared
+  84 |   }, [mode, d]);
+  85 |
+  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\clients\[clientId]\components\SystemsDiagram.tsx:86:3
+   84 |   }, [mode, d]);
+   85 |
+>  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+      |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  87 |     const svg = svgRef.current;
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  88 |     if (!svg) return;
+      …
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 195 |     svg.appendChild(desc);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 196 |   }
+      | ^^^^ `buildSVG` is declared here
+  197 |
+  198 |   return (
+  199 |     <div className="bg-[#023047] rounded-2xl p-12 text-white">  react-hooks/immutability
+  84:6  warning  React Hook useEffect has a missing dependency: 'buildSVG'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\clients\[clientId]\layout.tsx
+  15:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\clients\[clientId]\page.tsx
+   34:33  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  117:36  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:47  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\contact\actions.ts
+  13:6  warning  'ContactFormInput' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\cookies\page.tsx
+  163:13  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\design-system\ds-plates.js
+  153:43  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+  179:76  warning  'err' is defined but never used                                        @typescript-eslint/no-unused-vars
+  189:13  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  189:85  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\layout.tsx
+  16:10  warning  'Header' is defined but never used  @typescript-eslint/no-unused-vars
+  17:10  warning  'Footer' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\ai-paralysis\page.tsx
+  113:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\bottleneck-growth\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\buy-vs-build\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\cant-scale-operations\page.tsx
+  101:7  warning  'scalingSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\data-scattered\page.tsx
+  97:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\inventory-blind\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\legacy-system\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\ops-in-owners-head\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\page.tsx
+  102:43  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  109:36  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:50  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\seasonal-peaks\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\slow-processes\page.tsx
+  101:7  warning  'workflowSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\spreadsheet-addiction\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\problems\wrong-erp-software\page.tsx
+  104:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\resources\5-warning-signs\page.tsx
+   71:199  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  157:23   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:25   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:287  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:307  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:318  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  167:128  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\resources\artwork-approval-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\resources\audit-checklist\page.tsx
+    2:36   warning  'Download' is defined but never used                             @typescript-eslint/no-unused-vars
+  232:81   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  232:124  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:129  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:134  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:139  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  235:32   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  235:69   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  271:29   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  277:35   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:47   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:53   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:63   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  283:38   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  283:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  297:25   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  299:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\resources\erp-selection-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\resources\page.tsx
+  3:53  warning  'Star' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\resources\seasonal-capacity\page.tsx
+  59:127  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\resources\sop-template\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\sectors\labels-packaging\page.tsx
+  81:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\sectors\signs-graphics\page.tsx
+  81:45   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  81:159  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\sitemap.ts
+  12:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\app\tools\ops-health-score\page.tsx
+  24:7  warning  'scoreLabels' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\auth.config.ts
+  13:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\BlogList.tsx
+   55:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  148:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\CookieConsent.tsx
+  12:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\CookieConsent.tsx:12:5
+  10 |
+  11 |   useEffect(() => {
+> 12 |     setIsLoading(true);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  13 |     const consent = localStorage.getItem('cookie-consent');
+  14 |     if (!consent) {
+  15 |       setIsVisible(true);  react-hooks/set-state-in-effect
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\Plate.tsx
+  42:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  46:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  55:49  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  66:53  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  76:43  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  80:9   warning  Expected an assignment or function call and instead saw an expression                                                                                                                        @typescript-eslint/no-unused-expressions
+  81:16  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  91:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\RelatedPosts.tsx
+  34:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  43:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\graphics\AuditWheelGraphic.tsx
+  51:17  warning  'lx' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  52:17  warning  'ly' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  55:17  warning  'lines' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\schematics\problems\WrongErpSchematic.tsx
+  38:10  warning  'motion' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\components\schematics\sectors\PrintEmbroideryOpsConsultantSchematic.tsx
+   6:37  warning  'SKY' is defined but never used               @typescript-eslint/no-unused-vars
+  23:7   warning  'MID' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  24:7   warning  'SPINE_X' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\infographics\EcommerceBreakdownChart.tsx
+  117:42   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:102  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  142:74   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:79   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:234  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\public\infographics\VendorQuestionsGuide.tsx
+   56:34   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   59:59   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   59:63   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  120:26   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:92   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:131  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u4-images\scripts\hash-password.mjs
+  2:10  warning  'readFileSync' is defined but never used   @typescript-eslint/no-unused-vars
+  2:24  warning  'writeFileSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 135 problems (85 errors, 50 warnings)
+[0m
+Lint has many pre-existing issues but none from my changes. The `<img>` warnings are all in problem pages (unchanged). Let me now run the build:
+[0m$ [0mnpx next build 2>&1
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 422ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 25.0s
+  Running TypeScript ...
+  Finished TypeScript in 23.7s ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/174) ...
+  Generating static pages using 15 workers (43/174) 
+  Generating static pages using 15 workers (86/174) 
+  Generating static pages using 15 workers (130/174) 
+✓ Generating static pages using 15 workers (174/174) in 1117ms
+  Finalizing page optimization ...
+
+Route (app)                                          Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/auth/login
+├ ƒ /api/clients/documents/[id]/questionnaire
+├ ƒ /api/clients/documents/[id]/sign
+├ ƒ /api/clients/uploads
+├ ƒ /api/contact
+├ ƒ /api/tools/capture
+├ ○ /apps
+├ ○ /apps/artwork-manager
+├ ○ /apps/commerce
+├ ○ /apps/data-app
+├ ○ /blog                                                    5m      1y
+├ ƒ /blog/[slug]
+├ ○ /case-studies
+├ ○ /case-studies/case-study-01
+├ ○ /case-studies/case-study-02
+├ ○ /case-studies/case-study-03
+├ ○ /case-studies/eternal-fitness
+├ ○ /clarity
+├ ƒ /clients/[clientId]
+├ ƒ /clients/dashboard
+├ ƒ /clients/documents
+├ ƒ /clients/documents/view/[id]
+├ ○ /clients/login
+├ ƒ /clients/project
+├ ○ /contact
+├ ○ /cookies
+├ ○ /deliver
+├ ○ /how-i-build
+├ ○ /locations/fractional-cto
+├   /locations/fractional-cto/[location]
+│ ├ ● /locations/fractional-cto/chichester
+│ ├ ● /locations/fractional-cto/worthing
+│ ├ ● /locations/fractional-cto/horsham
+│ └ ● [+26 more paths]
+├ ○ /locations/tech-audit
+├   /locations/tech-audit/[location]
+│ ├ ● /locations/tech-audit/chichester
+│ ├ ● /locations/tech-audit/worthing
+│ ├ ● /locations/tech-audit/horsham
+│ └ ● [+26 more paths]
+├ ƒ /opengraph-image
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /problems
+├ ○ /problems/ai-paralysis
+├ ○ /problems/bottleneck-growth
+├ ○ /problems/buy-vs-build
+├ ○ /problems/cant-scale-operations
+├ ○ /problems/data-scattered
+├ ○ /problems/disaster-recovery
+├ ○ /problems/ecommerce-not-connected
+├ ○ /problems/erp-implementation-failure
+├ ○ /problems/inventory-blind
+├ ○ /problems/legacy-system
+├ ○ /problems/manual-workarounds
+├ ○ /problems/no-ops-owner
+├ ○ /problems/ops-in-owners-head
+├ ○ /problems/seasonal-peaks
+├ ○ /problems/slow-processes
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/artwork-approval-playbook
+├ ○ /resources/audit-checklist
+├ ○ /resources/capacity-planner
+├ ○ /resources/decoded-method
+├ ○ /resources/erp-selection-playbook
+├ ○ /resources/seasonal-capacity
+├ ○ /resources/six-sigma
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ƒ /robots.txt
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/operations-consultant-print-embroidery
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ƒ /sitemap.xml
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/ai-readiness-check
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+[0m
+[0m# [0mTodos
+[✓] Explore codebase: find all <img> usage, heavy assets, config
+[✓] Add images config to next.config.ts
+[✓] Optimize heavy images (create -v2 files)
+[✓] Switch <img> to next/image in app/apps/*/page.tsx
+[✓] Update blog images with -v2.webp copies
+[✓] Verify: grep for old <img>, tsc, lint, build
+[•] Commit and write lane reports
+[0m
+Build succeeded. Turbopack doesn't show the First Load JS table. Let me commit the changes and write the lane reports.
+[0m$ [0mgit add app/apps/data-app/page.tsx app/apps/commerce/page.tsx app/apps/artwork-manager/page.tsx app/page.tsx app/sectors/schoolwear/page.tsx components/HeroVisual.tsx components/SectorCredibilityPhoto.tsx next.config.ts public/images/apps/commerce-pdp-v2.webp public/images/apps/commerce-plp-v2.webp public/images/apps/data-app-dashboard-v2.webp public/images/apps/data-app-catalogue-v2.webp public/images/apps/data-app-supplier-import-v2.webp public/images/apps/data-app-hero-v2.webp public/images/apps/artwork-approval-v2.webp public/images/apps/artwork-manager-hero-v2.webp public/images/hero-craft-v2.webp public/images/sectors/thread-spools-v2.webp public/images/blog/decoded-method-operations-framework-img-1-v2.webp public/images/blog/decoded-method-operations-framework-thumb-v2.webp public/assets/screens/data-app-hero-v2.webp public/images/sector-credibility-v2.webp
+warning: in the working copy of 'app/apps/data-app/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[0m
+[0m$ [0mgit commit -m "CR-WEB-042: optimise heavy app/blog images, next/image on app pages, modern formats
+
+- Add images: { formats: ['image/avif', 'image/webp'] } to next.config.ts
+- Switch all <img> tags to next/image <Image> in app/apps/*/page.tsx (9 tags across 3 files)
+- Add import Image from 'next/image' to data-app, commerce, artwork-manager pages
+- Add sizes and priority attributes per layout (hero=priority, grid=loading lazy)
+- Create WebP -v2 optimised copies of all 14 heavy assets:
+  PNGs → WebP q82 max 1600px: commerce-pdp 1556→100KB, commerce-plp 1401→245KB,
+  data-app-dashboard 603→118KB, data-app-catalogue 493→82KB,
+  data-app-supplier-import 269→46KB, data-app-hero 243→72KB, artwork-approval 497→97KB
+  JPGs → WebP q78 max 1600px: hero-craft 119→46KB, thread-spools 159→75KB,
+  sector-credibility 133→57KB, artwork-manager-hero 334→164KB
+  Blog: decoded-method-operations-framework-img-1 998→64KB, -thumb 99→22KB
+- Update HeroVisual, SectorCredibilityPhoto, homepage, schoolwear sector page to use -v2.webp
+- Leave originals in place; problem page <img> tags unchanged (hub content reference)" 2>&1
+[web011-u4-images f576114] CR-WEB-042: optimise heavy app/blog images, next/image on app pages, modern formats
+ 22 files changed, 29 insertions(+), 17 deletions(-)
+ create mode 100644 public/assets/screens/data-app-hero-v2.webp
+ create mode 100644 public/images/apps/artwork-approval-v2.webp
+ create mode 100644 public/images/apps/artwork-manager-hero-v2.webp
+ create mode 100644 public/images/apps/commerce-pdp-v2.webp
+ create mode 100644 public/images/apps/commerce-plp-v2.webp
+ create mode 100644 public/images/apps/data-app-catalogue-v2.webp
+ create mode 100644 public/images/apps/data-app-dashboard-v2.webp
+ create mode 100644 public/images/apps/data-app-hero-v2.webp
+ create mode 100644 public/images/apps/data-app-supplier-import-v2.webp
+ create mode 100644 public/images/blog/decoded-method-operations-framework-img-1-v2.webp
+ create mode 100644 public/images/blog/decoded-method-operations-framework-thumb-v2.webp
+ create mode 100644 public/images/hero-craft-v2.webp
+ create mode 100644 public/images/sector-credibility-v2.webp
+ create mode 100644 public/images/sectors/thread-spools-v2.webp
+[0m
+Now let me create the lane reports:
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web011-u4-images\.context\lane-reports already exists.
+[0m
+[0m$ [0mgit log --oneline -1
+f576114 CR-WEB-042: optimise heavy app/blog images, next/image on app pages, modern formats
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web011-u4-images.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web011-u4-images.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web011-u4-images.json .context/lane-reports/LANE-NOTES-web011-u4-images.md && git commit -m "Add lane reports for CR-WEB-042 image optimisation lane" 2>&1
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web011-u4-images.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web011-u4-images.json', LF will be replaced by CRLF the next time Git touches it
+[web011-u4-images fce8363] Add lane reports for CR-WEB-042 image optimisation lane
+ 2 files changed, 110 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web011-u4-images.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web011-u4-images.json
+[0m
+[0m$ [0mgit status --short && echo "---" && git log --oneline -3
+---
+fce8363 Add lane reports for CR-WEB-042 image optimisation lane
+f576114 CR-WEB-042: optimise heavy app/blog images, next/image on app pages, modern formats
+9168425 docs: lane exit contract for nl-header-asset
+[0m
+[0m# [0mTodos
+[✓] Explore codebase: find all <img> usage, heavy assets, config
+[✓] Add images config to next.config.ts
+[✓] Optimize heavy images (create -v2 files)
+[✓] Switch <img> to next/image in app/apps/*/page.tsx
+[✓] Update blog images with -v2.webp copies
+[✓] Verify: grep for old <img>, tsc, lint, build
+[✓] Commit and write lane reports
+[0m
+Lane complete. Two commits on `web011-u4-images`:
+
+**`f576114`** — CR-WEB-042: optimise heavy app/blog images, next/image on app pages, modern formats
+- `next.config.ts` — added `images: { formats: ['image/avif', 'image/webp'] }`
+- 3 app pages (`data-app`, `commerce`, `artwork-manager`) — 9 `<img>` tags → `<Image>` with `sizes`, `priority` on heroes, `loading="lazy"` on grid
+- 5 other refs updated (`HeroVisual`, `SectorCredibilityPhoto`, homepage hero+band, schoolwear sector)
+- 14 WebP `-v2` files created, all under targets:
+
+| Asset | Before | After | Reduction |
+|-------|--------|-------|-----------|
+| commerce-pdp | 1556KB | 100KB | 94% |
+| commerce-plp | 1401KB | 245KB | 82% |
+| data-app-dashboard | 603KB | 118KB | 80% |
+| data-app-catalogue | 493KB | 82KB | 83% |
+| data-app-supplier-import | 269KB | 46KB | 83% |
+| data-app-hero | 243KB | 72KB | 70% |
+| artwork-approval | 497KB | 97KB | 81% |
+| hero-craft | 119KB | 46KB | 62% |
+| thread-spools | 159KB | 75KB | 53% |
+| blog img-1 | 998KB | 64KB | 94% |
+| blog thumb | 99KB | 22KB | 78% |
+
+**`fce8363`** — Lane reports committed.
+
+**Deviations**: Problem page `<img>` tags unchanged (hub content). Blog `-v2.webp` created but originals kept (hub content_items needs separate update). Turbopack build succeeded but doesn't emit First Load JS table. `real-example.jpg` referenced by 2 problem pages doesn't exist (pre-existing).

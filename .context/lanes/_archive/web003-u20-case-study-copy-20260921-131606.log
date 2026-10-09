@@ -1,0 +1,130 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0m# [0mTodos
+[ΓÇó] Locate case study 02 (PG-017) content file
+[ ] Edit negative framing copy to active/ongoing
+[ ] Verify old phrase removed
+[ ] Commit work + lane reports
+[0m
+[0mΓ£▒ [0mGlob "app/case-studies/**/*"[90m 5 matches[0m
+[0mΓ£▒ [0mGrep "PG-017|case.study.02|case-study-02"[90m 100 matches[0m
+[0mΓ£▒ [0mGrep "not a finished state"[90m 2 matches[0m
+[0mΓåÆ [0mRead app/case-studies/case-study-02/page.tsx
+[0m
+[0m# [0mTodos
+[Γ£ô] Locate case study 02 (PG-017) content file
+[ΓÇó] Edit negative framing copy to active/ongoing
+[ ] Verify old phrase removed
+[ ] Commit work + lane reports
+[0m
+Found it. Line 216: "not a finished job being presented as complete." Also the heading on line 214 reads "What's still in progress" which is passively-framed.
+[0mΓåÉ [0mEdit app/case-studies/case-study-02/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u20-case-study-copy\app\case-studies\case-study-02\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u20-case-study-copy\app\case-studies\case-study-02\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u20-case-study-copy\app\case-studies\case-study-02\page.tsx
+@@ -210,11 +210,11 @@
+       Live Symphony integration was proven in production on 27 July 2026, including new-variant publishing. That was a real gap in the first build, found and fixed live.
+     </p>
+ 
+     <div className="progress-note">
+-      <h3>What&apos;s still in progress</h3>
++      <h3>Ongoing work</h3>
+       <p>
+-        The Data App keeps expanding. Warehouse floor tooling and further supplier automation are active, ongoing work, not a finished job being presented as complete.
++        The Data App keeps expanding. Warehouse floor tooling and further supplier automation are active, ongoing work that continues to grow with the client&apos;s needs.
+       </p>
+     </div>
+   </div>
+ </section>
+
+[0m
+[0m# [0mTodos
+[Γ£ô] Locate case study 02 (PG-017) content file
+[Γ£ô] Edit negative framing copy to active/ongoing
+[ΓÇó] Verify old phrase removed
+[ ] Commit work + lane reports
+[0m
+[0mΓ£▒ [0mGrep "not a finished (job|state) being presented as complete"[90m in app/case-studies ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGrep "ongoing work that continues to grow"[90m in app/case-studies ┬╖ 1 match[0m
+Old negative phrase is gone from case-studies. New active phrasing confirmed at line 216. Let me run a quick typecheck.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web003-u20-case-study-copy" && npx tsc --noEmit --pretty 2>&1 | Select-Object -Last 10
+This is not the tsc command you are looking for                
+                                                                               
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+[0m
+[0m# [0mTodos
+[Γ£ô] Locate case study 02 (PG-017) content file
+[Γ£ô] Edit negative framing copy to active/ongoing
+[Γ£ô] Verify old phrase removed
+[ΓÇó] Commit work + lane reports
+[0m
+No `node_modules` installed in this worktree ΓÇö tsc cannot run. This is a string-literal-only copy edit; no structural risk. Proceeding to commit.
+[0m$ [0mmkdir -p "D:\apps\worktrees\decoded-ops-website\web003-u20-case-study-copy\.context\lane-reports"
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web003-u20-case-study-copy\.context\lane-reports already exists.
+[0m
+[0m$ [0mgit status --short
+M app/case-studies/case-study-02/page.tsx
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web003-u20-case-study-copy.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web003-u20-case-study-copy.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(CR-WEB-038): remove negative platform framing from case study 02 copy"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web003-u20-case-study-copy.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web003-u20-case-study-copy.json', LF will be replaced by CRLF the next time Git touches it
+[web003-u20-case-study-copy 1050175] fix(CR-WEB-038): remove negative platform framing from case study 02 copy
+ 3 files changed, 45 insertions(+), 2 deletions(-)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web003-u20-case-study-copy.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web003-u20-case-study-copy.json
+[0m
+[0m$ [0mgit log --oneline -1
+1050175 fix(CR-WEB-038): remove negative platform framing from case study 02 copy
+[0m
+[0mΓåÉ [0mEdit .context/lane-reports/LANE-RESULT-web003-u20-case-study-copy.json
+Index: D:\apps\worktrees\decoded-ops-website\web003-u20-case-study-copy\.context\lane-reports\LANE-RESULT-web003-u20-case-study-copy.json
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u20-case-study-copy\.context\lane-reports\LANE-RESULT-web003-u20-case-study-copy.json
++++ D:\apps\worktrees\decoded-ops-website\web003-u20-case-study-copy\.context\lane-reports\LANE-RESULT-web003-u20-case-study-copy.json
+@@ -3,9 +3,9 @@
+ "wo": "wo-website-consolidated-2026-08-02",
+ "unit": "u20",
+ "commits": [
+   {
+-    "sha": "",
++    "sha": "1050175",
+     "subject": "fix(CR-WEB-038): remove negative platform framing from case study 02 copy"
+   }
+ ],
+ "filesChanged": [
+
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: update lane report with commit SHA"
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web003-u20-case-study-copy.json', LF will be replaced by CRLF the next time Git touches it
+[web003-u20-case-study-copy 1e2d038] chore: update lane report with commit SHA
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[0m
+[0m# [0mTodos
+[Γ£ô] Locate case study 02 (PG-017) content file
+[Γ£ô] Edit negative framing copy to active/ongoing
+[Γ£ô] Verify old phrase removed
+[Γ£ô] Commit work + lane reports
+[0m
+Done. Two commits on `web003-u20-case-study-copy`:
+
+1. **`1050175`** ΓÇö `fix(CR-WEB-038): remove negative platform framing from case study 02 copy`
+2. **`1e2d038`** ΓÇö `chore: update lane report with commit SHA`
+
+**Change summary:** `app/case-studies/case-study-02/page.tsx` lines 213ΓÇô218
+- Heading: "What's still in progress" ΓåÆ "Ongoing work"
+- Body: removed "not a finished job being presented as complete" ΓåÆ replaced with "that continues to grow with the client's needs"
+
+**Verification:** grep confirms 0 hits for the old phrase, 1 hit for the new phrasing. tsc not runnable (no node_modules); change is string-literal only.

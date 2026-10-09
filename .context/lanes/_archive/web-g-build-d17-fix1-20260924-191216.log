@@ -1,0 +1,374 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-g-build-d17-fix1.md
+[0m
+[0m# [0mTodos
+[ ] Section 1: Port SOP template hero art (DO-ART-987) into app/resources/sop-template/page.tsx
+[ ] Section 2: Remove old Plate block from six-sigma, keep DO-ART-986
+[ ] Section 3: Phone overflow fixes for seasonal-capacity and ops-health-score
+[ ] Section 4: Rebuild all resource/tool heroes with rt-split layout
+[ ] Section 5: Move inline pieces to immediately after hero on each page
+[ ] Run tsc --noEmit, commit, write lane reports
+[0m
+[0m→ [0mRead .context/lane-briefs/d17-resources
+[0m→ [0mRead app/resources/sop-template/page.tsx
+[0m→ [0mRead app/resources/six-sigma/page.tsx
+[0m→ [0mRead app/resources/seasonal-capacity/page.tsx
+[0m→ [0mRead app/tools/ops-health-score/page.tsx
+[0m→ [0mRead app/d17-resources.css
+Let me explore the codebase in parallel to understand the current state.
+[0m→ [0mRead .context/lane-briefs/d17-resources/sop-template.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/six-sigma.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/seasonal-capacity.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/ops-health-score.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/resources.hero.html
+Now let me read the hero HTML files and a reference page that already has the rt-split layout.
+[0m✱ [0mGrep "rt-split"[90m in app · 5 matches[0m
+[0m→ [0mRead app/resources/page.tsx
+[0m→ [0mRead app/tools/page.tsx
+Let me find a page that already has the rt-split pattern, and also check the remaining hero HTML files and pages.
+[0m→ [0mRead app/resources/5-warning-signs/page.tsx
+[0m→ [0mRead app/resources/artwork-approval-playbook/page.tsx
+[0m→ [0mRead app/resources/audit-checklist/page.tsx
+[0m→ [0mRead app/resources/capacity-planner/page.tsx
+[0m→ [0mRead app/resources/decoded-method/page.tsx
+[0m→ [0mRead app/resources/erp-selection-playbook/page.tsx
+Now let me read the remaining resource/tool pages that need the rt-split hero.
+[0m→ [0mRead .context/lane-briefs/d17-resources/tools.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/artwork-approval-playbook.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/six-sigma.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/capacity-planner.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/audit-checklist.inline.html
+[0m→ [0mRead app/tools/should-i-replace-erp/page.tsx[90m [limit=50][0m
+Let me read the remaining tool pages and inline HTML references.
+Let me read the remaining tool pages briefly to check their hero pattern.
+[0m• [0mRead tool page heroes[90m Explore Agent[0m
+[0m✓ [0mRead tool page heroes[90m Explore Agent[0m
+[0m
+[0m# [0mTodos
+[ ] Section 1: Port SOP template hero art (DO-ART-987) into app/resources/sop-template/page.tsx
+[•] Section 2: Remove old Plate block from six-sigma, keep DO-ART-986
+[ ] Section 3: Phone overflow fixes for seasonal-capacity and ops-health-score
+[ ] Section 4: Rebuild all resource/tool heroes with rt-split layout
+[ ] Section 5: Move inline pieces to immediately after hero on each page
+[ ] Run tsc --noEmit, commit, write lane reports
+[0m
+I now have a complete picture. Let me start implementing. I'll begin with the independent CSS fix (Section 3), then work through the structural changes.
+Starting with Section 2: six-sigma cleanup. Remove the old Plate block and the duplicate DO-ART-986.
+[0m← [0mEdit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
+@@ -1,9 +1,8 @@
+ import Link from 'next/link';
+ import { ArrowRight, Download, AlertTriangle } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
+ import { SixSigmaSchematic } from '@/components/schematics/SixSigmaSchematic';
+-import { Plate } from '@/components/Plate';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
+ import '@/app/d17-resources.css';
+ 
+
+[0m
+Now remove the old Plate section (DO-ART-209):
+[0m← [0mEdit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
+@@ -114,114 +114,8 @@
+ </figure>
+   ` }} />
+ </section>
+ 
+-{/* PLATE · DO-ART-209 */}
+-<section className="g-navy">
+-  <div className="wrap">
+-    <span className="eyebrow">Process quality &middot; DO-ART-209</span>
+-    <h2>What each sigma level actually costs a decoration floor.</h2>
+-    <div className="hair"></div>
+-    <p className="lede" style={{ marginTop: 16 }}>
+-      The higher the sigma, the fewer faults escape the floor. At 3σ, roughly 1 in 15 garments has a visible fault. At 5σ, it is 233 in a million.
+-    </p>
+-
+-    <div className="plate-scroll">
+-      <div className="plate-frame" data-od-id="plate-six-sigma">
+-        <Plate tone="dark" p="sig" title="The sigma scale"
+-               sub="What 3σ, 5σ and 6σ actually cost a decoration floor"
+-               no="DO-ART-209" rev="01" cls="DECODED OPS · ISSUED">
+-
+-          <defs>
+-            <linearGradient id="sig-scale" x1="0" y1="0" x2="1" y2="0">
+-              <stop offset="0%" stopColor="var(--do-amber)"/>
+-              <stop offset="52%" stopColor="var(--do-sky-blue)"/>
+-              <stop offset="100%" stopColor="var(--do-cerulean)"/>
+-            </linearGradient>
+-          </defs>
+-
+-          <g className="sk-fade sk-s2">
+-            <text x="60" y="200" className="p-mono" fontSize="15" letterSpacing="2.6" opacity=".5">DEFECTS PER MILLION OPPORTUNITIES</text>
+-            <text x="60" y="244" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="32">The higher the sigma, the fewer faults escape the floor</text>
+-          </g>
+-
+-          {/* ══ the shift ══ */}
+-          <path id="sig-shift" pathLength="1" className="sk-draw sk-s5 p-scyan"
+-                d="M680 424 C 790 306, 1050 306, 1160 424" fill="none" strokeWidth="3" markerEnd="url(#sig-ah)"/>
+-          <g className="sk-fade sk-s5" textAnchor="middle">
+-            <text x="920" y="352" className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="62">99.6%</text>
+-            <text x="920" y="386" className="p-mono" fontSize="18" opacity=".68">fewer defects, moving 3σ to 5σ</text>
+-          </g>
+-
+-          {/* ══ the track ══ */}
+-          <g className="sk-fade sk-s3">
+-            <rect x="200" y="455" width="1200" height="10" rx="5" fill="var(--do-prussian-blue)" opacity=".55"/>
+-          </g>
+-          <rect className="sk-draw sk-s3" x="200" y="455" width="1200" height="10" rx="5" fill="url(#sig-scale)"/>
+-
+-          {/* ticks */}
+-          <g className="sk-fade sk-s4" textAnchor="middle">
+-            {/* 1σ */}
+-            <line x1="200" y1="447" x2="200" y2="475" className="p-samber" strokeWidth="2"/>
+-            <text x="200" y="434" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24">1σ</text>
+-            <text x="200" y="506" className="p-mono" fontSize="18" opacity=".78">690,000</text>
+-            {/* 2σ */}
+-            <line x1="440" y1="447" x2="440" y2="475" className="p-scyan" strokeWidth="2" strokeOpacity=".6"/>
+-            <text x="440" y="434" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24" opacity=".85">2σ</text>
+-            <text x="440" y="506" className="p-mono" fontSize="18" opacity=".7">308,000</text>
+-            {/* 3σ */}
+-            <line x1="680" y1="447" x2="680" y2="475" className="p-samber" strokeWidth="2"/>
+-            <text x="680" y="434" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24">3σ</text>
+-            <text x="680" y="506" className="p-mono" fontSize="18" opacity=".78">66,807</text>
+-            {/* 4σ */}
+-            <line x1="920" y1="447" x2="920" y2="475" className="p-scyan" strokeWidth="2" strokeOpacity=".6"/>
+-            <text x="920" y="434" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24" opacity=".85">4σ</text>
+-            <text x="920" y="506" className="p-mono" fontSize="18" opacity=".7">6,210</text>
+-            {/* 5σ */}
+-            <line x1="1160" y1="447" x2="1160" y2="475" className="p-scyan" strokeWidth="2"/>
+-            <text x="1160" y="434" className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24">5σ</text>
+-            <text x="1160" y="506" className="p-mono" fontSize="18" opacity=".78">233</text>
+-            {/* 6σ */}
+-            <line x1="1400" y1="447" x2="1400" y2="475" className="p-scyan" strokeWidth="2"/>
+-            <text x="1400" y="434" className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24">6σ</text>
+-            <text x="1400" y="506" className="p-mono" fontSize="18" opacity=".78">3.4</text>
+-
+-            <text x="800" y="534" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".38">DEFECTS PER MILLION</text>
+-          </g>
+-
+-          {/* target zone, below the track so it does not fight the shift arc */}
+-          <g className="sk-fade sk-s6">
+-            <path d="M1100 566 v20 h340 v-20" fill="none" className="p-scyan" strokeWidth="1.5" strokeOpacity=".7"/>
+-            <text x="1270" y="612" textAnchor="middle" className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="16" letterSpacing="1.4">TARGET ZONE</text>
+-          </g>
+-
+-          {/* where you probably are */}
+-          <g className="sk-fade sk-s6">
+-            <path d="M600 566 v20 h160 v-20" fill="none" className="p-samber" strokeWidth="1.5" strokeOpacity=".7"/>
+-            <text x="680" y="612" textAnchor="middle" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="16" letterSpacing="1.4">MOST FLOORS</text>
+-          </g>
+-
+-          {/* ══ takeaway ══ */}
+-          <g className="sk-fade sk-s6">
+-            <line x1="60" y1="656" x2="1540" y2="656" className="p-scyan" strokeWidth=".6" strokeOpacity=".2"/>
+-            <text x="60" y="694" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">At 3σ, roughly 1 in 15 garments has a visible fault. At 5σ, it is 233 in a million.</text>
+-            <text x="60" y="730" className="p-mono" fontSize="17" opacity=".62">That jump is not a new machine. It is a better process: standard settings, documented steps, checks at the right points.</text>
+-          </g>
+-
+-          {/* travelling marker */}
+-          <g className="sk-dots">
+-            <circle r="7" className="p-cyan">
+-              <animateMotion dur="4s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.5;1" calcMode="linear">
+-                <mpath href="#sig-shift"/>
+-              </animateMotion>
+-            </circle>
+-          </g>
+-        </Plate>
+-      </div>
+-    </div>
+-  </div>
+-</section>
+-
+ {/* WARNING BAND, the one accent strip */}
+ <div className="strip">
+   <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, textAlign: 'center' }}>
+     <AlertTriangle size={18} style={{ flexShrink: 0 }} />
+
+[0m
+Now remove the duplicate DO-ART-986 section:
+[0m→ [0mRead app/resources/six-sigma/page.tsx[90m [offset=150][0m
+Remove the duplicate DO-ART-986 section:
+[0m
+[0m✗ [0mInvalid Tool
+
+
+...56990 bytes truncated...
+
+The tool call succeeded but the output was truncated. Full output saved to: C:\Users\CraigBlackman\.local\share\opencode\tool-output\tool_0d4ac85ec001F2tkmPSuWXkcmh
+Use the Task tool to have explore agent process this file with Grep and Read (with offset/limit). Do NOT read the full file yourself - delegate to save context.
+[0m
+Let me use a more targeted approach to remove the duplicate. I'll use the unique comment marker:
+[0m← [0mEdit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
+@@ -205,24 +205,9 @@
+ ` }} />
+       </section>
+ 
+ 
+-      {/* D17 INLINE · DO-ART-986 */}
+-      <section className="g-navy">
+-        <div className="wrap" dangerouslySetInnerHTML={{ __html: `<figure class="d17 sw a986" data-od-id="plate-scale" data-motion data-no="DO-ART-986" data-rev="01" data-tx="schematic"
+-              aria-label="Drawn plate DO-ART-986, the same thousand garments on two floors. At 3 sigma, 66,807 defects per million, 67 of the 1,000 carry a visible fault, marked in amber. At 5 sigma, 233 defects per million, none of the 1,000 does; the next fault is about one garment in 4,300. Same machines. Different process.">
+-        <div class="q-grid" aria-hidden="true"></div>
+-        <div class="sw-cap">
+-          <p class="k d17-mono">Process quality <span>· to scale</span></p>
+-          <div class="bar" aria-hidden="true"></div>
+-          <h3>The same 1,000 garments. Two floors.</h3>
+-          <p>Every square is one garment. Same machines on both floors. What changes is the process: settings standardised, procedures written down, checkpoints measured.</p>
+-          <span class="d17-mark">decodedops.co.uk · DO-ART-986 · Rev 01</span>
+-        </div>
+-        <div class="floors" aria-hidden="true">
+-          <div class="fl fl-3">
+-            <p class="h"><b>3σ</b><span>Industry baseline</span></p>
+-            <div class="g1k"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i class="x"></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i class="x"></i><i class="x"></i><i></i><i class="x"></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i class="x"></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i class="x"></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i class="x"></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i></div>
++      {/* CTA STRIP (light) */}<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i class="x"></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i class="x"></i><i class="x"></i><i></i><i class="x"></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i class="x"></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i class="x"></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i class="x"></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i></div>
+             <p class="f"><b>67</b> of 1,000 with a visible fault</p>
+           </div>
+           <div class="fl fl-5">
+             <p class="h"><b>5σ</b><span>High performance</span></p>
+
+[0m
+Let me check the file state after that edit:
+[0m→ [0mRead app/resources/six-sigma/page.tsx[90m [offset=195][0m
+The file got corrupted. Let me rewrite the entire six-sigma page cleanly:
+[0m
+[0m✗ [0mInvalid Tool
+
+
+...63037 bytes truncated...
+
+The tool call succeeded but the output was truncated. Full output saved to: C:\Users\CraigBlackman\.local\share\opencode\tool-output\tool_0d4b6d121001YiPF2XtgfQkCuW
+Use the Task tool to have explore agent process this file with Grep and Read (with offset/limit). Do NOT read the full file yourself - delegate to save context.
+[0m
+The inline HTML with thousands of `<i>` tags is too long for the write tool. Let me use a task agent to fix the file properly.
+[0m• [0mFix six-sigma page file[90m General Agent[0m
+[0m✓ [0mFix six-sigma page file[90m General Agent[0m
+[0m
+[0m# [0mTodos
+[ ] Section 1: Port SOP template hero art (DO-ART-987) into app/resources/sop-template/page.tsx
+[✓] Section 2: Remove old Plate block from six-sigma, keep DO-ART-986
+[ ] Section 3: Phone overflow fixes for seasonal-capacity and ops-health-score
+[ ] Section 4: Rebuild all resource/tool heroes with rt-split layout
+[ ] Section 5: Move inline pieces to immediately after hero on each page
+[ ] Run tsc --noEmit, commit, write lane reports
+[0m
+Good. Now let me commit Section 2 and move on.
+[0m• [0mPhone overflow CSS fixes[90m General Agent[0m
+[0m• [0mrt-split heroes + inline moves[90m General Agent[0m
+Now let me tackle Sections 3, 4, 5 and 1 in parallel using task agents.
+[0m✓ [0mPhone overflow CSS fixes[90m General Agent[0m
+[0m✓ [0mrt-split heroes + inline moves[90m General Agent[0m
+[0m
+[0m# [0mTodos
+[✓] Section 1: Port SOP template hero art (DO-ART-987) into app/resources/sop-template/page.tsx
+[✓] Section 2: Remove old Plate block from six-sigma, keep DO-ART-986
+[✓] Section 3: Phone overflow fixes for seasonal-capacity and ops-health-score
+[✓] Section 4: Rebuild all resource/tool heroes with rt-split layout
+[✓] Section 5: Move inline pieces to immediately after hero on each page
+[•] Run tsc --noEmit, commit, write lane reports
+[0m
+All tasks completed. Let me verify the build and commit.
+[0m$ [0mnpx tsc --noEmit 2>&1 | head -50
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+Clean. Now commit and write lane reports.
+[0m$ [0mgit add -A && git status
+warning: in the working copy of 'app/resources/seasonal-capacity/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+On branch web-g-build-d17
+Your branch and 'origin/staging' have diverged,
+and have 9 and 15 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   app/resources/5-warning-signs/page.tsx
+	modified:   app/resources/artwork-approval-playbook/page.tsx
+	modified:   app/resources/audit-checklist/page.tsx
+	modified:   app/resources/capacity-planner/page.tsx
+	modified:   app/resources/decoded-method/page.tsx
+	modified:   app/resources/erp-selection-playbook/page.tsx
+	modified:   app/resources/page.tsx
+	modified:   app/resources/seasonal-capacity/page.tsx
+	modified:   app/resources/six-sigma/page.tsx
+	modified:   app/resources/sop-template/page.tsx
+	modified:   app/tools/automation-roi-calculator/page.tsx
+	modified:   app/tools/downtime-cost-calculator/page.tsx
+	modified:   app/tools/ops-health-score/page.tsx
+	modified:   app/tools/page.tsx
+	modified:   app/tools/rto-calculator/page.tsx
+	modified:   app/tools/should-i-replace-erp/page.tsx
+	modified:   components/calculators/SeasonalCapacityCalculator.tsx
+	modified:   components/calculators/calculators.css
+[0m
+[0m$ [0mgit commit -m "fix(web): SOP hero art, six-sigma plate swap, calculator phone overflow (WO-INF-061)
+
+Sections 1-5 of web-g-build-d17-fix1 lane brief:
+1. SOP template: ported DO-ART-987 hero art with rt-split layout
+2. Six-sigma: removed old Plate DO-ART-209 block, kept DO-ART-986, removed duplicate
+3. Phone overflow: seasonal-capacity grid wraps below 640px, ops-health-score buttons flex-wrap
+4. All 16 resource/tool page heroes rebuilt with rt-split two-column layout
+5. Inline art pieces (984, 986, 990, 993) moved to immediately after hero"
+[web-g-build-d17 58a7a2e] fix(web): SOP hero art, six-sigma plate swap, calculator phone overflow (WO-INF-061)
+ 18 files changed, 354 insertions(+), 455 deletions(-)
+[0m
+[0m$ [0mgit log -1 --format="%H %s"
+58a7a2ee09b7cccab3399548297c2fbc9478b2d2 fix(web): SOP hero art, six-sigma plate swap, calculator phone overflow (WO-INF-061)
+[0m
+Now write the lane reports.
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-g-build-d17\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-g-build-d17-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-g-build-d17-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane reports for web-g-build-d17-fix1"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-g-build-d17-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-g-build-d17-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[web-g-build-d17 6b1fa67] chore: lane reports for web-g-build-d17-fix1
+ 2 files changed, 73 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-g-build-d17-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-g-build-d17-fix1.json
+[0m
+[0m# [0mTodos
+[✓] Section 1: Port SOP template hero art (DO-ART-987) into app/resources/sop-template/page.tsx
+[✓] Section 2: Remove old Plate block from six-sigma, keep DO-ART-986
+[✓] Section 3: Phone overflow fixes for seasonal-capacity and ops-health-score
+[✓] Section 4: Rebuild all resource/tool heroes with rt-split layout
+[✓] Section 5: Move inline pieces to immediately after hero on each page
+[✓] Run tsc --noEmit, commit, write lane reports
+[0m
+Lane complete. Two commits made:
+
+1. **`58a7a2e`** — `fix(web): SOP hero art, six-sigma plate swap, calculator phone overflow (WO-INF-061)` — 18 files, all 5 sections
+2. **`6b1fa67`** — `chore: lane reports for web-g-build-d17-fix1` — lane result JSON + notes
+
+**Summary of changes:**
+- **Section 1**: SOP template now has DO-ART-987 hero art with rt-split layout
+- **Section 2**: Six-sigma old Plate DO-ART-209 removed, duplicate DO-ART-986 removed
+- **Section 3**: Phone overflow fixed — seasonal-capacity grid wraps below 640px, ops-health-score buttons flex-wrap
+- **Section 4**: All 16 resource/tool page heroes rebuilt with rt-split two-column layout (text left, art right)
+- **Section 5**: Inline art pieces (984, 990, 993) moved to immediately after hero
+
+`tsc --noEmit` clean. No push performed.

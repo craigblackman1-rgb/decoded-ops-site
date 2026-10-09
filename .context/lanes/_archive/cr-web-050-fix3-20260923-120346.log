@@ -1,0 +1,82 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/cr-web-050-fix3.md
+[0m→ [0mRead app/page.tsx[90m [offset=310, limit=10][0m
+[0m→ [0mRead app/page.tsx[90m [offset=393, limit=10][0m
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -310,9 +310,9 @@
+           </Plate>
+         </div>
+       </div>
+ 
+-      <p className="sheet-foot">Same approach at Case study 02, real production numbers: nine supplier
++      <p className="sheet-foot">Same approach at Case study 02, real production numbers: 17 supplier
+         feeds automated, and a projected saving of 20 to 40 hours a week.</p>
+     </article>
+   </div>
+ </section>
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -393,9 +393,9 @@
+ 
+ <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
+       opacity=".45">SHOWS</text>
+ <text x="1026" y="422" className="p-ink" fontFamily="Outfit,sans-serif"
+-      fontWeight="600" fontSize="22">Nine supplier feeds, automated</text>
++      fontWeight="600" fontSize="22">17 supplier feeds, automated</text>
+ <text x="1026" y="450" className="p-mono" fontSize="16" opacity=".62">Stock, bins and
+   picking alongside Symphony</text>
+ 
+ <text x="1026" y="506" className="p-mono" fontSize="15" letterSpacing="2"
+
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git grep -niE "nine supplier|9 supplier feeds" -- app ':!app/clients'
+(no output)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && npx tsc --noEmit 2>&1 | tail -20
+tail: The term 'tail' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git add -A && git commit -m "fix(site): homepage feed count (CR-WEB-050)"
+warning: in the working copy of '.context/lane-briefs/cr-web-050-fix3.md', LF will be replaced by CRLF the next time Git touches it
+[cr-web-site-figures 3585692] fix(site): homepage feed count (CR-WEB-050)
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[0m
+[0m$ [0mmkdir -p "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\.context\lane-reports"
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\.context\lane-reports already exists.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git log --oneline -1
+3585692 fix(site): homepage feed count (CR-WEB-050)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git log --format="%H" -1
+3585692771e109d2187710b3457fff7ac727fc4c
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-cr-web-050-fix3.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-cr-web-050-fix3.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git add -A && git commit -m "chore: lane exit — cr-web-050-fix3"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-cr-web-050-fix3.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-cr-web-050-fix3.json', LF will be replaced by CRLF the next time Git touches it
+[cr-web-site-figures 7dbcc2d] chore: lane exit — cr-web-050-fix3
+ 2 files changed, 9 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-cr-web-050-fix3.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-cr-web-050-fix3.json
+[0m
+Done. Two edits in `app/page.tsx` (lines 314, 397), tsc clean, grep empty, two commits landed.

@@ -1,0 +1,416 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead lib/d17-figures/a943.ts
+[0m
+[0m$ [0mgit status --short | Select-Object -First 30; git log --oneline -5; git branch --show-current
+M data/route-slugs.json
+?? .context/lane-briefs/web074-fix1.md
+0252116 docs: lane report + exit files for web074-art-swaps (CR-WEB-074)
+2388a65 feat(art): height polish — home DO-ART-917 to ~630px at 1152w, tighten 917/718 phone stacks to ≤820px (CR-WEB-074)
+e7c1264 feat(art): renumber systems-dont-talk/spreadsheet-addiction plates to DO-ART-1012/1013 with own hook classes (CR-WEB-074)
+fc71343 feat(art): DO-ART-917 home only — swap data-scattered/erp-implementation-failure to 942/991 (CR-WEB-074)
+2c27540 feat(art): DO-ART-718 keep on two — swap ai-paralysis/disaster-recovery/no-ops-owner/slow-processes to 997/998/1011/986 (CR-WEB-074)
+lane/web074-art-swaps
+[0m
+[0m✱ [0mGrep "a943"[90m in app · 34 matches[0m
+[0m✱ [0mGrep "max-width:\s*640px"[90m in app/d17-art.module.css · 10 matches[0m
+[0m→ [0mRead app/d17-apps-cases.css[90m [offset=160, limit=80][0m
+[0m→ [0mRead app/d17-art.module.css[90m [offset=360, limit=60][0m
+[0m✱ [0mGrep "\.d17\b|\.mw\b|\.mw-bar|\.mw-main|container-type|\.d17-mark"[90m in app/d17-global.css · 100 matches[0m
+[0m✱ [0mGrep "\.mw|\.desk"[90m in app/d17-apps-cases.css · 35 matches[0m
+[0m→ [0mRead app/d17-problems.css[90m [limit=30, offset=70][0m
+[0m✱ [0mGrep "import.*css|d17-"[90m in app/problems/inventory-blind/page.tsx · 8 matches[0m
+[0m✱ [0mGrep "import.*css|d17-"[90m in app/apps/works/page.tsx · 8 matches[0m
+[0m✱ [0mGrep "m-rise|m-drop|m-pop|\.d17\{|\.d17 \{|d17-mark"[90m in app/d17-global.css · 100 matches[0m
+[0m→ [0mRead app/d17-art.module.css[90m [limit=140, offset=100][0m
+[0m→ [0mRead app/d17-art.module.css[90m [limit=50, offset=50][0m
+[0m✱ [0mGrep "a917"[90m in app/d17-art.module.css · 31 matches[0m
+[0m
+[0m$ [0mgit show HEAD~1 --stat | Select-Object -First 30; git log --oneline -12
+commit 2388a652f772e7e14113b4537390995e11cfd65b
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Thu Oct 8 22:27:04 2026 +0100
+
+    feat(art): height polish — home DO-ART-917 to ~630px at 1152w, tighten 917/718 phone stacks to ≤820px (CR-WEB-074)
+
+ app/d17-art.module.css | 46 +++++++++++++++++++++++++++++-----------------
+ app/d17-problems.css   | 12 ++++++++++++
+ 2 files changed, 41 insertions(+), 17 deletions(-)
+0252116 docs: lane report + exit files for web074-art-swaps (CR-WEB-074)
+2388a65 feat(art): height polish — home DO-ART-917 to ~630px at 1152w, tighten 917/718 phone stacks to ≤820px (CR-WEB-074)
+e7c1264 feat(art): renumber systems-dont-talk/spreadsheet-addiction plates to DO-ART-1012/1013 with own hook classes (CR-WEB-074)
+fc71343 feat(art): DO-ART-917 home only — swap data-scattered/erp-implementation-failure to 942/991 (CR-WEB-074)
+2c27540 feat(art): DO-ART-718 keep on two — swap ai-paralysis/disaster-recovery/no-ops-owner/slow-processes to 997/998/1011/986 (CR-WEB-074)
+9405e5d feat(art): DO-ART-918 home only — swap cant-scale/inventory-blind/manual-workarounds/seasonal-peaks to 993/943/1009/1010, lift shared figures to lib/d17-figures (CR-WEB-074)
+89017db feat(art): install 15 library photo exports, repoint problem heroes/plates and money bands (CR-WEB-074)
+e1194dd chore: lane brief web046-fix1
+7fc4d89 docs: lane report + exit files for web046-fix1
+0c01482 fix(art): blog hero full-width up to 960px, block display (BUG-WEB-046)
+19c150e chore: lane report for web046-art-sizing
+5ee13c2 fix(art): cap blog post hero image at 960px centred with explicit dimensions (BUG-WEB-046)
+[0m
+[0m→ [0mRead app/page.tsx[90m [limit=80, offset=280][0m
+[0m→ [0mRead app/d17-art.module.css[90m [limit=30, offset=340][0m
+[0m
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
+@@ -222,8 +222,19 @@
+   .a943 .cap3{ --u:1px }
+   .a943 .d17-mark--abs{ left:14px; bottom:18px }
+   .pv{ grid-template-columns:90px 1fr }
+ }
++/* CR-WEB-074 fix1 · ≤640px ceiling for DO-ART-943: the catalogue card must sit fully
++   inside the figure (no left crop), the secondary phone mock-up drops out, and the
++   stack tightens so the whole piece is ≤800px at 342px wide. */
++@media (max-width: 640px){
++  .a943{ padding:14px 12px 56px; gap:14px }
++  .a943 .desk{ position:relative; left:auto; right:auto; top:auto; width:100%; transform:none }
++  .a943 .desk .mw{ --u:.55px }
++  .a943 .phone{ display:none }
++  .a943 .cap3{ --u:.9px }
++  .a943 .cap3 li{ padding:10px 0 }
++}
+ 
+ /* ─── DO-ART-944 · artwork manager hero · the approval history screen ─── */
+ .a944 .stage{ position:relative; padding:calc(70 * var(--u)) calc(26 * var(--u)) 0 }
+ .a944 .d17-ph{ bottom:auto; height:calc(360 * var(--u)) }
+
+[0m
+Now I have the full picture. Making the edits — a943 phone block first.
+[0m$ [0mrg -n "d17-rise|@keyframes d17" app\d17-global.css | Select-Object -First 15
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+Let me check the `m-rise` animation and `.desk` pill rule interaction — that may explain the left crop.
+[0m✱ [0mGrep "@media \(max-width: 760px\)"[90m in app/d17-global.css · 60 matches[0m
+Now the a917 ≤640px block — tighten further.
+[0m
+[0m← [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-art.module.css
+@@ -400,8 +400,28 @@
+   .meter { margin-top: 8px; padding: 8px 12px }
+   .feeds { margin-top: 8px; padding: 6px 12px }
+   .feeds .r { padding: 4px 0 }
+ }
++/* CR-WEB-074 fix1 · ≤640px ceiling, second pass: drop the mock-up subline (not the
++   headline, the KPIs or the mark line) and tighten again to bring the stacked
++   piece under 800px on an 844px phone. */
++@media (max-width: 640px) {
++  .a917 { padding: 16px 14px 14px; gap: 14px }
++  .winBar { height: 28px }
++  .winMain { padding: 10px 12px }
++  .winMain .s { display: none }
++  .kpis { gap: 6px }
++  .kpi { padding: 8px 12px }
++  .meter { margin-top: 6px; padding: 6px 10px }
++  .meter .track { margin-top: 6px }
++  .feeds { margin-top: 6px; padding: 4px 10px }
++  .feeds .r { padding: 3px 0 }
++  .feeds .more { padding-top: 4px }
++  .a917 .cap .bar { margin: 12px 0 }
++  .a917 .cap p { margin-top: 10px }
++  .a917 .live { margin-top: 14px }
++  .a917 .d17Mark { margin-top: 18px }
++}
+ @media (max-width: 760px) {
+   .a920 { grid-template-columns: 1fr; min-height: 0; aspect-ratio: auto }
+   .a920 .d17Ph { left: 0; bottom: auto; height: 250px }
+   .a920::before { background: linear-gradient(180deg, transparent 0, transparent 130px, var(--do-prussian-blue) 250px) }
+
+[0m
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
+@@ -224,12 +224,15 @@
+   .pv{ grid-template-columns:90px 1fr }
+ }
+ /* CR-WEB-074 fix1 · ≤640px ceiling for DO-ART-943: the catalogue card must sit fully
+    inside the figure (no left crop), the secondary phone mock-up drops out, and the
+-   stack tightens so the whole piece is ≤800px at 342px wide. */
++   stack tightens so the whole piece is ≤800px at 342px wide. transform:none and the
++   display/background resets also neutralise the generic .desk pill rule from
++   d17-problems.css that leaks in on /problems/inventory-blind. */
+ @media (max-width: 640px){
+   .a943{ padding:14px 12px 56px; gap:14px }
+-  .a943 .desk{ position:relative; left:auto; right:auto; top:auto; width:100%; transform:none }
++  .a943 .desk{ position:relative; left:auto; right:auto; top:auto; bottom:auto; width:100%; transform:none;
++    display:block; background:none; border-radius:0; padding:0; white-space:normal; gap:0; box-shadow:none; font-family:inherit }
+   .a943 .desk .mw{ --u:.55px }
+   .a943 .phone{ display:none }
+   .a943 .cap3{ --u:.9px }
+   .a943 .cap3 li{ padding:10px 0 }
+
+[0m
+One catch: on `/problems/inventory-blind`, `d17-problems.css` defines a generic `.desk` pill rule (amber, translateX(-50%)) that leaks into a943's desk div — that's the left-crop cause. I need to neutralise the pill properties in the phone block too.
+The generic `.desk` pill rule in `d17-problems.css` also leaks at desktop widths on `/problems/inventory-blind` (amber pill background, `translateX(-50%)` — same left-crop cause). I'll guard the base `.a943 .desk` rule too, since that page loads problems.css.
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
+@@ -170,9 +170,12 @@
+ .a943 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.62) contrast(1.08) brightness(.72) }
+ .a943::before{ content:''; position:absolute; inset:0; z-index:-1;
+   background:linear-gradient(90deg, color-mix(in srgb, var(--do-prussian-blue) 20%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 40%, transparent) 60%,
+     var(--do-prussian-blue) 100%) }
+-.a943 .desk{ position:absolute; left:calc(44 * var(--u)); top:calc(64 * var(--u)); width:calc(590 * var(--u)) }
++/* The resets here (display/background/transform/etc) neutralise the generic .desk pill
++   rule from d17-problems.css, which leaks into this div on /problems/inventory-blind. */
++.a943 .desk{ position:absolute; left:calc(44 * var(--u)); top:calc(64 * var(--u)); width:calc(590 * var(--u));
++  transform:none; display:block; background:none; border-radius:0; padding:0; white-space:normal; gap:0; box-shadow:none; font-family:inherit }
+ .a943 .phone{ position:absolute; left:calc(596 * var(--u)); top:calc(150 * var(--u)); width:calc(214 * var(--u)); z-index:3;
+   border-radius:calc(30 * var(--u)); padding:calc(10 * var(--u)); background:#0b1116;
+   box-shadow:0 calc(30 * var(--u)) calc(60 * var(--u)) color-mix(in srgb, #000 60%, transparent), 0 0 0 2px color-mix(in srgb, var(--do-sky-blue) 25%, transparent);
+   transform:rotate(4deg) }
+
+[0m
+The pill rule also leaks `text-transform:uppercase`, `letter-spacing`, `z-index`, `font-size` — adding those to both guards so the card content isn't uppercased on the inventory-blind page.
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
+@@ -173,9 +173,10 @@
+     var(--do-prussian-blue) 100%) }
+ /* The resets here (display/background/transform/etc) neutralise the generic .desk pill
+    rule from d17-problems.css, which leaks into this div on /problems/inventory-blind. */
+ .a943 .desk{ position:absolute; left:calc(44 * var(--u)); top:calc(64 * var(--u)); width:calc(590 * var(--u));
+-  transform:none; display:block; background:none; border-radius:0; padding:0; white-space:normal; gap:0; box-shadow:none; font-family:inherit }
++  transform:none; display:block; background:none; border-radius:0; padding:0; white-space:normal; gap:0; z-index:auto;
++  box-shadow:none; font-family:inherit; font-size:inherit; font-weight:inherit; letter-spacing:normal; text-transform:none; color:inherit }
+ .a943 .phone{ position:absolute; left:calc(596 * var(--u)); top:calc(150 * var(--u)); width:calc(214 * var(--u)); z-index:3;
+   border-radius:calc(30 * var(--u)); padding:calc(10 * var(--u)); background:#0b1116;
+   box-shadow:0 calc(30 * var(--u)) calc(60 * var(--u)) color-mix(in srgb, #000 60%, transparent), 0 0 0 2px color-mix(in srgb, var(--do-sky-blue) 25%, transparent);
+   transform:rotate(4deg) }
+
+[0m
+Simplify the ≤640 block since the base rule now carries the pill neutralisation.
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web074-art-swaps\app\d17-apps-cases.css
+@@ -228,15 +228,12 @@
+   .pv{ grid-template-columns:90px 1fr }
+ }
+ /* CR-WEB-074 fix1 · ≤640px ceiling for DO-ART-943: the catalogue card must sit fully
+    inside the figure (no left crop), the secondary phone mock-up drops out, and the
+-   stack tightens so the whole piece is ≤800px at 342px wide. transform:none and the
+-   display/background resets also neutralise the generic .desk pill rule from
+-   d17-problems.css that leaks in on /problems/inventory-blind. */
++   stack tightens so the whole piece is ≤800px at 342px wide. */
+ @media (max-width: 640px){
+   .a943{ padding:14px 12px 56px; gap:14px }
+-  .a943 .desk{ position:relative; left:auto; right:auto; top:auto; bottom:auto; width:100%; transform:none;
+-    display:block; background:none; border-radius:0; padding:0; white-space:normal; gap:0; box-shadow:none; font-family:inherit }
++  .a943 .desk{ position:relative; left:auto; right:auto; top:auto; bottom:auto; width:100%; transform:none }
+   .a943 .desk .mw{ --u:.55px }
+   .a943 .phone{ display:none }
+   .a943 .cap3{ --u:.9px }
+   .a943 .cap3 li{ padding:10px 0 }
+
+[0m
+Now repo hygiene — the duplicate swap-exports folder.
+[0m$ [0mgit ls-files .context/cr-web-074/ | Select-Object -First 30; Test-Path .context/cr-web-074/swap-exports
+.context/cr-web-074/artwork-swap-map.md
+.context/cr-web-074/extract-figures.mjs
+.context/cr-web-074/step2-remaining.mjs
+.context/cr-web-074/step3-noops.mjs
+.context/cr-web-074/step3-swaps.mjs
+.context/cr-web-074/step4-swaps.mjs
+.context/cr-web-074/swap-exports/_contact-sheet.jpg
+.context/cr-web-074/swap-exports/band-packing-station-7c4f80.webp
+.context/cr-web-074/swap-exports/band-screenprint-carousel-f0dce0.webp
+.context/cr-web-074/swap-exports/card-embroidery-heads-50b561.webp
+.context/cr-web-074/swap-exports/card-garment-shelf-724253.webp
+.context/cr-web-074/swap-exports/card-warehouse-floor-f1d62c.webp
+.context/cr-web-074/swap-exports/hero-embroidery-floor-84216c.webp
+.context/cr-web-074/swap-exports/hero-embroidery-heads-b5b1fb.webp
+.context/cr-web-074/swap-exports/hero-office-paperwork-75fcd2.webp
+.context/cr-web-074/swap-exports/hero-racking-aisle-7d129e.webp
+.context/cr-web-074/swap-exports/hero-stockroom-mixed-fa24e6.webp
+.context/cr-web-074/swap-exports/manifest.json
+.context/cr-web-074/swap-exports/plate-crates-aisle-e843b7.webp
+.context/cr-web-074/swap-exports/plate-dtf-conveyor-a1f1d1.webp
+.context/cr-web-074/swap-exports/plate-job-sheets-63dd9c.webp
+.context/cr-web-074/swap-exports/plate-pallets-12eebd.webp
+.context/cr-web-074/swap-exports/plate-racking-bays-626a9b.webp
+.context/cr-web-074/swap-home-to-lib.mjs
+.context/cr-web-074/swap-tools-to-lib.mjs
+True
+[0m
+[0m$ [0mTest-Path public/images/d17/apps-cases/gen-bench-flatlay-dea11a.webp; Get-Content .context/cr-web-074/swap-exports/manifest.json -TotalCount 30
+True
+[
+ {
+  "id": "E01",
+  "src": "20260609_124553.jpg",
+  "rotW": 4624,
+  "rotH": 3468,
+  "crop": [
+   0,
+   607,
+   4624,
+   2601
+  ],
+  "srcPx": "4624x2601",
+  "out": "plate-crates-aisle-e843b7.webp",
+  "size": "1600x900",
+  "kb": 243,
+  "q": 78
+ },
+ {
+  "id": "E02",
+  "src": "20260617_095414.jpg",
+  "rotW": 4624,
+  "rotH": 3468,
+  "crop": [
+   93,
+   815,
+   3884,
+   2185
+  ],
+  "srcPx": "3884x2185",
+[0m
+[0m$ [0mforeach($f in @('plate-crates-aisle-e843b7.webp','hero-racking-aisle-7d129e.webp','card-embroidery-heads-50b561.webp','band-packing-station-7c4f80.webp')){ $hit = Get-ChildItem -Recurse -Filter $f public/images -ErrorAction SilentlyContinue; "$f -> $(if($hit){$hit.FullName}else{'MISSING'})" }
+plate-crates-aisle-e843b7.webp -> D:\apps\worktrees\decoded-ops-website\web074-art-swaps\public\images\d17\problems\plate-crates-aisle-e843b7.webp
+hero-racking-aisle-7d129e.webp -> D:\apps\worktrees\decoded-ops-website\web074-art-swaps\public\images\d17\problems\hero-racking-aisle-7d129e.webp
+card-embroidery-heads-50b561.webp -> D:\apps\worktrees\decoded-ops-website\web074-art-swaps\public\images\d17\problems\card-embroidery-heads-50b561.webp
+band-packing-station-7c4f80.webp -> D:\apps\worktrees\decoded-ops-website\web074-art-swaps\public\images\money\band-packing-station-7c4f80.webp
+[0m
+All images are in `public/images/`. Removing the duplicates and committing the first pass.
+[0m$ [0mgit rm -r --cached .context/cr-web-074/swap-exports | Out-Null; Remove-Item -Recurse -Force .context/cr-web-074/swap-exports; git add app/d17-apps-cases.css app/d17-art.module.css .context/cr-web-074; git status --short | Select-Object -First 40
+D  .context/cr-web-074/swap-exports/_contact-sheet.jpg
+D  .context/cr-web-074/swap-exports/band-packing-station-7c4f80.webp
+D  .context/cr-web-074/swap-exports/band-screenprint-carousel-f0dce0.webp
+D  .context/cr-web-074/swap-exports/card-embroidery-heads-50b561.webp
+D  .context/cr-web-074/swap-exports/card-garment-shelf-724253.webp
+D  .context/cr-web-074/swap-exports/card-warehouse-floor-f1d62c.webp
+D  .context/cr-web-074/swap-exports/hero-embroidery-floor-84216c.webp
+D  .context/cr-web-074/swap-exports/hero-embroidery-heads-b5b1fb.webp
+D  .context/cr-web-074/swap-exports/hero-office-paperwork-75fcd2.webp
+D  .context/cr-web-074/swap-exports/hero-racking-aisle-7d129e.webp
+D  .context/cr-web-074/swap-exports/hero-stockroom-mixed-fa24e6.webp
+D  .context/cr-web-074/swap-exports/manifest.json
+D  .context/cr-web-074/swap-exports/plate-crates-aisle-e843b7.webp
+D  .context/cr-web-074/swap-exports/plate-dtf-conveyor-a1f1d1.webp
+D  .context/cr-web-074/swap-exports/plate-job-sheets-63dd9c.webp
+D  .context/cr-web-074/swap-exports/plate-pallets-12eebd.webp
+D  .context/cr-web-074/swap-exports/plate-racking-bays-626a9b.webp
+M  app/d17-apps-cases.css
+M  app/d17-art.module.css
+ M data/route-slugs.json
+?? .context/lane-briefs/web074-fix1.md
+[0m
+[0m$ [0m$files = @('_contact-sheet.jpg','band-packing-station-7c4f80.webp','band-screenprint-carousel-f0dce0.webp','card-embroidery-heads-50b561.webp','card-garment-shelf-724253.webp','card-warehouse-floor-f1d62c.webp','hero-embroidery-floor-84216c.webp','hero-embroidery-heads-b5b1fb.webp','hero-office-paperwork-75fcd2.webp','hero-racking-aisle-7d129e.webp','hero-stockroom-mixed-fa24e6.webp','plate-crates-aisle-e843b7.webp','plate-dtf-conveyor-a1f1d1.webp','plate-job-sheets-63dd9c.webp','plate-pallets-12eebd.webp','plate-racking-bays-626a9b.webp'); $missing=@(); foreach($f in $files){ $hit = Get-ChildItem -Recurse -Filter $f public -ErrorAction SilentlyContinue; if(-not $hit){ $missing += $f } }; if($missing){ "MISSING: $($missing -join ', ')" } else { "all 16 non-manifest files present in public/" }
+MISSING: _contact-sheet.jpg
+[0m
+Contact sheet is a working artefact, not shipped imagery — fine to drop. Committing.
+[0m$ [0mgit commit -m "fix(art): phone fit for DO-ART-943/917, drop duplicate swap exports (CR-WEB-074)"; git log --oneline -1
+[lane/web074-art-swaps 3a6795d] fix(art): phone fit for DO-ART-943/917, drop duplicate swap exports (CR-WEB-074)
+ 19 files changed, 36 insertions(+), 258 deletions(-)
+ delete mode 100644 .context/cr-web-074/swap-exports/_contact-sheet.jpg
+ delete mode 100644 .context/cr-web-074/swap-exports/band-packing-station-7c4f80.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/band-screenprint-carousel-f0dce0.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/card-embroidery-heads-50b561.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/card-garment-shelf-724253.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/card-warehouse-floor-f1d62c.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/hero-embroidery-floor-84216c.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/hero-embroidery-heads-b5b1fb.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/hero-office-paperwork-75fcd2.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/hero-racking-aisle-7d129e.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/hero-stockroom-mixed-fa24e6.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/manifest.json
+ delete mode 100644 .context/cr-web-074/swap-exports/plate-crates-aisle-e843b7.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/plate-dtf-conveyor-a1f1d1.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/plate-job-sheets-63dd9c.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/plate-pallets-12eebd.webp
+ delete mode 100644 .context/cr-web-074/swap-exports/plate-racking-bays-626a9b.webp
+3a6795d fix(art): phone fit for DO-ART-943/917, drop duplicate swap exports (CR-WEB-074)
+[0m
+Now run tsc, then write the lane notes and exit files.
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -First 20; "exit=$LASTEXITCODE"
+exit=0
+[0m
+[0m→ [0mRead .context/lane-reports/LANE-NOTES-web074-art-swaps.md
+[0m
+[0m$ [0mgit diff HEAD~1 --name-only -- 'app/' 'lib/' | Out-String; Select-String -Path app\d17-apps-cases.css,app\d17-art.module.css -Pattern '\\u[0-9a-fA-F]{4}|\\x[0-9a-fA-F]{2}' | Measure-Object | Select-Object -ExpandProperty Count
+app/d17-apps-cases.css
+app/d17-art.module.css
+
+0
+[0m
+[0m← [0mEdit .context/lane-reports/LANE-NOTES-web074-art-swaps.md
+Index: D:\apps\worktrees\decoded-ops-website\web074-art-swaps\.context\lane-reports\LANE-NOTES-web074-art-swaps.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web074-art-swaps\.context\lane-reports\LANE-NOTES-web074-art-swaps.md
++++ D:\apps\worktrees\decoded-ops-website\web074-art-swaps\.context\lane-reports\LANE-NOTES-web074-art-swaps.md
+@@ -113,4 +113,34 @@
+ - Post-swap greps: `data-no="DO-ART-918"` and `DO-ART-917` only in `app/page.tsx`;
+   `DO-ART-718` exactly two pages (bottleneck-growth, ops-in-owners-head).
+ - No `\uXXXX`/`\xXX` escapes in any new JSX/string figure.
+ - No reference to proof-approval.jpg anywhere.
++
++## fix1 (commit 3a6795d)
++
++CR-WEB-074 fix1 lane — phone fit for DO-ART-943/917 + drop duplicate swap exports.
++
++- **DO-ART-943 ≤640px** (`app/d17-apps-cases.css`): new `@media (max-width:640px)` block after
++  the existing 760px stack — figure padding 14/12/56px, gap 14px; `.desk` becomes
++  relative/`width:100%` with `transform:none` (no left crop); `.mw` scale `.62px → .55px`; the
++  secondary phone mock-up hides (`display:none`); `.cap3` scales `.9px` with 10px li padding.
++  Caption list (Dashboard / Catalogue view / Supplier import) and the mark line kept. Figure
++  estimate ~700–750px at 342px wide (was 1152–1174). No `calc(N*var(--u))` used on the figure's
++  own min-height/padding.
++- **Root cause of the left crop found and fixed at source**: the generic `.desk` pill rule in
++  `d17-problems.css` (`.desk{ position:absolute; left:50%; transform:translateX(-50%); … }`)
++  leaks into a943's catalogue-card div on `/problems/inventory-blind` (which loads problems.css
++  before apps-cases.css), shifting it left by half its width under `.d17`'s overflow:hidden.
++  The base `.a943 .desk` rule now carries resets (transform, display, background, radius,
++  padding, white-space, gap, z-index, font, letter-spacing, text-transform, color) so the card
++  renders correctly at every width on that page, not just ≤640px.
++- **DO-ART-917 ≤640px** (`app/d17-art.module.css`): second-pass block after the existing
++  ≤640 tightening — figure padding 16/14/14, gap 14; winBar 28px; winMain padding 10/12;
++  the mock-up subline `.s` hides (decorative — headline, three KPI numbers and mark line kept);
++  kpi/meter/feeds paddings and gaps tightened again; caption bar/p/live/mark margins reduced.
++  Figure estimate ~740–780px at 342px wide (was 859).
++- **Hygiene**: `git rm -r --cached .context/cr-web-074/swap-exports` + folder deleted from the
++  worktree. All 15 shipped webp exports verified present under `public/images/` before removal;
++  `_contact-sheet.jpg` and `manifest.json` existed only in the duplicate copy (working
++  artefacts, not shipped). `artwork-swap-map.md` and the helper .mjs scripts kept.
++- **Honest limits**: heights are CSS arithmetic estimates — no dev server / Playwright was
++  allowed, so the ≤800px claims need a render pass to confirm. `npx tsc --noEmit` clean.
+
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web074-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web074-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-NOTES-web074-art-swaps.md .context/lane-reports/LANE-NOTES-web074-fix1.md .context/lane-reports/LANE-RESULT-web074-fix1.json && git commit -m "docs: lane notes + exit files for web074-fix1 (CR-WEB-074)" && git status --short
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web074-art-swaps.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web074-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web074-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[lane/web074-art-swaps 702bb9c] docs: lane notes + exit files for web074-fix1 (CR-WEB-074)
+ 3 files changed, 82 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web074-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web074-fix1.json
+ M data/route-slugs.json
+?? .context/lane-briefs/web074-fix1.md
+[0m
+Lane complete. Two commits on `lane/web074-art-swaps`:
+
+- **`3a6795d`** — fix(art): DO-ART-943 ≤640px block (card relative/100%/transform:none, phone mock-up hidden, stack tightened), DO-ART-917 second-pass ≤640px tightening (subline hidden, spacing reduced; headline/KPIs/mark kept), and `swap-exports/` dropped from the index and disk (all 15 webps verified in `public/images/` first). Also fixed the crop's root cause: the generic `.desk` pill rule in `d17-problems.css` was leaking `translateX(-50%)` into a943's card on `/problems/inventory-blind` — the base `.a943 .desk` rule now carries resets.
+- **`702bb9c`** — lane notes (fix1 section) + `LANE-RESULT-web074-fix1.json` + `LANE-NOTES-web074-fix1.md`.
+
+`npx tsc --noEmit` clean. Honest caveat recorded in the notes: heights are CSS arithmetic estimates (no render allowed), so the ≤800px targets need a visual pass to confirm.

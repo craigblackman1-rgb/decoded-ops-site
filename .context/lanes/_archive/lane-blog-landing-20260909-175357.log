@@ -1,0 +1,784 @@
+
+> build ┬╖ mimo-v2.5
+
+# Todos
+[ΓÇó] Read mockup HTML
+[ ] Read current app/blog/page.tsx
+[ ] Read current components/BlogList.tsx
+[ ] Implement changes in page.tsx and BlogList.tsx
+[ ] Verify with tsc and grep checks
+[ ] Commit
+
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/blog/blog-landing-v1.html
+ΓåÆ Read app/blog/page.tsx
+ΓåÆ Read components/BlogList.tsx
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/blog/blog-landing-v1.html [offset=981]
+
+# Todos
+[Γ£ô] Read mockup HTML
+[Γ£ô] Read current app/blog/page.tsx
+[Γ£ô] Read current components/BlogList.tsx
+[ΓÇó] Implement changes in page.tsx and BlogList.tsx
+[ ] Verify with tsc and grep checks
+[ ] Commit
+
+Now I'll edit `page.tsx` ΓÇö removing Plate, changing to `max-w-6xl`, and letting BlogList handle everything below the hero.
+ΓåÉ Write app/blog/page.tsx
+Wrote file successfully.
+
+Now write the new `BlogList.tsx` with lead post, filter rail, and card grid.
+ΓåÉ Write components/BlogList.tsx
+Wrote file successfully.
+
+# Todos
+[Γ£ô] Read mockup HTML
+[Γ£ô] Read current app/blog/page.tsx
+[Γ£ô] Read current components/BlogList.tsx
+[Γ£ô] Implement changes in page.tsx and BlogList.tsx
+[ΓÇó] Verify with tsc and grep checks
+[ ] Commit
+
+Now verify.
+Γ£▒ Grep "DO-ART-211|from '@/components/Plate'" in app/blog/page.tsx ┬╖ 0 matches
+Γ£▒ Grep "max-w-4xl" in app/blog/page.tsx ┬╖ 0 matches
+
+$ npx tsc --noEmit 2>&1
+                                                                               
+                This is not the tsc command you are looking for                
+                                                                               
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+
+Grep checks pass. Need to install deps for tsc.
+$ npm install 2>&1 | tail -5
+tail: The term 'tail' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ npm install 2>&1
+(no output)
+
+<shell_metadata>
+shell tool terminated command after exceeding timeout 120000 ms. If this command is expected to take longer and is not waiting for interactive input, retry with a larger timeout value in milliseconds.
+</shell_metadata>
+
+$ npm install --prefer-offline 2>&1
+changed 7 packages, and audited 76 packages in 1m
+npm warn allow-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   cpu-features@0.0.10 (install: node-gyp rebuild)
+npm warn allow-scripts   ssh2@1.17.0 (install: (install scripts present))
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+10 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ npx tsc --noEmit 2>&1
+                                                                               
+                This is not the tsc command you are looking for                
+                                                                               
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+
+$ ls node_modules/.bin/tsc* 2>&1 ; ls node_modules/typescript/bin/tsc 2>&1
+Get-ChildItem: Cannot find path 'D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\node_modules\typescript\bin\tsc' because it does not exist.
+
+$ node -e "const p = require('./package.json'); console.log(JSON.stringify({devDeps: Object.keys(p.devDependencies || {}), deps: Object.keys(p.dependencies || {})}, null, 2))"
+{
+  "devDeps": [
+    "@tailwindcss/postcss",
+    "@types/bcryptjs",
+    "@types/node",
+    "@types/nodemailer",
+    "@types/pg",
+    "@types/react",
+    "@types/react-dom",
+    "eslint",
+    "eslint-config-next",
+    "tailwindcss",
+    "typescript"
+  ],
+  "deps": [
+    "resend",
+    "@supabase/supabase-js",
+    "@upstash/ratelimit",
+    "@upstash/redis",
+    "bcryptjs",
+    "chart.js",
+    "gsap",
+    "lucide-react",
+    "next",
+    "next-auth",
+    "nodemailer",
+    "pg",
+    "react",
+    "react-chartjs-2",
+    "react-dom",
+    "ssh2",
+    "zod"
+  ]
+}
+
+$ ls node_modules/typescript 2>&1 ; ls node_modules/.bin/tsc 2>&1
+Get-ChildItem: Cannot find path 'D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\node_modules\typescript' because it does not exist.
+Get-ChildItem: Cannot find path 'D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\node_modules\.bin\tsc' because it does not exist.
+
+$ npm install 2>&1
+up to date, audited 76 packages in 783ms
+npm warn allow-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   cpu-features@0.0.10 (install: node-gyp rebuild)
+npm warn allow-scripts   ssh2@1.17.0 (install: (install scripts present))
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+10 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ ls node_modules 2>&1
+Directory: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\node_modules
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          09/09/2026    18:00                .bin
+d----          09/09/2026    17:56                @auth
+d----          09/09/2026    17:56                @img
+d----          09/09/2026    17:56                @kurkle
+d----          09/09/2026    17:56                @next
+d----          09/09/2026    17:56                @panva
+d----          09/09/2026    17:56                @stablelib
+d----          09/09/2026    17:56                @supabase
+d----          09/09/2026    17:56                @swc
+d----          09/09/2026    18:00                @upstash
+d----          09/09/2026    17:56                asn1
+d----          09/09/2026    17:59                baseline-browser-mapping
+d----          09/09/2026    17:56                bcrypt-pbkdf
+d----          09/09/2026    17:59                bcryptjs
+d----          09/09/2026    17:56                buildcheck
+d----          09/09/2026    17:57                caniuse-lite
+d----          09/09/2026    17:56                chart.js
+d----          09/09/2026    17:56                client-only
+d----          09/09/2026    17:56                cpu-features
+d----          09/09/2026    17:56                detect-libc
+d----          09/09/2026    17:56                fast-sha256
+d----          09/09/2026    17:56                gsap
+d----          09/09/2026    17:56                iceberg-js
+d----          09/09/2026    17:56                jose
+d----          09/09/2026    17:58                lucide-react
+d----          09/09/2026    17:56                nan
+d----          09/09/2026    17:59                nanoid
+d----          09/09/2026    17:59                next
+d----          09/09/2026    17:56                next-auth
+d----          09/09/2026    17:56                nodemailer
+d----          09/09/2026    17:56                oauth4webapi
+d----          09/09/2026    17:56                pg
+d----          09/09/2026    17:56                pg-cloudflare
+d----          09/09/2026    17:56                pg-connection-string
+d----          09/09/2026    17:56                pg-int8
+d----          09/09/2026    17:56                pg-pool
+d----          09/09/2026    17:56                pg-protocol
+d----          09/09/2026    17:56                pg-types
+d----          09/09/2026    17:56                pgpass
+d----          09/09/2026    17:56                picocolors
+d----          09/09/2026    17:56                postal-mime
+d----          09/09/2026    17:56                postgres-array
+d----          09/09/2026    17:56                postgres-bytea
+d----          09/09/2026    17:56                postgres-date
+d----          09/09/2026    17:56                postgres-interval
+d----          09/09/2026    17:56                preact
+d----          09/09/2026    17:56                preact-render-to-string
+d----          09/09/2026    17:56                react
+d----          09/09/2026    17:56                react-chartjs-2
+d----          09/09/2026    17:56                react-dom
+d----          09/09/2026    17:56                resend
+d----          09/09/2026    17:56                safer-buffer
+d----          09/09/2026    17:56                scheduler
+d----          09/09/2026    17:56                sharp
+d----          09/09/2026    17:56                source-map-js
+d----          09/09/2026    17:56                split2
+d----          09/09/2026    17:56                ssh2
+d----          09/09/2026    17:56                standardwebhooks
+d----          09/09/2026    17:56                styled-jsx
+d----          09/09/2026    17:56                tslib
+d----          09/09/2026    17:56                tweetnacl
+d----          09/09/2026    17:56                uncrypto
+d----          09/09/2026    17:56                xtend
+d----          09/09/2026    17:56                zod
+-a---          09/09/2026    18:00          34994 .package-lock.json
+
+$ npm install typescript @types/node @types/react @types/react-dom --save-dev 2>&1
+up to date, audited 76 packages in 1s
+npm warn allow-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   cpu-features@0.0.10 (install: node-gyp rebuild)
+npm warn allow-scripts   ssh2@1.17.0 (install: (install scripts present))
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+10 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ Test-Path package-lock.json ; Test-Path .npmrc ; Test-Path .nvmrc
+True
+True
+False
+
+ΓåÆ Read .npmrc
+
+$ Get-Item node_modules | Select-Object LinkType, Target, Attributes
+LinkType Target Attributes
+-------- ------ ----------
+                 Directory
+
+$ npm ls typescript 2>&1
+decoded-ops-next@0.1.0 D:\apps\worktrees\decoded-ops-website\lane-blog-orphans
+`-- (empty)
+
+$ Remove-Item -Recurse -Force node_modules ; Remove-Item package-lock.json ; npm install 2>&1
+added 73 packages, and audited 74 packages in 1m
+npm warn allow-scripts 1 package has install scripts not yet covered by allowScripts:
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+10 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ Test-Path node_modules/typescript ; Test-Path node_modules/.bin/tsc
+False
+False
+
+ΓåÆ Read package.json
+
+$ npm ls 2>&1
+decoded-ops-next@0.1.0 D:\apps\worktrees\decoded-ops-website\lane-blog-orphans
++-- @supabase/supabase-js@2.116.0
++-- @upstash/ratelimit@2.0.8
++-- @upstash/redis@1.38.4
++-- bcryptjs@3.0.3
++-- chart.js@4.5.1
++-- gsap@3.15.0
++-- lucide-react@1.43.0
++-- next-auth@5.0.0-beta.32
++-- next@16.3.3
++-- nodemailer@9.1.1
++-- pg@8.23.0
++-- react-chartjs-2@5.3.1
++-- react-dom@19.2.4
++-- react@19.2.4
++-- resend@6.26.0
++-- ssh2@1.17.0
+`-- zod@4.5.4
+
+$ npm install --include=dev 2>&1
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 339 packages, and audited 413 packages in 24s
+npm warn allow-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   ssh2@1.17.0 (install: (install scripts present))
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+150 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ npx tsc --noEmit 2>&1
+(no output)
+
+tsc passes clean. Now verify the grep checks pass and check git status.
+$ git status --short 2>&1
+M app/blog/page.tsx
+ M components/BlogList.tsx
+ M package-lock.json
+ M package.json
+?? LANE-BRIEF-U4.md
+?? LANE-BRIEF.md
+
+$ rg -n "DO-ART-211|from '@/components/Plate'" app/blog/page.tsx 2>&1 ; echo "---" ; rg -c "max-w-4xl" app/blog/page.tsx 2>&1
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+---
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+The `package-lock.json` and `package.json` changed from `npm install`. I need to revert those since only the two files may change.
+$ git checkout -- package-lock.json package.json 2>&1
+(no output)
+
+$ git status --short 2>&1
+M app/blog/page.tsx
+ M components/BlogList.tsx
+?? LANE-BRIEF-U4.md
+?? LANE-BRIEF.md
+
+# Todos
+[Γ£ô] Read mockup HTML
+[Γ£ô] Read current app/blog/page.tsx
+[Γ£ô] Read current components/BlogList.tsx
+[Γ£ô] Implement changes in page.tsx and BlogList.tsx
+[Γ£ô] Verify with tsc and grep checks
+[ΓÇó] Commit
+
+Only the two target files are modified. Now commit.
+$ git diff --stat 2>&1
+app/blog/page.tsx       |  73 ++--------------
+ components/BlogList.tsx | 223 ++++++++++++++++++++++++++++++++++--------------
+ 2 files changed, 162 insertions(+), 134 deletions(-)
+warning: in the working copy of 'app/blog/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/BlogList.tsx', LF will be replaced by CRLF the next time Git touches it
+
+$ git diff app/blog/page.tsx 2>&1
+diff --git a/app/blog/page.tsx b/app/blog/page.tsx
+index f74d40b..fdedcc0 100644
+--- a/app/blog/page.tsx
++++ b/app/blog/page.tsx
+@@ -4,7 +4,6 @@ import { BOOKING_URL } from '@/lib/constants';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import BlogList from '@/components/BlogList';
+-import { Plate } from '@/components/Plate';
+ import type { Metadata } from 'next';
+ import localBlogPosts from '@/data/blog-index.json';
+ import { hubFetch } from '@/lib/hub-fetch';
+@@ -67,7 +66,7 @@ export default async function BlogPage() {
+       ]} />
+       <JsonLd data={blogSchema} />
+       <section className="pt-24 pb-16 lg:pt-32 lg:pb-20" style={{ backgroundColor: 'var(--do-surface-page)' }}>
+-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
++        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: 'var(--do-prussian-blue)/0.08', border: '1px solid var(--do-prussian-blue)/0.15' }}>
+             <span className="text-xs font-semibold tracking-wider uppercase" style={{ color: 'var(--do-prussian-blue)' }}>Insights</span>
+           </div>
+@@ -80,77 +79,15 @@ export default async function BlogPage() {
+         </div>
+       </section>
+ 
+-      {/* PLATE ┬╖ DO-ART-211 */}
+-      <section className="g-navy">
+-        <div className="wrap">
+-          <span className="eyebrow">Content breakdown &middot; DO-ART-211</span>
+-          <h2>28 posts across seven subjects.</h2>
+-          <div className="hair"></div>
+-          <p className="lede" style={{ marginTop: 16 }}>
+-            Where the writing actually goes, counted from the index not estimated. Two thirds of it is operations and technology. Every post lands on the same rule.
+-          </p>
+-
+-          <div className="plate-scroll">
+-            <div className="plate-frame" data-od-id="plate-blog">
+-              <Plate tone="dark" p="blx" title="28 posts, seven subjects"
+-                     sub="Where the writing actually goes ┬╖ counted from the index, not estimated"
+-                     no="DO-ART-211" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+-
+-                <g className="sk-fade sk-s2">
+-                  <text x="80" y="196" className="p-mono" fontSize="14" letterSpacing="2.6" opacity=".45">POSTS BY SUBJECT</text>
+-                </g>
+-
+-                <g className="sk-fade sk-s3">
+-                  <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="22" textAnchor="end">
+-                    <text x="370" y="256">Operations</text>
+-                    <text x="370" y="326">Technology</text>
+-                    <text x="370" y="396">ERP</text>
+-                    <text x="370" y="466">Integration</text>
+-                    <text x="370" y="536">Workflow</text>
+-                    <text x="370" y="606">Quality</text>
+-                    <text x="370" y="676">Marketing</text>
+-                  </g>
+-                </g>
+-
+-                {/* bars: 100px per post */}
+-                <g className="sk-fade sk-s4">
+-                  <rect x="400" y="234" width="900" height="30" rx="4" fill="var(--do-cerulean)" opacity=".85"/>
+-                  <rect x="400" y="304" width="800" height="30" rx="4" fill="var(--do-cerulean)" opacity=".78"/>
+-                  <rect x="400" y="374" width="400" height="30" rx="4" fill="var(--do-cerulean)" opacity=".68"/>
+-                  <rect x="400" y="444" width="300" height="30" rx="4" fill="var(--do-sky-blue)" opacity=".6"/>
+-                  <rect x="400" y="514" width="200" height="30" rx="4" fill="var(--do-sky-blue)" opacity=".5"/>
+-                  <rect x="400" y="584" width="100" height="30" rx="4" fill="var(--do-sky-blue)" opacity=".42"/>
+-                  <rect x="400" y="654" width="100" height="30" rx="4" fill="var(--do-sky-blue)" opacity=".42"/>
+-                </g>
+-                <g className="sk-fade sk-s5" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="26" fill="var(--do-off-white)">
+-                  <text x="1324" y="258">9</text><text x="1224" y="328">8</text><text x="824" y="398">4</text>
+-                  <text x="724" y="468">3</text><text x="624" y="538">2</text><text x="524" y="608">1</text><text x="524" y="678">1</text>
+-                </g>
+-
+-                {/* gridline at the top count */}
+-                <g className="sk-fade sk-s5">
+-                  <line x1="400" y1="222" x2="400" y2="696" className="p-scyan" strokeWidth=".8" strokeOpacity=".3"/>
+-                </g>
+-
+-                <g className="sk-fade sk-s6">
+-                  <rect x="80" y="716" width="1460" height="60" rx="10" fill="url(#blx-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
+-                  <text x="106" y="754" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="22">Two thirds of it is operations and technology. Every post lands on the same rule: process and data before automation.</text>
+-                </g>
+-              </Plate>
+-            </div>
+-          </div>
+-        </div>
+-      </section>
+-
+       <section className="py-16 lg:py-20">
+-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
++        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+           <BlogList posts={posts} />
+ 
+           <div className="border-t pt-16" style={{ borderColor: 'var(--do-border-subtle)' }}>
+             <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>Free Resources</h2>
+             <Link
+               href="/resources/audit-checklist"
+-              className="blog-card group block p-8 rounded-2xl hover:shadow-md transition-all duration-300"
++              className="group block p-8 rounded-2xl hover:shadow-md transition-all duration-300"
+               style={{ backgroundColor: 'var(--do-cerulean)/0.05', border: '1px solid var(--do-cerulean)/0.3' }}
+             >
+               <div className="flex items-start justify-between gap-6">
+@@ -177,10 +114,10 @@ export default async function BlogPage() {
+             <p className="leading-relaxed mb-6" style={{ color: 'var(--do-sky-blue)' }}>
+               These resources are free. An audit is where things get specific. I quantify every finding, cost every recommendation, and map your next steps.
+             </p>
+-            <Link href="/contact" className="blog-cta-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
++            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
+               Book a free discovery call <ArrowRight size={18} />
+             </Link>
+-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-sky-blue hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
++            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium inline-flex items-center gap-1 mt-3" style={{ color: 'var(--do-sky-blue)' }}>Or book a call directly <ArrowRight size={14} /></a>
+           </div>
+         </div>
+       </section>
+warning: in the working copy of 'app/blog/page.tsx', LF will be replaced by CRLF the next time Git touches it
+
+$ git diff components/BlogList.tsx 2>&1
+diff --git a/components/BlogList.tsx b/components/BlogList.tsx
+index cafa3b5..7f6abd4 100644
+--- a/components/BlogList.tsx
++++ b/components/BlogList.tsx
+@@ -1,7 +1,6 @@
+ 'use client';
+ 
+ import Link from 'next/link';
+-import { ArrowRight } from 'lucide-react';
+ import { useState, useMemo } from 'react';
+ 
+ interface BlogPost {
+@@ -15,110 +14,202 @@ interface BlogPost {
+   featuredImage?: string | null;
+ }
+ 
++function PostMeta({ date, readTime }: { date: string; readTime: number }) {
++  return (
++    <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 'var(--do-text-xs)', color: 'var(--do-text-muted)' }}>
++      <span>{date}</span>
++      <span aria-hidden="true">&middot;</span>
++      <span>{readTime} min read</span>
++    </div>
++  );
++}
++
+ export default function BlogList({ posts }: { posts: BlogPost[] }) {
+   const [activeCategory, setActiveCategory] = useState<string>('All');
+ 
++  const leadPost = posts[0];
++
+   const categories = useMemo(() => {
+     const cats = new Set(posts.map(p => p.category).filter(Boolean));
+     return ['All', ...Array.from(cats).sort()];
+   }, [posts]);
+ 
+-  const filtered = useMemo(() => {
+-    if (activeCategory === 'All') return posts;
+-    return posts.filter(p => p.category === activeCategory);
++  const gridPosts = useMemo(() => {
++    const remaining = posts.slice(1);
++    if (activeCategory === 'All') return remaining;
++    return remaining.filter(p => p.category === activeCategory);
+   }, [posts, activeCategory]);
+ 
+   return (
+     <div>
+-      {/* Category filters */}
+-      <div className="flex flex-wrap gap-2 mb-10" role="group" aria-label="Filter by category">
++      {/* Lead post */}
++      {leadPost && (
++        <div style={{ marginBottom: 56 }}>
++          <Link
++            href={`/blog/${leadPost.slug}`}
++            className="focus-visible:outline-3 focus-visible:outline-[var(--do-cerulean)] focus-visible:outline-offset-3"
++            style={{
++              display: 'grid',
++              gridTemplateColumns: '1.15fr 1fr',
++              alignItems: 'stretch',
++              background: 'var(--do-surface-raised)',
++              border: '1px solid var(--do-border-subtle)',
++              borderRadius: 'var(--do-radius-2xl)',
++              overflow: 'hidden',
++              textDecoration: 'none',
++              color: 'inherit',
++              transition: 'border-color var(--do-duration-normal) var(--do-ease-default), box-shadow var(--do-duration-normal) var(--do-ease-default)',
++            }}
++            onMouseEnter={(e) => {
++              e.currentTarget.style.borderColor = 'var(--do-cerulean)';
++              e.currentTarget.style.boxShadow = 'var(--do-shadow-md)';
++            }}
++            onMouseLeave={(e) => {
++              e.currentTarget.style.borderColor = 'var(--do-border-subtle)';
++              e.currentTarget.style.boxShadow = 'none';
++            }}
++          >
++            {leadPost.featuredImage && (
++              <img
++                src={leadPost.featuredImage}
++                alt=""
++                style={{ width: '100%', height: '100%', display: 'block', aspectRatio: '16/9', objectFit: 'cover' }}
++              />
++            )}
++            <div style={{ padding: '40px 44px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
++              <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ alignSelf: 'flex-start', color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
++                {leadPost.category}
++              </span>
++              <h2 className="font-bold leading-tight" style={{ fontFamily: 'var(--font-outfit), sans-serif', fontSize: 'var(--do-text-3xl)', color: 'var(--do-text-primary)', margin: '14px 0' }}>
++                {leadPost.title}
++              </h2>
++              <p style={{ fontSize: 'var(--do-text-base)', lineHeight: 'var(--do-leading-relaxed)', color: 'var(--do-text-secondary)', margin: 0 }}>
++                {leadPost.excerpt}
++              </p>
++              <div style={{ marginTop: 18 }}>
++                <PostMeta
++                  date={leadPost.date || leadPost.publishedDate ? new Date(leadPost.date || leadPost.publishedDate!).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }) : ''}
++                  readTime={leadPost.readTime}
++                />
++              </div>
++            </div>
++          </Link>
++        </div>
++      )}
++
++      {/* Filter rail */}
++      <div
++        className="flex flex-wrap gap-2 items-center"
++        role="group"
++        aria-label="Filter by category"
++        style={{
++          position: 'sticky',
++          top: 0,
++          zIndex: 10,
++          margin: '0 0 28px',
++          padding: '16px 0',
++          background: 'var(--do-surface-page)',
++          borderBottom: '1px solid var(--do-border-subtle)',
++        }}
++      >
+         {categories.map(cat => (
+           <button
+             key={cat}
++            type="button"
++            aria-pressed={activeCategory === cat}
+             onClick={() => setActiveCategory(cat)}
+-            className="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200"
++            className="focus-visible:outline-3 focus-visible:outline-[var(--do-cerulean)] focus-visible:outline-offset-2"
+             style={{
+-              backgroundColor: activeCategory === cat ? 'var(--do-cerulean)' : 'transparent',
+-              color: activeCategory === cat ? '#fff' : 'var(--do-text-muted)',
+-              border: activeCategory === cat ? '1px solid var(--do-cerulean)' : '1px solid var(--do-border-subtle)',
++              fontFamily: 'var(--do-font-body)',
++              fontSize: 'var(--do-text-sm)',
++              fontWeight: 600,
++              padding: '8px 16px',
++              borderRadius: 9999,
++              cursor: 'pointer',
++              minHeight: 38,
++              background: activeCategory === cat ? 'var(--do-prussian-blue)' : 'transparent',
++              color: activeCategory === cat ? 'var(--do-off-white)' : 'var(--do-text-secondary)',
++              border: activeCategory === cat ? '1px solid var(--do-prussian-blue)' : '1px solid var(--do-border-subtle)',
++              transition: 'background-color var(--do-duration-fast) var(--do-ease-default), border-color var(--do-duration-fast) var(--do-ease-default)',
+             }}
+           >
+             {cat}
+           </button>
+         ))}
++        <span style={{ marginLeft: 'auto', fontFamily: 'var(--do-font-body)', fontSize: 'var(--do-text-xs)', color: 'var(--do-text-muted)', letterSpacing: '0.06em' }}>
++          {gridPosts.length} post{gridPosts.length !== 1 ? 's' : ''}
++        </span>
+       </div>
+ 
+-      {/* Post list */}
+-      <div className="space-y-8 mb-20">
+-        {filtered.map(post => {
++      {/* Card grid */}
++      <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginBottom: 72 }}>
++        {gridPosts.map(post => {
+           const pubDate = post.date || post.publishedDate;
+           const date = pubDate
+             ? new Date(pubDate).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })
+             : '';
+-          const thumbSrc = post.featuredImage || null;
+ 
+           return (
+             <Link
+               key={post.slug}
+               href={`/blog/${post.slug}`}
+-              className="blog-card group block rounded-2xl hover:shadow-md transition-all duration-300 overflow-hidden"
+-              style={{ backgroundColor: 'var(--do-surface-page)', border: '1px solid var(--do-border-subtle)' }}
++              className="focus-visible:outline-3 focus-visible:outline-[var(--do-cerulean)] focus-visible:outline-offset-[-3px] rounded-2xl"
++              style={{
++                background: 'var(--do-surface-raised)',
++                border: '1px solid var(--do-border-subtle)',
++                borderRadius: 'var(--do-radius-2xl)',
++                overflow: 'hidden',
++                textDecoration: 'none',
++                color: 'inherit',
++                display: 'block',
++                transition: 'border-color var(--do-duration-normal) var(--do-ease-default), box-shadow var(--do-duration-normal) var(--do-ease-default)',
++              }}
++              onMouseEnter={(e) => {
++                e.currentTarget.style.borderColor = 'var(--do-cerulean)';
++                e.currentTarget.style.boxShadow = 'var(--do-shadow-md)';
++              }}
++              onMouseLeave={(e) => {
++                e.currentTarget.style.borderColor = 'var(--do-border-subtle)';
++                e.currentTarget.style.boxShadow = 'none';
++              }}
+             >
+-              <div className="flex flex-col sm:flex-row">
+-                {/* Thumbnail */}
+-                {thumbSrc && (
+-                  <div className="sm:w-56 shrink-0">
+-                    <img
+-                      src={thumbSrc}
+-                      alt=""
+-                      className="w-full h-48 sm:h-full object-cover"
+-                      loading="lazy"
+-                    />
+-                  </div>
+-                )}
+-                {/* Content */}
+-                <div className="flex-1 p-8">
+-                  <div className="flex items-start justify-between gap-6 mb-4">
+-                    <div className="min-w-0">
+-                      <div
+-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4"
+-                        style={{ backgroundColor: 'var(--do-cerulean)/0.1', border: '1px solid var(--do-cerulean)/0.2' }}
+-                      >
+-                        <span className="text-xs font-semibold uppercase" style={{ color: 'var(--do-cerulean)' }}>
+-                          {post.category}
+-                        </span>
+-                      </div>
+-                      <h2
+-                        className="text-xl lg:text-2xl font-bold transition-colors mb-3"
+-                        style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}
+-                      >
+-                        {post.title}
+-                      </h2>
+-                      <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--do-text-muted)' }}>
+-                        {post.excerpt}
+-                      </p>
+-                    </div>
+-                    <div className="flex-shrink-0 mt-2 hidden sm:block">
+-                      <ArrowRight
+-                        size={24}
+-                        className="group-hover:translate-x-2 transition-transform"
+-                        style={{ color: 'var(--do-cerulean)' }}
+-                      />
+-                    </div>
+-                  </div>
+-                  <div className="flex items-center gap-4 text-sm" style={{ color: 'var(--do-text-muted)', opacity: 0.7 }}>
+-                    <span>{date}</span>
+-                    <span>┬╖</span>
+-                    <span>{post.readTime} min read</span>
+-                  </div>
+-                </div>
++              {post.featuredImage && (
++                <img
++                  src={post.featuredImage}
++                  alt=""
++                  style={{ width: '100%', display: 'block', aspectRatio: '16/9', objectFit: 'cover' }}
++                  loading="lazy"
++                />
++              )}
++              <div style={{ padding: '24px 26px 26px' }}>
++                <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
++                  {post.category}
++                </span>
++                <h3 className="font-bold leading-snug" style={{ fontFamily: 'var(--font-outfit), sans-serif', fontSize: 'var(--do-text-xl)', color: 'var(--do-text-primary)', margin: '14px 0 10px' }}>
++                  {post.title}
++                </h3>
++                <p
++                  className="leading-relaxed"
++                  style={{
++                    fontSize: 'var(--do-text-sm)',
++                    color: 'var(--do-text-secondary)',
++                    margin: '0 0 18px',
++                    display: '-webkit-box',
++                    WebkitLineClamp: 2,
++                    WebkitBoxOrient: 'vertical',
++                    overflow: 'hidden',
++                  }}
++                >
++                  {post.excerpt}
++                </p>
++                <PostMeta date={date} readTime={post.readTime} />
+               </div>
+             </Link>
+           );
+         })}
+ 
+-        {filtered.length === 0 && (
+-          <p className="text-center py-12" style={{ color: 'var(--do-text-muted)' }}>
++        {gridPosts.length === 0 && (
++          <p className="text-center py-12" style={{ color: 'var(--do-text-muted)', gridColumn: '1 / -1' }}>
+             No posts found in this category.
+           </p>
+         )}
+warning: in the working copy of 'components/BlogList.tsx', LF will be replaced by CRLF the next time Git touches it
+
+Diff looks correct. Commit now.
+$ git add app/blog/page.tsx components/BlogList.tsx && git commit -m "CR-WEB-028 u4: rebuild /blog landing to the signed-off v1 mockup
+
+Retires the full-bleed DO-ART-211 bar-chart plate, adds a lead post,
+widens to max-w-6xl and moves the list to a two-column card grid with
+16:9 artwork. Copy, metadata, schema and the hub index fetch unchanged." 2>&1
+warning: in the working copy of 'app/blog/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/BlogList.tsx', LF will be replaced by CRLF the next time Git touches it
+[lane/blog-orphan-purge d38aac6] CR-WEB-028 u4: rebuild /blog landing to the signed-off v1 mockup
+ 2 files changed, 162 insertions(+), 134 deletions(-)
+
+$ git log --oneline -3 2>&1
+d38aac6 CR-WEB-028 u4: rebuild /blog landing to the signed-off v1 mockup
+ebf089f CR-WEB-028 u1: delete 57 orphaned blog SVGs from superseded post slugs
+da4c493 updates
+
+$ npx tsc --noEmit 2>&1
+(no output)
+
+# Todos
+[Γ£ô] Read mockup HTML
+[Γ£ô] Read current app/blog/page.tsx
+[Γ£ô] Read current components/BlogList.tsx
+[Γ£ô] Implement changes in page.tsx and BlogList.tsx
+[Γ£ô] Verify with tsc and grep checks
+[Γ£ô] Commit
+
+Done. Report:
+
+**Commit:** `d38aac6` on `lane/blog-orphan-purge`
+
+**Files changed (2):**
+- `app/blog/page.tsx` ΓÇö removed Plate import and DO-ART-211 section, widened containers from `max-w-4xl` to `max-w-6xl`
+- `components/BlogList.tsx` ΓÇö full rewrite: lead post card (newest post, 16:9 artwork left + content right), sticky filter rail with `aria-pressed` + post count, two-column card grid with 16:9 artwork, line-clamp-2 excerpt, cerulean focus-visible rings on all interactive elements
+
+**tsc:** passes clean
+
+**Mockup gaps:**
+- The mockup shows artwork as SVG placeholders (`<svg>` placeholders for DO-ART slots). The implementation uses `post.featuredImage` URLs ΓÇö no grey boxes when artwork is missing (posts without `featuredImage` render chip + title + excerpt only, per brief).
+- The mockup's `count` uses a monospace font (`var(--do-font-mono)`). I used `var(--do-font-body)` instead to avoid loading an unused font on the marketing surface (consistent with the site's existing approach ΓÇö Decision 03 removes JetBrains Mono from new work).
+- The mockup's CTA section uses `<a class="btn-amber">` and `<a class="alt">`. The live page uses a Next.js `<Link>` with inline styles matching the same values ΓÇö no visual difference.

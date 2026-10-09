@@ -1,0 +1,369 @@
+
+> build ┬╖ mimo-v2.5
+
+# Todos
+[ΓÇó] Explore existing pillar/sector pages to understand conventions
+[ ] Build the new pillar page at a sensible route
+[ ] Add internal links from relevant sector pages
+[ ] Verify metadata (title/description) set
+[ ] Commit work and write LANE-RESULT.json
+
+ΓåÆ Read app/sectors
+Γ£▒ Glob "app/sectors/**/page.tsx" in . ┬╖ 9 matches
+ΓåÆ Read app/sectors/garment-decoration/page.tsx
+ΓåÆ Read app/sectors/print-promotional/page.tsx
+Now let me check the routing data and see what routes exist:
+ΓåÆ Read data/sector-routing.ts
+Γ£▒ Grep "pillar|ops.consultant" in app ┬╖ 0 matches
+Γ£▒ Glob "app/locations/**/page.tsx" in . ┬╖ 4 matches
+Γ£▒ Grep "pillar" in app ┬╖ 0 matches
+ΓåÆ Read components/SectorPageDS.module.css
+Γ£▒ Glob "*.tsx" in components/schematics/sectors ┬╖ 6 matches
+ΓåÆ Read app/sitemap.ts
+ΓåÆ Read data/route-slugs.json
+ΓåÆ Read scripts/generate-route-slugs.mjs
+
+# Todos
+[Γ£ô] Explore existing pillar/sector pages to understand conventions
+[ΓÇó] Build the new pillar page at a sensible route
+[ ] Add internal links from relevant sector pages
+[ ] Verify metadata (title/description) set
+[ ] Commit work and write LANE-RESULT.json
+
+Let me check an existing schematic to understand the pattern:
+ΓåÆ Read components/schematics/sectors/PrintPromotionalSchematic.tsx
+Now I have a clear picture. Let me create the schematic component and the page. First the schematic:
+
+ΓåÉ Write components/schematics/sectors/PrintEmbroideryOpsConsultantSchematic.tsx
+Wrote file successfully.
+
+Now create the pillar page:
+ΓåÉ Write app/sectors/operations-consultant-print-embroidery/page.tsx
+Wrote file successfully.
+
+ΓåÉ Edit data/sector-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\data\sector-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\data\sector-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\data\sector-routing.ts
+@@ -78,5 +78,17 @@
+       { href: '/problems/wrong-erp-software', label: 'Job software that doesn\'t fit personalised work' },
+       { href: '/problems/no-ops-owner', label: 'No one owns the operational picture' },
+     ],
+   },
++  'operations-consultant-print-embroidery': {
++    targetService: {
++      href: '/clarity',
++      label: 'Clarity Audit for print & embroidery',
++      anchor: 'A one-day audit that maps your full workflow ΓÇö order intake, artwork, production scheduling, stock, and despatch ΓÇö and tells you exactly what to fix, in what order, and what it costs.',
++    },
++    relatedProblems: [
++      { href: '/problems/manual-workarounds', label: 'Manual workarounds across embroidery and print' },
++      { href: '/problems/erp-implementation-failure', label: 'ERP that does not handle decoration methods properly' },
++      { href: '/problems/systems-dont-talk', label: 'Embroidery, print, and admin systems that do not connect' },
++    ],
++  },
+ };
+
+
+Now add the route to sector-routing and the slug to route-slugs:
+ΓåÉ Edit data/route-slugs.json
+Index: D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\data\route-slugs.json
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\data\route-slugs.json
++++ D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\data\route-slugs.json
+@@ -23,8 +23,9 @@
+ "sectors": [
+   "awards-engraving",
+   "garment-decoration",
+   "labels-packaging",
++  "operations-consultant-print-embroidery",
+   "print-promotional",
+   "promotional-merchandise",
+   "schoolwear",
+   "signs-graphics",
+
+
+Now add internal links from the two most relevant sector pages. First, garment-decoration:
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\app\sectors\garment-decoration\page.tsx
+@@ -236,8 +236,21 @@
+     </div>
+   </section>
+ )}
+ 
++{/* RELATED SECTOR */}
++<section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
++  <div className="wrap">
++    <span className="eyebrow">Related</span>
++    <h2>Operations consultant for print & embroidery</h2>
++    <div className="hair" />
++    <p className="lede">If you run embroidery alongside screen print or DTF, the same operational challenges apply ΓÇö but with the added complexity of decoration-method-specific scheduling. See the full picture for print & embroidery businesses.</p>
++    <div className="btn-row" style={{ marginTop: '24px' }}>
++      <Link className="btn btn--outline" href="/sectors/operations-consultant-print-embroidery">See the print & embroidery page <ArrowRight size={16} aria-hidden="true" /></Link>
++    </div>
++  </div>
++</section>
++
+ {/* CTA STRIP */}
+ <section className="g-off">
+   <div className={`wrap ${styles.centred}`}>
+     <h2>Book a free discovery call.</h2>
+
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\app\sectors\print-promotional\page.tsx
+@@ -240,8 +240,21 @@
+     </div>
+   </section>
+ )}
+ 
++{/* RELATED SECTOR */}
++<section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
++  <div className="wrap">
++    <span className="eyebrow">Related</span>
++    <h2>Operations consultant for print & embroidery</h2>
++    <div className="hair" />
++    <p className="lede">If your print shop also runs embroidery, the operational challenges multiply. See the dedicated page for print and embroidery businesses.</p>
++    <div className="btn-row" style={{ marginTop: '24px' }}>
++      <Link className="btn btn--outline" href="/sectors/operations-consultant-print-embroidery">See the print & embroidery page <ArrowRight size={16} aria-hidden="true" /></Link>
++    </div>
++  </div>
++</section>
++
+ {/* CTA STRIP */}
+ <section className="g-off">
+   <div className={`wrap ${styles.centred}`}>
+     <h2>Book a free discovery call.</h2>
+
+
+Now add from print-promotional:
+Now let me verify the build compiles:
+$ ls D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\node_modules\.package-lock.json 2>$null; if ($LASTEXITCODE -ne 0) { echo "NO_NODE_MODULES" } else { echo "HAS_NODE_MODULES" }
+NO_NODE_MODULES
+
+$ npm install
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 440 packages, and audited 441 packages in 2m
+npm warn allow-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+158 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ npx tsc --noEmit 2>&1 | head -50
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ npx tsc --noEmit 2>&1
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,38): error TS1005: ':' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,44): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,54): error TS1005: ':' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,57): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,68): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,79): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,87): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,92): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,99): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,108): error TS1127: Invalid character.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,115): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,121): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,128): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,131): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,140): error TS1127: Invalid character.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,153): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,159): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,176): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,184): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,188): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,194): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,204): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,213): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,230): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,245): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,251): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,257): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,261): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,272): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,289): error TS1005: ':' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,299): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,306): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,317): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,337): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,351): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,354): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,358): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,373): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,377): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,389): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,397): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,402): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,409): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,421): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,433): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,444): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,449): error TS1005: ',' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,450): error TS1003: Identifier expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(45,454): error TS1002: Unterminated string literal.
+app/sectors/operations-consultant-print-embroidery/page.tsx(46,9): error TS1005: ':' expected.
+app/sectors/operations-consultant-print-embroidery/page.tsx(47,9): error TS1136: Property assignment expected.
+
+ΓåÆ Read app/sectors/operations-consultant-print-embroidery/page.tsx [offset=40, limit=20]
+Γ£ù Edit app/sectors/operations-consultant-print-embroidery/page.tsx failed
+Error: No changes to apply: oldString and newString are identical.
+The curly quote in "doesn't" is breaking the string. Let me fix:
+
+$ $content = Get-Content -Raw "app\sectors\operations-consultant-print-embroidery\page.tsx"; $lines = $content -split "`n"; $lines[44]
+acceptedAnswer: { '@type: 'Answer', text: 'An operations consultant reviews your entire workflow - from order intake to despatch - identifies where time, money, and quality are being lost, and provides specific, costed recommendations. For print and embroidery businesses, this typically covers production scheduling, artwork approval, ERP or MIS selection, and the connections between your online shop, order system, and production floor.' },
+
+$ $content = Get-Content -Raw "app\sectors\operations-consultant-print-embroidery\page.tsx"; $lines = $content -split "`n"; $lines[54]
+acceptedAnswer: { '@type': 'Answer', text: 'A general business consultant applies broad frameworks. A sector-specific operations consultant understands decoration methods, production scheduling for mixed-method environments, artwork workflows, blank stock dependency, and the ERP landscape for the decorated-goods sector. The difference is in the detail of what gets recommended and what gets ignored.' },
+
+$ $content = Get-Content -Raw "app\sectors\operations-consultant-print-embroidery\page.tsx"; $lines = $content -split "`n"; $line45 = $lines[44]; for($i=0; $i -lt $line45.Length; $i++) { $c = $line45[$i]; if([int]$c -gt 127) { Write-Host "Pos $i : char='$c' code=$([int]$c)" } }
+Pos 107 : char='-' code=8212
+Pos 139 : char='-' code=8212
+
+$ $content = Get-Content -Raw "app\sectors\operations-consultant-print-embroidery\page.tsx"; $lines = $content -split "`n"; $line = $lines[44]; Write-Host "Length: $($line.Length)"; Write-Host "Chars around 38:"; for($i=30; $i -lt [Math]::Min(50, $line.Length); $i++) { Write-Host "Pos $i : char='$($line[$i])' code=$([int]$line[$i])" }
+Length: 453
+Chars around 38:
+Pos 30 : char='t' code=116
+Pos 31 : char='y' code=121
+Pos 32 : char='p' code=112
+Pos 33 : char='e' code=101
+Pos 34 : char=':' code=58
+Pos 35 : char=' ' code=32
+Pos 36 : char=''' code=39
+Pos 37 : char='A' code=65
+Pos 38 : char='n' code=110
+Pos 39 : char='s' code=115
+Pos 40 : char='w' code=119
+Pos 41 : char='e' code=101
+Pos 42 : char='r' code=114
+Pos 43 : char=''' code=39
+Pos 44 : char=',' code=44
+Pos 45 : char=' ' code=32
+Pos 46 : char='t' code=116
+Pos 47 : char='e' code=101
+Pos 48 : char='x' code=120
+Pos 49 : char='t' code=116
+
+I see the issue - the `'@type` is missing a closing quote. Let me fix all three FAQ entries:
+ΓåÉ Edit app/sectors/operations-consultant-print-embroidery/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\app\sectors\operations-consultant-print-embroidery\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\app\sectors\operations-consultant-print-embroidery\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\app\sectors\operations-consultant-print-embroidery\page.tsx
+@@ -41,9 +41,9 @@
+ mainEntity: [
+   {
+     '@type': 'Question',
+     name: 'What does an operations consultant do for a print or embroidery business?',
+-    acceptedAnswer: { '@type: 'Answer', text: 'An operations consultant reviews your entire workflow ΓÇö from order intake to despatch ΓÇö identifies where time, money, and quality are being lost, and provides specific, costed recommendations. For print and embroidery businesses, this typically covers production scheduling, artwork approval, ERP or MIS selection, and the connections between your online shop, order system, and production floor.' },
++    acceptedAnswer: { '@type': 'Answer', text: 'An operations consultant reviews your entire workflow ΓÇö from order intake to despatch ΓÇö identifies where time, money, and quality are being lost, and provides specific, costed recommendations. For print and embroidery businesses, this typically covers production scheduling, artwork approval, ERP or MIS selection, and the connections between your online shop, order system, and production floor.' },
+   },
+   {
+     '@type': 'Question',
+     name: 'When should a print or embroidery business hire an operations consultant?',
+
+
+Γ£ù Edit app/sectors/operations-consultant-print-embroidery/page.tsx failed
+Error: Could not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+ΓåÆ Read app/sectors/operations-consultant-print-embroidery/page.tsx [limit=20, offset=45]
+
+$ npx tsc --noEmit 2>&1
+(no output)
+
+Clean. Now commit early:
+$ git add app/sectors/operations-consultant-print-embroidery/page.tsx components/schematics/sectors/PrintEmbroideryOpsConsultantSchematic.tsx data/sector-routing.ts data/route-slugs.json app/sectors/garment-decoration/page.tsx app/sectors/print-promotional/page.tsx && git commit -m "feat: add GF2 pillar page ΓÇö operations consultant for print & embroidery businesses UK
+
+- New sector page at /sectors/operations-consultant-print-embroidery
+- Schematic component for hero visual
+- Route added to sector-routing.ts and route-slugs.json
+- Internal links added from garment-decoration and print-promotional pages
+- FAQ schema, breadcrumb schema, metadata all set
+- tsc clean"
+warning: in the working copy of 'app/sectors/operations-consultant-print-embroidery/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/schematics/sectors/PrintEmbroideryOpsConsultantSchematic.tsx', LF will be replaced by CRLF the next time Git touches it
+[gf2-pillar-page-ops-consultant 5ccd2d7] feat: add GF2 pillar page ΓÇö operations consultant for print & embroidery businesses UK
+ 6 files changed, 423 insertions(+)
+ create mode 100644 app/sectors/operations-consultant-print-embroidery/page.tsx
+ create mode 100644 components/schematics/sectors/PrintEmbroideryOpsConsultantSchematic.tsx
+
+$ npx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\gf2-pillar-page-ops-consultant\lint
+
+$ npx eslint app/sectors/operations-consultant-print-embroidery/page.tsx components/schematics/sectors/PrintEmbroideryOpsConsultantSchematic.tsx 2>&1
+(no output)
+
+<shell_metadata>
+shell tool terminated command after exceeding timeout 60000 ms. If this command is expected to take longer and is not waiting for interactive input, retry with a larger timeout value in milliseconds.
+</shell_metadata>
+
+Lint timed out. Let me verify the page exists correctly and write the result:
+$ git log --oneline -3
+5ccd2d7 feat: add GF2 pillar page ΓÇö operations consultant for print & embroidery businesses UK
+d12eac7 docs: lane briefs for CR-WEB-031 build + CSP fix
+56f16d9 docs: update LANE-RESULT.json for cr-web-031-fix-csp
+
+$ git rev-parse --short HEAD
+5ccd2d7
+
+$ Test-Path ".context\lane-reports"
+True
+
+ΓåÉ Write .context/lane-reports/LANE-RESULT.json
+Wrote file successfully.
+
+$ git add .context/lane-reports/LANE-RESULT.json && git commit -m "docs: LANE-RESULT.json for gf2-pillar-page-ops-consultant"
+warning: in the working copy of '.context/lane-reports/LANE-RESULT.json', LF will be replaced by CRLF the next time Git touches it
+[gf2-pillar-page-ops-consultant ea5b8fe] docs: LANE-RESULT.json for gf2-pillar-page-ops-consultant
+ 1 file changed, 13 insertions(+), 12 deletions(-)
+
+$ node .context/price-audit.mjs --check 2>&1
+12 files, 33 lines, 37 figures
+    7  app/small-business/page.tsx
+    6  app/pricing/page.tsx
+    5  app/locations/tech-audit/page.tsx
+    4  app/locations/tech-audit/[location]/page.tsx
+    3  app/clarity/page.tsx
+    2  app/problems/cant-scale-operations/page.tsx
+    1  app/apps/commerce/page.tsx
+    1  app/opengraph-image.tsx
+    1  app/problems/slow-processes/page.tsx
+    1  components/Header.tsx
+    1  data/locations.ts
+    1  data/problem-routing.ts
+
+check: 0 disallowed prices outside /pricing
+  PASS ΓÇö prices live on /pricing only, plus the ┬ú1,500 and ┬ú750 exceptions.
+
+# Todos
+[Γ£ô] Explore existing pillar/sector pages to understand conventions
+[Γ£ô] Build the new pillar page at a sensible route
+[Γ£ô] Add internal links from relevant sector pages
+[Γ£ô] Verify metadata (title/description) set
+[Γ£ô] Commit work and write LANE-RESULT.json
+
+Done. Two commits on `gf2-pillar-page-ops-consultant`:
+
+**`5ccd2d7`** ΓÇö GF2 pillar page: operations consultant for print & embroidery businesses UK
+- New sector page at `/sectors/operations-consultant-print-embroidery` following the existing sector page pattern (hero split, plate diagram, challenges, what I do, cross-links, CTA)
+- Schematic component (`PrintEmbroideryOpsConsultantSchematic.tsx`)
+- Route added to `data/sector-routing.ts` and `data/route-slugs.json`
+- Internal links added from both `garment-decoration` and `print-promotional` sector pages
+- Full metadata (title, description, OG, Twitter), FAQ schema, breadcrumb schema
+- tsc clean, price audit passes
+
+**`ea5b8fe`** ΓÇö LANE-RESULT.json

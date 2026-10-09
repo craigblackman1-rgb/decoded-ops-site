@@ -1,0 +1,638 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0m# [0mTodos
+[ΓÇó] Find and fix cant-scale figures (┬ú500k/┬ú1.5m)
+[ ] Find and fix seasonal-peaks figures ('forty', 'two hundred')
+[ ] Find and fix spreadsheet-addiction figures ('forty-order', 'eight-month')
+[ ] Fix ERP page case study 02: '9 supplier feeds' ΓåÆ '17 supplier feeds'
+[ ] Drop 'Excel' and 'Google Sheets' from copy
+[ ] Fix 404 on /problems/systems-dont-talk-video
+[ ] Run tsc and lint verification
+[ ] Commit and write lane reports
+[0m
+[0mΓ£▒ [0mGrep "500k|1\.5m|500,000|1,500,000|┬ú500|┬ú1\.5"[90m in app/problems ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGrep "forty|two hundred|40 orders|200 orders"[90m in app/problems ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGrep "eight.month|forty.order|eight months|forty orders"[90m in app/problems ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGrep "9 supplier feeds|17 supplier feeds"[90m in app ┬╖ 20 matches[0m
+[0mΓ£▒ [0mGrep "Excel|Google Sheets"[90m in app/problems ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGlob "app/problems/**/page.tsx"[90m in . ┬╖ 19 matches[0m
+[0mΓ£▒ [0mGrep "systems-dont-talk-video"[90m in . ┬╖ 7 matches[0m
+[0mΓåÆ [0mRead app/problems/cant-scale-operations/page.tsx
+[0mΓåÆ [0mRead app/problems/seasonal-peaks/page.tsx
+[0mΓåÆ [0mRead app/problems/spreadsheet-addiction/page.tsx
+[0mΓ£▒ [0mGrep "9 supplier feeds"[90m in app ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGrep "┬ú500k|┬ú1\.5m|500k|1\.5m revenue"[90m in . ┬╖ 100 matches[0m
+[0mΓ£▒ [0mGrep "forty orders|two hundred orders|forty-order|eight-month"[90m in . ┬╖ 10 matches[0m
+[0mΓ£▒ [0mGrep "9 supplier|nine supplier"[90m in app ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGrep "Excel|Google Sheets"[90m in app/problems ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGlob "app/**/erp*/**"[90m in . ┬╖ 2 matches[0m
+The files don't contain the figures mentioned in the task. Let me search more broadly and check for the ERP page and other references.
+[0mΓ£▒ [0mGrep "systems-dont-talk-video"[90m in . ┬╖ 7 matches[0m
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures" && git log --oneline -20
+711f508 chore: lane report for web-pricing-v12
+989bd91 feat: update public prices to Craig-approved 28 Sep 2026 figures
+3f73fdb chore: add sharp dependency for image optimisation script
+4b6c9b3 docs: lane reports for web011-u21-cwv-preload-fix
+fcd2948 perf: add srcset to homepage hero images with 800/1200w variants
+1c618d6 fix: add prefetch={false} to Footer logo Link to stop site-wide homepage prefetch
+cf70531 docs: update lane result with commit SHA
+f0f097f feat(web): merge 58 town location pages into 3 consolidated pages (CR-WEB-067)
+d429b11 docs: lane reports for web061-u42-footer-fix (BUG-WEB-031)
+35785da fix(BUG-WEB-031): footer CTA button visibility and column wrapping
+78fe948 chore: lane reports for u45 seasonal capacity overflow fix
+ea40d84 fix: prevent seasonal capacity month rows overflowing viewport on mobile
+0f6157a Add lane reports for u24 emoji-icons replacement
+26cde02 Replace emoji icons with Lucide components in client proposal pages
+a7cbcf9 content: BLOG-078 images (thumb DO-ART-1021, inline DO-ART-1026/1027)
+364ddf9 docs: lane reports for web003-u23-heading-order
+c257708 fix: correct heading hierarchy in garment-decoration sector page (BUG-WEB-036)
+c3a861a LANE-RESULT: web003-u22-hero-overlap ΓÇö rail overlap fix verified
+a6993c8 BUG-WEB-035: hide homepage section rail below 480px to fix hero text overlap
+9efdc22 CR-WEB-066: update lane result SHA
+[0m
+The files appear to already have the fixes applied. Let me check git history to understand the current state.
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures" && git diff --stat HEAD
+(no output)
+[0m
+[0mΓ£▒ [0mGrep "Excel|Google Sheets"[90m in app ┬╖ 8 matches[0m
+[0mΓåÆ [0mRead data/problem-videos.ts
+[0mΓåÆ [0mRead data/problem-routing.ts
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures" && git log --oneline --all -- app/problems/systems-dont-talk-video
+(no output)
+[0m
+[0mΓåÆ [0mRead .context/lane-reports/LANE-NOTES-web-f-build-d17.md
+[0mΓåÆ [0mRead app/problems/erp-implementation-failure/page.tsx
+[0mΓåÆ [0mRead app/problems/systems-dont-talk/page.tsx
+[0mΓ£▒ [0mGrep "systems-dont-talk-video"[90m in app ┬╖ 1 match[0m
+[0mΓåÆ [0mRead data/route-slugs.json
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures" && git log --oneline --all -- app/problems/cant-scale-operations/page.tsx | head -10
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures" && git log --oneline --all -- app/problems/seasonal-peaks/page.tsx | head -10
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures" && git log --oneline --all -- app/problems/spreadsheet-addiction/page.tsx | head -10
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures" && git log --oneline -10 -- app/problems/cant-scale-operations/page.tsx
+a4d7835 feat(seo): keyword-mapped titles and descriptions (CR-WEB-058)
+34eaae3 fix(seo): WebP images, update refs, add cache headers (CR-WEB-065 #8)
+be121d3 content(web): Decoded Works + Proof naming and ERP positioning (CR-WEB-057, CR-WEB-056)
+43ae268 content(web): CR-WEB-056 copy fixes from the content review
+3a9cb5a fix(web): resolve problem-page image placeholders + ERP hero art (WO-INF-061)
+027f13a feat(web): D17 artwork on problems pages (WO-INF-061)
+f6f8c89 CR-WEB-040: internal link mesh for sector/problem/resource/case-study pages
+9c12c02 feat: add VideoEmbed, VideoSchema, problem-videos plumbing for CR-WEB-031
+acd5c4f fix: remove space before colon in meta title separator
+44e44f1 chore(seo): standardise meta title separator to colon
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures" && git log --oneline -5 -- app/problems/systems-dont-talk-video
+(no output)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures" && git log --oneline -10 -- data/problem-videos.ts
+9c12c02 feat: add VideoEmbed, VideoSchema, problem-videos plumbing for CR-WEB-031
+[0m
+[0mΓ£▒ [0mGrep "systems-dont-talk-video"[90m in . ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGrep "systems-dont-talk-video"[90m in . ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGrep "systems-dont-talk-video"[90m in . ┬╖ 0 matches[0m
+[0mΓ£▒ [0mGrep "systems-dont-talk"[90m in app ┬╖ 11 matches[0m
+[0mΓåÆ [0mRead app/sitemap.ts
+[0mΓåÆ [0mRead next.config.ts
+[0mΓ£▒ [0mGlob "middleware.*"[90m in . ┬╖ 1 match[0m
+[0mΓ£▒ [0mGrep "systems-dont-talk-video"[90m in . ┬╖ 5 matches[0m
+Now I have the full picture. The d17 lane already applied all copy fixes (items 1-5). The remaining work is the 404 on `/problems/systems-dont-talk-video` ΓÇö there are no internal links to it, so a redirect is the correct fix.
+[0m
+[0m# [0mTodos
+[Γ£ô] Find and fix cant-scale figures (┬ú500k/┬ú1.5m)
+[Γ£ô] Find and fix seasonal-peaks figures ('forty', 'two hundred')
+[Γ£ô] Find and fix spreadsheet-addiction figures ('forty-order', 'eight-month')
+[Γ£ô] Fix ERP page case study 02: '9 supplier feeds' ΓåÆ '17 supplier feeds'
+[Γ£ô] Drop 'Excel' and 'Google Sheets' from copy
+[ΓÇó] Fix 404 on /problems/systems-dont-talk-video
+[ ] Run tsc and lint verification
+[ ] Commit and write lane reports
+[0m
+Items 1-5 were already applied by the d17 lane. The only remaining fix is the 404 redirect. Adding it to `next.config.ts`:
+[0mΓåÉ [0mEdit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\next.config.ts
+@@ -45,8 +45,9 @@
+ { source: '/decoded-data-app', destination: '/apps/works', permanent: true },
+ { source: '/resources/software-reviews', destination: '/resources', permanent: true },
+ { source: '/decoded-method', destination: '/resources/decoded-method', permanent: true },
+ { source: '/tools/ai-readiness-check', destination: '/tools/ops-health-score', permanent: true },
++{ source: '/problems/systems-dont-talk-video', destination: '/problems/systems-dont-talk', permanent: true },
+ { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
+ { source: '/case-studies/hanicks', destination: '/case-studies/case-study-01', permanent: true },
+ { source: '/case-studies/tacklebag', destination: '/case-studies/case-study-02', permanent: true },
+ { source: '/case-studies/cobra-workwear', destination: '/case-studies/case-study-03', permanent: true },
+
+[0m
+[0m# [0mTodos
+[Γ£ô] Find and fix cant-scale figures (┬ú500k/┬ú1.5m)
+[Γ£ô] Find and fix seasonal-peaks figures ('forty', 'two hundred')
+[Γ£ô] Find and fix spreadsheet-addiction figures ('forty-order', 'eight-month')
+[Γ£ô] Fix ERP page case study 02: '9 supplier feeds' ΓåÆ '17 supplier feeds'
+[Γ£ô] Drop 'Excel' and 'Google Sheets' from copy
+[Γ£ô] Fix 404 on /problems/systems-dont-talk-video
+[ΓÇó] Run tsc and lint verification
+[ ] Commit and write lane reports
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures" && npx tsc --noEmit 2>&1
+[41m                                                                               [0m
+[41m[37m                This is not the tsc command you are looking for                [0m
+[41m                                                                               [0m
+
+To get access to the TypeScript compiler, [34mtsc[0m, from the command line either:
+
+- Use [1mnpm install typescript[0m to first add TypeScript to your project [1mbefore[0m using npx
+- Use [1myarn[0m to avoid accidentally running code from un-installed packages
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures" && npx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\lint
+[0m
+[0m$ [0mnpm install
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 440 packages, and audited 441 packages in 17s
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+
+158 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+[0m
+[0m$ [0mnpx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\lint
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mnpx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\lint
+[0m
+[0m$ [0mnpx next lint --dir . 2>&1
+error: unknown option '--dir'
+[0m
+[0m$ [0mnpm run lint 2>&1
+> decoded-ops-next@0.1.0 lint
+> eslint
+
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\.context\mockup-vs-app.mjs
+  5:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\.context\plate-audit.mjs
+   8:31  warning  'dirname' is defined but never used     @typescript-eslint/no-unused-vars
+  67:14  warning  'm' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\.context\slot-audit.mjs
+   7:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+  43:21  warning  't' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\.context\tools\verify-pages.js
+  5:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  6:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  7:22  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\about\page.tsx
+   56:42  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  111:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  114:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  137:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  152:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  194:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\api\auth\login\route.ts
+  81:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  82:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\apps\commerce\page.tsx
+  271:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\apps\page.tsx
+  42:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  76:43  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  77:43  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  78:51  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  79:51  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\blog\[slug]\page.tsx
+  46:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\blog\page.tsx
+  43:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  54:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  56:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\case-studies\case-study-03\page.tsx
+  211:42  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\case-studies\page.tsx
+    3:10  warning  'ArrowRight' is defined but never used                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+    4:10  warning  'BOOKING_URL' is defined but never used                                                                                                                                                                                                                                                  @typescript-eslint/no-unused-vars
+   49:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  108:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  126:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\clients\[clientId]\components\AcceptanceSection.tsx
+  102:84  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  257:39  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\clients\[clientId]\components\DemoSection.tsx
+  127:27  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        @typescript-eslint/no-explicit-any
+  129:3   error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\clients\[clientId]\components\DemoSection.tsx:129:3
+  127 |   const chartRef = useRef<any>(null);
+  128 |   const stocksRef = useRef(stocks);
+> 129 |   stocksRef.current = stocks;
+      |   ^^^^^^^^^^^^^^^^^ Cannot update ref during render
+  130 |
+  131 |   function statusFor(stock: number, min: number) {
+  132 |     return stock === 0 ? 'out' : stock < min ? 'low' : 'ok';                                                                                                                                                                                                                                                          react-hooks/refs
+  246:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\clients\[clientId]\components\DemoSection.tsx:246:5
+  244 |
+  245 |   useEffect(() => {
+> 246 |     updateAlerts(stocks);
+      |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  247 |   }, []);
+  248 |
+  249 |   const filteredStocks = filter === 'all'  react-hooks/set-state-in-effect
+  247:6   warning  React Hook useEffect has missing dependencies: 'stocks' and 'updateAlerts'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\clients\[clientId]\components\PricingSection.tsx
+   92:19  warning  'isA' is assigned a value but never used                         @typescript-eslint/no-unused-vars
+  323:77  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\clients\[clientId]\components\SystemsDiagram.tsx
+  83:5  error    Error: Cannot access variable before it is declared
+
+`buildSVG` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\clients\[clientId]\components\SystemsDiagram.tsx:83:5
+  81 |
+  82 |   useEffect(() => {
+> 83 |     buildSVG(mode);
+     |     ^^^^^^^^ `buildSVG` accessed before it is declared
+  84 |   }, [mode, d]);
+  85 |
+  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\clients\[clientId]\components\SystemsDiagram.tsx:86:3
+   84 |   }, [mode, d]);
+   85 |
+>  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+      |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  87 |     const svg = svgRef.current;
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  88 |     if (!svg) return;
+      ΓÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 195 |     svg.appendChild(desc);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 196 |   }
+      | ^^^^ `buildSVG` is declared here
+  197 |
+  198 |   return (
+  199 |     <div className="bg-[#023047] rounded-2xl p-12 text-white">  react-hooks/immutability
+  84:6  warning  React Hook useEffect has a missing dependency: 'buildSVG'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\clients\[clientId]\layout.tsx
+  15:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\clients\[clientId]\page.tsx
+   34:33  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  117:36  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:47  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\contact\ContactClient.tsx
+  265:40  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\contact\actions.ts
+  13:6  warning  'ContactFormInput' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\cookies\page.tsx
+  163:16  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\design-system\ds-plates.js
+  153:43  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+  179:76  warning  'err' is defined but never used                                        @typescript-eslint/no-unused-vars
+  189:13  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  189:85  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\layout.tsx
+  16:10  warning  'Header' is defined but never used  @typescript-eslint/no-unused-vars
+  17:10  warning  'Footer' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\page.tsx
+    3:8   warning  'Image' is defined but never used                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  109:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  293:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  384:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\problems\cant-scale-operations\page.tsx
+  102:7  warning  'scalingSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\problems\page.tsx
+  102:43  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  109:36  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:50  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\problems\slow-processes\page.tsx
+  102:7  warning  'workflowSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\resources\5-warning-signs\page.tsx
+    5:10   warning  'Plate' is defined but never used                                @typescript-eslint/no-unused-vars
+  116:23   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:25   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:53   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:287  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:307  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:318  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  126:128  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\resources\artwork-approval-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\resources\audit-checklist\page.tsx
+    2:36   warning  'Download' is defined but never used                             @typescript-eslint/no-unused-vars
+    5:10   warning  'Plate' is defined but never used                                @typescript-eslint/no-unused-vars
+  239:81   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  239:124  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  239:129  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  239:134  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  239:139  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  242:32   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  242:69   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  278:29   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  284:35   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  284:47   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  284:53   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  284:63   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  304:25   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  306:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\resources\erp-selection-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\resources\page.tsx
+  3:53  warning  'Star' is defined but never used   @typescript-eslint/no-unused-vars
+  5:10  warning  'Plate' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\resources\seasonal-capacity\page.tsx
+  97:127  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\resources\sop-template\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\sectors\schoolwear\page.tsx
+  5:10  warning  'Plate' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\sitemap.ts
+  12:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  95:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\small-business\page.tsx
+  3:46  warning  'TrendingUp' is defined but never used  @typescript-eslint/no-unused-vars
+  3:58  warning  'Wrench' is defined but never used      @typescript-eslint/no-unused-vars
+  3:66  warning  'Clock' is defined but never used       @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\tools\automation-roi-calculator\page.tsx
+  60:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\tools\downtime-cost-calculator\page.tsx
+  62:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\tools\ops-health-score\page.tsx
+  29:7   warning  'scoreLabels' is assigned a value but never used                                                                                                                                                                                                                                         @typescript-eslint/no-unused-vars
+  80:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\tools\page.tsx
+    6:10  warning  'Plate' is defined but never used                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  100:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  125:74  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\app\tools\should-i-replace-erp\page.tsx
+  72:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\auth.config.ts
+  13:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\components\Artwork.tsx
+  50:49  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+  61:53  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+  71:43  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+  75:9   warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  76:16  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\components\BlogList.tsx
+   55:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  148:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\components\CookieConsent.tsx
+  12:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\components\CookieConsent.tsx:12:5
+  10 |
+  11 |   useEffect(() => {
+> 12 |     setIsLoading(true);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  13 |     const consent = localStorage.getItem('cookie-consent');
+  14 |     if (!consent) {
+  15 |       setIsVisible(true);  react-hooks/set-state-in-effect
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\components\PhotoPiece.tsx
+  64:9  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\components\Plate.tsx
+  42:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  46:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  55:49  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  66:53  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  76:43  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  80:9   warning  Expected an assignment or function call and instead saw an expression                                                                                                                        @typescript-eslint/no-unused-expressions
+  81:16  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  91:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\components\RelatedPosts.tsx
+  34:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  43:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\components\graphics\AuditWheelGraphic.tsx
+  51:17  warning  'lx' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  52:17  warning  'ly' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  55:17  warning  'lines' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\components\schematics\problems\WrongErpSchematic.tsx
+  38:10  warning  'motion' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\components\schematics\sectors\PrintEmbroideryOpsConsultantSchematic.tsx
+   6:37  warning  'SKY' is defined but never used               @typescript-eslint/no-unused-vars
+  23:7   warning  'MID' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  24:7   warning  'SPINE_X' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\public\infographics\EcommerceBreakdownChart.tsx
+  117:42   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:102  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  142:74   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:79   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:234  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\public\infographics\VendorQuestionsGuide.tsx
+   56:34   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   59:59   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   59:63   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  120:26   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:92   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:131  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\scripts\fix-og-images.mjs
+  37:10  warning  'addImagesToBlock' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\scripts\hash-password.mjs
+  2:10  warning  'readFileSync' is defined but never used   @typescript-eslint/no-unused-vars
+  2:24  warning  'writeFileSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\scripts\optimise-images.mjs
+  20:11  warning  'ext' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  27:11  warning  'targetW' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 160 problems (77 errors, 83 warnings)
+[0m
+[0m$ [0mgit diff --stat
+next.config.ts | 1 +
+ 1 file changed, 1 insertion(+)
+[0m
+tsc is clean. The 160 lint problems are all pre-existing ΓÇö none are from my change. Let me verify the forbidden strings are clean and commit.
+[0m$ [0mgit diff
+diff --git a/next.config.ts b/next.config.ts
+index 934acb7..4705a1a 100644
+--- a/next.config.ts
++++ b/next.config.ts
+@@ -46,6 +46,7 @@ const nextConfig: NextConfig = {
+       { source: '/resources/software-reviews', destination: '/resources', permanent: true },
+       { source: '/decoded-method', destination: '/resources/decoded-method', permanent: true },
+       { source: '/tools/ai-readiness-check', destination: '/tools/ops-health-score', permanent: true },
++      { source: '/problems/systems-dont-talk-video', destination: '/problems/systems-dont-talk', permanent: true },
+       { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
+       { source: '/case-studies/hanicks', destination: '/case-studies/case-study-01', permanent: true },
+       { source: '/case-studies/tacklebag', destination: '/case-studies/case-study-02', permanent: true },
+[0m
+Clean. Now committing and writing lane reports.
+[0m$ [0mgit add -A && git commit -m "fix: redirect /problems/systems-dont-talk-video to /problems/systems-dont-talk (CR-WEB-052)
+
+The /problems/systems-dont-talk-video route never existed ΓÇö no page component
+was created for it and no internal links point to it. Added a permanent
+redirect in next.config.ts so the URL resolves to the correct problem page
+rather than 404ing.
+
+Copy fixes from CR-WEB-052 (invented figures, Excel/Google Sheets references,
+9ΓåÆ17 supplier feeds) were already applied by the d17 lane (commit 027f13a)."
+warning: in the working copy of 'LANE-BRIEF.md', LF will be replaced by CRLF the next time Git touches it
+[web061-u36-problem-copy-figures f34fdb0] fix: redirect /problems/systems-dont-talk-video to /problems/systems-dont-talk (CR-WEB-052)
+ 2 files changed, 28 insertions(+)
+ create mode 100644 LANE-BRIEF.md
+[0m
+[0m$ [0mgit status
+On branch web061-u36-problem-copy-figures
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web061-u36-problem-copy-figures\.context\lane-reports already exists.
+[0m
+[0m$ [0mgit rev-parse HEAD
+f34fdb0db96a79f6db508240f3311ec1f3cb0872
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web061-u36-problem-copy-figures.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web061-u36-problem-copy-figures.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web061-u36-problem-copy-figures.json .context/lane-reports/LANE-NOTES-web061-u36-problem-copy-figures.md && git commit -m "docs: lane reports for web061-u36-problem-copy-figures"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web061-u36-problem-copy-figures.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web061-u36-problem-copy-figures.json', LF will be replaced by CRLF the next time Git touches it
+[web061-u36-problem-copy-figures ca07738] docs: lane reports for web061-u36-problem-copy-figures
+ 2 files changed, 54 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web061-u36-problem-copy-figures.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web061-u36-problem-copy-figures.json
+[0m
+[0m# [0mTodos
+[Γ£ô] Find and fix cant-scale figures (┬ú500k/┬ú1.5m)
+[Γ£ô] Find and fix seasonal-peaks figures ('forty', 'two hundred')
+[Γ£ô] Find and fix spreadsheet-addiction figures ('forty-order', 'eight-month')
+[Γ£ô] Fix ERP page case study 02: '9 supplier feeds' ΓåÆ '17 supplier feeds'
+[Γ£ô] Drop 'Excel' and 'Google Sheets' from copy
+[Γ£ô] Fix 404 on /problems/systems-dont-talk-video
+[Γ£ô] Run tsc and lint verification
+[Γ£ô] Commit and write lane reports
+[0m
+[0m$ [0mgit status && git log --oneline -3
+On branch web061-u36-problem-copy-figures
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+ca07738 docs: lane reports for web061-u36-problem-copy-figures
+f34fdb0 fix: redirect /problems/systems-dont-talk-video to /problems/systems-dont-talk (CR-WEB-052)
+711f508 chore: lane report for web-pricing-v12
+[0m
+Lane complete. Two commits:
+
+1. **`f34fdb0`** ΓÇö Added permanent redirect `/problems/systems-dont-talk-video` ΓåÆ `/problems/systems-dont-talk` in `next.config.ts`
+2. **`ca07738`** ΓÇö Lane reports
+
+**Summary of all 6 items:**
+
+| # | Fix | Status |
+|---|---|---|
+| 1 | Remove cant-scale ┬ú500k/┬ú1.5m figures | Already done by d17 lane (027f13a) |
+| 2 | Remove seasonal-peaks "forty"/"two hundred" | Already done by d17 lane |
+| 3 | Remove spreadsheet-addiction "forty-order"/"eight-month" | Already done by d17 lane |
+| 4 | ERP page "9 supplier feeds" ΓåÆ "17" | Already done by d17 lane |
+| 5 | Drop "Excel"/"Google Sheets" | Already done by d17 lane |
+| 6 | Fix404 on `/problems/systems-dont-talk-video` | **Done this lane** ΓÇö redirect added |
+
+No internal links pointed to the video URL; the redirect ensures it resolves. The video data in `problem-videos.ts` remains commented out pending Craig's YouTube upload.

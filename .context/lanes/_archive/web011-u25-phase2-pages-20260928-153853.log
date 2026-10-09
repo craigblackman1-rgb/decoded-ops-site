@@ -1,0 +1,445 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/phase2-loose-fit-pages.md
+[0m→ [0mRead app/sectors/awards-engraving/page.tsx
+[0m→ [0mRead app/problems/legacy-system/page.tsx
+[0m
+[0m← [0mEdit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\sectors\awards-engraving\page.tsx
+@@ -101,9 +101,9 @@
+       : <span key={i} style={{ color: 'var(--do-text-cerulean)' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+-  <p>Every award carries different names, titles, and dates, and every order is for a specific event with a hard deadline. That makes awards and engraving one of the most demanding corners of the decorated products sector.</p>
++  <p>Every award carries different names, titles, and dates, and every order is for a specific event with a hard deadline. That makes awards and engraving one of the most demanding corners of the decorated products sector. Most print shop software treats a personalised award like any other order line, and that is where the rework starts.</p>
+ </div>
+ <div className="btn-row">
+   <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+   <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+
+[0m
+[0m← [0mEdit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\sectors\awards-engraving\page.tsx
+@@ -182,9 +182,9 @@
+ <div className="wrap">
+   <span className="eyebrow">Common challenges</span>
+   <h2>Where the problems tend to live</h2>
+   <div className="hair" />
+-  <p className="lede">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
++  <p className="lede">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most, and the ones general print shop software handles worst.</p>
+   <div className="grid grid--2">
+     {challenges.map((c, i) => (
+       <article key={i} className="card">
+         <span className="kicker">{String(i + 1).padStart(2, '0')} &middot; {c.title}</span>
+
+[0m
+[0m✗ [0mEdit app/problems/legacy-system/page.tsx failed
+[91m[1mError: [0mCould not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+Now I'll make all four edits:
+[0m
+[0m← [0mEdit app/problems/legacy-system/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx
+@@ -129,11 +129,9 @@
+ <section className="g-tint">
+  <div className="wrap">
+   <span className="eyebrow">The signs</span>
+   <h2>Seven signs the platform wasn&apos;t built for this.</h2>
+-  <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the problem
+-   isn&apos;t your team working around the system. It&apos;s the system never having been designed for
+-   decoration in the first place.</p>
++   <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the system is the cause. The inventory software was never designed for decoration, so your team works around it every day.</p>
+ 
+   <ul className="symptoms">
+    <li>Decoration BOMs are tracked in a spreadsheet because the platform can&apos;t model them</li>
+    <li>Blank and finished stock get confused, or tracked as if they&apos;re the same item</li>
+
+[0m
+[0m→ [0mRead app/problems/legacy-system/page.tsx[90m [offset=88, limit=8][0m
+Third edit failed — let me check the exact whitespace:
+[0m✗ [0mEdit app/problems/legacy-system/page.tsx failed
+[91m[1mError: [0mCould not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+[0m
+[0m$ [0mrg -n "Generic ERP and stock" "D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx" --byte
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx" -Pattern "Generic ERP" | Format-List
+IgnoreCase : True
+LineNumber : 42
+Line       :      name: 'What decoration-specific workflows do generic ERPs miss?',
+Filename   : page.tsx
+Path       : D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx
+Pattern    : Generic ERP
+Context    : 
+Matches    : {0}
+
+IgnoreCase : True
+LineNumber : 43
+Line       :      acceptedAnswer: { '@type': 'Answer', text: 'Decoration BOMs, a blank plus a decoration method plus 
+             thread or ink plus setup time, are rarely represented cleanly in a generic ERP. Blank versus finished 
+             goods tracking and supplier artwork versioning are likewise missing from most platforms.' },
+Filename   : page.tsx
+Path       : D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx
+Pattern    : Generic ERP
+Context    : 
+Matches    : {0}
+
+IgnoreCase : True
+LineNumber : 90
+Line       :       <p className="lede">Generic ERP and stock systems are built for businesses that buy and sell the
+Filename   : page.tsx
+Path       : D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx
+Pattern    : Generic ERP
+Context    : 
+Matches    : {0}
+[0m
+[0m$ [0m[System.IO.File]::ReadAllBytes("D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx")[8000..8200] | ForEach-Object { '{0:X2}' -f $_ } | Out-String
+73
+65
+2E
+20
+54
+68
+65
+20
+69
+6E
+76
+65
+6E
+74
+6F
+72
+79
+20
+73
+6F
+66
+74
+77
+61
+72
+65
+20
+77
+61
+73
+20
+6E
+65
+76
+65
+72
+20
+64
+65
+73
+69
+67
+6E
+65
+64
+20
+66
+6F
+72
+20
+64
+65
+63
+6F
+72
+61
+74
+69
+6F
+6E
+2C
+20
+73
+6F
+20
+79
+6F
+75
+72
+20
+74
+65
+61
+6D
+20
+77
+6F
+72
+6B
+73
+20
+61
+72
+6F
+75
+6E
+64
+20
+69
+74
+20
+65
+76
+65
+72
+79
+20
+64
+61
+79
+2E
+3C
+2F
+70
+3E
+0A
+0D
+0A
+20
+20
+20
+20
+20
+3C
+75
+6C
+20
+63
+6C
+61
+73
+73
+4E
+61
+6D
+65
+3D
+22
+73
+79
+6D
+70
+74
+6F
+6D
+73
+22
+3E
+0D
+0A
+20
+20
+20
+20
+20
+20
+3C
+6C
+69
+3E
+44
+65
+63
+6F
+72
+61
+74
+69
+6F
+6E
+20
+42
+4F
+4D
+73
+20
+61
+72
+65
+20
+74
+72
+61
+63
+6B
+65
+64
+20
+69
+6E
+20
+61
+20
+73
+70
+72
+65
+61
+64
+73
+68
+65
+65
+74
+20
+62
+65
+63
+61
+75
+73
+[0m
+[0m← [0mEdit app/problems/legacy-system/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\app\problems\legacy-system\page.tsx
+@@ -86,10 +86,10 @@
+ <div className="wrap hero-split">
+  <div>
+   <span className="eyebrow">The problem</span>
+   <h1>The platform you bought ten years ago wasn&apos;t built for decoration.</h1>
+-  <p className="lede">Generic ERP and stock systems are built for businesses that buy and sell the
+-   same thing they hold in the warehouse. Decoration doesn&apos;t work like that. A blank
++  <p className="lede">Generic ERP systems and most inventory management software for small businesses are built
++   for businesses that buy and sell the same thing they hold in the warehouse. Decoration doesn&apos;t work like that. A blank
+    garment becomes a different, finished product the moment it&apos;s printed or embroidered, and
+    most platforms have no clean way to model that.</p>
+   <div className="hero-cta">
+    <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
+
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | head -20
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+All four edits applied. Let me verify the changes and run typecheck:
+[0m$ [0mgit diff --stat
+warning: in the working copy of 'app/problems/legacy-system/page.tsx', LF will be replaced by CRLF the next time Git touches it
+ app/problems/legacy-system/page.tsx   | 8 +++-----
+ app/sectors/awards-engraving/page.tsx | 4 ++--
+ 2 files changed, 5 insertions(+), 7 deletions(-)
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+[41m                                                                               [0m
+[41m[37m                This is not the tsc command you are looking for                [0m
+[41m                                                                               [0m
+
+To get access to the TypeScript compiler, [34mtsc[0m, from the command line either:
+
+- Use [1mnpm install typescript[0m to first add TypeScript to your project [1mbefore[0m using npx
+- Use [1myarn[0m to avoid accidentally running code from un-installed packages
+[0m
+[0m$ [0mTest-Path "D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\node_modules"
+False
+[0m
+No `node_modules` — brief forbids `npm install`, so `tsc` can't run. The two files are `.tsx` with no type-level changes, only JSX text edits. The diff confirms clean substitution of 4 strings across 2 files.
+
+Let me verify the diffs look correct:
+[0m$ [0mgit diff
+warning: in the working copy of 'app/problems/legacy-system/page.tsx', LF will be replaced by CRLF the next time Git touches it
+diff --git a/app/problems/legacy-system/page.tsx b/app/problems/legacy-system/page.tsx
+index 6af19c5..5ec666a 100644
+--- a/app/problems/legacy-system/page.tsx
++++ b/app/problems/legacy-system/page.tsx
+@@ -87,8 +87,8 @@ export default function LegacySystemPage() {
+      <div>
+       <span className="eyebrow">The problem</span>
+       <h1>The platform you bought ten years ago wasn&apos;t built for decoration.</h1>
+-      <p className="lede">Generic ERP and stock systems are built for businesses that buy and sell the
+-       same thing they hold in the warehouse. Decoration doesn&apos;t work like that. A blank
++      <p className="lede">Generic ERP systems and most inventory management software for small businesses are built
++       for businesses that buy and sell the same thing they hold in the warehouse. Decoration doesn&apos;t work like that. A blank
+        garment becomes a different, finished product the moment it&apos;s printed or embroidered, and
+        most platforms have no clean way to model that.</p>
+       <div className="hero-cta">
+@@ -130,9 +130,7 @@ export default function LegacySystemPage() {
+     <div className="wrap">
+      <span className="eyebrow">The signs</span>
+      <h2>Seven signs the platform wasn&apos;t built for this.</h2>
+-     <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the problem
+-      isn&apos;t your team working around the system. It&apos;s the system never having been designed for
+-      decoration in the first place.</p>
++      <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the system is the cause. The inventory software was never designed for decoration, so your team works around it every day.</p>
+ 
+      <ul className="symptoms">
+       <li>Decoration BOMs are tracked in a spreadsheet because the platform can&apos;t model them</li>
+diff --git a/app/sectors/awards-engraving/page.tsx b/app/sectors/awards-engraving/page.tsx
+index 50fa120..c0d2f41 100644
+--- a/app/sectors/awards-engraving/page.tsx
++++ b/app/sectors/awards-engraving/page.tsx
+@@ -102,7 +102,7 @@ export default function AwardsEngravingPage() {
+               )}
+             </h1>
+             <div className={styles.heroBody}>
+-              <p>Every award carries different names, titles, and dates, and every order is for a specific event with a hard deadline. That makes awards and engraving one of the most demanding corners of the decorated products sector.</p>
++              <p>Every award carries different names, titles, and dates, and every order is for a specific event with a hard deadline. That makes awards and engraving one of the most demanding corners of the decorated products sector. Most print shop software treats a personalised award like any other order line, and that is where the rework starts.</p>
+             </div>
+             <div className="btn-row">
+               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+@@ -183,7 +183,7 @@ export default function AwardsEngravingPage() {
+           <span className="eyebrow">Common challenges</span>
+           <h2>Where the problems tend to live</h2>
+           <div className="hair" />
+-          <p className="lede">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
++          <p className="lede">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most, and the ones general print shop software handles worst.</p>
+           <div className="grid grid--2">
+             {challenges.map((c, i) => (
+               <article key={i} className="card">
+[0m
+All four diffs are exactly as specified. Now committing:
+[0m$ [0mgit add app/sectors/awards-engraving/page.tsx app/problems/legacy-system/page.tsx && git commit -m "content: phase 2 keyword copy for awards-engraving and legacy-system"
+warning: in the working copy of 'app/problems/legacy-system/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[content/phase2-loose-fit-pages ece3822] content: phase 2 keyword copy for awards-engraving and legacy-system
+ 2 files changed, 5 insertions(+), 7 deletions(-)
+[0m
+[0m$ [0mgit log --oneline -1
+ece3822 content: phase 2 keyword copy for awards-engraving and legacy-system
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\phase2-loose-fit\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web011-u25-phase2-pages.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web011-u25-phase2-pages.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/ && git commit -m "lane: web011-u25-phase2-pages result and notes"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web011-u25-phase2-pages.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web011-u25-phase2-pages.json', LF will be replaced by CRLF the next time Git touches it
+[content/phase2-loose-fit-pages 5412c3b] lane: web011-u25-phase2-pages result and notes
+ 2 files changed, 15 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web011-u25-phase2-pages.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web011-u25-phase2-pages.json
+[0m
+**Done.** Two commits on the worktree:
+
+1. `ece3822` — four copy replacements in `awards-engraving/page.tsx` and `legacy-system/page.tsx`
+2. `5412c3b` — lane result JSON and notes
+
+**Diff summary:**
+- **awards-engraving line 105:** appended "Most print shop software treats a personalised award like any other order line, and that is where the rework starts."
+- **awards-engraving line 186:** extended lede with ", and the ones general print shop software handles worst."
+- **legacy-system lines 90-91:** replaced "Generic ERP and stock systems" with "Generic ERP systems and most inventory management software for small businesses"
+- **legacy-system lines 133-135:** replaced "the problem isn't your team...system never having been designed" with "the system is the cause. The inventory software was never designed for decoration, so your team works around it every day."
+
+**tsc:** skipped (no `node_modules`, brief forbids `npm install`). Both edits are pure JSX text substitutions with no type-level changes.

@@ -1,0 +1,79 @@
+
+> build · mimo-v2.5
+
+✱ Grep "craig-blackman" 1 match
+
+$ git status --short
+M public/images/craig-blackman.jpg
+?? .context/lane-briefs/BRIEF-artwork-refresh-batch-a-fix1.md
+?? .context/lane-briefs/BRIEF-artwork-refresh-batch-a-fix2.md
+?? .context/lane-briefs/BRIEF-artwork-refresh-batch-a.md
+
+→ Read app/about/page.tsx [offset=45, limit=15]
+
+← Edit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\app\about\page.tsx
+@@ -46,9 +46,9 @@
+ </div>
+ 
+ <div className={s.heroShot}>
+   <div className={s.photo} data-od-id="about-visual">
+-    <img src="/images/craig-blackman.jpg" width="1400" height="1500"
++     <img src="/images/craig-blackman.jpg" width="1600" height="1067"
+          alt="Craig Blackman, founder of Decoded Ops." />
+   </div>
+   <p className={s.shotCaption}>Twenty-five years in rooms like this one, on both sides of the
+     system that runs them.</p>
+
+
+$ git add public/images/craig-blackman.jpg app/about/page.tsx && git commit -m "fix(CR-WEB-030): /about portrait replaced with Craig-supplied photo (1600x1067)"
+warning: in the working copy of 'app/about/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[artwork-refresh-batch-a 45c4bf5] fix(CR-WEB-030): /about portrait replaced with Craig-supplied photo (1600x1067)
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+$ npx tsc --noEmit 2>&1 | tail -5
+tail: The term 'tail' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ git diff --stat HEAD~1
+app/about/page.tsx               |   2 +-
+ public/images/craig-blackman.jpg | Bin 143921 -> 81748 bytes
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+$ npx tsc --noEmit 2>&1; if ($LASTEXITCODE -eq 0) { "tsc: clean" } else { "tsc: FAIL (exit $LASTEXITCODE)" }
+tsc: clean
+
+$ git log --oneline -1 --format=%H
+45c4bf53d0b680832cf4888466e0780d7be692ef
+
+$ mkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\artwork-refresh-batch-a\.context\lane-reports already exists.
+
+← Write .context/lane-reports/LANE-RESULT-artwork-refresh-batch-a-fix2.json
+Wrote file successfully.
+
+← Write .context/lane-reports/LANE-NOTES-artwork-refresh-batch-a-fix2.md
+Wrote file successfully.
+
+$ git add .context/lane-reports/LANE-RESULT-artwork-refresh-batch-a-fix2.json .context/lane-reports/LANE-NOTES-artwork-refresh-batch-a-fix2.md && git commit -m "chore: lane exit contract for artwork-refresh-batch-a-fix2"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-artwork-refresh-batch-a-fix2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-artwork-refresh-batch-a-fix2.json', LF will be replaced by CRLF the next time Git touches it
+[artwork-refresh-batch-a 5e288fb] chore: lane exit contract for artwork-refresh-batch-a-fix2
+ 2 files changed, 42 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-artwork-refresh-batch-a-fix2.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-artwork-refresh-batch-a-fix2.json
+
+$ git log --oneline -3
+5e288fb chore: lane exit contract for artwork-refresh-batch-a-fix2
+45c4bf5 fix(CR-WEB-030): /about portrait replaced with Craig-supplied photo (1600x1067)
+fc4a974 chore: lane reports for artwork-refresh-batch-a fix round 1
+
+**Lane complete.** Two commits:
+
+1. `45c4bf5` — `fix(CR-WEB-030): /about portrait replaced with Craig-supplied photo (1600x1067)` — 2 files (page.tsx + image)
+2. `5e288fb` — lane exit contract files
+
+**Verify:** `npx tsc --noEmit` clean · `git diff --stat HEAD~1` = 2 files · no push.

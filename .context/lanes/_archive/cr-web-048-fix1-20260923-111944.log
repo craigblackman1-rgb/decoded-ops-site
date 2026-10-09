@@ -1,0 +1,283 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/cr-web-048-fix1.md
+[0m→ [0mRead .context/lane-briefs/cr-web-048.md
+[0m→ [0mRead .context/lane-briefs/CASE_STUDIES_COPY_2026-09-23.md
+[0m→ [0mRead app/case-studies/page.tsx
+[0m→ [0mRead app/case-studies/case-study-01/page.tsx
+[0m→ [0mRead app/case-studies/case-study-02/page.tsx
+[0m
+[0m# [0mTodos
+[•] Fix cards in page.tsx: names, labels, desc, figures
+[ ] Delete {/* TackleBag */} comment in page.tsx
+[ ] Fix case-study-02 DO-ART-206 After lines
+[ ] Fix case-study-02 figures block last stat
+[ ] Fix case-study-01 figures stock-take stat
+[ ] Fix case-study-01 DO-ART-205 plate and lede
+[ ] Run tsc and grep verification
+[ ] Commit and write lane reports
+[0m
+Now I'll make all edits. Starting with `page.tsx` cards and TackleBag comment:
+[0m← [0mEdit app/case-studies/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\page.tsx
+@@ -23,22 +23,22 @@
+ };
+ 
+ const cases = [
+   {
+-    name: 'Case study 01',
++    name: 'Hanicks',
+     sector: 'Heating spares & eCommerce',
+-    desc: 'Heating spares, big catalogue, lots of suppliers. The ERP changed. The data work carried on.',
++    desc: 'Hanicks sells heating spares. It isn\u2019t decorated goods, but it\u2019s the same problem underneath: a big catalogue arriving from lots of suppliers in different formats, which has to be clean and current on every channel it sells through.',
+     href: '/case-studies/case-study-01',
+     status: 'Live engagement',
+-    pull: '317,812 products brought in · 154,518 matched automatically · 40 active suppliers',
++    pull: '317,812 products brought in \u00b7 154,518 matched automatically \u00b7 40 active suppliers',
+   },
+   {
+-    name: 'Case study 02',
++    name: 'The diagnostic came before the decision.',
+     sector: 'Branded apparel & decoration',
+-    desc: 'The diagnostic came before the decision.',
++    desc: 'A teamwear and schoolwear business selling decorated and plain stock across a lot of suppliers, on an eCommerce platform that needed to show live stock accurately.',
+     href: '/case-studies/case-study-02',
+     status: 'In Deliver',
+-    pull: '17 supplier feeds automated · 952 products live on their website · 100% of stock binned',
++    pull: '17 supplier feeds automated \u00b7 952 products live on their website \u00b7 100% of stock binned',
+   },
+   {
+     name: 'Case study 03',
+     sector: 'Workwear B2B distributor',
+
+[0m
+[0m← [0mEdit app/case-studies/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\page.tsx
+@@ -158,9 +158,8 @@
+   </g>
+   <text x="80" y="382" className="p-mono" fontSize="16" opacity=".62">Data app (now the ERP), supplier feeds and channel automation</text>
+ </g>
+ 
+-{/* TackleBag */}
+ <g className="sk-fade sk-s3">
+   <rect x="820" y="180" width="730" height="230" rx="10"
+         fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
+         stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
+
+[0m
+[0m# [0mTodos
+[✓] Fix cards in page.tsx: names, labels, desc, figures
+[✓] Delete {/* TackleBag */} comment in page.tsx
+[•] Fix case-study-02 DO-ART-206 After lines
+[ ] Fix case-study-02 figures block last stat
+[ ] Fix case-study-01 figures stock-take stat
+[ ] Fix case-study-01 DO-ART-205 plate and lede
+[ ] Run tsc and grep verification
+[ ] Commit and write lane reports
+[0m
+[0m← [0mEdit app/case-studies/case-study-02/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-02\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-02\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-02\page.tsx
+@@ -129,9 +129,9 @@
+         letterSpacing="2" fill="var(--do-prussian-blue)">AFTER</text>
+ </g>
+ <g className="sk-fade sk-s5" fontSize="22">
+   <text x="890" y="332" className="p-ink">17 supplier feeds coming in on their own</text>
+-  <text x="890" y="402" className="p-ink">27,778 supplier products in one place</text>
++  <text x="890" y="402" className="p-ink">27,778 supplier products (236,056 sizes and colours) in one place</text>
+   <text x="890" y="472" className="p-ink">Every order landing in one queue, ready to pick</text>
+   <text x="890" y="542" className="p-ink">Same platform + Data App alongside it</text>
+   <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
+      strokeLinejoin="round" fill="none">
+
+[0m
+Now fix case-study-02 DO-ART-206 After lines:
+[0m← [0mEdit app/case-studies/case-study-02/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-02\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-02\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-02\page.tsx
+@@ -131,9 +131,12 @@
+ <g className="sk-fade sk-s5" fontSize="22">
+   <text x="890" y="332" className="p-ink">17 supplier feeds coming in on their own</text>
+   <text x="890" y="402" className="p-ink">27,778 supplier products (236,056 sizes and colours) in one place</text>
+   <text x="890" y="472" className="p-ink">Every order landing in one queue, ready to pick</text>
+-  <text x="890" y="542" className="p-ink">Same platform + Data App alongside it</text>
++  <text x="890" y="542" className="p-ink">
++    <tspan x="890" dy="0">The same website platform,</tspan>
++    <tspan x="890" dy="26">with the data app doing the work it was never built for</tspan>
++  </text>
+   <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
+      strokeLinejoin="round" fill="none">
+     <path d="M856 325 L863 332 L876 318"/>
+     <path d="M856 395 L863 402 L876 388"/>
+
+[0m
+Now fix the figures block last stat label:
+[0m← [0mEdit app/case-studies/case-study-02/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-02\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-02\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-02\page.tsx
+@@ -186,9 +186,9 @@
+     <p className="stat-label">of stock has a bin location</p>
+   </div>
+   <div className="stat">
+     <p className="stat-num num">20 to 40</p>
+-    <p className="stat-label">hours a week of admin time, projected at discovery</p>
++    <p className="stat-label">hours a week of admin time, projected at discovery (being measured now it&apos;s live)</p>
+   </div>
+ </div>
+ <p className="lede" style={{ marginTop: 36, color: 'var(--do-text-muted-on-dark)' }}>
+   Figures from the live system, September 2026. Hours saving is a projection, not yet measured.
+
+[0m
+[0m# [0mTodos
+[✓] Fix cards in page.tsx: names, labels, desc, figures
+[✓] Delete {/* TackleBag */} comment in page.tsx
+[✓] Fix case-study-02 DO-ART-206 After lines
+[✓] Fix case-study-02 figures block last stat
+[•] Fix case-study-01 figures stock-take stat
+[ ] Fix case-study-01 DO-ART-205 plate and lede
+[ ] Run tsc and grep verification
+[ ] Commit and write lane reports
+[0m
+[0m← [0mEdit app/case-studies/case-study-01/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-01\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-01\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-01\page.tsx
+@@ -175,9 +175,9 @@
+ </div>
+ <div className="grid grid--3" style={{ marginTop: 32 }}>
+   <div className="stat">
+     <p className="stat-num num">2,872</p>
+-    <p className="stat-label">new products found in a stock-take reconciliation</p>
++    <p className="stat-label">new products and 28 new suppliers found in a stock-take reconciliation</p>
+   </div>
+   <div className="stat">
+     <p className="stat-num num">3,844</p>
+     <p className="stat-label">Amazon listings re-optimised ahead of a title-format deadline</p>
+
+[0m
+Now fix case-study-01 DO-ART-205 plate. First the AFTER line, then the lede:
+[0m← [0mEdit app/case-studies/case-study-01/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-01\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-01\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-01\page.tsx
+@@ -130,9 +130,9 @@
+ </g>
+ <g className="sk-fade sk-s5" fontSize="22">
+   <text x="890" y="332" className="p-ink">154,518 matched automatically</text>
+   <text x="890" y="402" className="p-ink">40 active suppliers feeding in</text>
+-  <text x="890" y="472" className="p-ink">Same platform, kept</text>
++  <text x="890" y="472" className="p-ink">Data app (now the ERP)</text>
+   <text x="890" y="542" className="p-ink">Data app (now the ERP)</text>
+   <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
+      strokeLinejoin="round" fill="none">
+     <path d="M856 325 L863 332 L876 318"/>
+
+[0m
+[0m← [0mEdit app/case-studies/case-study-01/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-01\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-01\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\app\case-studies\case-study-01\page.tsx
+@@ -87,9 +87,9 @@
+ <div className="wrap">
+   <span className="eyebrow">Measure &middot; DO-ART-205</span>
+   <h2>Not projected. Not modelled. What&apos;s actually in the system.</h2>
+   <div className="hair"></div>
+-  <p className="lede" style={{ marginTop: 16 }}>317,812 products brought in from supplier feeds. 154,518 matched to a supplier automatically, before anyone had to touch them. 40 active suppliers feeding in.</p>
++  <p className="lede" style={{ marginTop: 16 }}>Catalogue figures from the live system, September 2026.</p>
+ 
+   <div className="plate-scroll">
+     <div className="plate-frame" data-od-id="plate-cs01">
+       <Plate tone="dark" p="hs" title="Supplier catalogue: before and after"
+
+[0m
+[0m# [0mTodos
+[✓] Fix cards in page.tsx: names, labels, desc, figures
+[✓] Delete {/* TackleBag */} comment in page.tsx
+[✓] Fix case-study-02 DO-ART-206 After lines
+[✓] Fix case-study-02 figures block last stat
+[✓] Fix case-study-01 figures stock-take stat
+[✓] Fix case-study-01 DO-ART-205 plate and lede
+[•] Run tsc and grep verification
+[ ] Commit and write lane reports
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mgit grep -nE "Khaos|164,752|127,135|11,064|9 supplier feeds|TackleBag|Tackle Bag|Same platform" -- app/case-studies 2>&1
+(no output)
+[0m
+Both checks pass clean. Now commit and write lane reports:
+[0m$ [0mgit add -A && git commit -m "fix(case-studies): card titles, plate lines, full figures (CR-WEB-048)" 2>&1
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-briefs/cr-web-048-fix1.md', LF will be replaced by CRLF the next time Git touches it
+[cr-web-048-case-studies afd3da0] fix(case-studies): card titles, plate lines, full figures (CR-WEB-048)
+ 4 files changed, 26 insertions(+), 13 deletions(-)
+ create mode 100644 .context/lane-briefs/cr-web-048-fix1.md
+[0m
+[0m$ [0mgit log --oneline -1 --format="%H %s" 2>&1
+afd3da087c65e47d59b92bb7f963ab12f71525d6 fix(case-studies): card titles, plate lines, full figures (CR-WEB-048)
+[0m
+[0m$ [0mgit diff --name-only HEAD~1 HEAD 2>&1
+.context/lane-briefs/cr-web-048-fix1.md
+app/case-studies/case-study-01/page.tsx
+app/case-studies/case-study-02/page.tsx
+app/case-studies/page.tsx
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\cr-web-048-case-studies\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-cr-web-048-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-cr-web-048-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane reports for cr-web-048-fix1" 2>&1
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-cr-web-048-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-cr-web-048-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[cr-web-048-case-studies 16dc15e] chore: lane reports for cr-web-048-fix1
+ 2 files changed, 52 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-cr-web-048-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-cr-web-048-fix1.json
+[0m
+[0m# [0mTodos
+[✓] Fix cards in page.tsx: names, labels, desc, figures
+[✓] Delete {/* TackleBag */} comment in page.tsx
+[✓] Fix case-study-02 DO-ART-206 After lines
+[✓] Fix case-study-02 figures block last stat
+[✓] Fix case-study-01 figures stock-take stat
+[✓] Fix case-study-01 DO-ART-205 plate and lede
+[✓] Run tsc and grep verification
+[✓] Commit and write lane reports
+[0m
+All six fix items applied and verified. Here's the item-by-item report:
+
+| # | Fix | File:line |
+|---|---|---|
+| 1 | Card 01 name → "Hanicks", desc → full intro sentence | `app/case-studies/page.tsx:27-29` |
+| 1 | Card 02 name → "The diagnostic came before the decision.", desc → full intro sentence | `app/case-studies/page.tsx:35-37` |
+| 2 | Deleted `{/* TackleBag */}` comment | `app/case-study-02/page.tsx:162` (was) |
+| 3 | After line 2: added "(236,056 sizes and colours)" | `app/case-studies/case-study-02/page.tsx:133` |
+| 3 | After line 4: "Same platform + Data App alongside it" → two-line tspan with full spec text | `app/case-studies/case-study-02/page.tsx:135-138` |
+| 4 | Figures last stat: added "(being measured now it's live)" | `app/case-studies/case-study-02/page.tsx:187` |
+| 5 | Stock-take stat: added "and 28 new suppliers" | `app/case-studies/case-study-01/page.tsx:179` |
+| 6 | DO-ART-205 AFTER line: "Same platform, kept" → "Data app (now the ERP)" | `app/case-studies/case-study-01/page.tsx:134` |
+| 6 | Plate lede: replaced product summary with small print | `app/case-studies/case-study-01/page.tsx:91` |
+
+**Verification:** `npx tsc --noEmit` clean. `git grep` for forbidden strings: 0 hits. Two commits landed.

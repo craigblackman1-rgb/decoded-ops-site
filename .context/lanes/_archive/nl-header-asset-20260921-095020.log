@@ -1,0 +1,55 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m$ [0mGet-Item "C:\Users\CraigBlackman\OneDrive - Decoded Ops\decoded-ops-ai\decoded-ops\Content\newsletter\assets\png\ops-briefing-header.png" | Select-Object FullName, Length
+FullName
+--------                                                                                                               
+C:\Users\CraigBlackman\OneDrive - Decoded Ops\decoded-ops-ai\decoded-ops\Content\newsletter\assets\png\ops-briefing-he.
+[0m
+[0m$ [0mTest-Path "D:\apps\worktrees\decoded-ops-website\nl-header-asset\public\newsletter\assets" -ErrorAction SilentlyContinue
+False
+[0m
+[0m✱ [0mGrep "headers|rewrites|redirects"[90m in . · 5 matches[0m
+[0m→ [0mRead next.config.ts
+[0m
+[0m$ [0m(Get-Item "C:\Users\CraigBlackman\OneDrive - Decoded Ops\decoded-ops-ai\decoded-ops\Content\newsletter\assets\png\ops-briefing-header.png").Length
+34017
+[0m
+Source confirmed: 34,017 bytes. Next.config has no blocks on `/newsletter/*` — the only catch-all is security headers (HSTS, CSP, etc.) applied to all routes, which don't block static file serving.
+[0m$ [0mNew-Item -ItemType Directory -Path "D:\apps\worktrees\decoded-ops-website\nl-header-asset\public\newsletter\assets" -Force | Out-Null; Copy-Item "C:\Users\CraigBlackman\OneDrive - Decoded Ops\decoded-ops-ai\decoded-ops\Content\newsletter\assets\png\ops-briefing-header.png" "D:\apps\worktrees\decoded-ops-website\nl-header-asset\public\newsletter\assets\ops-briefing-header.png"; (Get-Item "D:\apps\worktrees\decoded-ops-website\nl-header-asset\public\newsletter\assets\ops-briefing-header.png").Length
+34017
+[0m
+34,017 bytes confirmed. Now committing the asset only.
+[0m$ [0mgit add public/newsletter/assets/ops-briefing-header.png && git commit -m "assets: host Ops Briefing Issue 1 header image (newsletter/assets)"
+[nl-header-asset ac186a6] assets: host Ops Briefing Issue 1 header image (newsletter/assets)
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 public/newsletter/assets/ops-briefing-header.png
+[0m
+[0m$ [0mNew-Item -ItemType Directory -Path "D:\apps\worktrees\decoded-ops-website\nl-header-asset\.context\lane-reports" -Force | Out-Null
+(no output)
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-nl-header-asset.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-nl-header-asset.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-nl-header-asset.json .context/lane-reports/LANE-NOTES-nl-header-asset.md && git commit -m "docs: lane exit contract for nl-header-asset"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-nl-header-asset.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-nl-header-asset.json', LF will be replaced by CRLF the next time Git touches it
+[nl-header-asset 9168425] docs: lane exit contract for nl-header-asset
+ 2 files changed, 35 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-nl-header-asset.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-nl-header-asset.json
+[0m
+[0m$ [0mgit log --oneline -3
+9168425 docs: lane exit contract for nl-header-asset
+ac186a6 assets: host Ops Briefing Issue 1 header image (newsletter/assets)
+f94af0f chore: lane report for ops022-fix-price-spacing
+[0m
+Done. Two commits on `nl-header-asset`:
+
+1. **`ac186a6`** — `ops-briefing-header.png` (34,017 bytes) in `public/newsletter/assets/`
+2. **`9168425`** — Lane exit contract (`.context/lane-reports/`)
+
+`next.config.ts` has no blocks — the only `/:path*` rule is security headers, not rewrites or redirects. The image will be served at `/newsletter/assets/ops-briefing-header.png`.

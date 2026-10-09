@@ -1,0 +1,206 @@
+Do a keyword research pass instead. The business is an operations and technology consultancy for UK garment decorators, screen printers, embroiderers, workwear suppliers, sign and label makers and promotional merchandise companies, plus three apps: an ERP (Decoded Works), an artwork approval app (Decoded Proof) and a B2B storefront (Decoded Commerce). For the UK market give me a table of keywords with monthly search volume, keyword difficulty, intent and the top 3 ranking domains for each, covering: (a) software category terms like print shop management software, embroidery business software, garment decoration ERP, workwear ERP, artwork approval software, online proofing for printers, B2B ordering portal for workwear; (b) named competitor/alternative terms like DecoNetwork, Printavo, InkSoft, OnPrintShop, Teesom, YoPrint, OrderWise, Khaos Control, Unleashed, Cin7, Katana; (c) problem terms like double data entry, spreadsheet order tracking, Shopify to ERP integration, WooCommerce order sync, artwork approval process; (d) consultancy terms like operations consultant print industry, fractional CTO small business UK, business systems audit. Put the full table in a document, at least 80 rows, sorted by volume. Then list which existing decodedops.co.uk pages could own each cluster and where a new page is needed.
+Thought process
+— Initial assessment: The request is for UK-focused keyword research related to a...
+
+Initial assessment: The request is for UK-focused keyword research related to a consultancy serving the garment decoration industry, including their software products. It's crucial to identify relevant search terms covering both the consultancy services and the specific software offerings.
+
+I need to understand the relationship between the target audience and the company's offerings to formulate relevant keywords that encompass both business needs and software solutions. The business's context is very important to identify the main customer segments.
+
+Focus is on identifying keywords related to operations, technology, garment decoration, and the three associated apps.
+
+Expanding the initial keyword set requires a multi-faceted approach, incorporating related terms and competitive analyses. The goal is to generate a comprehensive dataset exceeding 80 rows, detailing monthly UK search volume, keyword difficulty, search intent, and the top ranking domains for a thorough understanding of the landscape. Using the specified sub-clusters, a targeted keyword research strategy will be applied for more granular data.
+
+Need to gather keyword data across four distinct clusters for the UK market. The required metrics are volume, keyword difficulty, search intent, and top ranking SERP results. Will organize this task using a planning widget.
+
+Need to generate a table with at least 80 rows, sorted by search volume. The table requires Keyword, Monthly Search Volume (UK), Keyword Difficulty (KD), Intent, and Top 3 Ranking Domains columns. Initial focus is on the software category terms provided to begin the compilation.
+
+UK Keyword & SERP Research
+6/6
+
+An in-depth UK (GB) keyword research pass has been conducted across all four requested pillars: Software Categories, Competitors & Alternatives, Problem & Workflow Terms, and Consultancy / Systems Audits.
+
+The full analysis of 85 keyword targets, sorted by monthly UK search volume, is documented below.
+
+Decoded Ops - UK Keyword Research Matrix (85 Opportunities)
+Document
+Cluster Mapping: Existing URLs vs. Required New Pages
+
+To capture this demand systematically, the clusters should be divided between optimizing existing pages and building dedicated product/solution landing pages.
+
+TEXT
+Cluster Architecture:
+├── Existing Pages (Authority & Service Optimization)
+│ ├── /problems/ecommerce-not-connected (Integrations & Connectors)
+│ ├── /locations/fractional-cto & /locations/tech-audit (Consultancy & Audits)
+│ ├── /sectors/workwear-teamwear (Industry Niche ERP)
+│ └── /blog/orderwise-what-it-does-well-what-it-doesn-t (Competitor Reviews)
+│
+└── New Dedicated Pages Needed (Apps, Alternatives & Workflows)
+ ├── /apps/decoded-works (Print & Decoration ERP Landing Page)
+ ├── /apps/decoded-proof (Artwork Approval & Online Proofing)
+ ├── /apps/decoded-commerce (B2B Workwear & Merch Ordering Portal)
+ ├── /compare/ (Competitor Alternative & Comparison Hub)
+ └── /problems/spreadsheet-order-tracking (Operational Bottlenecks)
+# 1. Cluster: Software Categories (ERP, Proofing & Portals)
+•
+Target Queries: print shop management software, embroidery business software, garment decoration erp, artwork approval software, online proofing software, b2b ordering portal.
+•
+Existing Pages to Own Partial Demand:
+•
+https://decodedops.co.uk/sectors/workwear-teamwear → Target workwear erp, workwear erp software.
+•
+https://decodedops.co.uk/sectors/garment-decoration → Target garment decoration erp, embroidery business software.
+•
+New Pages Needed:
+•
+/apps/decoded-works (New Product Landing Page): Dedicated SaaS/ERP solution page targeting print shop management software, garment decoration erp, and screen print shop management.
+•
+/apps/decoded-proof (New Product Landing Page): Dedicated artwork approval software page targeting artwork approval software, online proofing software, client proofing software, and pdf approval software.
+•
+/apps/decoded-commerce (New Product Landing Page): B2B portal landing page targeting b2b ordering portal, b2b customer portal, and workwear ordering portal.
+# 2. Cluster: Competitors, Alternatives & Switcher Intent
+•
+Target Queries: orderwise review, orderwise alternatives, cin7 vs unleashed, deconetwork alternatives, printavo alternatives, khaos control review.
+•
+Existing Pages to Own Partial Demand:
+•
+https://decodedops.co.uk/blog/orderwise-what-it-does-well-what-it-doesn-t → Expand to fully own orderwise review, orderwise erp uk, and orderwise migration.
+•
+New Pages Needed:
+•
+/compare/cin7-vs-unleashed-for-decorated-goods (New Comparison Guide): Captures high-intent searchers choosing between general inventory ERPs (KD 11, $32+ CPC).
+•
+/compare/deconetwork-alternatives (New Switcher Hub): Targets print and embroidery shops outgrowing DecoNetwork.
+•
+/compare/printavo-alternatives-uk (New Switcher Hub): Positions Decoded Works against US-centric solutions for UK decorators.
+# 3. Cluster: Problem-Aware & Systems Integration
+•
+Target Queries: double data entry, spreadsheet order tracking, shopify to erp integration, woocommerce order sync, manual order entry errors, artwork bottleneck.
+•
+Existing Pages to Own Partial Demand:
+•
+https://decodedops.co.uk/problems/ecommerce-not-connected → Expand to target shopify to erp integration, woocommerce order sync, and woocommerce erp connector.
+•
+https://decodedops.co.uk/blog/embroidery-quality-standards-stitch-density-thread-durability → Retain embroidery proofing process.
+•
+New Pages Needed:
+•
+/problems/spreadsheet-order-tracking (New Problem Guide): Target excel order management, spreadsheet order tracking, and eliminate manual data entry with a clear transition path to Decoded Works/consultancy.
+•
+/problems/artwork-approval-bottlenecks (New Problem Guide): Target artwork bottleneck and artwork approval process, funnelling users to Decoded Proof.
+# 4. Cluster: Consultancy & Advisory Services
+•
+Target Queries: fractional cto uk, fractional cto small business uk, business systems audit, operations consultant uk, print consultancy uk.
+•
+Existing Pages to Own Demand:
+•
+https://decodedops.co.uk/locations/fractional-cto → Optimize to own fractional cto uk (KD 16, 30/mo) and fractional cto small business uk (KD 15).
+•
+https://decodedops.co.uk/locations/tech-audit → Optimize to own business systems audit (KD 18) and it audit uk.
+•
+https://decodedops.co.uk/how-i-build → Target print consultancy uk and print industry consultant.
+Suggested follow-up actions
+
+SUGGESTED FOLLOW-UPS
+
+Create /apps/decoded-works landing page brief
+Create /apps/decoded-proof landing page brief
+Draft Cin7 vs Unleashed comparison article
+UK Keyword & SERP Research
+0/6
+
+Nothing will be published without your approval.
+
+Download
+Decoded Ops - UK Keyword Research Matrix (85 Opportunities)
+Decoded Ops: UK Keyword Research Matrix (85 Targets)
+
+Market: United Kingdom (GB) | Focus: B2B Garment Decoration, Print, Workwear, ERP & Consultancy
+
+#	Keyword	Monthly Search Volume (UK)	Keyword Difficulty (KD)	Search Intent	Top 3 Ranking Domains (UK SERP)
+1	unleashed	8,100	49	Navigational / Broad	unleashedsoftware.com, capterra.co.uk, trustpilot.com
+2	cin7	1,300	75	Navigational / Commercial	cin7.com, capterra.co.uk, g2.com
+3	orderwise	1,000	34	Navigational / Commercial	orderwise.co.uk, linkedin.com, glassdoor.co.uk
+4	khaos control	390	38	Navigational	khaoscontrol.com, capterra.co.uk, trustpilot.com
+5	deconetwork	140	42	Navigational / Commercial	deconetwork.com, capterra.co.uk, facebook.com
+6	web to print software	90	46	Commercial / Transactional	onprintshop.com, capterra.co.uk, gelato.com
+7	printavo	90	76	Navigational / Commercial	printavo.com, capterra.co.uk, g2.com
+8	orderwise review	70	59	Commercial Investigation	trustpilot.com, glassdoor.co.uk, g2.com
+9	onprintshop	50	58	Navigational	onprintshop.com, capterra.co.uk, g2.com
+10	print estimating software	40	34	Commercial / High-Value	clarity-software.com, tharasystems.com, capterra.co.uk
+11	online proofing software	30	41	Commercial / Transactional	filestage.io, ziflow.com, capterra.co.uk
+12	print mis	30	35	Commercial / Informational	tharstern.com, shuttleworth-uk.com, clarity-software.com
+13	fractional cto uk	30	16	Commercial / Executive Service	fractionalcto.uk, linkedin.com, thecto.group
+14	artwork approval software	20	35	Commercial / Transactional	filestage.io, approvalstudio.com, capterra.co.uk
+15	b2b customer portal	20	44	Commercial / Transactional	zoho.com, magento.com, shopify.com
+16	embroidery software uk	20	14	Transactional / Local	wilcom.com, embroiderysuperstore.co.uk, gs-uk.com
+17	print production software	20	63	Commercial	efi.com, onprintshop.com, capterra.co.uk
+18	artwork approval process	20	35	Informational / Educational	filestage.io, ziflow.com, smartsheet.com
+19	inksoft	20	78	Navigational	inksoft.com, capterra.co.uk, g2.com
+20	b2b ordering portal	10	37	Commercial / Transactional	sparklayer.io, b2bwave.com, cloudfy.com
+21	embroidery business software	10	38	Commercial / Transactional	deconetwork.com, printavo.com, capterra.co.uk
+22	print shop management software	10	32	Commercial / Transactional	printavo.com, clarity-software.com, capterra.co.uk
+23	screen printing software	10	23	Commercial	printavo.com, deconetwork.com, t-shirtforums.com
+24	web to print uk	10	23	Commercial / Local	onprintshop.com, w2p.co.uk, gelato.com
+25	client proofing software	10	60	Commercial / Solution-Aware	ziflow.com, filestage.io, g2.com
+26	design approval software	10	56	Commercial / Solution-Aware	filestage.io, invisionapp.com, capterra.co.uk
+27	online proofing tool	10	47	Commercial / Evaluative	filestage.io, ziflow.com, pageproof.com
+28	print mis software	10	32	Commercial	tharstern.com, capterra.co.uk, softwareadvice.co.uk
+29	proofing software for printers	10	48	Commercial / Niche	pageproof.com, filestage.io, ziflow.com
+30	cin7 vs unleashed	10	11	Comparison / High Intent	capterra.co.uk, softwareadvice.co.uk, trustradius.com
+31	deconetwork alternatives	10	46	Commercial / Switcher Intent	capterra.co.uk, g2.com, softwareadvice.co.uk
+32	inksoft alternatives	10	46	Commercial / Switcher Intent	capterra.co.uk, g2.com, printavo.com
+33	khaos control review	10	50	Commercial Investigation	trustpilot.com, capterra.co.uk, g2.com
+34	printavo alternatives	10	44	Commercial / Switcher Intent	capterra.co.uk, g2.com, deconetwork.com
+35	katana cloud manufacturing	10	53	Navigational / Commercial	katanamrp.com, capterra.co.uk, g2.com
+36	teesom	10	35	Navigational	teesom.com, facebook.com, capterra.com
+37	yoprint	10	47	Navigational	yoprint.com, capterra.co.uk, g2.com
+38	double data entry	10	75	Informational / Problem-Aware	investopedia.com, wikipedia.org, techtarget.com
+39	woocommerce order sync	10	77	Technical / Commercial	woocommerce.com, zapier.com, make.com
+40	woocommerce order management	10	48	Solution-Aware / Commercial	woocommerce.com, hubspot.com, capterra.co.uk
+41	eliminate manual data entry	10	31	Problem-Aware / Solution	zapier.com, uipath.com, make.com
+42	excel order management	10	24	Problem-Aware / Alternative	smartsheet.com, vertex42.com, hubspot.com
+43	woocommerce erp connector	10	50	Commercial / Integration	woocommerce.com, makewebbetter.com, cedcommerce.com
+44	business systems audit	10	18	Commercial / Service	bdo.co.uk, grantthornton.co.uk, rsmuk.com
+45	it audit uk	10	62	Commercial / Compliance	pwc.co.uk, deloitte.com, kpmg.com
+46	garment decoration erp	<10	37	Commercial / Niche	deconetwork.com, aptean.com, capterra.co.uk
+47	workwear erp	<10	31	Commercial / Niche	orderwise.co.uk, khaoscontrol.com, aptean.com
+48	workwear erp software	<10	30	Commercial / Specific	orderwise.co.uk, decodedops.co.uk, khaoscontrol.com
+49	print shop crm	<10	27	Commercial	printavo.com, hubspot.com, capterra.co.uk
+50	garment printing software	<10	45	Commercial / Niche	deconetwork.com, cadlink.com, wilcom.com
+51	pdf approval software	<10	25	Solution-Aware	filestage.io, pageproof.com, adobe.com
+52	workwear ordering portal	<10	25	Commercial / B2B	sparklayer.io, cloudfy.com, b2bwave.com
+53	b2b workwear webshop	<10	22	Commercial / Transactional	shopify.com, magento.com, bigcommerce.com
+54	artwork approval tool	<10	35	Solution-Aware	filestage.io, ziflow.com, approvalstudio.com
+55	print quote software	<10	29	Commercial	clarity-software.com, tharasystems.com, capterra.co.uk
+56	screen print shop management	<10	28	Commercial / Niche	printavo.com, deconetwork.com, yoprint.com
+57	orderwise alternatives	<10	46	Switcher / High Intent	capterra.co.uk, softwareadvice.co.uk, trustradius.com
+58	orderwise erp uk	<10	34	Commercial Investigation	orderwise.co.uk, decodedops.co.uk, linkedin.com
+59	deconetwork uk	<10	47	Navigational / Local	deconetwork.com, linkedin.com, capterra.co.uk
+60	printavo uk	<10	56	Navigational	printavo.com, g2.com, capterra.co.uk
+61	yoprint uk	<10	13	Navigational	yoprint.com, capterra.co.uk, g2.com
+62	katana mrp uk	<10	23	Navigational / Commercial	katanamrp.com, capterra.co.uk, g2.com
+63	cin7 uk review	<10	42	Commercial Investigation	trustpilot.com, g2.com, capterra.co.uk
+64	unleashed software review	<10	39	Commercial Investigation	trustpilot.com, capterra.co.uk, softwareadvice.co.uk
+65	teesom review	<10	20	Commercial Investigation	capterra.com, g2.com, softwareadvice.com
+66	shopify to erp integration	<10	47	Solution-Aware	celigo.com, patchworks.com, shopify.com
+67	shopify erp integration uk	<10	18	High-Intent Commercial	patchworks.com, orderwise.co.uk, celigo.com
+68	spreadsheet order tracking	<10	46	Problem-Aware	smartsheet.com, clickup.com, airtable.com
+69	inventory management print shop	<10	39	Solution-Aware	printavo.com, deconetwork.com, katanamrp.com
+70	artwork bottleneck	<10	25	Problem-Aware	filestage.io, ziflow.com, decodedops.co.uk
+71	automate order entry	<10	61	Commercial / Solution	zapier.com, make.com, uipath.com
+72	embroidery proofing process	<10	4	Informational / Educational	decodedops.co.uk, wilcom.com, t-shirtforums.com
+73	manual order entry errors	<10	48	Problem-Aware	scanco.com, hubspot.com, investopedia.com
+74	print shop workflow automation	<10	46	Commercial / Solution	onprintshop.com, efi.com, clarity-software.com
+75	workwear order management	<10	26	Commercial / Niche	orderwise.co.uk, khaoscontrol.com, decodedops.co.uk
+76	operations consultant uk	<10	31	Commercial / Professional Service	managementconsultancy.co.uk, linkedin.com, clutch.co
+77	fractional cto small business uk	<10	15	High-Intent Commercial	fractionalcto.uk, thecto.group, decodedops.co.uk
+78	print consultancy uk	<10	8	Commercial / Specialist	decodedops.co.uk, theprintconsultant.co.uk, linkedin.com
+79	operations consultant london	<10	46	Commercial / Local	clutch.co, linkedin.com, yell.com
+80	part time cto uk	<10	40	Commercial / Executive Service	fractionalcto.uk, linkedin.com, thecto.group
+81	print industry consultant	<10	24	Commercial / Specialist	decodedops.co.uk, theprintconsultancy.co.uk, linkedin.com
+82	systems audit uk	<10	70	Commercial / Technical	bdo.co.uk, grantthornton.co.uk, pwc.co.uk
+83	technology consultant small business	<10	48	Commercial / Advisory	clutch.co, accenture.com, linkedin.com
+84	orderwise migration	<10	22	High-Intent Switcher	decodedops.co.uk, orderwise.co.uk, linkedin.com
+85	khaos control alternatives	<10	33	Switcher Intent	capterra.co.uk, softwareadvice.co.uk, g2.com
+1 / 1

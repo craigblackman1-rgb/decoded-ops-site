@@ -1,0 +1,29 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0m# [0mTodos
+[ΓÇó] Find CSS/component causing article.card to be 394px wide at 390px viewport
+[ ] Fix the sizing to prevent horizontal overflow
+[ ] Verify fix with tsc/lint
+[ ] Commit changes
+[ ] Write lane exit contract files
+[0m
+[0mΓ£▒ [0mGlob "app/case-studies/eternal-fitness/**/*"[90m 1 match[0m
+[0mΓ£▒ [0mGrep "article\.card|article-card|ArticleCard"[90m 0 matches[0m
+[0mΓåÆ [0mRead app/case-studies/eternal-fitness/page.tsx
+[0mΓ£▒ [0mGrep "\.grid--3|\.grid\s|grid\.grid"[90m 2 matches[0m
+[0mΓ£▒ [0mGrep "\.card\s*\{|article\.card"[90m 5 matches[0m
+[0mΓ£▒ [0mGlob "app/d17-apps-cases.css"[90m 1 match[0m
+[0mΓåÆ [0mRead app/design-system/ds-marketing.css[90m [offset=175, limit=50][0m
+[0mΓåÆ [0mRead app/globals.css[90m [offset=1, limit=100][0m
+[0mΓ£▒ [0mGrep "\.wrap\s*\{"[90m 6 matches[0m
+[0mΓåÆ [0mRead app/globals.css[90m [offset=100, limit=100][0m
+[0mΓ£▒ [0mGlob "app/d17-global.css"[90m 1 match[0m
+[0mΓåÆ [0mRead app/d17-apps-cases.css[90m [limit=60, offset=440][0m
+[0mΓåÆ [0mRead app/d17-global.css[90m [limit=80, offset=1][0m
+[0mΓ£▒ [0mGrep "\.g-tint|\.g-off|\.g-white"[90m 5 matches[0m
+[0mΓåÆ [0mRead app/design-system/ds-marketing.css[90m [limit=30, offset=1][0m
+[0mΓåÆ [0mRead app/design-system/ds-marketing.css[90m [limit=30, offset=270][0m
+[0mΓåÆ [0mRead app/design-system/ds-marketing.css[90m [limit=70, offset=30][0m
+Let me check the layout sections and understand the card sizing better.
+[0mΓåÆ [0mRead app/d17-apps-cases.css[90m [limit=30, offset=1][0m

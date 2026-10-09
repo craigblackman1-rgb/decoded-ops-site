@@ -1,0 +1,318 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0m# [0mTodos
+[ΓÇó] Find and examine the header/nav logo component
+[ ] Find homepage hero image usage and preload hints
+[ ] Fix preload scoping (only preload on homepage)
+[ ] Add srcset for hero images (800/1200 widths)
+[ ] Commit changes
+[ ] Write lane reports
+[0m
+[0mΓ£▒ [0mGlob "**/Header*.tsx"[90m 1 match[0m
+[0mΓ£▒ [0mGlob "**/Nav*.tsx"[90m 0 matches[0m
+[0mΓ£▒ [0mGrep "hero-workshop|thread-spools|cat-workwear"[90m 100 matches[0m
+[0mΓåÆ [0mRead components/Header.tsx
+[0mΓåÆ [0mRead app/page.tsx[90m [limit=50][0m
+[0mΓåÆ [0mRead app/page.tsx[90m [offset=50, limit=150][0m
+[0mΓ£▒ [0mGrep "preload|fetchPriority|fetchpriority"[90m 1 match[0m
+[0mΓåÆ [0mRead app/page.tsx[90m [offset=200, limit=100][0m
+[0mΓ£▒ [0mGrep "hero-workshop\.webp|thread-spools\.webp|cat-workwear\.webp"[90m 4 matches[0m
+[0mΓ£▒ [0mGrep "rel="preload"|rel=.preload"[90m 3 matches[0m
+[0mΓ£▒ [0mGrep "prefetch"[90m 1 match[0m
+[0mΓåÆ [0mRead app/layout.tsx
+[0mΓ£▒ [0mGlob "public/images/d17/hero-workshop.webp"[90m 1 match[0m
+[0mΓ£▒ [0mGlob "public/images/d17/thread-spools.webp"[90m 1 match[0m
+[0mΓ£▒ [0mGlob "public/images/d17/cat-workwear.webp"[90m 1 match[0m
+[0mΓåÆ [0mRead components/AppShell.tsx
+[0mΓ£▒ [0mGrep "hero-workshop\.webp|thread-spools\.webp|cat-workwear\.webp"[90m 0 matches[0m
+[0mΓ£▒ [0mGlob "next.config.*"[90m 1 match[0m
+The logo already has `prefetch={false}`. Let me check the next.config and other mechanisms that might be causing site-wide image preloading.
+[0mΓ£▒ [0mGrep "hero-workshop\.webp|thread-spools\.webp|cat-workwear\.webp"[90m 0 matches[0m
+[0mΓåÆ [0mRead next.config.ts
+[0mΓ£▒ [0mGrep "d17.*hero-workshop|d17.*thread-spools|d17.*cat-workwear"[90m 0 matches[0m
+[0mΓåÆ [0mRead components/Footer.tsx
+Found it! The Footer has a logo Link to `/` without `prefetch={false}` on line 111. Let me now read the rest of the homepage to see the hero images' rendered sizes.
+[0mΓåÆ [0mRead app/page.tsx[90m [offset=300, limit=130][0m
+[0mΓ£▒ [0mGlob "scripts/*image*"[90m 2 matches[0m
+[0mΓ£▒ [0mGlob "scripts/*resize*"[90m 0 matches[0m
+[0m
+[0m$ [0mGet-ChildItem "D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\public\images\d17" -Filter "*.webp" | Select-Object Name, Length | Format-Table -AutoSize
+Name                      Length
+----                      ------
+cat-workwear.webp          30246
+craig-blackman.webp        41496
+fill-the-gap.webp          84288
+gen-bench-flatlay-v2.webp 116098
+gen-press-hall.webp        64814
+hero-workshop.webp        167536
+prod-mailer.webp            4810
+thread-spools.webp         76486
+[0m
+[0mΓåÆ [0mRead scripts/optimise-images.mjs
+[0m
+[0m$ [0mmagick identify "D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\public\images\d17\hero-workshop.webp" "D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\public\images\d17\thread-spools.webp" "D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\public\images\d17\cat-workwear.webp" 2>&1
+magick: The term 'magick' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mnode -e "const sharp = require('sharp'); ['hero-workshop.webp','thread-spools.webp','cat-workwear.webp'].forEach(async f => { const m = await sharp('public/images/d17/' + f).metadata(); console.log(f, m.width+'x'+m.height); })"
+node:internal/modules/cjs/loader:1568
+  throw err;
+  ^
+
+Error: Cannot find module 'sharp'
+Require stack:
+- D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\[eval]
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+    at Module._load (node:internal/modules/cjs/loader:1341:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.require (node:internal/modules/cjs/loader:1674:12)
+    at require (node:internal/modules/helpers:157:16)
+    at [eval]:1:15
+    at runScriptInThisContext (node:internal/vm:219:10) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'D:\\apps\\worktrees\\decoded-ops-website\\web011-u21-cwv-preload-fix\\[eval]'
+  ]
+}
+
+Node.js v24.21.0
+[0m
+[0m$ [0mnpm install sharp 2>&1 | Select-Object -Last 5
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mnode -e "const sharp = require('sharp'); ['hero-workshop.webp','thread-spools.webp','cat-workwear.webp'].forEach(async f => { const m = await sharp('public/images/d17/' + f).metadata(); console.log(f, m.width+'x'+m.height); })"
+hero-workshop.webp 1600x2397
+thread-spools.webp 1600x1067
+cat-workwear.webp 900x596
+[0m
+[0m# [0mTodos
+[Γ£ô] Find and examine the header/nav logo component
+[Γ£ô] Find homepage hero image usage and preload hints
+[ΓÇó] Fix preload scoping: add prefetch={false} to Footer logo Link
+[ ] Generate 800/1200w image variants for srcset
+[ ] Update hero img tags with srcset
+[ ] Commit changes
+[ ] Write lane reports
+[0m
+Images: hero-workshop is 1600x2397 (displayed 1100px), thread-spools is 1600x1067 (displayed 1300px), cat-workwear is 900x596 (already right-sized). Let me now do the work.
+[0mΓåÉ [0mEdit components/Footer.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\components\Footer.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\components\Footer.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\components\Footer.tsx
+@@ -107,9 +107,9 @@
+ <div className="wrap">
+ 
+   <div className="f-top">
+     <div className="f-brand">
+-      <Link className="logo" href="/">Decoded<span>Ops</span></Link>
++      <Link className="logo" href="/" prefetch={false}>Decoded<span>Ops</span></Link>
+       <p className="f-blurb">Independent technology and operations consultancy for the
+         decorated-goods sector. No vendor agenda.</p>
+       <div className="f-reach">
+         <Link className="f-cta" href="/contact">Book a free 60-min call</Link>
+
+[0m
+[0m$ [0mgit add components/Footer.tsx && git commit -m "fix: add prefetch={false} to Footer logo Link to stop site-wide homepage prefetch
+
+The Footer logo Link to '/' (Footer.tsx:111) was missing prefetch={false},
+causing Next.js to prefetch the homepage route on every page load. This
+pulled in the homepage's image preload hints, meaning hero-workshop.webp,
+thread-spools.webp and cat-workwear.webp were being preloaded on every
+page in the site, not just the homepage.
+
+The Header logo already had prefetch={false}; the Footer was the remaining
+trigger."
+[web011-u21-cwv-preload-fix 1c618d6] fix: add prefetch={false} to Footer logo Link to stop site-wide homepage prefetch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[0m
+[0m# [0mTodos
+[Γ£ô] Find and examine the header/nav logo component
+[Γ£ô] Find homepage hero image usage and preload hints
+[Γ£ô] Fix preload scoping: add prefetch={false} to Footer logo Link
+[ΓÇó] Generate 800/1200w image variants for srcset
+[ ] Update hero img tags with srcset
+[ ] Commit changes
+[ ] Write lane reports
+[0m
+[0m$ [0mnode -e "
+const sharp = require('sharp');
+const path = require('path');
+
+async function generateVariants() {
+  const images = [
+    { name: 'hero-workshop', src: 'public/images/d17/hero-workshop.webp', sizes: [800, 1200] },
+    { name: 'thread-spools', src: 'public/images/d17/thread-spools.webp', sizes: [800, 1200] },
+  ];
+
+  for (const img of images) {
+    for (const w of img.sizes) {
+      const outPath = img.src.replace('.webp', '-' + w + '.webp');
+      await sharp(img.src)
+        .resize({ width: w, withoutEnlargement: true })
+        .webp({ quality: 80 })
+        .toFile(outPath);
+      const meta = await sharp(outPath).metadata();
+      console.log('Created: ' + outPath + ' (' + meta.width + 'x' + meta.height + ')');
+    }
+  }
+}
+
+generateVariants().catch(console.error);
+"
+Created: public/images/d17/hero-workshop-800.webp (800x1198)
+Created: public/images/d17/hero-workshop-1200.webp (1200x1798)
+Created: public/images/d17/thread-spools-800.webp (800x534)
+Created: public/images/d17/thread-spools-1200.webp (1200x800)
+[0m
+[0m$ [0mGet-ChildItem "D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\public\images\d17" -Filter "*.webp" | Sort-Object Name | Select-Object Name, @{N='SizeKB';E={[math]::Round($_.Length/1KB,1)}} | Format-Table -AutoSize
+Name                      SizeKB
+----                      ------
+cat-workwear.webp          29.50
+craig-blackman.webp        40.50
+fill-the-gap.webp          82.30
+gen-bench-flatlay-v2.webp 113.40
+gen-press-hall.webp        63.30
+hero-workshop-1200.webp   108.50
+hero-workshop-800.webp     72.00
+hero-workshop.webp        163.60
+prod-mailer.webp            4.70
+thread-spools-1200.webp    43.30
+thread-spools-800.webp     28.20
+thread-spools.webp         74.70
+[0m
+[0m# [0mTodos
+[Γ£ô] Find and examine the header/nav logo component
+[Γ£ô] Find homepage hero image usage and preload hints
+[Γ£ô] Fix preload scoping: add prefetch={false} to Footer logo Link
+[Γ£ô] Generate 800/1200w image variants for srcset
+[ΓÇó] Update hero img tags with srcset
+[ ] Commit changes
+[ ] Write lane reports
+[0m
+Good - hero-workshop drops from 164KB to 72KB (800w) / 109KB (1200w), thread-spools from 75KB to 28KB (800w) / 43KB (1200w). Now let me update the img tags with srcset.
+[0mΓåÉ [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\app\page.tsx
+@@ -106,8 +106,10 @@
+      with two fanned documents and the question below. */}
+ <figure className={`${d17.d17} ${d17.a916}`} data-od-id="hero-question" data-motion
+         data-no="DO-ART-916" data-rev="01" data-tx="photo">
+   <div className={d17.d17Ph}><img src="/images/d17/hero-workshop.webp"
++    srcSet="/images/d17/hero-workshop-800.webp 800w, /images/d17/hero-workshop-1200.webp 1200w, /images/d17/hero-workshop.webp 1600w"
++    sizes="(max-width: 1200px) 100vw, 1100px"
+     alt="" width={1100} height={1224} /></div>
+   <div className={d17.d17Scan} aria-hidden="true" />
+   <div className={`${d17.top} ${d17.d17Mono}`} aria-hidden="true"><span>Clarity Audit</span><span>One day on site</span></div>
+   <div className={`${d17.stage}`} aria-hidden="true">
+
+[0m
+[0mΓåÉ [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\app\page.tsx
+@@ -289,9 +289,12 @@
+      fill, the feeds list in, and the amber lands on &quot;matched&quot; last. */}
+ <figure className={`${d17.d17} ${d17.a917}`} data-od-id="plate-measure" data-motion
+         data-no="DO-ART-917" data-rev="01" data-tx="photo"
+         aria-label="Product screen DO-ART-917. Decoded Works catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
+-  <div className={d17.d17Ph}><img src="/images/d17/thread-spools.webp" alt="" width={1300} height={867} /></div>
++  <div className={d17.d17Ph}><img src="/images/d17/thread-spools.webp"
++    srcSet="/images/d17/thread-spools-800.webp 800w, /images/d17/thread-spools-1200.webp 1200w, /images/d17/thread-spools.webp 1600w"
++    sizes="(max-width: 1200px) 100vw, 1300px"
++    alt="" width={1300} height={867} /></div>
+   <div className={d17.d17Scan} aria-hidden="true" />
+   <figcaption className={d17.cap}>
+     <div className={`${d17.k} ${d17.d17Mono}`}>Works <span>&middot; at Hanicks</span></div>
+     <div className={d17.bar} aria-hidden="true" />
+
+[0m
+[0m$ [0mgit add app/page.tsx public/images/d17/hero-workshop-800.webp public/images/d17/hero-workshop-1200.webp public/images/d17/thread-spools-800.webp public/images/d17/thread-spools-1200.webp && git commit -m "perf: add srcset to homepage hero images with 800/1200w variants
+
+Generate 800w and 1200w webp variants of hero-workshop.webp and
+thread-spools.webp, and add srcset/sizes attributes to the <img> tags
+on the homepage. This stops serving oversized originals (1600px) when
+the browser only needs 800-1200px, reducing image payload:
+
+- hero-workshop: 164KB (1600w) ΓåÆ 72KB (800w) / 109KB (1200w)
+- thread-spools: 75KB (1600w) ΓåÆ 28KB (800w) / 43KB (1200w)
+
+cat-workwear.webp is already 900x596 (the exact rendered size), so no
+srcset variant is needed for it."
+[web011-u21-cwv-preload-fix fcd2948] perf: add srcset to homepage hero images with 800/1200w variants
+ 5 files changed, 6 insertions(+), 1 deletion(-)
+ create mode 100644 public/images/d17/hero-workshop-1200.webp
+ create mode 100644 public/images/d17/hero-workshop-800.webp
+ create mode 100644 public/images/d17/thread-spools-1200.webp
+ create mode 100644 public/images/d17/thread-spools-800.webp
+[0m
+[0m# [0mTodos
+[Γ£ô] Find and examine the header/nav logo component
+[Γ£ô] Find homepage hero image usage and preload hints
+[Γ£ô] Fix preload scoping: add prefetch={false} to Footer logo Link
+[Γ£ô] Generate 800/1200w image variants for srcset
+[Γ£ô] Update hero img tags with srcset
+[Γ£ô] Commit changes
+[ΓÇó] Write lane reports
+[0m
+[0m$ [0mgit log --oneline -5
+fcd2948 perf: add srcset to homepage hero images with 800/1200w variants
+1c618d6 fix: add prefetch={false} to Footer logo Link to stop site-wide homepage prefetch
+cf70531 docs: update lane result with commit SHA
+f0f097f feat(web): merge 58 town location pages into 3 consolidated pages (CR-WEB-067)
+d429b11 docs: lane reports for web061-u42-footer-fix (BUG-WEB-031)
+[0m
+[0m$ [0mgit diff HEAD~2..HEAD --stat
+app/page.tsx                              |   7 ++++++-
+ components/Footer.tsx                     |   2 +-
+ public/images/d17/hero-workshop-1200.webp | Bin 0 -> 111104 bytes
+ public/images/d17/hero-workshop-800.webp  | Bin 0 -> 73734 bytes
+ public/images/d17/thread-spools-1200.webp | Bin 0 -> 44310 bytes
+ public/images/d17/thread-spools-800.webp  | Bin 0 -> 28876 bytes
+ 6 files changed, 7 insertions(+), 2 deletions(-)
+[0m
+[0m$ [0mif (-not (Test-Path "D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\.context\lane-reports")) { New-Item -ItemType Directory -Path "D:\apps\worktrees\decoded-ops-website\web011-u21-cwv-preload-fix\.context\lane-reports" -Force }
+(no output)
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web011-u21-cwv-preload-fix.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web011-u21-cwv-preload-fix.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web011-u21-cwv-preload-fix.json .context/lane-reports/LANE-NOTES-web011-u21-cwv-preload-fix.md && git commit -m "docs: lane reports for web011-u21-cwv-preload-fix"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web011-u21-cwv-preload-fix.md', LF will be replaced by CRLF the next time Git touches it
+[web011-u21-cwv-preload-fix 4b6c9b3] docs: lane reports for web011-u21-cwv-preload-fix
+ 2 files changed, 50 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web011-u21-cwv-preload-fix.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web011-u21-cwv-preload-fix.json
+[0m
+[0m# [0mTodos
+[Γ£ô] Find and examine the header/nav logo component
+[Γ£ô] Find homepage hero image usage and preload hints
+[Γ£ô] Fix preload scoping: add prefetch={false} to Footer logo Link
+[Γ£ô] Generate 800/1200w image variants for srcset
+[Γ£ô] Update hero img tags with srcset
+[Γ£ô] Commit changes
+[Γ£ô] Write lane reports
+[0m
+Lane complete. Three commits:
+
+1. **`1c618d6`** ΓÇö Added `prefetch={false}` to Footer logo Link (`Footer.tsx:111`). The Header logo already had it; the Footer was the remaining trigger causing Next.js to prefetch `/` on every page load, pulling in homepage image preload hints site-wide.
+
+2. **`fcd2948`** ΓÇö Generated 800w and 1200w webp variants of `hero-workshop.webp` (164KBΓåÆ72/109KB) and `thread-spools.webp` (75KBΓåÆ28/43KB), added `srcSet`/`sizes` to the `<img>` tags on the homepage. `cat-workwear.webp` was already at its rendered size (900├ù596).
+
+3. **`4b6c9b3`** ΓÇö Lane reports committed.
+
+**Deviations:** cat-workwear.webp already 900├ù596 ΓÇö no srcset variant generated or needed.

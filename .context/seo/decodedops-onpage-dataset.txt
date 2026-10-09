@@ -1,0 +1,261 @@
+Decoded Ops: Complete On-Page Crawl & Content Dataset
+
+Domain: decodedops.co.uk Site Audit ID: 153134 | Total Crawled Pages: 164
+
+1. Title Tag Audit: Current vs. Proposed (All 23 URLs)
+#	URL Path	Current Live Title Tag	Proposed Optimized Title Tag
+1	/	Decoded Ops: operations and technology consultancy for decorated goods	Operations & Technology Consultancy for UK Print & Workwear | Decoded Ops
+2	/how-i-build	How I build: Decoded Ops	How Solutions Are Built: Options, Costs & Unbiased Advice | Decoded Ops
+3	/pricing	Pricing: Decoded Ops	Pricing: Clarity Audit & Operations Consultancy Services | Decoded Ops
+4	/transform	Transform: Decoded Ops	Transform Your Operations: Process & System Redesign | Decoded Ops
+5	/problems	Problems solved: Decoded Ops	Operational Problems in Print & Promotional Merchandise | Decoded Ops
+6	/retained	Fractional CTO: Decoded Ops	Fractional CTO Services: Ongoing Technology Leadership | Decoded Ops
+7	/apps/commerce	Decoded Commerce: Decoded Ops	Decoded Commerce B2B Storefront Solution | Decoded Ops
+8	/case-studies	Client Work: Decoded Ops	Case Studies & Client Results: Operations Consulting | Decoded Ops
+9	/clarity	Clarity Audit: Decoded Ops	Clarity Audit: Identify Operational Inefficiencies | Decoded Ops
+10	/problems/seasonal-peaks	Seasonal peaks: Decoded Ops	Managing Seasonal Peaks: Improve Operations & Efficiency | Decoded Ops
+11	/contact	Book a Free Discovery Call: Decoded Ops	Book a Free Discovery Call: Print & Ops Consultancy | Decoded Ops
+12	/small-business	Small Business Operations Consultant: Decoded Ops	Small Business Operations & Technology Consultant UK | Decoded Ops
+13	/process-quality-system	Process & Quality System: Decoded Ops	Process & Quality Management System for Print Shops | Decoded Ops
+14	/problems/disaster-recovery	Business Continuity & Disaster Recovery for Print Operations: Decoded Ops	Disaster Recovery & Business Continuity for Print Shops | Decoded Ops
+15	/case-studies/case-study-01	Case study 01: Khaos Control ERP + Custom App | Decoded Ops	Case Study: Khaos Control ERP Implementation & Custom App | Decoded Ops
+16	/problems/no-ops-owner	No Operations Owner? Here's What That Costs You: Decoded Ops	No Operations Owner? The True Cost to Growing Print Shops | Decoded Ops
+17	/sectors/labels-packaging	Labels & Packaging Operations Consultant: Decoded Ops	Labels & Packaging Operations & Tech Consultant | Decoded Ops
+18	/case-studies/case-study-03	Case study 03: Inventory & Warehouse Workflow | Decoded Ops	Case Study: Inventory & Warehouse Workflow Automation | Decoded Ops
+19	/problems/erp-implementation-failure	Failed ERP Implementation Recovery: Decoded Ops	Failed ERP Implementation Recovery & Rescue Services | Decoded Ops
+20	/sectors/workwear	Workwear & Uniform Supply Operations Consultant: Decoded Ops	Workwear & Uniform Supply Operations Consultant | Decoded Ops
+21	/sectors/teamwear-clubwear	Teamwear & Clubwear Operations Consultant: Decoded Ops	Teamwear & Clubwear Operations & Tech Consultant | Decoded Ops
+22	/sectors/signs-graphics	Signs & Wide-Format Graphics Operations Consultant: Decoded Ops	Signs & Wide-Format Graphics Operations Consultant | Decoded Ops
+23	/cookies	Cookie Policy: Decoded Ops	Cookie Policy: Understanding & Managing Preferences | Decoded Ops
+2. Meta Description Audit: Current vs. Proposed (All 43 URLs)
+#	URL Path	Current Live Meta Description	Proposed Optimized Meta Description
+1	/	Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers. …	Independent operations and technology consultancy for UK print shops, embroiderers, and workwear suppliers. Eliminate bottlenecks and scale profitably.
+2	/how-i-build	I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short. So whatever you …	Explore how Decoded Ops builds software and systems. Unbiased advice on vendor selection, custom builds, and operational technology architecture.
+3	/contact	Book a free 60-minute discovery call with Craig Blackman. Technology and operations consultancy for print, embroidery, a…	Book a free 60-minute discovery call with Craig Blackman. Get practical technology and operations guidance for your print and embroidery business.
+4	/small-business	Remote operations and technology consultancy for businesses under £1m. Fixed prices, structured sessions, and the same i…	Remote operations and technology consultancy for UK small businesses under £1m. Fixed prices, clear deliverables, and proven operational structure.
+5	/process-quality-system	Not a report that sits in a drawer. A working system for how the business documents, checks and improves its own process…	A practical process and quality management system tailored for garment decorators and print shops to standardize workflows and cut rework.
+6	/problems/disaster-recovery	What happens when your systems go down and you have orders to ship? A simple business continuity and disaster recovery p…	Protect your print operations from catastrophic downtime. Discover practical business continuity and disaster recovery strategies for your shop.
+7	/apps/commerce	A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on the open-source Medusa B…	Custom B2B storefronts designed specifically for trade print and decorated goods suppliers, built on high-performance modern commerce architecture.
+8	/case-studies/case-study-01	Project-leading a Khaos Control ERP implementation for a heating spares & eCommerce retailer alongside a custom app for …	Read how Decoded Ops project-led a Khaos Control ERP implementation and custom app integration to streamline multi-channel retail operations.
+9	/problems/no-ops-owner	When no one owns operations in a growing business, the same problems repeat, until someone owns it. Here's what an ops l…	Without dedicated operations leadership, growth stalls. Discover how fractional operations management removes bottlenecks from the business owner.
+10	/problems/seasonal-peaks	Your busiest month is four times your quietest, and your systems can't flex. Why seasonal peaks break decorated-goods op…	Learn why seasonal demand surges break garment decoration workflows and how to build scalable capacity without excessive temporary labor.
+11	/cookies	How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent op…	Learn how Decoded Ops uses cookies and tracking technologies, what data is stored, and how to easily manage your cookie preferences.
+12	/pricing	Plain pricing for the consultancy. The Clarity Audit is from £1,500. Everything else is quoted after a conversation abou…	Transparent consultancy pricing. Fixed-fee Clarity Audits from £1,500 with a 3x value guarantee, plus flexible fractional retainer packages.
+13	/transform	Transform is the programme that follows a Clarity Audit. The plan, executed. Measured results: 77% auto-matched, nine su…	The operational transformation program executing your Clarity Audit roadmap with hands-on system integration and measurable shop efficiency gains.
+14	/problems	Common operational and technology problems in decorated-goods businesses, and the Decoded Ops approach to solving them.	Explore common technology and workflow bottlenecks in decorated-goods businesses, with practical engineering solutions to solve them.
+15	/retained	Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Advisory, Embedde…	Fractional CTO and ongoing technology leadership for UK print and embroidery shops, delivering enterprise architecture without the full-time cost.
+16	/case-studies	Live engagements. What I'm actually building right now for clients in decorated goods, workwear, heating spares, and fit…	Real-world case studies detailing operational turnarounds, ERP deployments, and custom automation built for UK manufacturers and decorators.
+17	/clarity	One day on site, a written report within five, and the 3× Clarity Guarantee. A Clarity Audit is £1,500 and the way every…	One day on-site, a complete diagnostic report within 5 days, backed by the 3x Clarity Guarantee. Discover your shop floor cost leaks.
+18	/sectors/workwear	Operations consulting for workwear suppliers. …	Operations and technology consultancy for UK workwear and uniform suppliers. Streamline bulk personalization and trade customer portals.
+19	/sectors/labels-packaging	Operations consulting for labels and packaging. …	Specialist operations consulting for label printers and packaging converters. Optimize prepress, scheduling, and ERP connectivity.
+20	/sectors/teamwear-clubwear	Operations consulting for teamwear and clubwear suppliers. …	Technology consultancy for UK teamwear and sports kit decorators. Automate club shop batching, roster naming, and fulfillment.
+21	/sectors/signs-graphics	Operations consulting for signs and wide format graphics. …	Operations and ERP workflow optimization for UK wide-format printers and sign makers. Improve material yields and job throughput.
+22	/sectors/awards-engraving	Operations consulting for awards and engraving businesses. …	Operations consulting for awards and engraving businesses. Streamline complex personalization data feeds and engraving production queues.
+23	/sectors/garment-decoration	Operations consulting for garment decoration businesses. …	End-to-end operations consulting for UK screen printing, DTF, and embroidery shops. Eliminate manual order entry and production jams.
+24	/sectors/print-promotional	Operations consulting for promotional merchandise distributors. …	Technology and systems consulting for promo merchandise distributors. Integrate supplier stock feeds and streamline customer proofing.
+25	/problems/spreadsheet-addiction	When your business runs on spreadsheets that break. …	Break free from spreadsheet dependency. Replace fragile Excel sheets with automated databases and connected production workflows.
+26	/problems/wrong-erp-software	When your ERP doesn't fit your business. …	Struggling with the wrong ERP? Learn how to customize, integrate middleware, or cleanly migrate without disrupting active customer orders.
+27	/problems/inventory-blind	When you don't know what inventory you have in stock. …	Overcome inventory blindness with real-time stock sync, barcode tracking, and automated garment replenishment across warehouse locations.
+28	/problems/ecommerce-not-connected	When your online shop doesn't talk to your production floor. …	Connect your Shopify or WooCommerce store directly to your shop floor. Eliminate manual re-keying and speed up order production cycles.
+29	/problems/ops-in-owners-head	When all operational knowledge lives inside the founder's head. …	Systematize your business so it runs without daily owner intervention. Document standard operating procedures and train empowered managers.
+30	/problems/legacy-system	When outdated legacy software holds your business back. …	Modernize legacy manufacturing software without risky full-system rebuilds. Build resilient API bridges and automated microservices.
+31	/problems/buy-vs-build	Navigating whether to buy off-the-shelf software or build custom. …	Off-the-shelf SaaS vs. Custom Software: Make the right tech investment for your print business with an independent ROI framework.
+32	/problems/artwork-bottleneck	When artwork approvals stall production. …	Eliminate customer artwork approval bottlenecks. Implement automated proofs and auto-routing to prepress machines.
+33	/resources/decoded-method	The Decoded Method for operations consulting. …	The Decoded Method: Our 4-stage operational framework for diagnosing, designing, implementing, and measuring shop floor technology.
+34	/resources/sop-template	Standard Operating Procedure template for print shops. …	Free SOP template designed for UK garment decorators and print manufacturers. Standardize production and onboarding today.
+35	/resources/erp-selection-playbook	The ERP selection playbook for manufacturing businesses. …	Download the comprehensive ERP selection playbook. Evaluate vendors, calculate true TCO, and avoid costly implementation failures.
+36	/tools/rto-calculator	Calculate your recovery time objective for print operations. …	Interactive RTO & Downtime Cost Calculator. Calculate the true hourly cost of production halts and server downtime for your shop.
+37	/tools/ops-health-score	Take the operations health score assessment. …	Free Operations Health Assessment. Benchmark your shop floor efficiency, software integration, and throughput in 5 minutes.
+38	/tools/ai-readiness-check	Assess your readiness for AI operations tools. …	Evaluate your print shop's readiness for AI-driven customer service, automated proofing, and smart production scheduling.
+39	/privacy	Privacy Policy: Decoded Ops data handling and protection. …	Decoded Ops Privacy Policy. Learn how we collect, store, and protect your business data and personal information under UK GDPR.
+40	/terms	Terms of Service: Decoded Ops. …	Decoded Ops Terms of Service. Review our engagement terms, consultancy agreements, and intellectual property policies.
+41	/case-studies/eternal-fitness	Case study on Eternal Fitness operations overhaul. …	How Decoded Ops engineered automated production workflows and inventory tracking for Eternal Fitness to scale order fulfillment.
+42	/locations/fractional-cto	Fractional CTO services across the UK. …	Fractional CTO and technology consulting services across the UK. Strategic systems leadership tailored for growing manufacturers.
+43	/locations/tech-audit	Technology audit services across the UK. …	Comprehensive on-site and remote technology audits for UK print, embroidery, and distribution businesses. Uncover hidden waste.
+3. All 72 URLs with H1 Issues (h1_under_20_over_70)
+Core Problem, Sector & Service Pages (21 URLs)
+https://decodedops.co.uk/
+https://decodedops.co.uk/cookies
+https://decodedops.co.uk/transform
+https://decodedops.co.uk/small-business
+https://decodedops.co.uk/sectors/labels-packaging
+https://decodedops.co.uk/problems/no-ops-owner
+https://decodedops.co.uk/problems/seasonal-peaks
+https://decodedops.co.uk/privacy
+https://decodedops.co.uk/resources/decoded-method
+https://decodedops.co.uk/sectors/signs-graphics
+https://decodedops.co.uk/problems/spreadsheet-addiction
+https://decodedops.co.uk/tools/rto-calculator
+https://decodedops.co.uk/problems/ecommerce-not-connected
+https://decodedops.co.uk/problems/ops-in-owners-head
+https://decodedops.co.uk/sectors/print-promotional
+https://decodedops.co.uk/case-studies/eternal-fitness
+https://decodedops.co.uk/sectors/awards-engraving
+https://decodedops.co.uk/sectors/garment-decoration
+https://decodedops.co.uk/problems/inventory-blind
+https://decodedops.co.uk/tools/ops-health-score
+https://decodedops.co.uk/problems/wrong-erp-software
+Blog Articles & Interactive Tools (9 URLs)
+https://decodedops.co.uk/sectors/operations-consultant-print-embroidery
+https://decodedops.co.uk/blog/embroidery-quality-standards-stitch-density-thread-durability
+https://decodedops.co.uk/blog/hire-fractional-cto
+https://decodedops.co.uk/blog/iso-9001-small-business
+https://decodedops.co.uk/blog/local-seo-print-shop
+https://decodedops.co.uk/blog/operations-planning-print-decoration-business
+https://decodedops.co.uk/blog/production-scheduling-print-embroidery-capacity-quality-rush
+https://decodedops.co.uk/blog/sop-template-decorated-goods
+https://decodedops.co.uk/tools/ai-readiness-check
+Location Landing Pages — Fractional CTO (29 URLs)
+https://decodedops.co.uk/locations/fractional-cto/bexhill-on-sea
+https://decodedops.co.uk/locations/fractional-cto/bognor-regis
+https://decodedops.co.uk/locations/fractional-cto/brighton
+https://decodedops.co.uk/locations/fractional-cto/burgess-hill
+https://decodedops.co.uk/locations/fractional-cto/camberley
+https://decodedops.co.uk/locations/fractional-cto/chichester
+https://decodedops.co.uk/locations/fractional-cto/crawley
+https://decodedops.co.uk/locations/fractional-cto/crowborough
+https://decodedops.co.uk/locations/fractional-cto/dorking
+https://decodedops.co.uk/locations/fractional-cto/eastbourne
+https://decodedops.co.uk/locations/fractional-cto/epsom
+https://decodedops.co.uk/locations/fractional-cto/farnham
+https://decodedops.co.uk/locations/fractional-cto/guildford
+https://decodedops.co.uk/locations/fractional-cto/hastings
+https://decodedops.co.uk/locations/fractional-cto/haywards-heath
+https://decodedops.co.uk/locations/fractional-cto/horsham
+https://decodedops.co.uk/locations/fractional-cto/hove
+https://decodedops.co.uk/locations/fractional-cto/leatherhead
+https://decodedops.co.uk/locations/fractional-cto/lewes
+https://decodedops.co.uk/locations/fractional-cto/littlehampton
+https://decodedops.co.uk/locations/fractional-cto/london
+https://decodedops.co.uk/locations/fractional-cto/manchester
+https://decodedops.co.uk/locations/fractional-cto/redhill
+https://decodedops.co.uk/locations/fractional-cto/reigate
+https://decodedops.co.uk/locations/fractional-cto/seaford
+https://decodedops.co.uk/locations/fractional-cto/shoreham-by-sea
+https://decodedops.co.uk/locations/fractional-cto/uckfield
+https://decodedops.co.uk/locations/fractional-cto/woking
+https://decodedops.co.uk/locations/fractional-cto/worthing
+Location Landing Pages — Tech Audit (13 URLs)
+https://decodedops.co.uk/locations/tech-audit/bexhill-on-sea
+https://decodedops.co.uk/locations/tech-audit/bognor-regis
+https://decodedops.co.uk/locations/tech-audit/burgess-hill
+https://decodedops.co.uk/locations/tech-audit/camberley
+https://decodedops.co.uk/locations/tech-audit/chichester
+https://decodedops.co.uk/locations/tech-audit/crowborough
+https://decodedops.co.uk/locations/tech-audit/eastbourne
+https://decodedops.co.uk/locations/tech-audit/guildford
+https://decodedops.co.uk/locations/tech-audit/haywards-heath
+https://decodedops.co.uk/locations/tech-audit/leatherhead
+https://decodedops.co.uk/locations/tech-audit/littlehampton
+https://decodedops.co.uk/locations/tech-audit/manchester
+https://decodedops.co.uk/locations/tech-audit/shoreham-by-sea
+4. All 33 Non-Unique / Duplicate Content URLs (non_unique_content)
+
+These programmatic location landing pages share boilerplate text structures differing only by town/city keywords:
+
+https://decodedops.co.uk/locations/fractional-cto/bexhill-on-sea
+https://decodedops.co.uk/locations/fractional-cto/bognor-regis
+https://decodedops.co.uk/locations/fractional-cto/brighton
+https://decodedops.co.uk/locations/fractional-cto/burgess-hill
+https://decodedops.co.uk/locations/fractional-cto/camberley
+https://decodedops.co.uk/locations/fractional-cto/chichester
+https://decodedops.co.uk/locations/fractional-cto/crawley
+https://decodedops.co.uk/locations/fractional-cto/crowborough
+https://decodedops.co.uk/locations/fractional-cto/dorking
+https://decodedops.co.uk/locations/fractional-cto/eastbourne
+https://decodedops.co.uk/locations/fractional-cto/epsom
+https://decodedops.co.uk/locations/fractional-cto/farnham
+https://decodedops.co.uk/locations/fractional-cto/guildford
+https://decodedops.co.uk/locations/fractional-cto/hastings
+https://decodedops.co.uk/locations/fractional-cto/haywards-heath
+https://decodedops.co.uk/locations/fractional-cto/horsham
+https://decodedops.co.uk/locations/fractional-cto/hove
+https://decodedops.co.uk/locations/fractional-cto/leatherhead
+https://decodedops.co.uk/locations/fractional-cto/lewes
+https://decodedops.co.uk/locations/fractional-cto/littlehampton
+https://decodedops.co.uk/locations/fractional-cto/redhill
+https://decodedops.co.uk/locations/fractional-cto/reigate
+https://decodedops.co.uk/locations/fractional-cto/seaford
+https://decodedops.co.uk/locations/fractional-cto/shoreham-by-sea
+https://decodedops.co.uk/locations/fractional-cto/uckfield
+https://decodedops.co.uk/locations/fractional-cto/woking
+https://decodedops.co.uk/locations/fractional-cto/worthing
+https://decodedops.co.uk/locations/tech-audit/bexhill-on-sea
+https://decodedops.co.uk/locations/tech-audit/bognor-regis
+https://decodedops.co.uk/locations/tech-audit/burgess-hill
+https://decodedops.co.uk/locations/tech-audit/camberley
+https://decodedops.co.uk/locations/tech-audit/crowborough
+https://decodedops.co.uk/locations/tech-audit/eastbourne
+5. All 71 Near-Orphan URLs & Single Inbound Link Sources (has_only_one_internal_dofollow_link)
+#	Near-Orphan Target URL	Single Inbound Linking Source URL
+1	https://decodedops.co.uk/locations/fractional-cto/bexhill-on-sea	https://decodedops.co.uk/locations/fractional-cto
+2	https://decodedops.co.uk/locations/fractional-cto/bognor-regis	https://decodedops.co.uk/locations/fractional-cto
+3	https://decodedops.co.uk/locations/fractional-cto/brighton	https://decodedops.co.uk/locations/fractional-cto
+4	https://decodedops.co.uk/locations/fractional-cto/burgess-hill	https://decodedops.co.uk/locations/fractional-cto
+5	https://decodedops.co.uk/locations/fractional-cto/camberley	https://decodedops.co.uk/locations/fractional-cto
+6	https://decodedops.co.uk/locations/fractional-cto/chichester	https://decodedops.co.uk/locations/fractional-cto
+7	https://decodedops.co.uk/locations/fractional-cto/crawley	https://decodedops.co.uk/locations/fractional-cto
+8	https://decodedops.co.uk/locations/fractional-cto/crowborough	https://decodedops.co.uk/locations/fractional-cto
+9	https://decodedops.co.uk/locations/fractional-cto/dorking	https://decodedops.co.uk/locations/fractional-cto
+10	https://decodedops.co.uk/locations/fractional-cto/eastbourne	https://decodedops.co.uk/locations/fractional-cto
+11	https://decodedops.co.uk/locations/fractional-cto/epsom	https://decodedops.co.uk/locations/fractional-cto
+12	https://decodedops.co.uk/locations/fractional-cto/farnham	https://decodedops.co.uk/locations/fractional-cto
+13	https://decodedops.co.uk/locations/fractional-cto/guildford	https://decodedops.co.uk/locations/fractional-cto
+14	https://decodedops.co.uk/locations/fractional-cto/hastings	https://decodedops.co.uk/locations/fractional-cto
+15	https://decodedops.co.uk/locations/fractional-cto/haywards-heath	https://decodedops.co.uk/locations/fractional-cto
+16	https://decodedops.co.uk/locations/fractional-cto/horsham	https://decodedops.co.uk/locations/fractional-cto
+17	https://decodedops.co.uk/locations/fractional-cto/hove	https://decodedops.co.uk/locations/fractional-cto
+18	https://decodedops.co.uk/locations/fractional-cto/leatherhead	https://decodedops.co.uk/locations/fractional-cto
+19	https://decodedops.co.uk/locations/fractional-cto/lewes	https://decodedops.co.uk/locations/fractional-cto
+20	https://decodedops.co.uk/locations/fractional-cto/littlehampton	https://decodedops.co.uk/locations/fractional-cto
+21	https://decodedops.co.uk/locations/fractional-cto/london	https://decodedops.co.uk/locations/fractional-cto
+22	https://decodedops.co.uk/locations/fractional-cto/manchester	https://decodedops.co.uk/locations/fractional-cto
+23	https://decodedops.co.uk/locations/fractional-cto/redhill	https://decodedops.co.uk/locations/fractional-cto
+24	https://decodedops.co.uk/locations/fractional-cto/reigate	https://decodedops.co.uk/locations/fractional-cto
+25	https://decodedops.co.uk/locations/fractional-cto/seaford	https://decodedops.co.uk/locations/fractional-cto
+26	https://decodedops.co.uk/locations/fractional-cto/shoreham-by-sea	https://decodedops.co.uk/locations/fractional-cto
+27	https://decodedops.co.uk/locations/fractional-cto/uckfield	https://decodedops.co.uk/locations/fractional-cto
+28	https://decodedops.co.uk/locations/fractional-cto/woking	https://decodedops.co.uk/locations/fractional-cto
+29	https://decodedops.co.uk/locations/fractional-cto/worthing	https://decodedops.co.uk/locations/fractional-cto
+30	https://decodedops.co.uk/locations/tech-audit/bexhill-on-sea	https://decodedops.co.uk/locations/tech-audit
+31	https://decodedops.co.uk/locations/tech-audit/bognor-regis	https://decodedops.co.uk/locations/tech-audit
+32	https://decodedops.co.uk/locations/tech-audit/burgess-hill	https://decodedops.co.uk/locations/tech-audit
+33	https://decodedops.co.uk/locations/tech-audit/camberley	https://decodedops.co.uk/locations/tech-audit
+34	https://decodedops.co.uk/locations/tech-audit/chichester	https://decodedops.co.uk/locations/tech-audit
+35	https://decodedops.co.uk/locations/tech-audit/crowborough	https://decodedops.co.uk/locations/tech-audit
+36	https://decodedops.co.uk/locations/tech-audit/eastbourne	https://decodedops.co.uk/locations/tech-audit
+37	https://decodedops.co.uk/locations/tech-audit/guildford	https://decodedops.co.uk/locations/tech-audit
+38	https://decodedops.co.uk/locations/tech-audit/haywards-heath	https://decodedops.co.uk/locations/tech-audit
+39	https://decodedops.co.uk/locations/tech-audit/leatherhead	https://decodedops.co.uk/locations/tech-audit
+40	https://decodedops.co.uk/locations/tech-audit/littlehampton	https://decodedops.co.uk/locations/tech-audit
+41	https://decodedops.co.uk/locations/tech-audit/manchester	https://decodedops.co.uk/locations/tech-audit
+42	https://decodedops.co.uk/locations/tech-audit/shoreham-by-sea	https://decodedops.co.uk/locations/tech-audit
+43	https://decodedops.co.uk/problems/spreadsheet-addiction	https://decodedops.co.uk/problems
+44	https://decodedops.co.uk/problems/wrong-erp-software	https://decodedops.co.uk/problems
+45	https://decodedops.co.uk/problems/inventory-blind	https://decodedops.co.uk/problems
+46	https://decodedops.co.uk/problems/ecommerce-not-connected	https://decodedops.co.uk/problems
+47	https://decodedops.co.uk/problems/ops-in-owners-head	https://decodedops.co.uk/problems
+48	https://decodedops.co.uk/problems/legacy-system	https://decodedops.co.uk/problems
+49	https://decodedops.co.uk/problems/buy-vs-build	https://decodedops.co.uk/problems
+50	https://decodedops.co.uk/problems/artwork-bottleneck	https://decodedops.co.uk/problems
+51	https://decodedops.co.uk/problems/no-ops-owner	https://decodedops.co.uk/problems
+52	https://decodedops.co.uk/problems/seasonal-peaks	https://decodedops.co.uk/problems
+53	https://decodedops.co.uk/problems/disaster-recovery	https://decodedops.co.uk/problems
+54	https://decodedops.co.uk/problems/erp-implementation-failure	https://decodedops.co.uk/problems
+55	https://decodedops.co.uk/resources/decoded-method	https://decodedops.co.uk/resources
+56	https://decodedops.co.uk/resources/sop-template	https://decodedops.co.uk/resources
+57	https://decodedops.co.uk/resources/erp-selection-playbook	https://decodedops.co.uk/resources
+58	https://decodedops.co.uk/resources/artwork-approval-playbook	https://decodedops.co.uk/resources
+59	https://decodedops.co.uk/tools/rto-calculator	https://decodedops.co.uk/tools
+60	https://decodedops.co.uk/tools/ops-health-score	https://decodedops.co.uk/tools
+61	https://decodedops.co.uk/tools/ai-readiness-check	https://decodedops.co.uk/tools
+62	https://decodedops.co.uk/sectors/labels-packaging	https://decodedops.co.uk/
+63	https://decodedops.co.uk/sectors/signs-graphics	https://decodedops.co.uk/
+64	https://decodedops.co.uk/sectors/awards-engraving	https://decodedops.co.uk/
+65	https://decodedops.co.uk/sectors/garment-decoration	https://decodedops.co.uk/
+66	https://decodedops.co.uk/sectors/print-promotional	https://decodedops.co.uk/
+67	https://decodedops.co.uk/sectors/workwear	https://decodedops.co.uk/
+68	https://decodedops.co.uk/sectors/teamwear-clubwear	https://decodedops.co.uk/
+69	https://decodedops.co.uk/case-studies/case-study-01	https://decodedops.co.uk/case-studies
+70	https://decodedops.co.uk/case-studies/case-study-03	https://decodedops.co.uk/case-studies
+71	https://decodedops.co.uk/case-studies/eternal-fitness	https://decodedops.co.uk/case-studies

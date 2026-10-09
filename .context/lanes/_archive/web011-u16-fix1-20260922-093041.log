@@ -1,0 +1,903 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web011-u16-fix1.md
+[0m
+[0m# [0mTodos
+[•] Read ProblemPageDS.tsx for the related-links markup pattern
+[ ] Fix app/problems/ai-paralysis/page.tsx - add related links before CTA
+[ ] Fix app/problems/bottleneck-growth/page.tsx - add related links before CTA
+[ ] Fix app/sectors/print-promotional/page.tsx - add relatedSectors article
+[ ] Fix app/sectors/garment-decoration/page.tsx - add relatedSectors article
+[ ] Run tsc and lint, commit, write lane reports
+[0m
+[0m✱ [0mGlob "components/ProblemPageDS.tsx"[90m 1 match[0m
+[0m→ [0mRead app/problems/ai-paralysis/page.tsx
+[0m→ [0mRead app/problems/bottleneck-growth/page.tsx
+[0m→ [0mRead app/sectors/print-promotional/page.tsx
+[0m→ [0mRead app/sectors/garment-decoration/page.tsx
+[0m→ [0mRead app/sectors/schoolwear/page.tsx
+[0m→ [0mRead data/problem-routing.ts
+[0m→ [0mRead data/sector-routing.ts
+[0m→ [0mRead components/ProblemPageDS.tsx[90m [offset=150, limit=120][0m
+Now let me read the ProblemPageDS component for the markup pattern:
+[0m
+[0m# [0mTodos
+[✓] Read ProblemPageDS.tsx for the related-links markup pattern
+[•] Fix app/problems/ai-paralysis/page.tsx - add related links before CTA
+[ ] Fix app/problems/bottleneck-growth/page.tsx - add related links before CTA
+[ ] Fix app/sectors/print-promotional/page.tsx - add relatedSectors article
+[ ] Fix app/sectors/garment-decoration/page.tsx - add relatedSectors article
+[ ] Run tsc and lint, commit, write lane reports
+[0m
+[0m← [0mEdit app/problems/ai-paralysis/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
+===================================================================
+Now I'll implement all four fixes. Let me start with the two problem pages and two sector pages:
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
+@@ -1,13 +1,15 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import { ArrowRight } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { Plate } from '@/components/Plate';
+ import { NowAfterPlate } from '@/components/NowAfterPlate';
+ import { VideoEmbed } from '@/components/VideoEmbed';
+ import { VideoSchema } from '@/components/VideoSchema';
+ import { problemVideos } from '@/data/problem-videos';
++import { problemRouting } from '@/data/problem-routing';
+ 
+ export const metadata: Metadata = {
+  title: 'AI paralysis: Decoded Ops',
+  description: 'AI readiness for small business, answered honestly. What needs to be in place before AI can deliver value in a print, embroidery or decoration operation, and what is noise you can safely ignore.',
+
+[0m
+[0m← [0mEdit app/problems/ai-paralysis/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
+@@ -77,8 +77,9 @@
+  ],
+ };
+ 
+ export default function AiParalysisPage() {
++ const route = problemRouting['ai-paralysis'];
+  return (
+   <>
+    <JsonLd data={aiParalysisSchema} />
+    <BreadcrumbSchema items={[
+
+[0m
+[0m← [0mEdit app/problems/ai-paralysis/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
+@@ -276,11 +276,66 @@
+     capability, and I tell you what needs to be in place before AI can deliver value, where the
+     real opportunities are in your specific operation, and what&apos;s noise you can safely ignore.</p>
+   </div>
+  </div>
+-</section>
++ </section>
+ 
+-{/* ── 6 · CTA STRIP ──────────────────────────────────────────────────── */}
++ {/* ── RELATED LINKS ──────────────────────────────────────────────── */}
++ {(route.relatedProblems.length > 0 || route.relatedSectors.length > 0 || route.relatedResources.length > 0) && (
++  <section className="g-off">
++   <div className="wrap">
++    <div className="grid grid--3">
++     {route.relatedProblems.length > 0 && (
++      <article className="card">
++       <span className="kicker">Related problems</span>
++       <h3>You might also have</h3>
++       <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
++        {route.relatedProblems.map(p => (
++         <li key={p.href} style={{ marginBottom: 10 }}>
++          <Link href={p.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
++           {p.label}
++          </Link>
++         </li>
++        ))}
++       </ul>
++      </article>
++     )}
++     {route.relatedSectors.length > 0 && (
++      <article className="card">
++       <span className="kicker">Related sectors</span>
++       <h3>Adjacent trades</h3>
++       <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
++        {route.relatedSectors.map(s => (
++         <li key={s.href} style={{ marginBottom: 10 }}>
++          <Link href={s.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
++           {s.label}
++          </Link>
++         </li>
++        ))}
++       </ul>
++      </article>
++     )}
++     {route.relatedResources.length > 0 && (
++      <article className="card">
++       <span className="kicker">Useful next steps</span>
++       <h3>Resources</h3>
++       <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
++        {route.relatedResources.map(r => (
++         <li key={r.href} style={{ marginBottom: 10 }}>
++          <Link href={r.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
++           {r.label}
++          </Link>
++         </li>
++        ))}
++       </ul>
++      </article>
++     )}
++    </div>
++   </div>
++  </section>
++ )}
++
++ {/* ── 6 · CTA STRIP ──────────────────────────────────────────────────── */}
+ <section className="g-white cta-strip">
+  <div className="wrap" style={{ maxWidth: 760 }}>
+   <h2>Find out what AI could actually do for you.</h2>
+   <p className="lede">Sixty minutes, free, no obligation. If the honest answer is &ldquo;not yet&rdquo;, I&apos;ll
+
+[0m
+Now fix bottleneck-growth/page.tsx:
+[0m← [0mEdit app/problems/bottleneck-growth/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
+@@ -1,13 +1,15 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import { ArrowRight } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { Plate } from '@/components/Plate';
+ import { NowAfterPlate } from '@/components/NowAfterPlate';
+ import { VideoEmbed } from '@/components/VideoEmbed';
+ import { VideoSchema } from '@/components/VideoSchema';
+ import { problemVideos } from '@/data/problem-videos';
++import { problemRouting } from '@/data/problem-routing';
+ 
+ export const metadata: Metadata = {
+  title: 'Growth bottleneck: Decoded Ops',
+  description: "The business stops where you stop. When every decision still goes through the owner, purchase orders, artwork approvals, production scheduling, growth hits a hard ceiling. The fix is documented process that means the business runs without you in the room.",
+
+[0m
+[0m← [0mEdit app/problems/bottleneck-growth/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
+@@ -58,8 +58,9 @@
+  ],
+ };
+ 
+ export default function BottleneckGrowthPage() {
++ const route = problemRouting['bottleneck-growth'];
+  return (
+   <>
+    <JsonLd data={bottleneckGrowthSchema} />
+    <BreadcrumbSchema items={[
+
+[0m
+[0m← [0mEdit app/problems/bottleneck-growth/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
+@@ -212,11 +212,66 @@
+    <p>From there, a Process &amp; Quality System turns that plan into SOPs your team can
+     actually follow, not a consultancy document that sits in a drawer.</p>
+   </div>
+  </div>
+-</section>
++ </section>
+ 
+-{/* ── 5 · CTA STRIP ──────────────────────────────────────────────────── */}
++ {/* ── RELATED LINKS ──────────────────────────────────────────────── */}
++ {(route.relatedProblems.length > 0 || route.relatedSectors.length > 0 || route.relatedResources.length > 0) && (
++  <section className="g-off">
++   <div className="wrap">
++    <div className="grid grid--3">
++     {route.relatedProblems.length > 0 && (
++      <article className="card">
++       <span className="kicker">Related problems</span>
++       <h3>You might also have</h3>
++       <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
++        {route.relatedProblems.map(p => (
++         <li key={p.href} style={{ marginBottom: 10 }}>
++          <Link href={p.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
++           {p.label}
++          </Link>
++         </li>
++        ))}
++       </ul>
++      </article>
++     )}
++     {route.relatedSectors.length > 0 && (
++      <article className="card">
++       <span className="kicker">Related sectors</span>
++       <h3>Adjacent trades</h3>
++       <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
++        {route.relatedSectors.map(s => (
++         <li key={s.href} style={{ marginBottom: 10 }}>
++          <Link href={s.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
++           {s.label}
++          </Link>
++         </li>
++        ))}
++       </ul>
++      </article>
++     )}
++     {route.relatedResources.length > 0 && (
++      <article className="card">
++       <span className="kicker">Useful next steps</span>
++       <h3>Resources</h3>
++       <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
++        {route.relatedResources.map(r => (
++         <li key={r.href} style={{ marginBottom: 10 }}>
++          <Link href={r.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
++           {r.label}
++          </Link>
++         </li>
++        ))}
++       </ul>
++      </article>
++     )}
++    </div>
++   </div>
++  </section>
++ )}
++
++ {/* ── 5 · CTA STRIP ──────────────────────────────────────────────────── */}
+ <section className="g-white cta-strip">
+  <div className="wrap" style={{ maxWidth: 760 }}>
+   <h2>Find out what&apos;s still sitting on your desk that shouldn&apos;t be.</h2>
+   <p className="lede">A Clarity Audit identifies every decision bottleneck in your operation,
+
+[0m
+[0m← [0mEdit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sectors\print-promotional\page.tsx
+@@ -214,9 +214,9 @@
+   </div>
+ </section>
+ 
+ {/* CROSS-LINKS */}
+-{(route.targetService || (route.relatedProblems && route.relatedProblems.length > 0) || (route.relatedResources && route.relatedResources.length > 0)) && (
++{(route.targetService || (route.relatedProblems && route.relatedProblems.length > 0) || (route.relatedResources && route.relatedResources.length > 0) || (route.relatedSectors && route.relatedSectors.length > 0)) && (
+   <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+     <div className="wrap">
+       <div className="grid grid--3">
+         {route.targetService && (
+
+[0m
+Now fix print-promotional/page.tsx - add relatedSectors to the guard and add the article:
+[0m← [0mEdit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sectors\print-promotional\page.tsx
+@@ -260,8 +260,24 @@
+               ))}
+             </ul>
+           </div>
+         )}
++        {route.relatedSectors && route.relatedSectors.length > 0 && (
++          <div className="card">
++            <span className="kicker">Related sectors</span>
++            <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>Adjacent trades</h3>
++            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
++              {route.relatedSectors.map((s) => (
++                <li key={s.href} style={{ marginBottom: '10px' }}>
++                  <Link href={s.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
++                    <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
++                    <span>{s.label}</span>
++                  </Link>
++                </li>
++              ))}
++            </ul>
++          </div>
++        )}
+       </div>
+     </div>
+   </section>
+ )}
+
+[0m
+[0m← [0mEdit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sectors\garment-decoration\page.tsx
+@@ -247,8 +247,24 @@
+               ))}
+             </ul>
+           </div>
+         )}
++        {route.relatedSectors && route.relatedSectors.length > 0 && (
++          <div className="card">
++            <span className="kicker">Related sectors</span>
++            <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>Adjacent trades</h3>
++            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
++              {route.relatedSectors.map((s) => (
++                <li key={s.href} style={{ marginBottom: '10px' }}>
++                  <Link href={s.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
++                    <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
++                    <span>{s.label}</span>
++                  </Link>
++                </li>
++              ))}
++            </ul>
++          </div>
++        )}
+       </div>
+     </div>
+   </section>
+ )}
+
+[0m
+Now fix garment-decoration/page.tsx - add the relatedSectors article after relatedResources:
+[0m# [0mTodos
+[✓] Read ProblemPageDS.tsx for the related-links markup pattern
+[✓] Fix app/problems/ai-paralysis/page.tsx - add related links before CTA
+[✓] Fix app/problems/bottleneck-growth/page.tsx - add related links before CTA
+[✓] Fix app/sectors/print-promotional/page.tsx - add relatedSectors article
+[✓] Fix app/sectors/garment-decoration/page.tsx - add relatedSectors article
+[•] Run tsc and lint, commit, write lane reports
+[0m
+[0m$ [0mTest-Path node_modules
+True
+[0m
+[0m$ [0mnpx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\lint
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mnpx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\lint
+[0m
+[0m$ [0mnpx --package=next next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\lint
+[0m
+[0m$ [0mnode -e "require('next/package.json').version" 2>&1
+(no output)
+[0m
+[0m$ [0mTest-Path .next
+True
+[0m
+[0m$ [0mnode node_modules\next\dist\bin\next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\lint
+[0m
+[0m$ [0mnpm run lint 2>&1
+> decoded-ops-next@0.1.0 lint
+> eslint
+
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\.context\mockup-vs-app.mjs
+  5:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\.context\plate-audit.mjs
+   8:31  warning  'dirname' is defined but never used     @typescript-eslint/no-unused-vars
+  67:14  warning  'm' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\.context\slot-audit.mjs
+   7:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+  43:21  warning  't' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\.context\tools\verify-pages.js
+  5:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  6:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  7:22  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\about\page.tsx
+   50:16   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  103:160  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+  117:121  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+  152:116  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\api\auth\login\route.ts
+  81:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  82:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\blog\[slug]\page.tsx
+  46:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\blog\page.tsx
+  40:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  53:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\case-studies\eternal-fitness\page.tsx
+  156:123  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\clients\[clientId]\components\AcceptanceSection.tsx
+  101:84  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  256:39  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\clients\[clientId]\components\DemoSection.tsx
+  126:27  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-explicit-any
+  128:3   error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\clients\[clientId]\components\DemoSection.tsx:128:3
+  126 |   const chartRef = useRef<any>(null);
+  127 |   const stocksRef = useRef(stocks);
+> 128 |   stocksRef.current = stocks;
+      |   ^^^^^^^^^^^^^^^^^ Cannot update ref during render
+  129 |
+  130 |   function statusFor(stock: number, min: number) {
+  131 |     return stock === 0 ? 'out' : stock < min ? 'low' : 'ok';                                                                                                                                                                                                                                                          react-hooks/refs
+  245:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\clients\[clientId]\components\DemoSection.tsx:245:5
+  243 |
+  244 |   useEffect(() => {
+> 245 |     updateAlerts(stocks);
+      |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  246 |   }, []);
+  247 |
+  248 |   const filteredStocks = filter === 'all'  react-hooks/set-state-in-effect
+  246:6   warning  React Hook useEffect has missing dependencies: 'stocks' and 'updateAlerts'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\clients\[clientId]\components\PricingSection.tsx
+   83:19  warning  'isA' is assigned a value but never used                         @typescript-eslint/no-unused-vars
+  309:77  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\clients\[clientId]\components\SystemsDiagram.tsx
+  83:5  error    Error: Cannot access variable before it is declared
+
+`buildSVG` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\clients\[clientId]\components\SystemsDiagram.tsx:83:5
+  81 |
+  82 |   useEffect(() => {
+> 83 |     buildSVG(mode);
+     |     ^^^^^^^^ `buildSVG` accessed before it is declared
+  84 |   }, [mode, d]);
+  85 |
+  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\clients\[clientId]\components\SystemsDiagram.tsx:86:3
+   84 |   }, [mode, d]);
+   85 |
+>  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+      |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  87 |     const svg = svgRef.current;
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  88 |     if (!svg) return;
+      …
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 195 |     svg.appendChild(desc);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 196 |   }
+      | ^^^^ `buildSVG` is declared here
+  197 |
+  198 |   return (
+  199 |     <div className="bg-[#023047] rounded-2xl p-12 text-white">  react-hooks/immutability
+  84:6  warning  React Hook useEffect has a missing dependency: 'buildSVG'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\clients\[clientId]\layout.tsx
+  15:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\clients\[clientId]\page.tsx
+   34:33  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  117:36  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:47  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\contact\actions.ts
+  13:6  warning  'ContactFormInput' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\cookies\page.tsx
+  163:13  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\design-system\ds-plates.js
+  153:43  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+  179:76  warning  'err' is defined but never used                                        @typescript-eslint/no-unused-vars
+  189:13  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  189:85  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\layout.tsx
+  16:10  warning  'Header' is defined but never used  @typescript-eslint/no-unused-vars
+  17:10  warning  'Footer' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
+    3:10  warning  'ArrowRight' is defined but never used                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+  116:7   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
+   3:10  warning  'ArrowRight' is defined but never used                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+  96:7   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\buy-vs-build\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\cant-scale-operations\page.tsx
+  101:7  warning  'scalingSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\data-scattered\page.tsx
+  97:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\inventory-blind\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\legacy-system\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ops-in-owners-head\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\page.tsx
+  102:43  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  109:36  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:50  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\seasonal-peaks\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\slow-processes\page.tsx
+  101:7  warning  'workflowSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\spreadsheet-addiction\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\wrong-erp-software\page.tsx
+  104:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\resources\5-warning-signs\page.tsx
+   71:199  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  157:23   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:25   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:287  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:307  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:318  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  167:128  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\resources\artwork-approval-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\resources\audit-checklist\page.tsx
+    2:36   warning  'Download' is defined but never used                             @typescript-eslint/no-unused-vars
+  232:81   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  232:124  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:129  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:134  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:139  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  235:32   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  235:69   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  271:29   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  277:35   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:47   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:53   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:63   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  283:38   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  283:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  297:25   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  299:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\resources\erp-selection-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\resources\page.tsx
+  3:53  warning  'Star' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\resources\seasonal-capacity\page.tsx
+  59:127  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\resources\sop-template\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sectors\labels-packaging\page.tsx
+  105:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sectors\signs-graphics\page.tsx
+  105:45   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  105:159  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\sitemap.ts
+  12:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\tools\ops-health-score\page.tsx
+  24:7  warning  'scoreLabels' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\auth.config.ts
+  13:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\components\BlogList.tsx
+   55:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  148:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\components\CookieConsent.tsx
+  12:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\components\CookieConsent.tsx:12:5
+  10 |
+  11 |   useEffect(() => {
+> 12 |     setIsLoading(true);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  13 |     const consent = localStorage.getItem('cookie-consent');
+  14 |     if (!consent) {
+  15 |       setIsVisible(true);  react-hooks/set-state-in-effect
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\components\Plate.tsx
+  42:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  46:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  55:49  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  66:53  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  76:43  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  80:9   warning  Expected an assignment or function call and instead saw an expression                                                                                                                        @typescript-eslint/no-unused-expressions
+  81:16  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  91:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\components\RelatedPosts.tsx
+  34:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  43:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\components\graphics\AuditWheelGraphic.tsx
+  51:17  warning  'lx' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  52:17  warning  'ly' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  55:17  warning  'lines' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\components\schematics\problems\WrongErpSchematic.tsx
+  38:10  warning  'motion' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\components\schematics\sectors\PrintEmbroideryOpsConsultantSchematic.tsx
+   6:37  warning  'SKY' is defined but never used               @typescript-eslint/no-unused-vars
+  23:7   warning  'MID' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  24:7   warning  'SPINE_X' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\public\infographics\EcommerceBreakdownChart.tsx
+  117:42   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:102  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  142:74   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:79   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:234  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\public\infographics\VendorQuestionsGuide.tsx
+   56:34   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   59:59   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   59:63   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  120:26   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:92   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:131  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\scripts\hash-password.mjs
+  2:10  warning  'readFileSync' is defined but never used   @typescript-eslint/no-unused-vars
+  2:24  warning  'writeFileSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 137 problems (85 errors, 52 warnings)
+[0m
+The only lint warnings from my changes are the unused `ArrowRight` imports in the two problem pages. Let me remove them — the ProblemPageDS pattern doesn't use ArrowRight in the related links section.
+[0m← [0mEdit app/problems/ai-paralysis/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
+@@ -1,7 +1,6 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+-import { ArrowRight } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { Plate } from '@/components/Plate';
+ import { NowAfterPlate } from '@/components/NowAfterPlate';
+
+[0m
+[0m← [0mEdit app/problems/bottleneck-growth/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
+@@ -1,7 +1,6 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+-import { ArrowRight } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { Plate } from '@/components/Plate';
+ import { NowAfterPlate } from '@/components/NowAfterPlate';
+
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mnpm run lint 2>&1 | Select-String -Pattern "ai-paralysis|bottleneck-growth|print-promotional|garment-decoration"
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\ai-paralysis\page.tsx
+D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\app\problems\bottleneck-growth\page.tsx
+[0m
+[0m$ [0mnpm run lint 2>&1 | Select-String -Pattern "(ai-paralysis|bottleneck-growth|print-promotional|garment-decoration).*warning|error"
+5:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  6:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  7:22  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  103:160  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                    
+                                                                                                                       
+                                                               react/no-unescaped-entities
+  117:121  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                    
+                                                                                                                       
+                                                               react/no-unescaped-entities
+  152:116  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                    
+                                                                                                                       
+                                                               react/no-unescaped-entities
+  81:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  82:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  46:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  40:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  53:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  156:123  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  101:84  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  256:39  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  126:27  error    Unexpected any. Specify a different type                                                            
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                         
+@typescript-eslint/no-explicit-any
+  128:3   error    Error: Cannot access refs during render
+  245:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+  309:77  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  83:5  error    Error: Cannot access variable before it is declared
+  15:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   34:33  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  117:36  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:47  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  163:13  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: 
+https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+  102:43  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  109:36  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:50  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   71:199  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  157:23   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:25   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:287  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:307  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:318  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  167:128  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  232:81   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  232:124  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:129  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:134  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:139  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  235:32   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  235:69   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  271:29   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  277:35   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:47   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:53   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:63   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  283:38   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  283:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  297:25   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  299:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  59:127  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  105:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  105:45   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  105:159  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  12:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  13:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  12:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+  42:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order 
+in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  46:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order 
+in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  91:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order 
+in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  34:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  43:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  117:42   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:102  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  142:74   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:79   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:234  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   56:34   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   59:59   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   59:63   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  120:26   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:92   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:131  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+✖ 135 problems (85 errors, 50 warnings)
+[0m
+tsc clean. Lint: 85 errors, 50 warnings — all pre-existing in untouched files. Zero new warnings or errors from my changes. Now commit:
+[0m$ [0mgit add app/problems/ai-paralysis/page.tsx app/problems/bottleneck-growth/page.tsx app/sectors/print-promotional/page.tsx app/sectors/garment-decoration/page.tsx && git commit -m "fix(seo): render related links on 4 pages missing the routing block (CR-WEB-040, WO-WEB-011 u16 fix1)"
+warning: in the working copy of 'app/problems/ai-paralysis/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/bottleneck-growth/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[web011-u16-internal-link-mesh b6846c2] fix(seo): render related links on 4 pages missing the routing block (CR-WEB-040, WO-WEB-011 u16 fix1)
+ 4 files changed, 151 insertions(+), 5 deletions(-)
+[0m
+Committed. Now write the lane reports:
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\.context\lane-reports already exists.
+[0m
+[0m$ [0mgit log -1 --format="%H %s"
+b6846c220df66190a61485d7a810bedc9c1ac7cc fix(seo): render related links on 4 pages missing the routing block (CR-WEB-040, WO-WEB-011 u16 fix1)
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web011-u16-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web011-u16-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web011-u16-fix1.json .context/lane-reports/LANE-NOTES-web011-u16-fix1.md && git commit -m "docs: lane report for web011-u16-fix1"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web011-u16-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web011-u16-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[web011-u16-internal-link-mesh 8c6fb3f] docs: lane report for web011-u16-fix1
+ 2 files changed, 47 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web011-u16-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web011-u16-fix1.json
+[0m
+[0m$ [0mgit status --short
+(no output)
+[0m
+Lane complete. Two commits landed:
+
+1. **`b6846c2`** — `fix(seo): render related links on 4 pages missing the routing block (CR-WEB-040, WO-WEB-011 u16 fix1)` — the actual code fix
+2. **`8c6fb3f`** — `docs: lane report for web011-u16-fix1` — LANE-RESULT and LANE-NOTES
+
+**Verification:** tsc clean (0 errors). Lint 85 errors / 50 warnings — all pre-existing, zero new from this change. Working tree clean.
+[0m# [0mTodos
+[✓] Read ProblemPageDS.tsx for the related-links markup pattern
+[✓] Fix app/problems/ai-paralysis/page.tsx - add related links before CTA
+[✓] Fix app/problems/bottleneck-growth/page.tsx - add related links before CTA
+[✓] Fix app/sectors/print-promotional/page.tsx - add relatedSectors article
+[✓] Fix app/sectors/garment-decoration/page.tsx - add relatedSectors article
+[✓] Run tsc and lint, commit, write lane reports
+[0m
+[0m• [0mExplore employee verification flow[90m General Agent[0m
+[0m• [0mExplore employer verification routes[90m General Agent[0m
+[0m✓ [0mExplore employee verification flow[90m General Agent[0m
+[0m✓ [0mExplore employer verification routes[90m General Agent[0m
+[0m
+[0m$ [0mTest-Path "D:\apps\worktrees\universal-credit"
+False
+[0m
+Lane complete. All exit contract steps done. Working tree is clean.

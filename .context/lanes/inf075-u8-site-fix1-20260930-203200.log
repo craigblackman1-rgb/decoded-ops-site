@@ -1,0 +1,199 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead lib/hub-fetch.ts
+[0m
+[0m$ [0mgit status && git log --oneline -5
+On branch inf075-u8-build-speed
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+f4040ae chore: lane report for inf075-u8-site-hub-timeout
+043c790 perf(site): 10s timeout on hub fetches so builds can't stall (WO-INF-075 u8)
+81fe3a4 chore: lane reports for web003-u25-27-copy-bugs
+1c75e87 fix(web): BUG-WEB-042/043/044 copy consistency
+098d8f1 feat(web): quoting costs problem page with trade pricing vocabulary (GF13)
+[0m
+[0m← [0mEdit lib/hub-fetch.ts
+Index: D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\lib\hub-fetch.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\lib\hub-fetch.ts
++++ D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\lib\hub-fetch.ts
+@@ -18,18 +18,28 @@
+  * a clientId. This is SERVER-ONLY: HUB_PUBLIC_API_KEY is never exposed to the
+  * browser (no NEXT_PUBLIC_ prefix), so hubFetch must only be called from
+  * server components, route handlers, or server actions — never client code.
+  *
+- * Hub calls time out after 10s so a slow or redeploying hub can't stall `next build` (WO-INF-075 u8).
++ * GET hub calls time out after 10s so a slow or redeploying hub can't stall `next build` (WO-INF-075 u8).
++ * Writes (POST/PUT/PATCH/DELETE) are not given a default timeout — client file uploads
++ * (e.g. app/api/clients/uploads/route.ts) can take longer than 10s. A caller-supplied
++ * `init.signal` always wins.
+  */
+ export function hubFetch(input: string, init: RequestInit = {}): Promise<Response> {
+   const key = process.env.HUB_PUBLIC_API_KEY;
++  const method = (init.method ?? 'GET').toUpperCase();
++  const signal =
++    init.signal !== undefined
++      ? init.signal
++      : method === 'GET'
++        ? AbortSignal.timeout(10_000)
++        : undefined;
+   return fetch(input, {
+     ...init,
+     headers: {
+       'User-Agent': 'DecodedOpsSite/1.0 (+https://decodedops.co.uk)',
+       ...(key ? { 'x-hub-key': key } : {}),
+       ...init.headers,
+     },
+-    signal: init.signal === undefined ? AbortSignal.timeout(10_000) : init.signal,
++    ...(signal !== undefined ? { signal } : {}),
+   });
+ }
+
+[0m
+[0m→ [0mRead lib/hub-fetch.ts
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(site): hub fetch timeout for GET only, uploads unaffected (WO-INF-075 u8)"
+[inf075-u8-build-speed a05d454] fix(site): hub fetch timeout for GET only, uploads unaffected (WO-INF-075 u8)
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1; echo "TSC_EXIT=$?"
+[41m                                                                               [0m
+[41m[37m                This is not the tsc command you are looking for                [0m
+[41m                                                                               [0m
+
+To get access to the TypeScript compiler, [34mtsc[0m, from the command line either:
+
+- Use [1mnpm install typescript[0m to first add TypeScript to your project [1mbefore[0m using npx
+- Use [1myarn[0m to avoid accidentally running code from un-installed packages
+TSC_EXIT=False
+[0m
+[0m$ [0mgit show --stat HEAD && git diff HEAD~1 HEAD --name-only && rg -n "AbortSignal\.timeout|hubFetch\(" lib components app --glob '!node_modules' 2>/dev/null
+commit a05d454cdec3e6d21e8ca8782e15bb7022f222e3
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Wed Sep 30 20:32:48 2026 +0100
+
+    fix(site): hub fetch timeout for GET only, uploads unaffected (WO-INF-075 u8)
+
+ lib/hub-fetch.ts | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+lib/hub-fetch.ts
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mTest-Path node_modules; Test-Path node_modules\typescript\bin\tsc; Test-Path node_modules\.bin\tsc.cmd
+False
+False
+False
+[0m
+[0m$ [0mGet-ChildItem -Recurse -Include *.ts,*.tsx -Path lib,components,app -ErrorAction SilentlyContinue | Select-String -Pattern "AbortSignal\.timeout|hubFetch\(" | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" }
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\lib\hub-fetch.ts:27: export function hubFetch(input: string, init: RequestInit = {}): Promise<Response> {
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\lib\hub-fetch.ts:34: ? AbortSignal.timeout(10_000)
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\components\RelatedPosts.tsx:18: const res = await hubFetch(`${HUB_API}/api/content/index`, {
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\api\clients\documents\[id]\questionnaire\route.ts:29: const res = await hubFetch(
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\api\clients\documents\[id]\questionnaire\route.ts:78: const res = await hubFetch(
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\api\clients\documents\[id]\sign\route.ts:44: const res = await hubFetch(
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\api\clients\uploads\route.ts:48: const res = await hubFetch(target, { method: 'POST', body });
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\api\tools\capture\route.ts:152: const hubResponse = await hubFetch(`${hubUrl}/api/public/leads`, {
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\blog\[slug]\page.tsx:77: const res = await hubFetch(url, preview ? { cache: 'no-store' } : { next: { revalidate: 300 } });
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\blog\[slug]\page.tsx:88: const res = await hubFetch(`${HUB_API}/api/content/index`, {
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\blog\page.tsx:45: const res = await hubFetch(`${HUB_API}/api/content/index`, {
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\clients\dashboard\page.tsx:79: hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\clients\documents\view\[id]\page.tsx:60: hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\clients\documents\page.tsx:86: hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\clients\project\page.tsx:19: const res = await hubFetch(`${hubUrl}/api/public/client-project?clientId=${clientId}`, { cache: 'no-store' });
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\clients\project\page.tsx:31: const res = await hubFetch(`${hubUrl}/api/public/client-uploads?clientId=${clientId}`, { cache: 'no-store' });
+D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\app\sitemap.ts:14: const res = await hubFetch(`${HUB_API}/api/content/index`, {
+[0m
+[0m$ [0mTest-Path D:\apps\decoded-ops-website\node_modules\typescript\bin\tsc; Test-Path D:\apps\decoded-ops-website\node_modules\.bin\tsc.cmd
+True
+True
+[0m
+No `node_modules` in this worktree. Checking the main checkout for a usable TypeScript install so I can run the typecheck honestly.
+[0m$ [0mgit show HEAD -- lib/hub-fetch.ts | Select-Object -First 80
+commit a05d454cdec3e6d21e8ca8782e15bb7022f222e3
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Wed Sep 30 20:32:48 2026 +0100
+
+    fix(site): hub fetch timeout for GET only, uploads unaffected (WO-INF-075 u8)
+
+diff --git a/lib/hub-fetch.ts b/lib/hub-fetch.ts
+index d5487f1..72259a5 100644
+--- a/lib/hub-fetch.ts
++++ b/lib/hub-fetch.ts
+@@ -19,10 +19,20 @@
+  * browser (no NEXT_PUBLIC_ prefix), so hubFetch must only be called from
+  * server components, route handlers, or server actions — never client code.
+  *
+- * Hub calls time out after 10s so a slow or redeploying hub can't stall `next build` (WO-INF-075 u8).
++ * GET hub calls time out after 10s so a slow or redeploying hub can't stall `next build` (WO-INF-075 u8).
++ * Writes (POST/PUT/PATCH/DELETE) are not given a default timeout — client file uploads
++ * (e.g. app/api/clients/uploads/route.ts) can take longer than 10s. A caller-supplied
++ * `init.signal` always wins.
+  */
+ export function hubFetch(input: string, init: RequestInit = {}): Promise<Response> {
+   const key = process.env.HUB_PUBLIC_API_KEY;
++  const method = (init.method ?? 'GET').toUpperCase();
++  const signal =
++    init.signal !== undefined
++      ? init.signal
++      : method === 'GET'
++        ? AbortSignal.timeout(10_000)
++        : undefined;
+   return fetch(input, {
+     ...init,
+     headers: {
+@@ -30,6 +40,6 @@ export function hubFetch(input: string, init: RequestInit = {}): Promise<Respons
+       ...(key ? { 'x-hub-key': key } : {}),
+       ...init.headers,
+     },
+-    signal: init.signal === undefined ? AbortSignal.timeout(10_000) : init.signal,
++    ...(signal !== undefined ? { signal } : {}),
+   });
+ }
+[0m
+Main repo has TypeScript. Linking its `node_modules` into this worktree so `tsc` can resolve types without a full install.
+[0m$ [0mNew-Item -ItemType Junction -Path "D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\node_modules" -Target "D:\apps\decoded-ops-website\node_modules" | Out-Null; & "D:\apps\decoded-ops-website\node_modules\.bin\tsc.cmd" --noEmit -p "D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\tsconfig.json"; echo "TSC_EXIT=$LASTEXITCODE"
+app/api/tools/capture/route.test.ts(1,54): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+vitest.config.ts(1,30): error TS2307: Cannot find module 'vitest/config' or its corresponding type declarations.
+TSC_EXIT=2
+[0m
+[0m$ [0mTest-Path "D:\apps\decoded-ops-website\node_modules\vitest"; Select-String -Path "D:\apps\decoded-ops-website\package.json" -Pattern "vitest" | ForEach-Object { $_.Line.Trim() }
+False
+[0m
+[0m$ [0m& "D:\apps\decoded-ops-website\node_modules\.bin\tsc.cmd" --noEmit -p "D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\tsconfig.json" 2>&1 | Select-String -Pattern "hub-fetch"; echo "---"; git -C "D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed" stash list
+---
+stash@{0}: WIP on web011-u5-faq-schema: 2c81a02 CR-WEB-043: add lane-result and lane-notes for FAQPage schema work
+[0m
+[0m$ [0mgit status --short; Test-Path .gitignore; Select-String -Path .gitignore -Pattern "node_modules" | ForEach-Object { $_.Line }
+True
+/node_modules
+[0m
+[0m$ [0mNew-Item -ItemType Directory -Force -Path .context\lane-reports | Out-Null
+(no output)
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-inf075-u8-site-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-inf075-u8-site-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane report for inf075-u8-site-fix1" && git log --oneline -3 && git status --short
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-inf075-u8-site-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-inf075-u8-site-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[inf075-u8-build-speed 9f1caed] chore: lane report for inf075-u8-site-fix1
+ 2 files changed, 39 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-inf075-u8-site-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-inf075-u8-site-fix1.json
+9f1caed chore: lane report for inf075-u8-site-fix1
+a05d454 fix(site): hub fetch timeout for GET only, uploads unaffected (WO-INF-075 u8)
+f4040ae chore: lane report for inf075-u8-site-hub-timeout
+[0m
+Lane complete. Two commits on `inf075-u8-build-speed`:
+
+- `a05d454` — `lib/hub-fetch.ts` only: 10s `AbortSignal.timeout` now applies solely when `init.signal` is undefined **and** method is GET/unset; POST/PUT/PATCH/DELETE get no default signal; caller signal always wins. Doc sentence updated.
+- `9f1caed` — lane report + notes under `.context/lane-reports/`.
+
+Verification: `tsc --noEmit` shows 2 pre-existing `vitest` module errors (vitest not installed anywhere in this env), 0 in `hub-fetch.ts`. Escape grep: `AbortSignal.timeout` only on the GET branch; uploads route (`method: 'POST'`) unaffected. Working tree clean.

@@ -1,0 +1,204 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Read next.config.ts to find existing redirects
+[ ] Add 301 redirect for old blog URL
+[ ] Run sync-blog-index.mjs and verify JSON
+[ ] Type check with tsc --noEmit
+[ ] Commit all changes
+[ ] Write and commit LANE-RESULT.json
+
+→ Read next.config.ts
+
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\cr-mkt-010-erp-gaps\node_modules"
+False
+
+# Todos
+[✓] Read next.config.ts to find existing redirects
+[•] Add 301 redirect for old blog URL
+[ ] Run sync-blog-index.mjs and verify JSON
+[ ] Type check with tsc --noEmit
+[ ] Commit all changes
+[ ] Write and commit LANE-RESULT.json
+
+← Edit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\cr-mkt-010-erp-gaps\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-mkt-010-erp-gaps\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\cr-mkt-010-erp-gaps\next.config.ts
+@@ -22,8 +22,9 @@
+     { source: '/apps/crm', destination: '/apps', permanent: true },
+     // BUG-WEB-017: blog slugs renamed during relaunch — preserve Search Console equity
+     { source: '/blog/artwork-approval-process', destination: '/blog/artwork-approval-workflow-brief-to-sign-off-24-hours', permanent: true },
+     { source: '/blog/embroidery-quality-standards', destination: '/blog/embroidery-quality-standards-stitch-density-thread-durability', permanent: true },
++    { source: '/blog/orderwise-what-it-does-well-what-it-doesn-t', destination: '/blog/erp-gaps-decorated-goods-business', permanent: true },
+   ];
+ },
+ async headers() {
+   return [
+
+
+Adding the redirect and installing dependencies in parallel.
+$ npm install
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 440 packages, and audited 441 packages in 14s
+npm warn allow-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+158 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+# Todos
+[✓] Read next.config.ts to find existing redirects
+[✓] Add 301 redirect for old blog URL
+[•] Run sync-blog-index.mjs and verify JSON
+[ ] Type check with tsc --noEmit
+[ ] Commit all changes
+[ ] Write and commit LANE-RESULT.json
+
+Running the blog index sync script.
+$ node scripts/sync-blog-index.mjs
+synced 33 items
+
+Verifying the blog index JSON.
+$ $json = Get-Content "D:\apps\worktrees\decoded-ops-website\cr-mkt-010-erp-gaps\data\blog-index.json" -Raw | ConvertFrom-Json
+$erpGaps = $json | Where-Object { $_.slug -eq "erp-gaps-decorated-goods-business" }
+$orderwise = $json | Where-Object { $_.slug -eq "orderwise-what-it-does-well-what-it-doesn-t" }
+Write-Output "erp-gaps present: $($null -ne $erpGaps)"
+if ($erpGaps) { Write-Output "erp-gaps date: $($erpGaps.date)" }
+Write-Output "orderwise absent: $($null -eq $orderwise)"
+erp-gaps present: False
+orderwise absent: True
+
+$ $json = Get-Content "D:\apps\worktrees\decoded-ops-website\cr-mkt-010-erp-gaps\data\blog-index.json" -Raw | ConvertFrom-Json
+$json | Select-Object -Property slug, date | Sort-Object slug | Format-Table -AutoSize
+slug date
+---- ----
+
+The `erp-gaps-decorated-goods-business` slug is not present in the hub-synced blog index. I cannot hand-edit the JSON per the task rules. Let me check what slugs are actually present and whether there's a local fallback.
+$ git status
+On branch cr-mkt-010-erp-gaps
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   data/blog-index.json
+	modified:   next.config.ts
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.context/lane-briefs/BRIEF-cr-mkt-010-publish.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+→ Read data/blog-index.json [limit=50]
+✱ Grep "orderwise" in data/blog-index.json · 0 matches
+The erp-gaps post is present (line 4, date `2026-09-15`). Let me verify orderwise is absent.
+
+# Todos
+[✓] Read next.config.ts to find existing redirects
+[✓] Add 301 redirect for old blog URL
+[✓] Run sync-blog-index.mjs and verify JSON
+[•] Type check with tsc --noEmit
+[ ] Commit all changes
+[ ] Write and commit LANE-RESULT.json
+
+Confirmed. Now running type check.
+$ npx tsc --noEmit 2>&1; $LASTEXITCODE
+0
+
+# Todos
+[✓] Read next.config.ts to find existing redirects
+[✓] Add 301 redirect for old blog URL
+[✓] Run sync-blog-index.mjs and verify JSON
+[✓] Type check with tsc --noEmit
+[•] Commit all changes
+[ ] Write and commit LANE-RESULT.json
+
+Type check clean. Now committing the redirect + blog index changes.
+$ git diff --stat
+warning: in the working copy of 'data/blog-index.json', LF will be replaced by CRLF the next time Git touches it
+ data/blog-index.json | 14 +++++++-------
+ next.config.ts       |  1 +
+ 2 files changed, 8 insertions(+), 7 deletions(-)
+
+$ git add next.config.ts data/blog-index.json && git commit -m "feat(blog): add 301 redirect for orderwise → erp-gaps, sync blog index
+
+- Add permanent redirect from /blog/orderwise-what-it-does-well-what-it-doesn-t to /blog/erp-gaps-decorated-goods-business
+- Sync blog index from hub: erp-gaps post now present (2026-09-15), orderwise slug removed
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
+warning: in the working copy of 'data/blog-index.json', LF will be replaced by CRLF the next time Git touches it
+[cr-mkt-010-erp-gaps 9b03802] feat(blog): add 301 redirect for orderwise → erp-gaps, sync blog index
+ 2 files changed, 8 insertions(+), 7 deletions(-)
+
+# Todos
+[✓] Read next.config.ts to find existing redirects
+[✓] Add 301 redirect for old blog URL
+[✓] Run sync-blog-index.mjs and verify JSON
+[✓] Type check with tsc --noEmit
+[✓] Commit all changes
+[•] Write and commit LANE-RESULT.json
+
+Now writing the lane report.
+$ git log -1 --format="%H %s"
+9b0380262c96adc766e26b92b28fbed2524c89d9 feat(blog): add 301 redirect for orderwise → erp-gaps, sync blog index
+
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\cr-mkt-010-erp-gaps\.context\lane-reports"
+True
+
+← Write .context/lane-reports/LANE-RESULT.json
+Wrote file successfully.
+
+$ git add .context/lane-reports/LANE-RESULT.json && git commit -m "chore: add lane report for cr-mkt-010-publish (u36)
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
+warning: in the working copy of '.context/lane-reports/LANE-RESULT.json', LF will be replaced by CRLF the next time Git touches it
+[cr-mkt-010-erp-gaps 405cd15] chore: add lane report for cr-mkt-010-publish (u36)
+ 1 file changed, 23 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-RESULT.json
+
+$ git status
+On branch cr-mkt-010-erp-gaps
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.context/lane-briefs/BRIEF-cr-mkt-010-publish.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git log --oneline -5
+405cd15 chore: add lane report for cr-mkt-010-publish (u36)
+9b03802 feat(blog): add 301 redirect for orderwise → erp-gaps, sync blog index
+c2dede4 art: DO-ART-629 erp-gaps-decorated-goods-business hero + 2 figures (CR-MKT-010)
+29ab952 BUG-WEB-025: sync data/blog-index.json from hub index + sync script
+2ebd29d CR-WEB-010: tool lead alert via shared email helper (Resend) to craig@decodedops.co.uk
+
+# Todos
+[✓] Read next.config.ts to find existing redirects
+[✓] Add 301 redirect for old blog URL
+[✓] Run sync-blog-index.mjs and verify JSON
+[✓] Type check with tsc --noEmit
+[✓] Commit all changes
+[✓] Write and commit LANE-RESULT.json
+
+**Lane complete.** Summary:
+
+| Check | Result |
+|---|---|
+| Redirect added | `/blog/orderwise-what-it-does-well-what-it-doesn-t` → `/blog/erp-gaps-decorated-goods-business` (301) |
+| Blog index synced | 33 items; `erp-gaps-decorated-goods-business` present (2026-09-15); `orderwise...` absent |
+| `tsc --noEmit` | Clean (exit 0) |
+| Commits | `9b03802` — redirect + index sync; `405cd15` — lane report |
+| Working tree | Clean (only untracked brief file) |

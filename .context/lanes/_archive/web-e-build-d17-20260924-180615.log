@@ -1,0 +1,282 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-apps-cases-build.md
+[0m
+[0m# [0mTodos
+[•] Read reference files: sector page pattern, D17 CSS files, mockup sources
+[ ] Create app/d17-apps-cases.css from d17-apps-cases.css source
+[ ] Port artwork to app/apps/page.tsx + apply CR-WEB-053
+[ ] Port artwork to app/apps/data-app/page.tsx
+[ ] Port artwork to app/apps/artwork-manager/page.tsx
+[ ] Port artwork to app/apps/commerce/page.tsx + apply CR-WEB-053
+[ ] Port artwork to app/case-studies/page.tsx
+[ ] Port artwork to app/case-studies/case-study-01/page.tsx (Hanicks)
+[ ] Port artwork to app/case-studies/case-study-02/page.tsx (TackleBag)
+[ ] Port artwork to app/case-studies/case-study-03/page.tsx (Cobra) + apply CR-WEB-053
+[ ] Port artwork to app/case-studies/eternal-fitness/page.tsx
+[ ] Run tsc and grep verifications
+[ ] Commit all work
+[ ] Write lane result and notes files
+[0m
+[0m✱ [0mGlob "app/sectors/workwear/page.tsx"[90m 1 match[0m
+[0m✱ [0mGlob ".context/lane-briefs/d17-apps-cases/*"[90m 0 matches[0m
+[0m✱ [0mGlob "app/d17-global.css"[90m 1 match[0m
+Let me read the reference files to understand the pattern and source materials.
+[0m✱ [0mGlob "components/D17Motion.tsx"[90m 1 match[0m
+[0m✱ [0mGlob ".context/lane-briefs/d17-apps-cases/**/*"[90m 0 matches[0m
+[0m✱ [0mGlob ".context/lane-briefs/d17*/**/*"[90m 0 matches[0m
+[0m→ [0mRead app/sectors/workwear/page.tsx
+[0m✱ [0mGlob "**/*d17-apps-cases*"[90m 0 matches[0m
+[0m✱ [0mGlob ".context/lane-briefs/**/*"[90m 0 matches[0m
+[0m→ [0mRead .context
+[0m✱ [0mGlob ".context/**/*.html"[90m 0 matches[0m
+[0m→ [0mRead .context/lane-briefs
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/d17-apps-cases.css
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/d17-art.css
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/apps.main.html
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/apps-data-app.main.html
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/apps-artwork-manager.main.html
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/apps-commerce.main.html
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/case-studies.main.html
+Let me read the CSS files and all the HTML source files in parallel.
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/case-studies-hanicks.main.html
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/case-studies-tacklebag.main.html
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/case-studies-cobra-workwear.main.html
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/case-studies-eternal-fitness.main.html
+Now let me read the remaining case study HTML files and the live pages.
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/d17-apps-cases.css[90m [offset=531][0m
+[0m→ [0mRead app/apps/page.tsx
+I have all the source materials. Now let me read the live pages and the remaining CSS content. I'll delegate the heavy lifting to agents.
+[0m→ [0mRead app/apps/data-app/page.tsx
+[0m
+[0m# [0mTodos
+[✓] Read reference files: sector page pattern, D17 CSS files, mockup sources
+[•] Create app/d17-apps-cases.css from d17-apps-cases.css source
+[ ] Port artwork to app/apps/page.tsx + apply CR-WEB-053
+[ ] Port artwork to app/apps/data-app/page.tsx
+[ ] Port artwork to app/apps/artwork-manager/page.tsx
+[ ] Port artwork to app/apps/commerce/page.tsx + apply CR-WEB-053
+[ ] Port artwork to app/case-studies/page.tsx
+[ ] Port artwork to app/case-studies/case-study-01/page.tsx (Hanicks)
+[ ] Port artwork to app/case-studies/case-study-02/page.tsx (TackleBag)
+[ ] Port artwork to app/case-studies/case-study-03/page.tsx (Cobra) + apply CR-WEB-053
+[ ] Port artwork to app/case-studies/eternal-fitness/page.tsx
+[ ] Run tsc and grep verifications
+[ ] Commit all work
+[ ] Write lane result and notes files
+[0m
+Creating the CSS file first, then delegating page edits to parallel agents.
+[0m→ [0mRead .context/lane-briefs/d17-apps-cases/d17-apps-cases.css
+Let me write the CSS file and then delegate the page edits to parallel agents.
+[0m
+[0m$ [0mcp "D:\apps\worktrees\decoded-ops-website\web-e-build-d17\.context\lane-briefs\d17-apps-cases\d17-apps-cases.css" "D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\d17-apps-cases.css"
+(no output)
+[0m
+[0m# [0mTodos
+[✓] Read reference files: sector page pattern, D17 CSS files, mockup sources
+[✓] Create app/d17-apps-cases.css from d17-apps-cases.css source
+[•] Port artwork to app/apps/page.tsx + apply CR-WEB-053
+[•] Port artwork to app/apps/data-app/page.tsx
+[•] Port artwork to app/apps/artwork-manager/page.tsx
+[•] Port artwork to app/apps/commerce/page.tsx + apply CR-WEB-053
+[•] Port artwork to app/case-studies/page.tsx
+[•] Port artwork to app/case-studies/case-study-01/page.tsx (Hanicks)
+[•] Port artwork to app/case-studies/case-study-02/page.tsx (TackleBag)
+[•] Port artwork to app/case-studies/case-study-03/page.tsx (Cobra) + apply CR-WEB-053
+[•] Port artwork to app/case-studies/eternal-fitness/page.tsx
+[ ] Run tsc and grep verifications
+[ ] Commit all work
+[ ] Write lane result and notes files
+[0m
+[0m• [0mEdit apps/page.tsx D17[90m General Agent[0m
+[0m• [0mEdit data-app page.tsx D17[90m General Agent[0m
+[0m• [0mEdit artwork-manager page D17[90m General Agent[0m
+[0m• [0mEdit commerce page D17[90m General Agent[0m
+[0m• [0mEdit case-studies page D17[90m General Agent[0m
+Launching parallel agents to edit all pages simultaneously.
+[0m• [0mEdit case study 01-03 + EF[90m General Agent[0m
+[0m✓ [0mEdit case-studies page D17[90m General Agent[0m
+[0m✓ [0mEdit apps/page.tsx D17[90m General Agent[0m
+[0m✓ [0mEdit data-app page.tsx D17[90m General Agent[0m
+[0m✓ [0mEdit commerce page D17[90m General Agent[0m
+[0m✓ [0mEdit artwork-manager page D17[90m General Agent[0m
+[0m✓ [0mEdit case study 01-03 + EF[90m General Agent[0m
+[0m
+[0m# [0mTodos
+[✓] Read reference files: sector page pattern, D17 CSS files, mockup sources
+[✓] Create app/d17-apps-cases.css from d17-apps-cases.css source
+[✓] Port artwork to app/apps/page.tsx + apply CR-WEB-053
+[✓] Port artwork to app/apps/data-app/page.tsx
+[✓] Port artwork to app/apps/artwork-manager/page.tsx
+[✓] Port artwork to app/apps/commerce/page.tsx + apply CR-WEB-053
+[✓] Port artwork to app/case-studies/page.tsx
+[✓] Port artwork to app/case-studies/case-study-01/page.tsx (Hanicks)
+[✓] Port artwork to app/case-studies/case-study-02/page.tsx (TackleBag)
+[✓] Port artwork to app/case-studies/case-study-03/page.tsx (Cobra) + apply CR-WEB-053
+[✓] Port artwork to app/case-studies/eternal-fitness/page.tsx
+[•] Run tsc and grep verifications
+[ ] Commit all work
+[ ] Write lane result and notes files
+[0m
+All agents completed. Now running verifications.
+[0m$ [0mnpx tsc --noEmit 2>&1 | head -100
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mgit grep -nE "Khaos|TackleBag|Tackle Bag|named with permission|WooCommerce|Medusa|Shopify|Google Sheets" -- app/apps/ app/case-studies/ 2>&1
+app/case-studies/case-study-03/page.tsx:76:                A workwear B2B distributor needed a B2B trade portal, an ERP evaluation, and a Shopify replacement. I ran a Clarity Audit, then Deliver Consultancy: vendor requirements, procurement, and integration architecture.
+[0m
+[0m$ [0mgit grep -n "craig-blackman" -- app/apps/ app/case-studies/ 2>&1
+(no output)
+[0m
+[0m→ [0mRead app/case-studies/case-study-03/page.tsx[90m [offset=70, limit=15][0m
+Found a Shopify reference that needs fixing. Let me fix it and run tsc.
+[0m
+[0m← [0mEdit app/case-studies/case-study-03/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-03\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-03\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-03\page.tsx
+@@ -72,9 +72,9 @@
+ <div>
+   <span className="eyebrow">Client work · workwear</span>
+   <h1>Architect and advisor, not the builder.</h1>
+   <p className="lede">
+-    A workwear B2B distributor needed a B2B trade portal, an ERP evaluation, and a Shopify replacement. I ran a Clarity Audit, then Deliver Consultancy: vendor requirements, procurement, and integration architecture.
++    A workwear B2B distributor needed a B2B trade portal, an ERP evaluation, and a storefront replacement. I ran a Clarity Audit, then Deliver Consultancy: vendor requirements, procurement, and integration architecture.
+   </p>
+   <div className="hero-cta">
+     <Link href="/contact" className="btn btn--primary">
+       Book a free discovery call <ArrowRight size={18} />
+
+[0m
+[0m$ [0mgit grep -nE "Khaos|TackleBag|Tackle Bag|named with permission|WooCommerce|Medusa|Shopify|Google Sheets" -- app/apps/ app/case-studies/ 2>&1
+(no output)
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m# [0mTodos
+[✓] Read reference files: sector page pattern, D17 CSS files, mockup sources
+[✓] Create app/d17-apps-cases.css from d17-apps-cases.css source
+[✓] Port artwork to app/apps/page.tsx + apply CR-WEB-053
+[✓] Port artwork to app/apps/data-app/page.tsx
+[✓] Port artwork to app/apps/artwork-manager/page.tsx
+[✓] Port artwork to app/apps/commerce/page.tsx + apply CR-WEB-053
+[✓] Port artwork to app/case-studies/page.tsx
+[✓] Port artwork to app/case-studies/case-study-01/page.tsx (Hanicks)
+[✓] Port artwork to app/case-studies/case-study-02/page.tsx (TackleBag)
+[✓] Port artwork to app/case-studies/case-study-03/page.tsx (Cobra) + apply CR-WEB-053
+[✓] Port artwork to app/case-studies/eternal-fitness/page.tsx
+[✓] Run tsc and grep verifications
+[•] Commit all work
+[ ] Write lane result and notes files
+[0m
+All verifications pass. Now committing and writing lane result files.
+[0m$ [0mgit status --short
+M app/apps/artwork-manager/page.tsx
+ M app/apps/commerce/page.tsx
+ M app/apps/data-app/page.tsx
+ M app/apps/page.tsx
+ M app/case-studies/case-study-01/page.tsx
+ M app/case-studies/case-study-02/page.tsx
+ M app/case-studies/case-study-03/page.tsx
+ M app/case-studies/eternal-fitness/page.tsx
+ M app/case-studies/page.tsx
+?? app/d17-apps-cases.css
+[0m
+[0m$ [0mgit add -A && git commit -m "feat(web): D17 artwork on apps-cases pages (WO-INF-061)
+
+Port D17 artwork pieces DO-ART-939..958 into the apps and case studies
+pages following the sector pages' proven pattern (dangerouslySetInnerHTML,
+D17Motion, global CSS imports). Created app/d17-apps-cases.css with full
+CSS for all pieces.
+
+Pages updated:
+- app/apps/page.tsx: DO-ART-939 (hero), DO-ART-940 (architecture)
+- app/apps/data-app/page.tsx: DO-ART-941 (hero), DO-ART-942 (layer stack), DO-ART-943 (screens)
+- app/apps/artwork-manager/page.tsx: DO-ART-944 (hero), DO-ART-945 (flow)
+- app/apps/commerce/page.tsx: DO-ART-946 (hero), DO-ART-947 (capability), DO-ART-948 (custom work)
+- app/case-studies/page.tsx: DO-ART-949 (hero), DO-ART-950 (case index heads)
+- app/case-studies/case-study-01/page.tsx: DO-ART-952 (hero), DO-ART-951 (measure)
+- app/case-studies/case-study-02/page.tsx: DO-ART-953 (hero), DO-ART-954 (measure)
+- app/case-studies/case-study-03/page.tsx: DO-ART-955 (hero), DO-ART-956 (architecture)
+- app/case-studies/eternal-fitness/page.tsx: DO-ART-957 (exhibit), DO-ART-958 (principle)
+
+CR-WEB-053 applied:
+- Removed WooCommerce, Medusa, Shopify platform names
+- Removed Cobra name from case study 03 (kept anonymous: 'a workwear brand')
+- Eternal Fitness naming kept (consented)
+
+Verified: tsc clean, grep returns 0 hits for forbidden terms."
+warning: in the working copy of 'app/apps/commerce/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/apps/data-app/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/apps/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/case-study-01/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/case-study-02/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/case-study-03/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/eternal-fitness/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[web-e-build-d17 6518798] feat(web): D17 artwork on apps-cases pages (WO-INF-061)
+ 10 files changed, 1829 insertions(+), 1018 deletions(-)
+ create mode 100644 app/d17-apps-cases.css
+[0m
+Now writing the lane result and notes files.
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-e-build-d17\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-e-build-d17.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-e-build-d17.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web-e-build-d17.json .context/lane-reports/LANE-NOTES-web-e-build-d17.md && git commit -m "chore: lane report for web-e-build-d17"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-e-build-d17.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-e-build-d17.json', LF will be replaced by CRLF the next time Git touches it
+[web-e-build-d17 12aa02f] chore: lane report for web-e-build-d17
+ 2 files changed, 64 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-e-build-d17.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-e-build-d17.json
+[0m
+[0m# [0mTodos
+[✓] Read reference files: sector page pattern, D17 CSS files, mockup sources
+[✓] Create app/d17-apps-cases.css from d17-apps-cases.css source
+[✓] Port artwork to app/apps/page.tsx + apply CR-WEB-053
+[✓] Port artwork to app/apps/data-app/page.tsx
+[✓] Port artwork to app/apps/artwork-manager/page.tsx
+[✓] Port artwork to app/apps/commerce/page.tsx + apply CR-WEB-053
+[✓] Port artwork to app/case-studies/page.tsx
+[✓] Port artwork to app/case-studies/case-study-01/page.tsx (Hanicks)
+[✓] Port artwork to app/case-studies/case-study-02/page.tsx (TackleBag)
+[✓] Port artwork to app/case-studies/case-study-03/page.tsx (Cobra) + apply CR-WEB-053
+[✓] Port artwork to app/case-studies/eternal-fitness/page.tsx
+[✓] Run tsc and grep verifications
+[✓] Commit all work
+[✓] Write lane result and notes files
+[0m
+Lane complete. Two commits made:
+
+1. **`6518798`** — `feat(web): D17 artwork on apps-cases pages (WO-INF-061)` — 10 files, +1829/-1018 lines
+2. **`12aa02f`** — `chore: lane report for web-e-build-d17`
+
+**What was done:**
+- Created `app/d17-apps-cases.css` with full D17 artwork CSS (DO-ART-939–958)
+- Ported D17 artwork into all 9 pages using the sector pages' proven pattern (`dangerouslySetInnerHTML`, `D17Motion`, global CSS imports)
+- Applied CR-WEB-053: removed WooCommerce, Medusa, Shopify, and Cobra name references
+- Kept Eternal Fitness naming (consented)
+
+**Per page:**
+- `/apps` — DO-ART-939 (hero screens), DO-ART-940 (architecture plate)
+- `/apps/data-app` — DO-ART-941 (supplier matching), DO-ART-942 (layer stack), DO-ART-943 (screens)
+- `/apps/artwork-manager` — DO-ART-944 (approval history), DO-ART-945 (vault-to-floor route)
+- `/apps/commerce` — DO-ART-946 (trade storefront), DO-ART-947 (capability tiers), DO-ART-948 (rebuild scope)
+- `/case-studies` — DO-ART-949 (engagement files), DO-ART-950 (case index heads)
+- `/case-studies/case-study-01` — DO-ART-952 (ERP changed), DO-ART-951 (live catalogue figures)
+- `/case-studies/case-study-02` — DO-ART-953 (warehouse phone), DO-ART-954 (before/after documents)
+- `/case-studies/case-study-03` — DO-ART-955 (vendor brief), DO-ART-956 (architecture zones)
+- `/case-studies/eternal-fitness` — DO-ART-957 (training plan tool), DO-ART-958 (review gate flow)
+
+**Verification:** tsc clean, 0 grep hits for forbidden terms.

@@ -1,0 +1,332 @@
+
+> build ┬╖ mimo-v2.5
+
+# Todos
+[ΓÇó] Record before-state: count 'Discovery Day' in app/clients/
+[ ] Edit ClarityAuditSchematic.tsx: SVG text DISCOVERY DAY ΓåÆ CLARITY AUDIT
+[ ] Edit ThreeLayerSchematic.tsx: text Discovery Day ΓåÆ Clarity Audit
+[ ] Edit HeroVisual.tsx: doc comment rename
+[ ] Edit docs/content-audit.md: 7 mentions, contextual update
+[ ] Verify: rg 0 hits in components/ app/ (excl clients), tsc, git diff
+[ ] Write LANE-NOTES
+[ ] Commit
+
+ΓåÆ Read components/schematics/ClarityAuditSchematic.tsx
+
+$ rg -n "Discovery Day" app/clients/ --count
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+ΓåÆ Read components/schematics/ThreeLayerSchematic.tsx
+ΓåÆ Read components/HeroVisual.tsx
+
+$ rg -n "Discovery Day" docs/content-audit.md
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Γ£▒ Grep "Discovery Day" in app/clients ┬╖ 49 matches
+Γ£▒ Grep "Discovery Day" in docs/content-audit.md ┬╖ 7 matches
+Γ£▒ Grep "Discovery Day" in components ┬╖ 2 matches
+Γ£▒ Grep "Discovery Day" in app ┬╖ 0 matches
+
+# Todos
+[Γ£ô] Record before-state: count 'Discovery Day' in app/clients/
+[ΓÇó] Edit ClarityAuditSchematic.tsx: SVG text DISCOVERY DAY ΓåÆ CLARITY AUDIT
+[ ] Edit ThreeLayerSchematic.tsx: text Discovery Day ΓåÆ Clarity Audit
+[ ] Edit HeroVisual.tsx: doc comment rename
+[ ] Edit docs/content-audit.md: 7 mentions, contextual update
+[ ] Verify: rg 0 hits in components/ app/ (excl clients), tsc, git diff
+[ ] Write LANE-NOTES
+[ ] Commit
+
+Before-state recorded: `app/clients/` has 49 hits across 4 proposal data files. Now making the edits.
+ΓåÉ Edit components/schematics/ClarityAuditSchematic.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\components\schematics\ClarityAuditSchematic.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\components\schematics\ClarityAuditSchematic.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\components\schematics\ClarityAuditSchematic.tsx
+@@ -58,9 +58,9 @@
+ <rect width="1240" height="860" rx="16" fill={`url(#${ID}-grid-${tone})`} opacity={c.gridOp} />
+ <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
+ 
+ {/* eyebrow + headline */}
+-<text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">DISCOVERY DAY</text>
++<text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">CLARITY AUDIT</text>
+ <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">One call. One day. One clear plan.</text>
+ 
+ {/* zone bands, single row at y=170 */}
+ <g className="sch-fade sch-f1" style={fMono} fontSize="20" letterSpacing="2.5" fill={c.mono} opacity="0.6">
+
+
+ΓåÉ Edit components/schematics/ThreeLayerSchematic.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\components\schematics\ThreeLayerSchematic.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\components\schematics\ThreeLayerSchematic.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\components\schematics\ThreeLayerSchematic.tsx
+@@ -91,9 +91,9 @@
+ <g className="sch-fade sch-f2" style={fBody}>
+   {/* PR-001 */}
+   <circle cx="150" cy="300" r="5" fill={c.sub} />
+   <text x="176" y="296" style={fMono} fontSize="12" fill={c.sub}>DO-PR-001</text>
+-  <text x="176" y="314" fontSize="14" fill={c.ink}>Discovery Day</text>
++  <text x="176" y="314" fontSize="14" fill={c.ink}>Clarity Audit</text>
+   <circle cx="360" cy="304" r="4" fill={cyan} />
+   {/* PR-002 (active, pulsing) */}
+   <circle cx="150" cy="380" className="sch-halo" r="16" fill={amber} />
+   <circle cx="150" cy="380" r="5" fill={amber} />
+
+
+ΓåÉ Edit components/HeroVisual.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\components\HeroVisual.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\components\HeroVisual.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\components\HeroVisual.tsx
+@@ -1,9 +1,9 @@
+ import Image from 'next/image';
+ import { ScreenshotFrame } from '@/components/ScreenshotFrame';
+ 
+ /**
+- * Homepage hero visual, replaces the Discovery Day audit-flow schematic.
++ * Homepage hero visual, replaces the earlier audit-flow schematic.
+  * Craig's read (2026-07-15): that schematic represented the audit product,
+  * not what he does day to day. This pairs a real industry photo with a
+  * live-software card, so the hero says "I work in this world AND I build
+  * the tools" rather than "step 1: audit."
+
+
+# Todos
+[Γ£ô] Record before-state: count 'Discovery Day' in app/clients/
+[Γ£ô] Edit ClarityAuditSchematic.tsx: SVG text DISCOVERY DAY ΓåÆ CLARITY AUDIT
+[Γ£ô] Edit ThreeLayerSchematic.tsx: text Discovery Day ΓåÆ Clarity Audit
+[Γ£ô] Edit HeroVisual.tsx: doc comment rename
+[ΓÇó] Edit docs/content-audit.md: 7 mentions, contextual update
+[ ] Verify: rg 0 hits in components/ app/ (excl clients), tsc, git diff
+[ ] Write LANE-NOTES
+[ ] Commit
+
+ΓåÆ Read docs/content-audit.md [offset=283, limit=25]
+ΓåÆ Read docs/content-audit.md [offset=299, limit=10]
+ΓåÆ Read docs/content-audit.md [offset=342, limit=10]
+ΓåÆ Read docs/content-audit.md [offset=838, limit=10]
+ΓåÆ Read docs/content-audit.md [offset=863, limit=10]
+ΓåÆ Read docs/content-audit.md [offset=893, limit=10]
+ΓåÆ Read docs/content-audit.md [offset=1500, limit=10]
+
+ΓåÉ Edit docs/content-audit.md
+Index: D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
++++ D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+@@ -283,9 +283,9 @@
+ _Source: app/clarity/page.tsx_
+ 
+ ### Metadata (SEO)
+ 
+-- **Title:** Discovery Day ΓÇö On-Site Audit for Print and Decoration Businesses | Decoded Ops
++- **Title:** Clarity Audit ΓÇö On-Site Audit for Print and Decoration Businesses | Decoded Ops
+ - **Meta description:** A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations.
+ - **Canonical:** /clarity
+ 
+ ### Page copy (heading & body)
+
+
+ΓåÉ Edit docs/content-audit.md
+Index: D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
++++ D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+@@ -299,9 +299,9 @@
+ ##### Ready to find the right engagement?
+ 
+ ##### The deliverables
+ 
+-##### What happens after Discovery Day?
++##### What happens after the Clarity Audit?
+ 
+ > "If the written assessment doesn't give you something you can act on, you're not obligated to go any further. No conditions. No questions."
+ 
+ A structured technology audit and operations review ΓÇö independent, on site, and delivered in writing. Not a workshop. Not a proposal. A real audit ΓÇö followed, observed, and quantified. One fixed fee, no surprises.
+
+
+ΓåÉ Edit docs/content-audit.md
+Index: D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
++++ D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+@@ -342,9 +342,9 @@
+ - Follow-up support for 30 days after delivery
+ 
+ ### Data object: `nextSteps`
+ 
+-- icon: Zap; title: Deliver; href: /deliver; desc: A fixed-scope project to implement the highest-impact recommendations from your Discovery Day report.
++- icon: Zap; title: Deliver; href: /deliver; desc: A fixed-scope project to implement the highest-impact recommendations from your Clarity Audit report.
+ - icon: Settings; title: Transform; href: /transform; desc: A longer engagement to overhaul systems, processes, and technology across the business.
+ - icon: Users; title: Retained; href: /retained; desc: Monthly strategic and operational leadership ΓÇö roadmap ownership, vendor management, ongoing.
+ 
+ ---
+
+
+ΓåÉ Edit docs/content-audit.md
+Index: D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
++++ D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+@@ -838,9 +838,9 @@
+ 
+ ### Metadata (SEO)
+ 
+ - **Title:** Print, Embroidery & Decoration Technology Consultant | Decoded Ops
+-- **Meta description:** Independent technology and operations consultant for UK print, embroidery, and decoration businesses. Discovery Day ΓÇö a full day on site, a written plan. 25 years in the sector. Plain English. No vendor agenda.
++- **Meta description:** Independent technology and operations consultant for UK print, embroidery, and decoration businesses. Clarity Audit ΓÇö a full day on site, a written plan. 25 years in the sector. Plain English. No vendor agenda.
+ - **Canonical:** /
+ 
+ ### Page copy (heading & body)
+ 
+
+
+ΓåÉ Edit docs/content-audit.md
+Index: D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
++++ D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+@@ -863,9 +863,9 @@
+ > ΓÇ£If I spent a day in your business looking at your systems, your processes, and your technology ΓÇö how{' '} confident{' '}are you that I wouldn't find anything costing you money you don't know about?ΓÇ¥
+ 
+ You know your business is losing money somewhere. You can feel the friction. The workarounds. The systems that don't talk to each other. 25 years inside print, embroidery, and decoration businesses says the same patterns repeat ΓÇö and they're fixable.
+ 
+-Independent technology and operations consultancy for UK print, embroidery, workwear, and promotional merchandise businesses. Discovery Day gets you a full day on site and a written plan. Plain English. No jargon. No vendor agenda.
++Independent technology and operations consultancy for UK print, embroidery, workwear, and promotional merchandise businesses. The Clarity Audit gets you a full day on site and a written plan. Plain English. No jargon. No vendor agenda.
+ 
+ That question is worth sitting with. Most owners can't answer it honestly.
+ 
+ These are the numbers I see in businesses like yours, every week. Not hypothetical. Not worst-case. Just the quiet cost of systems that don't talk to each other.
+
+
+ΓåÉ Edit docs/content-audit.md
+Index: D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
++++ D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+@@ -893,9 +893,9 @@
+ The discovery call is free, takes 60 minutes, and comes with no obligation. Just an honest conversation about your operation.
+ 
+ ### Data object: `services`
+ 
+-- icon: Search; name: Discovery Day; subtitle: On-Site Audit & Written Plan; desc: A full day on site, six areas covered, a written assessment and roadmap ΓÇö the entry point into everything else.; href: /clarity; badge: 'Start here' as string | null
++- icon: Search; name: Clarity Audit; subtitle: On-Site Audit & Written Plan; desc: A full day on site, six areas covered, a written assessment and roadmap ΓÇö the entry point into everything else.; href: /clarity; badge: 'Start here' as string | null
+ - icon: FileText; name: Deliver; subtitle: Project Delivery & Vendor Management; desc: Independent vendor brief, procurement, and project oversight. One point of contact. The vendor delivers what your business actually needs.; href: /deliver; badge: null as string | null
+ - icon: Layers; name: Transform; subtitle: Digital Transformation Programme; desc: Multi-workstream programmes ΓÇö ERP, eCommerce, process redesign. Process-led and people-first. Discovery required before scoping.; href: /transform; badge: null as string | null
+ - icon: Users; name: Retained; subtitle: Fractional CTO / Head of Operations; desc: Monthly strategic and operational leadership. Roadmap ownership. Vendor management. A direct line to Craig.; href: /retained; badge: null as string | null
+ 
+
+
+ΓåÉ Edit docs/content-audit.md
+Index: D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
++++ D:\apps\worktrees\decoded-ops-website\lane-u4-discovery-day-rename\docs\content-audit.md
+@@ -1500,9 +1500,9 @@
+ - ISO-ready, not ISO-burdened. Maps to ISO 9001 principles, without the certification weight.
+ 
+ ### Data object: `processRegister`
+ 
+-- ref: DO-PR-001; process: Discovery Day Delivery; status: active
++- ref: DO-PR-001; process: Clarity Audit Delivery; status: active
+ - ref: DO-PR-002; process: Clarity Audit & Report; status: active
+ - ref: DO-PR-003; process: New Client Onboarding; status: active
+ - ref: DO-PR-004; process: Proposal Build & Sign-off; status: active
+ - ref: DO-PR-005; process: App Requirements Capture; status: active
+
+
+All 7 mentions are current site copy ΓÇö none are historical notes. Updating them all.
+# Todos
+[Γ£ô] Record before-state: count 'Discovery Day' in app/clients/
+[Γ£ô] Edit ClarityAuditSchematic.tsx: SVG text DISCOVERY DAY ΓåÆ CLARITY AUDIT
+[Γ£ô] Edit ThreeLayerSchematic.tsx: text Discovery Day ΓåÆ Clarity Audit
+[Γ£ô] Edit HeroVisual.tsx: doc comment rename
+[Γ£ô] Edit docs/content-audit.md: 7 mentions, contextual update
+[ΓÇó] Verify: rg 0 hits in components/ app/ (excl clients), tsc, git diff
+[ ] Write LANE-NOTES
+[ ] Commit
+
+All edits done. Now verifying.
+Γ£▒ Grep "Discovery Day" in components ┬╖ 0 matches
+Γ£▒ Grep "Discovery Day" in app ┬╖ 0 matches
+Γ£▒ Grep "Discovery Day" in app/clients ┬╖ 49 matches
+
+$ git diff --stat
+components/HeroVisual.tsx                       |  2 +-
+ components/schematics/ClarityAuditSchematic.tsx |  2 +-
+ components/schematics/ThreeLayerSchematic.tsx   |  2 +-
+ docs/content-audit.md                           | 14 +++++++-------
+ 4 files changed, 10 insertions(+), 10 deletions(-)
+
+Verification passes:
+1. **components/** ΓÇö 0 hits Γ£à
+2. **app/** (excl clients) ΓÇö 0 hits Γ£à
+3. **app/clients/** ΓÇö 49 hits, unchanged Γ£à
+4. **git diff --stat** ΓÇö exactly 4 files Γ£à
+
+Let me check if tsc can run:
+$ Test-Path "node_modules" ; Test-Path "node_modules/typescript"
+True
+True
+
+$ npx tsc --noEmit 2>&1
+(no output)
+
+# Todos
+[Γ£ô] Record before-state: count 'Discovery Day' in app/clients/
+[Γ£ô] Edit ClarityAuditSchematic.tsx: SVG text DISCOVERY DAY ΓåÆ CLARITY AUDIT
+[Γ£ô] Edit ThreeLayerSchematic.tsx: text Discovery Day ΓåÆ Clarity Audit
+[Γ£ô] Edit HeroVisual.tsx: doc comment rename
+[Γ£ô] Edit docs/content-audit.md: 7 mentions, contextual update
+[Γ£ô] Verify: rg 0 hits in components/ app/ (excl clients), tsc, git diff
+[ΓÇó] Write LANE-NOTES
+[ ] Commit
+
+`tsc --noEmit` exit 0. Now writing lane notes and committing.
+$ New-Item -ItemType Directory -Force -Path ".context\lane-reports" | Out-Null
+(no output)
+
+ΓåÉ Write .context/lane-reports/LANE-NOTES-u4-discovery-day-rename.md
+Wrote file successfully.
+
+# Todos
+[Γ£ô] Record before-state: count 'Discovery Day' in app/clients/
+[Γ£ô] Edit ClarityAuditSchematic.tsx: SVG text DISCOVERY DAY ΓåÆ CLARITY AUDIT
+[Γ£ô] Edit ThreeLayerSchematic.tsx: text Discovery Day ΓåÆ Clarity Audit
+[Γ£ô] Edit HeroVisual.tsx: doc comment rename
+[Γ£ô] Edit docs/content-audit.md: 7 mentions, contextual update
+[Γ£ô] Verify: rg 0 hits in components/ app/ (excl clients), tsc, git diff
+[Γ£ô] Write LANE-NOTES
+[ΓÇó] Commit
+
+$ git add components/schematics/ClarityAuditSchematic.tsx components/schematics/ThreeLayerSchematic.tsx components/HeroVisual.tsx docs/content-audit.md .context/lane-reports/LANE-NOTES-u4-discovery-day-rename.md && git commit -m "CR-WEB-007: rename Discovery Day to Clarity Audit in live schematics"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-u4-discovery-day-rename.md', LF will be replaced by CRLF the next time Git touches it
+[lane/u4-discovery-day-rename 59bad9b] CR-WEB-007: rename Discovery Day to Clarity Audit in live schematics
+ 5 files changed, 66 insertions(+), 10 deletions(-)
+ create mode 100644 .context/lane-reports/LANE-NOTES-u4-discovery-day-rename.md
+
+# Todos
+[Γ£ô] Record before-state: count 'Discovery Day' in app/clients/
+[Γ£ô] Edit ClarityAuditSchematic.tsx: SVG text DISCOVERY DAY ΓåÆ CLARITY AUDIT
+[Γ£ô] Edit ThreeLayerSchematic.tsx: text Discovery Day ΓåÆ Clarity Audit
+[Γ£ô] Edit HeroVisual.tsx: doc comment rename
+[Γ£ô] Edit docs/content-audit.md: 7 mentions, contextual update
+[Γ£ô] Verify: rg 0 hits in components/ app/ (excl clients), tsc, git diff
+[Γ£ô] Write LANE-NOTES
+[Γ£ô] Commit
+
+Done. Committed `59bad9b` on `lane/u4-discovery-day-rename`.
+
+**Summary:**
+- `ClarityAuditSchematic.tsx` ΓÇö SVG eyebrow `DISCOVERY DAY` ΓåÆ `CLARITY AUDIT` (same char count, no layout change)
+- `ThreeLayerSchematic.tsx` ΓÇö process register label `Discovery Day` ΓåÆ `Clarity Audit`
+- `HeroVisual.tsx` ΓÇö doc comment updated
+- `content-audit.md` ΓÇö all 7 mentions updated (all were current site copy, none historical)
+- `app/clients/**` ΓÇö untouched (49 hits unchanged)
+- `tsc --noEmit` ΓÇö exit 0
+- Lane notes at `.context/lane-reports/LANE-NOTES-u4-discovery-day-rename.md`
+
+Not pushed.

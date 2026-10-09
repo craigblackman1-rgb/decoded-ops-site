@@ -1,0 +1,2001 @@
+2026-09-25 16:36:07 [truncated to last 2000 lines]
+d----          25/09/2026    16:17                _global-error
+d----          25/09/2026    16:18                _global-error.segments
+d----          25/09/2026    16:17                _not-found
+d----          25/09/2026    16:18                _not-found.segments
+d----          25/09/2026    16:17                about
+d----          25/09/2026    16:18                about.segments
+d----          25/09/2026    16:17                api
+d----          25/09/2026    16:18                apps
+d----          25/09/2026    16:18                apps.segments
+d----          25/09/2026    16:17                blog
+d----          25/09/2026    16:18                blog.segments
+d----          25/09/2026    16:18                case-studies
+d----          25/09/2026    16:18                case-studies.segments
+d----          25/09/2026    16:17                clarity
+d----          25/09/2026    16:18                clarity.segments
+d----          25/09/2026    16:18                clients
+d----          25/09/2026    16:17                contact
+d----          25/09/2026    16:18                contact.segments
+d----          25/09/2026    16:17                cookies
+d----          25/09/2026    16:18                cookies.segments
+d----          25/09/2026    16:17                deliver
+d----          25/09/2026    16:18                deliver.segments
+d----          25/09/2026    16:17                how-i-build
+d----          25/09/2026    16:18                how-i-build.segments
+d----          25/09/2026    16:18                index.segments
+d----          25/09/2026    16:18                locations
+d----          25/09/2026    16:17                opengraph-image
+d----          25/09/2026    16:17                page
+d----          25/09/2026    16:17                pricing
+d----          25/09/2026    16:18                pricing.segments
+d----          25/09/2026    16:17                privacy
+d----          25/09/2026    16:18                privacy.segments
+d----          25/09/2026    16:18                problems
+d----          25/09/2026    16:18                problems.segments
+d----          25/09/2026    16:17                process-quality-system
+d----          25/09/2026    16:18                process-quality-system.segments
+d----          25/09/2026    16:18                resources
+d----          25/09/2026    16:18                resources.segments
+d----          25/09/2026    16:17                retained
+d----          25/09/2026    16:18                retained.segments
+d----          25/09/2026    16:17                robots.txt
+d----          25/09/2026    16:18                sectors
+d----          25/09/2026    16:17                sitemap.xml
+d----          25/09/2026    16:17                small-business
+d----          25/09/2026    16:18                small-business.segments
+d----          25/09/2026    16:18                tools
+d----          25/09/2026    16:18                tools.segments
+d----          25/09/2026    16:17                transform
+d----          25/09/2026    16:18                transform.segments
+-a---          25/09/2026    16:18           8938 _global-error.html
+-a---          25/09/2026    16:18            421 _global-error.meta
+-a---          25/09/2026    16:18           4743 _global-error.rsc
+-a---          25/09/2026    16:18          32041 _not-found.html
+-a---          25/09/2026    16:18            517 _not-found.meta
+-a---          25/09/2026    16:18           9767 _not-found.rsc
+-a---          25/09/2026    16:18          61031 about.html
+-a---          25/09/2026    16:18            480 about.meta
+-a---          25/09/2026    16:18          24963 about.rsc
+-a---          25/09/2026    16:18          77396 apps.html
+-a---          25/09/2026    16:18            476 apps.meta
+-a---          25/09/2026    16:18          33784 apps.rsc
+-a---          25/09/2026    16:18         106089 blog.html
+-a---          25/09/2026    16:18            476 blog.meta
+-a---          25/09/2026    16:18          30658 blog.rsc
+-a---          25/09/2026    16:18          56150 case-studies.html
+-a---          25/09/2026    16:18            508 case-studies.meta
+-a---          25/09/2026    16:18          22896 case-studies.rsc
+-a---          25/09/2026    16:18          60373 clarity.html
+-a---          25/09/2026    16:18            488 clarity.meta
+-a---          25/09/2026    16:18          21933 clarity.rsc
+-a---          25/09/2026    16:18          43470 contact.html
+-a---          25/09/2026    16:18            488 contact.meta
+-a---          25/09/2026    16:18           9242 contact.rsc
+-a---          25/09/2026    16:18          47156 cookies.html
+-a---          25/09/2026    16:18            488 cookies.meta
+-a---          25/09/2026    16:18          17520 cookies.rsc
+-a---          25/09/2026    16:18          58144 deliver.html
+-a---          25/09/2026    16:18            488 deliver.meta
+-a---          25/09/2026    16:18          20735 deliver.rsc
+-a---          25/09/2026    16:18          67958 how-i-build.html
+-a---          25/09/2026    16:18            504 how-i-build.meta
+-a---          25/09/2026    16:18          23353 how-i-build.rsc
+-a---          25/09/2026    16:18          94346 index.html
+-a---          25/09/2026    16:18            362 index.meta
+-a---          25/09/2026    16:18          41709 index.rsc
+-a---          25/09/2026    16:17           8183 page_client-reference-manifest.js
+-a---          25/09/2026    16:17           1005 page.js
+-a---          25/09/2026    16:17             53 page.js.map
+-a---          25/09/2026    16:17          21589 page.js.nft.json
+-a---          25/09/2026    16:18          62500 pricing.html
+-a---          25/09/2026    16:18            488 pricing.meta
+-a---          25/09/2026    16:18          23455 pricing.rsc
+-a---          25/09/2026    16:18          50607 privacy.html
+-a---          25/09/2026    16:18            488 privacy.meta
+-a---          25/09/2026    16:18          19511 privacy.rsc
+-a---          25/09/2026    16:18          61936 problems.html
+-a---          25/09/2026    16:18            492 problems.meta
+-a---          25/09/2026    16:18          23383 problems.rsc
+-a---          25/09/2026    16:18          51896 process-quality-system.html
+-a---          25/09/2026    16:18            548 process-quality-system.meta
+-a---          25/09/2026    16:18          17475 process-quality-system.rsc
+-a---          25/09/2026    16:18          68608 resources.html
+-a---          25/09/2026    16:18            496 resources.meta
+-a---          25/09/2026    16:18          26651 resources.rsc
+-a---          25/09/2026    16:18          57568 retained.html
+-a---          25/09/2026    16:18            492 retained.meta
+-a---          25/09/2026    16:18          20407 retained.rsc
+-a---          25/09/2026    16:18          53353 small-business.html
+-a---          25/09/2026    16:18            516 small-business.meta
+-a---          25/09/2026    16:18          19829 small-business.rsc
+-a---          25/09/2026    16:18          48711 tools.html
+-a---          25/09/2026    16:18            480 tools.meta
+-a---          25/09/2026    16:18          18621 tools.rsc
+-a---          25/09/2026    16:18          58994 transform.html
+-a---          25/09/2026    16:18            496 transform.meta
+-a---          25/09/2026    16:18          21207 transform.rsc
+[0m
+[0m$ [0mls .next/server/app/about/ .next/server/app/case-studies/ .next/server/app/blog/ .next/server/app/locations/ .next/server/app/sectors/ .next/server/app/tools/ .next/server/app/resources/ 2>&1
+Get-ChildItem: A positional parameter cannot be found that accepts argument '.next/server/app/blog/'.
+[0m
+[0m$ [0mGet-ChildItem .next/server/app/about -Recurse -Name 2>&1; Get-ChildItem .next/server/app/case-studies -Recurse -Name 2>&1; Get-ChildItem .next/server/app/locations -Recurse -Name 2>&1
+page
+page_client-reference-manifest.js
+page.js
+page.js.map
+page.js.nft.json
+page\app-paths-manifest.json
+page\build-manifest.json
+page\next-font-manifest.json
+page\react-loadable-manifest.json
+page\server-reference-manifest.json
+case-study-01
+case-study-01.segments
+case-study-02
+case-study-02.segments
+case-study-03
+case-study-03.segments
+eternal-fitness
+eternal-fitness.segments
+page
+case-study-01.html
+case-study-01.meta
+case-study-01.rsc
+case-study-02.html
+case-study-02.meta
+case-study-02.rsc
+case-study-03.html
+case-study-03.meta
+case-study-03.rsc
+eternal-fitness.html
+eternal-fitness.meta
+eternal-fitness.rsc
+page_client-reference-manifest.js
+page.js
+page.js.map
+page.js.nft.json
+case-study-01\page
+case-study-01\page_client-reference-manifest.js
+case-study-01\page.js
+case-study-01\page.js.map
+case-study-01\page.js.nft.json
+case-study-01\page\app-paths-manifest.json
+case-study-01\page\build-manifest.json
+case-study-01\page\next-font-manifest.json
+case-study-01\page\react-loadable-manifest.json
+case-study-01\page\server-reference-manifest.json
+case-study-01.segments\case-studies
+case-study-01.segments\_full.segment.rsc
+case-study-01.segments\_tree.segment.rsc
+case-study-01.segments\case-studies\case-study-01
+case-study-01.segments\case-studies\case-study-01\__PAGE__.segment.rsc
+case-study-02\page
+case-study-02\page_client-reference-manifest.js
+case-study-02\page.js
+case-study-02\page.js.map
+case-study-02\page.js.nft.json
+case-study-02\page\app-paths-manifest.json
+case-study-02\page\build-manifest.json
+case-study-02\page\next-font-manifest.json
+case-study-02\page\react-loadable-manifest.json
+case-study-02\page\server-reference-manifest.json
+case-study-02.segments\case-studies
+case-study-02.segments\_full.segment.rsc
+case-study-02.segments\_tree.segment.rsc
+case-study-02.segments\case-studies\case-study-02
+case-study-02.segments\case-studies\case-study-02\__PAGE__.segment.rsc
+case-study-03\page
+case-study-03\page_client-reference-manifest.js
+case-study-03\page.js
+case-study-03\page.js.map
+case-study-03\page.js.nft.json
+case-study-03\page\app-paths-manifest.json
+case-study-03\page\build-manifest.json
+case-study-03\page\next-font-manifest.json
+case-study-03\page\react-loadable-manifest.json
+case-study-03\page\server-reference-manifest.json
+case-study-03.segments\case-studies
+case-study-03.segments\_full.segment.rsc
+case-study-03.segments\_tree.segment.rsc
+case-study-03.segments\case-studies\case-study-03
+case-study-03.segments\case-studies\case-study-03\__PAGE__.segment.rsc
+eternal-fitness\page
+eternal-fitness\page_client-reference-manifest.js
+eternal-fitness\page.js
+eternal-fitness\page.js.map
+eternal-fitness\page.js.nft.json
+eternal-fitness\page\app-paths-manifest.json
+eternal-fitness\page\build-manifest.json
+eternal-fitness\page\next-font-manifest.json
+eternal-fitness\page\react-loadable-manifest.json
+eternal-fitness\page\server-reference-manifest.json
+eternal-fitness.segments\case-studies
+eternal-fitness.segments\_full.segment.rsc
+eternal-fitness.segments\_tree.segment.rsc
+eternal-fitness.segments\case-studies\eternal-fitness
+eternal-fitness.segments\case-studies\eternal-fitness\__PAGE__.segment.rsc
+page\app-paths-manifest.json
+page\build-manifest.json
+page\next-font-manifest.json
+page\react-loadable-manifest.json
+page\server-reference-manifest.json
+fractional-cto
+fractional-cto.segments
+tech-audit
+tech-audit.segments
+fractional-cto.html
+fractional-cto.meta
+fractional-cto.rsc
+tech-audit.html
+tech-audit.meta
+tech-audit.rsc
+fractional-cto\[location]
+fractional-cto\bexhill-on-sea.segments
+fractional-cto\bognor-regis.segments
+fractional-cto\brighton.segments
+fractional-cto\burgess-hill.segments
+fractional-cto\camberley.segments
+fractional-cto\chichester.segments
+fractional-cto\crawley.segments
+fractional-cto\crowborough.segments
+fractional-cto\dorking.segments
+fractional-cto\eastbourne.segments
+fractional-cto\epsom.segments
+fractional-cto\farnham.segments
+fractional-cto\guildford.segments
+fractional-cto\hastings.segments
+fractional-cto\haywards-heath.segments
+fractional-cto\horsham.segments
+fractional-cto\hove.segments
+fractional-cto\leatherhead.segments
+fractional-cto\lewes.segments
+fractional-cto\littlehampton.segments
+fractional-cto\london.segments
+fractional-cto\manchester.segments
+fractional-cto\page
+fractional-cto\redhill.segments
+fractional-cto\reigate.segments
+fractional-cto\seaford.segments
+fractional-cto\shoreham-by-sea.segments
+fractional-cto\uckfield.segments
+fractional-cto\woking.segments
+fractional-cto\worthing.segments
+fractional-cto\bexhill-on-sea.html
+fractional-cto\bexhill-on-sea.meta
+fractional-cto\bexhill-on-sea.rsc
+fractional-cto\bognor-regis.html
+fractional-cto\bognor-regis.meta
+fractional-cto\bognor-regis.rsc
+fractional-cto\brighton.html
+fractional-cto\brighton.meta
+fractional-cto\brighton.rsc
+fractional-cto\burgess-hill.html
+fractional-cto\burgess-hill.meta
+fractional-cto\burgess-hill.rsc
+fractional-cto\camberley.html
+fractional-cto\camberley.meta
+fractional-cto\camberley.rsc
+fractional-cto\chichester.html
+fractional-cto\chichester.meta
+fractional-cto\chichester.rsc
+fractional-cto\crawley.html
+fractional-cto\crawley.meta
+fractional-cto\crawley.rsc
+fractional-cto\crowborough.html
+fractional-cto\crowborough.meta
+fractional-cto\crowborough.rsc
+fractional-cto\dorking.html
+fractional-cto\dorking.meta
+fractional-cto\dorking.rsc
+fractional-cto\eastbourne.html
+fractional-cto\eastbourne.meta
+fractional-cto\eastbourne.rsc
+fractional-cto\epsom.html
+fractional-cto\epsom.meta
+fractional-cto\epsom.rsc
+fractional-cto\farnham.html
+fractional-cto\farnham.meta
+fractional-cto\farnham.rsc
+fractional-cto\guildford.html
+fractional-cto\guildford.meta
+fractional-cto\guildford.rsc
+fractional-cto\hastings.html
+fractional-cto\hastings.meta
+fractional-cto\hastings.rsc
+fractional-cto\haywards-heath.html
+fractional-cto\haywards-heath.meta
+fractional-cto\haywards-heath.rsc
+fractional-cto\horsham.html
+fractional-cto\horsham.meta
+fractional-cto\horsham.rsc
+fractional-cto\hove.html
+fractional-cto\hove.meta
+fractional-cto\hove.rsc
+fractional-cto\leatherhead.html
+fractional-cto\leatherhead.meta
+fractional-cto\leatherhead.rsc
+fractional-cto\lewes.html
+fractional-cto\lewes.meta
+fractional-cto\lewes.rsc
+fractional-cto\littlehampton.html
+fractional-cto\littlehampton.meta
+fractional-cto\littlehampton.rsc
+fractional-cto\london.html
+fractional-cto\london.meta
+fractional-cto\london.rsc
+fractional-cto\manchester.html
+fractional-cto\manchester.meta
+fractional-cto\manchester.rsc
+fractional-cto\page_client-reference-manifest.js
+fractional-cto\page.js
+fractional-cto\page.js.map
+fractional-cto\page.js.nft.json
+fractional-cto\redhill.html
+fractional-cto\redhill.meta
+fractional-cto\redhill.rsc
+fractional-cto\reigate.html
+fractional-cto\reigate.meta
+fractional-cto\reigate.rsc
+fractional-cto\seaford.html
+fractional-cto\seaford.meta
+fractional-cto\seaford.rsc
+fractional-cto\shoreham-by-sea.html
+fractional-cto\shoreham-by-sea.meta
+fractional-cto\shoreham-by-sea.rsc
+fractional-cto\uckfield.html
+fractional-cto\uckfield.meta
+fractional-cto\uckfield.rsc
+fractional-cto\woking.html
+fractional-cto\woking.meta
+fractional-cto\woking.rsc
+fractional-cto\worthing.html
+fractional-cto\worthing.meta
+fractional-cto\worthing.rsc
+fractional-cto\[location]\page
+fractional-cto\[location]\page_client-reference-manifest.js
+fractional-cto\[location]\page.js
+fractional-cto\[location]\page.js.map
+fractional-cto\[location]\page.js.nft.json
+fractional-cto\[location]\page\app-paths-manifest.json
+fractional-cto\[location]\page\build-manifest.json
+fractional-cto\[location]\page\next-font-manifest.json
+fractional-cto\[location]\page\react-loadable-manifest.json
+fractional-cto\[location]\page\server-reference-manifest.json
+fractional-cto\bexhill-on-sea.segments\locations
+fractional-cto\bexhill-on-sea.segments\_full.segment.rsc
+fractional-cto\bexhill-on-sea.segments\_tree.segment.rsc
+fractional-cto\bexhill-on-sea.segments\locations\fractional-cto
+fractional-cto\bexhill-on-sea.segments\locations\fractional-cto\$d$location
+fractional-cto\bexhill-on-sea.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\bognor-regis.segments\locations
+fractional-cto\bognor-regis.segments\_full.segment.rsc
+fractional-cto\bognor-regis.segments\_tree.segment.rsc
+fractional-cto\bognor-regis.segments\locations\fractional-cto
+fractional-cto\bognor-regis.segments\locations\fractional-cto\$d$location
+fractional-cto\bognor-regis.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\brighton.segments\locations
+fractional-cto\brighton.segments\_full.segment.rsc
+fractional-cto\brighton.segments\_tree.segment.rsc
+fractional-cto\brighton.segments\locations\fractional-cto
+fractional-cto\brighton.segments\locations\fractional-cto\$d$location
+fractional-cto\brighton.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\burgess-hill.segments\locations
+fractional-cto\burgess-hill.segments\_full.segment.rsc
+fractional-cto\burgess-hill.segments\_tree.segment.rsc
+fractional-cto\burgess-hill.segments\locations\fractional-cto
+fractional-cto\burgess-hill.segments\locations\fractional-cto\$d$location
+fractional-cto\burgess-hill.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\camberley.segments\locations
+fractional-cto\camberley.segments\_full.segment.rsc
+fractional-cto\camberley.segments\_tree.segment.rsc
+fractional-cto\camberley.segments\locations\fractional-cto
+fractional-cto\camberley.segments\locations\fractional-cto\$d$location
+fractional-cto\camberley.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\chichester.segments\locations
+fractional-cto\chichester.segments\_full.segment.rsc
+fractional-cto\chichester.segments\_tree.segment.rsc
+fractional-cto\chichester.segments\locations\fractional-cto
+fractional-cto\chichester.segments\locations\fractional-cto\$d$location
+fractional-cto\chichester.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\crawley.segments\locations
+fractional-cto\crawley.segments\_full.segment.rsc
+fractional-cto\crawley.segments\_tree.segment.rsc
+fractional-cto\crawley.segments\locations\fractional-cto
+fractional-cto\crawley.segments\locations\fractional-cto\$d$location
+fractional-cto\crawley.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\crowborough.segments\locations
+fractional-cto\crowborough.segments\_full.segment.rsc
+fractional-cto\crowborough.segments\_tree.segment.rsc
+fractional-cto\crowborough.segments\locations\fractional-cto
+fractional-cto\crowborough.segments\locations\fractional-cto\$d$location
+fractional-cto\crowborough.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\dorking.segments\locations
+fractional-cto\dorking.segments\_full.segment.rsc
+fractional-cto\dorking.segments\_tree.segment.rsc
+fractional-cto\dorking.segments\locations\fractional-cto
+fractional-cto\dorking.segments\locations\fractional-cto\$d$location
+fractional-cto\dorking.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\eastbourne.segments\locations
+fractional-cto\eastbourne.segments\_full.segment.rsc
+fractional-cto\eastbourne.segments\_tree.segment.rsc
+fractional-cto\eastbourne.segments\locations\fractional-cto
+fractional-cto\eastbourne.segments\locations\fractional-cto\$d$location
+fractional-cto\eastbourne.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\epsom.segments\locations
+fractional-cto\epsom.segments\_full.segment.rsc
+fractional-cto\epsom.segments\_tree.segment.rsc
+fractional-cto\epsom.segments\locations\fractional-cto
+fractional-cto\epsom.segments\locations\fractional-cto\$d$location
+fractional-cto\epsom.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\farnham.segments\locations
+fractional-cto\farnham.segments\_full.segment.rsc
+fractional-cto\farnham.segments\_tree.segment.rsc
+fractional-cto\farnham.segments\locations\fractional-cto
+fractional-cto\farnham.segments\locations\fractional-cto\$d$location
+fractional-cto\farnham.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\guildford.segments\locations
+fractional-cto\guildford.segments\_full.segment.rsc
+fractional-cto\guildford.segments\_tree.segment.rsc
+fractional-cto\guildford.segments\locations\fractional-cto
+fractional-cto\guildford.segments\locations\fractional-cto\$d$location
+fractional-cto\guildford.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\hastings.segments\locations
+fractional-cto\hastings.segments\_full.segment.rsc
+fractional-cto\hastings.segments\_tree.segment.rsc
+fractional-cto\hastings.segments\locations\fractional-cto
+fractional-cto\hastings.segments\locations\fractional-cto\$d$location
+fractional-cto\hastings.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\haywards-heath.segments\locations
+fractional-cto\haywards-heath.segments\_full.segment.rsc
+fractional-cto\haywards-heath.segments\_tree.segment.rsc
+fractional-cto\haywards-heath.segments\locations\fractional-cto
+fractional-cto\haywards-heath.segments\locations\fractional-cto\$d$location
+fractional-cto\haywards-heath.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\horsham.segments\locations
+fractional-cto\horsham.segments\_full.segment.rsc
+fractional-cto\horsham.segments\_tree.segment.rsc
+fractional-cto\horsham.segments\locations\fractional-cto
+fractional-cto\horsham.segments\locations\fractional-cto\$d$location
+fractional-cto\horsham.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\hove.segments\locations
+fractional-cto\hove.segments\_full.segment.rsc
+fractional-cto\hove.segments\_tree.segment.rsc
+fractional-cto\hove.segments\locations\fractional-cto
+fractional-cto\hove.segments\locations\fractional-cto\$d$location
+fractional-cto\hove.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\leatherhead.segments\locations
+fractional-cto\leatherhead.segments\_full.segment.rsc
+fractional-cto\leatherhead.segments\_tree.segment.rsc
+fractional-cto\leatherhead.segments\locations\fractional-cto
+fractional-cto\leatherhead.segments\locations\fractional-cto\$d$location
+fractional-cto\leatherhead.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\lewes.segments\locations
+fractional-cto\lewes.segments\_full.segment.rsc
+fractional-cto\lewes.segments\_tree.segment.rsc
+fractional-cto\lewes.segments\locations\fractional-cto
+fractional-cto\lewes.segments\locations\fractional-cto\$d$location
+fractional-cto\lewes.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\littlehampton.segments\locations
+fractional-cto\littlehampton.segments\_full.segment.rsc
+fractional-cto\littlehampton.segments\_tree.segment.rsc
+fractional-cto\littlehampton.segments\locations\fractional-cto
+fractional-cto\littlehampton.segments\locations\fractional-cto\$d$location
+fractional-cto\littlehampton.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\london.segments\locations
+fractional-cto\london.segments\_full.segment.rsc
+fractional-cto\london.segments\_tree.segment.rsc
+fractional-cto\london.segments\locations\fractional-cto
+fractional-cto\london.segments\locations\fractional-cto\$d$location
+fractional-cto\london.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\manchester.segments\locations
+fractional-cto\manchester.segments\_full.segment.rsc
+fractional-cto\manchester.segments\_tree.segment.rsc
+fractional-cto\manchester.segments\locations\fractional-cto
+fractional-cto\manchester.segments\locations\fractional-cto\$d$location
+fractional-cto\manchester.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\page\app-paths-manifest.json
+fractional-cto\page\build-manifest.json
+fractional-cto\page\next-font-manifest.json
+fractional-cto\page\react-loadable-manifest.json
+fractional-cto\page\server-reference-manifest.json
+fractional-cto\redhill.segments\locations
+fractional-cto\redhill.segments\_full.segment.rsc
+fractional-cto\redhill.segments\_tree.segment.rsc
+fractional-cto\redhill.segments\locations\fractional-cto
+fractional-cto\redhill.segments\locations\fractional-cto\$d$location
+fractional-cto\redhill.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\reigate.segments\locations
+fractional-cto\reigate.segments\_full.segment.rsc
+fractional-cto\reigate.segments\_tree.segment.rsc
+fractional-cto\reigate.segments\locations\fractional-cto
+fractional-cto\reigate.segments\locations\fractional-cto\$d$location
+fractional-cto\reigate.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\seaford.segments\locations
+fractional-cto\seaford.segments\_full.segment.rsc
+fractional-cto\seaford.segments\_tree.segment.rsc
+fractional-cto\seaford.segments\locations\fractional-cto
+fractional-cto\seaford.segments\locations\fractional-cto\$d$location
+fractional-cto\seaford.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\shoreham-by-sea.segments\locations
+fractional-cto\shoreham-by-sea.segments\_full.segment.rsc
+fractional-cto\shoreham-by-sea.segments\_tree.segment.rsc
+fractional-cto\shoreham-by-sea.segments\locations\fractional-cto
+fractional-cto\shoreham-by-sea.segments\locations\fractional-cto\$d$location
+fractional-cto\shoreham-by-sea.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\uckfield.segments\locations
+fractional-cto\uckfield.segments\_full.segment.rsc
+fractional-cto\uckfield.segments\_tree.segment.rsc
+fractional-cto\uckfield.segments\locations\fractional-cto
+fractional-cto\uckfield.segments\locations\fractional-cto\$d$location
+fractional-cto\uckfield.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\woking.segments\locations
+fractional-cto\woking.segments\_full.segment.rsc
+fractional-cto\woking.segments\_tree.segment.rsc
+fractional-cto\woking.segments\locations\fractional-cto
+fractional-cto\woking.segments\locations\fractional-cto\$d$location
+fractional-cto\woking.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto\worthing.segments\locations
+fractional-cto\worthing.segments\_full.segment.rsc
+fractional-cto\worthing.segments\_tree.segment.rsc
+fractional-cto\worthing.segments\locations\fractional-cto
+fractional-cto\worthing.segments\locations\fractional-cto\$d$location
+fractional-cto\worthing.segments\locations\fractional-cto\$d$location\__PAGE__.segment.rsc
+fractional-cto.segments\locations
+fractional-cto.segments\_full.segment.rsc
+fractional-cto.segments\_tree.segment.rsc
+fractional-cto.segments\locations\fractional-cto
+fractional-cto.segments\locations\fractional-cto\__PAGE__.segment.rsc
+tech-audit\[location]
+tech-audit\bexhill-on-sea.segments
+tech-audit\bognor-regis.segments
+tech-audit\brighton.segments
+tech-audit\burgess-hill.segments
+tech-audit\camberley.segments
+tech-audit\chichester.segments
+tech-audit\crawley.segments
+tech-audit\crowborough.segments
+tech-audit\dorking.segments
+tech-audit\eastbourne.segments
+tech-audit\epsom.segments
+tech-audit\farnham.segments
+tech-audit\guildford.segments
+tech-audit\hastings.segments
+tech-audit\haywards-heath.segments
+tech-audit\horsham.segments
+tech-audit\hove.segments
+tech-audit\leatherhead.segments
+tech-audit\lewes.segments
+tech-audit\littlehampton.segments
+tech-audit\london.segments
+tech-audit\manchester.segments
+tech-audit\page
+tech-audit\redhill.segments
+tech-audit\reigate.segments
+tech-audit\seaford.segments
+tech-audit\shoreham-by-sea.segments
+tech-audit\uckfield.segments
+tech-audit\woking.segments
+tech-audit\worthing.segments
+tech-audit\bexhill-on-sea.html
+tech-audit\bexhill-on-sea.meta
+tech-audit\bexhill-on-sea.rsc
+tech-audit\bognor-regis.html
+tech-audit\bognor-regis.meta
+tech-audit\bognor-regis.rsc
+tech-audit\brighton.html
+tech-audit\brighton.meta
+tech-audit\brighton.rsc
+tech-audit\burgess-hill.html
+tech-audit\burgess-hill.meta
+tech-audit\burgess-hill.rsc
+tech-audit\camberley.html
+tech-audit\camberley.meta
+tech-audit\camberley.rsc
+tech-audit\chichester.html
+tech-audit\chichester.meta
+tech-audit\chichester.rsc
+tech-audit\crawley.html
+tech-audit\crawley.meta
+tech-audit\crawley.rsc
+tech-audit\crowborough.html
+tech-audit\crowborough.meta
+tech-audit\crowborough.rsc
+tech-audit\dorking.html
+tech-audit\dorking.meta
+tech-audit\dorking.rsc
+tech-audit\eastbourne.html
+tech-audit\eastbourne.meta
+tech-audit\eastbourne.rsc
+tech-audit\epsom.html
+tech-audit\epsom.meta
+tech-audit\epsom.rsc
+tech-audit\farnham.html
+tech-audit\farnham.meta
+tech-audit\farnham.rsc
+tech-audit\guildford.html
+tech-audit\guildford.meta
+tech-audit\guildford.rsc
+tech-audit\hastings.html
+tech-audit\hastings.meta
+tech-audit\hastings.rsc
+tech-audit\haywards-heath.html
+tech-audit\haywards-heath.meta
+tech-audit\haywards-heath.rsc
+tech-audit\horsham.html
+tech-audit\horsham.meta
+tech-audit\horsham.rsc
+tech-audit\hove.html
+tech-audit\hove.meta
+tech-audit\hove.rsc
+tech-audit\leatherhead.html
+tech-audit\leatherhead.meta
+tech-audit\leatherhead.rsc
+tech-audit\lewes.html
+tech-audit\lewes.meta
+tech-audit\lewes.rsc
+tech-audit\littlehampton.html
+tech-audit\littlehampton.meta
+tech-audit\littlehampton.rsc
+tech-audit\london.html
+tech-audit\london.meta
+tech-audit\london.rsc
+tech-audit\manchester.html
+tech-audit\manchester.meta
+tech-audit\manchester.rsc
+tech-audit\page_client-reference-manifest.js
+tech-audit\page.js
+tech-audit\page.js.map
+tech-audit\page.js.nft.json
+tech-audit\redhill.html
+tech-audit\redhill.meta
+tech-audit\redhill.rsc
+tech-audit\reigate.html
+tech-audit\reigate.meta
+tech-audit\reigate.rsc
+tech-audit\seaford.html
+tech-audit\seaford.meta
+tech-audit\seaford.rsc
+tech-audit\shoreham-by-sea.html
+tech-audit\shoreham-by-sea.meta
+tech-audit\shoreham-by-sea.rsc
+tech-audit\uckfield.html
+tech-audit\uckfield.meta
+tech-audit\uckfield.rsc
+tech-audit\woking.html
+tech-audit\woking.meta
+tech-audit\woking.rsc
+tech-audit\worthing.html
+tech-audit\worthing.meta
+tech-audit\worthing.rsc
+tech-audit\[location]\page
+tech-audit\[location]\page_client-reference-manifest.js
+tech-audit\[location]\page.js
+tech-audit\[location]\page.js.map
+tech-audit\[location]\page.js.nft.json
+tech-audit\[location]\page\app-paths-manifest.json
+tech-audit\[location]\page\build-manifest.json
+tech-audit\[location]\page\next-font-manifest.json
+tech-audit\[location]\page\react-loadable-manifest.json
+tech-audit\[location]\page\server-reference-manifest.json
+tech-audit\bexhill-on-sea.segments\locations
+tech-audit\bexhill-on-sea.segments\_full.segment.rsc
+tech-audit\bexhill-on-sea.segments\_tree.segment.rsc
+tech-audit\bexhill-on-sea.segments\locations\tech-audit
+tech-audit\bexhill-on-sea.segments\locations\tech-audit\$d$location
+tech-audit\bexhill-on-sea.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\bognor-regis.segments\locations
+tech-audit\bognor-regis.segments\_full.segment.rsc
+tech-audit\bognor-regis.segments\_tree.segment.rsc
+tech-audit\bognor-regis.segments\locations\tech-audit
+tech-audit\bognor-regis.segments\locations\tech-audit\$d$location
+tech-audit\bognor-regis.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\brighton.segments\locations
+tech-audit\brighton.segments\_full.segment.rsc
+tech-audit\brighton.segments\_tree.segment.rsc
+tech-audit\brighton.segments\locations\tech-audit
+tech-audit\brighton.segments\locations\tech-audit\$d$location
+tech-audit\brighton.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\burgess-hill.segments\locations
+tech-audit\burgess-hill.segments\_full.segment.rsc
+tech-audit\burgess-hill.segments\_tree.segment.rsc
+tech-audit\burgess-hill.segments\locations\tech-audit
+tech-audit\burgess-hill.segments\locations\tech-audit\$d$location
+tech-audit\burgess-hill.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\camberley.segments\locations
+tech-audit\camberley.segments\_full.segment.rsc
+tech-audit\camberley.segments\_tree.segment.rsc
+tech-audit\camberley.segments\locations\tech-audit
+tech-audit\camberley.segments\locations\tech-audit\$d$location
+tech-audit\camberley.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\chichester.segments\locations
+tech-audit\chichester.segments\_full.segment.rsc
+tech-audit\chichester.segments\_tree.segment.rsc
+tech-audit\chichester.segments\locations\tech-audit
+tech-audit\chichester.segments\locations\tech-audit\$d$location
+tech-audit\chichester.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\crawley.segments\locations
+tech-audit\crawley.segments\_full.segment.rsc
+tech-audit\crawley.segments\_tree.segment.rsc
+tech-audit\crawley.segments\locations\tech-audit
+tech-audit\crawley.segments\locations\tech-audit\$d$location
+tech-audit\crawley.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\crowborough.segments\locations
+tech-audit\crowborough.segments\_full.segment.rsc
+tech-audit\crowborough.segments\_tree.segment.rsc
+tech-audit\crowborough.segments\locations\tech-audit
+tech-audit\crowborough.segments\locations\tech-audit\$d$location
+tech-audit\crowborough.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\dorking.segments\locations
+tech-audit\dorking.segments\_full.segment.rsc
+tech-audit\dorking.segments\_tree.segment.rsc
+tech-audit\dorking.segments\locations\tech-audit
+tech-audit\dorking.segments\locations\tech-audit\$d$location
+tech-audit\dorking.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\eastbourne.segments\locations
+tech-audit\eastbourne.segments\_full.segment.rsc
+tech-audit\eastbourne.segments\_tree.segment.rsc
+tech-audit\eastbourne.segments\locations\tech-audit
+tech-audit\eastbourne.segments\locations\tech-audit\$d$location
+tech-audit\eastbourne.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\epsom.segments\locations
+tech-audit\epsom.segments\_full.segment.rsc
+tech-audit\epsom.segments\_tree.segment.rsc
+tech-audit\epsom.segments\locations\tech-audit
+tech-audit\epsom.segments\locations\tech-audit\$d$location
+tech-audit\epsom.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\farnham.segments\locations
+tech-audit\farnham.segments\_full.segment.rsc
+tech-audit\farnham.segments\_tree.segment.rsc
+tech-audit\farnham.segments\locations\tech-audit
+tech-audit\farnham.segments\locations\tech-audit\$d$location
+tech-audit\farnham.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\guildford.segments\locations
+tech-audit\guildford.segments\_full.segment.rsc
+tech-audit\guildford.segments\_tree.segment.rsc
+tech-audit\guildford.segments\locations\tech-audit
+tech-audit\guildford.segments\locations\tech-audit\$d$location
+tech-audit\guildford.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\hastings.segments\locations
+tech-audit\hastings.segments\_full.segment.rsc
+tech-audit\hastings.segments\_tree.segment.rsc
+tech-audit\hastings.segments\locations\tech-audit
+tech-audit\hastings.segments\locations\tech-audit\$d$location
+tech-audit\hastings.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\haywards-heath.segments\locations
+tech-audit\haywards-heath.segments\_full.segment.rsc
+tech-audit\haywards-heath.segments\_tree.segment.rsc
+tech-audit\haywards-heath.segments\locations\tech-audit
+tech-audit\haywards-heath.segments\locations\tech-audit\$d$location
+tech-audit\haywards-heath.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\horsham.segments\locations
+tech-audit\horsham.segments\_full.segment.rsc
+tech-audit\horsham.segments\_tree.segment.rsc
+tech-audit\horsham.segments\locations\tech-audit
+tech-audit\horsham.segments\locations\tech-audit\$d$location
+tech-audit\horsham.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\hove.segments\locations
+tech-audit\hove.segments\_full.segment.rsc
+tech-audit\hove.segments\_tree.segment.rsc
+tech-audit\hove.segments\locations\tech-audit
+tech-audit\hove.segments\locations\tech-audit\$d$location
+tech-audit\hove.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\leatherhead.segments\locations
+tech-audit\leatherhead.segments\_full.segment.rsc
+tech-audit\leatherhead.segments\_tree.segment.rsc
+tech-audit\leatherhead.segments\locations\tech-audit
+tech-audit\leatherhead.segments\locations\tech-audit\$d$location
+tech-audit\leatherhead.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\lewes.segments\locations
+tech-audit\lewes.segments\_full.segment.rsc
+tech-audit\lewes.segments\_tree.segment.rsc
+tech-audit\lewes.segments\locations\tech-audit
+tech-audit\lewes.segments\locations\tech-audit\$d$location
+tech-audit\lewes.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\littlehampton.segments\locations
+tech-audit\littlehampton.segments\_full.segment.rsc
+tech-audit\littlehampton.segments\_tree.segment.rsc
+tech-audit\littlehampton.segments\locations\tech-audit
+tech-audit\littlehampton.segments\locations\tech-audit\$d$location
+tech-audit\littlehampton.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\london.segments\locations
+tech-audit\london.segments\_full.segment.rsc
+tech-audit\london.segments\_tree.segment.rsc
+tech-audit\london.segments\locations\tech-audit
+tech-audit\london.segments\locations\tech-audit\$d$location
+tech-audit\london.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\manchester.segments\locations
+tech-audit\manchester.segments\_full.segment.rsc
+tech-audit\manchester.segments\_tree.segment.rsc
+tech-audit\manchester.segments\locations\tech-audit
+tech-audit\manchester.segments\locations\tech-audit\$d$location
+tech-audit\manchester.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\page\app-paths-manifest.json
+tech-audit\page\build-manifest.json
+tech-audit\page\next-font-manifest.json
+tech-audit\page\react-loadable-manifest.json
+tech-audit\page\server-reference-manifest.json
+tech-audit\redhill.segments\locations
+tech-audit\redhill.segments\_full.segment.rsc
+tech-audit\redhill.segments\_tree.segment.rsc
+tech-audit\redhill.segments\locations\tech-audit
+tech-audit\redhill.segments\locations\tech-audit\$d$location
+tech-audit\redhill.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\reigate.segments\locations
+tech-audit\reigate.segments\_full.segment.rsc
+tech-audit\reigate.segments\_tree.segment.rsc
+tech-audit\reigate.segments\locations\tech-audit
+tech-audit\reigate.segments\locations\tech-audit\$d$location
+tech-audit\reigate.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\seaford.segments\locations
+tech-audit\seaford.segments\_full.segment.rsc
+tech-audit\seaford.segments\_tree.segment.rsc
+tech-audit\seaford.segments\locations\tech-audit
+tech-audit\seaford.segments\locations\tech-audit\$d$location
+tech-audit\seaford.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\shoreham-by-sea.segments\locations
+tech-audit\shoreham-by-sea.segments\_full.segment.rsc
+tech-audit\shoreham-by-sea.segments\_tree.segment.rsc
+tech-audit\shoreham-by-sea.segments\locations\tech-audit
+tech-audit\shoreham-by-sea.segments\locations\tech-audit\$d$location
+tech-audit\shoreham-by-sea.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\uckfield.segments\locations
+tech-audit\uckfield.segments\_full.segment.rsc
+tech-audit\uckfield.segments\_tree.segment.rsc
+tech-audit\uckfield.segments\locations\tech-audit
+tech-audit\uckfield.segments\locations\tech-audit\$d$location
+tech-audit\uckfield.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\woking.segments\locations
+tech-audit\woking.segments\_full.segment.rsc
+tech-audit\woking.segments\_tree.segment.rsc
+tech-audit\woking.segments\locations\tech-audit
+tech-audit\woking.segments\locations\tech-audit\$d$location
+tech-audit\woking.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit\worthing.segments\locations
+tech-audit\worthing.segments\_full.segment.rsc
+tech-audit\worthing.segments\_tree.segment.rsc
+tech-audit\worthing.segments\locations\tech-audit
+tech-audit\worthing.segments\locations\tech-audit\$d$location
+tech-audit\worthing.segments\locations\tech-audit\$d$location\__PAGE__.segment.rsc
+tech-audit.segments\locations
+tech-audit.segments\_full.segment.rsc
+tech-audit.segments\_tree.segment.rsc
+tech-audit.segments\locations\tech-audit
+tech-audit.segments\locations\tech-audit\__PAGE__.segment.rsc
+[0m
+[0m← [0mWrite scripts/check-onpage-seo.mjs
+Wrote file successfully.
+[0m
+Now I understand the build output structure. Let me fix the checker script:
+[0m$ [0mnode scripts/check-onpage-seo.mjs 2>&1
+TITLE MISMATCH: /problems/cant-scale-operations
+  Expected: "Business Growing, Operations Not Scaling | Decoded Ops"
+  Got:      "Your Business Is Growing. Your Operations Aren't Keeping Up.: Decoded Ops"
+DESC MISMATCH: /resources/audit-checklist
+  Expected: "A practical technology audit checklist covering the six areas of an operations review for print, embroidery and decoration businesses. Free to download today."
+  Got:      "A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download."
+DESC MISMATCH: /tools/automation-roi-calculator
+  Expected: "A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business."
+  Got:      "Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods."
+DESC MISMATCH: /tools/downtime-cost-calculator
+  Expected: "A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods."
+  Got:      "Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods."
+DESC MISMATCH: /tools/rto-calculator
+  Expected: "Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup."
+  Got:      "Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders."
+TITLE MISMATCH: /locations/tech-audit/bexhill-on-sea
+  Expected: "Technology Audit for Bexhill-on-Sea Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Bexhill-on-Sea | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/bexhill-on-sea
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Bexhill-on-Sea. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Bexhill-on-Sea SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/bognor-regis
+  Expected: "Technology Audit for Bognor Regis Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Bognor Regis | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/bognor-regis
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Bognor Regis. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Bognor Regis SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/brighton
+  Expected: "Technology Audit for Brighton Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Brighton | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/brighton
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Brighton. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Brighton SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/burgess-hill
+  Expected: "Technology Audit for Burgess Hill Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Burgess Hill | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/burgess-hill
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Burgess Hill. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Burgess Hill SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/camberley
+  Expected: "Technology Audit for Camberley Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Camberley | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/camberley
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Camberley. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Camberley SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/chichester
+  Expected: "Technology Audit for Chichester Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Chichester | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/chichester
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Chichester. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Chichester SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/crawley
+  Expected: "Technology Audit for Crawley Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Crawley | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/crawley
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Crawley. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Crawley SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/crowborough
+  Expected: "Technology Audit for Crowborough Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Crowborough | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/crowborough
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Crowborough. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Crowborough SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/dorking
+  Expected: "Technology Audit for Dorking Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Dorking | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/dorking
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Dorking. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Dorking SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/eastbourne
+  Expected: "Technology Audit for Eastbourne Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Eastbourne | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/eastbourne
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Eastbourne. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Eastbourne SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/epsom
+  Expected: "Technology Audit for Epsom Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Epsom | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/epsom
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Epsom. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Epsom SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/farnham
+  Expected: "Technology Audit for Farnham Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Farnham | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/farnham
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Farnham. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Farnham SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/guildford
+  Expected: "Technology Audit for Guildford Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Guildford | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/guildford
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Guildford. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Guildford SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/hastings
+  Expected: "Technology Audit for Hastings Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Hastings | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/hastings
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Hastings. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Hastings SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/haywards-heath
+  Expected: "Technology Audit for Haywards Heath Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Haywards Heath | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/haywards-heath
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Haywards Heath. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Haywards Heath SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/horsham
+  Expected: "Technology Audit for Horsham Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Horsham | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/horsham
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Horsham. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Horsham SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/hove
+  Expected: "Technology Audit for Hove Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Hove | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/hove
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Hove. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Hove SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/leatherhead
+  Expected: "Technology Audit for Leatherhead Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Leatherhead | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/leatherhead
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Leatherhead. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Leatherhead SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/lewes
+  Expected: "Technology Audit for Lewes Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Lewes | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/lewes
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Lewes. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Lewes SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/littlehampton
+  Expected: "Technology Audit for Littlehampton Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Littlehampton | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/littlehampton
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Littlehampton. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Littlehampton SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/london
+  Expected: "Technology Audit for London Businesses | Decoded Ops"
+  Got:      "Fractional CTO in London | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/london
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in London. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for London SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/manchester
+  Expected: "Technology Audit for Manchester Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Manchester | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/manchester
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Manchester. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Manchester SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/redhill
+  Expected: "Technology Audit for Redhill Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Redhill | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/redhill
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Redhill. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Redhill SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/reigate
+  Expected: "Technology Audit for Reigate Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Reigate | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/reigate
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Reigate. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Reigate SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/seaford
+  Expected: "Technology Audit for Seaford Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Seaford | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/seaford
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Seaford. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Seaford SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/shoreham-by-sea
+  Expected: "Technology Audit for Shoreham-by-Sea Businesses"
+  Got:      "Fractional CTO in Shoreham-by-Sea | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/shoreham-by-sea
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Shoreham-by-Sea. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Shoreham-by-Sea SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/uckfield
+  Expected: "Technology Audit for Uckfield Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Uckfield | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/uckfield
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Uckfield. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Uckfield SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/woking
+  Expected: "Technology Audit for Woking Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Woking | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/woking
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Woking. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Woking SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+TITLE MISMATCH: /locations/tech-audit/worthing
+  Expected: "Technology Audit for Worthing Businesses | Decoded Ops"
+  Got:      "Fractional CTO in Worthing | Decoded Ops"
+DESC MISMATCH: /locations/tech-audit/worthing
+  Expected: "Independent technology audits for print, embroidery and decorated goods businesses in Worthing. Book a free call to talk through your systems."
+  Got:      "Independent technology audit for Worthing SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee."
+
+=== Results ===
+Total entries in JSON: 159
+Matched (title + desc): 189
+Mismatches: 63
+Not prerendered: 33
+  /blog/erp-gaps-decorated-goods-business
+  /blog/decoded-method-operations-framework
+  /blog/iso-9001-small-business
+  /blog/sop-template-decorated-goods
+  /blog/operations-planning-print-decoration-business
+  /blog/local-seo-print-shop
+  /blog/cloud-erp-print-business
+  /blog/what-is-erp-decorated-goods
+  /blog/erp-selection-decorated-goods
+  /blog/hire-fractional-cto
+  /blog/lean-six-sigma-small-business
+  /blog/the-hidden-cost-of-running-legacy-systems
+  /blog/process-before-platform
+  /blog/embroidery-stitch-density-quality-speed-cost
+  /blog/heat-press-temperature-dwell-time-operations-guide
+  /blog/ralawise-integration-bulk-orders-stock-management
+  /blog/screen-printing-vs-heat-transfer-scale-your-business
+  /blog/artwork-approval-workflow-brief-to-sign-off-24-hours
+  /blog/how-to-evaluate-an-ai-tool-without-getting-sold-to
+  /blog/the-artwork-file-that-broke-the-erp-cartoon
+  /blog/b2b-portal-down-on-christmas-jumper-day-cartoon
+  /blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it
+  /blog/what-good-operations-actually-looks-like
+  /blog/when-it-support-is-the-problem
+  /blog/bulk-order-management-wholesale-decorated-goods
+  /blog/production-scheduling-print-embroidery-capacity-quality-rush
+  /blog/embroidery-quality-standards-stitch-density-thread-durability
+  /blog/ai-isnt-your-problem-your-processes-are
+  /blog/what-happens-when-your-systems-go-down
+  /blog/ecommerce-integration-trap
+  /blog/5-questions-vendors-wont-like
+  /blog/the-real-cost-of-a-failed-erp-project
+  /blog/why-systems-dont-talk
+[0m
+[0m→ [0mRead app/locations/tech-audit/[location]/page.tsx[90m [limit=42][0m
+Three categories of issues. Let me investigate them:
+[0m✱ [0mGrep "bexhill"[90m in data/locations.ts · 1 match[0m
+[0m→ [0mRead data/locations.ts[90m [offset=225, limit=25][0m
+I see the problem — each town has one data entry but needs two different SEO titles (one for fractional-cto, one for tech-audit). I need to add both sets of fields. Let me fix this:
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\data\locations.ts
+@@ -9,8 +9,10 @@
+   businessSectors: string[];
+   regionalChallenge: string;
+   seoTitle: string;
+   seoDescription: string;
++  seoTitleTechAudit: string;
++  seoDescriptionTechAudit: string;
+ }
+ 
+ export const locations: LocationData[] = [
+   // West Sussex
+
+[0m
+Now I need to add the tech-audit SEO fields to each location entry. Let me write a quick script:
+[0m$ [0mnode -e "
+const fs = require('fs');
+const path = require('path');
+const ROOT = 'D:\\\\apps\\\\worktrees\\\\decoded-ops-website\\\\web065-tech-seo';
+const json = JSON.parse(fs.readFileSync(path.join(ROOT, '.context/lane-briefs/onpage-web058.json'), 'utf8'));
+let c = fs.readFileSync(path.join(ROOT, 'data/locations.ts'), 'utf8');
+
+// For each tech-audit town entry, add seoTitleTechAudit and seoDescriptionTechAudit
+for (const entry of json) {
+  if (!entry.path.startsWith('/locations/tech-audit/')) continue;
+  const townSlug = entry.path.split('/').pop();
+  
+  // Find the entry's closing brace (the seoDescription line)
+  const seoDescPattern = \"  seoDescription: '\";
+  let searchFrom = c.indexOf(\"slug: '\" + townSlug + \"'\");
+  if (searchFrom === -1) continue;
+  
+  const seoDescIdx = c.indexOf(seoDescPattern, searchFrom);
+  if (seoDescIdx === -1) continue;
+  
+  // Check if tech-audit fields already exist
+  const nextEntryIdx = c.indexOf('\\n  {', seoDescIdx);
+  const block = nextEntryIdx === -1 ? c.slice(seoDescIdx) : c.slice(seoDescIdx, nextEntryIdx);
+  if (block.includes('seoTitleTechAudit:')) continue;
+  
+  // Find the closing of this entry (the line after seoDescription that starts with '  },')
+  const closingPattern = '\\n  },';
+  const closingIdx = c.indexOf(closingPattern, seoDescIdx);
+  if (closingIdx === -1) continue;
+  
+  const titleEsc = entry.title.replace(/'/g, \"\\\\\\\\'\");
+  const descEsc = entry.meta.replace(/'/g, \"\\\\\\\\'\");
+  const insert = \"  seoTitleTechAudit: '\" + titleEsc + \"',\\n  seoDescriptionTechAudit: '\" + descEsc + \"',\\n\";
+  
+  c = c.slice(0, closingIdx + 1) + insert + c.slice(closingIdx + 1);
+}
+
+fs.writeFileSync(path.join(ROOT, 'data/locations.ts'), c, 'utf8');
+console.log('Done');
+" 2>&1
+ParserError: 
+Line |
+  24 |    if (block.includes('seoTitleTechAudit:')) continue;
+     |                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Unexpected token 'seoTitleTechAudit:')) continue;      // Find the closing of this entry (the line after
+     | seoDescription that starts with '' in expression or statement.
+[0m
+[0m← [0mWrite scripts/add-tech-audit-seo.mjs
+Wrote file successfully.
+[0m
+Let me write it as a file instead:
+[0m$ [0mnode scripts/add-tech-audit-seo.mjs 2>&1
+Done adding seoTitleTechAudit/seoDescriptionTechAudit
+[0m
+Now update the tech-audit generator to use the correct fields:
+[0m✗ [0mEdit app/locations/tech-audit/[location]/page.tsx failed
+[91m[1mError: [0mCould not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+[0m→ [0mRead app/locations/tech-audit/[location]/page.tsx[90m [limit=42, offset=24][0m
+[0m
+[0m← [0mEdit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\[location]\page.tsx
+@@ -21,23 +21,23 @@
+   const loc = getLocation(location);
+   if (!loc) return {};
+ 
+   return {
+-    title: (loc as any).seoTitle || `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
+-    description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
++    title: (loc as any).seoTitleTechAudit || `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
++    description: (loc as any).seoDescriptionTechAudit || `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
+     alternates: {
+       canonical: `/locations/tech-audit/${loc.slug}`,
+     },
+     openGraph: {
+-      title: (loc as any).seoTitle || `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
+-      description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
++      title: (loc as any).seoTitleTechAudit || `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
++      description: (loc as any).seoDescriptionTechAudit || `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
+       url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}`,
+       images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+     },
+     twitter: {
+       card: 'summary_large_image',
+-      title: (loc as any).seoTitle || `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
+-      description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
++      title: (loc as any).seoTitleTechAudit || `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
++      description: (loc as any).seoDescriptionTechAudit || `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
+     },
+   };
+ }
+ 
+
+[0m
+I see the actual characters. Let me use `replaceAll` to fix the tech-audit generator:
+[0m→ [0mRead app/problems/cant-scale-operations/page.tsx[90m [limit=30][0m
+Now let me check and fix the remaining mismatches:
+[0m
+[0m← [0mEdit app/problems/cant-scale-operations/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\problems\cant-scale-operations\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\problems\cant-scale-operations\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\problems\cant-scale-operations\page.tsx
+@@ -8,9 +8,9 @@
+ import '@/app/d17-problems.css';
+ import { D17Motion } from '@/components/D17Motion';
+ 
+ export const metadata: Metadata = {
+- title: "Your Business Is Growing. Your Operations Aren't Keeping Up.: Decoded Ops",
++ title: 'Business Growing, Operations Not Scaling | Decoded Ops',
+  description: "When your business is growing and operations are not scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
+  alternates: { canonical: '/problems/cant-scale-operations' },
+  openGraph: {
+   title: "Your Business Is Growing. Your Operations Aren't Keeping Up.: Decoded Ops",
+
+[0m
+[0m← [0mEdit app/problems/cant-scale-operations/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\problems\cant-scale-operations\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\problems\cant-scale-operations\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\problems\cant-scale-operations\page.tsx
+@@ -12,16 +12,16 @@
+  title: 'Business Growing, Operations Not Scaling | Decoded Ops',
+  description: "When your business is growing and operations are not scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
+  alternates: { canonical: '/problems/cant-scale-operations' },
+  openGraph: {
+-  title: "Your Business Is Growing. Your Operations Aren't Keeping Up.: Decoded Ops",
++  title: 'Business Growing, Operations Not Scaling | Decoded Ops',
+   description: "When your business is growing and operations are not scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
+   url: 'https://decodedops.co.uk/problems/cant-scale-operations',
+   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+   card: 'summary_large_image',
+-  title: "Your Business Is Growing. Your Operations Aren't Keeping Up.: Decoded Ops",
++  title: 'Business Growing, Operations Not Scaling | Decoded Ops',
+   description: "When your business is growing and operations are not scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
+  },
+ };
+ 
+
+[0m
+Now fix the OG/Twitter titles on the same page:
+Now let me fix the tool description mismatches. Let me check the actual pages:
+[0m✱ [0mGrep "description:"[90m in app/tools/automation-roi-calculator/page.tsx · 4 matches[0m
+The tool descriptions look correct in the source. The build output was stale. Let me rebuild after all fixes:
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 && echo "TSC: CLEAN"
+TSC: CLEAN
+[0m
+[0m$ [0mnpm run build 2>&1
+> decoded-ops-next@0.1.0 prebuild
+> node scripts/generate-route-slugs.mjs
+
+[route-slugs] 18 problems, 10 sectors, 5 tools
+
+> decoded-ops-next@0.1.0 build
+> next build
+
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 20ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.2s
+  Running TypeScript ...
+  Finished TypeScript in 1812ms ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/173) ...
+  Generating static pages using 15 workers (43/173) 
+  Generating static pages using 15 workers (86/173) 
+  Generating static pages using 15 workers (129/173) 
+✓ Generating static pages using 15 workers (173/173) in 930ms
+  Finalizing page optimization ...
+
+Route (app)                                          Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/auth/login
+├ ƒ /api/clients/documents/[id]/questionnaire
+├ ƒ /api/clients/documents/[id]/sign
+├ ƒ /api/clients/uploads
+├ ƒ /api/contact
+├ ƒ /api/tools/capture
+├ ○ /apps
+├ ○ /apps/commerce
+├ ○ /apps/proof
+├ ○ /apps/works
+├ ○ /blog                                                    5m      1y
+├ ƒ /blog/[slug]
+├ ○ /case-studies
+├ ○ /case-studies/case-study-01
+├ ○ /case-studies/case-study-02
+├ ○ /case-studies/case-study-03
+├ ○ /case-studies/eternal-fitness
+├ ○ /clarity
+├ ƒ /clients/[clientId]
+├ ƒ /clients/dashboard
+├ ƒ /clients/documents
+├ ƒ /clients/documents/view/[id]
+├ ○ /clients/login
+├ ƒ /clients/project
+├ ○ /contact
+├ ○ /cookies
+├ ○ /deliver
+├ ○ /how-i-build
+├ ○ /locations/fractional-cto
+├   /locations/fractional-cto/[location]
+│ ├ ● /locations/fractional-cto/chichester
+│ ├ ● /locations/fractional-cto/worthing
+│ ├ ● /locations/fractional-cto/horsham
+│ └ ● [+26 more paths]
+├ ○ /locations/tech-audit
+├   /locations/tech-audit/[location]
+│ ├ ● /locations/tech-audit/chichester
+│ ├ ● /locations/tech-audit/worthing
+│ ├ ● /locations/tech-audit/horsham
+│ └ ● [+26 more paths]
+├ ƒ /opengraph-image
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /problems
+├ ○ /problems/ai-paralysis
+├ ○ /problems/bottleneck-growth
+├ ○ /problems/buy-vs-build
+├ ○ /problems/cant-scale-operations
+├ ○ /problems/data-scattered
+├ ○ /problems/disaster-recovery
+├ ○ /problems/ecommerce-not-connected
+├ ○ /problems/erp-implementation-failure
+├ ○ /problems/inventory-blind
+├ ○ /problems/legacy-system
+├ ○ /problems/manual-workarounds
+├ ○ /problems/no-ops-owner
+├ ○ /problems/ops-in-owners-head
+├ ○ /problems/seasonal-peaks
+├ ○ /problems/slow-processes
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/artwork-approval-playbook
+├ ○ /resources/audit-checklist
+├ ○ /resources/capacity-planner
+├ ○ /resources/decoded-method
+├ ○ /resources/erp-selection-playbook
+├ ○ /resources/seasonal-capacity
+├ ○ /resources/six-sigma
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ƒ /robots.txt
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/operations-consultant-print-embroidery
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ƒ /sitemap.xml
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+[0m
+[0m$ [0mnode scripts/check-onpage-seo.mjs 2>&1
+DESC MISMATCH: /resources/audit-checklist
+  Expected: "A practical technology audit checklist covering the six areas of an operations review for print, embroidery and decoration businesses. Free to download today."
+  Got:      "A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download."
+DESC MISMATCH: /tools/automation-roi-calculator
+  Expected: "A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business."
+  Got:      "Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods."
+DESC MISMATCH: /tools/downtime-cost-calculator
+  Expected: "A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods."
+  Got:      "Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods."
+DESC MISMATCH: /tools/rto-calculator
+  Expected: "Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup."
+  Got:      "Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders."
+
+=== Results ===
+Total entries in JSON: 159
+Matched (title + desc): 248
+Mismatches: 4
+Not prerendered: 33
+  /blog/erp-gaps-decorated-goods-business
+  /blog/decoded-method-operations-framework
+  /blog/iso-9001-small-business
+  /blog/sop-template-decorated-goods
+  /blog/operations-planning-print-decoration-business
+  /blog/local-seo-print-shop
+  /blog/cloud-erp-print-business
+  /blog/what-is-erp-decorated-goods
+  /blog/erp-selection-decorated-goods
+  /blog/hire-fractional-cto
+  /blog/lean-six-sigma-small-business
+  /blog/the-hidden-cost-of-running-legacy-systems
+  /blog/process-before-platform
+  /blog/embroidery-stitch-density-quality-speed-cost
+  /blog/heat-press-temperature-dwell-time-operations-guide
+  /blog/ralawise-integration-bulk-orders-stock-management
+  /blog/screen-printing-vs-heat-transfer-scale-your-business
+  /blog/artwork-approval-workflow-brief-to-sign-off-24-hours
+  /blog/how-to-evaluate-an-ai-tool-without-getting-sold-to
+  /blog/the-artwork-file-that-broke-the-erp-cartoon
+  /blog/b2b-portal-down-on-christmas-jumper-day-cartoon
+  /blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it
+  /blog/what-good-operations-actually-looks-like
+  /blog/when-it-support-is-the-problem
+  /blog/bulk-order-management-wholesale-decorated-goods
+  /blog/production-scheduling-print-embroidery-capacity-quality-rush
+  /blog/embroidery-quality-standards-stitch-density-thread-durability
+  /blog/ai-isnt-your-problem-your-processes-are
+  /blog/what-happens-when-your-systems-go-down
+  /blog/ecommerce-integration-trap
+  /blog/5-questions-vendors-wont-like
+  /blog/the-real-cost-of-a-failed-erp-project
+  /blog/why-systems-dont-talk
+[0m
+[0m✱ [0mGrep "description:"[90m in app/resources/audit-checklist/page.tsx · 4 matches[0m
+[0m✱ [0mGrep "description:"[90m in app/tools/automation-roi-calculator/page.tsx · 4 matches[0m
+Down to 4 mismatches. Let me check the source files:
+I see — some descriptions were missed by the script. Let me fix the 4 remaining files manually:
+[0m→ [0mRead app/resources/audit-checklist/page.tsx[90m [limit=45][0m
+The schema description at line 19 got matched first, leaving the metadata description at line 29 untouched. Let me fix the remaining files:
+[0m
+[0m← [0mEdit app/resources/audit-checklist/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\audit-checklist\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\audit-checklist\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\audit-checklist\page.tsx
+@@ -25,9 +25,9 @@
+ };
+ 
+ export const metadata = {
+   title: 'Technology Audit Checklist | Decoded Ops',
+-  description: 'A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download.',
++  description: 'A practical technology audit checklist covering the six areas of an operations review for print, embroidery and decoration businesses. Free to download today.',
+   alternates: { canonical: '/resources/audit-checklist' },
+   openGraph: {
+     type: 'website',
+     title: 'Technology Audit Checklist | Decoded Ops',
+
+[0m
+[0m✱ [0mGrep "description:"[90m in app/tools/downtime-cost-calculator/page.tsx · 4 matches[0m
+[0m✱ [0mGrep "description:"[90m in app/tools/rto-calculator/page.tsx · 4 matches[0m
+Now fix the 3 tool pages:
+The source files look correct. Let me rebuild and recheck:
+[0m
+[0m$ [0mnpm run build 2>&1 | Select-String -Pattern "error|Error" -SimpleMatch
+(no output)
+[0m
+[0m$ [0mnode scripts/check-onpage-seo.mjs 2>&1
+DESC MISMATCH: /tools/automation-roi-calculator
+  Expected: "A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business."
+  Got:      "Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods."
+DESC MISMATCH: /tools/downtime-cost-calculator
+  Expected: "A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods."
+  Got:      "Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods."
+DESC MISMATCH: /tools/rto-calculator
+  Expected: "Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup."
+  Got:      "Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders."
+
+=== Results ===
+Total entries in JSON: 159
+Matched (title + desc): 249
+Mismatches: 3
+Not prerendered: 33
+  /blog/erp-gaps-decorated-goods-business
+  /blog/decoded-method-operations-framework
+  /blog/iso-9001-small-business
+  /blog/sop-template-decorated-goods
+  /blog/operations-planning-print-decoration-business
+  /blog/local-seo-print-shop
+  /blog/cloud-erp-print-business
+  /blog/what-is-erp-decorated-goods
+  /blog/erp-selection-decorated-goods
+  /blog/hire-fractional-cto
+  /blog/lean-six-sigma-small-business
+  /blog/the-hidden-cost-of-running-legacy-systems
+  /blog/process-before-platform
+  /blog/embroidery-stitch-density-quality-speed-cost
+  /blog/heat-press-temperature-dwell-time-operations-guide
+  /blog/ralawise-integration-bulk-orders-stock-management
+  /blog/screen-printing-vs-heat-transfer-scale-your-business
+  /blog/artwork-approval-workflow-brief-to-sign-off-24-hours
+  /blog/how-to-evaluate-an-ai-tool-without-getting-sold-to
+  /blog/the-artwork-file-that-broke-the-erp-cartoon
+  /blog/b2b-portal-down-on-christmas-jumper-day-cartoon
+  /blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it
+  /blog/what-good-operations-actually-looks-like
+  /blog/when-it-support-is-the-problem
+  /blog/bulk-order-management-wholesale-decorated-goods
+  /blog/production-scheduling-print-embroidery-capacity-quality-rush
+  /blog/embroidery-quality-standards-stitch-density-thread-durability
+  /blog/ai-isnt-your-problem-your-processes-are
+  /blog/what-happens-when-your-systems-go-down
+  /blog/ecommerce-integration-trap
+  /blog/5-questions-vendors-wont-like
+  /blog/the-real-cost-of-a-failed-erp-project
+  /blog/why-systems-dont-talk
+[0m
+The build cache may be stale. Let me clean and rebuild:
+[0m$ [0mRemove-Item -Recurse -Force .next && npm run build 2>&1 | Select-String -Pattern "error|Error" -SimpleMatch
+(no output)
+[0m
+[0m$ [0mnode scripts/check-onpage-seo.mjs 2>&1
+DESC MISMATCH: /tools/automation-roi-calculator
+  Expected: "A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business."
+  Got:      "Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods."
+DESC MISMATCH: /tools/downtime-cost-calculator
+  Expected: "A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods."
+  Got:      "Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods."
+DESC MISMATCH: /tools/rto-calculator
+  Expected: "Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup."
+  Got:      "Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders."
+
+=== Results ===
+Total entries in JSON: 159
+Matched (title + desc): 249
+Mismatches: 3
+Not prerendered: 33
+  /blog/erp-gaps-decorated-goods-business
+  /blog/decoded-method-operations-framework
+  /blog/iso-9001-small-business
+  /blog/sop-template-decorated-goods
+  /blog/operations-planning-print-decoration-business
+  /blog/local-seo-print-shop
+  /blog/cloud-erp-print-business
+  /blog/what-is-erp-decorated-goods
+  /blog/erp-selection-decorated-goods
+  /blog/hire-fractional-cto
+  /blog/lean-six-sigma-small-business
+  /blog/the-hidden-cost-of-running-legacy-systems
+  /blog/process-before-platform
+  /blog/embroidery-stitch-density-quality-speed-cost
+  /blog/heat-press-temperature-dwell-time-operations-guide
+  /blog/ralawise-integration-bulk-orders-stock-management
+  /blog/screen-printing-vs-heat-transfer-scale-your-business
+  /blog/artwork-approval-workflow-brief-to-sign-off-24-hours
+  /blog/how-to-evaluate-an-ai-tool-without-getting-sold-to
+  /blog/the-artwork-file-that-broke-the-erp-cartoon
+  /blog/b2b-portal-down-on-christmas-jumper-day-cartoon
+  /blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it
+  /blog/what-good-operations-actually-looks-like
+  /blog/when-it-support-is-the-problem
+  /blog/bulk-order-management-wholesale-decorated-goods
+  /blog/production-scheduling-print-embroidery-capacity-quality-rush
+  /blog/embroidery-quality-standards-stitch-density-thread-durability
+  /blog/ai-isnt-your-problem-your-processes-are
+  /blog/what-happens-when-your-systems-go-down
+  /blog/ecommerce-integration-trap
+  /blog/5-questions-vendors-wont-like
+  /blog/the-real-cost-of-a-failed-erp-project
+  /blog/why-systems-dont-talk
+[0m
+[0m✱ [0mGrep "meta name="description""[90m in .next/server/app/tools/automation-roi-calculator.html · 5 matches[0m
+Let me check what the build output actually contains for these tools:
+[0m→ [0mRead app/tools/automation-roi-calculator/page.tsx[90m [limit=40][0m
+[0m
+[0m← [0mEdit app/tools/automation-roi-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\automation-roi-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\automation-roi-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\automation-roi-calculator\page.tsx
+@@ -18,10 +18,9 @@
+ };
+ 
+ export const metadata: Metadata = {
+   title: 'Automation ROI Calculator | Decoded Ops',
+-  description:
+-    'Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods.',
++  description: 'A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.',
+   alternates: { canonical: '/tools/automation-roi-calculator' },
+   openGraph: {
+     type: 'website',
+     title: 'Automation ROI Calculator | Decoded Ops',
+
+[0m
+I see — the multiline `description:` on line 22-23 wasn't matched by the regex. Let me fix these 3 tool pages manually:
+[0m→ [0mRead app/tools/downtime-cost-calculator/page.tsx[90m [limit=40][0m
+[0m
+[0m← [0mEdit app/tools/downtime-cost-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\downtime-cost-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\downtime-cost-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\downtime-cost-calculator\page.tsx
+@@ -19,10 +19,9 @@
+ };
+ 
+ export const metadata: Metadata = {
+   title: 'Downtime Cost Calculator | Decoded Ops',
+-  description:
+-    'Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods.',
++  description: 'A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods.',
+   alternates: { canonical: '/tools/downtime-cost-calculator' },
+   openGraph: {
+     type: 'website',
+     title: 'Downtime Cost Calculator | Decoded Ops',
+
+[0m
+[0m→ [0mRead app/tools/rto-calculator/page.tsx[90m [limit=40][0m
+[0m
+[0m← [0mEdit app/tools/rto-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\rto-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\rto-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\rto-calculator\page.tsx
+@@ -18,10 +18,9 @@
+ };
+ 
+ export const metadata: Metadata = {
+   title: 'RTO Calculator & Disaster Recovery Plan | Decoded Ops',
+-  description:
+-    'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders.',
++  description: 'Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup.',
+   alternates: { canonical: '/tools/rto-calculator' },
+   openGraph: {
+     type: 'website',
+     title: 'RTO Calculator & Disaster Recovery Plan | Decoded Ops',
+
+[0m
+Now rebuild and recheck:
+[0m$ [0mRemove-Item -Recurse -Force .next && npm run build 2>&1 | Select-String -Pattern "error|Error" -SimpleMatch
+(no output)
+[0m
+[0m$ [0mnode scripts/check-onpage-seo.mjs 2>&1
+=== Results ===
+Total entries in JSON: 159
+Matched (title + desc): 252
+Mismatches: 0
+Not prerendered: 33
+  /blog/erp-gaps-decorated-goods-business
+  /blog/decoded-method-operations-framework
+  /blog/iso-9001-small-business
+  /blog/sop-template-decorated-goods
+  /blog/operations-planning-print-decoration-business
+  /blog/local-seo-print-shop
+  /blog/cloud-erp-print-business
+  /blog/what-is-erp-decorated-goods
+  /blog/erp-selection-decorated-goods
+  /blog/hire-fractional-cto
+  /blog/lean-six-sigma-small-business
+  /blog/the-hidden-cost-of-running-legacy-systems
+  /blog/process-before-platform
+  /blog/embroidery-stitch-density-quality-speed-cost
+  /blog/heat-press-temperature-dwell-time-operations-guide
+  /blog/ralawise-integration-bulk-orders-stock-management
+  /blog/screen-printing-vs-heat-transfer-scale-your-business
+  /blog/artwork-approval-workflow-brief-to-sign-off-24-hours
+  /blog/how-to-evaluate-an-ai-tool-without-getting-sold-to
+  /blog/the-artwork-file-that-broke-the-erp-cartoon
+  /blog/b2b-portal-down-on-christmas-jumper-day-cartoon
+  /blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it
+  /blog/what-good-operations-actually-looks-like
+  /blog/when-it-support-is-the-problem
+  /blog/bulk-order-management-wholesale-decorated-goods
+  /blog/production-scheduling-print-embroidery-capacity-quality-rush
+  /blog/embroidery-quality-standards-stitch-density-thread-durability
+  /blog/ai-isnt-your-problem-your-processes-are
+  /blog/what-happens-when-your-systems-go-down
+  /blog/ecommerce-integration-trap
+  /blog/5-questions-vendors-wont-like
+  /blog/the-real-cost-of-a-failed-erp-project
+  /blog/why-systems-dont-talk
+[0m
+[0m# [0mTodos
+[✓] Explore project structure: static pages, data files, dynamic routes
+[✓] Write metadata update script for all 159 routes
+[✓] Update root layout default metadata (home page entry)
+[✓] Update static page metadata (about, retained, clarity, deliver, etc.)
+[✓] Update data-driven routes (blog, locations, sectors, problems, resources, tools, case studies)
+[✓] Write check-onpage-seo.mjs verification script
+[✓] Run tsc + npm run build + checker, fix until zero mismatches
+[•] Commit and write lane report
+[0m
+**Zero mismatches.** 252 matched, 33 not-prerendered (all blog posts - dynamic from hub API, expected). Let me now commit and write the lane report.
+[0m$ [0mgit status --short 2>&1
+M app/about/page.tsx
+ M app/apps/commerce/page.tsx
+ M app/apps/page.tsx
+ M app/apps/proof/page.tsx
+ M app/apps/works/page.tsx
+ M app/blog/page.tsx
+ M app/case-studies/case-study-01/page.tsx
+ M app/case-studies/case-study-02/page.tsx
+ M app/case-studies/case-study-03/page.tsx
+ M app/case-studies/eternal-fitness/page.tsx
+ M app/case-studies/page.tsx
+ M app/clarity/page.tsx
+ M app/contact/page.tsx
+ M app/cookies/page.tsx
+ M app/deliver/page.tsx
+ M app/how-i-build/page.tsx
+ M app/layout.tsx
+ M app/locations/fractional-cto/[location]/page.tsx
+ M app/locations/fractional-cto/page.tsx
+ M app/locations/tech-audit/[location]/page.tsx
+ M app/locations/tech-audit/page.tsx
+ M app/page.tsx
+ M app/pricing/page.tsx
+ M app/privacy/page.tsx
+ M app/problems/ai-paralysis/page.tsx
+ M app/problems/bottleneck-growth/page.tsx
+ M app/problems/buy-vs-build/page.tsx
+ M app/problems/cant-scale-operations/page.tsx
+ M app/problems/data-scattered/page.tsx
+ M app/problems/disaster-recovery/page.tsx
+ M app/problems/ecommerce-not-connected/page.tsx
+ M app/problems/erp-implementation-failure/page.tsx
+ M app/problems/inventory-blind/page.tsx
+ M app/problems/legacy-system/page.tsx
+ M app/problems/manual-workarounds/page.tsx
+ M app/problems/no-ops-owner/page.tsx
+ M app/problems/ops-in-owners-head/page.tsx
+ M app/problems/page.tsx
+ M app/problems/seasonal-peaks/page.tsx
+ M app/problems/slow-processes/page.tsx
+ M app/problems/spreadsheet-addiction/page.tsx
+ M app/problems/systems-dont-talk/page.tsx
+ M app/problems/wrong-erp-software/page.tsx
+ M app/process-quality-system/page.tsx
+ M app/resources/5-warning-signs/page.tsx
+ M app/resources/artwork-approval-playbook/page.tsx
+ M app/resources/audit-checklist/page.tsx
+ M app/resources/decoded-method/page.tsx
+ M app/resources/erp-selection-playbook/page.tsx
+ M app/resources/page.tsx
+ M app/resources/six-sigma/page.tsx
+ M app/resources/sop-template/page.tsx
+ M app/retained/page.tsx
+ M app/sectors/awards-engraving/page.tsx
+ M app/sectors/garment-decoration/page.tsx
+ M app/sectors/labels-packaging/page.tsx
+ M app/sectors/operations-consultant-print-embroidery/page.tsx
+ M app/sectors/print-promotional/page.tsx
+ M app/sectors/promotional-merchandise/page.tsx
+ M app/sectors/schoolwear/page.tsx
+ M app/sectors/signs-graphics/page.tsx
+ M app/sectors/teamwear-clubwear/page.tsx
+ M app/sectors/workwear/page.tsx
+ M app/small-business/page.tsx
+ M app/tools/automation-roi-calculator/page.tsx
+ M app/tools/downtime-cost-calculator/page.tsx
+ M app/tools/ops-health-score/layout.tsx
+ M app/tools/ops-health-score/page.tsx
+ M app/tools/page.tsx
+ M app/tools/rto-calculator/page.tsx
+ M app/tools/should-i-replace-erp/layout.tsx
+ M app/tools/should-i-replace-erp/page.tsx
+ M app/transform/page.tsx
+ M data/blog-index.json
+ M data/locations.ts
+?? .context/lane-briefs/BRIEF-web058-onpage.md
+?? .context/lane-briefs/onpage-web058.json
+?? scripts/add-tech-audit-seo.mjs
+?? scripts/apply-onpage-seo.mjs
+?? scripts/check-onpage-seo.mjs
+[0m
+[0m$ [0mRemove-Item scripts/apply-onpage-seo.mjs, scripts/add-tech-audit-seo.mjs
+(no output)
+[0m
+[0m$ [0mgit add -A && git commit -m "feat(seo): keyword-mapped titles and descriptions (CR-WEB-058)"
+warning: in the working copy of 'app/tools/ops-health-score/layout.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/ops-health-score/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/should-i-replace-erp/layout.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/should-i-replace-erp/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/blog-index.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/locations.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-briefs/BRIEF-web058-onpage.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/check-onpage-seo.mjs', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo a4d7835] feat(seo): keyword-mapped titles and descriptions (CR-WEB-058)
+ 78 files changed, 3106 insertions(+), 472 deletions(-)
+ create mode 100644 .context/lane-briefs/BRIEF-web058-onpage.md
+ create mode 100644 .context/lane-briefs/onpage-web058.json
+ create mode 100644 scripts/check-onpage-seo.mjs
+[0m
+Now write the lane report and notes:
+[0m$ [0mNew-Item -ItemType Directory -Force .context/lane-reports | Out-Null
+(no output)
+[0m
+[0m$ [0m$commitSha = git rev-parse --short HEAD 2>&1; Write-Output $commitSha
+a4d7835
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web058-onpage.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web058-onpage.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/ && git commit -m "docs: lane report web058-onpage"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web058-onpage.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web058-onpage.json', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo 1124f49] docs: lane report web058-onpage
+ 2 files changed, 129 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web058-onpage.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web058-onpage.json
+[0m
+[0m$ [0mgit log --oneline -3 2>&1
+1124f49 docs: lane report web058-onpage
+a4d7835 feat(seo): keyword-mapped titles and descriptions (CR-WEB-058)
+7348066 docs: lane report for web065-tech-seo (CR-WEB-065)
+[0m
+[0m$ [0mnode scripts/check-onpage-seo.mjs 2>&1
+=== Results ===
+Total entries in JSON: 159
+Matched (title + desc): 252
+Mismatches: 0
+Not prerendered: 33
+  /blog/erp-gaps-decorated-goods-business
+  /blog/decoded-method-operations-framework
+  /blog/iso-9001-small-business
+  /blog/sop-template-decorated-goods
+  /blog/operations-planning-print-decoration-business
+  /blog/local-seo-print-shop
+  /blog/cloud-erp-print-business
+  /blog/what-is-erp-decorated-goods
+  /blog/erp-selection-decorated-goods
+  /blog/hire-fractional-cto
+  /blog/lean-six-sigma-small-business
+  /blog/the-hidden-cost-of-running-legacy-systems
+  /blog/process-before-platform
+  /blog/embroidery-stitch-density-quality-speed-cost
+  /blog/heat-press-temperature-dwell-time-operations-guide
+  /blog/ralawise-integration-bulk-orders-stock-management
+  /blog/screen-printing-vs-heat-transfer-scale-your-business
+  /blog/artwork-approval-workflow-brief-to-sign-off-24-hours
+  /blog/how-to-evaluate-an-ai-tool-without-getting-sold-to
+  /blog/the-artwork-file-that-broke-the-erp-cartoon
+  /blog/b2b-portal-down-on-christmas-jumper-day-cartoon
+  /blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it
+  /blog/what-good-operations-actually-looks-like
+  /blog/when-it-support-is-the-problem
+  /blog/bulk-order-management-wholesale-decorated-goods
+  /blog/production-scheduling-print-embroidery-capacity-quality-rush
+  /blog/embroidery-quality-standards-stitch-density-thread-durability
+  /blog/ai-isnt-your-problem-your-processes-are
+  /blog/what-happens-when-your-systems-go-down
+  /blog/ecommerce-integration-trap
+  /blog/5-questions-vendors-wont-like
+  /blog/the-real-cost-of-a-failed-erp-project
+  /blog/why-systems-dont-talk
+[0m
+[0m← [0mEdit .context/lane-reports/LANE-RESULT-web058-onpage.json
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports\LANE-RESULT-web058-onpage.json
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports\LANE-RESULT-web058-onpage.json
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports\LANE-RESULT-web058-onpage.json
+@@ -5,8 +5,12 @@
+ "commits": [
+   {
+     "sha": "a4d7835",
+     "subject": "feat(seo): keyword-mapped titles and descriptions (CR-WEB-058)"
++  },
++  {
++    "sha": "1124f49",
++    "subject": "docs: lane report web058-onpage"
+   }
+ ],
+ "filesChanged": [
+   "app/layout.tsx",
+
+[0m
+Let me update the lane report with the correct commit SHA:
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web058-onpage.json && git commit --amend --no-edit 2>&1
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web058-onpage.json', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo 905a82e] docs: lane report web058-onpage
+ Date: Fri Sep 25 16:32:25 2026 +0100
+ 2 files changed, 133 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web058-onpage.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web058-onpage.json
+[0m
+[0m← [0mEdit .context/lane-reports/LANE-RESULT-web058-onpage.json
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports\LANE-RESULT-web058-onpage.json
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports\LANE-RESULT-web058-onpage.json
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports\LANE-RESULT-web058-onpage.json
+@@ -7,9 +7,9 @@
+     "sha": "a4d7835",
+     "subject": "feat(seo): keyword-mapped titles and descriptions (CR-WEB-058)"
+   },
+   {
+-    "sha": "1124f49",
++    "sha": "905a82e",
+     "subject": "docs: lane report web058-onpage"
+   }
+ ],
+ "filesChanged": [
+
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web058-onpage.json && git commit -m "fix: update lane report SHA" 2>&1
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web058-onpage.json', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo 415a9d2] fix: update lane report SHA
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[0m
+[0m← [0mEdit .context/lane-reports/LANE-RESULT-web058-onpage.json
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports\LANE-RESULT-web058-onpage.json
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports\LANE-RESULT-web058-onpage.json
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports\LANE-RESULT-web058-onpage.json
+@@ -7,10 +7,10 @@
+     "sha": "a4d7835",
+     "subject": "feat(seo): keyword-mapped titles and descriptions (CR-WEB-058)"
+   },
+   {
+-    "sha": "905a82e",
+-    "subject": "docs: lane report web058-onpage"
++    "sha": "415a9d2",
++    "subject": "fix: update lane report SHA"
+   }
+ ],
+ "filesChanged": [
+   "app/layout.tsx",
+
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web058-onpage.json && git commit -m "fix: correct lane report commit SHA" 2>&1
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web058-onpage.json', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo 4560998] fix: correct lane report commit SHA
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[0m
+[0m$ [0mgit log --oneline -5 2>&1
+4560998 fix: correct lane report commit SHA
+415a9d2 fix: update lane report SHA
+905a82e docs: lane report web058-onpage
+a4d7835 feat(seo): keyword-mapped titles and descriptions (CR-WEB-058)
+7348066 docs: lane report for web065-tech-seo (CR-WEB-065)
+[0m
+[0m→ [0mRead .context/lane-reports/LANE-RESULT-web058-onpage.json
+[0m
+[0m$ [0mgit status --short 2>&1
+?? .context/lane-briefs/BRIEF-web065-fix1.md
+[0m
+[0m# [0mTodos
+[✓] Explore project structure: static pages, data files, dynamic routes
+[✓] Write metadata update script for all 159 routes
+[✓] Update root layout default metadata (home page entry)
+[✓] Update static page metadata (about, retained, clarity, deliver, etc.)
+[✓] Update data-driven routes (blog, locations, sectors, problems, resources, tools, case studies)
+[✓] Write check-onpage-seo.mjs verification script
+[✓] Run tsc + npm run build + checker, fix until zero mismatches
+[✓] Commit and write lane report
+[0m
+Lane complete. Summary:
+
+**CR-WEB-058 on-page titles + meta descriptions — done.**
+
+- 78 files changed across 159 routes
+- `npx tsc --noEmit` — clean
+- `npm run build` — 173 static pages, clean
+- `scripts/check-onpage-seo.mjs` — **0 mismatches** on all prerendered paths (33 blog posts correctly not prerendered — dynamic from hub API)
+- 2 commits: `a4d7835` (main work), `4560998` (report)
+- Lane report at `.context/lane-reports/LANE-RESULT-web058-onpage.json`

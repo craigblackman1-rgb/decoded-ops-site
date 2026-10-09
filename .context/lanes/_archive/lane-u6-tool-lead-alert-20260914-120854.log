@@ -1,0 +1,545 @@
+
+> build ┬╖ mimo-v2.5
+
+ΓåÆ Read app/api/tools/capture/route.ts
+ΓåÆ Read lib/email.ts
+ΓåÆ Read package.json
+Γ£▒ Glob ".env.example" in . ┬╖ 1 match
+Γ£▒ Glob "**/*.test.*" in . ┬╖ 0 matches
+Γ£▒ Glob "vitest.config.*" in . ┬╖ 0 matches
+ΓåÆ Read lib/hub-fetch.ts
+ΓåÆ Read .env.example
+ΓåÆ Read tsconfig.json
+
+# Todos
+[ΓÇó] Replace inline nodemailer with sendEmail in capture route
+[ ] Add vitest config + test for lead alert email
+[ ] Update .env.example with LEAD_ALERT_EMAIL
+[ ] Write LANE-NOTES report
+[ ] Commit and verify
+
+ΓåÉ Edit app/api/tools/capture/route.ts
+Index: D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.ts
++++ D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.ts
+@@ -1,6 +1,6 @@
+ import { NextRequest, NextResponse } from 'next/server';
+-import nodemailer from 'nodemailer';
++import { sendEmail, getEmailStatus } from '@/lib/email';
+ import { toolCaptureRatelimit } from '@/lib/rate-limit';
+ import { hubFetch } from '@/lib/hub-fetch';
+ 
+ const ALLOWED_ORIGINS = [
+
+
+ΓåÉ Edit app/api/tools/capture/route.ts
+Index: D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.ts
++++ D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.ts
+@@ -116,61 +116,79 @@
+       { status: 502 }
+     );
+   }
+ 
+-  try {
+-    const toolNames: Record<string, string> = {
+-      'ops-health-score': 'Ops Health Score',
+-      'downtime-cost-calculator': 'Downtime Cost Calculator',
+-      'rto-calculator': 'RTO Calculator',
+-      'should-i-replace-erp': 'Should I Replace My ERP',
+-      'ai-readiness-check': 'AI Readiness Check',
+-      'automation-roi-calculator': 'Automation ROI Calculator',
+-    };
+-    const readableTool = toolNames[tool] || tool;
++  const toolNames: Record<string, string> = {
++    'ops-health-score': 'Ops Health Score',
++    'downtime-cost-calculator': 'Downtime Cost Calculator',
++    'rto-calculator': 'RTO Calculator',
++    'should-i-replace-erp': 'Should I Replace My ERP',
++    'ai-readiness-check': 'AI Readiness Check',
++    'automation-roi-calculator': 'Automation ROI Calculator',
++  };
++  const readableTool = toolNames[tool] || tool;
+ 
+-    const answerLines = Object.entries(answers)
+-      .map(([key, value]) => {
+-        const label = key
+-          .replace(/([A-Z])/g, ' $1')
+-          .replace(/^./, (s) => s.toUpperCase());
+-        return `${label}: ${String(value)}`;
+-      })
+-      .join('\n');
++  const answerLines = Object.entries(answers)
++    .map(([key, value]) => {
++      const label = key
++        .replace(/([A-Z])/g, ' $1')
++        .replace(/^./, (s) => s.toUpperCase());
++      return `${label}: ${String(value)}`;
++    })
++    .join('\n');
+ 
+-    const transporter = nodemailer.createTransport({
+-      host: process.env.SMTP_HOST,
+-      port: Number(process.env.SMTP_PORT) || 587,
+-      secure: process.env.SMTP_PORT === '465',
+-      auth: {
+-        user: process.env.SMTP_USER,
+-        pass: process.env.SMTP_PASS,
+-      },
+-    });
++  const recipient = process.env.LEAD_ALERT_EMAIL || process.env.CONTACT_EMAIL || 'craig@decodedops.co.uk';
++  const subject = `New lead ΓÇö ${readableTool} ΓÇö ${sanitizedName}`;
++  const textBody = [
++    `New lead from the ${readableTool} tool.`,
++    ``,
++    `Name: ${sanitizedName}`,
++    `Email: ${sanitizedEmail}`,
++    `Company: ${sanitizedCompany || 'not given'}`,
++    ``,
++    `Result:`,
++    sanitizedSummary,
++    ``,
++    `Answers:`,
++    answerLines,
++    ``,
++    `View in CRM: ${process.env.HUB_API_URL}/admin/leads`,
++  ].join('\n');
+ 
+-    await transporter.sendMail({
+-      from: process.env.SMTP_FROM || 'noreply@decodedops.co.uk',
+-      replyTo: sanitizedEmail,
+-      to: process.env.CONTACT_EMAIL,
+-      subject: `New lead ΓÇö ${readableTool} ΓÇö ${sanitizedName}`,
+-      text: [
+-        `New lead from the ${readableTool} tool.`,
+-        ``,
+-        `Name: ${sanitizedName}`,
+-        `Email: ${sanitizedEmail}`,
+-        `Company: ${sanitizedCompany || 'not given'}`,
+-        ``,
+-        `Result:`,
+-        sanitizedSummary,
+-        ``,
+-        `Answers:`,
+-        answerLines,
+-        ``,
+-        `View in CRM: ${process.env.HUB_API_URL}/admin/leads`,
+-      ].join('\n'),
+-    });
++  const htmlBody = [
++    `<h2>New lead from the ${readableTool} tool</h2>`,
++    `<table style="border-collapse:collapse;margin:16px 0">`,
++    `<tr><td style="padding:4px 12px 4px 0;font-weight:600">Name</td><td style="padding:4px 0">${sanitizedName}</td></tr>`,
++    `<tr><td style="padding:4px 12px 4px 0;font-weight:600">Email</td><td style="padding:4px 0"><a href="mailto:${sanitizedEmail}">${sanitizedEmail}</a></td></tr>`,
++    `<tr><td style="padding:4px 12px 4px 0;font-weight:600">Company</td><td style="padding:4px 0">${sanitizedCompany || 'not given'}</td></tr>`,
++    `</table>`,
++    `<h3>Result</h3>`,
++    `<p style="white-space:pre-wrap">${sanitizedSummary}</p>`,
++    `<h3>Answers</h3>`,
++    `<ul style="list-style:none;padding:0;margin:0">`,
++    ...Object.entries(answers).map(([key, value]) => {
++      const label = key.replace(/([A-Z])/g, ' $1').replace(/^./, (s) => s.toUpperCase());
++      return `<li style="padding:2px 0"><strong>${label}:</strong> ${String(value)}</li>`;
++    }),
++    `</ul>`,
++    `<p style="margin-top:16px"><a href="${process.env.HUB_API_URL}/admin/leads">View in CRM</a></p>`,
++  ].join('\n');
++
++  try {
++    const emailStatus = getEmailStatus();
++    if (!emailStatus.configured) {
++      console.warn('[tools/capture] no email backend configured ΓÇö lead alert skipped');
++    } else {
++      await sendEmail({
++        to: recipient,
++        subject,
++        html: htmlBody,
++        text: textBody,
++        replyTo: sanitizedEmail,
++      });
++    }
+   } catch (emailError) {
+-    console.error('Lead alert email failed:', emailError);
++    console.error('[tools/capture] lead alert failed', emailError);
+   }
+ 
+   return NextResponse.json({ ok: true });
+ } catch (error) {
+
+
+ΓåÉ Edit .env.example
+Index: D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\.env.example
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\.env.example
++++ D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\.env.example
+@@ -7,10 +7,11 @@
+ SMTP_USER=website@decodedops.co.uk
+ SMTP_PASS=your-mailgun-smtp-password
+ SMTP_FROM=website@decodedops.co.uk
+ 
+-# Contact Form
++# Contact Form / Lead Alerts
+ CONTACT_EMAIL=craig@decodedops.co.uk
++LEAD_ALERT_EMAIL=craig@decodedops.co.uk
+ 
+ # Auth ΓÇö Client Portal
+ NEXTAUTH_SECRET=generate-with: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+ NEXTAUTH_URL=https://decodedops.co.uk
+
+
+Now let me update .env.example and set up vitest.
+# Todos
+[Γ£ô] Replace inline nodemailer with sendEmail in capture route
+[ΓÇó] Add vitest config + test for lead alert email
+[Γ£ô] Update .env.example with LEAD_ALERT_EMAIL
+[ ] Write LANE-NOTES report
+[ ] Commit and verify
+
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\node_modules"
+False
+
+$ npm install
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 412 packages, and audited 413 packages in 16s
+npm warn allow-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+150 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ npm install -D vitest
+added 20 packages, and audited 433 packages in 2s
+npm warn allow-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   ssh2@1.17.0 (install: (install scripts present))
+npm warn allow-scripts   unrs-resolver@1.12.2 (install: (install scripts present))
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+154 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+ΓåÉ Edit package.json
+Index: D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\package.json
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\package.json
++++ D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\package.json
+@@ -10,9 +10,10 @@
+   "lint": "eslint",
+   "check:nav": "node .context/check-nav-coverage.mjs",
+   "check:price": "node .context/price-audit.mjs",
+   "copy:extract": "node .context/extract-copy.mjs",
+-  "check:premerge": "npm run check:nav && npm run check:price"
++  "check:premerge": "npm run check:nav && npm run check:price",
++  "test": "vitest run"
+ },
+ "dependencies": {
+   "@supabase/supabase-js": "^2.107.0",
+   "@upstash/ratelimit": "^2.0.8",
+
+
+ΓåÉ Write vitest.config.ts
+Wrote file successfully.
+
+ΓåÉ Write app/api/tools/capture/route.test.ts
+Wrote file successfully.
+
+ΓåÉ Edit app/api/tools/capture/route.test.ts
+Index: D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.test.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.test.ts
++++ D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.test.ts
+@@ -68,9 +68,10 @@
+   expect(call.text).toContain('New lead from the Ops Health Score tool');
+   expect(call.html).toContain('Ops Health Score');
+ });
+ 
+-it('uses LEAD_ALERT_EMAIL when set', async process.env.LEAD_ALERT_EMAIL = 'alerts@example.com';
++it('uses LEAD_ALERT_EMAIL when set', async () => {
++  process.env.LEAD_ALERT_EMAIL = 'alerts@example.com';
+   (sendEmail as ReturnType<typeof vi.fn>).mockResolvedValue({ success: true });
+ 
+   const req = makeRequest(VALID_PAYLOAD);
+   const res = await POST(req);
+
+
+$ npx vitest run
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Startup Error ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\node_modules\vitest\dist\chunks\index.B89dZ0-N.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+$ npm install -D vite
+added 8 packages, changed 1 package, and audited 441 packages in 4s
+npm warn allow-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   ssh2@1.17.0 (install: (install scripts present))
+npm warn allow-scripts   unrs-resolver@1.12.2 (install: (install scripts present))
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+158 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ npx vitest run
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v5.0.0 D:/apps/worktrees/decoded-ops-website/lane-u6-tool-lead-alert
+
+ Γ¥» app/api/tools/capture/route.test.ts (5 tests | 5 failed) 13ms
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Failed Tests 5 ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+
+ FAIL  app/api/tools/capture/route.test.ts > tool lead capture > calls sendEmail with correct recipient and subject
+AssertionError: expected 500 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ Γ¥» app/api/tools/capture/route.test.ts:60:24
+     58|     const res = await POST(req);
+     59|
+     60|     expect(res.status).toBe(200);
+       |                        ^
+     61|     expect(sendEmail).toHaveBeenCalledTimes(1);
+     62|
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1/5]ΓÄ»
+
+ FAIL  app/api/tools/capture/route.test.ts > tool lead capture > uses LEAD_ALERT_EMAIL when set
+AssertionError: expected 500 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ Γ¥» app/api/tools/capture/route.test.ts:79:24
+     77|     const res = await POST(req);
+     78|
+     79|     expect(res.status).toBe(200);
+       |                        ^
+     80|     const call = (sendEmail as ReturnType<typeof vi.fn>).mock.calls[0]ΓÇª
+     81|     expect(call.to).toBe('alerts@example.com');
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[2/5]ΓÄ»
+
+ FAIL  app/api/tools/capture/route.test.ts > tool lead capture > falls back to CONTACT_EMAIL when LEAD_ALERT_EMAIL is unset
+AssertionError: expected 500 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ Γ¥» app/api/tools/capture/route.test.ts:91:24
+   Γ¥» tool lead capture (5)
+     ├ù calls sendEmail with correct recipient and subject 9ms
+     ├ù uses LEAD_ALERT_EMAIL when set 1ms
+     ├ù falls back to CONTACT_EMAIL when LEAD_ALERT_EMAIL is unset 1ms
+     ├ù still returns 200 when sendEmail rejects 1ms
+     ├ù skips email and logs warning when no backend configured 1ms
+
+ Test Files  1 failed (1)
+      Tests  5 failed (5)
+   Start at  12:12:05
+   Duration  3.40s (import 92%, transform 4%, worker 3%, tests 1%)
+     89|     const res = await POST(req);
+     90|
+     91|     expect(res.status).toBe(200);
+       |                        ^
+     92|     const call = (sendEmail as ReturnType<typeof vi.fn>).mock.calls[0]ΓÇª
+     93|     expect(call.to).toBe('contact@example.com');
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[3/5]ΓÄ»
+
+ FAIL  app/api/tools/capture/route.test.ts > tool lead capture > still returns 200 when sendEmail rejects
+AssertionError: expected 500 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ Γ¥» app/api/tools/capture/route.test.ts:102:24
+    100|     const res = await POST(req);
+    101|
+    102|     expect(res.status).toBe(200);
+       |                        ^
+    103|     const body = await res.json();
+    104|     expect(body.ok).toBe(true);
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[4/5]ΓÄ»
+
+ FAIL  app/api/tools/capture/route.test.ts > tool lead capture > skips email and logs warning when no backend configured
+AssertionError: expected 500 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ Γ¥» app/api/tools/capture/route.test.ts:114:24
+    112|     const res = await POST(req);
+    113|
+    114|     expect(res.status).toBe(200);
+       |                        ^
+    115|     expect(sendEmail).not.toHaveBeenCalled();
+    116|     expect(warnSpy).toHaveBeenCalledWith('[tools/capture] no email bacΓÇª
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[5/5]ΓÄ»
+
+ΓåÉ Edit app/api/tools/capture/route.test.ts
+Index: D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.test.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.test.ts
++++ D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\app\api\tools\capture\route.test.ts
+@@ -42,8 +42,10 @@
+ beforeEach(() => {
+   vi.clearAllMocks();
+   delete process.env.LEAD_ALERT_EMAIL;
+   delete process.env.CONTACT_EMAIL;
++  process.env.HUB_API_URL = 'http://localhost:3001';
++  process.env.HUB_PUBLIC_API_KEY = 'test-key';
+ 
+   (hubFetch as ReturnType<typeof vi.fn>).mockResolvedValue({
+     ok: true,
+     status: 200,
+
+
+The route requires `HUB_API_URL` and `HUB_PUBLIC_API_KEY` env vars. Let me fix the tests:
+$ npx vitest run 2>&1
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v5.0.0 D:/apps/worktrees/decoded-ops-website/lane-u6-tool-lead-alert
+
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  12:12:23
+   Duration  262ms (import 59%, transform 28%, tests 10%, worker 4%)
+
+# Todos
+[Γ£ô] Replace inline nodemailer with sendEmail in capture route
+[Γ£ô] Add vitest config + test for lead alert email
+[Γ£ô] Update .env.example with LEAD_ALERT_EMAIL
+[ΓÇó] Write LANE-NOTES report
+[ ] Commit and verify
+
+All 5 tests pass. Now let me commit the main change, then verify and do the remaining items.
+$ if (!(Test-Path "D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\.context\lane-reports")) { New-Item -ItemType Directory -Path "D:\apps\worktrees\decoded-ops-website\lane-u6-tool-lead-alert\.context\lane-reports" -Force }
+(no output)
+
+ΓåÉ Write .context/lane-reports/LANE-NOTES-u6-tool-lead-alert.md
+Wrote file successfully.
+
+# Todos
+[Γ£ô] Replace inline nodemailer with sendEmail in capture route
+[Γ£ô] Add vitest config + test for lead alert email
+[Γ£ô] Update .env.example with LEAD_ALERT_EMAIL
+[Γ£ô] Write LANE-NOTES report
+[ΓÇó] Commit and verify
+
+$ git status
+On branch lane/lane-u6-tool-lead-alert
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .env.example
+	modified:   app/api/tools/capture/route.ts
+	modified:   package-lock.json
+	modified:   package.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.context/lane-reports/LANE-NOTES-u6-tool-lead-alert.md
+	app/api/tools/capture/route.test.ts
+	vitest.config.ts
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git add .env.example app/api/tools/capture/route.ts app/api/tools/capture/route.test.ts package.json package-lock.json vitest.config.ts .context/lane-reports/LANE-NOTES-u6-tool-lead-alert.md && git commit -m "CR-WEB-010: tool lead alert via shared email helper (Resend) to craig@decodedops.co.uk"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-u6-tool-lead-alert.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/api/tools/capture/route.test.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'vitest.config.ts', LF will be replaced by CRLF the next time Git touches it
+[lane/lane-u6-tool-lead-alert 2ebd29d] CR-WEB-010: tool lead alert via shared email helper (Resend) to craig@decodedops.co.uk
+ 7 files changed, 1291 insertions(+), 75 deletions(-)
+ create mode 100644 .context/lane-reports/LANE-NOTES-u6-tool-lead-alert.md
+ create mode 100644 app/api/tools/capture/route.test.ts
+ create mode 100644 vitest.config.ts
+
+Committed. Now verification:
+$ git grep -n nodemailer -- app/api/tools/capture/route.ts
+(no output)
+
+$ npx vitest run 2>&1
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v5.0.0 D:/apps/worktrees/decoded-ops-website/lane-u6-tool-lead-alert
+
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  12:13:16
+   Duration  282ms (import 59%, transform 27%, tests 10%, worker 4%)
+
+$ npx tsc --noEmit 2>&1
+(no output)
+
+# Todos
+[Γ£ô] Replace inline nodemailer with sendEmail in capture route
+[Γ£ô] Add vitest config + test for lead alert email
+[Γ£ô] Update .env.example with LEAD_ALERT_EMAIL
+[Γ£ô] Write LANE-NOTES report
+[Γ£ô] Commit and verify
+
+All done. Summary:
+
+**Commit**: `2ebd29d` ΓÇö `CR-WEB-010: tool lead alert via shared email helper (Resend) to craig@decodedops.co.uk`
+
+**Changes**:
+- `app/api/tools/capture/route.ts` ΓÇö replaced inline nodemailer transport with `sendEmail`/`getEmailStatus` from `@/lib/email`; recipient now `LEAD_ALERT_EMAIL || CONTACT_EMAIL || 'craig@decodedops.co.uk'`; added HTML body; email failures logged but never fail the request
+- `app/api/tools/capture/route.test.ts` ΓÇö 5 unit tests (correct recipient/subject, LEAD_ALERT_EMAIL override, CONTACT_EMAIL fallback, sendEmail rejection = 200, no-backend warning)
+- `vitest.config.ts` ΓÇö vitest config with `@/` alias
+- `package.json` ΓÇö added `"test": "vitest run"`, vitest + vite devDeps
+- `.env.example` ΓÇö added `LEAD_ALERT_EMAIL`
+
+**Verification**:
+- `npx tsc --noEmit` ΓÇö clean
+- `npx vitest run` ΓÇö 5/5 passing
+- `git grep nodemailer -- app/api/tools/capture/route.ts` ΓÇö no matches

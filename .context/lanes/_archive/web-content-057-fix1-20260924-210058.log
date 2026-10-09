@@ -1,0 +1,41 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-content-057-fix1.md
+[0m
+[0m$ [0mpython .context/lane-briefs/cr-web-057/apply_spec.py .context/lane-briefs/cr-web-057/copy-spec-3.json
+applied 1/1, skipped 0
+[0m
+[0m$ [0mgit grep -n "Data App\|Artwork Manager" -- app components data lib ':!app/blog' ':!app/clients'
+(no output)
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mgit add -A && git commit -m "content(web): last Data App label (CR-WEB-057)"
+[web-content-057 f133a52] content(web): last Data App label (CR-WEB-057)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-content-057\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-content-057-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-content-057-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/ && git commit -m "chore: lane report for web-content-057-fix1"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-content-057-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-content-057-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[web-content-057 55b7d28] chore: lane report for web-content-057-fix1
+ 2 files changed, 4 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-content-057-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-content-057-fix1.json
+[0m
+Done. Two commits on `web-content-057`:
+
+1. `f133a52` — `content(web): last Data App label (CR-WEB-057)` — renamed "Artwork Manager" → "Artwork approval" on corporate wear sector page
+2. `55b7d28` — lane report files
+
+Verify: `apply_spec.py` reported `applied 1/1, skipped 0`; `git grep` for "Data App|Artwork Manager" returned nothing outside blog/clients; `tsc --noEmit` clean.

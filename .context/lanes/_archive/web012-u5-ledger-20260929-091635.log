@@ -1,0 +1,170 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓåÆ [0mRead .context/lane-briefs/web012-u5-ledger.md
+[0mΓåÆ [0mRead app/d17-art.module.css
+[0mΓåÆ [0mRead app/d17-global.css
+[0mΓ£▒ [0mGlob "app/d17-*.css"[90m in . ┬╖ 6 matches[0m
+Let me read the D17 CSS files to find all `.ledger` selectors.
+[0mΓ£▒ [0mGrep "class="ledger""[90m in . ┬╖ 6 matches[0m
+[0mΓ£▒ [0mGrep "\.ledger"[90m in app/d17-resources.css ┬╖ 36 matches[0m
+[0mΓ£▒ [0mGrep "\.ledger"[90m in app/d17-locations.css ┬╖ 36 matches[0m
+[0mΓ£▒ [0mGrep "\.ledger"[90m in app/d17-problems.css ┬╖ 36 matches[0m
+[0mΓ£▒ [0mGrep "\.ledger"[90m in app/d17-apps-cases.css ┬╖ 36 matches[0m
+[0mΓ£▒ [0mGrep "d17-art\.module"[90m in . ┬╖ 3 matches[0m
+Let me check the other d17 CSS files for `.ledger` and how the module is imported.
+[0mΓåÆ [0mRead app/homepage.css[90m [offset=100, limit=30][0m
+Let me check how the D17 art panel is structured in the homepage TSX.
+[0mΓåÆ [0mRead app/page.tsx[90m [offset=375, limit=30][0m
+Now I have a clear picture. The primary culprit is `d17-global.css` ΓÇö a plain CSS file that defines `.ledger` globally, leaking onto the homepage. The module file is already scoped but the brief asks me to scope it too.
+
+Let me make the edits. Starting with `d17-global.css`:
+[0m
+[0mΓåÉ [0mEdit app/d17-global.css
+Index: D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-global.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-global.css
++++ D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-global.css
+@@ -184,20 +184,20 @@
+ .a918 .k{ font-size:max(10px, calc(13 * var(--u))); color:var(--do-off-white) }
+ .a918 .k span{ color:var(--do-sky-blue) }
+ .a918 h3{ margin:calc(16 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; color:var(--do-white);
+   font-size:max(24px, calc(40 * var(--u))); line-height:1.05; letter-spacing:-.03em; max-width:15ch }
+-.ledger{ position:relative; list-style:none; margin:calc(28 * var(--u)) 0 calc(26 * var(--u)); padding:0 0 0 calc(40 * var(--u)) }
+-.ledger::before{ content:''; position:absolute; left:calc(9 * var(--u)); top:14px; bottom:22px; width:4px; border-radius:3px;
++.d17 .ledger{ position:relative; list-style:none; margin:calc(28 * var(--u)) 0 calc(26 * var(--u)); padding:0 0 0 calc(40 * var(--u)) }
++.d17 .ledger::before{ content:''; position:absolute; left:calc(9 * var(--u)); top:14px; bottom:22px; width:4px; border-radius:3px;
+   background:linear-gradient(180deg, var(--do-sky-blue), var(--do-cerulean) 70%, var(--do-amber)); transform-origin:top }
+-.ledger li{ position:relative; display:flex; align-items:baseline; gap:calc(14 * var(--u)); padding:calc(7 * var(--u)) 0 }
+-.ledger li::before{ content:''; position:absolute; left:calc(-40 * var(--u) + 3px); top:calc(50% - 8px);
++.d17 .ledger li{ position:relative; display:flex; align-items:baseline; gap:calc(14 * var(--u)); padding:calc(7 * var(--u)) 0 }
++.d17 .ledger li::before{ content:''; position:absolute; left:calc(-40 * var(--u) + 3px); top:calc(50% - 8px);
+   width:16px; height:16px; border-radius:50%; box-sizing:border-box;
+   background:var(--do-off-white); border:4px solid var(--do-prussian-blue); box-shadow:0 0 0 2px var(--do-sky-blue) }
+-.ledger .n{ font-family:var(--do-font-heading); font-weight:800; font-size:max(22px, calc(34 * var(--u)));
++.d17 .ledger .n{ font-family:var(--do-font-heading); font-weight:800; font-size:max(22px, calc(34 * var(--u)));
+   line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums; color:var(--do-white); min-width:5.1ch }
+-.ledger .t{ font-size:max(13px, calc(16 * var(--u))); line-height:1.3; color:color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+-.ledger li.end .n{ color:var(--do-amber) }
+-.ledger li.end::before{ background:var(--do-amber); box-shadow:0 0 0 2px var(--do-amber), 0 0 0 9px color-mix(in srgb, var(--do-amber) 20%, transparent) }
++.d17 .ledger .t{ font-size:max(13px, calc(16 * var(--u))); line-height:1.3; color:color-mix(in srgb, var(--do-off-white) 80%, transparent) }
++.d17 .ledger li.end .n{ color:var(--do-amber) }
++.d17 .ledger li.end::before{ background:var(--do-amber); box-shadow:0 0 0 2px var(--do-amber), 0 0 0 9px color-mix(in srgb, var(--do-amber) 20%, transparent) }
+ .a918 .print{ position:absolute; right:calc(46 * var(--u)); bottom:calc(46 * var(--u)); width:calc(230 * var(--u));
+   background:var(--do-white); color:var(--do-prussian-blue); padding:calc(14 * var(--u)) calc(16 * var(--u));
+   border-radius:calc(4 * var(--u)); transform:rotate(-2.5deg);
+   box-shadow:0 calc(20 * var(--u)) calc(40 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
+
+[0m
+Now scope the mobile rules in `d17-global.css`:
+[0mΓåÉ [0mEdit app/d17-global.css
+Index: D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-global.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-global.css
++++ D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-global.css
+@@ -211,11 +211,11 @@
+   .a918 .d17-ph{ left:0; bottom:auto; height:230px }
+   .a918::before{ background:linear-gradient(180deg, transparent 0, transparent 120px, var(--do-prussian-blue) 230px) }
+   .a918 .copy{ padding:200px 20px 24px }
+   .a918 .print{ right:16px; top:24px; bottom:auto; width:150px }
+-  .ledger{ padding-left:34px } .ledger li::before{ left:-31px }
+-  .ledger li{ gap:10px } .ledger .n{ min-width:5.3ch; font-size:21px } .ledger .t{ font-size:13.5px }
+-  .ledger::before{ left:7px }
++  .d17 .ledger{ padding-left:34px } .d17 .ledger li::before{ left:-31px }
++  .d17 .ledger li{ gap:10px } .d17 .ledger .n{ min-width:5.3ch; font-size:21px } .d17 .ledger .t{ font-size:13.5px }
++  .d17 .ledger::before{ left:7px }
+ }
+ 
+ /* ΓöÇΓöÇΓöÇ DO-ART-831 ┬╖ About ┬╖ the route, website cut + in-page draw ΓöÇΓöÇΓöÇ */
+ .a831{ --u:calc(100cqw / 1600); aspect-ratio:1600 / 900; margin-top:44px;
+
+[0m
+Now let me verify the animation rule at line 352 ΓÇö it already has `.d17.play .ledger::before`, which is correct. Let me now edit `d17-art.module.css`. Since it's a CSS module, I need to scope the `.ledger` selectors under `.d17` (which is also module-scoped in this file):
+[0mΓåÉ [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-art.module.css
+@@ -175,20 +175,20 @@
+ .a918 .k { font-size: max(10px, calc(13 * var(--u))); color: var(--do-off-white) }
+ .a918 .k span { color: var(--do-sky-blue) }
+ .a918 h3 { margin: calc(16 * var(--u)) 0 0; font-family: var(--do-font-heading); font-weight: 800; color: var(--do-white);
+   font-size: max(24px, calc(40 * var(--u))); line-height: 1.05; letter-spacing: -.03em; max-width: 15ch }
+-.ledger { position: relative; list-style: none; margin: calc(28 * var(--u)) 0 calc(26 * var(--u)); padding: 0 0 0 calc(40 * var(--u)) }
+-.ledger::before { content: ''; position: absolute; left: calc(9 * var(--u)); top: 14px; bottom: 22px; width: 4px; border-radius: 3px;
++.d17 .ledger { position: relative; list-style: none; margin: calc(28 * var(--u)) 0 calc(26 * var(--u)); padding: 0 0 0 calc(40 * var(--u)) }
++.d17 .ledger::before { content: ''; position: absolute; left: calc(9 * var(--u)); top: 14px; bottom: 22px; width: 4px; border-radius: 3px;
+   background: linear-gradient(180deg, var(--do-sky-blue), var(--do-cerulean) 70%, var(--do-amber)); transform-origin: top }
+-.ledger li { position: relative; display: flex; align-items: baseline; gap: calc(14 * var(--u)); padding: calc(7 * var(--u)) 0 }
+-.ledger li::before { content: ''; position: absolute; left: calc(-40 * var(--u) + 3px); top: calc(50% - 8px);
++.d17 .ledger li { position: relative; display: flex; align-items: baseline; gap: calc(14 * var(--u)); padding: calc(7 * var(--u)) 0 }
++.d17 .ledger li::before { content: ''; position: absolute; left: calc(-40 * var(--u) + 3px); top: calc(50% - 8px);
+   width: 16px; height: 16px; border-radius: 50%; box-sizing: border-box;
+   background: var(--do-off-white); border: 4px solid var(--do-prussian-blue); box-shadow: 0 0 0 2px var(--do-sky-blue) }
+-.ledger .n { font-family: var(--do-font-heading); font-weight: 800; font-size: max(22px, calc(34 * var(--u)));
++.d17 .ledger .n { font-family: var(--do-font-heading); font-weight: 800; font-size: max(22px, calc(34 * var(--u)));
+   line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; color: var(--do-white); min-width: 5.1ch }
+-.ledger .t { font-size: max(13px, calc(16 * var(--u))); line-height: 1.3; color: color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+-.ledger li.end .n { color: var(--do-amber) }
+-.ledger li.end::before { background: var(--do-amber); box-shadow: 0 0 0 2px var(--do-amber), 0 0 0 9px color-mix(in srgb, var(--do-amber) 20%, transparent) }
++.d17 .ledger .t { font-size: max(13px, calc(16 * var(--u))); line-height: 1.3; color: color-mix(in srgb, var(--do-off-white) 80%, transparent) }
++.d17 .ledger li.end .n { color: var(--do-amber) }
++.d17 .ledger li.end::before { background: var(--do-amber); box-shadow: 0 0 0 2px var(--do-amber), 0 0 0 9px color-mix(in srgb, var(--do-amber) 20%, transparent) }
+ .a918 .print { position: absolute; right: calc(46 * var(--u)); bottom: calc(46 * var(--u)); width: calc(230 * var(--u));
+   background: var(--do-white); color: var(--do-prussian-blue); padding: calc(14 * var(--u)) calc(16 * var(--u));
+   border-radius: calc(4 * var(--u)); transform: rotate(-2.5deg);
+   box-shadow: 0 calc(20 * var(--u)) calc(40 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
+
+[0m
+[0mΓåÉ [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web012-u5-ledger\app\d17-art.module.css
+@@ -356,11 +356,11 @@
+   .a918 .d17Ph { left: 0; bottom: auto; height: 230px }
+   .a918::before { background: linear-gradient(180deg, transparent 0, transparent 120px, var(--do-prussian-blue) 230px) }
+   .a918 .copy { padding: 200px 20px 24px }
+   .a918 .print { right: 16px; top: 24px; bottom: auto; width: 150px }
+-  .ledger { padding-left: 34px } .ledger li::before { left: -31px }
+-  .ledger li { gap: 10px } .ledger .n { min-width: 5.3ch; font-size: 21px } .ledger .t { font-size: 13.5px }
+-  .ledger::before { left: 7px }
++  .d17 .ledger { padding-left: 34px } .d17 .ledger li::before { left: -31px }
++  .d17 .ledger li { gap: 10px } .d17 .ledger .n { min-width: 5.3ch; font-size: 21px } .d17 .ledger .t { font-size: 13.5px }
++  .d17 .ledger::before { left: 7px }
+ }
+ @media (max-width: 700px) {
+   .a831 { aspect-ratio: auto; padding: 26px 20px 70px }
+   .a831 .eb, .a831 .hd, .a831 .stand, .a831 .st { position: static; width: auto }
+
+[0m
+Now scope the mobile rules in `d17-art.module.css`:
+Now let me commit the CSS changes. The brief says to only `git add` the files I changed:
+[0m$ [0mgit add app/d17-global.css app/d17-art.module.css && git commit -m "fix(BUG): scope d17 .ledger so homepage stat rows stop inheriting timeline styles (WO-WEB-012 u5)"
+[web012-u5-ledger 1759fa3] fix(BUG): scope d17 .ledger so homepage stat rows stop inheriting timeline styles (WO-WEB-012 u5)
+ 2 files changed, 22 insertions(+), 22 deletions(-)
+[0m
+Now write the lane notes and result files:
+[0m$ [0mmkdir -p .context/lane-reports
+(no output)
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web012-u5-ledger.md
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web012-u5-ledger.json
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web012-u5-ledger.json .context/lane-reports/LANE-NOTES-web012-u5-ledger.md && git commit -m "docs: lane report for web012-u5-ledger"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web012-u5-ledger.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web012-u5-ledger.json', LF will be replaced by CRLF the next time Git touches it
+[web012-u5-ledger d107c2a] docs: lane report for web012-u5-ledger
+ 2 files changed, 38 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web012-u5-ledger.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web012-u5-ledger.json
+[0m
+Done. Two commits made:
+
+1. **`1759fa3`** ΓÇö `fix(BUG): scope d17 .ledger so homepage stat rows stop inheriting timeline styles (WO-WEB-012 u5)` ΓÇö edited `app/d17-global.css` and `app/d17-art.module.css`, scoping all `.ledger` selectors under `.d17`
+2. **`d107c2a`** ΓÇö `docs: lane report for web012-u5-ledger` ΓÇö lane result JSON and notes
+
+The D17 timeline ledger styles no longer leak into the homepage stat rows. The `.d17.play .ledger::before` animation rule was already scoped and left untouched. Four problem pages using `class="ledger"` outside D17 art were found and listed in the notes ΓÇö they were not changed.

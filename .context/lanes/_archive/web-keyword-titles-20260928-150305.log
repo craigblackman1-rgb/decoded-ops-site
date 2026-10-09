@@ -1,0 +1,1989 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-keyword-titles.md
+[0m→ [0mRead .context/seo-titles-2026-09-28.json
+[0m→ [0mRead app/layout.tsx
+[0m• [0mFind all route files for 68 pages[90m Explore Agent[0m
+[0m✓ [0mFind all route files for 68 pages[90m Explore Agent[0m
+[0m→ [0mRead app/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/problems/ai-paralysis/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/sectors/workwear/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/resources/capacity-planner/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/tools/ops-health-score/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/tools/should-i-replace-erp/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/blog/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/case-studies/case-study-01/page.tsx[90m [limit=30][0m
+Now I understand the structure. Let me read a few representative files to confirm the exact metadata patterns before making changes.
+[0m→ [0mRead app/locations/manchester/page.tsx[90m [limit=30][0m
+[0m
+[0m# [0mTodos
+[•] Write and run update-seo-titles.mjs script to update 66 pages' metadata
+[ ] Create layout.tsx for ops-health-score and should-i-replace-erp (client pages)
+[ ] Write and run check-seo-titles.mjs verification script
+[ ] Run tsc and npm run build to verify
+[ ] Commit all changes
+[ ] Write lane reports
+[0m
+[0m→ [0mRead app/resources/5-warning-signs/page.tsx[90m [limit=25][0m
+[0m→ [0mRead app/tools/automation-roi-calculator/page.tsx[90m [limit=25][0m
+[0m→ [0mRead app/tools/downtime-cost-calculator/page.tsx[90m [limit=25][0m
+[0m→ [0mRead app/tools/rto-calculator/page.tsx[90m [limit=25][0m
+Let me check a few more files to understand the exact patterns before writing the script.
+Now I have a complete picture. Let me write the update script.
+[0m
+[0m← [0mWrite scripts/update-seo-titles.mjs
+Wrote file successfully.
+[0m
+[0m$ [0mnode scripts/update-seo-titles.mjs
+updated: app/page.tsx
+  updated: app/about/page.tsx
+  updated: app/contact/page.tsx
+  updated: app/how-i-build/page.tsx
+  updated: app/pricing/page.tsx
+  updated: app/process-quality-system/page.tsx
+  updated: app/small-business/page.tsx
+  updated: app/clarity/page.tsx
+  updated: app/deliver/page.tsx
+  updated: app/retained/page.tsx
+  updated: app/transform/page.tsx
+  updated: app/apps/page.tsx
+  updated: app/apps/commerce/page.tsx
+  updated: app/apps/proof/page.tsx
+  updated: app/apps/works/page.tsx
+  updated: app/problems/page.tsx
+  updated: app/problems/ai-paralysis/page.tsx
+  updated: app/problems/bottleneck-growth/page.tsx
+  updated: app/problems/buy-vs-build/page.tsx
+  updated: app/problems/cant-scale-operations/page.tsx
+  updated: app/problems/data-scattered/page.tsx
+  updated: app/problems/disaster-recovery/page.tsx
+  updated: app/problems/ecommerce-not-connected/page.tsx
+  updated: app/problems/erp-implementation-failure/page.tsx
+  updated: app/problems/inventory-blind/page.tsx
+  updated: app/problems/legacy-system/page.tsx
+  updated: app/problems/manual-workarounds/page.tsx
+  updated: app/problems/no-ops-owner/page.tsx
+  updated: app/problems/ops-in-owners-head/page.tsx
+  updated: app/problems/seasonal-peaks/page.tsx
+  updated: app/problems/slow-processes/page.tsx
+  updated: app/problems/spreadsheet-addiction/page.tsx
+  updated: app/problems/systems-dont-talk/page.tsx
+  updated: app/problems/wrong-erp-software/page.tsx
+  updated: app/sectors/awards-engraving/page.tsx
+  updated: app/sectors/garment-decoration/page.tsx
+  updated: app/sectors/labels-packaging/page.tsx
+  updated: app/sectors/operations-consultant-print-embroidery/page.tsx
+  updated: app/sectors/print-promotional/page.tsx
+  updated: app/sectors/promotional-merchandise/page.tsx
+  updated: app/sectors/schoolwear/page.tsx
+  updated: app/sectors/signs-graphics/page.tsx
+  updated: app/sectors/teamwear-clubwear/page.tsx
+  updated: app/sectors/workwear/page.tsx
+  updated: app/resources/page.tsx
+  updated: app/resources/5-warning-signs/page.tsx
+  updated: app/resources/artwork-approval-playbook/page.tsx
+  updated: app/resources/audit-checklist/page.tsx
+  updated: app/resources/capacity-planner/page.tsx
+  updated: app/resources/decoded-method/page.tsx
+  updated: app/resources/erp-selection-playbook/page.tsx
+  updated: app/resources/six-sigma/page.tsx
+  updated: app/resources/sop-template/page.tsx
+  updated: app/tools/page.tsx
+  updated: app/tools/automation-roi-calculator/page.tsx
+  updated: app/tools/downtime-cost-calculator/page.tsx
+  updated: app/tools/rto-calculator/page.tsx
+  updated: app/case-studies/page.tsx
+  updated: app/case-studies/case-study-01/page.tsx
+  updated: app/case-studies/case-study-02/page.tsx
+  updated: app/case-studies/case-study-03/page.tsx
+  updated: app/case-studies/eternal-fitness/page.tsx
+  updated: app/locations/manchester/page.tsx
+  updated: app/locations/sussex-surrey/page.tsx
+  updated: app/locations/tech-audit/page.tsx
+  updated: app/blog/page.tsx
+
+Done. Updated: 66, Skipped: 2
+Skipped pages:
+  /tools/ops-health-score: client component - handled via layout.tsx
+  /tools/should-i-replace-erp: client component - handled via layout.tsx
+[0m
+[0m→ [0mRead app/page.tsx[90m [limit=26][0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=26][0m
+[0m→ [0mRead app/resources/capacity-planner/page.tsx[90m [limit=35][0m
+[0m→ [0mRead app/blog/page.tsx[90m [limit=30][0m
+66 pages updated. Let me spot-check a few to verify correctness.
+[0m→ [0mRead app/resources/capacity-planner/page.tsx[90m [offset=35, limit=15][0m
+I see an issue — the capacity-planner's `openGraph.title` and `twitter.title` weren't updated. The script's special case only replaced the top-level title. Let me fix this.
+[0m
+[0m← [0mEdit app/resources/capacity-planner/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\resources\capacity-planner\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\resources\capacity-planner\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\resources\capacity-planner\page.tsx
+@@ -26,16 +26,16 @@
+     'A free capacity planning tool for print and embroidery businesses. Work out how many jobs your machines and team can actually take on each week.',
+   alternates: { canonical: '/resources/capacity-planner' },
+   openGraph: {
+     type: 'website',
+-    title: 'Capacity Planning Calculator for Print | Decoded Ops',
++    title: 'Capacity Planning Calculator, Free Tool | Decoded Ops',
+     description: 'A free capacity planning tool for print and embroidery businesses. Work out how many jobs your machines and team can actually take on each week.',
+     url: 'https://decodedops.co.uk/resources/capacity-planner',
+     images: OG_IMAGE,
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'Capacity Planning Calculator for Print | Decoded Ops',
++    title: 'Capacity Planning Calculator, Free Tool | Decoded Ops',
+     description: 'A free capacity planning tool for print and embroidery businesses. Work out how many jobs your machines and team can actually take on each week.',
+     images: [OG_IMAGE_PATH],
+   },
+ };
+
+[0m
+[0m# [0mTodos
+[✓] Write and run update-seo-titles.mjs script to update 66 pages' metadata
+[•] Create layout.tsx for ops-health-score and should-i-replace-erp (client pages)
+[ ] Write and run check-seo-titles.mjs verification script
+[ ] Run tsc and npm run build to verify
+[ ] Commit all changes
+[ ] Write lane reports
+[0m
+Now let me update the todo and create layout files for the two client pages.
+[0m← [0mWrite app/tools/ops-health-score/layout.tsx
+Wrote file successfully.
+[0m
+[0m← [0mWrite app/tools/should-i-replace-erp/layout.tsx
+Wrote file successfully.
+[0m
+[0m# [0mTodos
+[✓] Write and run update-seo-titles.mjs script to update 66 pages' metadata
+[✓] Create layout.tsx for ops-health-score and should-i-replace-erp (client pages)
+[•] Write and run check-seo-titles.mjs verification script
+[ ] Run tsc and npm run build to verify
+[ ] Commit all changes
+[ ] Write lane reports
+[0m
+Now let me write the verification script.
+[0m← [0mWrite scripts/check-seo-titles.mjs
+Wrote file successfully.
+[0m
+[0m← [0mEdit scripts/check-seo-titles.mjs
+Index: D:\apps\worktrees\decoded-ops-website\web-keyword-titles\scripts\check-seo-titles.mjs
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-keyword-titles\scripts\check-seo-titles.mjs
++++ D:\apps\worktrees\decoded-ops-website\web-keyword-titles\scripts\check-seo-titles.mjs
+@@ -114,10 +114,12 @@
+   for (const m of missing) console.log(`  ${m.page}: ${m.reason}`);
+ }
+ if (errors.length > 0) {
+   console.log(`\nErrors (${errors.length}):`);
+-  for (const e of errors) console.log(`  ${e.page} — ${e.field} not found in ${e.file}`);
+-  console.log(`  Expected: "${e.expected}"`);
++  for (const e of errors) {
++    console.log(`  ${e.page} — ${e.field} not found in ${e.file}`);
++    console.log(`    Expected: "${e.expected}"`);
++  }
+ }
+ if (matched === data.length && missing.length === 0 && errors.length === 0) {
+   console.log('\nAll rows verified successfully.');
+   process.exit(0);
+
+[0m
+[0m$ [0mnode scripts/check-seo-titles.mjs
+SEO titles check: 68/68 matched
+
+All rows verified successfully.
+[0m
+[0m# [0mTodos
+[✓] Write and run update-seo-titles.mjs script to update 66 pages' metadata
+[✓] Create layout.tsx for ops-health-score and should-i-replace-erp (client pages)
+[✓] Write and run check-seo-titles.mjs verification script
+[•] Run tsc and npm run build to verify
+[ ] Commit all changes
+[ ] Write lane reports
+[0m
+All 68 rows verified. Now let me run the build checks.
+[0m$ [0mTest-Path node_modules
+False
+[0m
+[0m$ [0mnpm install
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 440 packages, and audited 441 packages in 16s
+
+158 packages are looking for funding
+  run `npm fund` for details
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+
+found 0 vulnerabilities
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+...output truncated...
+
+Full output saved to: C:\Users\CraigBlackman\.local\share\opencode\tool-output\tool_0e8628dcd00107Njfwu8ZP3Pk4
+
+app/page.tsx(24,77): error TS1005: ')' expected.
+app/page.tsx(24,103): error TS1005: ';' expected.
+app/page.tsx(24,105): error TS1434: Unexpected keyword or identifier.
+app/page.tsx(24,113): error TS1434: Unexpected keyword or identifier.
+app/page.tsx(24,119): error TS1434: Unexpected keyword or identifier.
+app/page.tsx(24,123): error TS1434: Unexpected keyword or identifier.
+app/page.tsx(24,127): error TS1434: Unexpected keyword or identifier.
+app/page.tsx(24,129): error TS1434: Unexpected keyword or identifier.
+app/page.tsx(24,137): error TS1434: Unexpected keyword or identifier.
+app/page.tsx(24,142): error TS1435: Unknown keyword or identifier. Did you mean 'with'?
+app/page.tsx(24,149): error TS1434: Unexpected keyword or identifier.
+app/page.tsx(24,159): error TS1003: Identifier expected.
+app/page.tsx(24,161): error TS1002: Unterminated string literal.
+app/page.tsx(25,4): error TS1128: Declaration or statement expected.
+app/page.tsx(26,1): error TS1128: Declaration or statement expected.
+app/problems/bottleneck-growth/page.tsx(15,151): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(15,153): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(15,157): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(15,159): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(15,164): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(15,167): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(15,169): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(15,170): error TS1003: Identifier expected.
+app/problems/bottleneck-growth/page.tsx(15,172): error TS1002: Unterminated string literal.
+app/problems/bottleneck-growth/page.tsx(16,2): error TS1005: ':' expected.
+app/problems/bottleneck-growth/page.tsx(16,12): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(16,14): error TS1136: Property assignment expected.
+app/problems/bottleneck-growth/page.tsx(16,27): error TS1003: Identifier expected.
+app/problems/bottleneck-growth/page.tsx(16,57): error TS1005: ':' expected.
+app/problems/bottleneck-growth/page.tsx(19,152): error TS1005: ';' expected.
+app/problems/bottleneck-growth/page.tsx(19,154): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(19,158): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(19,160): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(19,165): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(19,168): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(19,170): error TS1005: ',' expected.
+app/problems/bottleneck-growth/page.tsx(19,171): error TS1134: Variable declaration expected.
+app/problems/bottleneck-growth/page.tsx(19,173): error TS1002: Unterminated string literal.
+app/problems/bottleneck-growth/page.tsx(21,9): error TS1005: ';' expected.
+app/problems/bottleneck-growth/page.tsx(22,2): error TS1109: Expression expected.
+app/problems/bottleneck-growth/page.tsx(22,3): error TS1128: Declaration or statement expected.
+app/problems/bottleneck-growth/page.tsx(25,8): error TS1005: ';' expected.
+app/problems/bottleneck-growth/page.tsx(26,14): error TS1005: ';' expected.
+app/problems/bottleneck-growth/page.tsx(26,152): error TS1005: ';' expected.
+app/problems/bottleneck-growth/page.tsx(26,154): error TS1434: Unexpected keyword or identifier.
+app/problems/bottleneck-growth/page.tsx(26,158): error TS1434: Unexpected keyword or identifier.
+app/problems/bottleneck-growth/page.tsx(26,160): error TS1434: Unexpected keyword or identifier.
+app/problems/bottleneck-growth/page.tsx(26,165): error TS1434: Unexpected keyword or identifier.
+app/problems/bottleneck-growth/page.tsx(26,171): error TS1003: Identifier expected.
+app/problems/bottleneck-growth/page.tsx(26,173): error TS1002: Unterminated string literal.
+app/problems/bottleneck-growth/page.tsx(27,3): error TS1128: Declaration or statement expected.
+app/problems/bottleneck-growth/page.tsx(28,1): error TS1128: Declaration or statement expected.
+app/problems/cant-scale-operations/page.tsx(12,49): error TS1005: ',' expected.
+app/problems/cant-scale-operations/page.tsx(12,51): error TS1005: ',' expected.
+app/problems/cant-scale-operations/page.tsx(12,61): error TS1005: ',' expected.
+app/problems/cant-scale-operations/page.tsx(12,64): error TS1005: ',' expected.
+app/problems/cant-scale-operations/page.tsx(12,66): error TS1002: Unterminated string literal.
+app/problems/cant-scale-operations/page.tsx(13,112): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(13,114): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(13,119): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(13,121): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(13,126): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(13,140): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(13,144): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(13,148): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(13,153): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(13,167): error TS1003: Identifier expected.
+app/problems/cant-scale-operations/page.tsx(13,180): error TS1002: Unterminated string literal.
+app/problems/cant-scale-operations/page.tsx(14,62): error TS1128: Declaration or statement expected.
+app/problems/cant-scale-operations/page.tsx(16,50): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(16,62): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(16,62): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(16,67): error TS1002: Unterminated string literal.
+app/problems/cant-scale-operations/page.tsx(17,113): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(17,115): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(17,120): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(17,122): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(17,127): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(17,141): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(17,145): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(17,149): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(17,154): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(17,168): error TS1003: Identifier expected.
+app/problems/cant-scale-operations/page.tsx(17,181): error TS1002: Unterminated string literal.
+app/problems/cant-scale-operations/page.tsx(19,9): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(20,2): error TS1109: Expression expected.
+app/problems/cant-scale-operations/page.tsx(20,3): error TS1128: Declaration or statement expected.
+app/problems/cant-scale-operations/page.tsx(23,8): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(23,50): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(23,62): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(23,62): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(23,67): error TS1002: Unterminated string literal.
+app/problems/cant-scale-operations/page.tsx(24,113): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(24,115): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(24,120): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(24,122): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(24,127): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(24,141): error TS1005: ';' expected.
+app/problems/cant-scale-operations/page.tsx(24,145): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(24,149): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(24,154): error TS1434: Unexpected keyword or identifier.
+app/problems/cant-scale-operations/page.tsx(24,168): error TS1003: Identifier expected.
+app/problems/cant-scale-operations/page.tsx(24,181): error TS1002: Unterminated string literal.
+app/problems/cant-scale-operations/page.tsx(25,3): error TS1128: Declaration or statement expected.
+app/problems/cant-scale-operations/page.tsx(26,1): error TS1128: Declaration or statement expected.
+app/problems/ecommerce-not-connected/page.tsx(13,168): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,170): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,174): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,177): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,181): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,185): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,197): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,205): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,206): error TS1003: Identifier expected.
+app/problems/ecommerce-not-connected/page.tsx(13,208): error TS1002: Unterminated string literal.
+app/problems/ecommerce-not-connected/page.tsx(14,2): error TS1005: ':' expected.
+app/problems/ecommerce-not-connected/page.tsx(14,12): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(14,14): error TS1136: Property assignment expected.
+app/problems/ecommerce-not-connected/page.tsx(14,27): error TS1003: Identifier expected.
+app/problems/ecommerce-not-connected/page.tsx(14,63): error TS1005: ':' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,169): error TS1005: ';' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,171): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,175): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,178): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,182): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,186): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,198): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,206): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,207): error TS1134: Variable declaration expected.
+app/problems/ecommerce-not-connected/page.tsx(17,209): error TS1002: Unterminated string literal.
+app/problems/ecommerce-not-connected/page.tsx(19,9): error TS1005: ';' expected.
+app/problems/ecommerce-not-connected/page.tsx(20,2): error TS1109: Expression expected.
+app/problems/ecommerce-not-connected/page.tsx(20,3): error TS1128: Declaration or statement expected.
+app/problems/ecommerce-not-connected/page.tsx(23,8): error TS1005: ';' expected.
+app/problems/ecommerce-not-connected/page.tsx(24,14): error TS1005: ';' expected.
+app/problems/ecommerce-not-connected/page.tsx(24,169): error TS1005: ';' expected.
+app/problems/ecommerce-not-connected/page.tsx(24,171): error TS1434: Unexpected keyword or identifier.
+app/problems/ecommerce-not-connected/page.tsx(24,175): error TS1434: Unexpected keyword or identifier.
+app/problems/ecommerce-not-connected/page.tsx(24,178): error TS1434: Unexpected keyword or identifier.
+app/problems/ecommerce-not-connected/page.tsx(24,182): error TS1434: Unexpected keyword or identifier.
+app/problems/ecommerce-not-connected/page.tsx(24,186): error TS1434: Unexpected keyword or identifier.
+app/problems/ecommerce-not-connected/page.tsx(24,207): error TS1003: Identifier expected.
+app/problems/ecommerce-not-connected/page.tsx(24,209): error TS1002: Unterminated string literal.
+app/problems/ecommerce-not-connected/page.tsx(25,3): error TS1128: Declaration or statement expected.
+app/problems/ecommerce-not-connected/page.tsx(26,1): error TS1128: Declaration or statement expected.
+app/problems/inventory-blind/page.tsx(14,117): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,119): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,124): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,128): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,134): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,140): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,171): error TS1005: ':' expected.
+app/problems/inventory-blind/page.tsx(14,173): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,178): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,182): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,188): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,194): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,202): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,208): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,214): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,216): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(14,217): error TS1003: Identifier expected.
+app/problems/inventory-blind/page.tsx(14,219): error TS1002: Unterminated string literal.
+app/problems/inventory-blind/page.tsx(15,2): error TS1005: ':' expected.
+app/problems/inventory-blind/page.tsx(15,12): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(15,14): error TS1136: Property assignment expected.
+app/problems/inventory-blind/page.tsx(15,27): error TS1003: Identifier expected.
+app/problems/inventory-blind/page.tsx(15,55): error TS1005: ':' expected.
+app/problems/inventory-blind/page.tsx(18,118): error TS1005: ';' expected.
+app/problems/inventory-blind/page.tsx(18,120): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(18,125): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(18,129): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(18,135): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(18,141): error TS1005: ',' expected.
+app/problems/inventory-blind/page.tsx(18,172): error TS1005: ';' expected.
+app/problems/inventory-blind/page.tsx(18,174): error TS1434: Unexpected keyword or identifier.
+app/problems/inventory-blind/page.tsx(18,179): error TS1434: Unexpected keyword or identifier.
+app/problems/inventory-blind/page.tsx(18,195): error TS1005: ';' expected.
+app/problems/inventory-blind/page.tsx(18,203): error TS1434: Unexpected keyword or identifier.
+app/problems/inventory-blind/page.tsx(18,209): error TS1434: Unexpected keyword or identifier.
+app/problems/inventory-blind/page.tsx(18,218): error TS1003: Identifier expected.
+app/problems/inventory-blind/page.tsx(18,220): error TS1002: Unterminated string literal.
+app/problems/inventory-blind/page.tsx(20,9): error TS1005: ';' expected.
+app/problems/inventory-blind/page.tsx(21,2): error TS1109: Expression expected.
+app/problems/inventory-blind/page.tsx(21,3): error TS1128: Declaration or statement expected.
+app/problems/inventory-blind/page.tsx(24,8): error TS1005: ';' expected.
+app/problems/inventory-blind/page.tsx(25,14): error TS1005: ';' expected.
+app/problems/inventory-blind/page.tsx(25,118): error TS1005: ';' expected.
+app/problems/inventory-blind/page.tsx(25,120): error TS1434: Unexpected keyword or identifier.
+app/problems/inventory-blind/page.tsx(25,125): error TS1434: Unexpected keyword or identifier.
+app/problems/inventory-blind/page.tsx(25,141): error TS1005: ';' expected.
+app/problems/inventory-blind/page.tsx(25,172): error TS1005: ';' expected.
+app/problems/inventory-blind/page.tsx(25,174): error TS1434: Unexpected keyword or identifier.
+app/problems/inventory-blind/page.tsx(25,179): error TS1434: Unexpected keyword or identifier.
+app/problems/inventory-blind/page.tsx(25,195): error TS1005: ';' expected.
+app/problems/inventory-blind/page.tsx(25,203): error TS1434: Unexpected keyword or identifier.
+app/problems/inventory-blind/page.tsx(25,209): error TS1434: Unexpected keyword or identifier.
+app/problems/inventory-blind/page.tsx(25,218): error TS1003: Identifier expected.
+app/problems/inventory-blind/page.tsx(25,220): error TS1002: Unterminated string literal.
+app/problems/inventory-blind/page.tsx(26,3): error TS1128: Declaration or statement expected.
+app/problems/inventory-blind/page.tsx(27,1): error TS1128: Declaration or statement expected.
+app/problems/no-ops-owner/page.tsx(13,103): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,105): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,110): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,114): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,119): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,129): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,133): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,136): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,144): error TS1005: '(' expected.
+app/problems/no-ops-owner/page.tsx(13,152): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,154): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,158): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,164): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,168): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,169): error TS1134: Variable declaration expected.
+app/problems/no-ops-owner/page.tsx(14,12): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(14,53): error TS1128: Declaration or statement expected.
+app/problems/no-ops-owner/page.tsx(17,14): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(17,104): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(17,106): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(17,111): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(17,115): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(17,130): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(17,134): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(17,137): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(17,141): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(17,145): error TS1435: Unknown keyword or identifier. Did you mean 'with out'?
+app/problems/no-ops-owner/page.tsx(17,153): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(17,165): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(17,170): error TS1003: Identifier expected.
+app/problems/no-ops-owner/page.tsx(18,6): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(19,9): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(20,2): error TS1109: Expression expected.
+app/problems/no-ops-owner/page.tsx(20,3): error TS1128: Declaration or statement expected.
+app/problems/no-ops-owner/page.tsx(23,8): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(24,14): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(24,104): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(24,106): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,111): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,115): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,130): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(24,134): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,137): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,141): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,145): error TS1435: Unknown keyword or identifier. Did you mean 'with out'?
+app/problems/no-ops-owner/page.tsx(24,153): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,165): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(24,170): error TS1003: Identifier expected.
+app/problems/no-ops-owner/page.tsx(25,2): error TS1109: Expression expected.
+app/problems/no-ops-owner/page.tsx(25,3): error TS1128: Declaration or statement expected.
+app/problems/no-ops-owner/page.tsx(26,1): error TS1128: Declaration or statement expected.
+app/problems/ops-in-owners-head/page.tsx(14,86): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,89): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,94): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,105): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,111): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,117): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,128): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,138): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,144): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,153): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,157): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,159): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,165): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,167): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(14,168): error TS1003: Identifier expected.
+app/problems/ops-in-owners-head/page.tsx(14,170): error TS1002: Unterminated string literal.
+app/problems/ops-in-owners-head/page.tsx(15,2): error TS1005: ':' expected.
+app/problems/ops-in-owners-head/page.tsx(15,12): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(15,14): error TS1136: Property assignment expected.
+app/problems/ops-in-owners-head/page.tsx(15,27): error TS1003: Identifier expected.
+app/problems/ops-in-owners-head/page.tsx(15,58): error TS1005: ':' expected.
+app/problems/ops-in-owners-head/page.tsx(18,87): error TS1005: ';' expected.
+app/problems/ops-in-owners-head/page.tsx(18,90): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,95): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,106): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,112): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,118): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,129): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,139): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,145): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,154): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,158): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,160): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,166): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,168): error TS1005: ',' expected.
+app/problems/ops-in-owners-head/page.tsx(18,169): error TS1134: Variable declaration expected.
+app/problems/ops-in-owners-head/page.tsx(18,171): error TS1002: Unterminated string literal.
+app/problems/ops-in-owners-head/page.tsx(20,9): error TS1005: ';' expected.
+app/problems/ops-in-owners-head/page.tsx(21,2): error TS1109: Expression expected.
+app/problems/ops-in-owners-head/page.tsx(21,3): error TS1128: Declaration or statement expected.
+app/problems/ops-in-owners-head/page.tsx(24,8): error TS1005: ';' expected.
+app/problems/ops-in-owners-head/page.tsx(25,14): error TS1005: ';' expected.
+app/problems/ops-in-owners-head/page.tsx(25,87): error TS1005: ';' expected.
+app/problems/ops-in-owners-head/page.tsx(25,90): error TS1435: Unknown keyword or identifier. Did you mean 'never'?
+app/problems/ops-in-owners-head/page.tsx(25,112): error TS1005: ';' expected.
+app/problems/ops-in-owners-head/page.tsx(25,118): error TS1434: Unexpected keyword or identifier.
+app/problems/ops-in-owners-head/page.tsx(25,129): error TS1434: Unexpected keyword or identifier.
+app/problems/ops-in-owners-head/page.tsx(25,139): error TS1434: Unexpected keyword or identifier.
+app/problems/ops-in-owners-head/page.tsx(25,154): error TS1005: ';' expected.
+app/problems/ops-in-owners-head/page.tsx(25,158): error TS1434: Unexpected keyword or identifier.
+app/problems/ops-in-owners-head/page.tsx(25,160): error TS1434: Unexpected keyword or identifier.
+app/problems/ops-in-owners-head/page.tsx(25,169): error TS1003: Identifier expected.
+app/problems/ops-in-owners-head/page.tsx(25,171): error TS1002: Unterminated string literal.
+app/problems/ops-in-owners-head/page.tsx(26,3): error TS1128: Declaration or statement expected.
+app/problems/ops-in-owners-head/page.tsx(27,1): error TS1128: Declaration or statement expected.
+app/problems/seasonal-peaks/page.tsx(14,127): error TS1005: ',' expected.
+app/problems/seasonal-peaks/page.tsx(14,129): error TS1005: ',' expected.
+app/problems/seasonal-peaks/page.tsx(14,133): error TS1005: ',' expected.
+app/problems/seasonal-peaks/page.tsx(14,139): error TS1005: ',' expected.
+app/problems/seasonal-peaks/page.tsx(14,171): error TS1005: ':' expected.
+app/problems/seasonal-peaks/page.tsx(14,173): error TS1005: ',' expected.
+app/problems/seasonal-peaks/page.tsx(14,177): error TS1005: ',' expected.
+app/problems/seasonal-peaks/page.tsx(14,183): error TS1005: ',' expected.
+app/problems/seasonal-peaks/page.tsx(14,196): error TS1002: Unterminated string literal.
+app/problems/seasonal-peaks/page.tsx(15,2): error TS1005: ':' expected.
+app/problems/seasonal-peaks/page.tsx(15,12): error TS1005: ',' expected.
+app/problems/seasonal-peaks/page.tsx(15,14): error TS1136: Property assignment expected.
+app/problems/seasonal-peaks/page.tsx(15,27): error TS1003: Identifier expected.
+app/problems/seasonal-peaks/page.tsx(15,54): error TS1005: ':' expected.
+app/problems/seasonal-peaks/page.tsx(18,128): error TS1005: ';' expected.
+app/problems/seasonal-peaks/page.tsx(18,130): error TS1005: ',' expected.
+app/problems/seasonal-peaks/page.tsx(18,134): error TS1005: ',' expected.
+app/problems/seasonal-peaks/page.tsx(18,140): error TS1005: ',' expected.
+app/problems/seasonal-peaks/page.tsx(18,172): error TS1005: ';' expected.
+app/problems/seasonal-peaks/page.tsx(18,184): error TS1005: ';' expected.
+app/problems/seasonal-peaks/page.tsx(18,197): error TS1002: Unterminated string literal.
+app/problems/seasonal-peaks/page.tsx(20,9): error TS1005: ';' expected.
+app/problems/seasonal-peaks/page.tsx(21,2): error TS1109: Expression expected.
+app/problems/seasonal-peaks/page.tsx(21,3): error TS1128: Declaration or statement expected.
+app/problems/seasonal-peaks/page.tsx(24,8): error TS1005: ';' expected.
+app/problems/seasonal-peaks/page.tsx(25,14): error TS1005: ';' expected.
+app/problems/seasonal-peaks/page.tsx(25,128): error TS1005: ';' expected.
+app/problems/seasonal-peaks/page.tsx(25,140): error TS1005: ';' expected.
+app/problems/seasonal-peaks/page.tsx(25,172): error TS1005: ';' expected.
+app/problems/seasonal-peaks/page.tsx(25,184): error TS1005: ';' expected.
+app/problems/seasonal-peaks/page.tsx(25,197): error TS1002: Unterminated string literal.
+app/problems/seasonal-peaks/page.tsx(26,3): error TS1128: Declaration or statement expected.
+app/problems/seasonal-peaks/page.tsx(27,1): error TS1128: Declaration or statement expected.
+app/problems/spreadsheet-addiction/page.tsx(14,137): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(14,139): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(14,143): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(14,154): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(14,160): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(14,168): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(14,170): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(14,171): error TS1003: Identifier expected.
+app/problems/spreadsheet-addiction/page.tsx(14,173): error TS1002: Unterminated string literal.
+app/problems/spreadsheet-addiction/page.tsx(15,2): error TS1005: ':' expected.
+app/problems/spreadsheet-addiction/page.tsx(15,12): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(15,14): error TS1136: Property assignment expected.
+app/problems/spreadsheet-addiction/page.tsx(15,27): error TS1003: Identifier expected.
+app/problems/spreadsheet-addiction/page.tsx(15,61): error TS1005: ':' expected.
+app/problems/spreadsheet-addiction/page.tsx(18,138): error TS1005: ';' expected.
+app/problems/spreadsheet-addiction/page.tsx(18,140): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(18,144): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(18,155): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(18,161): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(18,169): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(18,171): error TS1005: ',' expected.
+app/problems/spreadsheet-addiction/page.tsx(18,172): error TS1134: Variable declaration expected.
+app/problems/spreadsheet-addiction/page.tsx(18,174): error TS1002: Unterminated string literal.
+app/problems/spreadsheet-addiction/page.tsx(20,9): error TS1005: ';' expected.
+app/problems/spreadsheet-addiction/page.tsx(21,2): error TS1109: Expression expected.
+app/problems/spreadsheet-addiction/page.tsx(21,3): error TS1128: Declaration or statement expected.
+app/problems/spreadsheet-addiction/page.tsx(24,8): error TS1005: ';' expected.
+app/problems/spreadsheet-addiction/page.tsx(25,14): error TS1005: ';' expected.
+app/problems/spreadsheet-addiction/page.tsx(25,138): error TS1005: ';' expected.
+app/problems/spreadsheet-addiction/page.tsx(25,140): error TS1434: Unexpected keyword or identifier.
+app/problems/spreadsheet-addiction/page.tsx(25,144): error TS1434: Unexpected keyword or identifier.
+app/problems/spreadsheet-addiction/page.tsx(25,155): error TS1434: Unexpected keyword or identifier.
+app/problems/spreadsheet-addiction/page.tsx(25,161): error TS1435: Unknown keyword or identifier. Did you mean 'out grow'?
+app/problems/spreadsheet-addiction/page.tsx(25,172): error TS1003: Identifier expected.
+app/problems/spreadsheet-addiction/page.tsx(25,174): error TS1002: Unterminated string literal.
+app/problems/spreadsheet-addiction/page.tsx(26,3): error TS1128: Declaration or statement expected.
+app/problems/spreadsheet-addiction/page.tsx(27,1): error TS1128: Declaration or statement expected.
+app/problems/systems-dont-talk/page.tsx(12,27): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,29): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,34): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,37): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,42): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,48): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,58): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,61): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(13,13): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(13,38): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(13,40): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,45): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,48): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,53): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,59): error TS1435: Unknown keyword or identifier. Did you mean 'for'?
+app/problems/systems-dont-talk/page.tsx(13,65): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,72): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,75): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,78): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,86): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,102): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(13,115): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(13,119): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,124): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,165): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(13,167): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,172): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,175): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,194): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(13,198): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,206): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,209): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,214): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,218): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,238): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(13,242): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,251): error TS1127: Invalid character.
+app/problems/systems-dont-talk/page.tsx(14,13): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(14,59): error TS1128: Declaration or statement expected.
+app/problems/systems-dont-talk/page.tsx(16,29): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(16,31): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(16,36): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(16,39): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(16,60): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(17,15): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(17,40): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(17,42): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,47): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,50): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,55): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,61): error TS1435: Unknown keyword or identifier. Did you mean 'for'?
+app/problems/systems-dont-talk/page.tsx(17,67): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,74): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,77): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,80): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,88): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,104): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(17,117): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(17,121): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,126): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,167): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(17,169): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,174): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,177): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,196): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(17,200): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,208): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,211): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,216): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,220): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,240): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(17,244): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,253): error TS1127: Invalid character.
+app/problems/systems-dont-talk/page.tsx(18,7): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(19,10): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(20,3): error TS1109: Expression expected.
+app/problems/systems-dont-talk/page.tsx(20,4): error TS1128: Declaration or statement expected.
+app/problems/systems-dont-talk/page.tsx(23,9): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(23,29): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(23,31): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(23,36): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(23,39): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(23,60): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(24,15): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(24,40): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(24,42): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,47): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,50): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,55): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,61): error TS1435: Unknown keyword or identifier. Did you mean 'for'?
+app/problems/systems-dont-talk/page.tsx(24,67): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,74): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,77): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,80): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,88): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,104): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(24,117): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(24,121): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,126): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,167): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(24,169): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,174): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,177): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,196): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(24,200): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,208): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,211): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,216): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,220): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,240): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(24,244): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,253): error TS1127: Invalid character.
+app/problems/systems-dont-talk/page.tsx(25,3): error TS1109: Expression expected.
+app/problems/systems-dont-talk/page.tsx(25,4): error TS1128: Declaration or statement expected.
+app/problems/systems-dont-talk/page.tsx(26,1): error TS1128: Declaration or statement expected.
+app/sectors/garment-decoration/page.tsx(13,136): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(13,138): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(13,151): error TS1005: '(' expected.
+app/sectors/garment-decoration/page.tsx(13,156): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(13,161): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(13,162): error TS1003: Identifier expected.
+app/sectors/garment-decoration/page.tsx(13,190): error TS1005: ':' expected.
+app/sectors/garment-decoration/page.tsx(17,138): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(17,140): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(17,153): error TS1005: '(' expected.
+app/sectors/garment-decoration/page.tsx(17,158): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(17,163): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(17,164): error TS1003: Identifier expected.
+app/sectors/garment-decoration/page.tsx(17,192): error TS1005: ':' expected.
+app/sectors/garment-decoration/page.tsx(24,138): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(24,140): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(24,153): error TS1005: '(' expected.
+app/sectors/garment-decoration/page.tsx(24,158): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(24,163): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(24,164): error TS1003: Identifier expected.
+app/sectors/garment-decoration/page.tsx(24,192): error TS1005: ':' expected.
+app/sectors/workwear/page.tsx(12,156): error TS1005: ',' expected.
+app/sectors/workwear/page.tsx(12,158): error TS1005: ',' expected.
+app/sectors/workwear/page.tsx(12,162): error TS1005: ',' expected.
+app/sectors/workwear/page.tsx(12,166): error TS1005: ',' expected.
+app/sectors/workwear/page.tsx(12,171): error TS1005: ',' expected.
+app/sectors/workwear/page.tsx(12,172): error TS1003: Identifier expected.
+app/sectors/workwear/page.tsx(12,174): error TS1002: Unterminated string literal.
+app/sectors/workwear/page.tsx(13,3): error TS1005: ':' expected.
+app/sectors/workwear/page.tsx(13,13): error TS1005: ',' expected.
+app/sectors/workwear/page.tsx(13,15): error TS1136: Property assignment expected.
+app/sectors/workwear/page.tsx(13,28): error TS1003: Identifier expected.
+app/sectors/workwear/page.tsx(13,48): error TS1005: ':' expected.
+app/sectors/workwear/page.tsx(16,158): error TS1005: ';' expected.
+app/sectors/workwear/page.tsx(16,160): error TS1005: ',' expected.
+app/sectors/workwear/page.tsx(16,164): error TS1005: ',' expected.
+app/sectors/workwear/page.tsx(16,168): error TS1005: ',' expected.
+app/sectors/workwear/page.tsx(16,173): error TS1005: ',' expected.
+app/sectors/workwear/page.tsx(16,174): error TS1134: Variable declaration expected.
+app/sectors/workwear/page.tsx(16,176): error TS1002: Unterminated string literal.
+app/sectors/workwear/page.tsx(18,11): error TS1005: ';' expected.
+app/sectors/workwear/page.tsx(19,3): error TS1109: Expression expected.
+app/sectors/workwear/page.tsx(19,4): error TS1128: Declaration or statement expected.
+app/sectors/workwear/page.tsx(22,10): error TS1005: ';' expected.
+app/sectors/workwear/page.tsx(23,16): error TS1005: ';' expected.
+app/sectors/workwear/page.tsx(23,158): error TS1005: ';' expected.
+app/sectors/workwear/page.tsx(23,160): error TS1434: Unexpected keyword or identifier.
+app/sectors/workwear/page.tsx(23,164): error TS1434: Unexpected keyword or identifier.
+app/sectors/workwear/page.tsx(23,174): error TS1003: Identifier expected.
+app/sectors/workwear/page.tsx(23,176): error TS1002: Unterminated string literal.
+app/sectors/workwear/page.tsx(24,4): error TS1128: Declaration or statement expected.
+app/sectors/workwear/page.tsx(25,1): error TS1128: Declaration or statement expected.
+app/small-business/page.tsx(10,19): error TS1005: ',' expected.
+app/small-business/page.tsx(10,21): error TS1005: ',' expected.
+app/small-business/page.tsx(10,23): error TS1005: ',' expected.
+app/small-business/page.tsx(10,29): error TS1005: ',' expected.
+app/small-business/page.tsx(10,38): error TS1005: ',' expected.
+app/small-business/page.tsx(10,49): error TS1005: ',' expected.
+app/small-business/page.tsx(10,53): error TS1005: ':' expected.
+app/small-business/page.tsx(10,71): error TS1005: ',' expected.
+app/small-business/page.tsx(10,75): error TS1005: ',' expected.
+app/small-business/page.tsx(10,84): error TS1005: ',' expected.
+app/small-business/page.tsx(10,90): error TS1005: ',' expected.
+app/small-business/page.tsx(10,96): error TS1127: Invalid character.
+app/small-business/page.tsx(10,98): error TS1351: An identifier or keyword cannot immediately follow a numeric literal.
+app/small-business/page.tsx(10,100): error TS1005: ',' expected.
+app/small-business/page.tsx(10,108): error TS1005: ',' expected.
+app/small-business/page.tsx(10,116): error TS1005: ',' expected.
+app/small-business/page.tsx(10,135): error TS1005: ',' expected.
+app/small-business/page.tsx(10,157): error TS1005: ',' expected.
+app/small-business/page.tsx(10,163): error TS1005: ',' expected.
+app/small-business/page.tsx(10,164): error TS1003: Identifier expected.
+app/small-business/page.tsx(10,166): error TS1002: Unterminated string literal.
+app/small-business/page.tsx(11,3): error TS1005: ':' expected.
+app/small-business/page.tsx(11,13): error TS1005: ',' expected.
+app/small-business/page.tsx(11,15): error TS1136: Property assignment expected.
+app/small-business/page.tsx(11,28): error TS1003: Identifier expected.
+app/small-business/page.tsx(11,46): error TS1005: ':' expected.
+app/small-business/page.tsx(15,21): error TS1005: ';' expected.
+app/small-business/page.tsx(15,23): error TS1005: ',' expected.
+app/small-business/page.tsx(15,25): error TS1005: ',' expected.
+app/small-business/page.tsx(15,31): error TS1005: ',' expected.
+app/small-business/page.tsx(15,40): error TS1005: ',' expected.
+app/small-business/page.tsx(15,51): error TS1005: ',' expected.
+app/small-business/page.tsx(15,55): error TS1005: '(' expected.
+app/small-business/page.tsx(15,73): error TS1005: ';' expected.
+app/small-business/page.tsx(15,77): error TS1005: ';' expected.
+app/small-business/page.tsx(15,86): error TS1005: ')' expected.
+app/small-business/page.tsx(15,98): error TS1127: Invalid character.
+app/small-business/page.tsx(15,100): error TS1351: An identifier or keyword cannot immediately follow a numeric literal.
+app/small-business/page.tsx(15,118): error TS1005: ';' expected.
+app/small-business/page.tsx(15,137): error TS1005: ';' expected.
+app/small-business/page.tsx(15,159): error TS1005: ';' expected.
+app/small-business/page.tsx(15,166): error TS1003: Identifier expected.
+app/small-business/page.tsx(15,168): error TS1002: Unterminated string literal.
+app/small-business/page.tsx(17,11): error TS1005: ';' expected.
+app/small-business/page.tsx(18,3): error TS1109: Expression expected.
+app/small-business/page.tsx(18,4): error TS1128: Declaration or statement expected.
+app/small-business/page.tsx(21,10): error TS1005: ';' expected.
+app/small-business/page.tsx(22,16): error TS1005: ';' expected.
+app/small-business/page.tsx(22,21): error TS1005: ';' expected.
+app/small-business/page.tsx(22,23): error TS1434: Unexpected keyword or identifier.
+app/small-business/page.tsx(22,25): error TS1434: Unexpected keyword or identifier.
+app/small-business/page.tsx(22,31): error TS1434: Unexpected keyword or identifier.
+app/small-business/page.tsx(22,40): error TS1434: Unexpected keyword or identifier.
+app/small-business/page.tsx(22,55): error TS1005: '(' expected.
+app/small-business/page.tsx(22,73): error TS1005: ';' expected.
+app/small-business/page.tsx(22,77): error TS1005: ';' expected.
+app/small-business/page.tsx(22,86): error TS1005: ')' expected.
+app/small-business/page.tsx(22,98): error TS1127: Invalid character.
+app/small-business/page.tsx(22,100): error TS1351: An identifier or keyword cannot immediately follow a numeric literal.
+app/small-business/page.tsx(22,118): error TS1005: ';' expected.
+app/small-business/page.tsx(22,137): error TS1005: ';' expected.
+app/small-business/page.tsx(22,159): error TS1005: ';' expected.
+app/small-business/page.tsx(22,166): error TS1003: Identifier expected.
+app/small-business/page.tsx(22,168): error TS1002: Unterminated string literal.
+app/small-business/page.tsx(23,4): error TS1128: Declaration or statement expected.
+app/small-business/page.tsx(24,1): error TS1128: Declaration or statement expected.
+[0m
+[0m→ [0mRead scripts/update-seo-titles.mjs[90m [offset=86, limit=15][0m
+The issue is that some new descriptions contain apostrophes (like `I'm`) which break single-quoted strings. I need to fix the script to use double quotes when the value contains single quotes.
+[0m
+[0m$ [0mgit checkout -- app/
+(no output)
+[0m
+[0m✗ [0mEdit scripts/update-seo-titles.mjs failed
+[91m[1mError: [0mCould not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+Now let me fix the script to handle apostrophes properly.
+[0m→ [0mRead scripts/update-seo-titles.mjs[90m [offset=106, limit=50][0m
+[0m
+[0m← [0mEdit scripts/update-seo-titles.mjs
+Index: D:\apps\worktrees\decoded-ops-website\web-keyword-titles\scripts\update-seo-titles.mjs
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-keyword-titles\scripts\update-seo-titles.mjs
++++ D:\apps\worktrees\decoded-ops-website\web-keyword-titles\scripts\update-seo-titles.mjs
+@@ -106,29 +106,25 @@
+   }
+   return null;
+ }
+ 
+-// Replace a field value inside a metadata block
++// Replace a field value inside a metadata block.
++// Uses double quotes if the value contains an apostrophe; single quotes otherwise.
+ function replaceField(block, fieldName, newValue) {
+-  // title: { absolute: '...' } -> title: '...'
++  const useDouble = newValue.includes("'");
++  const q = useDouble ? '"' : "'";
++  const escaped = useDouble ? newValue.replace(/"/g, '\\"') : newValue;
++
++  // Handle title: { absolute: '...' } -> title: "..." or title: '...'
+   if (fieldName === 'title') {
+     block = block.replace(
+       new RegExp(`(title:\\s*)\\{\\s*absolute:\\s*['"][^'"]*['"]\\s*}`),
+-      `$1'${newValue}'`
++      `$1${q}${escaped}${q}`
+     );
+   }
+-  // Match: fieldName: 'old' OR fieldName: "old"
+-  // Uses [\s\S] for potential multiline but mostly single-line
+-  const q = `['"]`;
+-  const oldescaped = newValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+-  // We don't know the old value, so match the field and replace the value
+-  // For title at top level: title: '...'
+-  // For openGraph.title: title: '...'
+-  // For twitter.title: title: '...'
+-  // We need to be careful not to match nested title fields in openGraph/twitter when replacing top-level
+-  // Strategy: replace all occurrences of fieldName: '...' with fieldName: 'newValue'
+-  const re = new RegExp(`(${fieldName}:\\s*)${q}[^'"]*${q}`, 'g');
+-  block = block.replace(re, `$1'${newValue}'`);
++  // Replace all occurrences of fieldName: 'old' or fieldName: "old"
++  const re = new RegExp(`(${fieldName}:\\s*)(['"])([^'"]*)\\2`, 'g');
++  block = block.replace(re, `$1${q}${escaped}${q}`);
+   return block;
+ }
+ 
+ let updated = 0;
+
+[0m
+[0m$ [0mnode scripts/update-seo-titles.mjs
+updated: app/page.tsx
+  updated: app/about/page.tsx
+  updated: app/contact/page.tsx
+  updated: app/how-i-build/page.tsx
+  updated: app/pricing/page.tsx
+  updated: app/process-quality-system/page.tsx
+  updated: app/small-business/page.tsx
+  updated: app/clarity/page.tsx
+  updated: app/deliver/page.tsx
+  updated: app/retained/page.tsx
+  updated: app/transform/page.tsx
+  updated: app/apps/page.tsx
+  updated: app/apps/commerce/page.tsx
+  updated: app/apps/proof/page.tsx
+  updated: app/apps/works/page.tsx
+  updated: app/problems/page.tsx
+  updated: app/problems/ai-paralysis/page.tsx
+  updated: app/problems/bottleneck-growth/page.tsx
+  updated: app/problems/buy-vs-build/page.tsx
+  updated: app/problems/cant-scale-operations/page.tsx
+  updated: app/problems/data-scattered/page.tsx
+  updated: app/problems/disaster-recovery/page.tsx
+  updated: app/problems/ecommerce-not-connected/page.tsx
+  updated: app/problems/erp-implementation-failure/page.tsx
+  updated: app/problems/inventory-blind/page.tsx
+  updated: app/problems/legacy-system/page.tsx
+  updated: app/problems/manual-workarounds/page.tsx
+  updated: app/problems/no-ops-owner/page.tsx
+  updated: app/problems/ops-in-owners-head/page.tsx
+  updated: app/problems/seasonal-peaks/page.tsx
+  updated: app/problems/slow-processes/page.tsx
+  updated: app/problems/spreadsheet-addiction/page.tsx
+  updated: app/problems/systems-dont-talk/page.tsx
+  updated: app/problems/wrong-erp-software/page.tsx
+  updated: app/sectors/awards-engraving/page.tsx
+  updated: app/sectors/garment-decoration/page.tsx
+  updated: app/sectors/labels-packaging/page.tsx
+  updated: app/sectors/operations-consultant-print-embroidery/page.tsx
+  updated: app/sectors/print-promotional/page.tsx
+  updated: app/sectors/promotional-merchandise/page.tsx
+  updated: app/sectors/schoolwear/page.tsx
+  updated: app/sectors/signs-graphics/page.tsx
+  updated: app/sectors/teamwear-clubwear/page.tsx
+  updated: app/sectors/workwear/page.tsx
+  updated: app/resources/page.tsx
+  updated: app/resources/5-warning-signs/page.tsx
+  updated: app/resources/artwork-approval-playbook/page.tsx
+  updated: app/resources/audit-checklist/page.tsx
+  updated: app/resources/capacity-planner/page.tsx
+  updated: app/resources/decoded-method/page.tsx
+  updated: app/resources/erp-selection-playbook/page.tsx
+  updated: app/resources/six-sigma/page.tsx
+  updated: app/resources/sop-template/page.tsx
+  updated: app/tools/page.tsx
+  updated: app/tools/automation-roi-calculator/page.tsx
+  updated: app/tools/downtime-cost-calculator/page.tsx
+  updated: app/tools/rto-calculator/page.tsx
+  updated: app/case-studies/page.tsx
+  updated: app/case-studies/case-study-01/page.tsx
+  updated: app/case-studies/case-study-02/page.tsx
+  updated: app/case-studies/case-study-03/page.tsx
+  updated: app/case-studies/eternal-fitness/page.tsx
+  updated: app/locations/manchester/page.tsx
+  updated: app/locations/sussex-surrey/page.tsx
+  updated: app/locations/tech-audit/page.tsx
+  updated: app/blog/page.tsx
+
+Done. Updated: 66, Skipped: 2
+Skipped pages:
+  /tools/ops-health-score: client component - handled via layout.tsx
+  /tools/should-i-replace-erp: client component - handled via layout.tsx
+[0m
+[0m→ [0mRead app/resources/capacity-planner/page.tsx[90m [limit=42][0m
+[0m
+[0m← [0mEdit app/resources/capacity-planner/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\resources\capacity-planner\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\resources\capacity-planner\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\resources\capacity-planner\page.tsx
+@@ -26,16 +26,16 @@
+     'A free capacity planning tool for print and embroidery businesses. Work out how many jobs your machines and team can actually take on each week.',
+   alternates: { canonical: '/resources/capacity-planner' },
+   openGraph: {
+     type: 'website',
+-    title: 'Capacity Planning Calculator for Print | Decoded Ops',
++    title: 'Capacity Planning Calculator, Free Tool | Decoded Ops',
+     description: 'A free capacity planning tool for print and embroidery businesses. Work out how many jobs your machines and team can actually take on each week.',
+     url: 'https://decodedops.co.uk/resources/capacity-planner',
+     images: OG_IMAGE,
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'Capacity Planning Calculator for Print | Decoded Ops',
++    title: 'Capacity Planning Calculator, Free Tool | Decoded Ops',
+     description: 'A free capacity planning tool for print and embroidery businesses. Work out how many jobs your machines and team can actually take on each week.',
+     images: [OG_IMAGE_PATH],
+   },
+ };
+
+[0m
+[0m→ [0mRead app/page.tsx[90m [limit=26][0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=26][0m
+[0m→ [0mRead app/small-business/page.tsx[90m [limit=26][0m
+Now let me verify a few files that had apostrophes.
+Double-quoting working correctly for apostrophes. Let me run the verification and tsc.
+[0m
+[0m$ [0mnode scripts/check-seo-titles.mjs
+SEO titles check: 62/68 matched
+
+Errors (6):
+  /how-i-build — description not found in app/how-i-build/page.tsx
+    Expected: "As an ERP implementation consultant, I set out what's on the market, what it costs and where it falls short, so the buy-or-build decision stays yours."
+  /problems/cant-scale-operations — description not found in app/problems/cant-scale-operations/page.tsx
+    Expected: "Scaling a business gets harder, not easier, once operations stop keeping pace with growth. Here's what I look at first, and the fix that usually works."
+  /problems/inventory-blind — description not found in app/problems/inventory-blind/page.tsx
+    Expected: "Without a proper stock control system you order stock you already have and run out of stock you didn't know you needed. Here's how Decoded Works fixes it."
+  /problems/seasonal-peaks — description not found in app/problems/seasonal-peaks/page.tsx
+    Expected: "Production capacity planning matters when your busiest month runs four times your quietest and the systems can't flex. Here's how I get them ready for it."
+  /tools/ops-health-score — title not found in app/tools/ops-health-score/layout.tsx
+    Expected: "Operations Audit, Free Ops Health Score | Decoded Ops"
+  /tools/should-i-replace-erp — title not found in app/tools/should-i-replace-erp/layout.tsx
+    Expected: "ERP for Manufacturing, Should You Replace It | Decoded Ops"
+[0m
+[0m$ [0mSelect-String -Path "app\how-i-build\page.tsx" -Pattern "description:" | Select-Object -First 3
+app\how-i-build\page.tsx:10:    description: "Making a buy vs build software decision. I show you what's on the 
+market, what it costs and where it falls short, so you choose on the facts.",
+app\how-i-build\page.tsx:15:  description: "Making a buy vs build software decision. I show you what's on the market, 
+what it costs and where it falls short, so you choose on the facts.",
+app\how-i-build\page.tsx:22:    description: "Making a buy vs build software decision. I show you what's on the 
+market, what it costs and where it falls short, so you choose on the facts.",
+[0m
+[0m$ [0mSelect-String -Path "app\problems\cant-scale-operations\page.tsx" -Pattern "description:" | Select-Object -First 3
+app\problems\cant-scale-operations\page.tsx:13: description: "When your business is growing and operations are not 
+scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
+app\problems\cant-scale-operations\page.tsx:17:  description: "When your business is growing and operations are not 
+scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
+app\problems\cant-scale-operations\page.tsx:24:  description: "When your business is growing and operations are not 
+scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
+[0m
+[0m$ [0mSelect-String -Path "app\tools\ops-health-score\layout.tsx" -Pattern "title" | Select-Object -First 3
+app\tools\ops-health-score\layout.tsx:5:  title: 'Ops Health Score | Decoded Ops',
+app\tools\ops-health-score\layout.tsx:9:    title: 'Ops Health Score | Decoded Ops',
+app\tools\ops-health-score\layout.tsx:16:    title: 'Ops Health Score | Decoded Ops',
+[0m
+[0m→ [0mRead app/how-i-build/page.tsx[90m [limit=25][0m
+The issue is the regex `[^'"]*` can't match apostrophes inside double-quoted strings. Let me fix the script and also recreate the layout files.
+[0m
+[0m← [0mEdit scripts/update-seo-titles.mjs
+Index: D:\apps\worktrees\decoded-ops-website\web-keyword-titles\scripts\update-seo-titles.mjs
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-keyword-titles\scripts\update-seo-titles.mjs
++++ D:\apps\worktrees\decoded-ops-website\web-keyword-titles\scripts\update-seo-titles.mjs
+@@ -108,8 +108,9 @@
+ }
+ 
+ // Replace a field value inside a metadata block.
+ // Uses double quotes if the value contains an apostrophe; single quotes otherwise.
++// Handles old values that used either quote style, including apostrophes inside double quotes.
+ function replaceField(block, fieldName, newValue) {
+   const useDouble = newValue.includes("'");
+   const q = useDouble ? '"' : "'";
+   const escaped = useDouble ? newValue.replace(/"/g, '\\"') : newValue;
+@@ -120,10 +121,15 @@
+       new RegExp(`(title:\\s*)\\{\\s*absolute:\\s*['"][^'"]*['"]\\s*}`),
+       `$1${q}${escaped}${q}`
+     );
+   }
+-  // Replace all occurrences of fieldName: 'old' or fieldName: "old"
+-  const re = new RegExp(`(${fieldName}:\\s*)(['"])([^'"]*)\\2`, 'g');
++  // Replace field: "old value with 'apostrophes'" or field: 'old value'
++  // Match double-quoted: everything except " between the quotes
++  // Match single-quoted: everything except ' between the quotes
++  const re = new RegExp(
++    `(${fieldName}:\\s*)("(?:[^"]*)"|'(?:[^']*)')`,
++    'g'
++  );
+   block = block.replace(re, `$1${q}${escaped}${q}`);
+   return block;
+ }
+ 
+
+[0m
+[0m$ [0mnode scripts/update-seo-titles.mjs
+updated: app/how-i-build/page.tsx
+  updated: app/problems/cant-scale-operations/page.tsx
+  updated: app/problems/inventory-blind/page.tsx
+  updated: app/problems/seasonal-peaks/page.tsx
+
+Done. Updated: 4, Skipped: 64
+Skipped pages:
+  /: no changes needed (already matches)
+  /about: no changes needed (already matches)
+  /contact: no changes needed (already matches)
+  /pricing: no changes needed (already matches)
+  /process-quality-system: no changes needed (already matches)
+  /small-business: no changes needed (already matches)
+  /clarity: no changes needed (already matches)
+  /deliver: no changes needed (already matches)
+  /retained: no changes needed (already matches)
+  /transform: no changes needed (already matches)
+  /apps: no changes needed (already matches)
+  /apps/commerce: no changes needed (already matches)
+  /apps/proof: no changes needed (already matches)
+  /apps/works: no changes needed (already matches)
+  /problems: no changes needed (already matches)
+  /problems/ai-paralysis: no changes needed (already matches)
+  /problems/bottleneck-growth: no changes needed (already matches)
+  /problems/buy-vs-build: no changes needed (already matches)
+  /problems/data-scattered: no changes needed (already matches)
+  /problems/disaster-recovery: no changes needed (already matches)
+  /problems/ecommerce-not-connected: no changes needed (already matches)
+  /problems/erp-implementation-failure: no changes needed (already matches)
+  /problems/legacy-system: no changes needed (already matches)
+  /problems/manual-workarounds: no changes needed (already matches)
+  /problems/no-ops-owner: no changes needed (already matches)
+  /problems/ops-in-owners-head: no changes needed (already matches)
+  /problems/slow-processes: no changes needed (already matches)
+  /problems/spreadsheet-addiction: no changes needed (already matches)
+  /problems/systems-dont-talk: no changes needed (already matches)
+  /problems/wrong-erp-software: no changes needed (already matches)
+  /sectors/awards-engraving: no changes needed (already matches)
+  /sectors/garment-decoration: no changes needed (already matches)
+  /sectors/labels-packaging: no changes needed (already matches)
+  /sectors/operations-consultant-print-embroidery: no changes needed (already matches)
+  /sectors/print-promotional: no changes needed (already matches)
+  /sectors/promotional-merchandise: no changes needed (already matches)
+  /sectors/schoolwear: no changes needed (already matches)
+  /sectors/signs-graphics: no changes needed (already matches)
+  /sectors/teamwear-clubwear: no changes needed (already matches)
+  /sectors/workwear: no changes needed (already matches)
+  /resources: no changes needed (already matches)
+  /resources/5-warning-signs: no changes needed (already matches)
+  /resources/artwork-approval-playbook: no changes needed (already matches)
+  /resources/audit-checklist: no changes needed (already matches)
+  /resources/capacity-planner: no changes needed (already matches)
+  /resources/decoded-method: no changes needed (already matches)
+  /resources/erp-selection-playbook: no changes needed (already matches)
+  /resources/six-sigma: no changes needed (already matches)
+  /resources/sop-template: no changes needed (already matches)
+  /tools: no changes needed (already matches)
+  /tools/automation-roi-calculator: no changes needed (already matches)
+  /tools/downtime-cost-calculator: no changes needed (already matches)
+  /tools/ops-health-score: client component - handled via layout.tsx
+  /tools/rto-calculator: no changes needed (already matches)
+  /tools/should-i-replace-erp: client component - handled via layout.tsx
+  /case-studies: no changes needed (already matches)
+  /case-studies/case-study-01: no changes needed (already matches)
+  /case-studies/case-study-02: no changes needed (already matches)
+  /case-studies/case-study-03: no changes needed (already matches)
+  /case-studies/eternal-fitness: no changes needed (already matches)
+  /locations/manchester: no changes needed (already matches)
+  /locations/sussex-surrey: no changes needed (already matches)
+  /locations/tech-audit: no changes needed (already matches)
+  /blog: no changes needed (already matches)
+[0m
+[0m← [0mWrite app/tools/ops-health-score/layout.tsx
+Wrote file successfully.
+[0m
+4 more fixed. Now let me recreate the layout files for the client pages.
+[0m← [0mWrite app/tools/should-i-replace-erp/layout.tsx
+Wrote file successfully.
+[0m
+Now let me run the full verification.
+[0m$ [0mnode scripts/check-seo-titles.mjs
+SEO titles check: 68/68 matched
+
+All rows verified successfully.
+[0m
+All 68 verified. Now tsc.
+[0m$ [0mnpx tsc --noEmit 2>&1
+app/case-studies/case-study-03/page.tsx(11,166): error TS1005: ',' expected.
+app/case-studies/case-study-03/page.tsx(11,168): error TS1005: ',' expected.
+app/case-studies/case-study-03/page.tsx(11,177): error TS1005: ',' expected.
+app/case-studies/case-study-03/page.tsx(11,183): error TS1005: ',' expected.
+app/case-studies/case-study-03/page.tsx(11,184): error TS1003: Identifier expected.
+app/case-studies/case-study-03/page.tsx(11,186): error TS1002: Unterminated string literal.
+app/case-studies/case-study-03/page.tsx(12,3): error TS1005: ':' expected.
+app/case-studies/case-study-03/page.tsx(12,13): error TS1005: ',' expected.
+app/case-studies/case-study-03/page.tsx(12,15): error TS1136: Property assignment expected.
+app/case-studies/case-study-03/page.tsx(12,28): error TS1003: Identifier expected.
+app/case-studies/case-study-03/page.tsx(12,58): error TS1005: ':' expected.
+app/case-studies/case-study-03/page.tsx(16,168): error TS1005: ';' expected.
+app/case-studies/case-study-03/page.tsx(16,170): error TS1005: ',' expected.
+app/case-studies/case-study-03/page.tsx(16,179): error TS1005: ',' expected.
+app/case-studies/case-study-03/page.tsx(16,185): error TS1005: ',' expected.
+app/case-studies/case-study-03/page.tsx(16,186): error TS1134: Variable declaration expected.
+app/case-studies/case-study-03/page.tsx(16,188): error TS1002: Unterminated string literal.
+app/case-studies/case-study-03/page.tsx(18,11): error TS1005: ';' expected.
+app/case-studies/case-study-03/page.tsx(19,3): error TS1109: Expression expected.
+app/case-studies/case-study-03/page.tsx(19,4): error TS1128: Declaration or statement expected.
+app/case-studies/case-study-03/page.tsx(22,10): error TS1005: ';' expected.
+app/case-studies/case-study-03/page.tsx(23,16): error TS1005: ';' expected.
+app/case-studies/case-study-03/page.tsx(23,168): error TS1005: ';' expected.
+app/case-studies/case-study-03/page.tsx(23,170): error TS1434: Unexpected keyword or identifier.
+app/case-studies/case-study-03/page.tsx(23,186): error TS1003: Identifier expected.
+app/case-studies/case-study-03/page.tsx(23,188): error TS1002: Unterminated string literal.
+app/case-studies/case-study-03/page.tsx(25,3): error TS1109: Expression expected.
+app/case-studies/case-study-03/page.tsx(25,4): error TS1128: Declaration or statement expected.
+app/case-studies/case-study-03/page.tsx(26,1): error TS1128: Declaration or statement expected.
+app/problems/ecommerce-not-connected/page.tsx(13,168): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,170): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,174): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,177): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,181): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,185): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,197): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,205): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(13,206): error TS1003: Identifier expected.
+app/problems/ecommerce-not-connected/page.tsx(13,208): error TS1002: Unterminated string literal.
+app/problems/ecommerce-not-connected/page.tsx(14,2): error TS1005: ':' expected.
+app/problems/ecommerce-not-connected/page.tsx(14,12): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(14,14): error TS1136: Property assignment expected.
+app/problems/ecommerce-not-connected/page.tsx(14,27): error TS1003: Identifier expected.
+app/problems/ecommerce-not-connected/page.tsx(14,63): error TS1005: ':' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,169): error TS1005: ';' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,171): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,175): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,178): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,182): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,186): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,198): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,206): error TS1005: ',' expected.
+app/problems/ecommerce-not-connected/page.tsx(17,207): error TS1134: Variable declaration expected.
+app/problems/ecommerce-not-connected/page.tsx(17,209): error TS1002: Unterminated string literal.
+app/problems/ecommerce-not-connected/page.tsx(19,9): error TS1005: ';' expected.
+app/problems/ecommerce-not-connected/page.tsx(20,2): error TS1109: Expression expected.
+app/problems/ecommerce-not-connected/page.tsx(20,3): error TS1128: Declaration or statement expected.
+app/problems/ecommerce-not-connected/page.tsx(23,8): error TS1005: ';' expected.
+app/problems/ecommerce-not-connected/page.tsx(24,14): error TS1005: ';' expected.
+app/problems/ecommerce-not-connected/page.tsx(24,169): error TS1005: ';' expected.
+app/problems/ecommerce-not-connected/page.tsx(24,171): error TS1434: Unexpected keyword or identifier.
+app/problems/ecommerce-not-connected/page.tsx(24,175): error TS1434: Unexpected keyword or identifier.
+app/problems/ecommerce-not-connected/page.tsx(24,178): error TS1434: Unexpected keyword or identifier.
+app/problems/ecommerce-not-connected/page.tsx(24,182): error TS1434: Unexpected keyword or identifier.
+app/problems/ecommerce-not-connected/page.tsx(24,186): error TS1434: Unexpected keyword or identifier.
+app/problems/ecommerce-not-connected/page.tsx(24,207): error TS1003: Identifier expected.
+app/problems/ecommerce-not-connected/page.tsx(24,209): error TS1002: Unterminated string literal.
+app/problems/ecommerce-not-connected/page.tsx(25,3): error TS1128: Declaration or statement expected.
+app/problems/ecommerce-not-connected/page.tsx(26,1): error TS1128: Declaration or statement expected.
+app/problems/no-ops-owner/page.tsx(13,170): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,172): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,176): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,183): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,187): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,192): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,202): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,206): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,209): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,217): error TS1005: '(' expected.
+app/problems/no-ops-owner/page.tsx(13,225): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,227): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,232): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,236): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(13,237): error TS1003: Identifier expected.
+app/problems/no-ops-owner/page.tsx(13,239): error TS1002: Unterminated string literal.
+app/problems/no-ops-owner/page.tsx(14,2): error TS1005: ':' expected.
+app/problems/no-ops-owner/page.tsx(14,12): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(14,14): error TS1136: Property assignment expected.
+app/problems/no-ops-owner/page.tsx(14,27): error TS1003: Identifier expected.
+app/problems/no-ops-owner/page.tsx(14,52): error TS1005: ':' expected.
+app/problems/no-ops-owner/page.tsx(17,171): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(17,173): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,177): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,184): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,188): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,193): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,203): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,207): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,210): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,214): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,218): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,226): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,228): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,233): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,237): error TS1005: ',' expected.
+app/problems/no-ops-owner/page.tsx(17,238): error TS1134: Variable declaration expected.
+app/problems/no-ops-owner/page.tsx(17,240): error TS1002: Unterminated string literal.
+app/problems/no-ops-owner/page.tsx(19,9): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(20,2): error TS1109: Expression expected.
+app/problems/no-ops-owner/page.tsx(20,3): error TS1128: Declaration or statement expected.
+app/problems/no-ops-owner/page.tsx(23,8): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(24,14): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(24,171): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(24,184): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(24,188): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,203): error TS1005: ';' expected.
+app/problems/no-ops-owner/page.tsx(24,207): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,210): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,214): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,218): error TS1435: Unknown keyword or identifier. Did you mean 'with out'?
+app/problems/no-ops-owner/page.tsx(24,226): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,228): error TS1434: Unexpected keyword or identifier.
+app/problems/no-ops-owner/page.tsx(24,238): error TS1003: Identifier expected.
+app/problems/no-ops-owner/page.tsx(24,240): error TS1002: Unterminated string literal.
+app/problems/no-ops-owner/page.tsx(25,3): error TS1128: Declaration or statement expected.
+app/problems/no-ops-owner/page.tsx(26,1): error TS1128: Declaration or statement expected.
+app/problems/systems-dont-talk/page.tsx(12,62): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,64): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,69): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,72): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,77): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,83): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,93): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,96): error TS1005: ',' expected.
+app/problems/systems-dont-talk/page.tsx(12,98): error TS1002: Unterminated string literal.
+app/problems/systems-dont-talk/page.tsx(13,165): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(13,167): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,172): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,175): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,194): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(13,198): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,206): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,209): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,214): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,218): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,238): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(13,242): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(13,251): error TS1127: Invalid character.
+app/problems/systems-dont-talk/page.tsx(14,13): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(14,59): error TS1128: Declaration or statement expected.
+app/problems/systems-dont-talk/page.tsx(16,64): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(16,66): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(16,71): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(16,74): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(16,95): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(16,95): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(16,100): error TS1002: Unterminated string literal.
+app/problems/systems-dont-talk/page.tsx(17,167): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(17,169): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,174): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,177): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,196): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(17,200): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,208): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,211): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,216): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,220): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,240): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(17,244): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(17,253): error TS1127: Invalid character.
+app/problems/systems-dont-talk/page.tsx(18,7): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(19,10): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(20,3): error TS1109: Expression expected.
+app/problems/systems-dont-talk/page.tsx(20,4): error TS1128: Declaration or statement expected.
+app/problems/systems-dont-talk/page.tsx(23,9): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(23,64): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(23,66): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(23,71): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(23,74): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(23,95): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(23,95): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(23,100): error TS1002: Unterminated string literal.
+app/problems/systems-dont-talk/page.tsx(24,167): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(24,169): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,174): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,177): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,196): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(24,200): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,208): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,211): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,216): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,220): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,240): error TS1005: ';' expected.
+app/problems/systems-dont-talk/page.tsx(24,244): error TS1434: Unexpected keyword or identifier.
+app/problems/systems-dont-talk/page.tsx(24,253): error TS1127: Invalid character.
+app/problems/systems-dont-talk/page.tsx(25,3): error TS1109: Expression expected.
+app/problems/systems-dont-talk/page.tsx(25,4): error TS1128: Declaration or statement expected.
+app/problems/systems-dont-talk/page.tsx(26,1): error TS1128: Declaration or statement expected.
+app/sectors/garment-decoration/page.tsx(13,163): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(13,165): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(13,178): error TS1005: '(' expected.
+app/sectors/garment-decoration/page.tsx(13,183): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(13,188): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(13,189): error TS1003: Identifier expected.
+app/sectors/garment-decoration/page.tsx(13,191): error TS1002: Unterminated string literal.
+app/sectors/garment-decoration/page.tsx(14,3): error TS1005: ':' expected.
+app/sectors/garment-decoration/page.tsx(14,13): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(14,15): error TS1136: Property assignment expected.
+app/sectors/garment-decoration/page.tsx(14,28): error TS1003: Identifier expected.
+app/sectors/garment-decoration/page.tsx(14,58): error TS1005: ':' expected.
+app/sectors/garment-decoration/page.tsx(17,165): error TS1005: ';' expected.
+app/sectors/garment-decoration/page.tsx(17,167): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(17,171): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(17,180): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(17,185): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(17,190): error TS1005: ',' expected.
+app/sectors/garment-decoration/page.tsx(17,191): error TS1134: Variable declaration expected.
+app/sectors/garment-decoration/page.tsx(17,193): error TS1002: Unterminated string literal.
+app/sectors/garment-decoration/page.tsx(19,11): error TS1005: ';' expected.
+app/sectors/garment-decoration/page.tsx(20,3): error TS1109: Expression expected.
+app/sectors/garment-decoration/page.tsx(20,4): error TS1128: Declaration or statement expected.
+app/sectors/garment-decoration/page.tsx(23,10): error TS1005: ';' expected.
+app/sectors/garment-decoration/page.tsx(24,16): error TS1005: ';' expected.
+app/sectors/garment-decoration/page.tsx(24,165): error TS1005: ';' expected.
+app/sectors/garment-decoration/page.tsx(24,167): error TS1434: Unexpected keyword or identifier.
+app/sectors/garment-decoration/page.tsx(24,171): error TS1434: Unexpected keyword or identifier.
+app/sectors/garment-decoration/page.tsx(24,180): error TS1434: Unexpected keyword or identifier.
+app/sectors/garment-decoration/page.tsx(24,191): error TS1003: Identifier expected.
+app/sectors/garment-decoration/page.tsx(24,193): error TS1002: Unterminated string literal.
+app/sectors/garment-decoration/page.tsx(25,4): error TS1128: Declaration or statement expected.
+app/sectors/garment-decoration/page.tsx(26,1): error TS1128: Declaration or statement expected.
+[0m
+[0m→ [0mRead app/case-studies/case-study-03/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/problems/ecommerce-not-connected/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/problems/no-ops-owner/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/problems/systems-dont-talk/page.tsx[90m [limit=30][0m
+[0m→ [0mRead app/sectors/garment-decoration/page.tsx[90m [limit=30][0m
+The script is producing corrupted output in 5 files where old values contained apostrophes inside double quotes. Let me revert those and fix them manually.
+[0m
+[0m$ [0mgit checkout -- app/case-studies/case-study-03/page.tsx app/problems/ecommerce-not-connected/page.tsx app/problems/no-ops-owner/page.tsx app/problems/systems-dont-talk/page.tsx app/sectors/garment-decoration/page.tsx
+(no output)
+[0m
+[0m→ [0mRead app/case-studies/case-study-03/page.tsx[90m [limit=27][0m
+[0m→ [0mRead app/problems/ecommerce-not-connected/page.tsx[90m [limit=27][0m
+[0m→ [0mRead app/problems/no-ops-owner/page.tsx[90m [limit=27][0m
+[0m→ [0mRead app/problems/systems-dont-talk/page.tsx[90m [limit=27][0m
+[0m→ [0mRead app/sectors/garment-decoration/page.tsx[90m [limit=27][0m
+Now let me manually edit these 5 files with the correct values.
+[0m
+[0m← [0mEdit app/case-studies/case-study-03/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\case-studies\case-study-03\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\case-studies\case-study-03\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\case-studies\case-study-03\page.tsx
+@@ -6,22 +6,22 @@
+ import '@/app/d17-apps-cases.css';
+ import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
+ 
+ export const metadata = {
+-  title: 'B2B Portal Case Study | Decoded Ops',
+-  description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s ordering portal.',
++  title: "B2B Portal Case Study, Workwear Distributor | Decoded Ops",
++  description: "This B2B portal case study covers vendor requirements, procurement and integration for a workwear distributor. I was the architect, not the builder.",
+   alternates: { canonical: '/case-studies/case-study-03' },
+   openGraph: {
+     type: 'article',
+-    title: 'B2B Portal Case Study | Decoded Ops',
+-    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s ordering portal.',
++    title: "B2B Portal Case Study, Workwear Distributor | Decoded Ops",
++    description: "This B2B portal case study covers vendor requirements, procurement and integration for a workwear distributor. I was the architect, not the builder.",
+     url: 'https://decodedops.co.uk/case-studies/case-study-03',
+     images: OG_IMAGE,
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'B2B Portal Case Study | Decoded Ops',
+-    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s ordering portal.',
++    title: "B2B Portal Case Study, Workwear Distributor | Decoded Ops",
++    description: "This B2B portal case study covers vendor requirements, procurement and integration for a workwear distributor. I was the architect, not the builder.",
+     images: [OG_IMAGE_PATH],
+   },
+ };
+ 
+
+[0m
+[0m← [0mEdit app/problems/ecommerce-not-connected/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\problems\ecommerce-not-connected\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\problems\ecommerce-not-connected\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\problems\ecommerce-not-connected\page.tsx
+@@ -8,21 +8,21 @@
+ import '@/app/d17-problems.css';
+ import { D17Motion } from '@/components/D17Motion';
+ 
+ export const metadata: Metadata = {
+- title: 'Ecommerce Not Connected to Inventory | Decoded Ops',
+- description: 'When ecommerce is not connected to inventory, online orders come in but stock and invoicing stay manual. Here\'s how to fix the integration properly.',
++ title: "How to Fix Ecommerce Integration Issues | Decoded Ops",
++ description: "I fix ecommerce integration issues where online orders come in but stock and invoicing stay manual. See how I connect the store to production properly.",
+  alternates: { canonical: '/problems/ecommerce-not-connected' },
+  openGraph: {
+-  title: 'Ecommerce Not Connected to Inventory | Decoded Ops',
+-  description: 'When ecommerce is not connected to inventory, online orders come in but stock and invoicing stay manual. Here\'s how to fix the integration properly.',
++  title: "How to Fix Ecommerce Integration Issues | Decoded Ops",
++  description: "I fix ecommerce integration issues where online orders come in but stock and invoicing stay manual. See how I connect the store to production properly.",
+   url: 'https://decodedops.co.uk/problems/ecommerce-not-connected',
+   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+   card: 'summary_large_image',
+-  title: 'Ecommerce Not Connected to Inventory | Decoded Ops',
+-  description: 'When ecommerce is not connected to inventory, online orders come in but stock and invoicing stay manual. Here\'s how to fix the integration properly.',
++  title: "How to Fix Ecommerce Integration Issues | Decoded Ops",
++  description: "I fix ecommerce integration issues where online orders come in but stock and invoicing stay manual. See how I connect the store to production properly.",
+  },
+ };
+ 
+ const ecommerceNotConnectedSchema = {
+
+[0m
+[0m← [0mEdit app/problems/no-ops-owner/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\problems\no-ops-owner\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\problems\no-ops-owner\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\problems\no-ops-owner\page.tsx
+@@ -8,21 +8,21 @@
+ import '@/app/d17-problems.css';
+ import { D17Motion } from '@/components/D17Motion';
+ 
+ export const metadata: Metadata = {
+- title: 'Head of Operations for Small Business | Decoded Ops',
+- description: 'A head of operations for a small business stops the same problems repeating on the owner\'s desk. What the role does, and how to get one without a full hire.',
++ title: "Interim Operations Director, Decoration | Decoded Ops",
++ description: "An interim operations director stops the same problems landing back on your desk. Here's what the role does, and how to get one without a full-time hire.",
+  alternates: { canonical: '/problems/no-ops-owner' },
+  openGraph: {
+-  title: 'Head of Operations for Small Business | Decoded Ops',
+-  description: 'A head of operations for a small business stops the same problems repeating on the owner\'s desk. What the role does, and how to get one without a full hire.',
++  title: "Interim Operations Director, Decoration | Decoded Ops",
++  description: "An interim operations director stops the same problems landing back on your desk. Here's what the role does, and how to get one without a full-time hire.",
+   url: 'https://decodedops.co.uk/problems/no-ops-owner',
+   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+   card: 'summary_large_image',
+-  title: 'Head of Operations for Small Business | Decoded Ops',
+-  description: 'A head of operations for a small business stops the same problems repeating on the owner\'s desk. What the role does, and how to get one without a full hire.',
++  title: "Interim Operations Director, Decoration | Decoded Ops",
++  description: "An interim operations director stops the same problems landing back on your desk. Here's what the role does, and how to get one without a full-time hire.",
+  },
+ };
+ 
+ const noOpsOwnerSchema = {
+
+[0m
+[0m← [0mEdit app/problems/systems-dont-talk/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\problems\systems-dont-talk\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\problems\systems-dont-talk\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\problems\systems-dont-talk\page.tsx
+@@ -8,21 +8,21 @@
+ import '@/app/d17-problems.css';
+ import { D17Motion } from '@/components/D17Motion';
+ 
+ export const metadata: Metadata = {
+- title: 'Systems Don\'t Talk to Each Other | Decoded Ops',
+- description: 'When systems don\'t talk to each other, orders get rekeyed by hand and errors follow. Find out what that\'s costing your decorated goods business.',
++ title: "Systems That Don't Talk to Each Other | Decoded Ops",
++ description: "When systems that don't talk to each other force orders to be rekeyed by hand, errors follow. Find out what that's costing your decoration business.",
+   alternates: { canonical: '/problems/systems-dont-talk' },
+   openGraph: {
+-   title: 'Systems Don\'t Talk to Each Other | Decoded Ops',
+-   description: 'When systems don\'t talk to each other, orders get rekeyed by hand and errors follow. Find out what that\'s costing your decorated goods business.',
++   title: "Systems That Don't Talk to Each Other | Decoded Ops",
++   description: "When systems that don't talk to each other force orders to be rekeyed by hand, errors follow. Find out what that's costing your decoration business.",
+    url: 'https://decodedops.co.uk/problems/systems-dont-talk',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+    card: 'summary_large_image',
+-   title: 'Systems Don\'t Talk to Each Other | Decoded Ops',
+-   description: 'When systems don\'t talk to each other, orders get rekeyed by hand and errors follow. Find out what that\'s costing your decorated goods business.',
++   title: "Systems That Don't Talk to Each Other | Decoded Ops",
++   description: "When systems that don't talk to each other force orders to be rekeyed by hand, errors follow. Find out what that's costing your decoration business.",
+   },
+ };
+ 
+ const systemsDontTalkSchema = {
+
+[0m
+[0m← [0mEdit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-keyword-titles\app\sectors\garment-decoration\page.tsx
+@@ -8,21 +8,21 @@
+ import { sectorRouting } from '@/data/sector-routing';
+ import styles from '@/components/SectorPageDS.module.css';
+ 
+ export const metadata: Metadata = {
+-  title: 'ERP for Garment Decoration | Decoded Ops',
+-  description: 'ERP for garment decoration needs to handle embroidery, screen print, DTF and DTG production scheduling, and artwork that doesn\'t get approved over email.',
++  title: "ERP for Garment Decoration Businesses | Decoded Ops",
++  description: "Garment decoration needs an ERP that handles embroidery, screen print, DTF and DTG scheduling, plus artwork that doesn't get approved over email.",
+   alternates: { canonical: '/sectors/garment-decoration' },
+   openGraph: {
+-    title: 'ERP for Garment Decoration | Decoded Ops',
+-    description: 'ERP for garment decoration needs to handle embroidery, screen print, DTF and DTG production scheduling, and artwork that doesn\'t get approved over email.',
++    title: "ERP for Garment Decoration Businesses | Decoded Ops",
++    description: "Garment decoration needs an ERP that handles embroidery, screen print, DTF and DTG scheduling, plus artwork that doesn't get approved over email.",
+     url: 'https://decodedops.co.uk/sectors/garment-decoration',
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'ERP for Garment Decoration | Decoded Ops',
+-    description: 'ERP for garment decoration needs to handle embroidery, screen print, DTF and DTG production scheduling, and artwork that doesn\'t get approved over email.',
++    title: "ERP for Garment Decoration Businesses | Decoded Ops",
++    description: "Garment decoration needs an ERP that handles embroidery, screen print, DTF and DTG scheduling, plus artwork that doesn't get approved over email.",
+   },
+ };
+ 
+ const sectorSchema = {
+
+[0m
+Now let me verify everything.
+[0m$ [0mnode scripts/check-seo-titles.mjs
+SEO titles check: 68/68 matched
+
+All rows verified successfully.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+tsc clean. Now build.
+[0m$ [0mnpm run build 2>&1
+> decoded-ops-next@0.1.0 prebuild
+> node scripts/generate-route-slugs.mjs
+
+[route-slugs] 18 problems, 10 sectors, 5 tools
+
+> decoded-ops-next@0.1.0 build
+> next build
+
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 188ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 19.8s
+  Running TypeScript ...
+  Finished TypeScript in 7.1s ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/116) ...
+  Generating static pages using 15 workers (29/116) 
+  Generating static pages using 15 workers (58/116) 
+  Generating static pages using 15 workers (87/116) 
+✓ Generating static pages using 15 workers (116/116) in 783ms
+  Finalizing page optimization ...
+
+Route (app)                                          Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/auth/login
+├ ƒ /api/clients/documents/[id]/questionnaire
+├ ƒ /api/clients/documents/[id]/sign
+├ ƒ /api/clients/uploads
+├ ƒ /api/contact
+├ ƒ /api/tools/capture
+├ ○ /apps
+├ ○ /apps/commerce
+├ ○ /apps/proof
+├ ○ /apps/works
+├ ○ /blog                                                    5m      1y
+├ ƒ /blog/[slug]
+├ ○ /case-studies
+├ ○ /case-studies/case-study-01
+├ ○ /case-studies/case-study-02
+├ ○ /case-studies/case-study-03
+├ ○ /case-studies/eternal-fitness
+├ ○ /clarity
+├ ƒ /clients/[clientId]
+├ ƒ /clients/dashboard
+├ ƒ /clients/documents
+├ ƒ /clients/documents/view/[id]
+├ ○ /clients/login
+├ ƒ /clients/project
+├ ○ /contact
+├ ○ /cookies
+├ ○ /deliver
+├ ○ /how-i-build
+├ ○ /locations/manchester
+├ ○ /locations/sussex-surrey
+├ ○ /locations/tech-audit
+├ ƒ /opengraph-image
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /problems
+├ ○ /problems/ai-paralysis
+├ ○ /problems/bottleneck-growth
+├ ○ /problems/buy-vs-build
+├ ○ /problems/cant-scale-operations
+├ ○ /problems/data-scattered
+├ ○ /problems/disaster-recovery
+├ ○ /problems/ecommerce-not-connected
+├ ○ /problems/erp-implementation-failure
+├ ○ /problems/inventory-blind
+├ ○ /problems/legacy-system
+├ ○ /problems/manual-workarounds
+├ ○ /problems/no-ops-owner
+├ ○ /problems/ops-in-owners-head
+├ ○ /problems/seasonal-peaks
+├ ○ /problems/slow-processes
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/artwork-approval-playbook
+├ ○ /resources/audit-checklist
+├ ○ /resources/capacity-planner
+├ ○ /resources/decoded-method
+├ ○ /resources/erp-selection-playbook
+├ ○ /resources/seasonal-capacity
+├ ○ /resources/six-sigma
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ƒ /robots.txt
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/operations-consultant-print-embroidery
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ƒ /sitemap.xml
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+[0m
+[0m# [0mTodos
+[✓] Write and run update-seo-titles.mjs script to update 66 pages' metadata
+[✓] Create layout.tsx for ops-health-score and should-i-replace-erp (client pages)
+[✓] Write and run check-seo-titles.mjs verification script
+[✓] Run tsc and npm run build to verify
+[•] Commit all changes
+[ ] Write lane reports
+[0m
+Build clean. Let me commit and write lane reports.
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-keyword-titles\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-keyword-titles.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-keyword-titles.md
+Wrote file successfully.
+[0m
+Now let me commit everything.
+[0m$ [0mgit add -A && git status
+warning: in the working copy of 'app/tools/ops-health-score/layout.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/should-i-replace-erp/layout.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-briefs/web-keyword-titles.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-keyword-titles.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-keyword-titles.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/check-seo-titles.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/update-seo-titles.mjs', LF will be replaced by CRLF the next time Git touches it
+On branch lane/web-keyword-titles
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .context/lane-briefs/web-keyword-titles.md
+	new file:   .context/lane-reports/LANE-NOTES-web-keyword-titles.md
+	new file:   .context/lane-reports/LANE-RESULT-web-keyword-titles.json
+	new file:   .context/seo-titles-2026-09-28.json
+	modified:   app/about/page.tsx
+	modified:   app/apps/commerce/page.tsx
+	modified:   app/apps/page.tsx
+	modified:   app/apps/proof/page.tsx
+	modified:   app/apps/works/page.tsx
+	modified:   app/blog/page.tsx
+	modified:   app/case-studies/case-study-01/page.tsx
+	modified:   app/case-studies/case-study-02/page.tsx
+	modified:   app/case-studies/case-study-03/page.tsx
+	modified:   app/case-studies/eternal-fitness/page.tsx
+	modified:   app/case-studies/page.tsx
+	modified:   app/clarity/page.tsx
+	modified:   app/contact/page.tsx
+	modified:   app/deliver/page.tsx
+	modified:   app/how-i-build/page.tsx
+	modified:   app/locations/manchester/page.tsx
+	modified:   app/locations/sussex-surrey/page.tsx
+	modified:   app/locations/tech-audit/page.tsx
+	modified:   app/page.tsx
+	modified:   app/pricing/page.tsx
+	modified:   app/problems/ai-paralysis/page.tsx
+	modified:   app/problems/bottleneck-growth/page.tsx
+	modified:   app/problems/buy-vs-build/page.tsx
+	modified:   app/problems/cant-scale-operations/page.tsx
+	modified:   app/problems/data-scattered/page.tsx
+	modified:   app/problems/disaster-recovery/page.tsx
+	modified:   app/problems/ecommerce-not-connected/page.tsx
+	modified:   app/problems/erp-implementation-failure/page.tsx
+	modified:   app/problems/inventory-blind/page.tsx
+	modified:   app/problems/legacy-system/page.tsx
+	modified:   app/problems/manual-workarounds/page.tsx
+	modified:   app/problems/no-ops-owner/page.tsx
+	modified:   app/problems/ops-in-owners-head/page.tsx
+	modified:   app/problems/page.tsx
+	modified:   app/problems/seasonal-peaks/page.tsx
+	modified:   app/problems/slow-processes/page.tsx
+	modified:   app/problems/spreadsheet-addiction/page.tsx
+	modified:   app/problems/systems-dont-talk/page.tsx
+	modified:   app/problems/wrong-erp-software/page.tsx
+	modified:   app/process-quality-system/page.tsx
+	modified:   app/resources/5-warning-signs/page.tsx
+	modified:   app/resources/artwork-approval-playbook/page.tsx
+	modified:   app/resources/audit-checklist/page.tsx
+	modified:   app/resources/capacity-planner/page.tsx
+	modified:   app/resources/decoded-method/page.tsx
+	modified:   app/resources/erp-selection-playbook/page.tsx
+	modified:   app/resources/page.tsx
+	modified:   app/resources/six-sigma/page.tsx
+	modified:   app/resources/sop-template/page.tsx
+	modified:   app/retained/page.tsx
+	modified:   app/sectors/awards-engraving/page.tsx
+	modified:   app/sectors/garment-decoration/page.tsx
+	modified:   app/sectors/labels-packaging/page.tsx
+	modified:   app/sectors/operations-consultant-print-embroidery/page.tsx
+	modified:   app/sectors/print-promotional/page.tsx
+	modified:   app/sectors/promotional-merchandise/page.tsx
+	modified:   app/sectors/schoolwear/page.tsx
+	modified:   app/sectors/signs-graphics/page.tsx
+	modified:   app/sectors/teamwear-clubwear/page.tsx
+	modified:   app/sectors/workwear/page.tsx
+	modified:   app/small-business/page.tsx
+	modified:   app/tools/automation-roi-calculator/page.tsx
+	modified:   app/tools/downtime-cost-calculator/page.tsx
+	modified:   app/tools/ops-health-score/layout.tsx
+	modified:   app/tools/page.tsx
+	modified:   app/tools/rto-calculator/page.tsx
+	modified:   app/tools/should-i-replace-erp/layout.tsx
+	modified:   app/transform/page.tsx
+	new file:   scripts/check-seo-titles.mjs
+	new file:   scripts/update-seo-titles.mjs
+[0m
+[0m$ [0mgit commit -m "feat(seo): update title and description metadata on all 68 routes
+
+Set title and description from approved keyword map
+(.context/seo-titles-2026-09-28.json) on every page's metadata,
+openGraph, and twitter exports. Two client-side pages
+(ops-health-score, should-i-replace-erp) get metadata via new
+layout.tsx files. capacity-planner converted from { absolute: ... }
+to plain string (no root title template)."
+
+data/route-slugs.json is a pre-existing change unrelated to this
+lane."
+(no output)
+[0m
+[0m$ [0mgit log --oneline -1
+711f508 chore: lane report for web-pricing-v12
+[0m
+[0m$ [0mgit log --oneline -5
+711f508 chore: lane report for web-pricing-v12
+989bd91 feat: update public prices to Craig-approved 28 Sep 2026 figures
+3f73fdb chore: add sharp dependency for image optimisation script
+4b6c9b3 docs: lane reports for web011-u21-cwv-preload-fix
+fcd2948 perf: add srcset to homepage hero images with 800/1200w variants
+[0m
+[0m$ [0mgit status
+On branch lane/web-keyword-titles
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .context/lane-briefs/web-keyword-titles.md
+	new file:   .context/lane-reports/LANE-NOTES-web-keyword-titles.md
+	new file:   .context/lane-reports/LANE-RESULT-web-keyword-titles.json
+	new file:   .context/seo-titles-2026-09-28.json
+	modified:   app/about/page.tsx
+	modified:   app/apps/commerce/page.tsx
+	modified:   app/apps/page.tsx
+	modified:   app/apps/proof/page.tsx
+	modified:   app/apps/works/page.tsx
+	modified:   app/blog/page.tsx
+	modified:   app/case-studies/case-study-01/page.tsx
+	modified:   app/case-studies/case-study-02/page.tsx
+	modified:   app/case-studies/case-study-03/page.tsx
+	modified:   app/case-studies/eternal-fitness/page.tsx
+	modified:   app/case-studies/page.tsx
+	modified:   app/clarity/page.tsx
+	modified:   app/contact/page.tsx
+	modified:   app/deliver/page.tsx
+	modified:   app/how-i-build/page.tsx
+	modified:   app/locations/manchester/page.tsx
+	modified:   app/locations/sussex-surrey/page.tsx
+	modified:   app/locations/tech-audit/page.tsx
+	modified:   app/page.tsx
+	modified:   app/pricing/page.tsx
+	modified:   app/problems/ai-paralysis/page.tsx
+	modified:   app/problems/bottleneck-growth/page.tsx
+	modified:   app/problems/buy-vs-build/page.tsx
+	modified:   app/problems/cant-scale-operations/page.tsx
+	modified:   app/problems/data-scattered/page.tsx
+	modified:   app/problems/disaster-recovery/page.tsx
+	modified:   app/problems/ecommerce-not-connected/page.tsx
+	modified:   app/problems/erp-implementation-failure/page.tsx
+	modified:   app/problems/inventory-blind/page.tsx
+	modified:   app/problems/legacy-system/page.tsx
+	modified:   app/problems/manual-workarounds/page.tsx
+	modified:   app/problems/no-ops-owner/page.tsx
+	modified:   app/problems/ops-in-owners-head/page.tsx
+	modified:   app/problems/page.tsx
+	modified:   app/problems/seasonal-peaks/page.tsx
+	modified:   app/problems/slow-processes/page.tsx
+	modified:   app/problems/spreadsheet-addiction/page.tsx
+	modified:   app/problems/systems-dont-talk/page.tsx
+	modified:   app/problems/wrong-erp-software/page.tsx
+	modified:   app/process-quality-system/page.tsx
+	modified:   app/resources/5-warning-signs/page.tsx
+	modified:   app/resources/artwork-approval-playbook/page.tsx
+	modified:   app/resources/audit-checklist/page.tsx
+	modified:   app/resources/capacity-planner/page.tsx
+	modified:   app/resources/decoded-method/page.tsx
+	modified:   app/resources/erp-selection-playbook/page.tsx
+	modified:   app/resources/page.tsx
+	modified:   app/resources/six-sigma/page.tsx
+	modified:   app/resources/sop-template/page.tsx
+	modified:   app/retained/page.tsx
+	modified:   app/sectors/awards-engraving/page.tsx
+	modified:   app/sectors/garment-decoration/page.tsx
+	modified:   app/sectors/labels-packaging/page.tsx
+	modified:   app/sectors/operations-consultant-print-embroidery/page.tsx
+	modified:   app/sectors/print-promotional/page.tsx
+	modified:   app/sectors/promotional-merchandise/page.tsx
+	modified:   app/sectors/schoolwear/page.tsx
+	modified:   app/sectors/signs-graphics/page.tsx
+	modified:   app/sectors/teamwear-clubwear/page.tsx
+	modified:   app/sectors/workwear/page.tsx
+	modified:   app/small-business/page.tsx
+	modified:   app/tools/automation-roi-calculator/page.tsx
+	modified:   app/tools/downtime-cost-calculator/page.tsx
+	modified:   app/tools/ops-health-score/layout.tsx
+	modified:   app/tools/page.tsx
+	modified:   app/tools/rto-calculator/page.tsx
+	modified:   app/tools/should-i-replace-erp/layout.tsx
+	modified:   app/transform/page.tsx
+	new file:   scripts/check-seo-titles.mjs
+	new file:   scripts/update-seo-titles.mjs
+[0m
+[0m$ [0mgit commit -m "feat(seo): update title and description metadata on all 68 routes"
+[lane/web-keyword-titles 5fecea2] feat(seo): update title and description metadata on all 68 routes
+ 74 files changed, 1127 insertions(+), 408 deletions(-)
+ create mode 100644 .context/lane-briefs/web-keyword-titles.md
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-keyword-titles.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-keyword-titles.json
+ create mode 100644 .context/seo-titles-2026-09-28.json
+ create mode 100644 scripts/check-seo-titles.mjs
+ create mode 100644 scripts/update-seo-titles.mjs
+[0m
+[0m→ [0mRead .context/lane-reports/LANE-RESULT-web-keyword-titles.json
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-keyword-titles.json
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane report for web-keyword-titles"
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-keyword-titles.json', LF will be replaced by CRLF the next time Git touches it
+[lane/web-keyword-titles a3545a7] chore: lane report for web-keyword-titles
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[0m
+[0m$ [0mgit log --oneline -3
+a3545a7 chore: lane report for web-keyword-titles
+5fecea2 feat(seo): update title and description metadata on all 68 routes
+711f508 chore: lane report for web-pricing-v12
+[0m
+[0m# [0mTodos
+[✓] Write and run update-seo-titles.mjs script to update 66 pages' metadata
+[✓] Create layout.tsx for ops-health-score and should-i-replace-erp (client pages)
+[✓] Write and run check-seo-titles.mjs verification script
+[✓] Run tsc and npm run build to verify
+[✓] Commit all changes
+[✓] Write lane reports
+[0m
+**Lane complete.** Summary:
+
+- **68/68 routes** updated with approved title + description from `.context/seo-titles-2026-09-28.json`
+- **66 page.tsx** files edited (title, description, openGraph, twitter)
+- **2 layout.tsx** files created for `'use client'` pages (`ops-health-score`, `should-i-replace-erp`)
+- **capacity-planner** converted from `{ absolute: ... }` to plain string (no root title template)
+- **tsc**: clean | **build**: passed | **check-seo-titles.mjs**: 68/68 matched
+- **2 commits**: `5fecea2` (work) + `a3545a7` (lane report)

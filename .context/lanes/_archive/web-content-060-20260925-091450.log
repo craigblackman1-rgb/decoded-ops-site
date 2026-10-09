@@ -1,0 +1,308 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/cr-web-060-build.md
+[0m
+[0m$ [0mls -la ".context/lane-briefs/cr-web-060/" 2>/dev/null || dir /b ".context\lane-briefs\cr-web-060"
+Out-File: Could not find a part of the path 'D:\dev\null'.
+Get-ChildItem: Cannot find path 'D:\b' because it does not exist.
+[0m
+[0m$ [0mGet-ChildItem ".context/lane-briefs/cr-web-060/" | Select-Object Name
+Name
+----
+a1008.css
+full-1440.png
+full-390.png
+how-i-help-1440.png
+how-i-help-390.png
+how-i-help-section.html
+[0m
+[0m→ [0mRead .context/lane-briefs/cr-web-060/how-i-help-section.html
+[0m→ [0mRead .context/lane-briefs/cr-web-060/a1008.css
+[0m→ [0mRead app/page.tsx
+[0m→ [0mRead app/d17-global.css
+[0m→ [0mRead app/d17-global.css[90m [offset=594][0m
+[0m✱ [0mGlob "public/images/d17/home/**"[90m in . · 1 match[0m
+Now let me check the rest of d17-global.css and the images directory:
+[0m✱ [0mGrep "import.*d17-global"[90m in app · 58 matches[0m
+[0m
+[0m# [0mTodos
+[•] Append a1008.css to app/d17-global.css
+[ ] Add d17-global.css import to app/page.tsx
+[ ] Replace s3 section content with DO-ART-1008 figure markup
+[ ] Run tsc --noEmit to verify
+[ ] Commit and write lane report
+[0m
+[0m← [0mEdit app/d17-global.css
+Index: D:\apps\worktrees\decoded-ops-website\web-content-060\app\d17-global.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-060\app\d17-global.css
++++ D:\apps\worktrees\decoded-ops-website\web-content-060\app\d17-global.css
+@@ -832,4 +832,76 @@
+ .hero-cta .btn{ white-space:normal; text-align:center }
+ @media (max-width: 480px){ .hero-split h1{ font-size:clamp(1.85rem, 8.6vw, 2.3rem); overflow-wrap:break-word } }
+ @media (max-width: 760px){ .shirt{ width:120px } }
+ @media (max-width: 760px){ .a933 .stage{ aspect-ratio:560 / 580 } .a921 .stage{ aspect-ratio:560 / 540 } .a929 .stage{ aspect-ratio:560 / 450 } }
++
++/* ─── DO-ART-1008 · Home how-I-help · route poster with pinned exhibits (D17, the 831 recipe) ─── */
++.a1008{ --u:calc(100cqw / 1600); aspect-ratio:1600 / 900; margin-top:44px;
++  background:
++    radial-gradient(60% 70% at 88% 18%, color-mix(in srgb, var(--do-cerulean) 20%, transparent), transparent 70%),
++    linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 80%, var(--do-cerulean)) 0%, var(--do-prussian-blue) 55%,
++      color-mix(in srgb, var(--do-prussian-blue) 78%, #000) 100%) }
++.a1008 .gridl{ position:absolute; inset:0; pointer-events:none; opacity:.55;
++  background-image:linear-gradient(color-mix(in srgb, var(--do-sky-blue) 6%, transparent) 1px, transparent 1px),
++    linear-gradient(90deg, color-mix(in srgb, var(--do-sky-blue) 6%, transparent) 1px, transparent 1px);
++  background-size:calc(40 * var(--u)) calc(40 * var(--u)) }
++.a1008 .eb{ position:absolute; left:calc(96 * var(--u)); top:calc(78 * var(--u)); margin:0;
++  font-size:max(10px, calc(20 * var(--u))); color:var(--do-sky-blue) }
++.a1008 .stand{ position:absolute; left:calc(96 * var(--u)); top:calc(122 * var(--u)); width:calc(560 * var(--u)); margin:0;
++  font-family:var(--do-font-heading); font-weight:700; font-size:max(15px, calc(26 * var(--u))); line-height:1.2;
++  letter-spacing:-.015em; color:var(--do-white) }
++.a1008 svg.route{ position:absolute; inset:0; width:100%; height:100% }
++.a1008 .fan{ position:absolute; inset:0 }
++.a1008 .docmini{ position:absolute; background:var(--do-white); color:var(--do-prussian-blue);
++  border-radius:calc(6 * var(--u)); padding:calc(16 * var(--u)) calc(18 * var(--u));
++  box-shadow:0 calc(22 * var(--u)) calc(44 * var(--u)) color-mix(in srgb, #000 45%, transparent);
++  font-family:var(--do-font-body) }
++.a1008 .docmini .tag{ display:block; font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u)));
++  letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
++.a1008 .docmini .row{ display:flex; align-items:baseline; gap:calc(8 * var(--u)); margin-top:calc(9 * var(--u));
++  padding-top:calc(9 * var(--u)); border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
++  font-size:max(10px, calc(14 * var(--u))); font-weight:700 }
++.a1008 .docmini .row:first-of-type{ border-top:0; padding-top:0; margin-top:calc(10 * var(--u)) }
++.a1008 .docmini .row b{ font-family:var(--do-font-mono); font-weight:700; font-size:max(8px, calc(11 * var(--u)));
++  color:var(--do-cerulean) }
++.a1008 .photopin{ position:absolute; padding:calc(9 * var(--u)) calc(9 * var(--u)) calc(34 * var(--u));
++  background:var(--do-off-white); box-shadow:0 calc(20 * var(--u)) calc(40 * var(--u)) color-mix(in srgb, #000 45%, transparent) }
++.a1008 .photopin img{ display:block; width:100%; height:100%; object-fit:cover;
++  filter:grayscale(.3) saturate(.75) contrast(1.08) brightness(.92) }
++.a1008 .photopin .tint{ position:absolute; inset:calc(9 * var(--u)) calc(9 * var(--u)) calc(34 * var(--u));
++  background:var(--do-prussian-blue); mix-blend-mode:multiply; opacity:.32 }
++.a1008 .photopin span{ position:absolute; left:calc(11 * var(--u)); right:calc(9 * var(--u)); bottom:calc(8 * var(--u));
++  font-family:var(--do-font-mono); font-size:calc(11 * var(--u)); line-height:1.3; letter-spacing:.06em; text-transform:uppercase;
++  color:color-mix(in srgb, var(--do-prussian-blue) 85%, transparent) }
++.a1008 .st{ position:absolute; margin:0 }
++.a1008 .st .n{ display:block; font-family:var(--do-font-mono); font-size:max(9px, calc(14 * var(--u))); letter-spacing:.16em;
++  text-transform:uppercase; color:var(--do-sky-blue) }
++.a1008 .st h3{ margin:calc(6 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:max(17px, calc(28 * var(--u)));
++  line-height:1.05; letter-spacing:-.02em; color:var(--do-white) }
++.a1008 .st p{ margin:calc(8 * var(--u)) 0 0; font-size:max(12px, calc(15 * var(--u))); line-height:1.4;
++  color:color-mix(in srgb, var(--do-off-white) 82%, transparent) }
++.a1008 .st a{ display:inline-block; margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); font-weight:700;
++  font-size:max(10px, calc(12 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:var(--do-amber);
++  text-decoration:none; border-bottom:1px solid color-mix(in srgb, var(--do-amber) 55%, transparent) }
++.a1008 .st--end h3{ color:var(--do-amber); font-size:max(19px, calc(34 * var(--u))) }
++.a1008 .st--end .n{ color:var(--do-amber) }
++.a1008 .d17-mark--abs{ left:calc(26 * var(--u)); bottom:calc(24 * var(--u)); font-size:max(9px, calc(13 * var(--u))) }
++@media (max-width: 760px){
++  .a1008{ aspect-ratio:auto; padding:26px 20px 30px }
++  .a1008 .eb, .a1008 .stand{ position:static; width:auto }
++  .a1008 .stand{ font-size:16px; margin-top:8px }
++  .a1008 svg.route{ display:none }
++  .a1008 .fan{ position:relative; display:flex; align-items:flex-start; gap:14px; margin:22px 0 6px }
++  .a1008 .docmini, .a1008 .photopin{ position:relative !important; left:auto !important; top:auto !important; width:48% !important;
++    transform:none !important }
++  .a1008 .photopin{ height:150px !important; padding:6px 6px 32px }
++  .a1008 .photopin .tint{ inset:6px 6px 32px } .a1008 .photopin span{ font-size:8.5px; left:7px; right:6px; bottom:5px }
++  .a1008 .stations{ position:relative; margin-top:20px; padding-left:34px }
++  .a1008 .stations::before{ content:''; position:absolute; left:8px; top:8px; bottom:36px; width:8px; border-radius:6px;
++    background:linear-gradient(180deg, var(--do-sky-blue), var(--do-sky-blue) 80%, var(--do-amber)) }
++  .a1008 .st{ position:relative !important; left:auto !important; top:auto !important; width:auto !important; padding:10px 0 14px }
++  .a1008 .st::before{ content:''; position:absolute; left:-33px; top:14px; width:18px; height:18px; border-radius:50%;
++    background:var(--do-off-white); border:4px solid var(--do-prussian-blue); box-sizing:border-box }
++  .a1008 .st--end::before{ background:var(--do-amber); left:-35px; width:22px; height:22px }
++  .a1008 .st .n{ font-size:11px } .a1008 .st h3{ font-size:20px } .a1008 .st--end h3{ font-size:24px } .a1008 .st p{ font-size:14px }
++  .a1008 .d17-mark--abs{ position:static; display:inline-block; margin-top:16px; left:auto; bottom:auto }
++}
+
+[0m
+[0m# [0mTodos
+[✓] Append a1008.css to app/d17-global.css
+[•] Add d17-global.css import to app/page.tsx
+[ ] Replace s3 section content with DO-ART-1008 figure markup
+[ ] Run tsc --noEmit to verify
+[ ] Commit and write lane report
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-060\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-060\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-060\app\page.tsx
+@@ -6,8 +6,9 @@
+ import { SheetIndexRail } from '@/components/SheetIndexRail';
+ import { D17Motion } from '@/components/D17Motion';
+ import d17 from './d17-art.module.css';
+ import './homepage.css';
++import './d17-global.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Decoded Ops: operations and technology consultancy for decorated goods',
+   description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers. A Clarity Audit gets you a full day on site and a written plan.',
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-060\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-060\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-060\app\page.tsx
+@@ -194,31 +194,57 @@
+       <p className="lede">Four services. Each one stands on its own, and each is a natural next step
+         from the one before it. Almost everyone starts with a Clarity Audit, because until somebody
+         has followed your processes from start to finish, everything after that is guesswork.</p>
+ 
+-      <figure className="band" data-od-id="help-photo">
+-        <Image src="/images/sectors/thread-spools-v2.webp" fill sizes="(max-width: 1200px) 100vw, 1152px" className="p-photo"
+-          style={{ objectFit: 'cover', objectPosition: '50% 58%' }}
+-          alt="A row of coloured thread cones loaded on an embroidery machine head." />
+-        <figcaption className="stamp">DO-ART-906 &middot; Materials</figcaption>
+-      </figure>
+-
+-      <ol className="idx" data-od-id="services-index">
+-        {services.map(s => (
+-          <li key={s.no} className={s.lead ? 'is-lead' : ''} data-od-id={`service-${s.name.toLowerCase().replace(/\s+/g, '-')}`}>
+-            <span className="no">{s.no}</span>
+-            <div>
+-              <h3>{s.name}</h3>
+-              <span className="role">{s.role}</span>
+-            </div>
+-            <div>
+-              <p>{s.desc}</p>
+-              {s.go && <Link className="go" href={s.go.href}>{s.go.label}</Link>}
+-            </div>
+-          </li>
+-        ))}
+-      </ol>
++      <div dangerouslySetInnerHTML={{ __html: `<figure class="d17 a1008" data-od-id="services-route" data-motion data-no="DO-ART-1008" data-rev="01" data-tx="poster"
++        aria-label="Journey plate DO-ART-1008, four services on one route. 01 Clarity Audit, start here: a full day on site, six areas followed from start to finish, then a written assessment and roadmap inside five working days. 02 Deliver: independent vendor brief, procurement and project oversight. 03 Transform: ERP, eCommerce and process redesign run together as one programme, scoped only once an audit has shown what it needs to cover. 04 Retained, the amber terminus, fractional CTO: monthly strategic and operational leadership, roadmap ownership, vendor management, a direct line to me.">
++  <div class="gridl" aria-hidden="true"></div>
++  <p class="eb d17-mono">The route</p>
++  <p class="stand">Four services, each a natural next step from the one before.</p>
++  <svg class="route" viewBox="0 0 1600 900" aria-hidden="true">
++    <defs><filter id="rt-glow2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter></defs>
++    <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="rgba(33,158,188,.5)" stroke-width="30" stroke-linejoin="round" stroke-linecap="round" filter="url(#rt-glow2)" class="m-draw"/>
++    <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#01263a" stroke-width="24" stroke-linejoin="round" stroke-linecap="round" class="m-draw"/>
++    <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#8ECAE6" stroke-width="14" stroke-linejoin="round" stroke-linecap="round" class="m-draw"/>
++    <rect x="58" y="596" width="12" height="48" rx="3" fill="#8ECAE6"/>
++    <g fill="#F8F9FA" stroke="#023047" stroke-width="6">
++      <circle cx="190" cy="620" r="17" class="m-pop" style="animation-delay:.35s;transform-origin:190px 620px"/>
++      <circle cx="470" cy="620" r="17" class="m-pop" style="animation-delay:.75s;transform-origin:470px 620px"/>
++      <circle cx="1080" cy="460" r="17" class="m-pop" style="animation-delay:1.45s;transform-origin:1080px 460px"/>
++    </g>
++    <g class="m-pop" style="animation-delay:2.15s;transform-origin:1430px 320px">
++      <circle cx="1430" cy="320" r="46" fill="rgba(255,183,3,.16)"/>
++      <circle cx="1430" cy="320" r="30" fill="#023047" stroke="#FFB703" stroke-width="10"/>
++      <circle cx="1430" cy="320" r="11" fill="#FFB703"/></g>
++  </svg>
++  <div class="fan" aria-hidden="true">
++    <div class="docmini m-drop" style="left:calc(352 * var(--u)); top:calc(356 * var(--u)); width:calc(236 * var(--u)); transform:rotate(-3deg); animation-delay:.9s">
++      <span class="tag">What the audit gives you</span>
++      <div class="row"><b>CA-01</b><span>Written report</span></div>
++      <div class="row"><b>RM-01</b><span>Roadmap</span></div>
+     </div>
++    <div class="photopin m-drop" style="left:calc(966 * var(--u)); top:calc(196 * var(--u)); width:calc(228 * var(--u)); height:calc(196 * var(--u)); transform:rotate(2.6deg); animation-delay:1.8s">
++      <img src="/images/d17/home/hero-workshop-32a6d0.jpg" alt=""><i class="tint"></i>
++      <span>on site, day one</span></div>
++  </div>
++  <div class="stations">
++    <div class="st m-fade" style="left:calc(168 * var(--u)); top:calc(658 * var(--u)); width:calc(280 * var(--u)); animation-delay:.4s">
++      <span class="n">01 &middot; Start here</span><h3>Clarity Audit</h3>
++      <p>On-site audit and written plan, six areas followed start to finish</p>
++      <a href="/clarity">Start here &rarr;</a></div>
++    <div class="st m-fade" style="left:calc(448 * var(--u)); top:calc(658 * var(--u)); width:calc(270 * var(--u)); animation-delay:.8s">
++      <span class="n">02</span><h3>Deliver</h3>
++      <p>Independent vendor brief, procurement and project oversight</p></div>
++    <div class="st m-fade" style="left:calc(1058 * var(--u)); top:calc(498 * var(--u)); width:calc(300 * var(--u)); animation-delay:1.35s">
++      <span class="n">03</span><h3>Transform</h3>
++      <p>ERP, eCommerce and process redesign, run as one programme</p></div>
++    <div class="st st--end m-fade" style="left:calc(1300 * var(--u)); top:calc(382 * var(--u)); width:calc(280 * var(--u)); animation-delay:2.15s">
++      <span class="n">04 &middot; Fractional CTO</span><h3>Retained</h3>
++      <p>Monthly leadership, roadmap ownership, a direct line to me</p></div>
++  </div>
++  <span class="d17-mark d17-mark--abs">decodedops.co.uk &middot; DO-ART-1008 &middot; Rev 01</span>
++</figure>` }} />
++    </div>
+   </section>
+ 
+   {/* ══════════ 04 · THE SEAL ══════════ */}
+   <section className="g-white" id="s4" data-od-id="guarantee">
+
+[0m
+Now let me check if the `services` array is still used anywhere:
+[0m✱ [0mGrep "services"[90m in app/page.tsx · 35 matches[0m
+The `services` array is only defined in page.tsx:58 and no longer referenced. Remove it.
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-060\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-060\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-060\app\page.tsx
+@@ -54,20 +54,8 @@
+   { value: '3–5', unit: 'per cent', desc: 'Of inbound stock at risk where inventory is disconnected', tag: 'Inventory' },
+   { value: '1–3', unit: 'per cent', desc: 'Of orders affected by picking and despatch errors', tag: 'Despatch' },
+ ];
+ 
+-const services = [
+-  { no: '01', name: 'Clarity Audit', role: 'On-site audit and written plan', lead: true,
+-    desc: 'A full day on site, six areas followed from start to finish, then a written assessment and roadmap inside five working days.',
+-    go: { href: '/clarity', label: 'Start here' } },
+-  { no: '02', name: 'Deliver', role: 'Delivery and vendor management', lead: false,
+-    desc: 'Independent vendor brief, procurement and project oversight. One point of contact, and someone technical sitting on your side of the table.' },
+-  { no: '03', name: 'Transform', role: 'Multi-workstream programme', lead: false,
+-    desc: 'ERP, eCommerce and process redesign run together as one programme. Process led and people first, and scoped only once an audit has shown what it needs to cover.' },
+-  { no: '04', name: 'Retained', role: 'Fractional CTO', lead: false,
+-    desc: 'Monthly strategic and operational leadership. Roadmap ownership, vendor management, and a direct line to me.' },
+-];
+-
+ const notes = [
+   { no: '01 · Translation', h: 'I say it back to you clearly.',
+     p: 'I take what you’re trying to convey (often half-formed, vague, hard to articulate) and reflect it back as a solution or a clear path forward. Business owners feel understood in a way they often haven’t been before.' },
+   { no: '02 · Problem solving', h: 'When you tell me the system can’t do that.',
+
+[0m
+[0m# [0mTodos
+[✓] Append a1008.css to app/d17-global.css
+[✓] Add d17-global.css import to app/page.tsx
+[✓] Replace s3 section content with DO-ART-1008 figure markup
+[•] Run tsc --noEmit to verify
+[ ] Commit and write lane report
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+Clean tsc. Now commit and write the lane report.
+[0m$ [0mgit add -A && git commit -m "feat(web): homepage How I help route poster DO-ART-1008 (CR-WEB-060)"
+[web-content-060 3a07c5f] feat(web): homepage How I help route poster DO-ART-1008 (CR-WEB-060)
+ 2 files changed, 121 insertions(+), 34 deletions(-)
+[0m
+[0m$ [0mNew-Item -ItemType Directory -Force -Path ".context/lane-reports" | Out-Null
+(no output)
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-content-060.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-content-060.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane report for web-content-060 (CR-WEB-060)"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-content-060.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-content-060.json', LF will be replaced by CRLF the next time Git touches it
+[web-content-060 d581b0f] chore: lane report for web-content-060 (CR-WEB-060)
+ 2 files changed, 41 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-content-060.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-content-060.json
+[0m
+[0m# [0mTodos
+[✓] Append a1008.css to app/d17-global.css
+[✓] Add d17-global.css import to app/page.tsx
+[✓] Replace s3 section content with DO-ART-1008 figure markup
+[✓] Run tsc --noEmit to verify
+[✓] Commit and write lane report
+[0m
+[0m→ [0mRead .context/lane-reports/LANE-RESULT-web-content-060.json
+Done. Two commits on `web-content-060`:
+
+1. **`3a07c5f`** — `feat(web): homepage How I help route poster DO-ART-1008 (CR-WEB-060)` — replaced the DO-ART-906 photo and services index with the route poster figure (dangerouslySetInnerHTML), appended a1008.css to d17-global.css, added the CSS import, removed the unused `services` array.
+2. **`d581b0f`** — lane report + notes.
+
+`tsc --noEmit`: clean. No push.

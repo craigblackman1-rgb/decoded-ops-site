@@ -1,0 +1,341 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-f-build-d17-fix1.md
+[0m→ [0mRead .context/lane-briefs/web-f-img-map.txt
+[0m✱ [0mGlob "app/problems/*/page.tsx"[90m in . · 18 matches[0m
+[0m
+[0m$ [0mrg -n "\{\{IMG" "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems" --include "*.tsx"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m→ [0mRead .context/lane-briefs/d17-problems/erp-implementation-failure.hero.html
+[0m
+[0m$ [0mfindstr /s /n "{{IMG" "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx" "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\disaster-recovery\page.tsx" "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\ecommerce-not-connected\page.tsx" "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\manual-workarounds\page.tsx" "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\no-ops-owner\page.tsx" "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\slow-processes\page.tsx"
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx:159:  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-workwear.jpg|blank=410,262,560,350|w=900|q=84}}" alt="" width="900" height="596"></div>
+[0m
+[0m$ [0mfindstr /s /r /n "{{IMG" "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\*\page.tsx"
+(no output)
+[0m
+[0m$ [0mGet-ChildItem -Recurse -Filter "page.tsx" -Path "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems" | Select-String -Pattern "\{\{IMG" | ForEach-Object { $_.Path + ":" + $_.LineNumber + ":" + $_.Line.Trim() }
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx:159:<div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-workwear.jpg|blank=410,262,560,350|w=900|q=84}}" alt="" width="900" height="596"></div>
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\disaster-recovery\page.tsx:106:<div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/hero-workshop.jpg|crop=0,120,1600,1900|blank=680,1340,800,1440;1080,1270,1270,1420|w=1100|q=80}}" alt="" width="1100" height="1224"></div>
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\ecommerce-not-connected\page.tsx:71:<div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/prod-mailer.jpg|w=900|q=80}}" alt="" width="900" height="600"></div>
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\manual-workarounds\page.tsx:71:<div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-promo.jpg|w=1100|q=78}}" alt="" width="900" height="600"></div>
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\manual-workarounds\page.tsx:95:<div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-workwear.jpg|blank=410,262,560,350|w=900|q=84}}" alt="" width="900" height="596"></div>
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\no-ops-owner\page.tsx:106:<div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/hero-workshop.jpg|crop=0,120,1600,1900|blank=680,1340,800,1440;1080,1270,1270,1420|w=1100|q=80}}" alt="" width="1100" height="1224"></div>
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\slow-processes\page.tsx:133:<div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/hero-workshop.jpg|crop=0,120,1600,1900|blank=680,1340,800,1440;1080,1270,1270,1420|w=1100|q=80}}" alt="" width="1100" height="1224"></div>
+[0m
+[0m# [0mTodos
+[•] Replace 7 {{IMG:...}} placeholders across 6 problem pages per image map
+[ ] Port ERP hero art DO-ART-967 into erp-implementation-failure/page.tsx
+[ ] Run tsc --noEmit to verify
+[ ] Commit and write lane report
+[0m
+[0m→ [0mRead app/problems/cant-scale-operations/page.tsx[90m [offset=155, limit=10][0m
+[0m→ [0mRead app/problems/disaster-recovery/page.tsx[90m [offset=102, limit=10][0m
+[0m→ [0mRead app/problems/ecommerce-not-connected/page.tsx[90m [offset=67, limit=10][0m
+[0m→ [0mRead app/problems/manual-workarounds/page.tsx[90m [offset=67, limit=32][0m
+[0m→ [0mRead app/problems/no-ops-owner/page.tsx[90m [offset=102, limit=10][0m
+[0m→ [0mRead app/problems/slow-processes/page.tsx[90m [offset=129, limit=10][0m
+Let me read the relevant lines from each file to make precise edits.
+[0m
+[0m← [0mEdit app/problems/cant-scale-operations/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx
+@@ -155,9 +155,9 @@
+ </figure>`;
+ 
+ const inlineArt918 = `<figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
+         aria-label="Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
+-  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-workwear.jpg|blank=410,262,560,350|w=900|q=84}}" alt="" width="900" height="596"></div>
++  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.jpg" alt="" width="900" height="596"></div>
+   <div class="d17-scan" aria-hidden="true"></div>
+   <figcaption class="copy">
+     <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>
+     <h3>Seventeen feeds in. Every item binned.</h3>
+
+[0m
+[0m← [0mEdit app/problems/disaster-recovery/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\disaster-recovery\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\disaster-recovery\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\disaster-recovery\page.tsx
+@@ -102,9 +102,9 @@
+ </figure>`;
+ 
+ const inlineArt718 = `<figure class="d17 sw sw-doc a718" data-od-id="plate-method" data-motion data-no="DO-ART-718" data-rev="03" data-tx="photo"
+         aria-label="Artwork DO-ART-718, the Decoded Method in three layers. Three documents over a photograph of an embroidery floor. A process register lists every process with a named owner role: enquiry to quote, sales lead; artwork approval, studio manager; goods in, warehouse lead; production planning, production manager; embroidery run, production supervisor; despatch, despatch lead; invoicing, accounts. A one-page SOP for despatch in five sections. An improvement log of three-line entries: what happened, why, and what changed.">
+-  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/hero-workshop.jpg|crop=0,120,1600,1900|blank=680,1340,800,1440;1080,1270,1270,1420|w=1100|q=80}}" alt="" width="1100" height="1224"></div>
++  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-8bff06.jpg" alt="" width="1100" height="1224"></div>
+   <div class="d17-scan" aria-hidden="true"></div>
+   <figcaption class="sw-cap">
+     <div class="k d17-mono">The Decoded Method <span>· in plain English</span></div>
+     <div class="bar" aria-hidden="true"></div>
+
+[0m
+[0m← [0mEdit app/problems/ecommerce-not-connected/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\ecommerce-not-connected\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\ecommerce-not-connected\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\ecommerce-not-connected\page.tsx
+@@ -67,9 +67,9 @@
+ };
+ 
+ const heroArt966 = `<figure class="d17 sx px ph-fade a966" data-od-id="hero-evidence" data-motion data-no="DO-ART-966" data-rev="01" data-tx="screen"
+         aria-label="Artwork DO-ART-966. Two screens over a photograph of a shipping carton. The online store shows order 1042, paid at 09:14: 25 polos, logo embroidered on the left chest. The production schedule below has jobs to schedule, in production and ready, but the slot for order 1042 is empty and marked not received. Between them, no link: retyped by hand. Paid online, unknown on the floor.">
+-  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/prod-mailer.jpg|w=900|q=80}}" alt="" width="900" height="600"></div>
++  <div class="d17-ph"><img src="/images/d17/problems/prod-mailer-f70773.jpg" alt="" width="900" height="600"></div>
+   <div class="d17-scan" aria-hidden="true"></div>
+   <div class="sx-top d17-mono" aria-hidden="true"><span>Store and floor</span><span>One order, two systems</span></div>
+   <div class="pair" aria-hidden="true">
+     <div class="win m-rise" style="animation-delay:.1s">
+
+[0m
+[0m← [0mEdit app/problems/manual-workarounds/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\manual-workarounds\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\manual-workarounds\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\manual-workarounds\page.tsx
+@@ -67,9 +67,9 @@
+ };
+ 
+ const heroArt970 = `<figure class="d17 sx px a970" data-od-id="hero-evidence" data-motion data-no="DO-ART-970" data-rev="01" data-tx="poster"
+         aria-label="Journey poster DO-ART-970. One order's route through the business. The email arrives. It is typed into the order system, copied onto the job sheet, the artwork is emailed to the studio, stock is checked by walking the floor, the despatch sheet is written up and the invoice is typed from the job sheet. Four of the seven steps retype the same order. One order, typed in four times.">
+-  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-promo.jpg|w=1100|q=78}}" alt="" width="900" height="600"></div>
++  <div class="d17-ph"><img src="/images/d17/problems/cat-promo-6d25d2.jpg" alt="" width="900" height="600"></div>
+   <div class="d17-scan" aria-hidden="true"></div>
+   <div class="sx-top d17-mono" aria-hidden="true"><span>Manual workarounds</span><span>One order's route</span></div>
+   <div class="print m-drop" style="animation-delay:.2s" aria-hidden="true"><span class="ref">Job sheet · by hand</span><b>Mugs, one-colour print</b><i style="width:92%"></i><i style="width:74%"></i><i style="width:84%"></i></div>
+   <div class="body" aria-hidden="true">
+
+[0m
+[0m← [0mEdit app/problems/manual-workarounds/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\manual-workarounds\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\manual-workarounds\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\manual-workarounds\page.tsx
+@@ -91,9 +91,9 @@
+ </figure>`;
+ 
+ const inlineArt918 = `<figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
+         aria-label="Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
+-  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-workwear.jpg|blank=410,262,560,350|w=900|q=84}}" alt="" width="900" height="596"></div>
++  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.jpg" alt="" width="900" height="596"></div>
+   <div class="d17-scan" aria-hidden="true"></div>
+   <figcaption class="copy">
+     <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>
+     <h3>Seventeen feeds in. Every item binned.</h3>
+
+[0m
+[0m← [0mEdit app/problems/no-ops-owner/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\no-ops-owner\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\no-ops-owner\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\no-ops-owner\page.tsx
+@@ -102,9 +102,9 @@
+ </figure>`;
+ 
+ const inlineArt718 = `<figure class="d17 sw sw-doc a718" data-od-id="plate-method" data-motion data-no="DO-ART-718" data-rev="03" data-tx="photo"
+         aria-label="Artwork DO-ART-718, the Decoded Method in three layers. Three documents over a photograph of an embroidery floor. A process register lists every process with a named owner role: enquiry to quote, sales lead; artwork approval, studio manager; goods in, warehouse lead; production planning, production manager; embroidery run, production supervisor; despatch, despatch lead; invoicing, accounts. A one-page SOP for despatch in five sections. An improvement log of three-line entries: what happened, why, and what changed.">
+-  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/hero-workshop.jpg|crop=0,120,1600,1900|blank=680,1340,800,1440;1080,1270,1270,1420|w=1100|q=80}}" alt="" width="1100" height="1224"></div>
++  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-8bff06.jpg" alt="" width="1100" height="1224"></div>
+   <div class="d17-scan" aria-hidden="true"></div>
+   <figcaption class="sw-cap">
+     <div class="k d17-mono">The Decoded Method <span>· in plain English</span></div>
+     <div class="bar" aria-hidden="true"></div>
+
+[0m
+Now I'll make all 7 replacements across the 6 files.
+[0m← [0mEdit app/problems/slow-processes/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\slow-processes\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\slow-processes\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\slow-processes\page.tsx
+@@ -129,9 +129,9 @@
+ </figure>`;
+ 
+ const inlineArt718 = `<figure class="d17 sw sw-doc a718" data-od-id="plate-method" data-motion data-no="DO-ART-718" data-rev="03" data-tx="photo"
+         aria-label="Artwork DO-ART-718, the Decoded Method in three layers. Three documents over a photograph of an embroidery floor. A process register lists every process with a named owner role: enquiry to quote, sales lead; artwork approval, studio manager; goods in, warehouse lead; production planning, production manager; embroidery run, production supervisor; despatch, despatch lead; invoicing, accounts. A one-page SOP for despatch in five sections. An improvement log of three-line entries: what happened, why, and what changed.">
+-  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/hero-workshop.jpg|crop=0,120,1600,1900|blank=680,1340,800,1440;1080,1270,1270,1420|w=1100|q=80}}" alt="" width="1100" height="1224"></div>
++  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-8bff06.jpg" alt="" width="1100" height="1224"></div>
+   <div class="d17-scan" aria-hidden="true"></div>
+   <figcaption class="sw-cap">
+     <div class="k d17-mono">The Decoded Method <span>· in plain English</span></div>
+     <div class="bar" aria-hidden="true"></div>
+
+[0m
+[0m$ [0mGet-ChildItem -Recurse -Filter "page.tsx" -Path "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems" | Select-String -Pattern "\{\{IMG"
+(no output)
+[0m
+[0m→ [0mRead app/problems/erp-implementation-failure/page.tsx
+All 7 placeholder replacements done. Let me verify and move to the ERP hero art.
+[0m
+[0m# [0mTodos
+[✓] Replace 7 {{IMG:...}} placeholders across 6 problem pages per image map
+[•] Port ERP hero art DO-ART-967 into erp-implementation-failure/page.tsx
+[ ] Run tsc --noEmit to verify
+[ ] Commit and write lane report
+[0m
+[0m→ [0mRead app/problems/cant-scale-operations/page.tsx[90m [limit=30][0m
+[0m→ [0mRead components/ProblemPageDS.tsx[90m [limit=60][0m
+[0m→ [0mRead components/ProblemPageDS.tsx[90m [limit=100, offset=60][0m
+[0m
+[0m$ [0mGet-ChildItem -Recurse -Filter "page.tsx" -Path "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems" | Select-String -Pattern "heroArt" | ForEach-Object { $_.Path + ":" + $_.LineNumber + ":" + $_.Line.Trim() }
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx:109:const heroArt963 = `<figure class="d17 sx px a963" data-od-id="hero-evidence" data-motion data-no="DO-ART-963" data-rev="01" data-tx="schematic"
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx:224:heroArt={heroArt963}
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\disaster-recovery\page.tsx:69:const heroArt965 = `<figure class="d17 sx px a965" data-od-id="hero-evidence" data-motion data-no="DO-ART-965" data-rev="01" data-tx="schematic"
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\disaster-recovery\page.tsx:198:heroArt={heroArt965}
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\ecommerce-not-connected\page.tsx:69:const heroArt966 = `<figure class="d17 sx px ph-fade a966" data-od-id="hero-evidence" data-motion data-no="DO-ART-966" data-rev="01" data-tx="screen"
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\ecommerce-not-connected\page.tsx:231:heroArt={heroArt966}
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\manual-workarounds\page.tsx:69:const heroArt970 = `<figure class="d17 sx px a970" data-od-id="hero-evidence" data-motion data-no="DO-ART-970" data-rev="01" data-tx="poster"
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\manual-workarounds\page.tsx:147:heroArt={heroArt970}
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\no-ops-owner\page.tsx:69:const heroArt971 = `<figure class="d17 sx px a971" data-od-id="hero-evidence" data-motion data-no="DO-ART-971" data-rev="01" data-tx="schematic"
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\no-ops-owner\page.tsx:198:heroArt={heroArt971}
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\slow-processes\page.tsx:110:const heroArt974 = `<figure class="d17 sx px a974" data-od-id="hero-evidence" data-motion data-no="DO-ART-974" data-rev="01" data-tx="schematic"
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\slow-processes\page.tsx:238:heroArt={heroArt974}
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\spreadsheet-addiction\page.tsx:60:const heroArt975 = `<figure class="d17 sx px a975" data-od-id="hero-evidence" data-motion data-no="DO-ART-975" data-rev="01" data-tx="photo"
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\spreadsheet-addiction\page.tsx:156:<div dangerouslySetInnerHTML={{ __html: heroArt975 }} />
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\systems-dont-talk\page.tsx:59:const heroArt976 = `<figure class="d17 sx px a976" data-od-id="hero-evidence" data-motion data-no="DO-ART-976" data-rev="01" data-tx="schematic"
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\systems-dont-talk\page.tsx:144:heroArt={heroArt976}
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\wrong-erp-software\page.tsx:70:const heroArt978 = `<figure class="d17 sx px a978" data-od-id="hero-evidence" data-motion data-no="DO-ART-978" data-rev="01" data-tx="photo"
+D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\wrong-erp-software\page.tsx:231:<div dangerouslySetInnerHTML={{ __html: heroArt978 }} />
+[0m
+[0m$ [0mTest-Path "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\public\images\d17\problems\hero-workshop-783ec1.jpg"; Test-Path "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\public\images\d17\problems\thread-spools-2195b5.jpg"
+True
+True
+[0m
+Now I'll add the DO-ART-967 hero art to the ERP page. It goes between the hero and the DO-ART-917 inline art.
+[0m← [0mEdit app/problems/erp-implementation-failure/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\erp-implementation-failure\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\erp-implementation-failure\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\erp-implementation-failure\page.tsx
+@@ -106,8 +106,52 @@
+   </div>
+  </div>
+ </section>
+ 
++{/* ── HERO ARTWORK · DO-ART-967 ──────────────────────────────────── */}
++<section className="g-off">
++ <div className="wrap">
++  <div dangerouslySetInnerHTML={{ __html: `
++   <!-- DO-ART-967 r01 · journey poster (D17, the 831 route). One decision, two routes: the
++        vendor-scoped one (dashed, sky) ends over budget and late with the platform blamed;
++        the audit-first one (amber) ends with the platform kept and the Hanicks figures.
++        Wide cut on desktop, two vertical lanes on a phone. In-page draw: both routes run,
++        the amber one lands last. Replaces DO-ART-412 in the live IA. -->
++   <figure class="d17 sw a967" data-od-id="pattern-route" data-motion data-no="DO-ART-967" data-rev="01" data-tx="poster"
++           aria-label="Journey poster DO-ART-967. One decision, choosing an ERP, and two routes from it. The vendor-scoped route: the demo, sold on what the software does well; the contract, scoped by the vendor; go-live, where the workarounds begin; ending over budget and late, with the platform blamed for a data problem. The audit-first route: the audit, looking at the business first; the data, fixed before anything moved; the platform, kept and working; ending at Hanicks with 154,518 products matched to a supplier automatically out of 317,812 brought in.">
++     <div class="gridl" aria-hidden="true"></div>
++     <svg class="route" viewBox="0 0 1600 760" preserveAspectRatio="none" aria-hidden="true">
++       <path d="M300 390 C390 390 380 210 480 210 H1250" fill="none" stroke="#8ECAE6" stroke-width="6" stroke-dasharray="14 12" stroke-linecap="round" class="m-draw" pathLength="1" style="animation-delay:.2s"/>
++       <path d="M300 390 C390 390 380 560 480 560 H1250" fill="none" stroke="#FFB703" stroke-width="10" stroke-linecap="round" class="m-draw" pathLength="1" style="animation-delay:.9s"/>
++       <circle cx="300" cy="390" r="16" fill="#F8F9FA" stroke="#023047" stroke-width="6"/>
++       <g fill="#023047" stroke="#8ECAE6" stroke-width="4"><circle cx="580" cy="210" r="12"/><circle cx="830" cy="210" r="12"/><circle cx="1080" cy="210" r="12"/></g>
++       <g fill="#F8F9FA" stroke="#023047" stroke-width="5"><circle cx="580" cy="560" r="14"/><circle cx="830" cy="560" r="14"/><circle cx="1080" cy="560" r="14"/></g>
++     </svg>
++     <p class="eb d17-mono">The pattern · same business, same platform</p>
++     <div class="st st--start m-fade" style="left:calc(70 * var(--u));top:calc(322 * var(--u))"><span class="n">01 · The decision</span><h4>Choosing an ERP</h4><p>and who scopes it first</p></div>
++     <div class="lane lane--v">
++       <div class="st st--v m-fade" style="left:calc(556 * var(--u));top:calc(240 * var(--u))"><span class="n">02 · The demo</span><h4>Sold on its strengths</h4><p>what it does well, moved past what it doesn't</p></div>
++       <div class="st st--v m-fade" style="left:calc(806 * var(--u));top:calc(240 * var(--u))"><span class="n">03 · The contract</span><h4>Scoped by the vendor</h4><p>before anyone looked at the business</p></div>
++       <div class="st st--v m-fade" style="left:calc(1056 * var(--u));top:calc(240 * var(--u))"><span class="n">04 · Go-live</span><h4>Workarounds begin</h4><p>the gaps turn up on the floor</p></div>
++       <div class="res res--v m-fade" style="left:calc(1280 * var(--u));top:calc(120 * var(--u))"><span class="n">Vendor-scoped</span><b>Over budget, late</b><p>and the platform takes the blame for a data problem</p></div>
++     </div>
++     <div class="lane lane--a">
++       <div class="st st--a m-fade" style="left:calc(556 * var(--u));top:calc(590 * var(--u))"><span class="n">02 · The audit</span><h4>The business first</h4><p>every workflow followed before any software</p></div>
++       <div class="st st--a m-fade" style="left:calc(806 * var(--u));top:calc(590 * var(--u))"><span class="n">03 · The data</span><h4>Fixed first</h4><p>supplier feeds matched, before anything moved</p></div>
++       <div class="st st--a m-fade" style="left:calc(1056 * var(--u));top:calc(590 * var(--u))"><span class="n">04 · The platform</span><h4>Kept, and working</h4><p>the one they had already paid for</p></div>
++       <div class="res res--a m-pop" style="left:calc(1280 * var(--u));top:calc(470 * var(--u));animation-delay:2.2s"><span class="n">Audit first · Hanicks</span><b>154,518 matched</b><p>to a supplier automatically, out of 317,812 products brought in</p></div>
++     </div>
++     <div class="prints" aria-hidden="true">
++       <div class="print" style="left:calc(50 * var(--u));top:calc(478 * var(--u));width:calc(165 * var(--u));height:calc(170 * var(--u));transform:rotate(-4deg)">
++         <img src="/images/d17/problems/hero-workshop-783ec1.jpg" alt=""><div class="tint"></div><span>The floor it has to serve</span></div>
++       <div class="print" style="left:calc(226 * var(--u));top:calc(505 * var(--u));width:calc(150 * var(--u));height:calc(160 * var(--u));transform:rotate(3deg)">
++         <img src="/images/d17/problems/thread-spools-2195b5.jpg" alt=""><div class="tint"></div><span>Decoration, the part demos skip</span></div>
++     </div>
++     <span class="d17-mark d17-mark--abs">decodedops.co.uk · DO-ART-967 · Rev 01</span>
++   </figure>` }} />
++ </div>
++</section>
++
+ {/* ── INLINE ARTWORK · DO-ART-917 ──────────────────────────────────── */}
+ <section className="g-navy">
+  <div className="wrap">
+   <span className="eyebrow">Evidence · DO-ART-917</span>
+
+[0m
+[0m# [0mTodos
+[✓] Replace 7 {{IMG:...}} placeholders across 6 problem pages per image map
+[✓] Port ERP hero art DO-ART-967 into erp-implementation-failure/page.tsx
+[•] Run tsc --noEmit to verify
+[ ] Commit and write lane report
+[0m
+[0m$ [0mGet-ChildItem -Recurse -Include "*.tsx","*.ts" -Path "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app","D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components" | Select-String -Pattern "\{\{IMG"
+(no output)
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m# [0mTodos
+[✓] Replace 7 {{IMG:...}} placeholders across 6 problem pages per image map
+[✓] Port ERP hero art DO-ART-967 into erp-implementation-failure/page.tsx
+[✓] Run tsc --noEmit to verify
+[•] Commit and write lane report
+[0m
+Zero `{{IMG` remaining, tsc clean. Now commit and write the lane report.
+[0m$ [0mmkdir -p ".context\lane-reports"
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-f-build-d17\.context\lane-reports already exists.
+[0m
+[0m$ [0mgit status --short
+M app/problems/cant-scale-operations/page.tsx
+ M app/problems/disaster-recovery/page.tsx
+ M app/problems/ecommerce-not-connected/page.tsx
+ M app/problems/erp-implementation-failure/page.tsx
+ M app/problems/manual-workarounds/page.tsx
+ M app/problems/no-ops-owner/page.tsx
+ M app/problems/slow-processes/page.tsx
+ M data/route-slugs.json
+[0m
+[0m$ [0mgit diff data/route-slugs.json | Select-Object -First 20
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+[0m
+[0m$ [0mgit add app/problems/cant-scale-operations/page.tsx app/problems/disaster-recovery/page.tsx app/problems/ecommerce-not-connected/page.tsx app/problems/erp-implementation-failure/page.tsx app/problems/manual-workarounds/page.tsx app/problems/no-ops-owner/page.tsx app/problems/slow-processes/page.tsx && git commit -m "fix(web): resolve problem-page image placeholders + ERP hero art (WO-INF-061)"
+[web-f-build-d17 3a9cb5a] fix(web): resolve problem-page image placeholders + ERP hero art (WO-INF-061)
+ 7 files changed, 51 insertions(+), 7 deletions(-)
+[0m
+[0m$ [0mgit log -1 --format="%H %s"
+3a9cb5a8f63fbfe12fc7ac538f4a4d29c3767f27 fix(web): resolve problem-page image placeholders + ERP hero art (WO-INF-061)
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-f-build-d17-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-f-build-d17-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web-f-build-d17-fix1.json .context/lane-reports/LANE-NOTES-web-f-build-d17-fix1.md && git commit -m "docs: lane report for web-f-build-d17-fix1"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-f-build-d17-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-f-build-d17-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[web-f-build-d17 173c482] docs: lane report for web-f-build-d17-fix1
+ 2 files changed, 55 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-f-build-d17-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-f-build-d17-fix1.json
+[0m
+[0m# [0mTodos
+[✓] Replace 7 {{IMG:...}} placeholders across 6 problem pages per image map
+[✓] Port ERP hero art DO-ART-967 into erp-implementation-failure/page.tsx
+[✓] Run tsc --noEmit to verify
+[✓] Commit and write lane report
+[0m
+Done. Two commits landed:
+
+1. **`3a9cb5a`** — `fix(web): resolve problem-page image placeholders + ERP hero art (WO-INF-061)`
+   - Replaced 7 `{{IMG:...}}` template strings across 6 problem pages with resolved image paths
+   - Ported DO-ART-967 journey poster into `/problems/erp-implementation-failure` hero slot
+   - `git grep "{{IMG" app components` returns 0 hits
+   - `npx tsc --noEmit` clean
+
+2. **`173c482`** — `docs: lane report for web-f-build-d17-fix1`

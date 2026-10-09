@@ -1,0 +1,739 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-content-056.md
+[0m
+[0m# [0mTodos
+[ ] Run apply_spec.py with copy-spec.json
+[ ] Em-dash sweep in user-visible copy (excluding blog/resources/tools/clients)
+[ ] Replace 'Trade store' with 'Commerce' in user-visible copy
+[ ] Run tsc --noEmit
+[ ] Commit and write lane reports
+[0m
+[0m$ [0mls ".context/lane-briefs/cr-web-056/"
+Directory: D:\apps\worktrees\decoded-ops-website\web-content-056\.context\lane-briefs\cr-web-056
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          24/09/2026    20:09            557 apply_spec.py
+-a---          24/09/2026    20:09          13509 copy-spec-notes.md
+-a---          24/09/2026    20:09           3190 copy-spec-resources-later.json
+-a---          24/09/2026    20:09         100364 copy-spec.json
+[0m
+[0m# [0mTodos
+[•] Run apply_spec.py with copy-spec.json
+[ ] Em-dash sweep in user-visible copy (excluding blog/resources/tools/clients)
+[ ] Replace 'Trade store' with 'Commerce' in user-visible copy
+[ ] Run tsc --noEmit
+[ ] Commit and write lane reports
+[0m
+[0m→ [0mRead .context/lane-briefs/cr-web-056/apply_spec.py
+[0m
+[0m$ [0mpython .context/lane-briefs/cr-web-056/apply_spec.py .context/lane-briefs/cr-web-056/copy-spec.json
+applied 157/157, skipped 0
+[0m
+[0m$ [0mgit add -A && git commit -m "content(web): CR-WEB-056 copy fixes from the content review"
+warning: in the working copy of '.context/lane-briefs/web-content-056.md', LF will be replaced by CRLF the next time Git touches it
+[web-content-056 43ae268] content(web): CR-WEB-056 copy fixes from the content review
+ 32 files changed, 167 insertions(+), 243 deletions(-)
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py with copy-spec.json
+[•] Em-dash sweep in user-visible copy (excluding blog/resources/tools/clients)
+[ ] Replace 'Trade store' with 'Commerce' in user-visible copy
+[ ] Run tsc --noEmit
+[ ] Commit and write lane reports
+[0m
+[0m→ [0mRead .context/lane-briefs/cr-web-056/copy-spec-notes.md
+Now let me get a fresh em-dash count after the apply_spec.py changes:
+[0m
+[0m$ [0mgrep -rn "—" app components data lib --include="*.ts" --include="*.tsx" | grep -v "app/blog/" | grep -v "app/resources/" | grep -v "app/tools/" | grep -v "app/clients/" | grep -v "// " | grep -v "/*" | head -200
+grep: The term 'grep' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mrg -n "\u2014" app components data lib --include="*.ts" --include="*.tsx" | Select-String -NotMatch "app\\\\blog\\\\" | Select-String -NotMatch "app\\\\resources\\\\" | Select-String -NotMatch "app\\\\tools\\\\" | Select-String -NotMatch "app\\\\clients\\\\" | Select-String -NotMatch "app\\\\api\\\\"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m✱ [0mGrep "—"[90m in app · 58 matches[0m
+[0m✱ [0mGrep "—"[90m in app · 100 matches[0m
+[0m✱ [0mGrep "—"[90m in components · 21 matches[0m
+[0m✱ [0mGrep "—"[90m in components · 0 matches[0m
+[0m✱ [0mGrep "—"[90m in data · 3 matches[0m
+[0m✱ [0mGrep "—"[90m in lib · 8 matches[0m
+[0m→ [0mRead app/clarity/page.tsx[90m [offset=185, limit=5][0m
+[0m→ [0mRead app/deliver/page.tsx[90m [offset=50, limit=5][0m
+[0m→ [0mRead app/how-i-build/page.tsx[90m [offset=76, limit=5][0m
+[0m→ [0mRead app/transform/page.tsx[90m [offset=77, limit=5][0m
+[0m→ [0mRead app/process-quality-system/page.tsx[90m [offset=158, limit=5][0m
+[0m→ [0mRead app/small-business/page.tsx[90m [offset=124, limit=5][0m
+[0m→ [0mRead app/pricing/page.tsx[90m [offset=86, limit=5][0m
+Now let me identify what needs fixing. Let me read the specific files with em-dashes (excluding blog, resources, tools, clients):
+[0m→ [0mRead app/retained/page.tsx[90m [offset=95, limit=5][0m
+[0m→ [0mRead app/case-studies/eternal-fitness/page.tsx[90m [limit=15, offset=228][0m
+[0m→ [0mRead app/case-studies/case-study-03/page.tsx[90m [limit=20, offset=226][0m
+[0m→ [0mRead components/calculators/SeasonalCapacityCalculator.tsx[90m [limit=5, offset=77][0m
+[0m→ [0mRead components/calculators/RtoCalculator.tsx[90m [limit=5, offset=157][0m
+[0m→ [0mRead components/calculators/DowntimeCostCalculator.tsx[90m [limit=5, offset=146][0m
+[0m→ [0mRead components/calculators/CapacityPlannerCalculator.tsx[90m [limit=5, offset=46][0m
+[0m→ [0mRead components/calculators/CapacityPlannerCalculator.tsx[90m [limit=5, offset=92][0m
+[0m→ [0mRead components/calculators/CapacityPlannerCalculator.tsx[90m [limit=10, offset=150][0m
+[0m→ [0mRead components/calculators/CapacityPlannerCalculator.tsx[90m [limit=5, offset=172][0m
+[0m→ [0mRead components/calculators/AutomationRoiCalculator.tsx[90m [limit=5, offset=188][0m
+[0m→ [0mRead components/graphics/ExpertiseTimelineGraphic.tsx[90m [limit=5, offset=49][0m
+[0m→ [0mRead components/HeroGraphic.tsx[90m [limit=10, offset=89][0m
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=5, offset=248][0m
+[0m→ [0mRead data/sector-routing.ts[90m [limit=5, offset=198][0m
+[0m→ [0mRead data/problem-routing.ts[90m [limit=5, offset=343][0m
+[0m→ [0mRead data/locations.ts[90m [limit=5, offset=345][0m
+[0m→ [0mRead app/case-studies/case-study-01/page.tsx[90m [limit=5, offset=274][0m
+[0m→ [0mRead app/case-studies/case-study-01/page.tsx[90m [limit=5, offset=286][0m
+Now let me check the Header.tsx lines mentioned in the notes:
+[0m→ [0mRead components/Header.tsx[90m [limit=10, offset=288][0m
+[0m→ [0mRead components/ProblemPageDS.tsx[90m [limit=5, offset=135][0m
+[0m→ [0mRead components/schematics/sectors/PrintEmbroideryOpsConsultantSchematic.tsx[90m [limit=20, offset=1][0m
+[0m✱ [0mGrep "—"[90m in app/sectors · 2 matches[0m
+[0m→ [0mRead app/sitemap.ts[90m [limit=5, offset=22][0m
+[0m
+[0m← [0mEdit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\clarity\page.tsx
+@@ -183,9 +183,9 @@
+     height={2397}
+     alt="Two multi-head embroidery machines on a workshop floor, threaded and mid-run, with a grey garment hooped under the needles and thread cones racked behind."
+     no="DO-ART-908"
+     rev="01"
+-    eyebrow="— Evidence · Clarity Audit"
++    eyebrow="Evidence · Clarity Audit"
+     caption="The floor the audit walks"
+     focus="50% 42%"
+   />
+ </div>
+
+[0m
+[0m← [0mEdit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\deliver\page.tsx
+@@ -48,9 +48,9 @@
+     height={1067}
+     alt="A finished cream and stone colour-block zip-neck polo shirt, folded and pressed, laid on a grey studio surface."
+     no="DO-ART-909"
+     rev="01"
+-    eyebrow="— Evidence · Deliver"
++    eyebrow="Evidence · Deliver"
+     caption="Finished, checked, out the door"
+     focus="50% 55%"
+   />
+ </div>
+
+[0m
+[0m← [0mEdit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\how-i-build\page.tsx
+@@ -74,9 +74,9 @@
+     height={1348}
+     alt="A worker in a grey T-shirt wearing an orange hi-vis vest with two reflective bands, photographed against a plain studio backdrop."
+     no="DO-ART-913"
+     rev="01"
+-    eyebrow="— Evidence · How I build"
++    eyebrow="Evidence · How I build"
+     caption="Built to the detail"
+     focus="50% 60%"
+   />
+ </div>
+
+[0m
+[0m← [0mEdit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\transform\page.tsx
+@@ -75,9 +75,9 @@
+     height={1067}
+     alt="A heat press mid-cycle on a print floor, platen lowered onto a green T-shirt with transfer paper taped across the print area."
+     no="DO-ART-911"
+     rev="01"
+-    eyebrow="— Evidence · Transform"
++    eyebrow="Evidence · Transform"
+     caption="The press hall, before and after"
+     focus="50% 50%"
+   />
+ </div>
+
+[0m
+[0m← [0mEdit app/process-quality-system/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\process-quality-system\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\process-quality-system\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\process-quality-system\page.tsx
+@@ -156,9 +156,9 @@
+     height={1067}
+     alt="A fanned stack of workwear shirts in white, navy, blue, olive, rust, mauve and red, collars aligned, laid on a pale blue shirt."
+     no="DO-ART-914"
+     rev="01"
+-    eyebrow="— Evidence · Process & Quality System"
++    eyebrow="Evidence · Process & Quality System"
+     caption="The same result, every run"
+     focus="50% 50%"
+   />
+ </div>
+
+[0m
+[0m← [0mEdit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\small-business\page.tsx
+@@ -122,9 +122,9 @@
+     height={1067}
+     alt="Two plain white ceramic mugs, handles outward, side by side on a white surface."
+     no="DO-ART-915"
+     rev="01"
+-    eyebrow="— Evidence · Small business"
++    eyebrow="Evidence · Small business"
+     caption="Small shop, same standards"
+     focus="50% 50%"
+   />
+ </div>
+
+[0m
+[0m← [0mEdit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\pricing\page.tsx
+@@ -84,9 +84,9 @@
+     height={600}
+     alt="A single plain kraft mailer box with its lid on, photographed on a white surface."
+     no="DO-ART-912"
+     rev="01"
+-    eyebrow="— Evidence · Pricing"
++    eyebrow="Evidence · Pricing"
+     caption="One packed order. One price."
+     focus="50% 50%"
+   />
+ </div>
+
+[0m
+Good. Now I have a complete picture. Let me make all the em-dash fixes. I'll do them in batches:
+[0m← [0mEdit app/retained/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\retained\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\retained\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\retained\page.tsx
+@@ -93,9 +93,9 @@
+     height={1067}
+     alt="A full row of embroidery thread cones in black, white, yellow, orange, red, pink, blue and green mounted on a machine's thread stand, every position filled."
+     no="DO-ART-910"
+     rev="01"
+-    eyebrow="— Evidence · Retained"
++    eyebrow="Evidence · Retained"
+     caption="Stock that is always there"
+     focus="50% 55%"
+   />
+ </div>
+
+[0m
+[0m← [0mEdit app/case-studies/eternal-fitness/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\eternal-fitness\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\eternal-fitness\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\eternal-fitness\page.tsx
+@@ -229,9 +229,9 @@
+ <div className="grid grid--3" style={{ marginTop: 24 }}>
+   <article className="card">
+     <span className="kicker">Problem</span>
+     <h3>Buy vs build</h3>
+-    <p>Choosing between off-the-shelf and custom — the decision behind this build.</p>
++    <p>Choosing between off-the-shelf and custom, the decision behind this build.</p>
+     <Link href="/problems/buy-vs-build" className="btn btn--outline" style={{ marginTop: 12 }}>Read about buy vs build</Link>
+   </article>
+   <article className="card">
+     <span className="kicker">Sector</span>
+
+[0m
+[0m← [0mEdit app/case-studies/eternal-fitness/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\eternal-fitness\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\eternal-fitness\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\eternal-fitness\page.tsx
+@@ -235,9 +235,9 @@
+ </article>
+ <article className="card">
+   <span className="kicker">Sector</span>
+   <h3>Signs &amp; graphics</h3>
+-  <p>Short-run, personalised production with custom tooling — similar operational patterns.</p>
++  <p>Short-run, personalised production with custom tooling, similar operational patterns.</p>
+   <Link href="/sectors/signs-graphics" className="btn btn--outline" style={{ marginTop: 12 }}>See the signs &amp; graphics page</Link>
+ </article>
+ <article className="card">
+   <span className="kicker">Sector</span>
+
+[0m
+[0m← [0mEdit app/case-studies/case-study-03/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\case-study-03\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\case-study-03\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\case-study-03\page.tsx
+@@ -227,9 +227,9 @@
+ <div className="grid grid--3" style={{ marginTop: 24 }}>
+   <article className="card">
+     <span className="kicker">Sector</span>
+     <h3>Workwear</h3>
+-    <p>B2B ordering portal and ERP evaluation for a workwear distributor — the same sector and challenge.</p>
++    <p>B2B ordering portal and ERP evaluation for a workwear distributor, the same sector and challenge.</p>
+     <Link href="/sectors/workwear" className="btn btn--outline" style={{ marginTop: 12 }}>See the workwear page</Link>
+   </article>
+   <article className="card">
+     <span className="kicker">Sector</span>
+
+[0m
+Now the case study and other fixes:
+[0m← [0mEdit app/case-studies/case-study-03/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\case-study-03\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\case-study-03\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\case-studies\case-study-03\page.tsx
+@@ -239,9 +239,9 @@
+     </article>
+     <article className="card">
+       <span className="kicker">Problem</span>
+       <h3>Wrong ERP software</h3>
+-      <p>Choosing the wrong platform and needing an independent evaluation — exactly what this engagement addressed.</p>
++      <p>Choosing the wrong platform and needing an independent evaluation: exactly what this engagement addressed.</p>
+       <Link href="/problems/wrong-erp-software" className="btn btn--outline" style={{ marginTop: 12 }}>Read about wrong ERP software</Link>
+     </article>
+   </div>
+ </div>
+
+[0m
+[0m← [0mEdit components/calculators/SeasonalCapacityCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\SeasonalCapacityCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\SeasonalCapacityCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\SeasonalCapacityCalculator.tsx
+@@ -75,9 +75,9 @@
+     value={baselineJobs}
+     onChange={(e) => setBaselineJobs(Math.max(1, Number(e.target.value) || 1))}
+     className="calc-input"
+   />
+-  <p className="calc-hint">Your output in a normal month. All months start at 100% (flat) — adjust each month to match your seasonal pattern.</p>
++  <p className="calc-hint">Your output in a normal month. All months start at 100% (flat). Adjust each month to match your seasonal pattern.</p>
+ </div>
+ 
+ <div style={{ marginTop: 24 }}>
+   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+
+[0m
+[0m← [0mEdit components/calculators/CapacityPlannerCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
+@@ -44,9 +44,9 @@
+     value={machines}
+     onChange={(e) => setMachines(Math.max(1, Number(e.target.value) || 1))}
+     className="calc-input"
+   />
+-  <p className="calc-hint">Heat presses, embroidery heads, print stations — anything that does the work.</p>
++  <p className="calc-hint">Heat presses, embroidery heads, print stations: anything that does the work.</p>
+ </div>
+ 
+ <div className="calc-input-group">
+   <label htmlFor="hoursPerDay" className="calc-label">
+
+[0m
+[0m← [0mEdit components/calculators/CapacityPlannerCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
+@@ -90,9 +90,9 @@
+     value={avgJobMinutes}
+     onChange={(e) => setAvgJobMinutes(Math.max(1, Number(e.target.value) || 1))}
+     className="calc-input"
+   />
+-  <p className="calc-hint">The average time a job occupies a machine — setup through completion.</p>
++  <p className="calc-hint">The average time a job occupies a machine, from setup through completion.</p>
+ </div>
+ 
+ <div className="calc-input-group">
+   <label htmlFor="downtimePct" className="calc-label">
+
+[0m
+[0m← [0mEdit components/calculators/CapacityPlannerCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
+@@ -151,9 +151,9 @@
+   />
+ </div>
+ <p className="calc-hint" style={{ color: 'color-mix(in srgb, var(--do-sky-blue) 70%, transparent)', marginTop: 6 }}>
+   {capacityUtilisation > 85
+-    ? 'High utilisation — very little headroom for spikes or breakdowns.'
++    ? 'High utilisation: very little headroom for spikes or breakdowns.'
+     : capacityUtilisation > 65
+       ? 'Solid utilisation with some room for surge capacity.'
+       : 'Plenty of spare capacity — check whether the inputs match reality.'}
+ </p>
+
+[0m
+[0m← [0mEdit components/calculators/CapacityPlannerCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
+@@ -154,9 +154,9 @@
+     {capacityUtilisation > 85
+       ? 'High utilisation: very little headroom for spikes or breakdowns.'
+       : capacityUtilisation > 65
+         ? 'Solid utilisation with some room for surge capacity.'
+-        : 'Plenty of spare capacity — check whether the inputs match reality.'}
++        : 'Plenty of spare capacity: check whether the inputs match reality.'}
+   </p>
+ </div>
+ 
+ <hr className="calc-divider" />
+
+[0m
+[0m← [0mEdit components/calculators/CapacityPlannerCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\CapacityPlannerCalculator.tsx
+@@ -170,9 +170,9 @@
+ 
+   <div style={{ marginTop: 24 }}>
+     <ToolLeadCapture
+       tool="capacity-planner"
+-      resultSummary={`${jobsPerWeek} jobs/week capacity — ${capacityUtilisation}% utilisation`}
++      resultSummary={`${jobsPerWeek} jobs/week capacity, ${capacityUtilisation}% utilisation`}
+       answers={{ machines, hoursPerDay, daysPerWeek, avgJobMinutes, downtimePct }}
+     />
+   </div>
+ </div>
+
+[0m
+[0m← [0mEdit components/calculators/RtoCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\RtoCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\RtoCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\RtoCalculator.tsx
+@@ -155,9 +155,9 @@
+ 
+   <div style={{ marginTop: 24 }}>
+     <ToolLeadCapture
+       tool="rto-calculator"
+-      resultSummary={`£${annualSaving.toLocaleString('en-GB')}/yr saving — £${threeYearSaving.toLocaleString('en-GB')} over 3 years`}
++      resultSummary={`£${annualSaving.toLocaleString('en-GB')}/yr saving, £${threeYearSaving.toLocaleString('en-GB')} over 3 years`}
+       answers={{ revenuePerHour, currentRto, targetRto, incidentsPerYear }}
+     />
+   </div>
+ </div>
+
+[0m
+[0m← [0mEdit components/calculators/DowntimeCostCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\DowntimeCostCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\DowntimeCostCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\DowntimeCostCalculator.tsx
+@@ -144,9 +144,9 @@
+ 
+   <div style={{ marginTop: 24 }}>
+     <ToolLeadCapture
+       tool="downtime-cost-calculator"
+-      resultSummary={`£${totalAnnualCost.toLocaleString('en-GB')} annual downtime cost — ${totalDowntimeHours} hours lost`}
++      resultSummary={`£${totalAnnualCost.toLocaleString('en-GB')} annual downtime cost, ${totalDowntimeHours} hours lost`}
+       answers={{ employees, hourlySalary, outagesPerYear, hoursPerOutage, revenuePerHour }}
+     />
+   </div>
+ </div>
+
+[0m
+Now the calculator fixes:
+[0m← [0mEdit components/calculators/AutomationRoiCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\AutomationRoiCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\AutomationRoiCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\calculators\AutomationRoiCalculator.tsx
+@@ -186,9 +186,9 @@
+ 
+   <div style={{ marginTop: 24 }}>
+     <ToolLeadCapture
+       tool="automation-roi-calculator"
+-      resultSummary={`${roiPercent}% 3-year ROI — break-even ${breakEvenMonths !== null ? `${breakEvenMonths} months` : 'not achievable'}`}
++      resultSummary={`${roiPercent}% 3-year ROI, break-even ${breakEvenMonths !== null ? `${breakEvenMonths} months` : 'not achievable'}`}
+       answers={{ hoursPerWeek, staffCount, hourlyRate, setupCost, monthlyMaintenance }}
+     />
+   </div>
+ </div>
+
+[0m
+[0m← [0mEdit components/graphics/ExpertiseTimelineGraphic.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\graphics\ExpertiseTimelineGraphic.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\graphics\ExpertiseTimelineGraphic.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\graphics\ExpertiseTimelineGraphic.tsx
+@@ -47,9 +47,9 @@
+       <div className="mt-2 p-4 rounded-xl border border-cerulean/30 bg-cerulean/10">
+         <div className="text-xs text-sky-blue leading-relaxed italic">
+           &ldquo;25 years in the sector means I know what a hoop size means and why it affects your production schedule. That context is what makes the advice useful.&rdquo;
+         </div>
+-        <div className="mt-2 text-xs font-semibold text-cerulean">— Craig Blackman</div>
++        <div className="mt-2 text-xs font-semibold text-cerulean">Craig Blackman</div>
+       </div>
+     </div>
+   );
+ }
+
+[0m
+[0m← [0mEdit components/HeroGraphic.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\HeroGraphic.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\HeroGraphic.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\HeroGraphic.tsx
+@@ -90,9 +90,9 @@
+ 
+ {/* Floating badge — 3× guarantee */}
+ <div className="absolute -bottom-4 -left-4 bg-off-white rounded-xl shadow-lg p-4 border border-sky-blue/40 max-w-[200px]">
+   <div className="text-xs font-semibold text-prussian-blue uppercase tracking-wider mb-1">3× Clarity Guarantee</div>
+-  <div className="text-xs text-prussian-blue/70 leading-snug">If the report doesn&apos;t find 3× its fee in value — full refund.</div>
++  <div className="text-xs text-prussian-blue/70 leading-snug">If the report doesn&apos;t find 3× its fee in value, full refund.</div>
+ </div>
+ 
+ {/* Floating badge — 1 day */}
+ <div className="absolute -top-2 -right-2 bg-cerulean rounded-xl shadow-lg p-3 text-center">
+
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\components\LocationPage.tsx
+@@ -246,9 +246,9 @@
+   </div>
+ )}
+ <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', fontWeight: 'var(--do-weight-medium)', letterSpacing: 'var(--do-tracking-wider)', textTransform: 'uppercase', marginBottom: 8 }}>Also serving</p>
+ <p style={{ color: 'var(--do-text-secondary)' }}>
+-  {allCounties.filter(c => c !== county).join(' · ')} —{' '}
++  {allCounties.filter(c => c !== county).join(' · ')},{' '}
+   <Link href={serviceUrl} className="text-cerulean hover:underline">
+     view all locations
+   </Link>
+ </p>
+
+[0m
+[0m← [0mEdit data/sector-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\data\sector-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\data\sector-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\data\sector-routing.ts
+@@ -196,9 +196,9 @@
+ 'operations-consultant-print-embroidery': {
+   targetService: {
+     href: '/clarity',
+     label: 'Clarity Audit for print & embroidery',
+-    anchor: 'A one-day audit that maps your full workflow — order intake, artwork, production scheduling, stock, and despatch — and tells you exactly what to fix, in what order, and what it costs.',
++    anchor: 'A one-day audit that maps your full workflow: order intake, artwork, production scheduling, stock, and despatch, and tells you exactly what to fix, in what order, and what it costs.',
+   },
+   relatedProblems: [
+     { href: '/problems/manual-workarounds', label: 'Manual workarounds across embroidery and print' },
+     { href: '/problems/erp-implementation-failure', label: 'ERP that does not handle decoration methods properly' },
+
+[0m
+[0m← [0mEdit data/problem-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\data\problem-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\data\problem-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\data\problem-routing.ts
+@@ -341,9 +341,9 @@
+ 'buy-vs-build': {
+   targetService: {
+     href: '/clarity',
+     label: 'Technology & operations audit',
+-    anchor: 'A structured assessment that compares off-the-shelf against custom, with real numbers on cost, timeline, and fit — not vendor sales decks.',
++    anchor: 'A structured assessment that compares off-the-shelf against custom, with real numbers on cost, timeline, and fit, not vendor sales decks.',
+   },
+   relatedProblems: [
+     { href: '/problems/wrong-erp-software', label: 'The wrong software for your business' },
+     { href: '/problems/legacy-system', label: 'The system is ancient' },
+
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\data\locations.ts
+@@ -343,9 +343,9 @@
+ slug: 'london',
+ name: 'London',
+ county: 'Greater London',
+ localContext:
+-  'London has the UK\'s densest cluster of decorated-goods businesses, from embroidery shops in East London to screen printers in the West End and workwear suppliers across the South and East. The scale is different from Sussex or Surrey — higher volumes, more complex supply chains, more staff — but the underlying technology problems are the same: disconnected systems, manual processes, and nobody senior enough to own the technology decisions.',
++  'London has the UK\'s densest cluster of decorated-goods businesses, from embroidery shops in East London to screen printers in the West End and workwear suppliers across the South and East. The scale is different from Sussex or Surrey: higher volumes, more complex supply chains, more staff, but the underlying technology problems are the same: disconnected systems, manual processes, and nobody senior enough to own the technology decisions.',
+ driveTime: 'Around 90–120 minutes (variable by location within London)',
+ localFact: 'London\'s garment district around Hackney and Dalston hosts one of Europe\'s highest concentrations of independent garment decoration businesses, many serving fashion brands and corporate clients.',
+ nearbyAreas: ['Croydon', 'Bromley', 'Enfield', 'Greenwich'],
+ businessSectors: ['Garment decoration', 'Fashion and textiles', 'Corporate workwear', 'Promotional merchandise'],
+
+[0m
+Now the remaining component and data fixes:
+[0m✱ [0mGrep "—"[90m in app · 46 matches[0m
+[0m✱ [0mGrep "—"[90m in app · 100 matches[0m
+[0m✱ [0mGrep "—"[90m in components · 9 matches[0m
+Let me verify no em-dashes remain in in-scope files:
+[0m✱ [0mGrep "—"[90m in data · 0 matches[0m
+All remaining em-dashes in in-scope files are either in excluded directories (clients, blog, resources, tools) or are code comments. The sweep is complete. Let me commit:
+[0m
+[0m$ [0mgit add -A && git commit -m "content(web): remove em dashes from site copy (CR-WEB-056)"
+[web-content-056 645b8fd] content(web): remove em dashes from site copy (CR-WEB-056)
+ 21 files changed, 27 insertions(+), 27 deletions(-)
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py with copy-spec.json
+[✓] Em-dash sweep in user-visible copy (excluding blog/resources/tools/clients)
+[•] Replace 'Trade store' with 'Commerce' in user-visible copy
+[ ] Run tsc --noEmit
+[ ] Commit and write lane reports
+[0m
+[0m✱ [0mGrep "Trade store"[90m in app · 3 matches[0m
+[0m✱ [0mGrep "Trade store"[90m in components · 0 matches[0m
+[0m✱ [0mGrep "Trade store"[90m in app · 0 matches[0m
+Now let me find "Trade store" occurrences:
+[0m✱ [0mGrep "Trade store"[90m in data · 0 matches[0m
+[0m→ [0mRead app/pricing/page.tsx[90m [limit=5, offset=260][0m
+[0m→ [0mRead app/apps/page.tsx[90m [limit=5, offset=66][0m
+[0m→ [0mRead app/apps/commerce/page.tsx[90m [limit=5, offset=81][0m
+Found 3 occurrences. Let me read the context and fix them:
+[0m
+[0m← [0mEdit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\pricing\page.tsx
+@@ -258,9 +258,9 @@
+     <span className="kicker">Artwork Manager</span>
+     <h3>Versions, approvals and delivery</h3>
+   </Link>
+   <Link className="card" href="/apps/commerce">
+-    <span className="kicker">Trade store</span>
++    <span className="kicker">Commerce</span>
+     <h3>B2B ordering for your customers</h3>
+   </Link>
+ </div>
+ 
+
+[0m
+[0m← [0mEdit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\apps\page.tsx
+@@ -64,9 +64,9 @@
+       <div className="say"><small>Customer sign-off</small>&ldquo;That&rsquo;s the one, go ahead with this.&rdquo;</div></div></div>
+   </div>
+ </div>
+ <div className="mw s3 m-rise" style={{animationDelay:'.6s'}} data-cap="Decoded Commerce · live infrastructure">
+-  <div className="mw-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb"><span>Trade store ›</span> Workwear</span><span className="pill">TRADE</span></div>
++  <div className="mw-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb"><span>Commerce ›</span> Workwear</span><span className="pill">TRADE</span></div>
+   <div className="mw-main">
+     <h5>Trade catalogue</h5>
+     <p className="s">Your account pricing · quote alongside the basket</p>
+     <div className="tiles">
+
+[0m
+[0m← [0mEdit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-content-056\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-content-056\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-content-056\app\apps\commerce\page.tsx
+@@ -79,9 +79,9 @@
+ <div class="d17-scan" aria-hidden="true"></div>
+ <div class="sx-top d17-mono" aria-hidden="true"><span>Decoded Commerce · trade storefront</span><span>Live infrastructure</span></div>
+ <div class="stage" aria-hidden="true">
+   <div class="mw">
+-    <div class="mw-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Trade store ›</span> Full catalogue</span><span class="pill">SIGNED IN</span></div>
++    <div class="mw-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Commerce ›</span> Full catalogue</span><span class="pill">SIGNED IN</span></div>
+     <div class="acct"><span>Trade account · your price list applies</span><b>Basket 2 · Quotes 1</b></div>
+     <div class="mw-main">
+       <h5>Full trade catalogue</h5>
+       <p class="s">Decoration-ready lines, live stock, prices for your account</p>
+
+[0m
+[0m$ [0mgit add -A && git commit -m "content(web): replace 'Trade store' with 'Commerce' in user-visible copy (CR-WEB-056)"
+[web-content-056 7d01743] content(web): replace 'Trade store' with 'Commerce' in user-visible copy (CR-WEB-056)
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py with copy-spec.json
+[✓] Em-dash sweep in user-visible copy (excluding blog/resources/tools/clients)
+[✓] Replace 'Trade store' with 'Commerce' in user-visible copy
+[•] Run tsc --noEmit
+[ ] Commit and write lane reports
+[0m
+[0m$ [0mTest-Path node_modules
+True
+[0m
+[0m$ [0mnpx tsc --noEmit
+(no output)
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py with copy-spec.json
+[✓] Em-dash sweep in user-visible copy (excluding blog/resources/tools/clients)
+[✓] Replace 'Trade store' with 'Commerce' in user-visible copy
+[✓] Run tsc --noEmit
+[•] Commit and write lane reports
+[0m
+tsc clean. Now let me write the lane reports:
+[0m$ [0mgit log --oneline -5
+7d01743 content(web): replace 'Trade store' with 'Commerce' in user-visible copy (CR-WEB-056)
+645b8fd content(web): remove em dashes from site copy (CR-WEB-056)
+43ae268 content(web): CR-WEB-056 copy fixes from the content review
+78bfc7f chore: CR-WEB-056 lane brief + copy spec
+173c482 docs: lane report for web-f-build-d17-fix1
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-content-056\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-content-056.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-content-056.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "docs: lane report for web-content-056"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-content-056.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-content-056.json', LF will be replaced by CRLF the next time Git touches it
+[web-content-056 0258772] docs: lane report for web-content-056
+ 2 files changed, 36 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-content-056.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-content-056.json
+[0m
+[0m# [0mTodos
+[✓] Run apply_spec.py with copy-spec.json
+[✓] Em-dash sweep in user-visible copy (excluding blog/resources/tools/clients)
+[✓] Replace 'Trade store' with 'Commerce' in user-visible copy
+[✓] Run tsc --noEmit
+[✓] Commit and write lane reports
+[0m
+Done. 4 commits total:
+
+| # | SHA | Subject |
+|---|---|---|
+| 1 | `43ae268` | content(web): CR-WEB-056 copy fixes from the content review |
+| 2 | `645b8fd` | content(web): remove em dashes from site copy (CR-WEB-056) |
+| 3 | `7d01743` | content(web): replace 'Trade store' with 'Commerce' in user-visible copy (CR-WEB-056) |
+| 4 | `0258772` | docs: lane report for web-content-056 |
+
+**Em-dash sweep:** 27 fixed. 8 eyebrow patterns (`— Evidence · X` → `Evidence · X`), 4 case study cards, 9 calculator strings, 1 attribution, 1 guarantee, 1 county separator, 2 anchor copy strings, 1 London localContext. Zero remaining in in-scope files (all others are in excluded dirs or code comments).
+
+**Trade store → Commerce:** 3 replacements (pricing kicker, apps page mockup crumb, commerce page mockup crumb).
+
+**tsc:** clean, 0 errors.

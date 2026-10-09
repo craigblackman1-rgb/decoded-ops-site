@@ -1,0 +1,678 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓ£▒ [0mGlob "**/case-studies/**"[90m in . ┬╖ 5 matches[0m
+[0mΓ£▒ [0mGrep "tacklebag"[90m in . ┬╖ 100 matches[0m
+[0mΓ£▒ [0mGrep "redirect"[90m in . ┬╖ 11 matches[0m
+[0mΓåÆ [0mRead next.config.ts
+[0mΓåÆ [0mRead app/case-studies/case-study-02/page.tsx
+[0mΓåÆ [0mRead app/case-studies/page.tsx
+[0mΓåÆ [0mRead app/sitemap.ts
+[0mΓåÆ [0mRead data/route-slugs.json
+Now let me read the key files:
+[0mΓ£▒ [0mGrep "case-study-02"[90m in . ┬╖ 5 matches[0m
+Now let me find all internal links referencing `case-study-02`:
+[0mΓ£▒ [0mGrep "case-study-02"[90m in . ┬╖ 2 matches[0m
+[0mΓåÆ [0mRead components/Header.tsx[90m [offset=95, limit=30][0m
+Let me check the Header component:
+[0m
+[0m# [0mTodos
+[ΓÇó] Rename route directory case-study-02 ΓåÆ apparel-supplier-automation
+[ ] Update page.tsx metadata (canonical, og url, schema url)
+[ ] Update next.config.ts redirect chain
+[ ] Update sitemap.ts
+[ ] Update case-studies/page.tsx link
+[ ] Update Header.tsx nav link
+[ ] Grep for remaining tacklebag/case-study-02 references
+[ ] Verify: lint, tsc, escape grep
+[ ] Commit and write lane reports
+[0m
+Now I have the full picture. The sector language is "branded apparel & decoration" ΓÇö supplier feeds automated, stock control, ERP. I'll use `apparel-supplier-automation` as the new slug.
+
+Let me execute all changes:
+[0m$ [0mMove-Item -Path "D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\case-study-02" -Destination "D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\apparel-supplier-automation"
+(no output)
+[0m
+[0mΓåÉ [0mEdit app/case-studies/apparel-supplier-automation/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\apparel-supplier-automation\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\apparel-supplier-automation\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\apparel-supplier-automation\page.tsx
+@@ -8,9 +8,9 @@
+ 
+ export const metadata = {
+   title: 'Clarity Audit Case Study | Decoded Ops',
+   description: 'A Clarity Audit case study into a Deliver engagement for a branded apparel and decoration retailer, where the diagnostic came before the decision.',
+-  alternates: { canonical: '/case-studies/case-study-02' },
++  alternates: { canonical: '/case-studies/apparel-supplier-automation' },
+   openGraph: {
+     type: 'article',
+     title: 'Clarity Audit Case Study | Decoded Ops',
+     description: 'A Clarity Audit case study into a Deliver engagement for a branded apparel and decoration retailer, where the diagnostic came before the decision.',
+
+[0m
+[0mΓåÉ [0mEdit app/case-studies/apparel-supplier-automation/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\apparel-supplier-automation\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\apparel-supplier-automation\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\apparel-supplier-automation\page.tsx
+@@ -13,9 +13,9 @@
+   openGraph: {
+     type: 'article',
+     title: 'Clarity Audit Case Study | Decoded Ops',
+     description: 'A Clarity Audit case study into a Deliver engagement for a branded apparel and decoration retailer, where the diagnostic came before the decision.',
+-    url: 'https://decodedops.co.uk/case-studies/case-study-02',
++    url: 'https://decodedops.co.uk/case-studies/apparel-supplier-automation',
+     images: OG_IMAGE,
+   },
+   twitter: {
+     card: 'summary_large_image',
+@@ -29,9 +29,9 @@
+   '@context': 'https://schema.org',
+   '@graph': [
+     {
+       '@type': 'Article',
+-      headline: 'Case study 02: the diagnostic came before the decision',
++      headline: 'Apparel supplier automation case study: the diagnostic came before the decision',
+       description: 'A Clarity Audit into a Deliver engagement for a branded apparel and decoration retailer. 17 supplier feeds automated, 20 to 40 hours a week of admin time projected saved.',
+       author: { '@type': 'Person', name: 'Craig Blackman' },
+       publisher: {
+         '@type': 'Organization', name: 'Decoded Ops',
+@@ -39,9 +39,9 @@
+       },
+       image: 'https://decodedops.co.uk/opengraph-image',
+       datePublished: '2026-07-28',
+       dateModified: '2026-09-23',
+-      url: 'https://decodedops.co.uk/case-studies/case-study-02',
++      url: 'https://decodedops.co.uk/case-studies/apparel-supplier-automation',
+     },
+   ],
+ };
+ 
+
+[0m
+[0mΓåÉ [0mEdit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\next.config.ts
+@@ -20,9 +20,10 @@
+ { source: '/decoded-method', destination: '/resources/decoded-method', permanent: true },
+ { source: '/tools/ai-readiness-check', destination: '/tools/ops-health-score', permanent: true },
+ { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
+ { source: '/case-studies/hanicks', destination: '/case-studies/case-study-01', permanent: true },
+-{ source: '/case-studies/tacklebag', destination: '/case-studies/case-study-02', permanent: true },
++{ source: '/case-studies/tacklebag', destination: '/case-studies/apparel-supplier-automation', permanent: true },
++{ source: '/case-studies/case-study-02', destination: '/case-studies/apparel-supplier-automation', permanent: true },
+ { source: '/case-studies/cobra-workwear', destination: '/case-studies/case-study-03', permanent: true },
+ { source: '/apps/crm', destination: '/apps', permanent: true },
+ { source: '/apps/data-app', destination: '/apps/works', permanent: true },
+ { source: '/apps/artwork-manager', destination: '/apps/proof', permanent: true },
+
+[0m
+[0mΓåÉ [0mEdit app/sitemap.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\sitemap.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\sitemap.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\sitemap.ts
+@@ -86,9 +86,9 @@
+   { url: `${BASE_URL}/transform`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+   { url: `${BASE_URL}/tools`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+   { url: `${BASE_URL}/case-studies`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+   { url: `${BASE_URL}/case-studies/case-study-01`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+-  { url: `${BASE_URL}/case-studies/case-study-02`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
++  { url: `${BASE_URL}/case-studies/apparel-supplier-automation`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+   { url: `${BASE_URL}/case-studies/case-study-03`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+   { url: `${BASE_URL}/case-studies/eternal-fitness`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+ ]
+ 
+
+[0m
+[0mΓåÉ [0mEdit app/case-studies/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\page.tsx
+@@ -116,9 +116,9 @@
+   <h3>The diagnostic came before the decision.</h3>
+   <p className="desc">A teamwear and schoolwear business selling decorated and plain stock across
+     a lot of suppliers, on an eCommerce platform that needed to show live stock accurately.</p>
+   <p className="figline">17 supplier feeds automated ┬╖ 952 products live on their website ┬╖ 100% of stock binned</p>
+-  <Link className="readmore" href="/case-studies/case-study-02">Read more</Link>
++  <Link className="readmore" href="/case-studies/apparel-supplier-automation">Read more</Link>
+ </article>
+ 
+ <article className="card case-card" data-od-id="case-03">
+   <figure className="d17 chd chd--c" data-no="DO-ART-950" data-rev="01" data-tx="photo"
+
+[0m
+Now edit all files in parallel:
+[0mΓåÉ [0mEdit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\Header.tsx
+@@ -104,9 +104,9 @@
+ const proofWork: NavGroup = {
+   title: "Work I've done",
+   items: [
+     { label: 'Case study 01', href: '/case-studies/case-study-01' },
+-    { label: 'Case study 02', href: '/case-studies/case-study-02' },
++    { label: 'Apparel supplier automation', href: '/case-studies/apparel-supplier-automation' },
+     { label: 'Case study 03', href: '/case-studies/case-study-03' },
+     { label: 'Eternal Fitness', href: '/case-studies/eternal-fitness' },
+     { label: 'All case studies', href: '/case-studies' },
+   ],
+
+[0m
+[0m# [0mTodos
+[Γ£ô] Rename route directory case-study-02 ΓåÆ apparel-supplier-automation
+[Γ£ô] Update page.tsx metadata (canonical, og url, schema url)
+[Γ£ô] Update next.config.ts redirect chain
+[Γ£ô] Update sitemap.ts
+[Γ£ô] Update case-studies/page.tsx link
+[Γ£ô] Update Header.tsx nav link
+[ΓÇó] Grep for remaining tacklebag/case-study-02 references
+[ ] Verify: lint, tsc, escape grep
+[ ] Commit and write lane reports
+[0m
+[0mΓ£▒ [0mGrep "case-study-02"[90m in . ┬╖ 1 match[0m
+[0m
+[0m$ [0mrg -i "tacklebag" --type-add 'src:*.{tsx,ts,jsx,js,json}' -t src -l "D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0mΓ£▒ [0mGrep "tacklebag"[90m in . ┬╖ 20 matches[0m
+[0m
+[0m$ [0mnpx next lint 2>&1 | head -40
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+The remaining `tacklebag` references are all in the authenticated client portal (`/clients/*`) ΓÇö not public-facing ΓÇö plus the redirect source itself which must stay. The case-study-02 grep confirms only the redirect source in `next.config.ts` remains, which is correct.
+
+Now verify:
+[0m$ [0mnpx tsc --noEmit 2>&1 | head -40
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mnpx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\lint
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+[41m                                                                               [0m
+[41m[37m                This is not the tsc command you are looking for                [0m
+[41m                                                                               [0m
+
+To get access to the TypeScript compiler, [34mtsc[0m, from the command line either:
+
+- Use [1mnpm install typescript[0m to first add TypeScript to your project [1mbefore[0m using npx
+- Use [1myarn[0m to avoid accidentally running code from un-installed packages
+[0m
+Need to install dependencies first:
+[0m$ [0mnpm install 2>&1 | Select-Object -Last 5
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mnpx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\lint
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mnpm run lint 2>&1
+> decoded-ops-next@0.1.0 lint
+> eslint
+
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\.context\mockup-vs-app.mjs
+  5:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\.context\plate-audit.mjs
+   8:31  warning  'dirname' is defined but never used     @typescript-eslint/no-unused-vars
+  67:14  warning  'm' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\.context\slot-audit.mjs
+   7:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+  43:21  warning  't' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\.context\tools\verify-pages.js
+  5:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  6:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  7:22  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\about\page.tsx
+   56:42  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  111:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  114:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  137:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  152:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  194:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\api\auth\login\route.ts
+  81:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  82:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\apps\commerce\page.tsx
+  271:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\apps\page.tsx
+  42:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  76:43  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  77:43  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  78:51  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  79:51  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\blog\[slug]\page.tsx
+  46:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\blog\page.tsx
+  43:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  54:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  56:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\case-study-03\page.tsx
+  211:42  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\case-studies\page.tsx
+    3:10  warning  'ArrowRight' is defined but never used                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+    4:10  warning  'BOOKING_URL' is defined but never used                                                                                                                                                                                                                                                  @typescript-eslint/no-unused-vars
+   49:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  108:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  126:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\clients\[clientId]\components\AcceptanceSection.tsx
+  102:84  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  257:39  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\clients\[clientId]\components\DemoSection.tsx
+  127:27  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-explicit-any
+  129:3   error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\clients\[clientId]\components\DemoSection.tsx:129:3
+  127 |   const chartRef = useRef<any>(null);
+  128 |   const stocksRef = useRef(stocks);
+> 129 |   stocksRef.current = stocks;
+      |   ^^^^^^^^^^^^^^^^^ Cannot update ref during render
+  130 |
+  131 |   function statusFor(stock: number, min: number) {
+  132 |     return stock === 0 ? 'out' : stock < min ? 'low' : 'ok';                                                                                                                                                                                                                                                          react-hooks/refs
+  246:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\clients\[clientId]\components\DemoSection.tsx:246:5
+  244 |
+  245 |   useEffect(() => {
+> 246 |     updateAlerts(stocks);
+      |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  247 |   }, []);
+  248 |
+  249 |   const filteredStocks = filter === 'all'  react-hooks/set-state-in-effect
+  247:6   warning  React Hook useEffect has missing dependencies: 'stocks' and 'updateAlerts'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\clients\[clientId]\components\PricingSection.tsx
+   92:19  warning  'isA' is assigned a value but never used                         @typescript-eslint/no-unused-vars
+  323:77  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\clients\[clientId]\components\SystemsDiagram.tsx
+  83:5  error    Error: Cannot access variable before it is declared
+
+`buildSVG` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\clients\[clientId]\components\SystemsDiagram.tsx:83:5
+  81 |
+  82 |   useEffect(() => {
+> 83 |     buildSVG(mode);
+     |     ^^^^^^^^ `buildSVG` accessed before it is declared
+  84 |   }, [mode, d]);
+  85 |
+  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\clients\[clientId]\components\SystemsDiagram.tsx:86:3
+   84 |   }, [mode, d]);
+   85 |
+>  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+      |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  87 |     const svg = svgRef.current;
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  88 |     if (!svg) return;
+      ΓÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 195 |     svg.appendChild(desc);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 196 |   }
+      | ^^^^ `buildSVG` is declared here
+  197 |
+  198 |   return (
+  199 |     <div className="bg-[#023047] rounded-2xl p-12 text-white">  react-hooks/immutability
+  84:6  warning  React Hook useEffect has a missing dependency: 'buildSVG'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\clients\[clientId]\layout.tsx
+  15:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\clients\[clientId]\page.tsx
+   34:33  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  117:36  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:47  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\contact\ContactClient.tsx
+  265:40  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\contact\actions.ts
+  13:6  warning  'ContactFormInput' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\cookies\page.tsx
+  163:16  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\design-system\ds-plates.js
+  153:43  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+  179:76  warning  'err' is defined but never used                                        @typescript-eslint/no-unused-vars
+  189:13  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  189:85  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\layout.tsx
+  16:10  warning  'Header' is defined but never used  @typescript-eslint/no-unused-vars
+  17:10  warning  'Footer' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\locations\fractional-cto\[location]\page.tsx
+  25:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  26:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  31:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  32:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  38:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  39:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\locations\tech-audit\[location]\page.tsx
+  25:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  26:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  31:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  32:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  38:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  39:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\page.tsx
+    3:8   warning  'Image' is defined but never used                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  109:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  291:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  379:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\problems\cant-scale-operations\page.tsx
+  102:7  warning  'scalingSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\problems\page.tsx
+  102:43  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  109:36  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:50  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\problems\slow-processes\page.tsx
+  102:7  warning  'workflowSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\resources\5-warning-signs\page.tsx
+    5:10   warning  'Plate' is defined but never used                                @typescript-eslint/no-unused-vars
+  116:23   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:25   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:53   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:287  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:307  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:318  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  126:128  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\resources\artwork-approval-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\resources\audit-checklist\page.tsx
+    2:36   warning  'Download' is defined but never used                             @typescript-eslint/no-unused-vars
+    5:10   warning  'Plate' is defined but never used                                @typescript-eslint/no-unused-vars
+  239:81   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  239:124  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  239:129  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  239:134  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  239:139  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  242:32   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  242:69   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  278:29   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  284:35   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  284:47   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  284:53   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  284:63   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  304:25   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  306:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\resources\erp-selection-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\resources\page.tsx
+  3:53  warning  'Star' is defined but never used   @typescript-eslint/no-unused-vars
+  5:10  warning  'Plate' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\resources\seasonal-capacity\page.tsx
+  97:127  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\resources\sop-template\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\sectors\schoolwear\page.tsx
+  5:10  warning  'Plate' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\sitemap.ts
+  13:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  26:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  28:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\small-business\page.tsx
+  3:46  warning  'TrendingUp' is defined but never used  @typescript-eslint/no-unused-vars
+  3:58  warning  'Wrench' is defined but never used      @typescript-eslint/no-unused-vars
+  3:66  warning  'Clock' is defined but never used       @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\tools\automation-roi-calculator\page.tsx
+  60:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\tools\downtime-cost-calculator\page.tsx
+  62:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\tools\ops-health-score\page.tsx
+  29:7   warning  'scoreLabels' is assigned a value but never used                                                                                                                                                                                                                                         @typescript-eslint/no-unused-vars
+  80:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\tools\page.tsx
+    6:10  warning  'Plate' is defined but never used                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  100:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  125:74  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\app\tools\should-i-replace-erp\page.tsx
+  72:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\auth.config.ts
+  13:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\Artwork.tsx
+  50:49  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+  61:53  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+  71:43  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+  75:9   warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  76:16  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\BlogList.tsx
+   55:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  148:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\CookieConsent.tsx
+  12:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\CookieConsent.tsx:12:5
+  10 |
+  11 |   useEffect(() => {
+> 12 |     setIsLoading(true);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  13 |     const consent = localStorage.getItem('cookie-consent');
+  14 |     if (!consent) {
+  15 |       setIsVisible(true);  react-hooks/set-state-in-effect
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\PhotoPiece.tsx
+  64:9  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\Plate.tsx
+  42:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  46:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  55:49  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  66:53  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  76:43  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  80:9   warning  Expected an assignment or function call and instead saw an expression                                                                                                                        @typescript-eslint/no-unused-expressions
+  81:16  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  91:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\RelatedPosts.tsx
+  34:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  43:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\graphics\AuditWheelGraphic.tsx
+  51:17  warning  'lx' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  52:17  warning  'ly' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  55:17  warning  'lines' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\schematics\problems\WrongErpSchematic.tsx
+  38:10  warning  'motion' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\components\schematics\sectors\PrintEmbroideryOpsConsultantSchematic.tsx
+   6:37  warning  'SKY' is defined but never used               @typescript-eslint/no-unused-vars
+  23:7   warning  'MID' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  24:7   warning  'SPINE_X' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\public\infographics\EcommerceBreakdownChart.tsx
+  117:42   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:102  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  142:74   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:79   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:234  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\public\infographics\VendorQuestionsGuide.tsx
+   56:34   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   59:59   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   59:63   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  120:26   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:92   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:131  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\scripts\fix-og-images.mjs
+  37:10  warning  'addImagesToBlock' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\scripts\hash-password.mjs
+  2:10  warning  'readFileSync' is defined but never used   @typescript-eslint/no-unused-vars
+  2:24  warning  'writeFileSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\scripts\optimise-images.mjs
+  20:11  warning  'ext' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  27:11  warning  'targetW' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 172 problems (89 errors, 83 warnings)
+[0m
+[0mΓ£▒ [0mGrep "\\u[0-9a-fA-F]{4}"[90m in app/case-studies/apparel-supplier-automation ┬╖ 0 matches[0m
+Lint errors are all pre-existing ΓÇö none from my changed files. `tsc` was clean. Now check for unicode escapes:
+[0m
+[0m$ [0mgit diff --stat origin/main...HEAD 2>&1
+(no output)
+[0m
+[0m$ [0mgit status --short 2>&1
+D app/case-studies/case-study-02/page.tsx
+ M app/case-studies/page.tsx
+ M app/sitemap.ts
+ M components/Header.tsx
+ M next.config.ts
+?? app/case-studies/apparel-supplier-automation/
+[0m
+All changes look correct. Let me commit and write the lane reports:
+[0m$ [0mgit add app/case-studies/apparel-supplier-automation/page.tsx app/case-studies/page.tsx app/sitemap.ts components/Header.tsx next.config.ts && git rm -r app/case-studies/case-study-02/ 2>&1
+rm 'app/case-studies/case-study-02/page.tsx'
+[0m
+[0m$ [0mgit commit -m "Anonymise TackleBag case study slug: case-study-02 ΓåÆ apparel-supplier-automation
+
+- Renamed route from /case-studies/case-study-02 to /case-studies/apparel-supplier-automation
+- Added 301 redirects: /case-studies/tacklebag and /case-studies/case-study-02 ΓåÆ new slug
+- Updated canonical, OG URLs, and schema.org data in page metadata
+- Updated sitemap, case-study index link, and Header nav link
+- Page body copy unchanged (already anonymous ΓÇö no client name in copy)
+- Sector language: branded apparel & decoration, supplier automation" 2>&1
+[web011-u22-cs-slug 3f48223] Anonymise TackleBag case study slug: case-study-02 ΓåÆ apparel-supplier-automation
+ 5 files changed, 9 insertions(+), 8 deletions(-)
+ rename app/case-studies/{case-study-02 => apparel-supplier-automation}/page.tsx (97%)
+[0m
+Now write the lane reports:
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web011-u22-cs-slug\.context\lane-reports already exists.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web011-u22-cs-slug.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web011-u22-cs-slug.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web011-u22-cs-slug.json .context/lane-reports/LANE-NOTES-web011-u22-cs-slug.md && git commit -m "Add lane reports for web011-u22-cs-slug" 2>&1
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web011-u22-cs-slug.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web011-u22-cs-slug.json', LF will be replaced by CRLF the next time Git touches it
+[web011-u22-cs-slug f2abcf9] Add lane reports for web011-u22-cs-slug
+ 2 files changed, 31 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web011-u22-cs-slug.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web011-u22-cs-slug.json
+[0m
+Done. Final verification:
+[0m$ [0mgit log --oneline -3 2>&1
+f2abcf9 Add lane reports for web011-u22-cs-slug
+3f48223 Anonymise TackleBag case study slug: case-study-02 ΓåÆ apparel-supplier-automation
+d429b11 docs: lane reports for web061-u42-footer-fix (BUG-WEB-031)
+[0m
+[0m$ [0mGet-ChildItem app\case-studies\ -Name 2>&1
+apparel-supplier-automation
+case-study-01
+case-study-03
+eternal-fitness
+page.tsx
+[0m
+[0m# [0mTodos
+[Γ£ô] Rename route directory case-study-02 ΓåÆ apparel-supplier-automation
+[Γ£ô] Update page.tsx metadata (canonical, og url, schema url)
+[Γ£ô] Update next.config.ts redirect chain
+[Γ£ô] Update sitemap.ts
+[Γ£ô] Update case-studies/page.tsx link
+[Γ£ô] Update Header.tsx nav link
+[Γ£ô] Grep for remaining tacklebag/case-study-02 references
+[Γ£ô] Verify: lint, tsc, escape grep
+[Γ£ô] Commit and write lane reports
+[0m
+**Lane complete.** Two commits on `web011-u22-cs-slug`:
+
+- **`3f48223`** ΓÇö Anonymise TackleBag case study slug: `case-study-02` ΓåÆ `apparel-supplier-automation`
+- **`f2abcf9`** ΓÇö Lane reports
+
+**Changes:** 5 files, +9/-8 lines
+- Route renamed: `app/case-studies/case-study-02/` ΓåÆ `app/case-studies/apparel-supplier-automation/`
+- Two 301 redirects: `/case-studies/tacklebag` and `/case-studies/case-study-02` ΓåÆ new slug
+- Canonical, OG, schema.org URLs updated
+- Sitemap, case-study index, Header nav all updated
+- Page body copy unchanged (already anonymous)
+
+**Verify:** `tsc` clean, lint pre-existing only, 0 unicode escapes. Remaining `tacklebag` references are all in the authenticated client portal (`/clients/*`) ΓÇö not public-facing.
+
+Lane reports at `.context/lane-reports/LANE-RESULT-web011-u22-cs-slug.json` and `.context/lane-reports/LANE-NOTES-web011-u22-cs-slug.md`.

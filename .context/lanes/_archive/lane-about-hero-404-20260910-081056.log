@@ -1,0 +1,335 @@
+
+> build · nex-agi/nex-n2.5-pro:free
+
+# Todos
+[•] Locate the About hero image reference and existing public image
+[ ] Update the About hero path and add a sensible image sizes attribute if needed
+[ ] Commit the smallest fix before verification
+[ ] Run typecheck and confirm the target image path exists
+[ ] Write LANE-REPORT-about-hero-404.md with change and proof
+
+✱ Glob "app/about/**/*" in . · 1 match
+✱ Glob "public/images/**/thread-spools*" in . · 1 match
+✱ Grep "commerce/thread-spools|thread-spools" in . · 1 match
+
+$ git status --short --branch
+## lane/about-hero-404...origin/main
+
+→ Read app/about/page.tsx [limit=220, offset=1]
+✱ Grep "/assets/commerce/thread-spools|thread-spools\.\*|thread-spools" in . · 7 matches
+
+$ git diff -- app/about/page.tsx && git log --oneline -8 -- app/about/page.tsx
+8f38b5b fix: broken image, dead blog link, bare LinkedIn href (BUG-WEB-012/013/014)
+631eea5 Structured copy pass round 1 (CR-WEB-002)
+a27fc60 Voice sweep, factual fixes, and remove two dead components
+75863dd feat(plates): port 13 new OpenDesign plate diagrams (2026-08-06 batch)
+44966fc Voice sweep: fix em dashes and voice violations across flagship core pages
+f5ce300 Build the 4 missing problem pages + rename Discovery Day -> Clarity Audit sitewide
+9b825f8 feat(ds-impl2): port /clarity /deliver /transform /about from Open Design mockups (Lane H, page content only)
+ebb35a6 feat: fixed logo wordmark, screenshot-artwork proof section, footer nav cleanup
+
+$ git ls-files "public/images/**/thread-spools*" && git ls-files "public/assets/**/thread-spools*"
+public/images/sectors/thread-spools.jpg
+
+$ git show --stat --oneline HEAD && git show --format=fuller --no-ext-diff HEAD -- app/about/page.tsx
+2426fc9 fix: hero image sizes - thread-spools loading w=3840 on mobile
+ app/page.tsx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+commit 2426fc958489c0fd170664fff20c6f21f2bc1b3d
+Author:     craigblackman1-rgb <craig.blackman1@gmail.com>
+AuthorDate: Thu Sep 10 07:22:06 2026 +0100
+Commit:     craigblackman1-rgb <craig.blackman1@gmail.com>
+CommitDate: Thu Sep 10 07:22:06 2026 +0100
+
+    fix: hero image sizes - thread-spools loading w=3840 on mobile
+    
+    BUG-WEB-024: thread-spools.jpg had sizes=1200px which forced the largest
+    Next.js variant on all viewports. Changed to responsive sizes that match
+    the .wrap max-width container. hero-craft.jpg already correct.
+
+$ git status --porcelain=v1 && git rev-parse HEAD && git merge-base HEAD origin/main && git log --oneline --decorate -5
+2426fc958489c0fd170664fff20c6f21f2bc1b3d
+2426fc958489c0fd170664fff20c6f21f2bc1b3d
+2426fc9 (HEAD -> lane/about-hero-404, origin/main, origin/HEAD, lane/mobile-nav-fix) fix: hero image sizes - thread-spools loading w=3840 on mobile
+c7329ed fix: mobile nav height — replace inset shorthand with explicit top/left/right/height calc
+4f59cc1 chore: drop LANE-REPORT.md — lane working notes, not product; the record lives in the work order
+c23e470 CR-WEB-028 u40: drop the duplicate call-to-action from the /blog CTA block
+38a4e2e CR-WEB-028 u35: DO-ART-633 artwork set for the Decoded Method post
+
+→ Read app/about/page.tsx [limit=20, offset=221]
+
+$ git log --oneline --decorate --graph --all -15 && git show --format=fuller --no-ext-diff 8f38b5b -- app/about/page.tsx
+* 2426fc9 (HEAD -> lane/about-hero-404, origin/main, origin/HEAD, lane/mobile-nav-fix) fix: hero image sizes - thread-spools loading w=3840 on mobile
+* c7329ed fix: mobile nav height — replace inset shorthand with explicit top/left/right/height calc
+* 4f59cc1 chore: drop LANE-REPORT.md — lane working notes, not product; the record lives in the work order
+* c23e470 CR-WEB-028 u40: drop the duplicate call-to-action from the /blog CTA block
+* 38a4e2e CR-WEB-028 u35: DO-ART-633 artwork set for the Decoded Method post
+* 820fff1 CR-WEB-028 u39: fix three /blog landing defects found in the live render
+* 05acb1c docs: add LANE-REPORT for blog landing parity fixes
+* e5db627 fix(blog): parity fixes for lead post, filter pills, CTA, z-index
+* d38aac6 CR-WEB-028 u4: rebuild /blog landing to the signed-off v1 mockup
+* ebf089f CR-WEB-028 u1: delete 57 orphaned blog SVGs from superseded post slugs
+* da4c493 (main) updates
+* 2e8fae3 CR-WEB-027: DO-ART-304 loop diagram for the Decoded Method post
+* 53da79d (lane/meta-title-spacing) fix: remove stray space before colon in 6 missed meta titles (pass 2)
+* c45423d docs: add LANE-NOTES.md for meta-title-spacing lane
+* acd5c4f fix: remove space before colon in meta title separator
+commit 8f38b5b5bf071519dc630e3ed813d8ce183b66f9
+Author:     craigblackman1-rgb <craig.blackman1@gmail.com>
+AuthorDate: Fri Sep 4 11:54:02 2026 +0100
+Commit:     craigblackman1-rgb <craig.blackman1@gmail.com>
+CommitDate: Fri Sep 4 12:06:43 2026 +0100
+
+    fix: broken image, dead blog link, bare LinkedIn href (BUG-WEB-012/013/014)
+    
+    - BUG-WEB-012: /about hero image pointed to /assets/commerce/thread-spools.jpg
+      (404 — directory doesn't exist). Changed to /images/sectors/thread-spools.jpg
+      which matches the convention used by homepage, sector, and problem pages.
+    - BUG-WEB-013: Related article link in problem-routing pointed to
+      /blog/ralawise-integration (404). Corrected to full slug
+      /blog/ralawise-integration-bulk-orders-stock-management.
+    - BUG-WEB-014: Footer LinkedIn icon linked to bare https://linkedin.com.
+      Changed to https://www.linkedin.com/company/decodedops matching the
+      site's own schema.org sameAs field.
+
+diff --git a/app/about/page.tsx b/app/about/page.tsx
+index cb47de5..d5064df 100644
+--- a/app/about/page.tsx
++++ b/app/about/page.tsx
+@@ -47,7 +47,7 @@ export default function AboutPage() {
+ 
+           <div className={s.heroShot}>
+             <div className={s.photo} data-od-id="about-visual">
+-              <img src="/assets/commerce/thread-spools.jpg" width="1600" height="1067"
++              <img src="/images/sectors/thread-spools.jpg" width="1600" height="1067"
+                    alt="A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor." />
+             </div>
+             <p className={s.shotCaption}>Twenty-five years in rooms like this one, on both sides of the
+
+$ git branch -avv --no-abbrev && git merge-base --is-ancestor 8f38b5b HEAD; printf 'ancestor_exit=%s\n' "$?"
++ bug-web-015-016-schema-fixes                                d723222478f5fcd20c7b7c0e3c87dd639c191958 (D:/apps/worktrees/decoded-ops-website/fix-schema-faq-articles) [origin/main: behind 19] chore: commit next dev agent-rules block in CLAUDE.md
+  chore/premerge-gates                                        ea0233ad212229b955b20012776ed8ab011fae6d [origin/main: behind 200] chore: wire pre-merge gates (price audit + copy extractor)
+  claude/decoded-ops-seo-content-review-9727b8                36289f34bd13d85c1360732ba5e655c5f0f65caf docs: fix stale staging Coolify uuid in CLAUDE.md
+  claude/implement-design-plates-20a617                       2cced43fb378f9d623bbe5d5aa0150c2396e127f [origin/staging: behind 127] feat(client-portal): render the evidence trail on each task card
+  claude/staging-design-review-2d366a                         55bb556753b32ae518aabec134967fb7f410826d Session records: staging review report, ERP positioning brief pack, loop-status log
+  cr-web-025-pricing-hotfix                                   8991c4daa90f19b0d040f018e8457cada302b300 [origin/main: behind 17] CR-WEB-025 Part 2: stop staging being indexed by search engines
+  docs/about-roi-benchmarks-audit                             ea0233ad212229b955b20012776ed8ab011fae6d [origin/main: behind 200] chore: wire pre-merge gates (price audit + copy extractor)
+  docs/wo-final-close                                         54202c06bf9243c656322454272b63d10a7828fc [origin/staging: behind 156] docs: close out DS implementation work order — Round 3 final verification
+  ds-impl/integration                                         e65d739e4f378e9f2b2bbaabea340ebb8699f8d3 [origin/staging: behind 173] Reconcile DS port with today's content-review fixes, add 4 new problem pages
+  ds-impl/lane-0-foundation                                   6507d5ff3b47375adef18c93bc0545fce665e42c [origin/staging: behind 192] lane-0: log push confirmation to loop-status.md
+  ds-impl/lane-a                                              4a8df16cc1109d4cc71f95dc004c0be3d63b9557 [origin/ds-impl/lane-0-foundation: ahead 1] lane-a: port 5 system pages from decoded-marketing mockups onto ds-marketing.css
+  ds-impl/lane-b                                              1a23881c2563d6da66c67a3b1648390c35e475b2 [origin/ds-impl/lane-0-foundation: ahead 1] DS impl Lane B: port 4 core pages from decoded-marketing mockups (ds-marketing.css classes, not Tailwind)
+  ds-impl/lane-c                                              184c228f0c3eb1a165a1b0df8f9f99615b21dd19 [origin/ds-impl/lane-0-foundation: ahead 2] chore: lane-c progress log
+  ds-impl/lane-d                                              b8dfec4940873a6f7b94324ce524e5e903c14be9 [origin/ds-impl/lane-0-foundation: ahead 1] DS implementation Lane D: rebuild ERP-failure anchor page, reskin 8 problem pages
+  ds-impl/lane-e                                              204b4df12be1029353e308693810355b0b804d3e [origin/ds-impl/lane-0-foundation: ahead 2] lane-e: reskin case-studies index onto ds-marketing.css with log-list layout and sourced stat pulls
+  ds-impl/lane-f                                              35cea6145851e7285da2416cbfbfe755bce3b926 [origin/ds-impl/lane-0-foundation: ahead 1] lane-f: reskin Units 2-7 onto ds-marketing.css classes
+  ds-impl2/integration2                                       d3c4d3c14c1a1943eb55116db41a012c5a3e626e [origin/staging: behind 158] tools: add verify-pages.js — derived route-vs-mockup verification, not a hand-maintained list
+  ds-impl2/lane-blog-tpl                                      3ed3daab737daf6576fa1c672c5da7841efcc87c [origin/ds-impl2/lane-blog-tpl: gone] Lane M: blog post template — DS classes instead of inline styles
+  ds-impl2/lane-cs-fix                                        d0432ff2f4489594b4276bb010d80e91660f09ff [origin/ds-impl2/lane-cs-fix: gone] fix(lane-cs-fix): re-port case study pages from mockups (hanicks, tacklebag, cobra-workwear), fix six-sigma CTA strip
+  ds-impl2/lane-homepage                                      7c2b70a197a9fb5e723fe7b9ef81d11957bd8c03 [origin/ds-impl2/lane-homepage: gone] feat(homepage): rebuild / from homepage.html mockup (Lane J)
+  ds-impl2/lane-prob-fix                                      fa126247dc0e9fb48880cc40f1dd5dc3a0f9236d [origin/ds-impl2/lane-prob-fix: gone] Lane K: Rebuild wrong-erp-software and ai-paralysis from mockups with DS classes
+  ds-impl2/lane-prob-new                                      be5d1b48400a3469e7240a9bcf8df788f1a3620f [origin/ds-impl2/lane-prob-new: gone] Lane I: log progress to loop-status.md
+  ds-impl2/lane-svc                                           d50898a55d4bbba01badec843afca06b0216ff0f [origin/ds-impl2/lane-svc: gone] feat(ds-impl2): port /clarity /deliver /transform /about from Open Design mockups
+  final-check-2026-08-02                                      4ad4bec1f75054aafceca3eee8acdb99ca1cafae [origin/staging: behind 149] Phase 2 Lane D: port plate diagrams into Hanicks and TackleBag case studies
+  finish-website-2026-08-01                                   f5ce300a0de1bceb7fd9d1c026f9881676910895 [origin/staging: behind 154] Build the 4 missing problem pages + rename Discovery Day -> Clarity Audit sitewide
+  fix-case-studies-2026-08-02                                 c2667032dc7a2904c8977b5f71847066c9d4b8eb [origin/staging: behind 145] Restore dropped/drifted content on 3 case-study pages
+  fix-cs-voice-2026-08-02                                     c5f94c19e27bef3f496090f9cfc164f0f53e33f7 [origin/staging: behind 136] Voice sweep: fix em dashes on the 4 individual case-study pages
+  fix-proposals-2026-08-02                                    90069af31bef3299cb300bdae6470dcb0e8eccc3 [origin/staging: behind 148] Fix critical pricing errors, add Decoded CRM, update Eternal Fitness disclosure
+  fix-schematics-voice-2026-08-02                             bd73ba63cdc60acba6f52fc573051fb125ce9bbc [origin/staging: behind 135] Voice sweep: fix em dashes in live schematic diagram components
+  fix-sectors-2026-08-02                                      5a2a69e69b59d27baa893d91a5af612c9fb539f9 [origin/staging: behind 146] Restore dropped content on 3 of 9 sector pages
+  footer-a-2026-08-06                                         b3b43384ec2bc5f5f5c387a6a1995a1614719364 [origin/staging: behind 130] Rebuild footer to Direction A — three columns and a drawer
+  footer-restructure-2026-08-06                               3e2d3ebd6cccf4c7cd830e119151181e816b199c [origin/staging: behind 132] Restructure footer to match the new nav, close every remaining orphan
+  full-audit-2026-08-02                                       f5ce300a0de1bceb7fd9d1c026f9881676910895 [origin/staging: behind 154] Build the 4 missing problem pages + rename Discovery Day -> Clarity Audit sitewide
+  hero-clarity-first                                          631eea53417672534bddc0d23a73e5aa8bde1b8b [origin/staging: behind 107] Structured copy pass round 1 (CR-WEB-002)
+  hotfix/case-studies-ds-regression                           b9e53ff213c62734008c08751ef8bad7864808db [origin/hotfix/case-studies-ds-regression: gone] hotfix(case-studies): revert lane-cs-fix regression, re-port hanicks/tacklebag/cobra-workwear onto DS classes
+  hotfix/tools-calculators-ds                                 c712ba466b0509fd8a4cd4ad715397c326074fa9 [origin/hotfix/tools-calculators-ds: gone] fix(tools): port 3 calculator components onto DS classes (RTO, downtime cost, automation ROI)
+  implement-homepage-v2-plate                                 b9787703d0bc2dcf545ef3571b4ce23f4fbf0d4f [origin/staging: behind 110] Port homepage-v2.html verbatim: real design port, not content-only reuse
+  lane-b1-rediff                                              87c8663d8cec5171c385ae4e8cd0cb2f4104b71f [origin/staging: behind 118] Restructure the homepage around the operational story
+  lane-b2b3b6b14-copy-2026-08-10                              0f90c0529b67ecffda839bc67aa1b1cb5534b7c8 [origin/staging: behind 112] Retire the App Scoping Session, remove competitor names from marketing copy
+  lane-b4-homepage-restructure-2026-08-10                     791988fbd3190a1ac7034e1b0d922376c3b19862 [origin/staging: behind 111] Collapse four homepage software sections into one, drop the ladder and Tracker
+  lane-b7b9-fixes-voice                                       a22148b97045ee9f26ff74700dbe3e82fd8193f9 [origin/staging: behind 114] Remove the last two em dashes, in public/infographics
+  lane-b8b10-cta-seo                                          01a6bef24d18f7df94f60c0c3e69d5365619ccb2 [origin/staging: behind 117] Route four sector CTAs to the audit, derive the sitemap, correct llms.txt
+  lane-lead-alert                                             d45350ebf1fc4b5c776409e545810a6ff423ac22 [origin/main: behind 180] Fix wrong CRM link in lead alert email — /leads → /admin/leads
+  lane-tool-lead-capture                                      c5f315749b0eb4441ee8282d802b1154255b11a1 [origin/main: behind 182] fix: remove false email promise from tool lead capture
+* lane/about-hero-404                                         2426fc958489c0fd170664fff20c6f21f2bc1b3d [origin/main] fix: hero image sizes - thread-spools loading w=3840 on mobile
+  lane/gf1-resources-port-2026-09-02                          19111cb97ebb782dbd1c41abc3821261192c91a6 [origin/staging: behind 61] Retire /resources/software-reviews (B12, GF6 triage)
+  lane/gf12-vocab-strings-2026-09-02                          0678c3eebc8270fddc4179542bc56198607e69c4 [origin/staging: behind 64] vocab-strings: rewrite sector metadata, body strings, and Khaos overclaim
+  lane/gf12b-overclaim-sweep-2026-09-02                       56420d8df834d555cd234732ef5c257167136a0e [origin/staging: behind 60] overclaim sweep: remove 'pushed live to Khaos Control' claims
+  lane/gf1b-resources-discovery-2026-09-02                    458bbc4f72edcb20132929ad405f8f41451da9e2 [origin/staging: behind 59] Add four resource pages to sitemap, llms.txt, and header nav
++ lane/give-first-magnets                                     20bea5d3da2104230d0494528abe534f6c9a457f (D:/apps/worktrees/decoded-ops-website/lane-give-first-magnets) [origin/main: ahead 1, behind 180] Add three ungated resource pages from published blog content
+  lane/meta-title-separator                                   c373e86e9cd40f1af263f9bd83a82f3c9c0a6f06 [origin/main: behind 15] docs: add lane notes for meta-title-separator
++ lane/meta-title-spacing                                     53da79d08c03fb546fdc8cd913bf1aadc9892366 (D:/apps/worktrees/decoded-ops-website/meta-title-spacing) [origin/main: behind 12] fix: remove stray space before colon in 6 missed meta titles (pass 2)
+  lane/mobile-nav-fix                                         2426fc958489c0fd170664fff20c6f21f2bc1b3d [origin/main] fix: hero image sizes - thread-spools loading w=3840 on mobile
+  lane/portal-hub-key                                         ec1f4a9b2575f249b93cb307737bd0b857940eb6 [origin/main: behind 179] Surface hub fetch failures; add david-sharp to portal client list
+  lane/sr0-staging-sync-2026-09-02                            2e731c3c832666da9e7c71becc92b1119bb85194 [origin/staging: behind 65] merge: origin/main into sr0-staging-sync — resolve 16 conflicts
+  lane/staging-merge-b5-2026-08-25                            8658fffa609282bbef9a3bb5138413751714bc7b [origin/staging: behind 91] B5: reframe /apps origin-first, strip pricing, audit CTA
+  lane/supabase-tier1-2026-09-02                              9fab990a371b53f7e1c21ba88c2b099d05c50895 [origin/staging: behind 57] chore: remove Supabase platform mentions from docs and comments (B1)
++ main                                                        da4c49350cf4ab1a471349f5c47e49bca6ba1139 (D:/apps/decoded-ops-website) [origin/main: behind 10] updates
+  merge-ds-integration-2026-08-01                             48a2b88936a5becd659be6cf77d1a38ebe6fa88a [origin/main: ahead 1, behind 174] Merge branch 'ds-impl2/integration2' into merge-ds-integration-2026-08-01
+  nav-mega-menu-2026-08-06                                    015ca0d2128c24254cb99dc5393d21b97a115a53 [origin/main: ahead 1, behind 208] Rebuild header nav as a mega menu, close the orphaned-page gap
+  nav-mega-menu-staging-2026-08-06                            a034eb8b10399dfe3f5a2085f1270f254ad6a716 [origin/staging: behind 133] Rebuild header as a five-group mega menu, fix two broken footer links
+  plate-case-studies-2026-08-02                               4ad4bec1f75054aafceca3eee8acdb99ca1cafae [origin/staging: behind 149] Phase 2 Lane D: port plate diagrams into Hanicks and TackleBag case studies
+  plate-core-pages-2026-08-02                                 fe5d386a4c23b47e92c5a1e4e7fce1d96fabfbf9 [origin/staging: behind 152] Phase 2 Lane A: port plate diagrams into the 12 core pages
+  plate-foundation-2026-08-02                                 647b8386d73073e43baebcad0b391c560fbd3a60 [origin/staging: behind 153] Phase 1: build the Plate React component, port homepage's 3 plates
+  plate-problems-2026-08-02                                   5fcbe0521f0fc7067b445b22630e5c8fbbbb1681 [origin/staging: behind 150] Phase 2 Lane C: port plate diagrams into 17 of 18 problem pages
+  plate-sectors-2026-08-02                                    9d013fefd64d129d05e3a3d3fbbe61d56d39df5e [origin/staging: behind 151] Phase 2 Lane B: port plate diagrams into all 9 sector pages
+  port-direction-a-2026-08-01                                 194383fe6a5951e9c96f1debc4322d5c771654e7 [origin/staging: behind 155] Port Direction A "Three Paths" header/footer redesign
+  questionnaire-save-feature                                  b3dd829df0cbe6ace0b2392a8c736ce79b16d93b [origin/main: behind 190] Restore Decoded Ops branding on the questionnaire form
+  sb-products-2026-08-06                                      6dc812566c3a3990aecabec4666ec7adb4e9dcce [origin/staging: behind 131] Add the two missing small-business products to the nav panel
+  sec-auth-critical                                           308d3a85a3f77e840b5cb8efb8f843f61db6643a [origin/main: behind 189] security: patch critical Auth.js vulnerabilities on client portal
+  sec-dockerfile                                              815ad379ce4138ceb109d91443fea5f577b29cad [origin/main: behind 185] fix(deploy): npm ci --legacy-peer-deps in Dockerfile
+  sec-hub-api-key                                             9a77ccac2c9d0b31fa1bb3fceacd30230d7cf9cd [origin/main: behind 188] security: send hub shared secret + proxy client uploads
+  sec-next-bump                                               5a01b3f6b4168d82d372b4cbad2b73d30944dfd9 [origin/main: behind 187] security: bump next 16.3.3, nodemailer 9, drop unused vercel dep
+  sec-npmrc                                                   90cd3da3eca1c57bc3db68c32a469245aa637ea3 [origin/main: behind 186] fix(deploy): add .npmrc legacy-peer-deps for nodemailer 9 vs next-auth peer
+  sec-staging                                                 8445923665f29475d02ddbc60eb55689a93fb498 [origin/staging: behind 86] security: patch critical Auth.js vulnerabilities on client portal
+  staging                                                     dd585e807aa76f75e377344a41badcf032d5c1e8 [origin/staging: behind 90] Freeze CR register: source of truth moved to hub DB
+  task/about-fabricated-stats-2026-09-01                      ddfc025e57c8ce756300f7e449833077fba37ee2 [origin/main: ahead 1, behind 184] content: remove unsourced ERP ROI benchmark stats from /about
++ task/hex-tokens-core-2026-09-01                             eff116532815a8c5e73edecc34bd47c9d8ce33f8 (D:/apps/worktrees/decoded-ops-website/hex-tokens-core) [origin/main: ahead 1, behind 180] chore: replace Tailwind hex colour classes with design-system tokens in core marketing pages
+  task/hex-tokens-core-v2-2026-09-02                          bd02b2e04635fc6945e0e6a9789ba3e56f54f7cd [origin/main: ahead 1, behind 180] hex-to-token: capture three stranded replacements left uncommitted by the lane
+  task/hex-tokens-core-v3-2026-09-04                          a5b8c56578d2eedeb2c989ad5dcb13107a8fd4da [origin/main: behind 39] hex-to-token: capture three stranded replacements left uncommitted by the lane
+  task/hex-tokens-unit-b-2026-09-04                           17acda2069fd378e6442e79a85162aa1e73c200b [origin/main: behind 38] hex-to-token: swap 5 arbitrary hex colour classes for DS tokens in /resources/decoded-method
+  task/lane-a-proof-2026-07-30                                e4e2d480ee9812d063be8fac8e84cae5ec4bac2c [origin/main: behind 210] docs: add CLAUDE.md architecture map
+  task/remove-supabase-secrets-2026-09-02                     c7dae3c2920aa1d847ac5a2c7423596f07b50b9a [origin/staging: behind 58] chore(security): remove dead Supabase migration scripts and a committed client-data SQL dump
+  task/tools-ds-tokens-2026-08-27                             5a46727d11f77f6d791ef8c80fb1218bc4eb093a [origin/main: behind 197] refactor(tools): swap hardcoded hex colour classes for DS tokens
+  voice-core-2026-08-02                                       44966fc4799a3489dc1997162b91a0f07cb56762 [origin/staging: behind 141] Voice sweep: fix em dashes and voice violations across flagship core pages
+  voice-legal-2026-08-02                                      8f5cb63134a9e70469dee218b564cab8cee1472d [origin/staging: behind 140] Voice sweep: rewrite legal/utility pages to first-person singular
+  voice-misc-2026-08-02                                       7251d4e149f0a9151f0221d5cce2ccb73526cb8a [origin/staging: behind 142] Voice sweep: fix em dashes and voice violations across tools/resources/locations/small-business/blog
+  voice-problems-2026-08-02                                   57a4a70de8d51eb10c7c86154dd1da6113f662a0 [origin/staging: behind 144] Voice sweep: fix em dashes and voice violations across app/problems/**
+  voice-sectors-2026-08-02                                    5b6e2478f525aab20e4d3b7923eb7e4b0d4a6f68 [origin/staging: behind 143] Voice sweep: fix em dashes and voice violations across app/sectors/**
+  remotes/origin/HEAD                                         -> origin/main
+  remotes/origin/claude/decoded-ops-seo-content-review-9727b8 36289f34bd13d85c1360732ba5e655c5f0f65caf docs: fix stale staging Coolify uuid in CLAUDE.md
+  remotes/origin/claude/staging-design-review-2d366a          55bb556753b32ae518aabec134967fb7f410826d Session records: staging review report, ERP positioning brief pack, loop-status log
+  remotes/origin/ds-impl/lane-0-foundation                    6507d5ff3b47375adef18c93bc0545fce665e42c lane-0: log push confirmation to loop-status.md
+  remotes/origin/ds-impl/lane-a                               4a8df16cc1109d4cc71f95dc004c0be3d63b9557 lane-a: port 5 system pages from decoded-marketing mockups onto ds-marketing.css
+  remotes/origin/ds-impl/lane-b                               1a23881c2563d6da66c67a3b1648390c35e475b2 DS impl Lane B: port 4 core pages from decoded-marketing mockups (ds-marketing.css classes, not Tailwind)
+  remotes/origin/ds-impl/lane-c                               184c228f0c3eb1a165a1b0df8f9f99615b21dd19 chore: lane-c progress log
+  remotes/origin/ds-impl/lane-d                               b8dfec4940873a6f7b94324ce524e5e903c14be9 DS implementation Lane D: rebuild ERP-failure anchor page, reskin 8 problem pages
+  remotes/origin/ds-impl/lane-e                               204b4df12be1029353e308693810355b0b804d3e lane-e: reskin case-studies index onto ds-marketing.css with log-list layout and sourced stat pulls
+  remotes/origin/ds-impl/lane-f                               35cea6145851e7285da2416cbfbfe755bce3b926 lane-f: reskin Units 2-7 onto ds-marketing.css classes
+  remotes/origin/main                                         2426fc958489c0fd170664fff20c6f21f2bc1b3d fix: hero image sizes - thread-spools loading w=3840 on mobile
+  remotes/origin/nav-mega-menu-2026-08-06                     015ca0d2128c24254cb99dc5393d21b97a115a53 Rebuild header nav as a mega menu, close the orphaned-page gap
+  remotes/origin/staging                                      8991c4daa90f19b0d040f018e8457cada302b300 CR-WEB-025 Part 2: stop staging being indexed by search engines
+printf: The term 'printf' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+✱ Glob "**/LANE-REPORT-about-hero-404.md" in . · 0 matches
+
+$ git show HEAD:app/about/page.tsx | rg -n "thread-spools|<Image|<img"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+✱ Grep "heroShot|\.photo|hero-split|heroSplit" in . · 6 matches
+
+# Todos
+[✓] Locate the About hero image reference and existing public image
+[✓] Update the About hero path and add a sensible image sizes attribute if needed
+[•] Commit the smallest fix before verification
+[ ] Run typecheck and confirm the target image path exists
+[ ] Write LANE-REPORT-about-hero-404.md with change and proof
+
+$ Get-ChildItem -LiteralPath "D:\apps\worktrees\decoded-ops-website\lane-about-hero-404\public\images\sectors" -Filter "thread-spools.jpg" | ForEach-Object { "$($_.Mode) $($_.LastWriteTime.ToString('yyyy-MM-dd HH:mm:ss')) $($_.Length) $($_.Name)" }
+-a--- 2026-09-10 08:10:51 163165 thread-spools.jpg
+
+← Write LANE-REPORT-about-hero-404.md
+Wrote file successfully.
+
+$ git status --short && git diff -- LANE-REPORT-about-hero-404.md
+?? LANE-REPORT-about-hero-404.md
+
+$ git add -- LANE-REPORT-about-hero-404.md && git commit -m "docs: record BUG-WEB-012 hero image fix"
+warning: in the working copy of 'LANE-REPORT-about-hero-404.md', LF will be replaced by CRLF the next time Git touches it
+[lane/about-hero-404 0616b1d] docs: record BUG-WEB-012 hero image fix
+ 1 file changed, 23 insertions(+)
+ create mode 100644 LANE-REPORT-about-hero-404.md
+
+# Todos
+[✓] Locate the About hero image reference and existing public image
+[✓] Update the About hero path and add a sensible image sizes attribute if needed
+[✓] Commit the smallest fix before verification
+[•] Run typecheck and confirm the target image path exists
+[✓] Write LANE-REPORT-about-hero-404.md with change and proof
+
+$ npx tsc --noEmit
+                                                                               
+                This is not the tsc command you are looking for                
+                                                                               
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+
+$ Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\lane-about-hero-404\public\images\sectors\thread-spools.jpg" -PathType Leaf
+True
+
+$ git status --short --branch && git log -1 --oneline
+## lane/about-hero-404...origin/main [ahead 1]
+0616b1d docs: record BUG-WEB-012 hero image fix
+
+✱ Glob "package*.json" in . · 2 matches
+✱ Glob "node_modules/.bin/tsc.cmd" in . · 0 matches
+→ Read package.json [limit=160, offset=1]
+The source path is already corrected in the branch, so I committed the lane report without changing product code. The requested typecheck cannot run yet because this worktree has no dependencies; I’m installing from the existing lockfile, then I’ll rerun it.
+
+$ npm ci
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 412 packages, and audited 413 packages in 17s
+npm warn allow-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+150 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ npx tsc --noEmit
+(no output)
+
+→ Read LANE-REPORT-about-hero-404.md [limit=100, offset=1]
+
+← Edit LANE-REPORT-about-hero-404.md
+Index: D:\apps\worktrees\decoded-ops-website\lane-about-hero-404\LANE-REPORT-about-hero-404.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-about-hero-404\LANE-REPORT-about-hero-404.md
++++ D:\apps\worktrees\decoded-ops-website\lane-about-hero-404\LANE-REPORT-about-hero-404.md
+@@ -20,4 +20,9 @@
+ -a--- 2026-09-10 08:10:51 163165 thread-spools.jpg
+ ```
+ 
+ Target path: `public/images/sectors/thread-spools.jpg`
++
++## Verification
++
++- `npx tsc --noEmit`: clean. Dependencies were installed from the existing `package-lock.json` because the worktree initially had no `node_modules`.
++- Exact-path existence check: `True`.
+
+
+$ git add -- LANE-REPORT-about-hero-404.md && git commit -m "docs: add BUG-WEB-012 verification results"
+warning: in the working copy of 'LANE-REPORT-about-hero-404.md', LF will be replaced by CRLF the next time Git touches it
+[lane/about-hero-404 60c715a] docs: add BUG-WEB-012 verification results
+ 1 file changed, 5 insertions(+)
+
+# Todos
+[✓] Locate the About hero image reference and existing public image
+[✓] Update the About hero path and add a sensible image sizes attribute if needed
+[✓] Commit the smallest fix before verification
+[✓] Run typecheck and confirm the target image path exists
+[✓] Write LANE-REPORT-about-hero-404.md with change and proof
+
+$ npx tsc --noEmit
+(no output)
+
+$ Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\lane-about-hero-404\public\images\sectors\thread-spools.jpg" -PathType Leaf; git status --short --branch; git log -2 --oneline
+True
+## lane/about-hero-404...origin/main [ahead 2]
+60c715a docs: add BUG-WEB-012 verification results
+0616b1d docs: record BUG-WEB-012 hero image fix
+
+✱ Grep "src="/images/sectors/thread-spools\.jpg"|src="/assets/commerce/thread-spools" in . · 1 match
+BUG-WEB-012 was already fixed in branch commit `8f38b5b`: `app/about/page.tsx:50` uses `/images/sectors/thread-spools.jpg`. The native `<img>` needs no `sizes`.
+
+Added `LANE-REPORT-about-hero-404.md` in commits `0616b1d` and `60c715a`. `npx tsc --noEmit` is clean and the target file exists. No push.

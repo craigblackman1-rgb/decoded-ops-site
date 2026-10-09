@@ -1,0 +1,182 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m# [0mTodos
+[ ] Fix pricing page lead paragraph (app/pricing/page.tsx ~line 101)
+[ ] Fix Retained minimum term wording (app/retained/page.tsx) — two+ places
+[ ] Fix Header mega-menu scope wording (components/Header.tsx ~line 339)
+[ ] Run tsc --noEmit, commit all changes
+[ ] Write lane report files and commit
+[0m
+[0m→ [0mRead app/pricing/page.tsx[90m [offset=90, limit=25][0m
+[0m→ [0mRead app/retained/page.tsx
+[0m→ [0mRead components/Header.tsx[90m [offset=325, limit=30][0m
+[0m
+[0m# [0mTodos
+[•] Fix pricing page lead paragraph (app/pricing/page.tsx ~line 101)
+[ ] Fix Retained minimum term wording (app/retained/page.tsx) — two+ places
+[ ] Fix Header mega-menu scope wording (components/Header.tsx ~line 339)
+[ ] Run tsc --noEmit, commit all changes
+[ ] Write lane report files and commit
+[0m
+[0m← [0mEdit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\pricing\page.tsx
+@@ -97,9 +97,9 @@
+ <section className="g-white">
+   <div className="container">
+     <p className="eyebrow">Consultancy</p>
+     <h2>Diagnosis, then delivery.</h2>
+-    <p className="lead" style={{ marginTop: 16 }}>Diagnosed, then delivered. Clarity Audit is the
++    <p className="lead" style={{ marginTop: 16 }}>Priced to the scope of your operation, not your turnover. Clarity Audit is the
+       entry point into everything below it.</p>
+ 
+     <div className="table-wrap" style={{ marginTop: 28 }}>
+       <table className="ds-table ds-table--fixed">
+
+[0m
+Now let me make all three edits and grep for other "no minimum" in retained.
+[0m✱ [0mGrep "no minimum"[90m in app/retained · 3 matches[0m
+[0m
+[0m← [0mEdit app/retained/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\retained\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\retained\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\retained\page.tsx
+@@ -52,9 +52,9 @@
+ },
+ {
+   '@type': 'Question',
+   name: 'What are the three tiers?',
+-  acceptedAnswer: { '@type': 'Answer', text: 'Essential, Recommended and Complete. Each covers a wider scope of involvement, and which one fits is set at the audit by the size and shape of your operation. Retained runs rolling monthly, with no minimum term.' },
++  acceptedAnswer: { '@type': 'Answer', text: 'Essential, Recommended and Complete. Each covers a wider scope of involvement, and which one fits is set at the audit by the size and shape of your operation. Retained runs on a 12-month minimum, then rolling monthly.' },
+ },
+ {
+   '@type': 'Question',
+   name: 'When does a fractional CTO relationship not work?',
+
+[0m
+[0m← [0mEdit app/retained/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\retained\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\retained\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\retained\page.tsx
+@@ -153,9 +153,9 @@
+       </div>
+     </div>
+ 
+     <div className="inset" style={{ maxWidth: 'none' }}>
+-      <b>Rolling monthly, no minimum term.</b> The scope is agreed at the start, and which tier fits
++      <b>12-month minimum, then rolling monthly.</b> The scope is agreed at the start, and which tier fits
+       is set at the audit by the size and shape of your operation.
+     </div>
+   </div>
+ </section>
+
+[0m
+[0m← [0mEdit app/retained/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\retained\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\retained\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\app\retained\page.tsx
+@@ -211,10 +211,10 @@
+               strokeOpacity=".22"/>
+         <text x="60" y="700" className="p-ink" fontFamily="Outfit,sans-serif"
+               fontWeight="600" fontSize="24" opacity=".9">Each tier covers a wider scope.
+           Set at the audit.</text>
+-        <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">Rolling
+-          monthly, no minimum term.</text>
++        <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">12-month minimum,
++          then rolling monthly.</text>
+       </g>
+     </Artwork>
+   </div>
+ </div>
+
+[0m
+[0m← [0mEdit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\components\Header.tsx
+@@ -335,9 +335,9 @@
+ </div>
+ <MegaGroup group={smallBusinessStart} onNavigate={() => { closePanel(); setMobileOpen(false); }} />
+ <div className="smallbiz-cta-band">
+   <div className="band-text">
+-    <h3>Bigger than £1m?</h3>
++    <h3>More than one site or system?</h3>
+     <p>Then the on-site work is a better fit, same steps, done in person.</p>
+   </div>
+   <div className="band-actions">
+     <Link className="btn btn--primary btn--sm" href="/contact" onClick={() => { closePanel(); setMobileOpen(false); }}>Book a free 60-min call</Link>
+
+[0m
+Three matches — the FAQ JSON-LD at line 56, the inset at line 157, and the SVG text at line 215–216. Let me fix all three plus the header.
+[0m# [0mTodos
+[✓] Fix pricing page lead paragraph (app/pricing/page.tsx ~line 101)
+[✓] Fix Retained minimum term wording (app/retained/page.tsx) — two+ places
+[✓] Fix Header mega-menu scope wording (components/Header.tsx ~line 339)
+[•] Run tsc --noEmit, commit all changes
+[ ] Write lane report files and commit
+[0m
+All edits applied. The sub-copy under the header still reads sensibly — no turnover language. Let me run tsc.
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+tsc is clean. Committing.
+[0m$ [0mgit add -A && git commit -m "CR-WEB-069: copy fixes (pricing lead, Retained minimum term, header scope wording)"
+warning: in the working copy of '.context/price-audit.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/pricing/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/retained/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[inf073-u1-web-pricing 4609fd8] CR-WEB-069: copy fixes (pricing lead, Retained minimum term, header scope wording)
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+[0m
+[0m# [0mTodos
+[✓] Fix pricing page lead paragraph (app/pricing/page.tsx ~line 101)
+[✓] Fix Retained minimum term wording (app/retained/page.tsx) — two+ places
+[✓] Fix Header mega-menu scope wording (components/Header.tsx ~line 339)
+[✓] Run tsc --noEmit, commit all changes
+[•] Write lane report files and commit
+[0m
+Committed as `4609fd8`. Now the lane exit contract.
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\inf073-u1-web-pricing\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-inf073-u1b-web-copy.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-inf073-u1b-web-copy.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "CR-WEB-069: lane reports for copy fixes"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-inf073-u1b-web-copy.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-inf073-u1b-web-copy.json', LF will be replaced by CRLF the next time Git touches it
+[inf073-u1-web-pricing 0555e95] CR-WEB-069: lane reports for copy fixes
+ 2 files changed, 35 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-inf073-u1b-web-copy.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-inf073-u1b-web-copy.json
+[0m
+Let me update the lane report with the correct sha for the commits array.
+[0m→ [0mRead .context/lane-reports/LANE-RESULT-inf073-u1b-web-copy.json
+[0m
+[0m# [0mTodos
+[✓] Fix pricing page lead paragraph (app/pricing/page.tsx ~line 101)
+[✓] Fix Retained minimum term wording (app/retained/page.tsx) — two+ places
+[✓] Fix Header mega-menu scope wording (components/Header.tsx ~line 339)
+[✓] Run tsc --noEmit, commit all changes
+[✓] Write lane report files and commit
+[0m
+The JSON is accurate — sha `4609fd8` is the work commit, sha `0555e95` is the reporting commit itself. All done.
+All done. Two commits on `inf073-u1-web-pricing`:
+
+**`4609fd8`** — CR-WEB-069: copy fixes (pricing lead, Retained minimum term, header scope wording)
+- `app/pricing/page.tsx:101` — "Diagnosed, then delivered." → "Priced to the scope of your operation, not your turnover."
+- `app/retained/page.tsx:56,157,215` — three instances of "Rolling monthly, no minimum term." → "12-month minimum, then rolling monthly." (matches `pricing-v11.json`)
+- `components/Header.tsx:339` — "Bigger than £1m?" → "More than one site or system?" — sub-copy unchanged, reads sensibly
+
+**`0555e95`** — Lane report files committed.
+
+tsc clean. No push.

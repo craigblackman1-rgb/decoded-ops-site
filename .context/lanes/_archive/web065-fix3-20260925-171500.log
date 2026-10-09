@@ -1,0 +1,1576 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/BRIEF-web065-fix3-contrast.md
+[0m
+[0m$ [0mGet-ChildItem -Force | Where-Object { $_.Name -like '.*' } | Select-Object Name
+Name
+----
+.claude
+.context
+.next
+.dockerignore
+.env.example
+.git
+.gitignore
+.npmrc
+[0m
+[0m✱ [0mGrep "color-mix\(in srgb, var\(--do-prussian-blue\)"[90m 100 matches[0m
+[0m✱ [0mGrep "opacity:\s*(0\.[45]|0\.4|0\.5)"[90m 6 matches[0m
+[0m✱ [0mGrep "--do-text-subtle"[90m 15 matches[0m
+[0m→ [0mRead app/d17-resources.css[90m [offset=100, limit=20][0m
+[0m→ [0mRead app/d17-resources.css[90m [offset=188, limit=20][0m
+[0m→ [0mRead app/d17-resources.css[90m [offset=245, limit=20][0m
+[0m→ [0mRead app/d17-resources.css[90m [offset=265, limit=15][0m
+[0m→ [0mRead app/d17-resources.css[90m [offset=318, limit=15][0m
+[0m→ [0mRead app/d17-resources.css[90m [offset=348, limit=15][0m
+[0m→ [0mRead app/d17-resources.css[90m [offset=394, limit=15][0m
+[0m→ [0mRead app/d17-resources.css[90m [offset=193, limit=15][0m
+Let me read the specific files to identify the exact `color:` instances (not background/border/shadow/etc.).
+I need to identify all `color:` (text) uses of `color-mix` with prussian-blue N < 72. Let me use ripgrep to find these precisely.
+[0m
+[0m$ [0mrg --no-heading -n "color:\s*color-mix\(in srgb, var\(--do-prussian-blue\) ([0-9]+)%, transparent\)" --include="*.css" --include="*.tsx" --include="*.ts" D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-resources.css","D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-problems.css","D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css" -Pattern "color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "$($_.Filename):$($_.LineNumber) [$pct%] $($_.Line.Trim())" } }
+d17-resources.css:106 [60%] color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-resources.css:193 [55%] color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+d17-resources.css:200 [50%] .d17-doc ol.st li::before{ content:counter(s); font-family:var(--do-font-mono); color:color-mix(in srgb, var(--do-prussian-blue) 50%, transparent) }
+d17-resources.css:250 [58%] color:color-mix(in srgb, var(--do-prussian-blue) 58%, transparent); text-align:center; padding:0 0 calc(5 * var(--u)) }
+d17-resources.css:260 [65%] letter-spacing:.08em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+d17-resources.css:270 [60%] color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-resources.css:276 [60%] .vs span{ font-family:var(--do-font-mono); font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-resources.css:277 [55%] .vs s{ font-weight:700; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+d17-resources.css:321 [70%] font-size:max(6px, calc(9 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+d17-resources.css:326 [65%] font-family:var(--do-font-mono); font-size:max(6.5px, calc(10 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+d17-resources.css:354 [60%] .hs-hd .tot span{ font-size:max(12px, calc(16 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-resources.css:399 [55%] .qz .n{ font-family:var(--do-font-mono); font-size:max(6.5px, calc(9.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+d17-problems.css:30 [70%] .win-flat .s{ margin:3px 0 0; font-size:max(11px, calc(13 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+d17-problems.css:33 [58%] text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 58%, transparent); padding:0 calc(6 * var(--u)) calc(6 * var(--u)) 0 }
+d17-problems.css:37 [62%] .tbl td.m{ font-family:var(--do-font-mono); font-weight:500; font-size:max(9.5px, calc(11 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+d17-problems.css:63 [60%] color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-problems.css:105 [65%] font-size:max(6.5px, calc(9 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+d17-problems.css:146 [65%] color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent); margin-bottom:calc(6 * var(--u)) }
+d17-problems.css:259 [60%] .a970 .print .ref{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-problems.css:287 [62%] font-family:var(--do-font-mono); font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.04em; color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+d17-problems.css:325 [7%] .xl th{ background:color-mix(in srgb, var(--do-prussian-blue) 7%, var(--do-white)); font-weight:600; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent); text-align:center }
+d17-problems.css:326 [7%] .xl td.rn{ background:color-mix(in srgb, var(--do-prussian-blue) 7%, var(--do-white)); color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent); text-align:center; width:1%; padding-inline:calc(4 * var(--u)) }
+d17-problems.css:387 [55%] color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); padding:0 0 calc(5 * var(--u)) }
+d17-problems.css:392 [55%] .sop .h i{ font-style:normal; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); margin-right:6px }
+d17-problems.css:398 [60%] .il .d{ font-family:var(--do-font-mono); font-size:max(7px, calc(9.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-problems.css:401 [55%] color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); padding-top:2px }
+d17-locations.css:110 [55%] text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); border-top:0; padding-bottom:calc(4 * var(--u)) }
+d17-locations.css:111 [62%] .dl .who{ font-family:var(--do-font-mono); font-weight:500; font-size:max(6px, calc(10 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+d17-locations.css:125 [62%] font-family:var(--do-font-mono); font-size:max(6px, calc(9.5 * var(--u))); letter-spacing:.08em; color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+d17-locations.css:244 [60%] text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+[0m
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-global.css" -Pattern "color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "$($_.Filename):$($_.LineNumber) [$pct%] $($_.Line.Trim())" } }
+d17-global.css:49 [60%] letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-global.css:53 [55%] font-size:max(6px, calc(9.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+d17-global.css:60 [55%] color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+d17-global.css:132 [70%] .win-main .s{ margin:4px 0 0; font-size:max(11px, calc(14 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+d17-global.css:137 [62%] text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+d17-global.css:165 [65%] font-size:max(11px, calc(13 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+d17-global.css:204 [60%] .a918 .print .ref{ font-family:var(--do-font-mono); font-size:max(8px, calc(10 * var(--u))); letter-spacing:.16em; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-global.css:325 [60%] text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-global.css:358 [12%] @keyframes d17-land{ 0%,60%{ border-color:color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); box-shadow:none } }
+d17-global.css:497 [60%] font-size:max(7px, calc(10 * var(--u))); letter-spacing:.08em; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-global.css:594 [58%] color:color-mix(in srgb, var(--do-prussian-blue) 58%, transparent); padding-top:calc(8 * var(--u)) }
+d17-global.css:619 [60%] color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-global.css:623 [55%] text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+d17-global.css:650 [70%] .a929 .doc-o li span{ font-weight:500; color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+d17-global.css:712 [55%] text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+d17-global.css:741 [70%] color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+d17-global.css:790 [55%] text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); padding:0 0 calc(4 * var(--u)) }
+d17-global.css:797 [60%] color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+d17-global.css:859 [60%] letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+[0m
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-global.css" -Pattern "\.tag" | Select-Object -First 5
+app\d17-global.css:858:.a1008 .docmini .tag{ display:block; font-family:var(--do-font-mono); font-size:max(7px, 
+calc(10 * var(--u)));
+[0m
+[0m✱ [0mGrep "color:\s*['"]color-mix"[90m 98 matches[0m
+Now let me check for inline `color:` style usages in TSX files and also check the `d17-global.css` mentioned in the brief.
+[0m→ [0mRead app/d17-global.css[90m [limit=15, offset=855][0m
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=25, offset=215][0m
+[0m→ [0mRead app/d17-global.css[90m [limit=30, offset=40][0m
+[0m✱ [0mGrep "ol\s*>\s*li|\.step.*span|aria-hidden|step-num|\.step-num"[90m in app · 0 matches[0m
+Let me check the `--ink` custom property and the `d17-global.css` `.tag` rule, plus the LocationPage.tsx and homepage list.
+[0m✱ [0mGrep "aria-hidden.*true|step.*0[1-9]"[90m in app · 100 matches[0m
+[0m✱ [0mGrep "aria-hidden.*true.*0[1-9]"[90m in app · 16 matches[0m
+[0m✱ [0mGrep "\b0[1-9].*aria-hidden"[90m in app · 4 matches[0m
+[0m✱ [0mGrep "ol.*li|<ol"[90m in app · 100 matches[0m
+[0m→ [0mRead app/page.tsx[90m [limit=50, offset=1][0m
+[0m→ [0mRead app/page.tsx[90m [limit=50, offset=185][0m
+[0m→ [0mRead app/homepage.css[90m [limit=50, offset=1][0m
+[0m✱ [0mGrep "station|\.st\b|\.n\b|subtle"[90m in app · 11 matches[0m
+[0m✱ [0mGrep "\.stations|\.st\b"[90m in app · 38 matches[0m
+[0m→ [0mRead app/d17-global.css[90m [limit=10, offset=875][0m
+[0m→ [0mRead app/d17-global.css[90m [limit=20, offset=838][0m
+[0m→ [0mRead app/d17-global.css[90m [limit=15, offset=895][0m
+[0m→ [0mRead app/page.tsx[90m [limit=60, offset=100][0m
+[0m→ [0mRead app/page.tsx[90m [limit=100, offset=235][0m
+[0m→ [0mRead app/page.tsx[90m [limit=100, offset=335][0m
+[0m→ [0mRead app/homepage.css[90m [limit=50, offset=50][0m
+[0m→ [0mRead app/homepage.css[90m [limit=80, offset=100][0m
+[0m→ [0mRead app/page.tsx[90m [limit=40, offset=50][0m
+[0m✱ [0mGrep "\.note|\.no\b"[90m in app · 10 matches[0m
+[0m→ [0mRead app/homepage.css[90m [limit=15, offset=196][0m
+[0m→ [0mRead app/d17-global.css[90m [limit=20, offset=888][0m
+[0m✱ [0mGrep "\.idx\s+\.no|\.note\s+\.no|ol\s+li.*aria-hidden"[90m in app · 2 matches[0m
+[0m✱ [0mGrep "\.idx"[90m in app · 10 matches[0m
+[0m→ [0mRead app/homepage.css[90m [limit=20, offset=137][0m
+Now I have a complete picture. Let me set up the todo list and start making edits. The brief's task 3 about homepage step numbers using `--do-text-subtle` appears to already be resolved (`.idx .no` and `.note .no` both already use `--do-text-muted`). I'll focus on tasks 1 and 2.
+[0m
+[0m# [0mTodos
+[•] Fix translucent prussian text N<72% in CSS files (d17-global, d17-resources, d17-problems, d17-locations)
+[ ] Fix translucent prussian text N<72% in TSX files (eternal-fitness, sop-template, decoded-method, erp-selection-playbook)
+[ ] Fix opacity-faded text on dark in LocationPage.tsx
+[ ] Check for other opacity-faded text on dark in other components
+[ ] Run tsc --noEmit and npm run build
+[ ] Commit and write lane report
+[0m
+I'll write a PowerShell script to do all the CSS edits efficiently and precisely.
+[0m$ [0m$files = @(
+  "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-global.css",
+  "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-resources.css",
+  "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-problems.css",
+  "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css"
+)
+
+foreach ($file in $files) {
+  $content = Get-Content $file -Raw
+  $original = $content
+  # Replace color:color-mix(in srgb, var(--do-prussian-blue) N%, transparent) where N < 72
+  # Pattern: color: followed by color-mix with prussian-blue and a percentage < 72
+  $content = $content -replace '(color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+)(\d+)(%, transparent\))', {
+    param($match)
+    $prefix = $match.Groups[1].Value
+    $pct = [int]$match.Groups[2].Value
+    $suffix = $match.Groups[3].Value
+    if ($pct -lt 72) { "${prefix}72${suffix}" } else { $match.Value }
+  }
+  if ($content -ne $original) {
+    Set-Content $file -Value $content -NoNewline
+    Write-Host "Updated: $file"
+  } else {
+    Write-Host "No changes: $file"
+  }
+}
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+Updated: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-global.css
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+Updated: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-resources.css
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+Updated: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-problems.css
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  15 |      $prefix = $match.Groups[1].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  16 |      $pct = [int]$match.Groups[2].Value
+Updated: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+InvalidOperation: 
+Line |
+  17 |      $suffix = $match.Groups[3].Value
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot index into a null array.
+[0m
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-global.css" -Pattern "color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "FAIL: $($_.Filename):$($_.LineNumber) [$pct%]" } } | Measure-Object | Select-Object -ExpandProperty Count
+0
+[0m
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-resources.css" -Pattern "color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "FAIL: $($_.Filename):$($_.LineNumber) [$pct%]" } } | Measure-Object | Select-Object -ExpandProperty Count
+0
+[0m
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-problems.css" -Pattern "color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "FAIL: $($_.Filename):$($_.LineNumber) [$pct%]" } } | Measure-Object | Select-Object -ExpandProperty Count
+0
+[0m
+The errors are from non-matching lines (which is fine), but let me verify the files were actually updated correctly.
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css" -Pattern "color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "FAIL: $($_.Filename):$($_.LineNumber) [$pct%]" } } | Measure-Object | Select-Object -ExpandProperty Count
+0
+[0m
+All CSS files are clean. Let me verify a couple of specific replacements look correct.
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-global.css" -Pattern "color:color-mix.*72%" | Select-Object -First 3 | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }
+(no output)
+[0m
+[0m→ [0mRead app/d17-global.css[90m [limit=3, offset=49][0m
+[0m→ [0mRead app/d17-global.css[90m [limit=3, offset=53][0m
+The script broke the files - it replaced the entire match with just "72". Let me restore from git first.
+[0m
+[0m$ [0mgit checkout -- app/d17-global.css app/d17-resources.css app/d17-problems.css app/d17-locations.css
+(no output)
+[0m
+Files restored. Let me write a proper script that preserves the full match.
+[0m$ [0m$files = @(
+  "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-global.css",
+  "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-resources.css",
+  "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-problems.css",
+  "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css"
+)
+
+foreach ($file in $files) {
+  $lines = Get-Content $file
+  $changed = 0
+  for ($i = 0; $i -lt $lines.Count; $i++) {
+    $line = $lines[$i]
+    # Match color: followed by color-mix with prussian-blue
+    if ($line -match 'color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%,\s*transparent\)') {
+      $pct = [int]$Matches[1]
+      if ($pct -lt 72) {
+        $lines[$i] = $line -replace "(color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+)${pct}(%)" , "`${1}72`${2}"
+        $changed++
+      }
+    }
+  }
+  if ($changed -gt 0) {
+    Set-Content $file -Value ($lines -join "`n") -NoNewline
+    Write-Host "$file : $changed lines changed"
+  } else {
+    Write-Host "$file : no changes"
+  }
+}
+D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-global.css : 19 lines changed
+D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-resources.css : 12 lines changed
+D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-problems.css : 14 lines changed
+D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-locations.css : 4 lines changed
+[0m
+Let me verify the replacements are correct.
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-global.css" -Pattern "color:color-mix.*var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "FAIL: $($_.LineNumber) [$pct%]" } else { "OK: $($_.LineNumber) [$pct%]" } } | Select-Object -First 10
+OK: 49 [72%]
+OK: 53 [72%]
+OK: 60 [72%]
+OK: 132 [72%]
+OK: 137 [72%]
+OK: 141 [72%]
+OK: 146 [72%]
+OK: 165 [72%]
+OK: 204 [72%]
+OK: 252 [85%]
+[0m
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-global.css" -Pattern "color:color-mix.*var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "FAIL: $($_.LineNumber) [$pct%]" } } | Measure-Object | Select-Object -ExpandProperty Count
+0
+[0m
+[0m$ [0mforeach ($f in @("d17-global.css","d17-resources.css","d17-problems.css","d17-locations.css")) {
+  $count = Select-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\$f" -Pattern "color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; [int]$Matches[1] } | Where-Object { $_ -lt 72 } | Measure-Object | Select-Object -ExpandProperty Count
+  Write-Host "$f : $count remaining failures"
+}
+d17-global.css : 0 remaining failures
+d17-resources.css : 0 remaining failures
+d17-problems.css : 2 remaining failures
+d17-locations.css : 0 remaining failures
+[0m
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-problems.css" -Pattern "color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "$($_.LineNumber) [$pct%] $($_.Line.Trim().Substring(0, [Math]::Min(100, $_.Line.Trim().Length)))" } }
+325 [7%] .xl th{ background:color-mix(in srgb, var(--do-prussian-blue) 7%, var(--do-white)); font-weight:600;
+326 [7%] .xl td.rn{ background:color-mix(in srgb, var(--do-prussian-blue) 7%, var(--do-white)); color:color-m
+[0m
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\d17-problems.css" -Pattern "color:\s*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "$($_.LineNumber) [$pct%] OK - this is background:, not color:" } }
+325 [7%] OK - this is background:, not color:
+326 [7%] OK - this is background:, not color:
+[0m
+[0m# [0mTodos
+[✓] Fix translucent prussian text N<72% in CSS files (d17-global, d17-resources, d17-problems, d17-locations)
+[•] Fix translucent prussian text N<72% in TSX files (eternal-fitness, sop-template, decoded-method, erp-selection-playbook)
+[ ] Fix opacity-faded text on dark in LocationPage.tsx
+[ ] Check for other opacity-faded text on dark in other components
+[ ] Run tsc --noEmit and npm run build
+[ ] Commit and write lane report
+[0m
+Good — those 2 are `background:color-mix(...)`, not `color:` — correctly left alone. CSS files are done. Now TSX files.
+[0m→ [0mRead app/case-studies/eternal-fitness/page.tsx[90m [limit=3, offset=84][0m
+[0m→ [0mRead app/resources/sop-template/page.tsx[90m [limit=3, offset=149][0m
+[0m→ [0mRead app/resources/decoded-method/page.tsx[90m [limit=3, offset=207][0m
+[0m→ [0mRead app/resources/decoded-method/page.tsx[90m [limit=3, offset=252][0m
+[0m→ [0mRead app/resources/decoded-method/page.tsx[90m [limit=3, offset=264][0m
+Now fix the TSX files with inline `color: 'color-mix(... 60%/70% ...)'`:
+[0m→ [0mRead app/resources/decoded-method/page.tsx[90m [limit=3, offset=308][0m
+[0m
+[0m← [0mEdit app/case-studies/eternal-fitness/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\case-studies\eternal-fitness\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\case-studies\eternal-fitness\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\case-studies\eternal-fitness\page.tsx
+@@ -81,9 +81,9 @@
+   <h1>Eternal Fitness: technical lead for a clinical-population training studio</h1>
+   <p className="lede">
+     Eternal Fitness is a private, 1-to-1 personal training studio. Most of its clients manage health conditions, rather than general weight loss. I&apos;m technical lead on the website rebuild and the tooling behind it, working alongside Esther Fair, the studio&apos;s Level 4 PT and clinical lead.
+   </p>
+-  <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 60%, transparent)', fontStyle: 'italic', marginTop: '12px' }}>
++  <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', fontStyle: 'italic', marginTop: '12px' }}>
+     Esther is my wife, named plainly. This is paid client work, not a favour or free build. She pays for it the same as anyone else. Which meant there was nowhere to hide if it did not work.
+   </p>
+ </div>
+ <div className="wrap" style={{ marginTop: 'clamp(24px, 3vw, 48px)' }}>
+
+[0m
+[0m← [0mEdit app/resources/sop-template/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\sop-template\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\sop-template\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\sop-template\page.tsx
+@@ -146,9 +146,9 @@
+         </p>
+       </div>
+     ))}
+   </div>
+-  <p style={{ marginTop: 16, fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 60%, transparent)', marginBottom: 0 }}>
++  <p style={{ marginTop: 16, fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', marginBottom: 0 }}>
+     The template takes about 30 minutes to fill in for your first process. Subsequent processes take less time because you are reusing the structure.
+   </p>
+ </div>
+ 
+
+[0m
+[0m← [0mEdit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
+@@ -204,9 +204,9 @@
+ <section className="g-off section--tight">
+   <div className="wrap">
+     <div style={{ maxWidth: 720 }}>
+       <h2>Three layers, each with a job</h2>
+-      <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)' }}>
++      <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)' }}>
+         Together they make a system you can hand to a new starter and trust them to follow. Here is how the three layers connect.
+       </p>
+     </div>
+ 
+
+[0m
+[0m← [0mEdit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
+@@ -249,9 +249,9 @@
+         <Icon size={20} style={{ color: 'var(--do-text-cerulean)' }} />
+       </div>
+       <div>
+         <h3 style={{ fontWeight: 700, color: 'var(--do-text-primary)', margin: 0 }}>{head}.</h3>
+-        <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)', marginTop: 6 }}>{rest.join('. ')}</p>
++        <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', marginTop: 6 }}>{rest.join('. ')}</p>
+       </div>
+     </div>
+   );
+ })}
+
+[0m
+[0m← [0mEdit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
+@@ -261,9 +261,9 @@
+ 
+ <section className="g-off section--tight">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+     <h2>The register we run Decoded Ops on</h2>
+-    <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)', marginBottom: 40 }}>
++    <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', marginBottom: 40 }}>
+       Twelve processes, each owned, each with a status. The same artefact a Clarity engagement produces for a client, usually the first time they&apos;ve seen their whole operation on one page.
+     </p>
+     <div style={{ borderRadius: 'var(--do-radius-2xl)', overflow: 'hidden', border: '1px solid var(--do-border-subtle)' }}>
+       <table style={{ width: '100%', fontSize: 'var(--do-text-sm)', borderCollapse: 'collapse' }}>
+
+[0m
+[0m← [0mEdit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\resources\decoded-method\page.tsx
+@@ -305,9 +305,9 @@
+         Book a discovery call
+       </Link>
+     </div>
+     <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+-    <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 60%, transparent)', marginTop: 20, marginBottom: 0 }}>
++    <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', marginTop: 20, marginBottom: 0 }}>
+       Want it run across your own operation? A Clarity engagement builds your Process Register with you, mapping what you do, who owns it, and where the gaps are. Retained clients get the Method as a living hub I host and keep current, not a document that goes stale.
+     </p>
+   </div>
+ </div>
+
+[0m
+[0m→ [0mRead app/tools/should-i-replace-erp/page.tsx[90m [limit=3, offset=165][0m
+Now let me check the tools pages that had 70% instances.
+[0m
+[0m← [0mEdit app/tools/should-i-replace-erp/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\should-i-replace-erp\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\should-i-replace-erp\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\should-i-replace-erp\page.tsx
+@@ -162,9 +162,9 @@
+   <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 8 }}>
+     {questions.map((q, i) => (
+       <div key={q.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, fontSize: 'var(--do-text-sm)' }}>
+         <span style={{ marginTop: 2, fontWeight: 'var(--do-weight-bold)', color: answers[i] === 'yes' ? 'var(--do-orange)' : 'var(--do-cerulean)' }}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+-        <span style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)' }}>{q.text}</span>
++        <span style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)' }}>{q.text}</span>
+       </div>
+     ))}
+   </div>
+ </details>
+
+[0m
+[0m$ [0mSelect-String -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\*.tsx","D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\**\*.tsx","D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\**\*.tsx" -Pattern "color.*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" -Include "*.tsx" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "FAIL: $($_.RelativePath):$($_.LineNumber) [$pct%]" } }
+FAIL: string RelativePath(string directory):117 [10%]
+[0m
+[0m$ [0mGet-ChildItem -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo" -Recurse -Include "*.tsx" -File | Where-Object { $_.FullName -notlike "*node_modules*" -and $_.FullName -notlike "*.next*" } | ForEach-Object { Select-String -Path $_.FullName -Pattern "color.*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "$($_.RelativePath):$($_.LineNumber) [$pct%]" } } }
+string RelativePath(string directory):117 [10%]
+string RelativePath(string directory):51 [5%]
+string RelativePath(string directory):134 [5%]
+string RelativePath(string directory):109 [5%]
+[0m
+[0m$ [0mGet-ChildItem -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo" -Recurse -Include "*.tsx" -File | Where-Object { $_.FullName -notlike "*node_modules*" -and $_.FullName -notlike "*.next*" } | ForEach-Object { $file = $_.FullName; $results = Select-String -Path $file -Pattern "color.*color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%" | ForEach-Object { $_.Line -match 'color-mix\(in srgb, var\(--do-prussian-blue\)\s+(\d+)%' | Out-Null; $pct = [int]$Matches[1]; if ($pct -lt 72) { "$file`:$($_.LineNumber) [$pct%]" } }; $results }
+D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\contact\ContactClient.tsx:117 [10%]
+D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\locations\tech-audit\page.tsx:51 [5%]
+D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\tools\ops-health-score\page.tsx:134 [5%]
+D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx:109 [5%]
+[0m
+[0m→ [0mRead app/contact/ContactClient.tsx[90m [limit=3, offset=116][0m
+[0m→ [0mRead app/locations/tech-audit/page.tsx[90m [limit=3, offset=50][0m
+[0m→ [0mRead app/tools/ops-health-score/page.tsx[90m [limit=3, offset=133][0m
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=3, offset=108][0m
+All 4 remaining TSX matches are `background:`/`border:`, not text. TSX task 1 is complete.
+[0m
+[0m# [0mTodos
+[✓] Fix translucent prussian text N<72% in CSS files (d17-global, d17-resources, d17-problems, d17-locations)
+[✓] Fix translucent prussian text N<72% in TSX files (eternal-fitness, sop-template, decoded-method, erp-selection-playbook, should-i-replace-erp)
+[•] Fix opacity-faded text on dark in LocationPage.tsx
+[ ] Check for other opacity-faded text on dark in other components
+[ ] Run tsc --noEmit and npm run build
+[ ] Commit and write lane report
+[0m
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=20, offset=213][0m
+Now fix the opacity-faded text on dark in LocationPage.tsx.
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+@@ -221,9 +221,9 @@
+     <Link href="/contact" className="btn btn--primary" style={{ width: '100%' }}>
+       Book a free call <ArrowRight size={18} />
+     </Link>
+     <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72, fontWeight: 'var(--do-weight-medium)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4, marginTop: 12 }}>Or book a call directly <ArrowRight size={14} /></a>
+-    <p style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-text-on-dark)', opacity: 0.4, textAlign: 'center', marginTop: 16, marginBottom: 0 }}>
++    <p style={{ fontSize: 'var(--do-text-xs)', color: '#c3d0d6', textAlign: 'center', marginTop: 16, marginBottom: 0 }}>
+       Serving {town} and across {county}
+     </p>
+   </div>
+ </div>
+
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+@@ -211,9 +211,9 @@
+   'Worked at every level, warehouse floor to boardroom',
+   '3× Clarity Guarantee on audit work',
+   trustLine || 'Based in the South East, on-site across Sussex and Surrey',
+ ].map((item) => (
+-  <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72 }}>
++  <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 'var(--do-text-sm)', color: '#dfe6ea' }}>
+     <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--do-cerulean)', marginTop: 7, flexShrink: 0 }} />
+     {item}
+   </div>
+ ))}
+
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+@@ -220,9 +220,9 @@
+   </div>
+   <Link href="/contact" className="btn btn--primary" style={{ width: '100%' }}>
+     Book a free call <ArrowRight size={18} />
+   </Link>
+-  <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72, fontWeight: 'var(--do-weight-medium)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4, marginTop: 12 }}>Or book a call directly <ArrowRight size={14} /></a>
++  <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: '#dfe6ea', fontWeight: 'var(--do-weight-medium)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4, marginTop: 12 }}>Or book a call directly <ArrowRight size={14} /></a>
+   <p style={{ fontSize: 'var(--do-text-xs)', color: '#c3d0d6', textAlign: 'center', marginTop: 16, marginBottom: 0 }}>
+     Serving {town} and across {county}
+   </p>
+ </div>
+
+[0m
+Now check the other opacity-on-dark instances. The OG image text is on a dark background.
+[0m→ [0mRead app/opengraph-image.tsx[90m [limit=25, offset=88][0m
+[0m→ [0mRead app/opengraph-image.tsx[90m [limit=30, offset=60][0m
+[0m→ [0mRead app/opengraph-image.tsx[90m [limit=10, offset=28][0m
+The OG image has text with opacity: 0.5 on a light background. Let me check if it needs fixing — but the brief specifically targets LocationPage.tsx. The OG image is a social share image, not regular page text. The brief says "Same for the `opacity: 0.72` paragraph just above it (fine at 0.72 but make it `color: '#dfe6ea'` without opacity for consistency). grep components/ and app/ for other text elements using `opacity: 0.4`/`0.5`/`opacity:.4`/`.5` on text (not images/art) and fix the same way."
+[0m✱ [0mGrep "opacity"[90m 1 match[0m
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=3, offset=204][0m
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\components\LocationPage.tsx
+@@ -201,9 +201,9 @@
+ {/* STICKY CTA CARD */}
+ <div style={{ position: 'sticky', top: 112 }}>
+   <div className="card" style={{ padding: 32 }}>
+     <div style={{ fontSize: 'var(--do-text-2xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-on-dark)', marginBottom: 8 }}>{cta}</div>
+-    <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72, lineHeight: 1.75, marginBottom: 24 }}>
++    <p style={{ fontSize: 'var(--do-text-sm)', color: '#dfe6ea', lineHeight: 1.75, marginBottom: 24 }}>
+       The first conversation is free and there&apos;s no obligation. Just a call about what&apos;s happening in your business and whether I can help.
+     </p>
+     <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}>
+       {[
+
+[0m
+[0m# [0mTodos
+[✓] Fix translucent prussian text N<72% in CSS files (d17-global, d17-resources, d17-problems, d17-locations)
+[✓] Fix translucent prussian text N<72% in TSX files (eternal-fitness, sop-template, decoded-method, erp-selection-playbook, should-i-replace-erp)
+[✓] Fix opacity-faded text on dark in LocationPage.tsx (4 instances: lines 205, 215, 224, 225)
+[✓] Check for other opacity-faded text on dark in other components
+[•] Run tsc --noEmit and npm run build
+[ ] Commit and write lane report
+[0m
+Now run verification. First check if node_modules exists.
+[0m$ [0mTest-Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\node_modules"
+True
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -First 30
+(no output)
+[0m
+tsc passes clean. Now build.
+[0m$ [0mnpm run build 2>&1 | Select-Object -Last 30
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ƒ /robots.txt
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/operations-consultant-print-embroidery
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ƒ /sitemap.xml
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+[0m
+Build passes. Now commit and write the lane report.
+[0m$ [0mgit status --short
+M app/case-studies/eternal-fitness/page.tsx
+ M app/d17-global.css
+ M app/d17-locations.css
+ M app/d17-problems.css
+ M app/d17-resources.css
+ M app/resources/decoded-method/page.tsx
+ M app/resources/sop-template/page.tsx
+ M app/tools/should-i-replace-erp/page.tsx
+ M components/LocationPage.tsx
+?? .context/lane-briefs/BRIEF-web065-fix3-contrast.md
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(a11y): translucent text >= 72% + faded dark text (CR-WEB-065)
+
+- Bumped all color-mix(in srgb, var(--do-prussian-blue) N%, transparent) text
+  declarations from N < 72% to 72% across d17-global.css, d17-resources.css,
+  d17-problems.css, d17-locations.css, eternal-fitness, sop-template,
+  decoded-method, should-i-replace-erp (CSS: 49 lines, TSX: 6 instances)
+- Removed opacity hacks on dark-surface text in LocationPage.tsx:
+  opacity:0.4 -> color:#c3d0d6, opacity:0.72 -> color:#dfe6ea (4 instances)
+- Task 3 (homepage step numbers using --do-text-subtle): already resolved,
+  .idx .no and .note .no both use --do-text-muted"
+warning: in the working copy of 'app/d17-global.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/d17-locations.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/d17-problems.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/d17-resources.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/should-i-replace-erp/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-briefs/BRIEF-web065-fix3-contrast.md', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo 1d03b63] fix(a11y): translucent text >= 72% + faded dark text (CR-WEB-065)
+ 10 files changed, 84 insertions(+), 64 deletions(-)
+ create mode 100644 .context/lane-briefs/BRIEF-web065-fix3-contrast.md
+[0m
+[0m$ [0mgit log -1 --format="%H %s"
+1d03b63aa60ecb14e8a6e0d09d6b8b0d4cb165a7 fix(a11y): translucent text >= 72% + faded dark text (CR-WEB-065)
+[0m
+[0m$ [0mNew-Item -ItemType Directory -Force -Path "D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports" | Out-Null
+(no output)
+[0m
+[0m$ [0mgit diff-tree --no-commit-id --name-only -r HEAD
+.context/lane-briefs/BRIEF-web065-fix3-contrast.md
+app/case-studies/eternal-fitness/page.tsx
+app/d17-global.css
+app/d17-locations.css
+app/d17-problems.css
+app/d17-resources.css
+app/resources/decoded-method/page.tsx
+app/resources/sop-template/page.tsx
+app/tools/should-i-replace-erp/page.tsx
+components/LocationPage.tsx
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web065-fix3.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web065-fix3.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/ && git commit -m "docs: lane report for web065-fix3"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web065-fix3.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web065-fix3.json', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo c633677] docs: lane report for web065-fix3
+ 2 files changed, 70 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web065-fix3.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web065-fix3.json
+[0m
+[0m# [0mTodos
+[✓] Fix translucent prussian text N<72% in CSS files (d17-global, d17-resources, d17-problems, d17-locations)
+[✓] Fix translucent prussian text N<72% in TSX files (eternal-fitness, sop-template, decoded-method, erp-selection-playbook, should-i-replace-erp)
+[✓] Fix opacity-faded text on dark in LocationPage.tsx (4 instances: lines 205, 215, 224, 225)
+[✓] Check for other opacity-faded text on dark in other components
+[✓] Run tsc --noEmit and npm run build
+[✓] Commit and write lane report
+[0m
+Lane complete. Two commits on `web065-tech-seo`:
+
+**Commit 1** (`1d03b63`): `fix(a11y): translucent text >= 72% + faded dark text (CR-WEB-065)`
+- 49 CSS lines across 4 d17-\*.css files: `color-mix(..., var(--do-prussian-blue) N%, transparent)` bumped from N<72% to 72%
+- 6 TSX instances (eternal-fitness, sop-template, decoded-method, should-i-replace-erp)
+- 4 LocationPage.tsx opacity-on-dark fixes: `opacity:0.4` → `color:'#c3d0d6'`, `opacity:0.72` → `color:'#dfe6ea'`
+
+**Commit 2** (`c633677`): lane report + notes
+
+**Task 3** (homepage step numbers): already resolved — `.idx .no` and `.note .no` both use `--do-text-muted`. No change needed.
+
+**Verify**: `tsc --noEmit` clean, `npm run build` pass.

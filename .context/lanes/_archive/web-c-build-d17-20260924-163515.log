@@ -1,0 +1,1270 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-c-build-d17.md
+[0m→ [0mRead app/pricing/page.tsx
+Let me start with step 0: resolving the merge conflict in `app/pricing/page.tsx`.
+Now let me resolve the first merge conflict - the imports section:
+[0m
+[0m← [0mEdit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\pricing\page.tsx
+@@ -2,16 +2,12 @@
+ import Link from 'next/link';
+ import { Artwork } from '@/components/Artwork';
+ import { PhotoPiece } from '@/components/PhotoPiece';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+-<<<<<<< HEAD
+-=======
+ import { JsonLd } from '@/components/JsonLd';
+-import { Plate } from '@/components/Plate';
+ import pricingData from '@/data/pricing-v11.json';
+ 
+ const { consultancy, small_business } = pricingData;
+->>>>>>> origin/main
+ 
+ export const metadata: Metadata = {
+   title: 'Pricing: Decoded Ops',
+   description: 'Plain pricing for the consultancy. The Clarity Audit is from £1,500. Everything else is quoted after a conversation about your operation.',
+
+[0m
+[0m← [0mEdit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\pricing\page.tsx
+@@ -74,9 +74,8 @@
+           </div>
+         </div>
+       </section>
+ 
+-<<<<<<< HEAD
+       {/* 1a · EVIDENCE PHOTO · DO-ART-912 */}
+       <section className="g-white ev-band" data-od-id="evidence">
+         <div className="container">
+           <PhotoPiece
+@@ -92,12 +91,9 @@
+           />
+         </div>
+       </section>
+ 
+-      {/* 2 · CLARITY AUDIT */}
+-=======
+       {/* 2 · CONSULTANCY */}
+->>>>>>> origin/main
+       <section className="g-white">
+         <div className="container">
+           <p className="eyebrow">Consultancy</p>
+           <h2>Diagnosis, then delivery.</h2>
+
+[0m
+Now resolve the second conflict - keeping both the evidence photo section and main's content:
+Good. Now commit the merge resolution:
+[0m$ [0mgit add app/pricing/page.tsx && git commit --no-edit
+[web-c-build-d17 6c00364] Merge remote-tracking branch 'origin/main' into web-c-build-d17
+[0m
+[0m→ [0mRead .context/lane-briefs/d17/homepage.src.html
+[0m→ [0mRead .context/lane-briefs/d17/about.src.html
+[0m→ [0mRead .context/lane-briefs/d17/contact.src.html
+[0m→ [0mRead .context/lane-briefs/d17/d17-art.css
+[0m→ [0mRead .context/lane-briefs/d17/d17-play.js
+Step 0 done. Now reading the mockup source files and the existing pages:
+[0m→ [0mRead app/page.tsx
+[0m→ [0mRead app/about/page.tsx
+Now let me read the existing live pages to understand what needs to change:
+[0m→ [0mRead app/contact/page.tsx
+[0m
+[0m# [0mTodos
+[✓] Step 0: Resolve merge conflict in pricing page and commit
+[•] Create D17 art CSS module (d17-art.module.css)
+[ ] Create D17Motion client component
+[ ] Port Home page artwork (DO-ART-916, 917, 918)
+[ ] Port About page artwork (DO-ART-904r03, 831, 919, 719)
+[ ] Port Contact page artwork (DO-ART-920)
+[ ] Remove 'named with permission' from all three pages
+[ ] Verify: tsc, grep checks, commit
+[ ] Write lane report and notes
+[0m
+This is a large task. Let me create a todo list and start working systematically.
+[0m→ [0mRead .context/lane-briefs/d17/homepage.src.html[90m [offset=988][0m
+[0m→ [0mRead .context/lane-briefs/d17/about.src.html[90m [offset=993][0m
+[0m→ [0mRead .context/lane-briefs/d17/contact.src.html[90m [offset=994][0m
+Let me read the rest of the homepage mockup to see the actual artwork HTML:
+[0m→ [0mRead app/homepage.css[90m [limit=50][0m
+[0m
+[0m$ [0mls -la public/images/d17/ 2>/dev/null || echo "Directory does not exist"
+Out-File: Could not find a part of the path 'D:\dev\null'.
+Directory does not exist
+[0m
+[0m✱ [0mGlob "components/Artwork.tsx"[90m in . · 1 match[0m
+Let me check what images are already in `public/images/d17/` and the existing homepage CSS:
+[0m✱ [0mGlob "components/PhotoPiece.tsx"[90m in . · 1 match[0m
+[0m✱ [0mGlob "public/**/*.jpg"[90m in . · 29 matches[0m
+[0m
+[0m$ [0mdir public\images\ 2>$null; if (-not $?) { echo "No public/images dir" }
+Directory: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\public\images
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          24/09/2026    16:33                apps
+d----          24/09/2026    16:33                blog
+d----          24/09/2026    16:34                d17
+d----          24/09/2026    16:33                money
+d----          24/09/2026    16:33                sectors
+-a---          24/09/2026    16:33          81748 craig-blackman.jpg
+-a---          24/09/2026    16:33          59440 decoded-method-cover.png
+-a---          24/09/2026    16:33          47062 hero-craft-v2.webp
+-a---          24/09/2026    16:33         122364 hero-craft.jpg
+-a---          24/09/2026    16:33         124840 real-example.jpg
+-a---          24/09/2026    16:33          58042 sector-credibility-v2.webp
+-a---          24/09/2026    16:33         136021 sector-credibility.jpg
+-a---          24/09/2026    16:33          75871 six-sigma-cover.png
+[0m
+[0m✱ [0mGlob "public/**/*.png"[90m in . · 27 matches[0m
+[0m→ [0mRead components/PhotoPiece.tsx[90m [limit=30][0m
+[0m→ [0mRead components/Artwork.tsx[90m [limit=30][0m
+[0m→ [0mRead app/deco-page.module.css[90m [limit=60][0m
+Good, all D17 images are already in place. Let me check the existing components and module CSS:
+[0m✱ [0mGlob "app/contact/ContactClient.tsx"[90m in . · 1 match[0m
+[0m→ [0mRead app/contact/ContactClient.tsx
+Now I have a clear picture. Let me start creating the files. First, the D17 art CSS module:
+[0m
+[0m← [0mWrite app/d17-art.module.css
+Wrote file successfully.
+[0m
+[0m← [0mWrite components/D17Motion.tsx
+Wrote file successfully.
+[0m
+Now create the D17Motion client component:
+[0m# [0mTodos
+[✓] Step 0: Resolve merge conflict in pricing page and commit
+[✓] Create D17 art CSS module (d17-art.module.css)
+[✓] Create D17Motion client component
+[•] Port Home page artwork (DO-ART-916, 917, 918)
+[ ] Port About page artwork (DO-ART-904r03, 831, 919, 719)
+[ ] Port Contact page artwork (DO-ART-920)
+[ ] Remove 'named with permission' from all three pages
+[ ] Verify: tsc, grep checks, commit
+[ ] Write lane report and notes
+[0m
+[0m→ [0mRead app/page.tsx[90m [offset=1, limit=10][0m
+Now let me update the homepage. I'll make the three artwork replacements:
+First, update the imports in the homepage:
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+@@ -4,8 +4,10 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { Plate } from '@/components/Plate';
+ import { SheetIndexRail } from '@/components/SheetIndexRail';
++import { D17Motion } from '@/components/D17Motion';
++import d17 from './d17-art.module.css';
+ import './homepage.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Decoded Ops: operations and technology consultancy for decorated goods',
+
+[0m
+Now let me read the full hero section to make precise edits:
+[0m→ [0mRead app/page.tsx[90m [offset=77, limit=60][0m
+Let me read more of the homepage CSS to understand the hero styling:
+[0m→ [0mRead app/homepage.css[90m [limit=80, offset=51][0m
+Now let me make the hero replacement. I'll replace the photo figure with DO-ART-916 and the ask blockquote:
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+@@ -113,25 +113,50 @@
+           <Link className="btn btn--outline" href="/contact">Book a free 60 minute call</Link>
+         </div>
+       </div>
+ 
+-      <figure className="shot" data-od-id="hero-photo">
+-        <Image className="p-photo" src="/images/hero-craft-v2.webp" fill sizes="(max-width: 1040px) 100vw, 45vw"
+-          style={{ objectFit: 'cover', objectPosition: '52% 42%' }}
+-          alt="Two multi-head embroidery machines running garments on a decoration floor." />
+-        <figcaption className="stamp">DO-ART-905 &middot; Decoration floor</figcaption>
++      {/* DO-ART-916 r01 · photo-led + document mock-ups (D17). Workshop photo
++           with two fanned documents and the question below. */}
++      <figure className={`${d17.d17} ${d17.a916}`} data-od-id="hero-question" data-motion
++              data-no="DO-ART-916" data-rev="01" data-tx="photo">
++        <div className={d17.d17Ph}><img src="/images/d17/hero-workshop.jpg"
++          alt="" width={1100} height={1224} /></div>
++        <div className={d17.d17Scan} aria-hidden="true" />
++        <div className={`${d17.top} ${d17.d17Mono}`} aria-hidden="true"><span>Clarity Audit</span><span>One day on site</span></div>
++        <div className="stage" aria-hidden="true">
++          <div className={`${d17.d17Doc} ${d17.docA} m-drop`} style={{ animationDelay: '.35s' }}>
++            <span className="tab">01</span>
++            <span className="ref">CA-01 &middot; Written report</span>
++            <h4>What it&apos;s costing you</h4>
++            <p className="sub">six areas &middot; followed, not described</p>
++            <ol>
++              <li><b>01</b>IT infrastructure<i /></li>
++              <li><b>02</b>Software &amp; systems<i /></li>
++              <li><b>03</b>eCommerce<i /></li>
++              <li><b>04</b>Processes &amp; ops<i /></li>
++              <li><b>05</b>Growth<i /></li>
++            </ol>
++          </div>
++          <div className={`${d17.d17Doc} ${d17.docB} m-drop`} style={{ animationDelay: '.1s' }}>
++            <span className="tab">02</span>
++            <span className="ref">RM-01 &middot; Roadmap</span>
++            <h4>What to fix, in what order</h4>
++            <p className="sub">within five working days</p>
++            <div className="phase">Now</div><div className="lines"><i style={{ width: '92%' }} /><i style={{ width: '70%' }} /></div>
++            <div className="phase">Next</div><div className="lines"><i style={{ width: '84%' }} /><i style={{ width: '58%' }} /></div>
++            <div className="phase">Later</div><div className="lines"><i style={{ width: '66%' }} /></div>
++          </div>
++        </div>
++        <div className={d17.askBody}>
++          <div className={d17.bar} aria-hidden="true" />
++          <blockquote>If I spent a day in your business looking at your systems, your processes,
++            and your technology, how confident are you that I wouldn&apos;t find anything costing you
++            money you don&apos;t know about?</blockquote>
++          <cite>Craig Blackman &middot; Decoded Ops</cite>
++          <span className={d17.d17Mark}>decodedops.co.uk &middot; DO-ART-916 &middot; Rev 01</span>
++        </div>
+       </figure>
+     </div>
+-
+-    <figure className="ask" data-od-id="hero-question">
+-      <span className="qm" aria-hidden="true">&ldquo;</span>
+-      <div>
+-        <blockquote>If I spent a day in your business looking at your systems, your processes
+-          and your technology, how confident are you that I wouldn&rsquo;t find anything costing you
+-          money you don&rsquo;t know about?</blockquote>
+-        <cite>Craig Blackman &middot; Decoded Ops</cite>
+-      </div>
+-    </figure>
+   </div>
+ </section>
+ 
+ {/* ══════════ 02 · THE LEDGER ══════════ */}
+
+[0m
+[0m→ [0mRead app/page.tsx[90m [limit=100, offset=230][0m
+Now replace the DO-ART-202 sheet with DO-ART-917. Let me read that section:
+[0m→ [0mRead app/page.tsx[90m [limit=60, offset=325][0m
+[0m→ [0mRead app/page.tsx[90m [limit=100, offset=378][0m
+Now let me replace the DO-ART-202 sheet with DO-ART-917 and DO-ART-902 with DO-ART-918. First the sheet section:
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+@@ -256,88 +256,66 @@
+ <section className="g-navy set" id="s6" data-od-id="turns-up">
+   <div className="do-dot-grid" aria-hidden="true" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
+   <div className="wrap">
+     <article className="sheet" data-od-id="sheet-measure">
+-      <div className="docket">
+-        <span>DO-ART-202 &middot; Measure</span>
+-        <span>Rev 01</span>
+-        <span className="issued">Issued</span>
+-      </div>
+-
+       <div className="masthead">
+         <div>
+-          <span className="eyebrow">What it turns up</span>
++          <span className="eyebrow">Measure &middot; DO-ART-917</span>
+           <h2>Nobody retypes a supplier spreadsheet.</h2>
+         </div>
+-        <p className="lede">Case study 01, real production numbers. One import pipeline, run to a schedule,
++        <p className="lede">Hanicks. One import pipeline, run to a schedule,
+           doing a job that used to be done by hand every time a supplier changed a range. Not
+           projected and not modelled. This is what actually happened.</p>
+       </div>
+ 
+-      <div className="plate-scroll">
+-        <div className="plate-frame" data-od-id="plate-measure">
+-          <Plate tone="dark" p="ms" title="Supplier catalogue: raw to live"
+-                 sub="Case study 01 · one import pipeline, first automated run"
+-                 no="DO-ART-202" rev="01" cls="DECODED OPS · ISSUED">
+-
+-            {/* track guides */}
+-            <g className="sk-fade sk-s1" opacity=".5">
+-              <line x1="430" y1="212" x2="430" y2="560" className="p-scyan" strokeWidth=".8"
+-                    strokeOpacity=".35"/>
+-              <line x1="1510" y1="212" x2="1510" y2="560" className="p-scyan" strokeWidth=".8"
+-                    strokeOpacity=".2"/>
+-            </g>
+-
+-            {/* 1 · rows imported */}
+-            <g className="sk-fade sk-s2">
+-              <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
+-                    opacity=".55">PRODUCTS BROUGHT IN</text>
+-              <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">from supplier feeds</text>
+-              <rect x="430" y="228" width="1080" height="62" rx="6" fill="url(#ms-bar)"
+-                    className="p-node" strokeWidth="1"/>
+-              <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
+-                    fontWeight="700" fontSize="30">317,812</text>
+-            </g>
+-
+-            {/* 2 · matched automatically */}
+-            <g className="sk-fade sk-s3">
+-              <text x="60" y="372" className="p-mono" fontSize="17" letterSpacing="1.6"
+-                    opacity=".55">MATCHED AUTOMATICALLY</text>
+-              <text x="60" y="402" className="p-mono" fontSize="16" opacity=".4">matched to a supplier</text>
+-              <rect x="430" y="348" width="525" height="62" rx="6" fill="url(#ms-bar)"
+-                    className="p-node" strokeWidth="1"/>
+-              <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
+-                    fontWeight="700" fontSize="30">154,518</text>
+-            </g>
+-
+-            {/* 3 · live. Amber lands once, on the figure that is the point. */}
+-            <g className="sk-fade sk-s4">
+-              <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
+-                    opacity=".55">RE-OPTIMISED</text>
+-              <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">Amazon listings</text>
+-              <rect x="430" y="468" width="14" height="62" rx="6" fill="url(#ms-amber-b)"
+-                    className="p-node-a" strokeWidth="1.4"/>
+-              <text x="527" y="510" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+-                    fontWeight="700" fontSize="30">3,844</text>
+-              <text x="630" y="510" className="p-mono" fontSize="17" opacity=".5">ahead of a title-format deadline</text>
+-            </g>
+-
+-            {/* the lever */}
+-            <g className="sk-fade sk-s5">
+-              <line x1="60" y1="596" x2="1540" y2="596" className="p-scyan" strokeWidth=".6"
+-                    strokeOpacity=".22"/>
+-              <rect x="60" y="624" width="4" height="18" rx="1" className="p-amber"/>
+-              <text x="80" y="640" className="p-mono" fontSize="16" letterSpacing="2.2"
+-                    opacity=".55">THE LEVER</text>
+-              <text x="60" y="690" className="p-ink" fontFamily="Outfit,sans-serif"
+-                    fontWeight="600" fontSize="26">One import pipeline, run to a schedule.
+-                Nobody retypes a supplier spreadsheet.</text>
+-              <text x="60" y="726" className="p-mono" fontSize="17" opacity=".5">Before: matched by
+-                hand, no repeatable run, and no way to tell what had changed since last time.</text>
+-            </g>
+-          </Plate>
++      {/* DO-ART-917 r01 &middot; product-screen mock-up carrying the live Hanicks
++           figures (SQL, 23 Sep 2026). In-page draw: cards rise, the meters
++           fill, the feeds list in, and the amber lands on &quot;matched&quot; last. */}
++      <figure className={`${d17.d17} ${d17.a917}`} data-od-id="plate-measure" data-motion
++              data-no="DO-ART-917" data-rev="01" data-tx="photo"
++              aria-label="Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
++        <div className={d17.d17Ph}><img src="/images/d17/thread-spools.jpg" alt="" width={1300} height={867} /></div>
++        <div className={d17.d17Scan} aria-hidden="true" />
++        <figcaption className="cap">
++          <div className={`${d17.k} ${d17.d17Mono}`}>The Data App <span>&middot; at Hanicks</span></div>
++          <div className={d17.bar} aria-hidden="true" />
++          <h3>Forty suppliers. One catalogue.</h3>
++          <p>Every supplier feed brought into one place, and matched to its supplier before anyone has to touch it.</p>
++          <div className={`${d17.live} ${d17.d17Mono}`}>Live system, September 2026</div>
++          <span className={d17.d17Mark}>decodedops.co.uk &middot; DO-ART-917 &middot; Rev 01</span>
++        </figcaption>
++        <div className={d17.win} aria-hidden="true">
++          <div className={d17.winBar}><span className="dots"><i /><i /><i /></span>
++            <span className="crumb"><span>Catalogue &rsaquo;</span> Overview</span><span className="pill">HANICKS</span></div>
++          <div className={d17.winBody}>
++            <nav className={d17.winNav}><span className="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M12 3 3 8l9 5 9-5-9-5Z" /><path d="m3 13 9 5 9-5" /></svg>Catalogue</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7" /><circle cx="7" cy="17.5" r="1.6" /><circle cx="17" cy="17.5" r="1.6" /></svg>Fulfil</span>
++              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z" /></svg>Publish</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg>Insight</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" /></svg>Setup</span></nav>
++            <div className={d17.winMain}>
++              <h5>Catalogue overview</h5>
++              <p className="s">Every supplier feed, brought into one catalogue</p>
++              <div className={d17.kpis}>
++                <div className={`${d17.kpi} m-rise`} style={{ animationDelay: '.1s' }}><div className="l">Products brought in</div>
++                  <p className="n">317,812</p><p className="d">from supplier feeds</p></div>
++                <div className={`${d17.kpi} ${d17.kpiHit} m-rise`} style={{ animationDelay: '.3s' }}><div className="l">Matched automatically</div>
++                  <p className="n">154,518</p><p className="d">to a supplier, before anyone had to touch them</p></div>
++                <div className={`${d17.kpi} m-rise`} style={{ animationDelay: '.5s' }}><div className="l">Active suppliers</div>
++                  <p className="n">40</p><p className="d">feeding in</p></div>
++              </div>
++              <div className={`${d17.meter} m-rise`} style={{ animationDelay: '.7s' }}><div className="row"><b>Supplier matching</b><span>154,518 of 317,812</span></div>
++                <div className="track"><div className={`${d17.fill} m-fill`} style={{ width: '48.6%', animationDelay: '1s' }} /></div></div>
++              <div className={`${d17.meter} m-rise`} style={{ animationDelay: '.85s' }}><div className="row"><b>Stock records with a bin location</b><span>77%</span></div>
++                <div className="track"><div className={`${d17.fill} m-fill`} style={{ width: '77%', animationDelay: '1.25s' }} /></div></div>
++              <div className={d17.feeds}>
++                <div className="hd"><b>Supplier feeds</b><span>40 active</span></div>
++                <div className={`${d17.r} m-fade`} style={{ animationDelay: '1.6s' }}><b>Supplier A</b><span>Product and stock</span><span className={d17.ok}>IMPORTED</span></div>
++                <div className={`${d17.r} m-fade`} style={{ animationDelay: '1.75s' }}><b>Supplier B</b><span>Product and stock</span><span className={d17.ok}>IMPORTED</span></div>
++                <div className={`${d17.r} m-fade`} style={{ animationDelay: '1.9s' }}><b>Supplier C</b><span>Stock</span><span className={d17.ok}>IMPORTED</span></div>
++                <div className={`${d17.more} m-fade`} style={{ animationDelay: '2.05s' }}>+ 37 more active suppliers</div>
++              </div>
++            </div>
++          </div>
+         </div>
+-      </div>
++      </figure>
+ 
+       <p className="sheet-foot">Same approach at Case study 02, real production numbers: 17 supplier
+         feeds automated, and a projected saving of 20 to 40 hours a week.</p>
+     </article>
+
+[0m
+Now replace the DO-ART-902 origin exhibit with DO-ART-918:
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+@@ -353,74 +353,33 @@
+   </ul>
+ </div>
+ 
+ <div className="origin-exhibit" data-od-id="origin-exhibit">
+-  <div className="docket">
+-    <span>DO-ART-902 &middot; Evidence</span>
+-    <span>Rev 01</span>
+-    <span className="issued">Issued</span>
+-  </div>
+-
+-  <div className="plate-scroll">
+-    <div className="plate-frame" data-od-id="plate-evidence">
+-      <Plate tone="dark" p="ev" title="Decoded Data App: live deployment"
+-             sub="Supplier feed to platform, one clean catalogue between them"
+-             no="DO-ART-902" rev="01" cls="DECODED OPS · ISSUED">
+-
+-        <clipPath id="ev-clip"><rect x="60" y="200" width="900" height="520" rx="12"/></clipPath>
+-
+-        {/* THE EXHIBIT. A screen, not a photograph — no grade. */}
+-        <g className="sk-fade sk-s2">
+-          <image href="/assets/screens/data-app-hero.png" x="60" y="200" width="900" height="520"
+-                 preserveAspectRatio="xMidYMid slice" clipPath="url(#ev-clip)" className="p-screen"/>
+-          <rect x="60" y="200" width="900" height="520" rx="12" fill="url(#ev-scan)"
+-                opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
+-          <rect x="60" y="200" width="900" height="520" rx="12" fill="none" className="p-scyan"
+-                strokeWidth="1.1" strokeOpacity=".35"/>
+-          <rect x="86" y="648" width="470" height="44" rx="6" className="p-block" opacity=".85"/>
+-          <text x="106" y="677" className="p-amber" fontSize="17" letterSpacing="2"
+-                fontWeight="600">LIVE DEPLOYMENT &middot; CASE STUDY 02</text>
+-        </g>
+-
+-        {/* THE SPECIFICATION. What the exhibit proves. */}
+-        <g className="sk-fade sk-s4">
+-          <rect x="1000" y="200" width="540" height="520" rx="12" fill="url(#ev-node)"
+-                className="p-node" strokeWidth="1.1"/>
+-          <rect x="1026" y="226" width="4" height="16" rx="1" className="p-cyan"/>
+-          <text x="1042" y="240" className="p-mono" fontSize="17" letterSpacing="2.4"
+-                fontWeight="600">EXHIBIT</text>
+-          <line x1="1026" y1="262" x2="1514" y2="262" className="p-scyan" strokeWidth=".6"
+-                strokeOpacity=".2"/>
+-
+-          <text x="1026" y="306" className="p-mono" fontSize="15" letterSpacing="2"
+-                opacity=".45">CLIENT</text>
+-          <text x="1026" y="336" className="p-ink" fontFamily="Outfit,sans-serif"
+-                fontWeight="600" fontSize="22">Case study 02 · real production numbers</text>
+-
+-          <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
+-                opacity=".45">SHOWS</text>
+-          <text x="1026" y="422" className="p-ink" fontFamily="Outfit,sans-serif"
+-                fontWeight="600" fontSize="22">17 supplier feeds, automated</text>
+-          <text x="1026" y="450" className="p-mono" fontSize="16" opacity=".62">Stock, bins and
+-            picking alongside Symphony</text>
+-
+-          <text x="1026" y="506" className="p-mono" fontSize="15" letterSpacing="2"
+-                opacity=".45">SOURCE</text>
+-          <text x="1026" y="536" className="p-ink" fontFamily="Outfit,sans-serif"
+-                fontWeight="600" fontSize="22">Decoded Data App interface</text>
+-
+-          <line x1="1026" y1="586" x2="1514" y2="586" className="p-scyan" strokeWidth=".6"
+-                strokeOpacity=".2"/>
+-          <text x="1026" y="626" className="p-mono" fontSize="16" opacity=".55">GRADE: none. A
+-            screen is not</text>
+-          <text x="1026" y="650" className="p-mono" fontSize="16" opacity=".55">a photograph;
+-            grading it would</text>
+-          <text x="1026" y="674" className="p-mono" fontSize="16" opacity=".55">destroy what it
+-            is evidence of.</text>
+-        </g>
+-      </Plate>
++  {/* DO-ART-918 r01 · photo-led evidence with a drawn ledger (D17). The
++       client is a teamwear business and is never named; figures are the
++       live system, SQL 23 Sep 2026. In-page draw: the ledger line runs
++       down and the figures land in order, amber on &quot;binned&quot; last. */}
++  <figure className={`${d17.d17} ${d17.a918}`} data-od-id="plate-evidence" data-motion
++          data-no="DO-ART-918" data-rev="01" data-tx="photo"
++          aria-label="Evidence piece DO-ART-918. A teamwear business on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
++    <div className={d17.d17Ph}><img src="/images/d17/cat-workwear.jpg" alt="" width={900} height={596} /></div>
++    <div className={d17.d17Scan} aria-hidden="true" />
++    <figcaption className="copy">
++      <div className={`${d17.k} ${d17.d17Mono}`}>A teamwear business <span>&middot; live system, Sept 2026</span></div>
++      <h3>Seventeen feeds in. Every item binned.</h3>
++      <ol className={d17.ledger}>
++        <li className="m-fade" style={{ animationDelay: '.2s' }}><span className="n">17</span><span className="t">supplier feeds, automated</span></li>
++        <li className="m-fade" style={{ animationDelay: '.55s' }}><span className="n">27,778</span><span className="t">supplier products in one catalogue</span></li>
++        <li className="m-fade" style={{ animationDelay: '.9s' }}><span className="n">236,056</span><span className="t">variants, split by colour and size</span></li>
++        <li className="m-fade" style={{ animationDelay: '1.25s' }}><span className="n">952</span><span className="t">products live on their website</span></li>
++        <li className={`${d17.end} m-fade`} style={{ animationDelay: '1.6s' }}><span className="n">100%</span><span className="t">of stock with a bin location</span></li>
++      </ol>
++      <span className={d17.d17Mark}>decodedops.co.uk &middot; DO-ART-918 &middot; Rev 01</span>
++    </figcaption>
++    <div className={`${d17.print} m-drop`} style={{ animationDelay: '1.9s' }} aria-hidden="true">
++      <span className="ref">BIN &middot; PICK FACE</span><b>A-04-2</b><div className="bc" /><div className="s">Polo &middot; navy &middot; M</div>
+     </div>
+-  </div>
++  </figure>
+ </div>
+ 
+ <div className="origin-links" data-od-id="origin-links">
+   <Link className="go" href="/apps">See what&rsquo;s already running</Link>
+
+[0m
+Now add the D17Motion component to the page:
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+@@ -406,7 +406,8 @@
+           </div>
+         </section>
+ 
+       </main>
++      <D17Motion />
+     </>
+   );
+ }
+
+[0m
+Let me check for "named with permission" in the homepage:
+[0m$ [0mgit grep -n "named with permission" -- app/page.tsx
+(no output)
+[0m
+[0m$ [0mgit grep -n "Plate" -- app/page.tsx | head -5
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mgit grep -n "Plate" -- app/page.tsx
+app/page.tsx:6:import { Plate } from '@/components/Plate';
+[0m
+[0m$ [0mSelect-String -Path "app\page.tsx" -Pattern "Plate" -AllMatches | Select-Object LineNumber, Line
+LineNumber Line
+---------- ----
+         6 import { Plate } from '@/components/Plate';
+       273               <figure className={`${d17.d17} ${d17.a917}`} data-od-id="plate-measure" data-motion
+       361               <figure className={`${d17.d17} ${d17.a918}`} data-od-id="plate-evidence" data-motion
+[0m
+[0m$ [0mSelect-String -Path "app\page.tsx" -Pattern "<Plate" -AllMatches
+(no output)
+[0m
+[0m$ [0mSelect-String -Path "app\page.tsx" -Pattern "DO-ART-302" -AllMatches
+(no output)
+[0m
+[0m$ [0mSelect-String -Path "app\page.tsx" -Pattern "ladder|302" -AllMatches
+(no output)
+[0m
+[0m$ [0mSelect-String -Path "app\page.tsx" -Pattern "Plate\b" -AllMatches
+app\page.tsx:6:import { Plate } from '@/components/Plate';
+app\page.tsx:273:              <figure className={`${d17.d17} ${d17.a917}`} data-od-id="plate-measure" data-motion
+app\page.tsx:361:              <figure className={`${d17.d17} ${d17.a918}`} data-od-id="plate-evidence" data-motion
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\page.tsx
+@@ -2,9 +2,8 @@
+ import Link from 'next/link';
+ import Image from 'next/image';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+-import { Plate } from '@/components/Plate';
+ import { SheetIndexRail } from '@/components/SheetIndexRail';
+ import { D17Motion } from '@/components/D17Motion';
+ import d17 from './d17-art.module.css';
+ import './homepage.css';
+
+[0m
+The Plate import is no longer used. Let me remove it:
+[0m$ [0mgit grep -rn "named with permission" -- app/
+(no output)
+[0m
+Good - no "named with permission" found. Let me commit the homepage changes and move to the About page:
+[0m$ [0mgit add app/page.tsx app/d17-art.module.css components/D17Motion.tsx && git commit -m "feat(web): D17 artwork on Home, About, Contact (WO-INF-061 u10, CR-WEB-034)
+
+- Add D17 art CSS module and D17Motion client component
+- Home: replace DO-ART-905 hero photo with DO-ART-916 (workshop + documents)
+- Home: replace DO-ART-202 plate with DO-ART-917 (product screen with figures)
+- Home: replace DO-ART-902 exhibit with DO-ART-918 (evidence with stock photo)"
+warning: in the working copy of 'app/d17-art.module.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/D17Motion.tsx', LF will be replaced by CRLF the next time Git touches it
+[web-c-build-d17 c927ae9] feat(web): D17 artwork on Home, About, Contact (WO-INF-061 u10, CR-WEB-034)
+ 3 files changed, 513 insertions(+), 152 deletions(-)
+ create mode 100644 app/d17-art.module.css
+ create mode 100644 components/D17Motion.tsx
+[0m
+[0m# [0mTodos
+[✓] Step 0: Resolve merge conflict in pricing page and commit
+[✓] Create D17 art CSS module (d17-art.module.css)
+[✓] Create D17Motion client component
+[✓] Port Home page artwork (DO-ART-916, 917, 918)
+[•] Port About page artwork (DO-ART-904r03, 831, 919, 719)
+[ ] Port Contact page artwork (DO-ART-920)
+[ ] Remove 'named with permission' from all three pages
+[ ] Verify: tsc, grep checks, commit
+[ ] Write lane report and notes
+[0m
+Now let me update the About page. First, add the imports:
+[0m→ [0mRead app/about/page.tsx[90m [limit=6][0m
+[0m
+[0m$ [0mSelect-String -Path "app\about\page.tsx" -Pattern "<Plate" -AllMatches
+app\about\page.tsx:71:              <Plate tone="dark" p="abt" title="Three heights, one gap"
+[0m
+[0m← [0mEdit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+@@ -1,8 +1,10 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import s from '@/app/deco-page.module.css';
+ import { Plate } from '@/components/Plate';
++import { D17Motion } from '@/components/D17Motion';
++import d17 from '@/app/d17-art.module.css';
+ 
+ export const metadata: Metadata = {
+   title: 'About Craig: Decoded Ops',
+   description: 'I started on the warehouse floor. Twenty-five years later, I\'m still solving the same problems, just from the other side of the table.',
+
+[0m
+Now replace the hero photo with DO-ART-904 r03:
+[0m← [0mEdit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+@@ -47,14 +47,22 @@
+       </div>
+     </div>
+ 
+     <div className={s.heroShot}>
+-      <div className={s.photo} data-od-id="about-visual">
+-         <img src="/images/craig-blackman.jpg" width="1600" height="1067"
+-             alt="Craig Blackman, founder of Decoded Ops." />
+-      </div>
+-      <p className={s.shotCaption}>Twenty-five years in rooms like this one, on both sides of the
+-        system that runs them.</p>
++      {/* DO-ART-904 r03 · photo-led portrait (D17). assets/craig-blackman.jpg is
++           the only approved portrait; rev 02's close-up selfie is banned.
++           Light grade, faces never palette-reduced. */}
++      <figure className={`${d17.d17} ${d17.a904}`} data-od-id="about-visual"
++              data-no="DO-ART-904" data-rev="03" data-tx="photo">
++        <div className={d17.d17Ph}><img src="/images/d17/craig-blackman.jpg" width={1100} height={1067}
++             alt="Craig Blackman on a wide sandy beach under a grey sky, smiling, hands in the pockets of a black jacket, the sea behind him." /></div>
++        <div className={d17.d17Scan} aria-hidden="true" style={{ opacity: '.3' }} />
++        <div className={`${d17.top} ${d17.d17Mono}`} aria-hidden="true"><span>Craig Blackman</span><span>Decoded Ops</span></div>
++        <p className={d17.note} aria-hidden="true">Twenty-five years inside <em>the businesses I now advise.</em></p>
++        <span className={`${d17.d17Mark} ${d17.d17MarkAbs}`}>decodedops.co.uk &middot; DO-ART-904 &middot; Rev 03</span>
++      </figure>
++      <p className={s.shotCaption}>Craig Blackman, Decoded Ops. Based in Worthing, West Sussex,
++        working across the UK.</p>
+     </div>
+   </div>
+ </section>
+ 
+
+[0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=30, offset=57][0m
+Now let me read the current about page to find where to add DO-ART-831:
+[0m→ [0mRead app/about/page.tsx[90m [limit=40, offset=160][0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=5, offset=69][0m
+Now let me replace the Plate DO-ART-904 section with DO-ART-831 route:
+[0m→ [0mRead app/about/page.tsx[90m [limit=5, offset=170][0m
+Let me replace the Plate DO-ART-904 section with DO-ART-831. I'll read the exact boundaries:
+[0m→ [0mRead app/about/page.tsx[90m [limit=110, offset=68][0m
+[0m
+[0m← [0mEdit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+@@ -65,111 +65,64 @@
+     </div>
+   </div>
+ </section>
+ 
+-{/* PLATE · DO-ART-904 */}
++{/* PLATE · DO-ART-904 → DO-ART-831 route */}
+ <section className="g-navy">
+   <div className="wrap">
+-    <span className="eyebrow">Career arc &middot; DO-ART-904</span>
++    <span className="eyebrow">Career arc &middot; DO-ART-831</span>
+     <h2>Three vantage points, one problem that never changed.</h2>
+     <div className="hair"></div>
+     <p className="lede" style={{ marginTop: 16 }}>
+       Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. The vantage point changed. The gap between the process on paper and the workaround on the floor did not.
+     </p>
+ 
+-    <div className="plate-scroll">
+-      <div className="plate-frame" data-od-id="plate-about">
+-        <Plate tone="dark" p="abt" title="Three heights, one gap"
+-               sub="Craig Blackman · twenty-five years, three vantage points, the same problem"
+-               no="DO-ART-904" rev="01" cls="DECODED OPS · ISSUED">
+-
+-          {/* ══ EXHIBIT, three vantage bands ══ */}
+-          <g className="sk-fade sk-s2">
+-            <text x="66" y="212" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".42">LOOKING DOWN FROM</text>
+-            <text x="800" y="212" textAnchor="end" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".42">WHAT BECAME VISIBLE</text>
+-          </g>
+-
+-          {/* band 3, highest, drawn first so the stack reads bottom-up */}
+-          <g className="sk-fade sk-s3" filter="url(#abt-shadow)">
+-            <rect x="60" y="230" width="880" height="132" rx="10" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
+-          </g>
+-          <g className="sk-fade sk-s3">
+-            <rect x="86" y="258" width="4" height="18" rx="1" className="p-cyan"/>
+-            <text x="102" y="272" className="p-mono" fontSize="15" letterSpacing="2.4" fontWeight="600" opacity=".7">03 · OPERATIONS &amp; ERP</text>
+-            <text x="102" y="308" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">Choosing the platform</text>
+-            <text x="102" y="336" className="p-mono" fontSize="16" opacity=".6">Running the department, then implementing what it depends on</text>
+-            <text x="914" y="308" textAnchor="end" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="19">Who signed it off</text>
+-            <text x="914" y="334" textAnchor="end" className="p-mono" fontSize="15" opacity=".55">and what nobody scoped first</text>
+-          </g>
+-
+-          {/* band 2 */}
+-          <g className="sk-fade sk-s4" filter="url(#abt-shadow)">
+-            <rect x="60" y="382" width="880" height="132" rx="10" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
+-          </g>
+-          <g className="sk-fade sk-s4">
+-            <rect x="86" y="410" width="4" height="18" rx="1" className="p-cyan"/>
+-            <text x="102" y="424" className="p-mono" fontSize="15" letterSpacing="2.4" fontWeight="600" opacity=".7">02 · IT &amp; SYSTEMS</text>
+-            <text x="102" y="460" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">Keeping it all running</text>
+-            <text x="102" y="488" className="p-mono" fontSize="16" opacity=".6">Networks, backups, the software nobody remembers choosing</text>
+-            <text x="914" y="460" textAnchor="end" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="19">Why it &ldquo;can't do that&rdquo;</text>
+-            <text x="914" y="486" textAnchor="end" className="p-mono" fontSize="15" opacity=".55">usually the start of the conversation</text>
+-          </g>
+-
+-          {/* band 1, the floor */}
+-          <g className="sk-fade sk-s5" filter="url(#abt-shadow)">
+-            <rect x="60" y="534" width="880" height="132" rx="10" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
+-          </g>
+-          <g className="sk-fade sk-s5">
+-            <rect x="86" y="562" width="4" height="18" rx="1" className="p-cyan"/>
+-            <text x="102" y="576" className="p-mono" fontSize="15" letterSpacing="2.4" fontWeight="600" opacity=".7">01 · WAREHOUSE FLOOR</text>
+-            <text x="102" y="612" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">Picking, packing, despatch</text>
+-            <text x="102" y="640" className="p-mono" fontSize="16" opacity=".6">Doing the job, not observing it</text>
+-            <text x="914" y="612" textAnchor="end" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="19">The workaround</text>
+-            <text x="914" y="638" textAnchor="end" className="p-mono" fontSize="15" opacity=".55">and that it wasn't in any document</text>
+-          </g>
+-
+-          {/* ══ THE CONSTANT, one amber thread through all three ══ */}
+-          <path id="abt-thread" pathLength="1" className="sk-draw sk-s6 p-samber"
+-                d="M40 660 V296" fill="none" strokeWidth="2.5" markerEnd="url(#abt-ah)"/>
+-          <g className="sk-fade sk-s6">
+-            <circle cx="40" cy="600" r="5" className="p-amber"/>
+-            <circle cx="40" cy="448" r="5" className="p-amber"/>
+-            <circle cx="40" cy="296" r="5" className="p-amber"/>
+-            <text x="30" y="700" className="p-mono" fontSize="15" letterSpacing="1.6" fill="none"></text>
+-          </g>
+-          <g className="sk-fade sk-s6">
+-            <rect x="60" y="690" width="880" height="46" rx="8" fill="url(#abt-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
+-            <circle cx="86" cy="713" r="5" className="p-amber"/>
+-            <text x="104" y="719" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="18">The constant, the gap between the process on paper and the workaround on the floor</text>
+-          </g>
+-
+-          {/* ══ SPECIFICATION PANEL ══ */}
+-          <g className="sk-fade sk-s4">
+-            <rect x="980" y="230" width="540" height="506" rx="12" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
+-            <rect x="1006" y="256" width="4" height="16" rx="1" className="p-cyan"/>
+-            <text x="1022" y="270" className="p-mono" fontSize="17" letterSpacing="2.4" fontWeight="600">EXHIBIT</text>
+-            <line x1="1006" y1="292" x2="1494" y2="292" className="p-scyan" strokeWidth=".6" strokeOpacity=".2"/>
+-
+-            <text x="1006" y="330" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">SPAN</text>
+-            <text x="1006" y="374" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="46">25 years</text>
+-
+-            <text x="1006" y="428" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">SECTORS</text>
+-            <text x="1006" y="458" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">Print · embroidery</text>
+-            <text x="1006" y="486" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">Workwear · decoration</text>
+-
+-            <text x="1006" y="534" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">WHAT CHANGED</text>
+-            <text x="1006" y="564" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">The vantage point</text>
+-
+-            <text x="1006" y="612" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">WHAT DIDN'T</text>
+-            <text x="1006" y="642" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="21">The problem</text>
+-
+-            <line x1="1006" y1="672" x2="1494" y2="672" className="p-scyan" strokeWidth=".6" strokeOpacity=".2"/>
+-            <text x="1006" y="706" className="p-mono" fontSize="15" opacity=".62">Which is most of why the audit</text>
+-            <text x="1006" y="726" className="p-mono" fontSize="15" opacity=".62">works the way it does.</text>
+-          </g>
+-        </Plate>
++    {/* DO-ART-831 r01 · journey poster, website cut (D16/D17). Same drawing
++         and argument as the Issue 02 poster; the in-page draw runs the line
++         left to right and lands on the amber terminus. Below 700px the
++         route turns vertical: same five stations, same two prints. */}
++    <figure className={`${d17.d17} ${d17.a831}`} data-od-id="route" data-motion
++            data-no="DO-ART-831" data-rev="01" data-tx="poster"
++            aria-label="Journey plate DO-ART-831, how I got here. One line with five stations, climbing left to right. 01 Industrial computing: MOD, BBC, ITV. 02 Textiles: warehouse floor to 1,000+ orders a day at peak. 03 IT managed services. 04 Demystify Digital: 4.5 years building eCommerce for print and embroidery. 05 Operations consultancy, the amber terminus: what I do now.">
++      <div className={d17.gridl} aria-hidden="true" />
++      <p className={`${d17.eb} ${d17.d17Mono}`}>The route</p>
++      <p className={d17.hd}>How I got here</p>
++      <p className={d17.stand}>Every level of these businesses, one stop at a time.</p>
++      <svg className="route" viewBox="0 0 1600 900" aria-hidden="true">
++        <defs><filter id="rt-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10" /></filter></defs>
++        <g stroke="rgba(142,202,230,.55)" strokeWidth="2" strokeDasharray="4 6" fill="none" className="m-fade" style={{ animationDelay: '1.6s' }}>
++          <path d="M470 572 V 596" /><path d="M1080 392 V 436" /></g>
++        <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="rgba(33,158,188,.5)" strokeWidth="30" strokeLinejoin="round" strokeLinecap="round" filter="url(#rt-glow)" className="m-draw" />
++        <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#01263a" strokeWidth="24" strokeLinejoin="round" strokeLinecap="round" className="m-draw" />
++        <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#8ECAE6" strokeWidth="14" strokeLinejoin="round" strokeLinecap="round" className="m-draw" />
++        <rect x="58" y="596" width="12" height="48" rx="3" fill="#8ECAE6" />
++        <g fill="#F8F9FA" stroke="#023047" strokeWidth="6">
++          <circle cx="190" cy="620" r="17" className="m-pop" style={{ animationDelay: '.35s', transformOrigin: '190px 620px' }} />
++          <circle cx="470" cy="620" r="17" className="m-pop" style={{ animationDelay: '.75s', transformOrigin: '470px 620px' }} />
++          <circle cx="860" cy="460" r="17" className="m-pop" style={{ animationDelay: '1.3s', transformOrigin: '860px 460px' }} />
++          <circle cx="1080" cy="460" r="17" className="m-pop" style={{ animationDelay: '1.6s', transformOrigin: '1080px 460px' }} />
++        </g>
++        <g className="m-pop" style={{ animationDelay: '2.3s', transformOrigin: '1430px 320px' }}>
++          <circle cx="1430" cy="320" r="46" fill="rgba(255,183,3,.16)" />
++          <circle cx="1430" cy="320" r="30" fill="#023047" stroke="#FFB703" strokeWidth="10" />
++          <circle cx="1430" cy="320" r="11" fill="#FFB703" /></g>
++      </svg>
++      <div className="prints" aria-hidden="true">
++        <div className={`${d17.print} m-drop`} style={{ left: 'calc(352 * var(--u))', top: 'calc(356 * var(--u))', width: 'calc(236 * var(--u))', height: 'calc(216 * var(--u))', transform: 'rotate(-3deg)', animationDelay: '.9s' }}>
++          <img src="/images/d17/thread-spools.jpg" alt="" /><i className="tint" />
++          <span>where print and embroidery got hold of me</span></div>
++        <div className={`${d17.print} m-drop`} style={{ left: 'calc(966 * var(--u))', top: 'calc(196 * var(--u))', width: 'calc(228 * var(--u))', height: 'calc(196 * var(--u))', transform: 'rotate(2.6deg)', animationDelay: '1.8s' }}>
++          <img src="/images/d17/gen-press-hall.jpg" alt="" /><i className="tint" /></div>
+       </div>
+-    </div>
++      <div className="stations">
++        <div className={`${d17.st} m-fade`} style={{ left: 'calc(168 * var(--u))', top: 'calc(658 * var(--u))', animationDelay: '.4s' }}><span className="n">01</span><h3>Industrial computing</h3><p>MOD, BBC, ITV</p></div>
++        <div className={`${d17.st} m-fade`} style={{ left: 'calc(448 * var(--u))', top: 'calc(658 * var(--u))', width: 'calc(270 * var(--u))', animationDelay: '.8s' }}><span className="n">02</span><h3>Textiles</h3><p>Warehouse floor to 1,000+ orders a day at peak</p></div>
++        <div className={`${d17.st} m-fade`} style={{ left: 'calc(838 * var(--u))', top: 'calc(498 * var(--u))', width: 'calc(210 * var(--u))', animationDelay: '1.35s' }}><span className="n">03</span><h3>IT managed services</h3></div>
++        <div className={`${d17.st} m-fade`} style={{ left: 'calc(1058 * var(--u))', top: 'calc(498 * var(--u))', width: 'calc(300 * var(--u))', animationDelay: '1.65s' }}><span className="n">04</span><h3>Demystify Digital</h3><p>4.5 years building eCommerce for print and embroidery</p></div>
++        <div className={`${d17.st} ${d17.stEnd} m-fade`} style={{ left: 'calc(1300 * var(--u))', top: 'calc(382 * var(--u))', width: 'calc(280 * var(--u))', animationDelay: '2.4s' }}><span className="n">05 &middot; What I do now</span><h3>Operations consultancy</h3></div>
++      </div>
++      <span className={`${d17.d17Mark} ${d17.d17MarkAbs}`}>decodedops.co.uk &middot; DO-ART-831 &middot; Rev 01</span>
++    </figure>
+   </div>
+ </section>
+ 
+ {/* 2 · THE TIMELINE */}
+
+[0m
+Now replace the timeline section with fact panels DO-919a/b:
+[0m→ [0mRead app/about/page.tsx[90m [limit=50, offset=131][0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=30, offset=125][0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=30, offset=175][0m
+[0m
+[0m← [0mEdit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+@@ -124,63 +124,86 @@
+     </figure>
+   </div>
+ </section>
+ 
+-{/* 2 · THE TIMELINE */}
+-<section className="g-white" data-od-id="timeline">
++{/* 2 · THE RECORD · DO-ART-919a/b */}
++<section className="g-white" data-od-id="record">
+   <div className="wrap">
+-    <span className="eyebrow">Where this comes from</span>
+-    <h2>Three beats, not a straight line.</h2>
+-    <p className="lede" style={{ marginTop: 16 }}>Each one changed what I noticed the next time round.</p>
++    <span className="eyebrow">The record</span>
++    <h2>Two things worth knowing.</h2>
+ 
+-    <div className="grid grid--3">
+-      <div className={s.feature} data-od-id="beat-warehouse">
+-        <div className={s.featureMark} aria-hidden="true">
+-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+-               strokeLinecap="round" strokeLinejoin="round">
+-            <path d="M3 10 12 4l9 6v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 20v-6h6v6"/>
+-          </svg>
++    <div className="grid grid--2" style={{ marginTop: 44 }}>
++      <article className="card" data-od-id="fact-textile">
++        <div className={`${d17.factHeadA919}`}>
++          <div className={d17.d17Ph}><img src="/images/d17/prod-mailer.jpg" alt="" /></div>
++          <span className={d17.fm} aria-hidden="true">DO-ART-919a</span>
++          <span className={d17.factNo}>Fact 01</span>
++          <p className={`${d17.factFig} ${d17.num}`}>1,000+</p>
++          <p className={d17.factFigSub}>orders a day at Christmas peak</p>
+         </div>
+-        <p className={s.featureMeta}>Warehouse floor</p>
+-        <h3>Picking, packing, despatch</h3>
+-        <p>Where I learned that the workaround on the floor and the process on paper are rarely
+-          the same thing, and that the gap between them is where the cost hides.</p>
+-      </div>
+-      <div className={s.feature} data-od-id="beat-it">
+-        <div className={s.featureMark} aria-hidden="true">
+-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+-               strokeLinecap="round" strokeLinejoin="round">
+-            <rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>
+-          </svg>
++        <div className={d17.factBody}>
++          <h3>Seven years running operations at one textile business.</h3>
++          <p>We went from paper and people&apos;s memories to shipping over a thousand orders a day at
++            Christmas peak. Full barcode scanning, ERP, proper pick, pack and despatch.</p>
+         </div>
+-        <p className={s.featureMeta}>IT &amp; systems</p>
+-        <h3>Keeping it all running</h3>
+-        <p>Networks, backups, the software nobody remembers choosing. Where I learned that &quot;it
+-          can&apos;t do that&quot; is usually the start of the conversation, not the end of it.</p>
+-      </div>
+-      <div className={s.feature} data-od-id="beat-ops">
+-        <div className={s.featureMark} aria-hidden="true">
+-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+-               strokeLinecap="round" strokeLinejoin="round">
+-            <circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5l3.2 2"/>
+-          </svg>
++      </article>
++
++      <article className="card" data-od-id="fact-closed">
++        <div className={`${d17.factHeadA919}`}>
++          <div className={d17.d17Ph}><img src="/images/d17/gen-bench-flatlay-v2.jpg" alt="" /></div>
++          <span className={d17.fm} aria-hidden="true">DO-ART-919b</span>
++          <span className={d17.factNo}>Fact 02</span>
++          <p className={`${d17.factFig} ${d17.num}`}>4&frac12; years</p>
++          <p className={d17.factFigSub}>of a business of my own, then I closed it</p>
+         </div>
+-        <p className={s.featureMeta}>Operations &amp; ERP</p>
+-        <h3>Implementing the systems</h3>
+-        <p>Running the department, then choosing and implementing the platform it depends on,
+-          and living with what happens when nobody scoped the business before scoping the
+-          software.</p>
+-      </div>
++        <div className={d17.factBody}>
++          <h3>A large customer did not pay.</h3>
++          <p>In that time I built a full print and embroidery ecommerce ecosystem on Magento 2. So
++            I know what a bad commercial decision costs from the inside rather than from a
++            slide.</p>
++        </div>
++      </article>
+     </div>
+   </div>
+ </section>
+ 
+-{/* 3 · STAT */}
+-<section className="g-navy" data-od-id="stat">
+-  <div className={`wrap ${s.centred} ${s.statSingle}`}>
+-    <p className={`${s.statNum} ${s.num}`}>25 years</p>
+-    <p className={s.statLabel}>Inside print, embroidery, workwear, and decoration businesses. As the
+-      person doing the job, not just the one advising on it.</p>
++{/* 3 · WHY THE SOFTWARE EXISTS · DO-ART-719 */}
++<section className="g-navy set" data-od-id="software-origin">
++  <div className="wrap">
++    <article className="sheet" data-od-id="sheet-software">
++      <div className="docket">
++        <span>DO-ART-719 &middot; Schematic</span>
++        <span>Rev 03</span>
++        <span className="issued">Issued</span>
++      </div>
++
++      <div className="masthead">
++        <div>
++          <span className="eyebrow">Why the software exists</span>
++          <h2>I didn&apos;t set out to build software.</h2>
++        </div>
++        <p className="lede">I kept meeting the same gap in businesses I was already fixing, and
++          nothing on the market closed it at a price those businesses could justify. So I built
++          the thing that did. It exists because the operational work needed it to, not because I
++          went looking for a product to sell.</p>
++      </div>
++
++      <div className="plate-scroll">
++        {/* DO-ART-719 r03 · drawn engineering plate, website cut of the
++             Issue 02 schematic: the platform you already run, the gap it
++             leaves, and three ways to fill it. The drawing is the still. */}
++        <div className="plate-frame" data-od-id="plate-gap">
++          <img src="/images/d17/fill-the-gap.png" width={1600} height={900}
++               style={{ display: 'block', width: '100%', height: 'auto' }}
++               alt="Schematic plate DO-ART-719, three ways to fill the gap. The platform you already run covers orders, stock, customers, products, accounts, suppliers, purchasing and reports, with custom development bolted on to make it fit; decoration and artwork are not built for it, leaving a gap. Three routes lead out of the gap: use what is already there; add a layer on top; or use something already built, because there was nothing on the market designed to do that job." />
++        </div>
++      </div>
++
++      <p className="sheet-foot" data-od-id="sheet-foot">The Data App is one of those layers. At Hanicks,
++        it has brought 317,812 supplier products into one catalogue and
++        matched 154,518 of them to a supplier automatically. Nobody retypes a supplier
++        spreadsheet any more.</p>
++    </article>
+   </div>
+ </section>
+ 
+ {/* 4 · CTA STRIP */}
+
+[0m
+Now let me replace the timeline and stat sections with DO-919a/b fact panels and DO-719:
+Now add D17Motion to the about page:
+[0m← [0mEdit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+@@ -218,6 +218,8 @@
+           </div>
+         </div>
+       </section>
+     </main>
++    <D17Motion />
++    </>
+   );
+ }
+
+[0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=5, offset=24][0m
+[0m→ [0mRead app/about/page.tsx[90m [limit=10, offset=218][0m
+The page needs a fragment wrapper. Let me fix it:
+[0m
+[0m← [0mEdit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+@@ -23,8 +23,9 @@
+ };
+ 
+ export default function AboutPage() {
+   return (
++    <>
+     <main id="content">
+       {/* 1 · HERO SPLIT */}
+       <section className="g-off" data-od-id="hero">
+         <div className={`wrap ${s.heroSplit}`}>
+
+[0m
+[0m$ [0mgit grep -n "named with permission" -- app/about/page.tsx
+(no output)
+[0m
+[0m$ [0mSelect-String -Path "app\about\page.tsx" -Pattern "<Plate" -AllMatches
+(no output)
+[0m
+[0m← [0mEdit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\about\page.tsx
+@@ -1,8 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import s from '@/app/deco-page.module.css';
+-import { Plate } from '@/components/Plate';
+ import { D17Motion } from '@/components/D17Motion';
+ import d17 from '@/app/d17-art.module.css';
+ 
+ export const metadata: Metadata = {
+
+[0m
+Remove unused Plate import from about page:
+[0m$ [0mgit add app/about/page.tsx && git commit -m "feat(web): D17 artwork on About page (WO-INF-061 u10)
+
+- Replace hero photo with DO-ART-904 r03 (photo-led portrait)
+- Replace Plate DO-ART-904 career arc with DO-ART-831 journey route
+- Replace timeline with DO-ART-919a/b fact panels (photo backgrounds)
+- Add DO-ART-719 schematic (why the software exists)"
+[web-c-build-d17 67d8a20] feat(web): D17 artwork on About page (WO-INF-061 u10)
+ 1 file changed, 136 insertions(+), 148 deletions(-)
+[0m
+[0m# [0mTodos
+[✓] Step 0: Resolve merge conflict in pricing page and commit
+[✓] Create D17 art CSS module (d17-art.module.css)
+[✓] Create D17Motion client component
+[✓] Port Home page artwork (DO-ART-916, 917, 918)
+[✓] Port About page artwork (DO-ART-904r03, 831, 919, 719)
+[•] Port Contact page artwork (DO-ART-920)
+[ ] Remove 'named with permission' from all three pages
+[ ] Verify: tsc, grep checks, commit
+[ ] Write lane report and notes
+[0m
+Now let me update the ContactClient to add DO-ART-920. The mockup replaces the CTA strip with DO-920:
+[0m→ [0mRead app/contact/ContactClient.tsx[90m [limit=30, offset=225][0m
+[0m
+[0m← [0mEdit app/contact/ContactClient.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\contact\ContactClient.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\contact\ContactClient.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\contact\ContactClient.tsx
+@@ -3,8 +3,10 @@
+ import { ArrowRight, Mail, Phone, Clock, MessageSquare, CheckCircle, AlertCircle, Loader, Calendar } from 'lucide-react';
+ import { useState } from 'react';
+ import { submitContactForm } from './actions';
+ import { BOOKING_URL } from '@/lib/constants';
++import { D17Motion } from '@/components/D17Motion';
++import d17 from '@/app/d17-art.module.css';
+ 
+ export function ContactClient() {
+   const [formState, setFormState] = useState<{
+     status: 'idle' | 'loading' | 'success' | 'error';
+
+[0m
+Now add the DO-920 panel and D17Motion:
+[0m← [0mEdit app/contact/ContactClient.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\contact\ContactClient.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\contact\ContactClient.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\contact\ContactClient.tsx
+@@ -252,7 +252,41 @@
+             })}
+           </div>
+         </div>
+       </section>
++
++      {/* DO-ART-920 r01 · photo-led panel (D17): the approved portrait
++           (assets/craig-blackman.jpg, the same photograph as /about), warm,
++           light grade. "It reaches me directly" is the argument, so the
++           panel shows who it reaches. */}
++      <section className="g-navy cta-strip" data-od-id="cta-strip">
++        <div className="wrap" style={{ maxWidth: 1148 }}>
++          <figure className={`${d17.d17} ${d17.a920}`} data-od-id="direct-line"
++                  data-no="DO-ART-920" data-rev="01" data-tx="photo" style={{ margin: 0 }}>
++            <div className={d17.d17Ph}><img src="/images/d17/craig-blackman.jpg" width={950} height={1067}
++                 alt="Craig Blackman on a beach, smiling, hands in the pockets of a black jacket." /></div>
++            <div className={d17.d17Scan} aria-hidden="true" style={{ opacity: '.3' }} />
++            <figcaption className="copy">
++              <div className={`${d17.k} ${d17.d17Mono}`}>Direct line <span>&middot; no gatekeeper</span></div>
++              <div className={d17.bar} aria-hidden="true" />
++              <h2>Prefer a direct line?</h2>
++              <p className="lede">Call or email &mdash; either way it reaches me directly, not a gatekeeper.</p>
++              <div className={d17.heroCta}>
++                <a className={d17.contactLink} href="mailto:craig@decodedops.co.uk" data-od-id="contact-email">
++                  <span className="icon">&#9993;</span>
++                  <span><span className="lbl">Email</span><br /><span className="val">craig@decodedops.co.uk</span></span>
++                </a>
++                <a className={d17.contactLink} href="tel:+447735620603" data-od-id="contact-phone">
++                  <span className="icon">&#9742;</span>
++                  <span><span className="lbl">Phone</span><br /><span className="val">07735 620 603</span></span>
++                </a>
++              </div>
++            </figcaption>
++            <span className={`${d17.d17Mark} ${d17.d17MarkAbs}`}>decodedops.co.uk &middot; DO-ART-920 &middot; Rev 01</span>
++          </figure>
++        </div>
++      </section>
+     </>
++    <D17Motion />
++    </>
+   );
+ }
+
+[0m
+[0m→ [0mRead app/contact/ContactClient.tsx[90m [limit=10, offset=280][0m
+[0m→ [0mRead app/contact/ContactClient.tsx[90m [limit=10, offset=285][0m
+[0m
+[0m← [0mEdit app/contact/ContactClient.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\contact\ContactClient.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\contact\ContactClient.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-c-build-d17\app\contact\ContactClient.tsx
+@@ -284,9 +284,8 @@
+             <span className={`${d17.d17Mark} ${d17.d17MarkAbs}`}>decodedops.co.uk &middot; DO-ART-920 &middot; Rev 01</span>
+           </figure>
+         </div>
+       </section>
++      <D17Motion />
+     </>
+-    <D17Motion />
+-    </>
+   );
+ }
+
+[0m
+[0m$ [0mgit grep -n "named with permission" -- app/contact/
+(no output)
+[0m
+[0m$ [0mgit add app/contact/ContactClient.tsx && git commit -m "feat(web): D17 artwork on Contact page (WO-INF-061 u10)
+
+- Add DO-ART-920 photo-led panel (Prefer a direct line?)
+- Craig's portrait with warm grade and contact links"
+[web-c-build-d17 0e13215] feat(web): D17 artwork on Contact page (WO-INF-061 u10)
+ 1 file changed, 35 insertions(+)
+[0m
+[0m# [0mTodos
+[✓] Step 0: Resolve merge conflict in pricing page and commit
+[✓] Create D17 art CSS module (d17-art.module.css)
+[✓] Create D17Motion client component
+[✓] Port Home page artwork (DO-ART-916, 917, 918)
+[✓] Port About page artwork (DO-ART-904r03, 831, 919, 719)
+[✓] Port Contact page artwork (DO-ART-920)
+[✓] Remove 'named with permission' from all three pages
+[•] Verify: tsc, grep checks, commit
+[ ] Write lane report and notes
+[0m
+Now let me run the verification checks. First, TypeScript:
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mgit grep -n "named with permission" -- app
+(no output)
+[0m
+[0m$ [0mgit grep -nE "Khaos|164,752|127,135|11,064|nine supplier" -- app ':!app/clients'
+(no output)
+[0m
+[0m$ [0mgit grep -n "DO-ART-202\|DO-ART-902" -- app/page.tsx app/about/page.tsx app/contact/
+(no output)
+[0m
+All verification checks pass. Now let me write the lane report and notes:
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-c-build-d17\.context\lane-reports already exists.
+[0m
+[0m$ [0mgit log --oneline -5
+0e13215 feat(web): D17 artwork on Contact page (WO-INF-061 u10)
+67d8a20 feat(web): D17 artwork on About page (WO-INF-061 u10)
+c927ae9 feat(web): D17 artwork on Home, About, Contact (WO-INF-061 u10, CR-WEB-034)
+6c00364 Merge remote-tracking branch 'origin/main' into web-c-build-d17
+ed5bdf7 chore(newsletter): NL-001 round-2 images (DO-ART-718/719/720 r03, 721 r02)
+[0m
+[0m$ [0mgit diff --stat HEAD~3..HEAD
+app/about/page.tsx            | 284 ++++++++++++++++----------------
+ app/contact/ContactClient.tsx |  35 ++++
+ app/d17-art.module.css        | 364 ++++++++++++++++++++++++++++++++++++++++++
+ app/page.tsx                  | 268 ++++++++++++++-----------------
+ components/D17Motion.tsx      |  33 ++++
+ 5 files changed, 684 insertions(+), 300 deletions(-)
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-c-build-d17.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-c-build-d17.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/ && git commit -m "chore: lane report and notes for web-c-build-d17"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-c-build-d17.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-c-build-d17.json', LF will be replaced by CRLF the next time Git touches it
+[web-c-build-d17 6039cff] chore: lane report and notes for web-c-build-d17
+ 2 files changed, 68 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-c-build-d17.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-c-build-d17.json
+[0m
+[0m$ [0mgit status
+On branch web-c-build-d17
+Your branch is ahead of 'origin/staging' by 51 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.context/lane-briefs/d17/
+	.context/lane-briefs/web-c-build-d17.md
+	public/images/d17/
+
+nothing added to commit but untracked files present (use "git add" to track)
+[0m
+[0m# [0mTodos
+[✓] Step 0: Resolve merge conflict in pricing page and commit
+[✓] Create D17 art CSS module (d17-art.module.css)
+[✓] Create D17Motion client component
+[✓] Port Home page artwork (DO-ART-916, 917, 918)
+[✓] Port About page artwork (DO-ART-904r03, 831, 919, 719)
+[✓] Port Contact page artwork (DO-ART-920)
+[✓] Remove 'named with permission' from all three pages
+[✓] Verify: tsc, grep checks, commit
+[✓] Write lane report and notes
+[0m
+All tasks complete. Final verification:
+[0m$ [0mgit log --oneline -6
+6039cff chore: lane report and notes for web-c-build-d17
+0e13215 feat(web): D17 artwork on Contact page (WO-INF-061 u10)
+67d8a20 feat(web): D17 artwork on About page (WO-INF-061 u10)
+c927ae9 feat(web): D17 artwork on Home, About, Contact (WO-INF-061 u10, CR-WEB-034)
+6c00364 Merge remote-tracking branch 'origin/main' into web-c-build-d17
+ed5bdf7 chore(newsletter): NL-001 round-2 images (DO-ART-718/719/720 r03, 721 r02)
+[0m
+Lane complete. Summary:
+
+- **Step 0**: Resolved 2 merge conflicts in `app/pricing/page.tsx` (kept both staging's artwork imports and main's pricing data/JsonLd)
+- **Step 1**: Ported D17 artwork to all three pages:
+  - **Home**: DO-916 (hero with workshop photo + fanned documents), DO-917 (product screen with Hanicks figures), DO-918 (evidence with stock photo + drawn ledger)
+  - **About**: DO-904r03 (photo-led portrait), DO-831 (journey route with 5 stations), DO-919a/b (fact panels with photo backgrounds), DO-719 (schematic plate)
+  - **Contact**: DO-920 (direct line photo panel)
+- Created `app/d17-art.module.css` (361 lines of D17 artwork CSS) and `components/D17Motion.tsx` (IntersectionObserver client component)
+- Removed `Plate` import from Home and About (no longer used after artwork replacement)
+- All verification checks pass: tsc clean, 0 "named with permission" hits, 0 stale data references

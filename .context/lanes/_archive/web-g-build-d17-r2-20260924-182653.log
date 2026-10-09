@@ -1,0 +1,307 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-resources-build.md
+[0m
+[0m$ [0mls .context/lane-briefs/d17-resources/
+Directory: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\.context\lane-briefs\d17-resources
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          24/09/2026    18:13           2243 5-warning-signs.hero.html
+-a---          24/09/2026    18:13           3465 artwork-approval-playbook.hero.html
+-a---          24/09/2026    18:13           6808 artwork-approval-playbook.inline.html
+-a---          24/09/2026    18:13           3183 audit-checklist.hero.html
+-a---          24/09/2026    18:13           6401 audit-checklist.inline.html
+-a---          24/09/2026    18:13           3456 automation-roi-calculator.hero.html
+-a---          24/09/2026    18:13           2935 capacity-planner.hero.html
+-a---          24/09/2026    18:13           3057 capacity-planner.inline.html
+-a---          24/09/2026    18:13          31125 d17-art.css
+-a---          24/09/2026    18:13          43913 d17-resources.css
+-a---          24/09/2026    18:13           3378 decoded-method.hero.html
+-a---          24/09/2026    18:13           2379 downtime-cost-calculator.hero.html
+-a---          24/09/2026    18:13           3632 erp-selection-playbook.hero.html
+-a---          24/09/2026    18:13           2907 ops-health-score.hero.html
+-a---          24/09/2026    18:13         741109 resources-1440.png
+-a---          24/09/2026    18:13        1339006 resources-5-warning-signs-1440.png
+-a---          24/09/2026    18:13        1182245 resources-artwork-approval-playbook-1440.png
+-a---          24/09/2026    18:13        1057001 resources-audit-checklist-1440.png
+-a---          24/09/2026    18:13         795124 resources-capacity-planner-1440.png
+-a---          24/09/2026    18:13        1240753 resources-decoded-method-1440.png
+-a---          24/09/2026    18:13        1522385 resources-erp-selection-playbook-1440.png
+-a---          24/09/2026    18:13         636641 resources-seasonal-capacity-1440.png
+-a---          24/09/2026    18:13         921300 resources-six-sigma-1440.png
+-a---          24/09/2026    18:13        1479264 resources-sop-template-1440.png
+-a---          24/09/2026    18:13           3933 resources.hero.html
+-a---          24/09/2026    18:13           3039 rto-calculator.hero.html
+-a---          24/09/2026    18:13           3628 seasonal-capacity.hero.html
+-a---          24/09/2026    18:13           3378 should-i-replace-erp.hero.html
+-a---          24/09/2026    18:13           2955 six-sigma.hero.html
+-a---          24/09/2026    18:13          16720 six-sigma.inline.html
+-a---          24/09/2026    18:13           3454 sop-template.hero.html
+-a---          24/09/2026    18:13         537060 tools-1440.png
+-a---          24/09/2026    18:13         987736 tools-automation-roi-calculator-1440.png
+-a---          24/09/2026    18:13        1135377 tools-downtime-cost-calculator-v2-1440.png
+-a---          24/09/2026    18:13         855363 tools-ops-health-score-1440.png
+-a---          24/09/2026    18:13         375580 tools-rto-calculator-1440.png
+-a---          24/09/2026    18:13         637602 tools-should-i-replace-erp-1440.png
+-a---          24/09/2026    18:13           3467 tools.hero.html
+[0m
+[0m→ [0mRead app/resources/page.tsx
+[0m→ [0mRead .context/lane-briefs/d17-resources/resources.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/tools.hero.html
+[0m✱ [0mGlob "app/sectors/*/page.tsx"[90m in . · 10 matches[0m
+[0m→ [0mRead app/sectors/workwear/page.tsx[90m [limit=60][0m
+[0m→ [0mRead app/d17-global.css
+[0m→ [0mRead app/sectors/workwear/page.tsx[90m [offset=60, limit=80][0m
+[0m✱ [0mGlob "app/resources/[slug]/page.tsx"[90m in . · 0 matches[0m
+[0m✱ [0mGlob "app/tools/[slug]/page.tsx"[90m in . · 0 matches[0m
+[0m✱ [0mGlob "app/resources/**/*.tsx"[90m in . · 10 matches[0m
+[0m✱ [0mGlob "app/tools/**/*.tsx"[90m in . · 8 matches[0m
+[0m→ [0mRead .context/lane-briefs/d17-resources/5-warning-signs.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/artwork-approval-playbook.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/audit-checklist.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/automation-roi-calculator.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/capacity-planner.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/decoded-method.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/downtime-cost-calculator.hero.html
+Now let me read all the hero HTML files and existing pages in parallel:
+[0m→ [0mRead .context/lane-briefs/d17-resources/erp-selection-playbook.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/ops-health-score.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/rto-calculator.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/seasonal-capacity.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/should-i-replace-erp.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/six-sigma.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/sop-template.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/d17-resources.css
+Now let me read the d17-resources.css and some existing pages:
+[0m• [0mRead all resource and tool pages[90m Explore Agent[0m
+Now let me read the existing resource pages and tools pages to understand their structure:
+[0m✓ [0mRead all resource and tool pages[90m Explore Agent[0m
+[0m
+[0m# [0mTodos
+[ ] Create app/d17-resources.css from mockup source
+[ ] Port D17 hero art to resources index page
+[ ] Port D17 hero art to 5-warning-signs page
+[ ] Port D17 hero art to artwork-approval-playbook page
+[ ] Port D17 hero art to audit-checklist page
+[ ] Port D17 hero art to capacity-planner page
+[ ] Port D17 hero art to decoded-method page
+[ ] Port D17 hero art to erp-selection-playbook page
+[ ] Port D17 hero art to seasonal-capacity page
+[ ] Port D17 hero art to six-sigma page
+[ ] Port D17 hero art to sop-template page
+[ ] Port D17 hero art to tools index page
+[ ] Port D17 hero art to automation-roi-calculator page
+[ ] Port D17 hero art to downtime-cost-calculator page
+[ ] Port D17 hero art to ops-health-score page
+[ ] Port D17 hero art to rto-calculator page
+[ ] Port D17 hero art to should-i-replace-erp page
+[ ] Prefix clashing CSS selectors with .d17
+[ ] Run tsc --noEmit to verify
+[ ] Check for craig-blackman references in batch dirs
+[ ] Commit all work
+[ ] Write lane report and notes
+[0m
+[0m→ [0mRead .context/lane-briefs/d17-resources/audit-checklist.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/six-sigma.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-resources/artwork-approval-playbook.inline.html
+Let me first read the inline HTML files, then create the CSS file:
+[0m→ [0mRead .context/lane-briefs/d17-resources/capacity-planner.inline.html
+Let me check for clashing class names in the hero HTML files:
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-g-build-d17" && grep -rn 'class="wrap\|class="lede\|class="eyebrow\|class="kicker\|class="card\|class="btn\|class="grid' .context/lane-briefs/d17-resources/*.html 2>/dev/null || echo "No clashes found"
+grep: The term 'grep' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+No clashes found
+[0m
+[0m✱ [0mGrep "class="(wrap|lede|eyebrow|kicker|card|btn|grid)"[90m in .context/lane-briefs/d17-resources · 0 matches[0m
+[0m
+[0m# [0mTodos
+[•] Create app/d17-resources.css from mockup source
+[ ] Port D17 hero art to resources index page
+[ ] Port D17 hero art to 5-warning-signs page
+[ ] Port D17 hero art to artwork-approval-playbook page
+[ ] Port D17 hero art to audit-checklist page
+[ ] Port D17 hero art to capacity-planner page
+[ ] Port D17 hero art to decoded-method page
+[ ] Port D17 hero art to erp-selection-playbook page
+[ ] Port D17 hero art to seasonal-capacity page
+[ ] Port D17 hero art to six-sigma page
+[ ] Port D17 hero art to sop-template page
+[ ] Port D17 hero art to tools index page
+[ ] Port D17 hero art to automation-roi-calculator page
+[ ] Port D17 hero art to downtime-cost-calculator page
+[ ] Port D17 hero art to ops-health-score page
+[ ] Port D17 hero art to rto-calculator page
+[ ] Port D17 hero art to should-i-replace-erp page
+[ ] Run tsc --noEmit to verify
+[ ] Check for craig-blackman references in batch dirs
+[ ] Commit all work
+[ ] Write lane report and notes
+[0m
+Good - no clashing class names in the HTML. Now let me create the CSS file and start modifying pages. First, commit the CSS file:
+[0m→ [0mRead .context/lane-briefs/d17-resources/d17-resources.css
+[0m
+[0m← [0mWrite app/d17-resources.css
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-g-build-d17" && git add app/d17-resources.css && git commit -m "feat(web): add d17-resources.css for resources/tools D17 artwork (WO-INF-061)"
+warning: in the working copy of 'app/d17-resources.css', LF will be replaced by CRLF the next time Git touches it
+[web-g-build-d17 2cc0f59] feat(web): add d17-resources.css for resources/tools D17 artwork (WO-INF-061)
+ 1 file changed, 463 insertions(+)
+ create mode 100644 app/d17-resources.css
+[0m
+[0m• [0mPort D17 art to resource pages group 1[90m General Agent[0m
+[0m• [0mPort D17 art to resource pages group 2[90m General Agent[0m
+Now let me modify all pages in parallel using task agents:
+[0m• [0mPort D17 art to tool pages[90m General Agent[0m
+[0m✓ [0mPort D17 art to tool pages[90m General Agent[0m
+[0m✓ [0mPort D17 art to resource pages group 1[90m General Agent[0m
+[0m✓ [0mPort D17 art to resource pages group 2[90m General Agent[0m
+[0m
+[0m# [0mTodos
+[✓] Create app/d17-resources.css from mockup source
+[✓] Port D17 hero art to resources index page
+[✓] Port D17 hero art to 5-warning-signs page
+[✓] Port D17 hero art to artwork-approval-playbook page
+[✓] Port D17 hero art to audit-checklist page
+[✓] Port D17 hero art to capacity-planner page
+[✓] Port D17 hero art to decoded-method page
+[✓] Port D17 hero art to erp-selection-playbook page
+[✓] Port D17 hero art to seasonal-capacity page
+[✓] Port D17 hero art to six-sigma page
+[✓] Port D17 hero art to sop-template page
+[✓] Port D17 hero art to tools index page
+[✓] Port D17 hero art to automation-roi-calculator page
+[✓] Port D17 hero art to downtime-cost-calculator page
+[✓] Port D17 hero art to ops-health-score page
+[✓] Port D17 hero art to rto-calculator page
+[✓] Port D17 hero art to should-i-replace-erp page
+[•] Run tsc --noEmit to verify
+[ ] Check for craig-blackman references in batch dirs
+[ ] Commit all work
+[ ] Write lane report and notes
+[0m
+[0m→ [0mRead components/D17Motion.tsx[90m [limit=10][0m
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-g-build-d17" && npx tsc --noEmit 2>&1 | head -50
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-g-build-d17" && npx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-g-build-d17" && git grep -n "craig-blackman" -- app/resources/ app/tools/ 2>&1
+(no output)
+[0m
+[0m# [0mTodos
+[✓] Create app/d17-resources.css from mockup source
+[✓] Port D17 hero art to resources index page
+[✓] Port D17 hero art to 5-warning-signs page
+[✓] Port D17 hero art to artwork-approval-playbook page
+[✓] Port D17 hero art to audit-checklist page
+[✓] Port D17 hero art to capacity-planner page
+[✓] Port D17 hero art to decoded-method page
+[✓] Port D17 hero art to erp-selection-playbook page
+[✓] Port D17 hero art to seasonal-capacity page
+[✓] Port D17 hero art to six-sigma page
+[✓] Port D17 hero art to sop-template page
+[✓] Port D17 hero art to tools index page
+[✓] Port D17 hero art to automation-roi-calculator page
+[✓] Port D17 hero art to downtime-cost-calculator page
+[✓] Port D17 hero art to ops-health-score page
+[✓] Port D17 hero art to rto-calculator page
+[✓] Port D17 hero art to should-i-replace-erp page
+[✓] Run tsc --noEmit to verify
+[✓] Check for craig-blackman references in batch dirs
+[•] Commit all work
+[ ] Write lane report and notes
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-g-build-d17" && git add -A && git commit -m "feat(web): D17 artwork on resources pages (WO-INF-061)"
+warning: in the working copy of 'app/resources/audit-checklist/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/six-sigma/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+[web-g-build-d17 69d5bc2] feat(web): D17 artwork on resources pages (WO-INF-061)
+ 15 files changed, 839 insertions(+), 290 deletions(-)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-g-build-d17" && git log --oneline -3
+69d5bc2 feat(web): D17 artwork on resources pages (WO-INF-061)
+2cc0f59 feat(web): add d17-resources.css for resources/tools D17 artwork (WO-INF-061)
+2c39891 chore: retry note for web-g build lane
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-g-build-d17" && mkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-g-build-d17\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-g-build-d17-r2.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-g-build-d17-r2.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-g-build-d17" && git add .context/lane-reports/ && git commit -m "chore: lane report for web-g-build-d17-r2"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-g-build-d17-r2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-g-build-d17-r2.json', LF will be replaced by CRLF the next time Git touches it
+[web-g-build-d17 f176586] chore: lane report for web-g-build-d17-r2
+ 2 files changed, 43 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-g-build-d17-r2.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-g-build-d17-r2.json
+[0m
+[0m# [0mTodos
+[✓] Create app/d17-resources.css from mockup source
+[✓] Port D17 hero art to resources index page
+[✓] Port D17 hero art to 5-warning-signs page
+[✓] Port D17 hero art to artwork-approval-playbook page
+[✓] Port D17 hero art to audit-checklist page
+[✓] Port D17 hero art to capacity-planner page
+[✓] Port D17 hero art to decoded-method page
+[✓] Port D17 hero art to erp-selection-playbook page
+[✓] Port D17 hero art to seasonal-capacity page
+[✓] Port D17 hero art to six-sigma page
+[✓] Port D17 hero art to sop-template page
+[✓] Port D17 hero art to tools index page
+[✓] Port D17 hero art to automation-roi-calculator page
+[✓] Port D17 hero art to downtime-cost-calculator page
+[✓] Port D17 hero art to ops-health-score page
+[✓] Port D17 hero art to rto-calculator page
+[✓] Port D17 hero art to should-i-replace-erp page
+[✓] Run tsc --noEmit to verify
+[✓] Check for craig-blackman references in batch dirs
+[✓] Commit all work
+[✓] Write lane report and notes
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-g-build-d17" && git log --oneline -5
+f176586 chore: lane report for web-g-build-d17-r2
+69d5bc2 feat(web): D17 artwork on resources pages (WO-INF-061)
+2cc0f59 feat(web): add d17-resources.css for resources/tools D17 artwork (WO-INF-061)
+2c39891 chore: retry note for web-g build lane
+139d1ac chore: lane report for web-g-build-d17 (WO-INF-061)
+[0m
+Done. Three commits landed:
+
+1. `2cc0f59` — `app/d17-resources.css` (463 lines, full D17 resources/tools stylesheet)
+2. `69d5bc2` — D17 hero art on all 16 pages (15 files, +839/-290 lines)
+3. `f176586` — Lane report + notes
+
+**16 pages ported:**
+
+| Page | Hero | Inline |
+|---|---|---|
+| `/resources` | DO-ART-980 | — |
+| `/resources/5-warning-signs` | DO-ART-982 | — |
+| `/resources/artwork-approval-playbook` | DO-ART-989 | DO-ART-990 |
+| `/resources/audit-checklist` | DO-ART-983 | DO-ART-984 |
+| `/resources/capacity-planner` | DO-ART-992 | DO-ART-993 |
+| `/resources/decoded-method` | DO-ART-988 | — |
+| `/resources/erp-selection-playbook` | DO-ART-991 | — |
+| `/resources/seasonal-capacity` | DO-ART-994 | — |
+| `/resources/six-sigma` | DO-ART-985 | DO-ART-986 |
+| `/resources/sop-template` | DO-ART-987 | — |
+| `/tools` | DO-ART-981 | — |
+| `/tools/automation-roi-calculator` | DO-ART-995 | — |
+| `/tools/downtime-cost-calculator` | DO-ART-996 | — |
+| `/tools/ops-health-score` | DO-ART-997 | — |
+| `/tools/rto-calculator` | DO-ART-998 | — |
+| `/tools/should-i-replace-erp` | DO-ART-999 | — |
+
+**Verification:** `tsc --noEmit` clean. `git grep "craig-blackman"` 0 hits in batch dirs. CR-WEB-055 copy fixes not redone (already committed b44c3ab).

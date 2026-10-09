@@ -1,0 +1,140 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/cr-web-050-fix2.md
+[0m→ [0mRead app/apps/page.tsx[90m [offset=60, limit=20][0m
+[0m→ [0mRead app/page.tsx[90m [offset=340, limit=50][0m
+[0m→ [0mRead app/problems/erp-implementation-failure/page.tsx[90m [offset=165, limit=20][0m
+[0m✱ [0mGrep "rect x="430" y="348""[90m in app/page.tsx · 1 match[0m
+[0m✱ [0mGrep "text x="1291" y="390""[90m in app/page.tsx · 1 match[0m
+Now let me find the SVG bars on the homepage:
+[0m✱ [0mGrep "rect x="430" y="468""[90m in app/page.tsx · 1 match[0m
+[0m→ [0mRead app/page.tsx[90m [limit=25, offset=275][0m
+[0m
+[0m← [0mEdit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\page.tsx
+@@ -65,9 +65,9 @@
+       <h3 style={{ marginTop: 14 }}>Decoded Commerce</h3>
+     </div>
+     <p>Storefront build and migration, scoped to what your customers actually need.
+       A full migration off WooCommerce, a new storefront, and reintegration back
+-      into one clean, matched list is the worked example.</p>
++      into the ERP is the worked example.</p>
+     <span className="go">See how it works</span>
+   </Link>
+ </div>
+ 
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -275,9 +275,9 @@
+ <g className="sk-fade sk-s3">
+   <text x="60" y="372" className="p-mono" fontSize="17" letterSpacing="1.6"
+         opacity=".55">MATCHED AUTOMATICALLY</text>
+   <text x="60" y="402" className="p-mono" fontSize="16" opacity=".4">matched to a supplier</text>
+-  <rect x="430" y="348" width="797" height="62" rx="6" fill="url(#ms-bar)"
++  <rect x="430" y="348" width="525" height="62" rx="6" fill="url(#ms-bar)"
+         className="p-node" strokeWidth="1"/>
+   <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
+         fontWeight="700" fontSize="30">154,518</text>
+   <text x="1291" y="390" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -279,10 +279,8 @@
+   <rect x="430" y="348" width="525" height="62" rx="6" fill="url(#ms-bar)"
+         className="p-node" strokeWidth="1"/>
+   <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
+         fontWeight="700" fontSize="30">154,518</text>
+-  <text x="1291" y="390" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+-        fontWeight="700" fontSize="30">40</text>
+ </g>
+ 
+ {/* 3 · live. Amber lands once, on the figure that is the point. */}
+ <g className="sk-fade sk-s4">
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -286,9 +286,9 @@
+ <g className="sk-fade sk-s4">
+   <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
+         opacity=".55">RE-OPTIMISED</text>
+   <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">Amazon listings</text>
+-  <rect x="430" y="468" width="73" height="62" rx="6" fill="url(#ms-amber-b)"
++  <rect x="430" y="468" width="14" height="62" rx="6" fill="url(#ms-amber-b)"
+         className="p-node-a" strokeWidth="1.4"/>
+   <text x="527" y="510" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+         fontWeight="700" fontSize="30">3,844</text>
+   <text x="630" y="510" className="p-mono" fontSize="17" opacity=".5">ahead of a title-format deadline</text>
+
+[0m
+Now I have all the context. Making the four edits:
+[0m← [0mEdit app/problems/erp-implementation-failure/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\erp-implementation-failure\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\erp-implementation-failure\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\erp-implementation-failure\page.tsx
+@@ -171,9 +171,9 @@
+ <span className="kicker">After</span>
+ <ul style={{ margin: '10px 0 0', padding: 0, listStyle: 'none' }}>
+  {[
+   <><b>154,518</b> matched to a supplier automatically</>,
+-   <>40 active suppliers feeding in, without anyone re-keying a row</>,
++   <><b>40</b> active suppliers feeding in, without anyone re-keying a row</>,
+    <><b>3,844</b> Amazon listings re-optimised ahead of a title-format deadline</>,
+   'The platform stayed. The layer around it changed.',
+  ].map((item, i) => (
+   <li key={i} style={{ fontSize: 'var(--do-text-sm)', marginBottom: 10, color: 'color-mix(in srgb, var(--do-prussian-blue) 74%, transparent)' }}>
+
+[0m
+All four edits applied. Now type-check:
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && npx tsc --noEmit 2>&1
+(no output)
+[0m
+Clean. Now commit:
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git add -A && git commit -m "fix(site): plate widths + commerce sentence (CR-WEB-050)"
+warning: in the working copy of '.context/lane-briefs/cr-web-050-fix2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/erp-implementation-failure/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+[cr-web-site-figures 0db0827] fix(site): plate widths + commerce sentence (CR-WEB-050)
+ 3 files changed, 4 insertions(+), 6 deletions(-)
+[0m
+Committed as `0db0827`. Now write the lane exit files:
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && mkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-cr-web-050-fix2.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-cr-web-050-fix2.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git add -A && git commit -m "chore: lane report cr-web-050-fix2"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-cr-web-050-fix2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-cr-web-050-fix2.json', LF will be replaced by CRLF the next time Git touches it
+[cr-web-site-figures 7c129a5] chore: lane report cr-web-050-fix2
+ 2 files changed, 10 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-cr-web-050-fix2.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-cr-web-050-fix2.json
+[0m
+Done. Two commits:
+
+- `0db0827` — all four content fixes (commerce sentence, two plate widths, delete extra text element, bold 40)
+- `7c129a5` — lane report files
+
+`tsc --noEmit` clean, 0 errors. All edits verified against the brief.

@@ -1,0 +1,68 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓåÆ [0mRead .context/lane-briefs/web011-u25-batch2-fix.md
+[0mΓ£▒ [0mGrep "It has grown into the ERP for a printing company, stock control software and order management system included."[90m 1 match[0m
+[0mΓ£▒ [0mGrep "closing that gap is what I do now as a business operations consultant."[90m 1 match[0m
+[0m
+[0mΓåÉ [0mEdit app/apps/works/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\works\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\works\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\works\page.tsx
+@@ -120,9 +120,9 @@
+         <div className="wrap">
+           <span className="eyebrow">Architecture &middot; DO-ART-942</span>
+           <h2>Keep your platform, or let this become it.</h2>
+           <p className="lede" style={{ marginTop: 16 }}>Works started as the missing layer: supplier
+-            feeds, data enrichment, catalogue maintenance across channels. It has grown into the ERP for a printing company, stock control software and order management system included.
++            feeds, data enrichment, catalogue maintenance across channels. It has grown into the ERP, with stock control and order management built in.
+             You can run it alongside the platform you already own, or let it replace it.</p>
+ 
+           <div dangerouslySetInnerHTML={{ __html: `
+ <figure class="d17 sw a942" data-od-id="layer-stack-diagram" data-motion data-no="DO-ART-942" data-rev="01" data-tx="schematic"
+
+[0m
+[0mΓåÉ [0mEdit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\about\page.tsx
+@@ -72,9 +72,9 @@
+ <span className="eyebrow">Career arc &middot; DO-ART-831</span>
+ <h2>Three vantage points, one problem that never changed.</h2>
+ <div className="hair"></div>
+ <p className="lede" style={{ marginTop: 16 }}>
+-  Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. Every level taught me the same thing: the paperwork says one thing, the floor does another, and closing that gap is what I do now as a business operations consultant.
++  Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. Every level taught me the same thing: the paperwork says one thing, the floor does another, and closing that gap is the job now.
+ </p>
+ 
+ {/* DO-ART-831 r01 ┬╖ journey poster, website cut (D16/D17). Same drawing
+      and argument as the Issue 02 poster; the in-page draw runs the line
+
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages" && git add app/apps/works/page.tsx app/about/page.tsx && git commit -m "content(seo): tidy two stuffed keyword sentences (WO-WEB-011 u25 batch 2)"
+[web011-u25-batch2-money-pages 29e5449] content(seo): tidy two stuffed keyword sentences (WO-WEB-011 u25 batch 2)
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages" && git log --oneline -1 --format="%H %s"
+29e54490937b8e6368b6bd41e03e6116f752fd2a content(seo): tidy two stuffed keyword sentences (WO-WEB-011 u25 batch 2)
+[0m
+[0m$ [0mmkdir -p "D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\.context\lane-reports"
+(no output)
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web011-u25-batch2-fix.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web011-u25-batch2-fix.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages" && git add .context/lane-reports/LANE-RESULT-web011-u25-batch2-fix.json .context/lane-reports/LANE-NOTES-web011-u25-batch2-fix.md && git commit -m "docs: lane report for web011-u25-batch2-fix"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web011-u25-batch2-fix.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web011-u25-batch2-fix.json', LF will be replaced by CRLF the next time Git touches it
+[web011-u25-batch2-money-pages f838861] docs: lane report for web011-u25-batch2-fix
+ 2 files changed, 26 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web011-u25-batch2-fix.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web011-u25-batch2-fix.json
+[0m
+Done. Two keyword-stuffed sentences replaced in `app/apps/works/page.tsx` and `app/about/page.tsx`. Committed as `29e5449`. Lane reports written and committed as `f838861`.

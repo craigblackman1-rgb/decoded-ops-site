@@ -111,3 +111,38 @@ NOTE: shared checkout is dirty + behind origin/main (deferred dmttspqz6bd).
 - Gates attested `amtu275eu5l`. No mockup governs a metadata-string change — design parity N/A, stated explicitly rather than skipped.
 - Coolify deploy `nj9ih5edchcs0zuo2fb2dbjl` fired 12:13Z and was still `in_progress` at report time — pushed, NOT yet verified live. Next pass confirms the running commit is at-or-after 53da79d.
 - Worktree `meta-title-spacing` left in place until the deploy is confirmed; remove it next pass.
+
+## 2026-09-22 08:5x — wo-dispatcher (scheduled)
+- Dispatched lane `web011-u16-internal-link-mesh` (worktree `D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh`, branch `web011-u16-internal-link-mesh`, off `origin/main` fae... at fetch time) for WO-WEB-011 u16 (CR-WEB-040 follow-up: 7 pages still under 3 in-content inbound links). Model `opencode-go/mimo-v2.5`, WT-tab (not -Inline). Brief: `LANE-BRIEF.md` in the worktree — additive edits only to `data/problem-routing.ts` / `data/sector-routing.ts` (+ case-study content if needed), tsc + build + grep-count verify, commit and stop (no push).
+- Not yet verified — next pass (or this session if it lands in time) checks scope diff, tsc, build, and the 7-target grep-count before attest + push.
+- 2026-09-22T12:35Z dispatcher: dispatched lane web003-u21-eslint-unescaped (mimo-v2.5, WT-tab) — BUG-WEB-030 eslint unescaped-entities fix, WO-WEB-003.
+
+- 2026-09-28 (weekend dispatcher): dispatched lane cr-web-066-cwv (WO-WEB-011 u21, CR-WEB-066 CWV preload/sizes fix) — worktree D:pps\worktrees\decoded-ops-website\cr-web-066-cwv, branch cr-web-066-cwv. Not yet verified.
+
+- 2026-09-28 09:1x (weekend dispatcher, correction pass): found lane `cr-web-066-cwv` (WO-WEB-011 u21, CR-WEB-066) already finished (2 commits, `components/Header.tsx` prefetch=false, honest deviation noted on hero srcset part — image since replaced by DO-ART-1008 in an earlier lane). Verified myself (re-ran `tsc --noEmit` clean, scope diff matches MUST). Attested `amukyrwolue`, pushed `eb7b0f1..9efdc22` to main, worktree removed. Note: a duplicate lane `web011-u21-cwv-polish` was briefly dispatched for the same unit before this was discovered (registry note had been overwritten by a concurrent session) — killed before it committed anything, worktree/branch removed, no harm done. Estate has other concurrent dispatch activity running right now (several opencode processes observed 08:58-09:05Z not from this session) — re-check `wo active` before trusting any note as current.
+
+## 2026-09-28T09:04:52Z — dispatcher (scheduled)
+- Dispatched lane web003-u22-hero-overlap (WO-WEB-003 u22, BUG-WEB-035) — D:\apps\worktrees\decoded-ops-website\web003-u22-hero-overlap, branch web003-u22-hero-overlap
+- Dispatched lane web003-u23-heading-order (WO-WEB-003 u23, BUG-WEB-036) — D:\apps\worktrees\decoded-ops-website\web003-u23-heading-order, branch web003-u23-heading-order
+
+- 2026-09-28 10:42 dispatcher: VERIFIED+MERGED u22 (BUG-WEB-035, 9efdc22..c3a861a) + u23 (BUG-WEB-036, c3a861a..364ddf9) from prior 10:04 run. Dispatched new lane web061-u42-footer-fix for WO-INF-061 u42 (BUG-WEB-031 footer button invisible + wrap). Worktree: D:\apps\worktrees\decoded-ops-website\web061-u42-footer-fix
+
+- 2026-09-28 11:0x dispatcher: dispatched lane web061-u43-contact-mobile-overflow (WO-INF-061 u43, BUG-WEB-032 contact page two-column form grid doesn't stack on mobile, 597px at 390px viewport). Worktree: D:\apps\worktrees\decoded-ops-website\web061-u43-contact-mobile-overflow. Model opencode-go/mimo-v2.5, WT-tab.
+
+- 2026-09-28T10:3x dispatcher: claimed web003-u24 (BUG-WEB-038 emoji icons), web061-u44 (BUG-WEB-033 case-studies overflow), web061-u45 (BUG-WEB-034 seasonal-capacity overflow) — lanes dispatched, WT-tab mode, mimo-v2.5
+2026-09-28T12:12:43Z | dispatcher (scheduled) | web011-u22-cs-slug | Dispatched OpenCode lane for WO-WEB-011 u22: anonymise /case-studies/tacklebag slug + 301 + sitemap. Worktree D:/apps/worktrees/decoded-ops-website/web011-u22-cs-slug branch web011-u22-cs-slug.
+2026-09-28T12:12:43Z | dispatcher (scheduled) | web011-u23-homepage-meta | Dispatched OpenCode lane for WO-WEB-011 u23: homepage + /retained title/meta to 28 Sep positioning. Worktree D:/apps/worktrees/decoded-ops-website/web011-u23-homepage-meta branch web011-u23-homepage-meta.
+2026-09-28T12:39:53Z dispatcher: claimed WO-WEB-011 u21 (CR-WEB-066 CWV preload fix), worktree web011-u21-cwv-preload-fix, lane launched
+
+## 2026-09-28 13:1x dispatcher (scheduled)
+- Verified+merged web011-u21-cwv-preload-fix (WO-WEB-011 u21, CR-WEB-066): lint clean (0 errors), unicode-escape grep clean, sharp dep committed. FF-merged cf70531..3f73fdb on main, worktree removed. Unit set done, test-item logged.
+
+## 2026-09-28 14:5x dispatcher (scheduled)
+- VERIFIED+CLEANED (no push needed): web-pricing-v12 was already attested (amulba8lejz) and merged to main (711f508) by a concurrent/prior pass before this run started — confirmed via git log, worktree/branch already gone. WO-OPS-018 unit already shows the 711f508 commit as done.
+- Dispatched 4 new lanes for WO-INF-061 (CR-WEB-051..054), content-correction only, off origin/main 711f508:
+  - web061-u35-sector-copy-figures (D:/apps/worktrees/decoded-ops-website/web061-u35-sector-copy-figures)
+  - web061-u36-problem-copy-figures (D:/apps/worktrees/decoded-ops-website/web061-u36-problem-copy-figures)
+  - web061-u37-apps-cs-copy (D:/apps/worktrees/decoded-ops-website/web061-u37-apps-cs-copy)
+  - web061-u38-location-copy (D:/apps/worktrees/decoded-ops-website/web061-u38-location-copy)
+  All WT-tab mode, opencode-go/mimo-v2.5. Not yet verified — next pass checks scope diff, tsc, lint, grep-verify per LANE-BRIEF.md before attest+push.
+- Skipped WO-WEB-011 u24 (keyword titles/meta rollout) despite AUTO tag: source file is named "Titles and descriptions - DRAFT - 28 Sept 2026.json" (not the APPROVED keyword map file) and the unit label itself says "after Claude review" — that review hasn't visibly happened yet. Left for an interactive pass rather than dispatched on an unclear approval state.

@@ -1,0 +1,118 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-e-build-d17-fix1.md
+[0m→ [0mRead app/case-studies/case-study-01/page.tsx[90m [limit=20][0m
+[0m→ [0mRead app/case-studies/case-study-02/page.tsx[90m [limit=20][0m
+[0m→ [0mRead app/case-studies/case-study-03/page.tsx[90m [limit=20][0m
+Let me read all four files in parallel to find the import lines.
+[0m→ [0mRead app/case-studies/eternal-fitness/page.tsx[90m [limit=20][0m
+[0m
+[0m← [0mEdit app/case-studies/case-study-01/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-01\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-01\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-01\page.tsx
+@@ -2,8 +2,9 @@
+ import { ArrowRight } from 'lucide-react';
+ import { D17Motion } from '@/components/D17Motion';
+ import { JsonLd } from '@/components/JsonLd';
+ import '@/app/d17-global.css';
++import '@/app/d17-apps-cases.css';
+ 
+ export const metadata = {
+   title: 'Case study 01: Hanicks | Decoded Ops',
+   description: 'Hanicks sells heating spares. A big catalogue arriving from lots of suppliers in different formats, needing to be clean and current on every channel.',
+
+[0m
+[0m← [0mEdit app/case-studies/case-study-02/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-02\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-02\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-02\page.tsx
+@@ -2,8 +2,9 @@
+ import { ArrowRight } from 'lucide-react';
+ import { D17Motion } from '@/components/D17Motion';
+ import { JsonLd } from '@/components/JsonLd';
+ import '@/app/d17-global.css';
++import '@/app/d17-apps-cases.css';
+ 
+ export const metadata = {
+   title: 'Case study 02: Clarity Audit to Stock Control Build | Decoded Ops',
+   description: 'A Clarity Audit into a Deliver engagement for a branded apparel and decoration retailer. The diagnostic came before the decision.',
+
+[0m
+[0m← [0mEdit app/case-studies/case-study-03/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-03\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-03\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\case-study-03\page.tsx
+@@ -2,8 +2,9 @@
+ import { ArrowRight } from 'lucide-react';
+ import { D17Motion } from '@/components/D17Motion';
+ import { JsonLd } from '@/components/JsonLd';
+ import '@/app/d17-global.css';
++import '@/app/d17-apps-cases.css';
+ 
+ export const metadata = {
+   title: 'Case study 03: B2B Portal & ERP Evaluation | Decoded Ops',
+   description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s B2B ordering portal.',
+
+[0m
+All four files have `import '@/app/d17-global.css';` — I'll add the missing import after each one.
+[0m← [0mEdit app/case-studies/eternal-fitness/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\eternal-fitness\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\eternal-fitness\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-e-build-d17\app\case-studies\eternal-fitness\page.tsx
+@@ -3,8 +3,9 @@
+ import { D17Motion } from '@/components/D17Motion';
+ import { BOOKING_URL } from '@/lib/constants';
+ import { JsonLd } from '@/components/JsonLd';
+ import '@/app/d17-global.css';
++import '@/app/d17-apps-cases.css';
+ 
+ export const metadata = {
+   title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
+   description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a 1-to-1 personal training studio for clinical populations.',
+
+[0m
+All four edits applied. Now verify with tsc.
+[0m$ [0mnpx tsc --noEmit
+(no output)
+[0m
+Clean tsc. Commit.
+[0m$ [0mgit add -A && git commit -m "fix(web): import d17-apps-cases.css on case study pages (WO-INF-061)"
+warning: in the working copy of '.context/lane-briefs/web-e-build-d17-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/case-study-01/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/case-study-02/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/case-study-03/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/case-studies/eternal-fitness/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+[web-e-build-d17 b7038cf] fix(web): import d17-apps-cases.css on case study pages (WO-INF-061)
+ 4 files changed, 4 insertions(+)
+[0m
+Now the lane exit contract. First the result JSON:
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-e-build-d17\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-e-build-d17-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-e-build-d17-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/ && git commit -m "chore: lane exit — web-e-build-d17-fix1"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-e-build-d17-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-e-build-d17-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[web-e-build-d17 a8d2eda] chore: lane exit — web-e-build-d17-fix1
+ 2 files changed, 4 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-e-build-d17-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-e-build-d17-fix1.json
+[0m
+Done. Two commits:
+
+1. **b7038cf** — `fix(web): import d17-apps-cases.css on case study pages (WO-INF-061)` — adds the missing import to all four case-study pages
+2. **a8d2eda** — lane exit artifacts (result JSON + notes)
+
+tsc clean, no deviations.

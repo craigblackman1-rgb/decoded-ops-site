@@ -1,0 +1,96 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead app/small-business/page.tsx[90m [offset=195, limit=20][0m
+[0m
+[0m← [0mEdit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\ops022-fix-price-spacing\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\ops022-fix-price-spacing\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\ops022-fix-price-spacing\app\small-business\page.tsx
+@@ -201,9 +201,9 @@
+ </div>
+ <h3 style={{ fontSize: 'var(--do-text-xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-primary)', marginBottom: 8 }}>{service.name}</h3>
+ <div style={{ marginBottom: 16 }}>
+   <span className="price" style={{ fontSize: 'var(--do-text-lg)' }}>{service.price}</span>
+-  <span className="num" style={{ color: 'var(--do-text-muted)' }}>{service.priceNote}</span>
++  <span className="num" style={{ color: 'var(--do-text-muted)', marginLeft: 6 }}>{service.priceNote}</span>
+ </div>
+ <p style={{ color: 'var(--do-text-muted)', fontSize: 'var(--do-text-sm)', marginBottom: 24, lineHeight: 1.75 }}>{service.tagline}</p>
+ <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24, flex: 1, padding: 0, listStyle: 'none' }}>
+   {service.features.map(f => (
+
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+[41m                                                                               [0m
+[41m[37m                This is not the tsc command you are looking for                [0m
+[41m                                                                               [0m
+
+To get access to the TypeScript compiler, [34mtsc[0m, from the command line either:
+
+- Use [1mnpm install typescript[0m to first add TypeScript to your project [1mbefore[0m using npx
+- Use [1myarn[0m to avoid accidentally running code from un-installed packages
+[0m
+[0m$ [0mnode .context/price-audit.mjs --check 2>&1
+15 files, 54 lines, 59 figures
+   10  app/pricing/page.tsx
+   10  app/small-business/page.tsx
+    6  components/Header.tsx
+    6  public/llms.txt
+    5  app/locations/tech-audit/page.tsx
+    4  app/locations/tech-audit/[location]/page.tsx
+    3  app/clarity/page.tsx
+    2  app/problems/cant-scale-operations/page.tsx
+    2  public/infographics/SystemsCostBreakdown.tsx
+    1  app/apps/commerce/page.tsx
+    1  app/opengraph-image.tsx
+    1  app/problems/slow-processes/page.tsx
+    1  data/locations.ts
+    1  data/problem-routing.ts
+    1  public/infographics/EcommerceBreakdownChart.tsx
+
+check: 0 violation
+  PASS — all prices and content comply with v11 rules.
+[0m
+[0m$ [0mnpm install 2>&1 | tail -5
+tail: The term 'tail' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mnpm install 2>&1 | Select-Object -Last 5
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mgit add app/small-business/page.tsx && git commit -m "fix(small-business): space between price and note (CR-WEB-036)"
+[ops022-fix-price-spacing 897e940] fix(small-business): space between price and note (CR-WEB-036)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\ops022-fix-price-spacing\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-ops022-fix-price-spacing.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-ops022-fix-price-spacing.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane report for ops022-fix-price-spacing"
+warning: in the working copy of '.context/price-audit.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-ops022-fix-price-spacing.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-ops022-fix-price-spacing.json', LF will be replaced by CRLF the next time Git touches it
+[ops022-fix-price-spacing f94af0f] chore: lane report for ops022-fix-price-spacing
+ 2 files changed, 8 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-ops022-fix-price-spacing.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-ops022-fix-price-spacing.json
+[0m
+Done. Two commits on `ops022-fix-price-spacing`:
+
+1. `897e940` — `fix(small-business): space between price and note (CR-WEB-036)` — the one-line `marginLeft: 6` fix
+2. `f94af0f` — lane report files
+
+Verification: `tsc --noEmit` clean, `price-audit.mjs --check` 0 violations.

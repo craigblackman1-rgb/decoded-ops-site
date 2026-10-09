@@ -1,0 +1,45 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-content-056-fix1.md
+[0m
+[0m$ [0mpython .context/lane-briefs/cr-web-056/apply_spec.py .context/lane-briefs/cr-web-056/copy-spec-2.json
+applied 3/3, skipped 0
+[0m
+[0m$ [0mgit grep -n "Shopify\|WooCommerce" -- app components data lib ':!app/blog' ':!app/clients'
+(no output)
+[0m
+[0m$ [0mnpx tsc --noEmit
+(no output)
+[0m
+[0m$ [0mgit add -A && git commit -m "content(web): remove remaining platform names (CR-WEB-056)"
+warning: in the working copy of '.context/lane-briefs/web-content-056-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+[web-content-056 ea13afd] content(web): remove remaining platform names (CR-WEB-056)
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+[0m
+[0m$ [0mgit log -1 --format=%H
+ea13afdc4752949ad06c1c2d2c0a5ec1ac5a0464
+[0m
+[0m$ [0mgit diff --name-only HEAD~1
+app/problems/wrong-erp-software/page.tsx
+data/problem-routing.ts
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-content-056\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-content-056-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-content-056-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "lane(web-content-056-fix1): exit report"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-content-056-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-content-056-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[web-content-056 98dd273] lane(web-content-056-fix1): exit report
+ 2 files changed, 32 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-content-056-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-content-056-fix1.json
+[0m
+Lane complete. apply_spec applied 3/3, grep clean, tsc clean. Two commits: the content fix (`ea13afd`) and the exit report (`98dd273`).

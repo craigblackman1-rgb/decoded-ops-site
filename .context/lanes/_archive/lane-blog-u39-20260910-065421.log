@@ -1,0 +1,210 @@
+
+> build ┬╖ mimo-v2.5
+
+ΓåÆ Read components/BlogList.tsx
+ΓåÆ Read app/globals.css
+
+ΓåÉ Edit components/BlogList.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+@@ -8,9 +8,9 @@
+   title: string;
+   excerpt: string;
+   date?: string;
+   publishedDate?: string;
+-  readTime: number;
++  readTime?: number;
+   category: string;
+   featuredImage?: string | null;
+ }
+ 
+
+
+ΓåÉ Edit components/BlogList.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+@@ -13,14 +13,16 @@
+   category: string;
+   featuredImage?: string | null;
+ }
+ 
+-function PostMeta({ date, readTime }: { date: string; readTime: number }) {
++function PostMeta({ date, readTime }: { date: string; readTime?: number }) {
++  const hasDate = !!date;
++  const hasReadTime = typeof readTime === 'number' && readTime > 0;
+   return (
+     <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 'var(--do-text-xs)', color: 'var(--do-text-muted)' }}>
+-      <span>{date}</span>
+-      <span aria-hidden="true">&middot;</span>
+-      <span>{readTime} min read</span>
++      {hasDate && <span>{date}</span>}
++      {hasDate && hasReadTime && <span aria-hidden="true">&middot;</span>}
++      {hasReadTime && <span>{readTime} min read</span>}
+     </div>
+   );
+ }
+ 
+
+
+ΓåÉ Edit components/BlogList.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+@@ -58,11 +58,13 @@
+     className="lead-art"
+   />
+ )}
+ <div className="lead-body">
+-  <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ alignSelf: 'flex-start', color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
+-    {leadPost.category}
+-  </span>
++  {leadPost.category && (
++    <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ alignSelf: 'flex-start', color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
++      {leadPost.category}
++    </span>
++  )}
+   <h2 className="font-bold leading-tight" style={{ fontFamily: 'var(--font-outfit), sans-serif', fontSize: 'var(--do-text-3xl)', color: 'var(--do-text-primary)', margin: '14px 0' }}>
+     {leadPost.title}
+   </h2>
+   <p style={{ fontSize: 'var(--do-text-base)', lineHeight: 'var(--do-leading-relaxed)', color: 'var(--do-text-secondary)', margin: 0 }}>
+
+
+ΓåÉ Edit components/BlogList.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+@@ -112,9 +112,9 @@
+   </span>
+ </div>
+ 
+ {/* Card grid */}
+-<div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginBottom: 72 }}>
++<div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginBottom: 72, alignItems: 'start' }}>
+   {gridPosts.map(post => {
+     const pubDate = post.date || post.publishedDate;
+     const date = pubDate
+       ? new Date(pubDate).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })
+
+
+ΓåÉ Edit components/BlogList.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\components\BlogList.tsx
+@@ -152,11 +152,13 @@
+     loading="lazy"
+   />
+ )}
+ <div style={{ padding: '24px 26px 26px' }}>
+-  <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
+-    {post.category}
+-  </span>
++  {post.category && (
++    <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
++      {post.category}
++    </span>
++  )}
+   <h3 className="font-bold leading-snug" style={{ fontFamily: 'var(--font-outfit), sans-serif', fontSize: 'var(--do-text-xl)', color: 'var(--do-text-primary)', margin: '14px 0 10px' }}>
+     {post.title}
+   </h3>
+   <p
+
+
+ΓåÉ Edit app/globals.css
+Index: D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\globals.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\globals.css
++++ D:\apps\worktrees\decoded-ops-website\lane-blog-orphans\app\globals.css
+@@ -365,12 +365,12 @@
+ .blog-lead:hover { border-color: var(--do-cerulean); box-shadow: var(--do-shadow-md); }
+ .blog-lead:focus-visible { outline: 3px solid var(--do-cerulean); outline-offset: 3px; }
+ .blog-lead .lead-art {
+   width: 100%;
+-  height: 100%;
+   display: block;
+   aspect-ratio: 16/9;
+   object-fit: cover;
++  align-self: center;
+ }
+ .blog-lead .lead-body {
+   padding: 40px 44px;
+   display: flex;
+
+
+$ npx tsc --noEmit 2>&1
+(no output)
+
+$ git status --short
+M app/globals.css
+ M components/BlogList.tsx
+ M public/images/blog/decoded-method-operations-framework-thumb.png
+?? LANE-BRIEF-U39.md
+?? public/images/blog/decoded-method-operations-framework-img-2.png
+
+$ grep -n "height: 100%" app/globals.css
+grep: The term 'grep' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ findstr "height: 100%" app\globals.css
+line-height: 1.2;
+  color: var(--do-text-secondary); line-height: var(--do-leading-relaxed);
+@keyframes sch-breathe { 0%, 100% { opacity: .14; } 50% { opacity: .42; } }
+  line-height: 1.75;
+  line-height: 1.25;
+  line-height: 1.3;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  width: 100%;
+  min-height: 38px;
+
+All three checks pass. `tsc --noEmit` clean, `git status` shows only `app/globals.css` and `components/BlogList.tsx` (plus the two blog PNGs), and no `height: 100%` in the lead-art context.
+$ git add app/globals.css components/BlogList.tsx && git commit -m "CR-WEB-028 u39: fix three /blog landing defects found in the live render
+
+Meta row no longer prints a bare \"min read\" when readTime is absent,
+cards without artwork no longer stretch to their row-mate's height,
+and the lead-post artwork shows its full 16:9 frame instead of being
+cropped by a height:100% box."
+warning: in the working copy of 'components/BlogList.tsx', LF will be replaced by CRLF the next time Git touches it
+error: pathspec 'min' did not match any file(s) known to git
+error: pathspec 'read\ when readTime is absent,
+cards without artwork no longer stretch to their row-mate's height,
+and the lead-post artwork shows its full 16:9 frame instead of being
+cropped by a height:100% box.' did not match any file(s) known to git
+
+$ git commit -m 'CR-WEB-028 u39: fix three /blog landing defects found in the live render
+
+Meta row no longer prints a bare "min read" when readTime is absent,
+cards without artwork no longer stretch to their row-mate'"'"'s height,
+and the lead-post artwork shows its full 16:9 frame instead of being
+cropped by a height:100% box.'
+error: pathspec ''' did not match any file(s) known to git
+error: pathspec 's height,
+and the lead-post artwork shows its full 16:9 frame instead of being
+cropped by a height:100% box.' did not match any file(s) known to git
+
+ΓåÉ Write C:/Users/CRAIGB~1/AppData/Local/Temp/opencode/commit-msg.txt
+Wrote file successfully.
+
+$ git commit -F "C:\Users\CRAIGB~1\AppData\Local\Temp\opencode\commit-msg.txt"
+[lane/blog-orphan-purge 820fff1] CR-WEB-028 u39: fix three /blog landing defects found in the live render
+ 2 files changed, 19 insertions(+), 13 deletions(-)
+
+Committed as `820fff1`. Here's what changed:
+
+**FIX 1 ΓÇö `components/BlogList.tsx`**
+- `readTime` on `BlogPost` interface: `number` ΓåÆ `number | undefined`
+- `PostMeta` component: all three parts (date, separator, "N min read") are now conditional ΓÇö only rendered when the relevant data is present. No more bare "┬╖ min read".
+
+**FIX 2 ΓÇö `components/BlogList.tsx`**
+- Card grid container: added `alignItems: 'start'` so cards without artwork don't stretch to match their row-mate.
+- Category chip in both the lead post and grid cards: wrapped in `{post.category && (...)}` ΓÇö no empty pill when category is absent.
+
+**FIX 3 ΓÇö `app/globals.css`**
+- `.blog-lead .lead-art`: removed `height: 100%`, added `align-self: center`. The 16:9 aspect ratio now governs the box height, eliminating the right-edge crop.

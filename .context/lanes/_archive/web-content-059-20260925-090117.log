@@ -1,0 +1,39 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-content-059.md
+[0m→ [0mRead .context/lane-briefs/cr-web-059/apply_spec.py
+[0m→ [0mRead .context/lane-briefs/cr-web-059/copy-spec.json
+[0m
+[0m$ [0mpython .context/lane-briefs/cr-web-059/apply_spec.py .context/lane-briefs/cr-web-059/copy-spec.json
+applied 6/6, skipped 0
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mgit add -A && git commit -m "content(web): About page voice and positive framing (CR-WEB-059)"
+warning: in the working copy of '.context/lane-briefs/web-content-059.md', LF will be replaced by CRLF the next time Git touches it
+[web-content-059 33ae459] content(web): About page voice and positive framing (CR-WEB-059)
+ 1 file changed, 9 insertions(+), 14 deletions(-)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-content-059\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-content-059.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-content-059.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/ && git commit -m "lane: web-content-059 exit files"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-content-059.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-content-059.json', LF will be replaced by CRLF the next time Git touches it
+[web-content-059 776049a] lane: web-content-059 exit files
+ 2 files changed, 30 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-content-059.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-content-059.json
+[0m
+Done. Two commits landed:
+
+- **`33ae459`** `content(web): About page voice and positive framing (CR-WEB-059)` — all 6 spec pairs applied, tsc clean.
+- **`776049a`** `lane: web-content-059 exit files` — lane result JSON and notes written.

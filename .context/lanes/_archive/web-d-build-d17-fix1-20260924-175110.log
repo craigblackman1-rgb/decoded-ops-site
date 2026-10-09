@@ -1,0 +1,334 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-d-build-d17-fix1.md
+[0m
+[0m# [0mTodos
+[•] Read source CSS files and understand the namespace
+[ ] Create app/d17-global.css from both source CSS files
+[ ] Delete app/d17-sectors.module.css
+[ ] Update all 9 sector page.tsx files
+[ ] Check for D17Motion.tsx usage on sector pages
+[ ] Check for global name clashes and prefix with .d17
+[ ] Run tsc --noEmit to verify
+[ ] Commit and write lane reports
+[0m
+[0m→ [0mRead .context/lane-briefs/d17-sectors/d17-art.css
+[0m→ [0mRead .context/lane-briefs/d17-sectors/d17-sectors.css
+[0m→ [0mRead app/d17-sectors.module.css
+[0m→ [0mRead app/d17-art.module.css
+[0m→ [0mRead app/globals.css
+[0m✱ [0mGlob "app/sectors/*/page.tsx"[90m in . · 10 matches[0m
+[0m→ [0mRead app/sectors/awards-engraving/page.tsx[90m [limit=50][0m
+[0m→ [0mRead app/sectors/garment-decoration/page.tsx[90m [limit=50][0m
+[0m→ [0mRead app/sectors/labels-packaging/page.tsx[90m [limit=50][0m
+[0m→ [0mRead app/sectors/print-promotional/page.tsx[90m [limit=50][0m
+[0m→ [0mRead app/sectors/promotional-merchandise/page.tsx[90m [limit=50][0m
+[0m→ [0mRead app/sectors/schoolwear/page.tsx[90m [limit=50][0m
+[0m→ [0mRead app/sectors/signs-graphics/page.tsx[90m [limit=50][0m
+[0m→ [0mRead app/sectors/teamwear-clubwear/page.tsx[90m [limit=50][0m
+Now let me read a few sector pages to understand the import patterns:
+[0m→ [0mRead app/sectors/workwear/page.tsx[90m [limit=50][0m
+[0m→ [0mRead app/sectors/operations-consultant-print-embroidery/page.tsx[90m [limit=15][0m
+Now let me check how `d17` and `sectors` module references are used in each file (in JSX, not injected HTML):
+[0m✱ [0mGrep "\bd17\.\w+|sectors\.\w+"[90m in app/sectors · 9 matches[0m
+[0m✗ [0mGrep "(?<!import )\bd17\b|(?<!import )\bsectors\b" failed[90m in app/sectors[0m
+[91m[1mError: [0mrg: regex parse error:
+    (?:(?<!import )\bd17\b|(?<!import )\bsectors\b)
+       ^^^^
+error: look-around, including look-ahead and look-behind, is not supported
+
+Consider enabling PCRE2 with the --pcre2 flag, which can handle backreferences
+and look-around.
+[0m✱ [0mGrep "\{d17\."[90m in app/sectors · 0 matches[0m
+Let me check if any sector pages use `d17.` or `sectors.` class references in actual JSX (not just the import line):
+[0m✱ [0mGrep "\{sectors\."[90m in app/sectors · 0 matches[0m
+[0m✱ [0mGrep "D17Motion"[90m in app/sectors · 18 matches[0m
+[0m→ [0mRead components/D17Motion.tsx
+No JSX usage of module variables — the imports were only for side-effect. Now let me check D17Motion usage in sector pages and understand the component:
+Now let me check for global name clashes with `globals.css`. I need to find bare/generic class names in the new CSS that already exist in globals.css:
+[0m• [0mCheck CSS class name clashes[90m Explore Agent[0m
+[0m✓ [0mCheck CSS class name clashes[90m Explore Agent[0m
+[0m
+[0m# [0mTodos
+[✓] Read source CSS files and understand the namespace
+[•] Create app/d17-global.css from both source CSS files
+[ ] Delete app/d17-sectors.module.css
+[ ] Update all 9 sector page.tsx files
+[✓] Check for D17Motion.tsx usage on sector pages
+[✓] Check for global name clashes and prefix with .d17
+[ ] Run tsc --noEmit to verify
+[ ] Commit and write lane reports
+[0m
+Good — no clashes with `globals.css`. Now let me create the global CSS file and make all the changes.
+[0m$ [0mGet-Content "D:\apps\worktrees\decoded-ops-website\web-d-build-d17\.context\lane-briefs\d17-sectors\d17-art.css" | Set-Content "D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\d17-global.css"
+Add-Content -Path "D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\d17-global.css" -Value ""
+Get-Content "D:\apps\worktrees\decoded-ops-website\web-d-build-d17\.context\lane-briefs\d17-sectors\d17-sectors.css" | Add-Content "D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\d17-global.css"
+(no output)
+[0m
+[0m$ [0m$f = "D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\d17-global.css"; $c = Get-Content $f | Measure-Object; Write-Output "Lines: $($c.Count)"
+Lines: 835
+[0m
+[0m$ [0mRemove-Item "D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\d17-sectors.module.css"
+(no output)
+[0m
+[0m← [0mEdit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\awards-engraving\page.tsx
+@@ -2,9 +2,9 @@
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
+ import { D17Motion } from '@/components/D17Motion';
+-import sectors from '@/app/d17-sectors.module.css';
++import '@/app/d17-global.css';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+ import styles from '@/components/SectorPageDS.module.css';
+ 
+
+[0m
+[0m← [0mEdit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\garment-decoration\page.tsx
+@@ -2,9 +2,9 @@
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
+ import { D17Motion } from '@/components/D17Motion';
+-import sectors from '@/app/d17-sectors.module.css';
++import '@/app/d17-global.css';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+ import styles from '@/components/SectorPageDS.module.css';
+ 
+
+[0m
+[0m← [0mEdit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\labels-packaging\page.tsx
+@@ -2,9 +2,9 @@
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
+ import { D17Motion } from '@/components/D17Motion';
+-import sectors from '@/app/d17-sectors.module.css';
++import '@/app/d17-global.css';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+ import styles from '@/components/SectorPageDS.module.css';
+ 
+
+[0m
+[0m← [0mEdit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\print-promotional\page.tsx
+@@ -2,9 +2,9 @@
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
+ import { D17Motion } from '@/components/D17Motion';
+-import sectors from '@/app/d17-sectors.module.css';
++import '@/app/d17-global.css';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+ import styles from '@/components/SectorPageDS.module.css';
+ 
+
+[0m
+[0m← [0mEdit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\promotional-merchandise\page.tsx
+@@ -4,10 +4,9 @@
+ import { D17Motion } from '@/components/D17Motion';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+-import d17 from '@/app/d17-art.module.css';
+-import sectors from '@/app/d17-sectors.module.css';
++import '@/app/d17-global.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Promotional merchandise: Decoded Ops',
+   description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+
+[0m
+[0m← [0mEdit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\schoolwear\page.tsx
+@@ -5,10 +5,9 @@
+ import { Plate } from '@/components/Plate';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+-import d17 from '@/app/d17-art.module.css';
+-import sectors from '@/app/d17-sectors.module.css';
++import '@/app/d17-global.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Schoolwear: Decoded Ops',
+   description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.',
+
+[0m
+[0m← [0mEdit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\signs-graphics\page.tsx
+@@ -2,9 +2,9 @@
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
+ import { D17Motion } from '@/components/D17Motion';
+-import sectors from '@/app/d17-sectors.module.css';
++import '@/app/d17-global.css';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+ import styles from '@/components/SectorPageDS.module.css';
+ 
+
+[0m
+[0m← [0mEdit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\teamwear-clubwear\page.tsx
+@@ -4,10 +4,9 @@
+ import { D17Motion } from '@/components/D17Motion';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+-import d17 from '@/app/d17-art.module.css';
+-import sectors from '@/app/d17-sectors.module.css';
++import '@/app/d17-global.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Teamwear & Clubwear: Decoded Ops',
+   description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.',
+
+[0m
+[0m← [0mEdit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\workwear\page.tsx
+@@ -4,10 +4,9 @@
+ import { D17Motion } from '@/components/D17Motion';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+-import d17 from '@/app/d17-art.module.css';
+-import sectors from '@/app/d17-sectors.module.css';
++import '@/app/d17-global.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Workwear: Decoded Ops',
+   description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+
+[0m
+Now let me update all 9 sector pages. Each needs the module import removed and replaced with the global CSS import:
+[0m# [0mTodos
+[✓] Read source CSS files and understand the namespace
+[✓] Create app/d17-global.css from both source CSS files
+[✓] Delete app/d17-sectors.module.css
+[✓] Update all 9 sector page.tsx files
+[✓] Check for D17Motion.tsx usage on sector pages
+[✓] Check for global name clashes and prefix with .d17
+[•] Run tsc --noEmit to verify
+[ ] Commit and write lane reports
+[0m
+[0m$ [0mgit grep -n "d17-sectors.module" -- app
+(no output)
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+Both checks pass. Let me now commit and write the lane reports.
+[0m$ [0mgit status
+On branch web-d-build-d17
+Your branch is ahead of 'origin/staging' by 5 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    app/d17-sectors.module.css
+	modified:   app/sectors/awards-engraving/page.tsx
+	modified:   app/sectors/garment-decoration/page.tsx
+	modified:   app/sectors/labels-packaging/page.tsx
+	modified:   app/sectors/print-promotional/page.tsx
+	modified:   app/sectors/promotional-merchandise/page.tsx
+	modified:   app/sectors/schoolwear/page.tsx
+	modified:   app/sectors/signs-graphics/page.tsx
+	modified:   app/sectors/teamwear-clubwear/page.tsx
+	modified:   app/sectors/workwear/page.tsx
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app/d17-global.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[0m
+[0m$ [0mgit add app/d17-global.css app/d17-sectors.module.css app/sectors/awards-engraving/page.tsx app/sectors/garment-decoration/page.tsx app/sectors/labels-packaging/page.tsx app/sectors/print-promotional/page.tsx app/sectors/promotional-merchandise/page.tsx app/sectors/schoolwear/page.tsx app/sectors/signs-graphics/page.tsx app/sectors/teamwear-clubwear/page.tsx app/sectors/workwear/page.tsx && git commit -m "fix(web): sector D17 art uses a global stylesheet (injected markup)"
+warning: in the working copy of 'app/sectors/promotional-merchandise/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/sectors/schoolwear/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/sectors/teamwear-clubwear/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/sectors/workwear/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[web-d-build-d17 f16dc21] fix(web): sector D17 art uses a global stylesheet (injected markup)
+ 10 files changed, 371 insertions(+), 13 deletions(-)
+ rename app/{d17-sectors.module.css => d17-global.css} (57%)
+[0m
+[0m$ [0mgit log -1 --format="%H %s"
+f16dc21659588300d69e22e722f0420571364176 fix(web): sector D17 art uses a global stylesheet (injected markup)
+[0m
+[0m$ [0mmkdir -p ".context/lane-reports"
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-d-build-d17\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-d-build-d17-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-d-build-d17-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web-d-build-d17-fix1.json .context/lane-reports/LANE-NOTES-web-d-build-d17-fix1.md && git commit -m "chore: lane report for web-d-build-d17-fix1"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-d-build-d17-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-d-build-d17-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[web-d-build-d17 9c888a1] chore: lane report for web-d-build-d17-fix1
+ 2 files changed, 71 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-d-build-d17-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-d-build-d17-fix1.json
+[0m
+[0m# [0mTodos
+[✓] Read source CSS files and understand the namespace
+[✓] Create app/d17-global.css from both source CSS files
+[✓] Delete app/d17-sectors.module.css
+[✓] Update all 9 sector page.tsx files
+[✓] Check for D17Motion.tsx usage on sector pages
+[✓] Check for global name clashes and prefix with .d17
+[✓] Run tsc --noEmit to verify
+[✓] Commit and write lane reports
+[0m
+Lane complete. Two commits on `web-d-build-d17`:
+
+**`f16dc21`** — `fix(web): sector D17 art uses a global stylesheet (injected markup)`
+- Created `app/d17-global.css` (835 lines) = `d17-art.css` + `d17-sectors.css` as a single global stylesheet with un-moduled class names
+- Deleted `app/d17-sectors.module.css`
+- Updated all 9 sector pages: replaced `import sectors from '@/app/d17-sectors.module.css'` (and `d17 from '@/app/d17-art.module.css'` where present) with `import '@/app/d17-global.css'`
+- `D17Motion` was already rendered on all 9 pages — no change needed
+- **Clash check: zero clashes with `globals.css`** — no `.d17` prefixing required
+
+**`9c888a1`** — `chore: lane report for web-d-build-d17-fix1`
+
+Verification: `npx tsc --noEmit` clean, `git grep d17-sectors.module -- app` empty.

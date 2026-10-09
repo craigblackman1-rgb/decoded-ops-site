@@ -94,7 +94,7 @@ Index: D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
  
  Required env vars:
  ```
- DATABASE_URL=             # postgresql://user:password@host:5432/dbname
+ DATABASE_URL=             # postgresql://user:[REDACTED]@host:5432/dbname
 
 
 ← Edit CLAUDE.md
@@ -148,7 +148,7 @@ Index: D:\apps\worktrees\decoded-ops-website\supabase-tier1\.env.example
 -# `lib/supabase.ts` is named for the client-portal tables it reads but is a
 -# plain `pg` Pool, same pattern as the hub's `supabase-pg.ts` shim.
 +# Database — plain Postgres on the dedicated VPS.
- DATABASE_URL=postgresql://user:password@host:5432/dbname
+ DATABASE_URL=postgresql://user:[REDACTED]@host:5432/dbname
  
  # Upstash Redis (for rate limiting) — optional, degrades gracefully if unset
  UPSTASH_REDIS_REST_URL=https://your-redis-url.upstash.io

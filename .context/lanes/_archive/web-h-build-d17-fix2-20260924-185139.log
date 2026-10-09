@@ -1,0 +1,170 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-h-build-d17-fix2.md
+[0m→ [0mRead components/LocationPage.tsx
+[0m✱ [0mGlob "app/d17-locations.css"[90m in . · 1 match[0m
+[0m→ [0mRead app/d17-locations.css
+Now I understand the two sections. The LOCAL CONTEXT grid (line 100, `1fr 2fr`) and HOW I HELP grid (line 178, `1fr 1fr`) are inline styles with no mobile breakpoint. I'll move them to CSS classes and add the stacking rule.
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+@@ -96,9 +96,9 @@
+ 
+ {/* LOCAL CONTEXT */}
+ <section className="g-white" style={{ borderBottom: '1px solid var(--do-border-subtle)' }}>
+   <div className="wrap">
+-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 40, alignItems: 'start' }}>
++    <div className="loc-ctx">
+       <div>
+         <span className="eyebrow" style={{ marginBottom: 22 }}>{town}</span>
+         <h2 className="h2" style={{ fontSize: 'var(--do-text-2xl)' }}>
+           What this looks like for {town} businesses
+
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+@@ -174,9 +174,9 @@
+ 
+ {/* HOW I HELP */}
+ <section className="g-navy">
+   <div className="wrap">
+-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(48px, 8vw, 80px)', alignItems: 'start' }}>
++    <div className="loc-how">
+       <div>
+         <span className="eyebrow" style={{ marginBottom: 22 }}>How I help</span>
+         <h2 className="h2">What the work actually looks like</h2>
+         <p className="lede">
+
+[0m
+Now add the CSS classes in `d17-locations.css`. I'll add them before the existing `@media (max-width: 760px)` block.
+[0m← [0mEdit app/d17-locations.css
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\d17-locations.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\d17-locations.css
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\d17-locations.css
+@@ -60,8 +60,22 @@
+   .steps{ grid-template-columns:1fr }
+   .hero-art{ margin-top:30px }
+ }
+ 
++/* ─── live location page sections (WO-INF-061) ─── */
++.loc-ctx{ display:grid; grid-template-columns:1fr 2fr; gap:40px; align-items:start }
++.loc-ctx > *{ min-width:0 }
++.loc-how{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(48px, 8vw, 80px); align-items:start }
++.loc-how > *{ min-width:0 }
++.loc-cta-card{ display:flex; flex-wrap:wrap; gap:32px; margin-top:24px }
++.loc-cta-card > *{ min-width:0 }
++@media (max-width: 768px){
++  .loc-ctx{ grid-template-columns:1fr; gap:24px }
++  .loc-how{ grid-template-columns:1fr; gap:32px }
++  .loc-how .card[style*="sticky"]{ position:static }
++  .loc-cta-card{ flex-direction:column; gap:16px }
++}
++
+ /* ─── DO-ART-1001 · fractional CTO hero · the monthly review pack over the floor ─── */
+ .a1001{ --u:calc(100cqw / 1152); display:flex; flex-direction:column }
+ .a1001 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.6) contrast(1.06) brightness(.8) }
+ .a1001::before{ content:''; position:absolute; inset:0; z-index:-1;
+
+[0m
+Now add the `loc-cta-card` class to the driveTime/localFact card:
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+@@ -123,9 +123,9 @@
+ <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-lg)', lineHeight: 1.75, marginTop: 16 }}>
+   The work I do is the same wherever the business is based: a structured, independent look at what&apos;s running, what it costs, and what it&apos;s holding back. But the conversation starts with understanding what&apos;s specific to this business, in this town, in this market.
+ </p>
+ {(driveTime || localFact) && (
+-  <div className="card" style={{ marginTop: 24, display: 'flex', gap: 32, flexDirection: 'row' }}>
++  <div className="card loc-cta-card" style={{ marginTop: 24 }}>
+     {driveTime && (
+       <div>
+         <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wide)', marginBottom: 4 }}>From Worthing</div>
+         <div style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)' }}>{driveTime}</div>
+
+[0m
+[0m← [0mEdit app/d17-locations.css
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\d17-locations.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\d17-locations.css
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\d17-locations.css
+@@ -70,9 +70,9 @@
+ .loc-cta-card > *{ min-width:0 }
+ @media (max-width: 768px){
+   .loc-ctx{ grid-template-columns:1fr; gap:24px }
+   .loc-how{ grid-template-columns:1fr; gap:32px }
+-  .loc-how .card[style*="sticky"]{ position:static }
++  .loc-how > div[style*="sticky"]{ position:static }
+   .loc-cta-card{ flex-direction:column; gap:16px }
+ }
+ 
+ /* ─── DO-ART-1001 · fractional CTO hero · the monthly review pack over the floor ─── */
+
+[0m
+I need to fix the sticky CTA selector — the sticky is on the wrapper div, not the card itself:
+Now verify with `tsc`:
+[0m$ [0mnpx tsc --noEmit 2>&1 | head -30
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -First 30
+(no output)
+[0m
+[0m→ [0mRead components/LocationPage.tsx[90m [offset=96, limit=10][0m
+[0m→ [0mRead components/LocationPage.tsx[90m [offset=124, limit=6][0m
+[0m→ [0mRead components/LocationPage.tsx[90m [offset=174, limit=6][0m
+[0m→ [0mRead app/d17-locations.css[90m [offset=63, limit=18][0m
+Clean. Let me verify the final state of the edits:
+All edits look correct. tsc is clean. Now commit and write the lane exit files.
+[0m
+[0m$ [0mgit add -A && git commit -m "fix(web): stack location page sections on phones (WO-INF-061)
+
+- Moved LOCAL CONTEXT grid (1fr 2fr) and HOW I HELP grid (1fr 1fr) from
+  inline styles to CSS classes (.loc-ctx, .loc-how) with media query at 768px
+  stacking to single column
+- Added .loc-cta-card class for driveTime/localFact card flex row, wrapping
+  on mobile
+- Added min-width:0 on grid children to prevent overflow from long words/cards
+- Unstuck the CTA card on mobile (position:static below 768px)
+- tsc clean" 2>&1
+warning: in the working copy of '.context/lane-briefs/web-h-build-d17-fix2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+[web-h-build-d17 2658603] fix(web): stack location page sections on phones (WO-INF-061)
+ 2 files changed, 17 insertions(+), 3 deletions(-)
+[0m
+[0m$ [0mgit log --oneline -1 --format="%H %s"
+2658603d6397613ee47a3ddab4d6f2627723c943 fix(web): stack location page sections on phones (WO-INF-061)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-h-build-d17\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-h-build-d17-fix2.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-h-build-d17-fix2.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane report for web-h-build-d17-fix2" 2>&1
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-h-build-d17-fix2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-h-build-d17-fix2.json', LF will be replaced by CRLF the next time Git touches it
+[web-h-build-d17 bacc09e] chore: lane report for web-h-build-d17-fix2
+ 2 files changed, 45 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-h-build-d17-fix2.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-h-build-d17-fix2.json
+[0m
+Done. Two commits made:
+
+1. **`2658603`** — `fix(web): stack location page sections on phones (WO-INF-061)` — the actual fix
+2. **`bacc09e`** — `chore: lane report for web-h-build-d17-fix2` — lane exit files
+
+**What changed:** Replaced inline grid styles in `LocationPage.tsx` with CSS classes (`loc-ctx`, `loc-how`, `loc-cta-card`) that stack to single column below 768px, with `min-width:0` on children and the sticky CTA unstuck on mobile. tsc clean.

@@ -1,0 +1,74 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓåÆ [0mRead .context/lane-briefs/inf070-u3-fix-390b.md
+[0mΓåÆ [0mRead components/DownloadOptIn.tsx
+[0mΓåÆ [0mRead components/DownloadOptIn.module.css
+[0m
+[0mΓåÉ [0mEdit components/DownloadOptIn.tsx
+Index: D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.tsx
++++ D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.tsx
+@@ -78,9 +78,9 @@
+ <div className="wrap">
+   <div className={s.miniRow}>
+     <p><b>{title}</b> <span>&middot; Word document, 11 pages, free, no email needed</span></p>
+     <a
+-      className="btn btn--outline dlBtn"
++      className={`btn btn--outline ${s.dlBtn}`}
+       href={fileHref}
+       download
+       style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--do-font-body)' }}
+     >
+
+[0m
+[0mΓåÉ [0mEdit components/DownloadOptIn.tsx
+Index: D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.tsx
++++ D:\apps\worktrees\decoded-ops-website\inf070-u3-sop-signup\components\DownloadOptIn.tsx
+@@ -117,9 +117,9 @@
+ <span className="dl-ey">Free download</span>
+ <h2>{title}</h2>
+ <p className={s.meta}><b>{meta}</b></p>
+ <a
+-  className="btn btn--primary dlBtn"
++  className={`btn btn--primary ${s.dlBtn}`}
+   href={fileHref}
+   download
+   style={{ display: 'inline-flex', alignItems: 'center', gap: 10, fontFamily: 'var(--do-font-body)' }}
+ >
+
+[0m
+[0m$ [0mnpx tsc --noEmit -p .
+(no output)
+[0m
+[0m$ [0mgit add components/DownloadOptIn.tsx components/DownloadOptIn.module.css && git commit -m "fix(web): DownloadOptIn uses module class for dlBtn; stop 390px overflow (CR-WEB-061)"
+[inf070-u3-sop-signup ed5919a] fix(web): DownloadOptIn uses module class for dlBtn; stop 390px overflow (CR-WEB-061)
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+(no output)
+[0m
+[0m$ [0mgit log --oneline -1 --format="%H %s"
+ed5919ac5ddbd0a4e1e09a915be7d67789819048 fix(web): DownloadOptIn uses module class for dlBtn; stop 390px overflow (CR-WEB-061)
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-inf070-u3-fix-390c.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-inf070-u3-fix-390c.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/ && git commit -m "chore: lane report for inf070-u3-fix-390c"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-inf070-u3-fix-390c.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-inf070-u3-fix-390c.json', LF will be replaced by CRLF the next time Git touches it
+[inf070-u3-sop-signup b72bdb1] chore: lane report for inf070-u3-fix-390c
+ 2 files changed, 39 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-inf070-u3-fix-390c.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-inf070-u3-fix-390c.json
+[0m
+Done. Two commits:
+
+1. **`ed5919a`** ΓÇö Fixed `DownloadOptIn.tsx` to use `s.dlBtn` module class instead of literal string `"dlBtn"`, resolving the CSS module hash mismatch that caused the 390px overflow. CSS was already correct.
+2. **`b72bdb1`** ΓÇö Lane reports written.

@@ -324,10 +324,10 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 --     ----            -------------   -----         -----------     --------             -------
 1      Job1            BackgroundJob   Running       True            localhost            npm run start -- -p 9999
 
-$ Start-Sleep -Seconds 4; Invoke-WebRequest -Uri "http://localhost:9999/case-studies/case-study-01" -UseBasicParsing | Select-Object -ExpandProperty Content | Select-String -Pattern '"@type"' -AllMatches
+$ Start-Sleep -Seconds 4; Invoke-WebRequest -Uri "http://user:[REDACTED]@type"' -AllMatches
 Invoke-WebRequest: No connection could be made because the target machine actively refused it.
 
-$ Start-Sleep -Seconds 8; Invoke-WebRequest -Uri "http://localhost:9999/case-studies/case-study-01" -UseBasicParsing | Select-Object -ExpandProperty Content | Select-String -Pattern '"@type"' -AllMatches
+$ Start-Sleep -Seconds 8; Invoke-WebRequest -Uri "http://user:[REDACTED]@type"' -AllMatches
 Invoke-WebRequest: No connection could be made because the target machine actively refused it.
 
 $ Start-Sleep -Seconds 5; curl -s http://localhost:9999/ | Select-Object -First 5
@@ -465,7 +465,7 @@ margin-inline:auto }
   .next\server\app\case-studies\case-study-01.html:3:        .hero-center h1{ max-width:none; margin-inline:auto }
   .next\server\app\case-studies\case-study-01.html:4:        .hero-center .lede{ margin:18px auto 0 }
 > .next\server\app\case-studies\case-study-01.html:24:      </style><main><script 
-type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Case study 01: 
+type="application/ld+json">{"@context":"https://user:[REDACTED]@type":"Article","headline":"Case study 01: 
 Khaos Control ERP + Custom App","description":"Project-leading a Khaos Control ERP implementation for a heating spares 
 & eCommerce retailer alongside a custom app for supplier data, Amazon FBA, and channel 
 automation.","author":{"@type":"Person","name":"Craig Blackman"},"publisher":{"@type":"Organization","name":"Decoded Op
@@ -1276,8 +1276,8 @@ $ Start-Process -NoNewWindow powershell -ArgumentList "-Command", "cd 'D:\apps\w
 Γ£ô Running next.config.ts took 32ms
 ΓÜá "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
 ---CASE STUDY 02---
-{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://decodedops.co.uk/#organisation","name":"Decoded Ops","url":"https://decodedops.co.uk","description":"Technology and operations consultancy for print, embroidery and decoration businesses. Plain English. Real answers. 25 years in the sector.","address":{"@type":"PostalAddress","addressLocality":"Worthing","addressRegion":"West Sussex","addressCountry":"GB"},"telephone":"07735 620 603","founder":{"@type":"Person","name":"Craig Blackman","jobTitle":"Founder & Principal Consultant"},"areaServed":"GB","knowsAbout":["print technology","embroidery operations","ERP systems","fractional CTO","technology audit","eCommerce integration"],"sameAs":["https://www.linkedin.com/company/decodedops"]}
-{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Case study 02: the diagnostic came before the decision","description":"Clarity Audit into a Deliver engagement, building a Stock Control module ahead of a Khaos Control ERP implementation, nine supplier feeds fully automated.","author":{"@type":"Person","name":"Craig Blackman"},"publisher":{"@type":"Organization","name":"Decoded Ops","logo":{"@type":"ImageObject","url":"https://decodedops.co.uk/logo.png","width":512,"height":512}},"image":"https://decodedops.co.uk/opengraph-image","datePublished":"2026-07-28","dateModified":"2026-07-28","url":"https://decodedops.co.uk/case-studies/case-study-02"}]}
+{"@context":"https://user:[REDACTED]@id":"https://user:[REDACTED]@type":"PostalAddress","addressLocality":"Worthing","addressRegion":"West Sussex","addressCountry":"GB"},"telephone":"07735 620 603","founder":{"@type":"Person","name":"Craig Blackman","jobTitle":"Founder & Principal Consultant"},"areaServed":"GB","knowsAbout":["print technology","embroidery operations","ERP systems","fractional CTO","technology audit","eCommerce integration"],"sameAs":["https://www.linkedin.com/company/decodedops"]}
+{"@context":"https://user:[REDACTED]@type":"Article","headline":"Case study 02: the diagnostic came before the decision","description":"Clarity Audit into a Deliver engagement, building a Stock Control module ahead of a Khaos Control ERP implementation, nine supplier feeds fully automated.","author":{"@type":"Person","name":"Craig Blackman"},"publisher":{"@type":"Organization","name":"Decoded Ops","logo":{"@type":"ImageObject","url":"https://decodedops.co.uk/logo.png","width":512,"height":512}},"image":"https://decodedops.co.uk/opengraph-image","datePublished":"2026-07-28","dateModified":"2026-07-28","url":"https://decodedops.co.uk/case-studies/case-study-02"}]}
 
 
 <shell_metadata>
@@ -1618,7 +1618,7 @@ $ $blogHtml = Get-Content ".next\server\app\blog\the-real-cost-of-a-failed-erp-p
 True
 
 $ $blogHtml = Get-Content ".next\server\app\blog\lean-six-sigma-small-business.html" -Raw; $ldStart = $blogHtml.IndexOf('application/ld+json'); $chunk = $blogHtml.Substring($ldStart, 200); $chunk
-application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"ProfessionalService\\\",\\\"@id\\\":\\\"https://decodedops.co.uk/#organis
+application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://user:[REDACTED]@id\\\":\\\"https://decodedops.co.uk/#organis
 
 The blog posts are RSC (React Server Components) ΓÇö JSON-LD is in the flight data, not static HTML. I need to start the server and curl. Let me also check if there are any remaining changes to commit:
 $ git status --short

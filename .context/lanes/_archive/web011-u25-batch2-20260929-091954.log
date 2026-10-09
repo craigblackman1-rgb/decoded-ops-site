@@ -1,0 +1,546 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓåÆ [0mRead .context/lane-briefs/web011-u25-batch2.md
+[0mΓåÆ [0mRead app/page.tsx
+[0mΓåÆ [0mRead app/clarity/page.tsx
+[0mΓåÆ [0mRead app/deliver/page.tsx
+[0mΓåÆ [0mRead app/transform/page.tsx
+[0mΓåÆ [0mRead app/retained/page.tsx
+[0mΓåÆ [0mRead app/small-business/page.tsx
+[0mΓåÆ [0mRead app/pricing/page.tsx
+[0mΓåÆ [0mRead app/about/page.tsx
+[0mΓåÆ [0mRead app/how-i-build/page.tsx
+[0mΓåÆ [0mRead app/apps/page.tsx
+[0mΓåÆ [0mRead app/apps/works/page.tsx
+[0mΓåÆ [0mRead app/apps/proof/page.tsx
+[0mΓåÆ [0mRead app/apps/commerce/page.tsx
+Now let me read all the page files that need editing:
+[0m
+[0mΓåÉ [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\page.tsx
+@@ -85,9 +85,9 @@
+ <div className="stage-grid">
+   <div className="stage-copy">
+     <span className="eyebrow">Operations &amp; technology consultancy</span>
+     <h1>I find what&rsquo;s quietly costing you money.</h1>
+-    <p>I help owners of print, embroidery, workwear and promotional merchandise businesses
++    <p>I&rsquo;m an operations consultant. I help owners of print, embroidery, workwear and promotional merchandise businesses
+       fix the systems that are holding them back. Start with a Clarity Audit: a day inside your
+       business, six areas followed from start to finish, and within five working days a written
+       plan that tells you what&rsquo;s broken, what it&rsquo;s costing you, which software actually
+       fits how you work, and what to fix first. That&rsquo;s the penny drop: you finally see
+
+[0m
+[0mΓåÉ [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\page.tsx
+@@ -347,9 +347,9 @@
+ <div className="wrap">
+   <div className="origin-lead" data-od-id="origin-lead">
+     <span className="eyebrow">Where the software came from</span>
+     <h2>I didn&rsquo;t set out to build software.</h2>
+-    <p>I kept meeting the same gap in businesses I was already fixing. The platform was
++    <p>I kept meeting the same gap in businesses I was already fixing as an operations consultant. The platform was
+       usually right. It just would not do one particular job, and nothing on the market closed
+       that gap at a price a business this size could justify. So I built the thing that
+       did.</p>
+     <p>Because it was built by someone who does the process work, the Process Register and the
+
+[0m
+[0mΓåÉ [0mEdit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\clarity\page.tsx
+@@ -59,9 +59,9 @@
+ <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
+   <div className="wrap">
+     <span className="eyebrow">Clarity Audit</span>
+     <h1>One day on site. One written plan.</h1>
+-    <p className="lede">A free 60-minute call, then one full day inside your business. I follow six
++    <p className="lede">A free 60-minute call, then a one-day process audit inside your business. I follow six
+       areas from start to finish, rather than just discussing them. Priced to your scope, confirmed before you commit, and covered by the
+       3&times; guarantee below: if the report doesn&apos;t find at least three times the fee, it&apos;s
+       refunded in full. A written report within five working days, walked through with you in person.</p>
+     <div className={s.heroCta}>
+
+[0m
+[0mΓåÉ [0mEdit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\clarity\page.tsx
+@@ -198,9 +198,9 @@
+ <section className="g-white" data-od-id="areas">
+   <div className="wrap">
+     <span className="eyebrow">What gets covered</span>
+     <h2>Six areas, followed from start to finish.</h2>
+-    <p className="lede" style={{ marginTop: 16 }}>Not a checklist ticked off from a desk. I follow the
++    <p className="lede" style={{ marginTop: 16 }}>Not a checklist ticked off from a desk. In a process audit I follow the
+       actual process, in the actual place it happens.</p>
+ 
+     <div className="grid grid--3">
+       <article className="card" data-od-id="area-it">
+
+[0m
+[0mΓåÉ [0mEdit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\deliver\page.tsx
+@@ -31,9 +31,9 @@
+ <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
+   <div className="wrap">
+     <span className="eyebrow">Deliver</span>
+     <h1>I get it built. And you keep the system that runs it.</h1>
+-    <p className="lede">Deliver is the implementation phase after a Clarity Audit. I sit on your side
++    <p className="lede">Deliver is the business process improvement and implementation phase after a Clarity Audit. I sit on your side
+       of the table for the whole build, from brief through to handover, and I leave behind a
+       documented Process &amp; Quality System, so the business can run what&apos;s built long after
+       I&apos;ve gone.</p>
+     <div className={s.heroCta}>
+
+[0m
+[0mΓåÉ [0mEdit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\deliver\page.tsx
+@@ -114,9 +114,9 @@
+ <section className="g-tint" data-od-id="deliver-loop">
+   <div className="wrap">
+     <span className="eyebrow">How Deliver runs &middot; DO-ART-305</span>
+     <h2>Map, document, check, log. Then round again.</h2>
+-    <p className="lede" style={{ marginTop: 16 }}>Not a one-off audit. A loop that keeps running after
++    <p className="lede" style={{ marginTop: 16 }}>Not a one-off audit. Business process improvement as a loop that keeps running after
+       the engagement ends, because the last step feeds the first one.</p>
+ 
+     <div className="plate-scroll" style={{ marginTop: 34 }}>
+       <div className={`plate-frame ${s.plateFrame}`} data-od-id="deliver-loop-diagram">
+
+[0m
+[0mΓåÉ [0mEdit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\transform\page.tsx
+@@ -59,9 +59,9 @@
+ <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
+   <div className="wrap">
+     <span className="eyebrow">Transform</span>
+     <h1>The plan, executed.</h1>
+-    <p className="lede">Transform is what happens after a Clarity Audit finds something that needs
++    <p className="lede">Transform is my digital transformation consultancy, and it is what happens after a Clarity Audit finds something that needs
+       proper change, not a quick fix. I take that plan and run it: ERP, eCommerce and process
+       redesign, run as one programme over weeks rather than a day.</p>
+     <div className={s.heroCta}>
+       <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
+
+[0m
+[0mΓåÉ [0mEdit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\transform\page.tsx
+@@ -188,9 +188,9 @@
+ <div className="wrap">
+   <span className="eyebrow">What a Transform engagement covers</span>
+   <h2>Three dimensions, run together.</h2>
+   <p className="lede" style={{ marginTop: 16 }}>Transform is the Clarity Audit plan, turned into a
+-    programme. The same discipline as Deliver, applied across several systems or departments
++    programme. The same discipline as Deliver, applied to ERP implementation across several systems or departments
+     at once.</p>
+ 
+   <div className="grid grid--3">
+     <div className={s.feature} data-od-id="dimension-plan">
+
+[0m
+[0mΓåÉ [0mEdit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\transform\page.tsx
+@@ -235,9 +235,9 @@
+ {/* 4 ┬╖ CTA STRIP */}
+ <section className={`g-navy ${s.ctaStrip}`} data-od-id="cta-strip">
+   <div className="wrap" style={{ maxWidth: 760 }}>
+     <h2>Book a Clarity Audit.</h2>
+-    <p className="lede">Transform is scoped per engagement. There&apos;s no published price for a
++    <p className="lede">My digital transformation consultancy is scoped per engagement. There&apos;s no published price for a
+       programme this size, and there won&apos;t be. It starts the same way everything does: a full
+       day on site and a written plan.</p>
+     <div className={s.heroCta}>
+       <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
+
+[0m
+[0mΓåÉ [0mEdit app/retained/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\retained\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\retained\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\retained\page.tsx
+@@ -78,9 +78,9 @@
+ <section className="g-off">
+   <div className="container hero-center">
+     <p className="eyebrow">Fractional CTO</p>
+     <h1>Fractional CTO. Not a project. A standing decision-maker.</h1>
+-    <p className="lead">Ongoing technology leadership, without the cost of a full-time hire.
++    <p className="lead">Ongoing technology and operations leadership, as a fractional CTO or fractional COO, without the cost of a full-time hire.
+       The scope and cadence are agreed at the start.</p>
+     <div className="hero-cta">
+       <Link className="btn btn-primary" href="/contact">Let&rsquo;s talk about whether this suits you</Link>
+     </div>
+
+[0m
+[0mΓåÉ [0mEdit app/retained/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\retained\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\retained\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\retained\page.tsx
+@@ -147,9 +147,9 @@
+         <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
+       </svg>
+     </div>
+     <h3>Complete</h3>
+-    <p className="feature-meta">Near full-time strategic and operational leadership</p>
++    <p className="feature-meta">Near full-time fractional COO: strategic and operational leadership</p>
+     <p>For a business mid-way through something big enough that it needs one person holding it.</p>
+   </div>
+ </div>
+ 
+
+[0m
+[0mΓåÉ [0mEdit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\small-business\page.tsx
+@@ -98,9 +98,9 @@
+ <div className="wrap" style={{ maxWidth: 720, textAlign: 'center' }}>
+   <span className="eyebrow" style={{ marginBottom: 22 }}>For small businesses</span>
+   <h1 className="h1">Small business operations consultant. <em>Technology and systems support without the big-business price tag.</em></h1>
+   <p className="lede">
+-    The same operational thinking I bring to larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
++    As a small business consultant, I bring the same operational thinking I use with larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
+   </p>
+   <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', maxWidth: '48ch', margin: '0 auto 16px' }}>
+     A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, and process improvement, on a flexible, affordable basis built for owner-led businesses.
+   </p>
+
+[0m
+[0mΓåÉ [0mEdit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\small-business\page.tsx
+@@ -134,9 +134,9 @@
+ <section className="g-off">
+   <div className="wrap">
+     <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
+       <h2 className="h2">Start with a Clarity Check</h2>
+-      <p className="lede">A fixed-price remote diagnostic, delivered by me, not a junior team.</p>
++      <p className="lede">A fixed-price remote diagnostic, delivered by me as your small business consultant, not a junior team.</p>
+     </div>
+     <div className="grid grid--2">
+       {services.map((service) => {
+         const Icon = service.icon;
+
+[0m
+[0mΓåÉ [0mEdit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\pricing\page.tsx
+@@ -66,9 +66,9 @@
+ <section className="g-off">
+   <div className="container hero-center">
+     <p className="eyebrow">Pricing</p>
+     <h1>Start with the audit.</h1>
+-    <p className="lead">One fixed price to begin. Everything after that is scoped once
++    <p className="lead">One fixed price to begin. Everything else in my operations consultancy is scoped once
+       I understand your operation.</p>
+     <div className="hero-cta">
+       <Link className="btn btn-primary" href="/contact">Book a free discovery call</Link>
+       <Link className="btn btn-ghost btn-arrow" href="/how-i-build">See how I decide what to build</Link>
+
+[0m
+[0mΓåÉ [0mEdit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\pricing\page.tsx
+@@ -97,9 +97,9 @@
+ <section className="g-white">
+   <div className="container">
+     <p className="eyebrow">Consultancy</p>
+     <h2>Diagnosis, then delivery.</h2>
+-    <p className="lead" style={{ marginTop: 16 }}>Priced to the scope of your operation, not your turnover. Clarity Audit is the
++    <p className="lead" style={{ marginTop: 16 }}>Operations consultancy priced to the scope of your business, not your turnover. Clarity Audit is the
+       entry point into everything below it.</p>
+ 
+     <div className="table-wrap" style={{ marginTop: 28 }}>
+       <table className="ds-table ds-table--fixed">
+
+[0m
+[0mΓåÉ [0mEdit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\about\page.tsx
+@@ -34,9 +34,9 @@
+ <div>
+   <span className="eyebrow">About Craig</span>
+   <h1>I started on the warehouse floor.</h1>
+   <div className={s.heroBody}>
+-    <p>Twenty-five years later, I&apos;m still solving the same problems, just from the other
++    <p>Twenty-five years later, I&apos;m a business operations consultant still solving the same problems, just from the other
+       side of the table.</p>
+     <p>I&apos;ve worked at every level in these businesses, not as a consultant brought in to observe. I picked, packed and despatched on the warehouse floor, kept things running as the IT engineer, and ran the operation as the ops manager. I implemented the systems, worked with them every day, and fixed what needed fixing.</p>
+     <p>That&apos;s why I know what a system needs to do for the person using it, not just the
+       person commissioning it.</p>
+
+[0m
+[0mΓåÉ [0mEdit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\about\page.tsx
+@@ -72,9 +72,9 @@
+ <span className="eyebrow">Career arc &middot; DO-ART-831</span>
+ <h2>Three vantage points, one problem that never changed.</h2>
+ <div className="hair"></div>
+ <p className="lede" style={{ marginTop: 16 }}>
+-  Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. Every level taught me the same thing: the paperwork says one thing, the floor does another, and closing that gap is the job I do now.
++  Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. Every level taught me the same thing: the paperwork says one thing, the floor does another, and closing that gap is what I do now as a business operations consultant.
+ </p>
+ 
+ {/* DO-ART-831 r01 ┬╖ journey poster, website cut (D16/D17). Same drawing
+      and argument as the Issue 02 poster; the in-page draw runs the line
+
+[0m
+[0mΓåÉ [0mEdit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\how-i-build\page.tsx
+@@ -58,9 +58,9 @@
+ <section className="g-off">
+   <div className="wrap hero-center">
+     <p className="eyebrow">How I build</p>
+     <h1>The facts, the options, and the decision stays yours.</h1>
+-    <p className="lede">I don&rsquo;t tell you what to buy. I show you what&rsquo;s on the market, what it costs,
++    <p className="lede">As an ERP implementation consultant, I don&rsquo;t tell you what to buy. I show you what&rsquo;s on the market, what it costs,
+       and where it falls short, so whatever you decide, you decide on the merits, not on my
+       say-so.</p>
+     <div className="btn-row" style={{ marginTop: 32 }}>
+       <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
+
+[0m
+[0mΓåÉ [0mEdit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\how-i-build\page.tsx
+@@ -177,9 +177,9 @@
+ 
+ <article className="rung rung--default">
+   <p className="kicker">Rung 2 <span className="flag">The normal answer</span></p>
+   <h3>Buy plus a custom layer</h3>
+-  <p>Usually the platform is right but leaves gaps: supplier feeds, artwork, reporting across
++  <p>On an ERP implementation the platform is usually right but leaves gaps: supplier feeds, artwork, reporting across
+     more than one business. I&rsquo;ll show you what the gap costs to leave alone versus what it
+     costs to close with a custom layer, and let you weigh it up.</p>
+ </article>
+ 
+
+[0m
+[0mΓåÉ [0mEdit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\page.tsx
+@@ -31,9 +31,9 @@
+ <section className="g-off">
+   <div className="wrap centred">
+     <span className="eyebrow">The systems</span>
+     <h1>Run the operation. Approve the artwork. Sell the goods.</h1>
+-    <p className="lede">Not a product catalogue. Software built for jobs the platforms in this sector
++    <p className="lede">Not a product catalogue. Print management software built for jobs the platforms in this sector
+       were never going to do, proven at real clients.</p>
+   </div>
+   <div className="wrap hero-art">
+     {/* DO-ART-939 r01 */}
+
+[0m
+[0mΓåÉ [0mEdit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\page.tsx
+@@ -241,9 +241,9 @@
+ <h2>Software is the last answer, not the first.</h2>
+ <p className="lede" style={{ marginTop: 16, maxWidth: '62ch' }}>The audit comes first and it decides
+   what&rsquo;s needed, not the other way round. If a platform already on the market does the job,
+   that&rsquo;s what goes on the table: named, no commission in it for me. Works, Proof and Commerce
+-  exist because for a specific set of jobs in this sector, nothing on the market did the job
++  exist because for a specific set of jobs in this sector, no print management software on the market did the job
+   properly.</p>
+ <div className="btn-row" style={{ marginTop: 32 }}>
+   <Link className="btn btn--outline btn-arrow" href="/how-i-build">How I decide what to build</Link>
+ </div>
+
+[0m
+[0mΓåÉ [0mEdit app/apps/works/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\works\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\works\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\works\page.tsx
+@@ -64,9 +64,9 @@
+ <div className="hero-body">
+   <p>Every Clarity Audit ends in a written brief. For years the same jobs kept coming back
+     with nothing on the market built for decorated goods: supplier feeds, decoration data,
+     blank-to-finished mapping, artwork held against the job. So I built the missing piece.
+-    Engagement by engagement it grew, and today it runs the whole operation: catalogue,
++    Engagement by engagement it grew into an ERP for a printing company or embroiderer, and today it runs the whole operation: catalogue,
+     orders, purchasing, stock, production and despatch. It still plays both ways. Alongside
+     the platform you already own, or as the system itself.</p>
+ </div>
+ <div className="btn-row">
+
+[0m
+[0mΓåÉ [0mEdit app/apps/works/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\works\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\works\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\works\page.tsx
+@@ -120,9 +120,9 @@
+         <div className="wrap">
+           <span className="eyebrow">Architecture &middot; DO-ART-942</span>
+           <h2>Keep your platform, or let this become it.</h2>
+           <p className="lede" style={{ marginTop: 16 }}>Works started as the missing layer: supplier
+-            feeds, data enrichment, catalogue maintenance across channels. It has grown into the ERP.
++            feeds, data enrichment, catalogue maintenance across channels. It has grown into the ERP for a printing company, stock control software and order management system included.
+             You can run it alongside the platform you already own, or let it replace it.</p>
+ 
+           <div dangerouslySetInnerHTML={{ __html: `
+ <figure class="d17 sw a942" data-od-id="layer-stack-diagram" data-motion data-no="DO-ART-942" data-rev="01" data-tx="schematic"
+
+[0m
+[0mΓåÉ [0mEdit app/apps/proof/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\proof\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\proof\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\proof\page.tsx
+@@ -61,9 +61,9 @@
+ <div>
+   <p className="eyebrow">Decoded Proof &middot; artwork revision control</p>
+   <h1>Every version. The one they actually approved.</h1>
+   <div className="hero-body">
+-    <p>An artwork vault across embroidery and print formats, with full revision control and an
++    <p>Artwork approval software with an artwork vault across embroidery and print formats, full revision control and an
+       audit trail. Colourways and thread libraries are held against the job, not scattered
+       across folders and someone&rsquo;s memory. Customers approve their own proofs instead of an
+       email chain, and the approved file goes straight to the floor in the format the machine
+       actually wants.</p>
+
+[0m
+[0mΓåÉ [0mEdit app/apps/proof/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\proof\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\proof\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\proof\page.tsx
+@@ -124,9 +124,9 @@
+ <h2>Revision control, proofing, and delivery to the machine.</h2>
+ <p className="lede" style={{ marginTop: 16 }}>Artwork is the thing that goes wrong quietly. Wrong
+   version stitched, a colourway approved for one job and used on the next, a proof approved in
+   an email nobody can find. All three of those are the same problem: no record of which
+-  version was the real one.</p>
++  version was the real one. Artwork approval software has to fix that first.</p>
+ 
+ <div className="grid grid--3">
+   <div className="feature">
+     <div className="feature-mark" aria-hidden="true">
+
+[0m
+[0mΓåÉ [0mEdit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\commerce\page.tsx
+@@ -63,9 +63,9 @@
+ <h1>A storefront that fits how you actually sell.</h1>
+ <div className="hero-body">
+   <p>Three tiers, priced on what you need rather than how many days it takes. Where a client
+     wants more than a tier covers, that&rsquo;s scoped and costed separately.</p>
+-  <p>It&rsquo;s built on an open-source B2B commerce starter: company accounts, spend limits,
++  <p>It&rsquo;s a B2B ecommerce platform, built on an open-source commerce starter: company accounts, spend limits,
+     approval workflows, quote negotiation, order editing, and a full storefront and
+     checkout. Real foundations, not a from-scratch build, which keeps the cost well under a
+     bespoke quote for the same thing.</p>
+ </div>
+
+[0m
+[0mΓåÉ [0mEdit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\app\apps\commerce\page.tsx
+@@ -151,9 +151,9 @@
+   <h3>Connected</h3>
+   <p className="feature-meta">The B2B trade portal shape</p>
+   <p>Adds company accounts with multi-user roles, per-employee spending limits, approval
+     workflows, and quote negotiation. This is what most trade businesses in this sector
+-    actually mean when they say they want a trade portal.</p>
++    actually mean when they say they want a trade portal or a B2B ecommerce platform.</p>
+ </div>
+ 
+ <div className="feature" data-od-id="tier-extended">
+   <div className="feature-mark" aria-hidden="true">
+
+[0m
+Now I'll apply all the edits in parallel:
+All 26 edits applied. Now commit the changed page files:
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages" && git add app/page.tsx app/clarity/page.tsx app/deliver/page.tsx app/transform/page.tsx app/retained/page.tsx app/small-business/page.tsx app/pricing/page.tsx app/about/page.tsx app/how-i-build/page.tsx app/apps/page.tsx app/apps/works/page.tsx app/apps/proof/page.tsx app/apps/commerce/page.tsx && git commit -m "content(seo): phase 2 keyword body copy, money pages (WO-WEB-011 u25 batch 2)"
+[web011-u25-batch2-money-pages feb7017] content(seo): phase 2 keyword body copy, money pages (WO-WEB-011 u25 batch 2)
+ 13 files changed, 27 insertions(+), 27 deletions(-)
+[0m
+Now write the lane reports:
+[0m$ [0mmkdir -p "D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages\.context\lane-reports"
+(no output)
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web011-u25-batch2.md
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web011-u25-batch2.json
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages" && git add .context/lane-reports/LANE-NOTES-web011-u25-batch2.md .context/lane-reports/LANE-RESULT-web011-u25-batch2.json && git commit -m "chore: lane notes and result for web011-u25-batch2"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web011-u25-batch2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web011-u25-batch2.json', LF will be replaced by CRLF the next time Git touches it
+[web011-u25-batch2-money-pages d533646] chore: lane notes and result for web011-u25-batch2
+ 2 files changed, 42 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web011-u25-batch2.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web011-u25-batch2.json
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web011-u25-batch2-money-pages" && git status
+On branch web011-u25-batch2-money-pages
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.context/lane-briefs/web011-u25-batch2.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+[0m
+Done. Two commits:
+
+1. **`feb7017`** ΓÇö `content(seo): phase 2 keyword body copy, money pages (WO-WEB-011 u25 batch 2)` ΓÇö 13 files, 27 insertions, 27 deletions. All 26 edits applied, zero mismatches.
+2. **`d533646`** ΓÇö lane notes and result JSON committed to `.context/lane-reports/`.
+
+No failed edits. No deviations. Branch is 2 commits ahead of origin/main.

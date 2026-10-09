@@ -1,0 +1,280 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-d-build-d17.md
+[0m
+[0m# [0mTodos
+[•] Read D17 sector source files and existing sector pages
+[ ] Port d17-sectors.css
+[ ] Update each sector page with D17 artwork slots
+[ ] Apply CR-WEB-051 copy edits
+[ ] Verify tsc + grep checks
+[ ] Commit and write lane reports
+[0m
+[0m✱ [0mGlob ".context/lane-briefs/d17-sectors/*"[90m in . · 0 matches[0m
+[0m✱ [0mGlob "app/sectors/*/page.tsx"[90m in . · 10 matches[0m
+[0m✱ [0mGlob "**/D17Motion.tsx"[90m in . · 1 match[0m
+[0m✱ [0mGlob "**/d17-sectors.css"[90m in . · 0 matches[0m
+[0m✱ [0mGlob "**/*d17*sector*"[90m in . · 0 matches[0m
+[0m✱ [0mGlob "**/*sector*d17*"[90m in . · 0 matches[0m
+[0m→ [0mRead .context/lane-briefs
+[0m→ [0mRead components/D17Motion.tsx
+[0m→ [0mRead .context/lane-briefs/d17-sectors
+[0m→ [0mRead .context/lane-briefs/d17-sectors/d17-sectors.css
+[0m→ [0mRead .context/lane-briefs/d17-sectors/awards-engraving.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/awards-engraving.inline.html
+[0m→ [0mRead app/sectors/awards-engraving/page.tsx
+[0m→ [0mRead app/sectors/garment-decoration/page.tsx
+Let me read all the key source files in parallel.
+[0m→ [0mRead app/sectors/print-promotional/page.tsx
+[0m✱ [0mGrep "D17Motion"[90m in . · 7 matches[0m
+[0m✱ [0mGrep "d17-art"[90m in . · 3 matches[0m
+[0m→ [0mRead app/sectors/schoolwear/page.tsx
+[0m→ [0mRead app/sectors/labels-packaging/page.tsx
+Now let me read more files to understand the D17 CSS import pattern and remaining sector pages.
+[0m→ [0mRead app/d17-art.module.css[90m [limit=50][0m
+[0m→ [0mRead app/sectors/promotional-merchandise/page.tsx
+[0m→ [0mRead app/sectors/signs-graphics/page.tsx
+[0m→ [0mRead app/sectors/teamwear-clubwear/page.tsx
+[0m→ [0mRead app/sectors/workwear/page.tsx
+Now let me read the D17 art CSS and the remaining sector pages + hero/inline files.
+[0m✱ [0mGlob "public/images/d17/sectors/*"[90m in . · 15 matches[0m
+[0m→ [0mRead components/SectorPageDS.tsx
+[0m→ [0mRead .context/lane-briefs/d17-sectors/garment-decoration.hero.html
+Let me check the image files exist and read the SectorPageDS component.
+[0m→ [0mRead .context/lane-briefs/d17-sectors/garment-decoration.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/labels-packaging.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/labels-packaging.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/print-promotional.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/print-promotional.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/promotional-merchandise.hero.html
+Let me read the remaining inline files quickly.
+[0m→ [0mRead .context/lane-briefs/d17-sectors/promotional-merchandise.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/schoolwear.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/schoolwear.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/signs-graphics.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/signs-graphics.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/teamwear-clubwear.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/teamwear-clubwear.inline.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/workwear.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-sectors/workwear.inline.html
+Now I have a complete picture. Let me start implementing. First, I'll commit the CSS file, then work through the pages systematically.
+[0m
+[0m# [0mTodos
+[✓] Read D17 sector source files and existing sector pages
+[•] Port d17-sectors.css as a module
+[ ] Convert 4 SectorPageDS pages to inline JSX and add D17 artwork
+[ ] Update 5 inline-structure pages with D17 artwork
+[ ] Apply CR-WEB-051 copy edits
+[ ] Verify tsc + grep checks
+[ ] Commit and write lane reports
+[0m
+[0m$ [0mcp "D:\apps\worktrees\decoded-ops-website\web-d-build-d17\.context\lane-briefs\d17-sectors\d17-sectors.css" "D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\d17-sectors.module.css"
+(no output)
+[0m
+[0m$ [0mgit add app/d17-sectors.module.css && git commit -m "feat(web): add d17-sectors.css module (WO-INF-061 u14 D-build)"
+[web-d-build-d17 6d1cf15] feat(web): add d17-sectors.css module (WO-INF-061 u14 D-build)
+ 1 file changed, 473 insertions(+)
+ create mode 100644 app/d17-sectors.module.css
+[0m
+[0m# [0mTodos
+[✓] Read D17 sector source files and existing sector pages
+[✓] Port d17-sectors.css as a module
+[•] Convert 4 SectorPageDS pages to inline JSX and add D17 artwork
+[ ] Update 5 inline-structure pages with D17 artwork
+[ ] Apply CR-WEB-051 copy edits
+[ ] Verify tsc + grep checks
+[ ] Commit and write lane reports
+[0m
+Let me start with schoolwear (needs CR-WEB-051 edits). I'll convert it to inline JSX and add D17 artwork.
+[0m← [0mWrite app/sectors/schoolwear/page.tsx
+Wrote file successfully.
+[0m
+[0m• [0mWrite promo-merch D17 page[90m General Agent[0m
+[0m• [0mWrite teamwear D17 page[90m General Agent[0m
+Now let me do promotional-merchandise, teamwear-clubwear, and workwear. I'll use parallel tasks for speed.
+[0m• [0mWrite workwear D17 page[90m General Agent[0m
+[0m✓ [0mWrite promo-merch D17 page[90m General Agent[0m
+[0m✓ [0mWrite teamwear D17 page[90m General Agent[0m
+[0m✓ [0mWrite workwear D17 page[90m General Agent[0m
+[0m• [0mUpdate 5 sector pages D17[90m General Agent[0m
+Now let me update the 5 inline-structure pages (awards-engraving, garment-decoration, labels-packaging, print-promotional, signs-graphics).
+[0m✓ [0mUpdate 5 sector pages D17[90m General Agent[0m
+[0m
+[0m# [0mTodos
+[✓] Read D17 sector source files and existing sector pages
+[✓] Port d17-sectors.css as a module
+[✓] Convert 4 SectorPageDS pages to inline JSX and add D17 artwork
+[✓] Update 5 inline-structure pages with D17 artwork
+[•] Apply CR-WEB-051 copy edits
+[ ] Verify tsc + grep checks
+[ ] Commit and write lane reports
+[0m
+Now let me verify the CR-WEB-051 copy edits and run the grep checks.
+[0m✱ [0mGrep "20-40|20–40|volume triples|TackleBag|Tackle Bag|named with permission"[90m in app/sectors · 0 matches[0m
+[0m✱ [0mGrep "craig-blackman"[90m in app/sectors · 0 matches[0m
+[0m✱ [0mGrep "projected"[90m in app/sectors/schoolwear · 0 matches[0m
+[0m✱ [0mGrep "teamwear-and-schoolwear|teamwear business"[90m in app/sectors/schoolwear · 0 matches[0m
+The grep for schoolwear CR-WEB-051 edits found nothing. Let me check the schoolwear page content.
+[0m✱ [0mGrep "20 to 40|teamwear"[90m in app/sectors/schoolwear · 1 match[0m
+[0m✱ [0mGrep "20 to 40|teamwear-and-schoolwear|retailer|projected saving"[90m in app/sectors/schoolwear · 0 matches[0m
+[0m→ [0mRead app/sectors/schoolwear/page.tsx[90m [limit=30, offset=120][0m
+[0m✱ [0mGrep "Three problems|features|Where it usually"[90m in app/sectors/schoolwear · 0 matches[0m
+[0m→ [0mRead app/sectors/schoolwear/page.tsx[90m [limit=50, offset=160][0m
+The CR-WEB-051 edits for schoolwear aren't present - the features section was dropped during conversion. Let me check what's missing and fix it.
+I need to restore the missing features section in schoolwear with CR-WEB-051 edits. Let me add it.
+[0m
+[0m← [0mEdit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-d-build-d17\app\sectors\schoolwear\page.tsx
+@@ -181,8 +181,41 @@
+ </figure>` }} />
+   </div>
+ </section>
+ 
++{/* FEATURES */}
++<section className="g-white">
++  <div className="wrap">
++    <span className="eyebrow">Where it usually breaks</span>
++    <h2>Three problems, all of them worse in August.</h2>
++    <div className="hair" />
++    <div className="grid grid--2" style={{ marginTop: '32px' }}>
++      {[
++        {
++          title: 'Supplier feeds, current before the peak hits',
++          body: "Schoolwear ranges don't change often, but when a supplier does update sizing or stock, you need to know before the August rush, not during it. The Decoded Data App keeps that current automatically.",
++        },
++        {
++          title: 'Sizing that scales with growing pupils',
++          body: "A school's sizing spread is wider and shifts every year. Stock and bin management that understands that means fewer \u201csold out in the size everyone actually needs\u201d moments in week one.",
++        },
++        {
++          title: 'Proven at a teamwear business',
++          body: "The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: 17 supplier feeds automated, a projected 20 to 40 hours a week.",
++        },
++      ].map((f, i) => (
++        <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
++          <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
++          <div>
++            <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '0 0 8px' }}>{f.title}</h3>
++            <p>{f.body}</p>
++          </div>
++        </div>
++      ))}
++    </div>
++  </div>
++</section>
++
+ {/* COMMON CHALLENGES */}
+ <section className="g-white">
+   <div className="wrap">
+     <span className="eyebrow">Common challenges</span>
+
+[0m
+Let me verify the print-promotional CR-WEB-051 edit.
+[0m✱ [0mGrep "20-40|20–40|cuts production delays"[90m in app/sectors/print-promotional · 1 match[0m
+The print-promotional edit is correct. Let me also check for any TackleBag references in the D17 HTML content.
+[0m✱ [0mGrep "TackleBag|Tackle Bag|Hanicks"[90m in app/sectors · 0 matches[0m
+[0m✱ [0mGrep "Hanicks|named with permission"[90m in app/sectors/promotional-merchandise · 0 matches[0m
+[0m
+[0m# [0mTodos
+[✓] Read D17 sector source files and existing sector pages
+[✓] Port d17-sectors.css as a module
+[✓] Convert 4 SectorPageDS pages to inline JSX and add D17 artwork
+[✓] Update 5 inline-structure pages with D17 artwork
+[✓] Apply CR-WEB-051 copy edits
+[•] Verify tsc + grep checks
+[ ] Commit and write lane reports
+[0m
+Good - all forbidden terms are clean. Now let me run tsc and verify.
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mgit grep -nE "Khaos|TackleBag|Tackle Bag|20-40%|20–40%|volume triples|named with permission" -- app/sectors 2>&1
+(no output)
+[0m
+tsc clean. Now let me run the full grep checks from the lane brief.
+[0m$ [0mgit grep -n "craig-blackman" -- app/sectors 2>&1
+(no output)
+[0m
+[0m# [0mTodos
+[✓] Read D17 sector source files and existing sector pages
+[✓] Port d17-sectors.css as a module
+[✓] Convert 4 SectorPageDS pages to inline JSX and add D17 artwork
+[✓] Update 5 inline-structure pages with D17 artwork
+[✓] Apply CR-WEB-051 copy edits
+[✓] Verify tsc + grep checks
+[•] Commit and write lane reports
+[0m
+All grep checks pass. Now let me commit and write lane reports.
+[0m$ [0mgit add -A && git commit -m "feat(web): D17 artwork on sector pages + CR-WEB-051 copy (WO-INF-061 u14)"
+warning: in the working copy of 'app/sectors/promotional-merchandise/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/sectors/schoolwear/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/sectors/teamwear-clubwear/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/sectors/workwear/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[web-d-build-d17 098906a] feat(web): D17 artwork on sector pages + CR-WEB-051 copy (WO-INF-061 u14)
+ 9 files changed, 883 insertions(+), 749 deletions(-)
+[0m
+[0m$ [0mgit log --oneline -3
+098906a feat(web): D17 artwork on sector pages + CR-WEB-051 copy (WO-INF-061 u14)
+6d1cf15 feat(web): add d17-sectors.css module (WO-INF-061 u14 D-build)
+a1820ed chore(web): D17 sector images + lane brief (WO-INF-061 u14)
+[0m
+[0m$ [0mgit diff --stat HEAD~1..HEAD
+app/sectors/awards-engraving/page.tsx        | 120 +++++++-------
+ app/sectors/garment-decoration/page.tsx      | 104 ++++++------
+ app/sectors/labels-packaging/page.tsx        | 157 +++++++++++-------
+ app/sectors/print-promotional/page.tsx       | 188 ++++++++++++++-------
+ app/sectors/promotional-merchandise/page.tsx | 240 +++++++++++++--------------
+ app/sectors/schoolwear/page.tsx              | 239 ++++++++++++++++----------
+ app/sectors/signs-graphics/page.tsx          | 139 ++++++++--------
+ app/sectors/teamwear-clubwear/page.tsx       | 222 ++++++++++++-------------
+ app/sectors/workwear/page.tsx                | 223 +++++++++++--------------
+ 9 files changed, 883 insertions(+), 749 deletions(-)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-d-build-d17\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-d-build-d17.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-d-build-d17.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/ && git commit -m "chore(web): lane reports for web-d-build-d17 (WO-INF-061 u14)"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-d-build-d17.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-d-build-d17.json', LF will be replaced by CRLF the next time Git touches it
+[web-d-build-d17 c4ec818] chore(web): lane reports for web-d-build-d17 (WO-INF-061 u14)
+ 2 files changed, 63 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-d-build-d17.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-d-build-d17.json
+[0m
+[0m# [0mTodos
+[✓] Read D17 sector source files and existing sector pages
+[✓] Port d17-sectors.css as a module
+[✓] Convert 4 SectorPageDS pages to inline JSX and add D17 artwork
+[✓] Update 5 inline-structure pages with D17 artwork
+[✓] Apply CR-WEB-051 copy edits
+[✓] Verify tsc + grep checks
+[✓] Commit and write lane reports
+[0m
+Done. 3 commits on `web-d-build-d17`:
+
+1. **`6d1cf15`** — `d17-sectors.module.css` added (473 lines)
+2. **`098906a`** — All 9 sector pages updated with D17 artwork + CR-WEB-051 copy
+3. **`c4ec818`** — Lane reports
+
+**Per page:**
+- **awards-engraving**: hero DO-921 (photo-led docs over trophy shelf), inline DO-922 (drawn fifty proofs)
+- **garment-decoration**: hero DO-923 (thread spools + run logics), inline DO-924 (journey poster)
+- **labels-packaging**: hero DO-925 (drawn SKU revision history), inline DO-926 (spec sheet + variable-data proof)
+- **print-promotional**: hero DO-927 (press hall + run sheet), inline DO-928 (four systems + press week). CR-WEB-051: removed "20-40%" claim
+- **promotional-merchandise**: hero DO-929 (docs over product), inline DO-930 (supplier matching screen). Converted from SectorPageDS
+- **schoolwear**: hero DO-931 (drawn term-start surge), inline DO-932 (badge spec + parent order). CR-WEB-051: "a teamwear business", "projected 20 to 40 hours". Converted from SectorPageDS
+- **signs-graphics**: hero DO-933 (site survey + dimensions), inline DO-934 (production board)
+- **teamwear-clubwear**: hero DO-935 (supplier feeds screen), inline DO-936 (squad sheet + sponsor spec). Converted from SectorPageDS
+- **workwear**: hero DO-937 (garment + decoration tags), inline DO-938 (catalogue → production → portal). Converted from SectorPageDS
+
+**Verification:** tsc clean, `git grep` for Khaos/TackleBag/20-40%/volume triples/craig-blackman returns 0 hits.

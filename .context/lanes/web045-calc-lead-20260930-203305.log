@@ -1,0 +1,219 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓÇó [0mTrace calculator lead capture flow[90m Explore Agent[0m
+[0m
+[0m$ [0mgit status && git log --oneline -5 && git branch --show-current
+On branch dispatcher/web045-calc-lead
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+81fe3a4 chore: lane reports for web003-u25-27-copy-bugs
+1c75e87 fix(web): BUG-WEB-042/043/044 copy consistency
+098d8f1 feat(web): quoting costs problem page with trade pricing vocabulary (GF13)
+e50262c chore: lane report for inf070-u3-fix-390c
+cfeb3c7 fix(web): DownloadOptIn uses module class for dlBtn; stop 390px overflow (CR-WEB-061)
+dispatcher/web045-calc-lead
+[0m
+[0mΓ£ô [0mTrace calculator lead capture flow[90m Explore Agent[0m
+[0mΓåÆ [0mRead app/api/tools/capture/route.ts
+[0mΓåÆ [0mRead lib/hub-fetch.ts
+[0mΓåÆ [0mRead components/ToolLeadCapture.tsx
+[0mΓåÆ [0mRead D:/apps/decoded-ops-hub/src/app/api/public/leads/route.ts
+[0mΓåÆ [0mRead D:/apps/decoded-ops-hub/src/proxy.ts
+Research is in. Now I'll read the key files myself to verify before making the minimal fix.
+[0mΓåÆ [0mRead app/api/tools/capture/route.test.ts
+[0mΓ£▒ [0mGrep "ToolLeadCapture|tool=["']"[90m in . ┬╖ 100 matches[0m
+I've confirmed the picture. Now checking the existing test and calculator tool slugs before editing.
+[0m
+[0m$ [0mrg -n "capacity-planner|seasonal-capacity|ai-readiness-check" --type ts --type tsx -g '!node_modules' 2>$null; rg -n "capacity-planner|seasonal-capacity" components app lib -g '!node_modules'
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0mΓåÉ [0mEdit app/api/tools/capture/route.ts
+Index: D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
++++ D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
+@@ -10,11 +10,13 @@
+ ];
+ 
+ const VALID_TOOLS = [
+   'automation-roi-calculator',
++  'capacity-planner',
+   'downtime-cost-calculator',
+   'ops-health-score',
+   'rto-calculator',
++  'seasonal-capacity',
+   'should-i-replace-erp',
+ ] as const;
+ 
+ const VALID_RESOURCES = ['sop-template', 'audit-checklist', 'erp-selection-playbook'] as const;
+
+[0m
+[0mΓåÉ [0mEdit app/api/tools/capture/route.ts
+Index: D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
++++ D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
+@@ -133,8 +133,12 @@
+ 
+ const hubUrl = process.env.HUB_API_URL;
+ const hubKey = process.env.HUB_PUBLIC_API_KEY;
+ if (!hubUrl || !hubKey) {
++  const missing = [!hubUrl ? 'HUB_API_URL' : null, !hubKey ? 'HUB_PUBLIC_API_KEY' : null]
++    .filter(Boolean)
++    .join(', ');
++  console.error(`[tools/capture] lead capture not configured ΓÇö missing env: ${missing}`);
+   return NextResponse.json({ error: 'Tool lead capture not configured' }, { status: 500 });
+ }
+ 
+ const payload: Record<string, unknown> = {
+
+[0m
+[0mΓåÉ [0mEdit app/api/tools/capture/route.ts
+Index: D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
++++ D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
+@@ -154,16 +154,33 @@
+ if (isResource) {
+   payload.optin = 'ops-briefing';
+ }
+ 
+-const hubResponse = await hubFetch(`${hubUrl}/api/public/leads`, {
++// Trim trailing slashes so a HUB_API_URL like https://hubΓÇª/ does not
++// produce a doubled-slash endpoint the hub may not match.
++const hubEndpoint = `${hubUrl.replace(/\/+$/, '')}/api/public/leads`;
++const hubResponse = await hubFetch(hubEndpoint, {
+   method: 'POST',
+   headers: { 'Content-Type': 'application/json' },
+   body: JSON.stringify(payload),
+ });
+ 
+ if (!hubResponse.ok) {
+-  console.error('Hub lead capture failed:', hubResponse.status);
++  // Surface the hub's own error body ΓÇö a bare status hid 401 Unauthorized
++  // (key mismatch) and 400 tool-must-be-one-of for months behind a generic
++  // 502 with no server-side clue.
++  let hubBody = '';
++  try {
++    hubBody = await hubResponse.text();
++  } catch {
++    hubBody = '(hub response body unreadable)';
++  }
++  console.error('[tools/capture] hub lead capture failed', {
++    status: hubResponse.status,
++    tool,
++    endpoint: hubEndpoint,
++    body: hubBody.slice(0, 500),
++  });
+   return NextResponse.json(
+     { error: 'Failed to save your details. Please try again.' },
+     { status: 502 }
+   );
+
+[0m
+Root cause is confirmed. Making the minimal fix in this repo now.
+[0mΓåÉ [0mEdit app/api/tools/capture/route.ts
+Index: D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
++++ D:\apps\worktrees\decoded-ops-website\web045-calc-lead\app\api\tools\capture\route.ts
+@@ -235,8 +235,10 @@
+   'downtime-cost-calculator': 'Downtime Cost Calculator',
+   'rto-calculator': 'RTO Calculator',
+   'should-i-replace-erp': 'Should I Replace My ERP',
+   'automation-roi-calculator': 'Automation ROI Calculator',
++  'capacity-planner': 'Capacity Planner',
++  'seasonal-capacity': 'Seasonal Capacity Calculator',
+ };
+ const readableTool = toolNames[tool] || tool;
+ 
+ const answerLines = Object.entries(safeAnswers)
+
+[0m
+[0m$ [0mif (Test-Path node_modules) { Write-Output "node_modules: present" } else { Write-Output "node_modules: MISSING" }; if (Test-Path package.json) { Get-Content package.json | Select-String -Pattern '"(tsc|typecheck|test|vitest)"' }
+node_modules: MISSING
+
+    "test": "vitest run",
+    "vitest": "^5.0.0"
+[0m
+[0m$ [0mnpm install --no-audit --no-fund 2>&1 | Select-Object -Last 15
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 440 packages in 2m
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mnpx vitest run app/api/tools/capture/route.test.ts 2>&1
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v5.0.0 D:/apps/worktrees/decoded-ops-website/web045-calc-lead
+
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)
+   Start at  20:43:28
+   Duration  2.43s (import 82%, transform 12%, worker 4%, tests 2%)
+[0m
+tsc clean, 9 tests pass. Committing the code fix now.
+[0m$ [0mgit add app/api/tools/capture/route.ts && git commit -m "fix(web): BUG-WEB-045 calculator lead capture ΓÇö allowlist + surfaced hub errors
+
+Two calculators mounted ToolLeadCapture with slugs the API route rejected:
+capacity-planner and seasonal-capacity returned 400 'Invalid tool.' before
+any hub call, so those leads could never reach the CRM. Added both to
+VALID_TOOLS (and the lead-alert email name map).
+
+Also stopped swallowing hub failures:
+- hub response body is now logged on non-ok (was status-only, hiding 401
+  key mismatch and hub 400 tool-list errors behind a generic 502)
+- missing HUB_API_URL / HUB_PUBLIC_API_KEY now logs which var is absent
+- hubUrl trailing slashes trimmed before building /api/public/leads
+
+Hub-side gap NOT fixed here (other repo): hub /api/public/leads VALID_TOOLS
+still lacks capacity-planner, seasonal-capacity, and the three resource
+slugs ΓÇö those need a hub deploy before leads will insert. See lane notes." && git log --oneline -2
+[dispatcher/web045-calc-lead 49a6104] fix(web): BUG-WEB-045 calculator lead capture ΓÇö allowlist + surfaced hub errors
+ 1 file changed, 27 insertions(+), 2 deletions(-)
+49a6104 fix(web): BUG-WEB-045 calculator lead capture ΓÇö allowlist + surfaced hub errors
+81fe3a4 chore: lane reports for web003-u25-27-copy-bugs
+[0m
+[0m$ [0mNew-Item -ItemType Directory -Force -Path .context/lane-reports | Out-Null; Write-Output "dir ok"
+dir ok
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web045-calc-lead.md
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web045-calc-lead.json
+Wrote file successfully.
+[0m
+Now writing the lane report files.
+[0m$ [0mgit add -A && git commit -m "chore: lane notes + result for web045-calc-lead (BUG-WEB-045)" && git log --oneline -3 && git status --short
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web045-calc-lead.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web045-calc-lead.json', LF will be replaced by CRLF the next time Git touches it
+[dispatcher/web045-calc-lead 31360f6] chore: lane notes + result for web045-calc-lead (BUG-WEB-045)
+ 2 files changed, 107 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web045-calc-lead.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web045-calc-lead.json
+31360f6 chore: lane notes + result for web045-calc-lead (BUG-WEB-045)
+49a6104 fix(web): BUG-WEB-045 calculator lead capture ΓÇö allowlist + surfaced hub errors
+81fe3a4 chore: lane reports for web003-u25-27-copy-bugs
+[0m
+Lane complete. Working tree clean, two commits on `dispatcher/web045-calc-lead`, no push.
+
+**Root cause (this repo):** `capacity-planner` and `seasonal-capacity` calculators mount `ToolLeadCapture`, but the API route's `VALID_TOOLS` rejected them with 400 before any hub call ΓÇö those leads could never reach the CRM. Hub errors were also swallowed (status-only log, body discarded), hiding 401 key mismatches and hub 400s behind a generic 502.
+
+**Fixed in `app/api/tools/capture/route.ts`:** both slugs added to `VALID_TOOLS`; hub response body + missing-env var names now logged; trailing slash trimmed from `HUB_API_URL`. `npx tsc --noEmit` clean; capture-route tests 9/9 pass.
+
+**Hub-side (not edited, in notes):** hub `VALID_TOOLS` still lacks `capacity-planner`, `seasonal-capacity`, and the three resource slugs ΓÇö those flows stay blocked until the hub repo is updated.

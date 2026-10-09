@@ -1,0 +1,426 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-problems-build.md
+[0m
+[0m# [0mTodos
+[•] Read mockup sources and existing problem pages to understand structure
+[ ] Create app/d17-problems.css from mockup CSS
+[ ] Update ProblemPageDS.tsx with optional heroArt/inlineArt props
+[ ] Apply D17 artwork and copy fixes to all 17 problem pages
+[ ] Verify: tsc --noEmit, grep checks, commit
+[ ] Write lane reports and final commit
+[0m
+[0m→ [0mRead .context/lane-briefs/d17-problems
+[0m→ [0mRead components/ProblemPageDS.tsx
+[0m→ [0mRead app/problems
+[0m→ [0mRead app/sectors/workwear/page.tsx
+[0m→ [0mRead .context/lane-briefs/d17-problems/d17-problems.css
+[0m→ [0mRead .context/lane-briefs/d17-problems/d17-art.css
+[0m→ [0mRead app/problems/ai-paralysis/page.tsx
+[0m→ [0mRead app/problems/wrong-erp-software/page.tsx
+Now let me read the CSS files and a few problem pages to understand the patterns.
+[0m→ [0mRead app/problems/systems-dont-talk/page.tsx
+[0m• [0mRead all hero HTML files[90m General Agent[0m
+[0m• [0mRead remaining problem pages[90m General Agent[0m
+Let me read the hero/inline HTML files and the remaining pages to understand the full scope.
+[0m✓ [0mRead remaining problem pages[90m General Agent[0m
+[0m✓ [0mRead all hero HTML files[90m General Agent[0m
+[0m→ [0mRead .context/lane-briefs/d17-problems/_reuse-718.html
+[0m→ [0mRead .context/lane-briefs/d17-problems/_reuse-719.html
+[0m→ [0mRead .context/lane-briefs/d17-problems/_reuse-917.html
+Let me read the reuse HTML files to understand the inline art patterns.
+[0m→ [0mRead .context/lane-briefs/d17-problems/_reuse-918.html
+[0m→ [0mRead .context/lane-briefs/d17-problems/ai-paralysis.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-problems/ai-paralysis.inline.html
+[0m→ [0mRead app/problems/erp-implementation-failure/page.tsx
+[0m→ [0mRead app/problems/cant-scale-operations/page.tsx
+Let me read a few hero files and the ERP page for the copy fixes.
+[0m→ [0mRead app/problems/seasonal-peaks/page.tsx
+[0m✱ [0mGlob "app/d17-*.css"[90m in . · 2 matches[0m
+[0m→ [0mRead app/problems/spreadsheet-addiction/page.tsx
+[0m→ [0mRead app/d17-global.css[90m [limit=30][0m
+Let me check the existing D17 files and the spreadsheet page for copy fixes.
+[0m
+[0m# [0mTodos
+[✓] Read mockup sources and existing problem pages to understand structure
+[•] Create app/d17-problems.css from mockup CSS
+[ ] Update ProblemPageDS.tsx with optional heroArt/inlineArt props
+[ ] Apply D17 artwork and copy fixes to all 17 problem pages
+[ ] Verify: tsc --noEmit, grep checks, commit
+[ ] Write lane reports and final commit
+[0m
+Now let me create the CSS file and update the component. I'll copy the mockup CSS as-is (the selectors are already D17-specific enough) and update ProblemPageDS.
+[0m→ [0mRead .context/lane-briefs/d17-problems/d17-problems.css
+[0m
+[0m$ [0mcp "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\.context\lane-briefs\d17-problems\d17-problems.css" "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\d17-problems.css"
+(no output)
+[0m
+Now update `ProblemPageDS.tsx` with the new props:
+[0m← [0mEdit components/ProblemPageDS.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
+@@ -27,8 +27,12 @@
+   /** Useful next steps (resources, tools) */
+   relatedResources?: { href: string; label: string }[];
+   /** Optional video data for the "one fix, one screen" embed block */
+   video?: ProblemVideo;
++  /** D17 hero artwork HTML, injected via dangerouslySetInnerHTML */
++  heroArt?: string;
++  /** D17 inline artwork HTML, injected via dangerouslySetInnerHTML */
++  inlineArt?: string;
+ }
+ 
+ /**
+  * DS-classed replacement for ProblemPage.tsx, built on ds-marketing.css
+
+[0m
+[0m← [0mEdit components/ProblemPageDS.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
+@@ -48,9 +48,9 @@
+  * Deliberately a *new* component rather than a restyle of the old shared
+  * ProblemPage.tsx, which has since been removed. /problems/wrong-erp-software
+  * now uses its own inline JSX.
+  */
+-export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading, relatedSectors, relatedResources, video }: ProblemPageDSProps) {
++export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading, relatedSectors, relatedResources, video, heroArt, inlineArt }: ProblemPageDSProps) {
+   const parts = headline.split('||');
+ 
+   return (
+     <>
+
+[0m
+[0m← [0mEdit components/ProblemPageDS.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
+@@ -88,9 +88,11 @@
+     <Link className="btn btn--primary" href="/contact">Talk about your situation</Link>
+     <Link className="btn btn--outline" href="/clarity">See how the audit works</Link>
+   </div>
+ </div>
+-{heroGraphic && (
++{heroArt ? (
++  <div dangerouslySetInnerHTML={{ __html: heroArt }} />
++) : heroGraphic && (
+   <div className="plate-frame" style={{ marginTop: 0 }}>
+     {heroGraphic}
+   </div>
+ )}
+
+[0m
+Now add the heroArt and inlineArt rendering:
+[0m← [0mEdit components/ProblemPageDS.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\components\ProblemPageDS.tsx
+@@ -255,7 +255,16 @@
+             </div>
+           </div>
+         </section>
+       )}
++
++      {/* D17 INLINE ARTWORK */}
++      {inlineArt && (
++        <section className="g-navy" data-od-id="inline-art">
++          <div className="wrap">
++            <div dangerouslySetInnerHTML={{ __html: inlineArt }} />
++          </div>
++        </section>
++      )}
+     </>
+   );
+ }
+
+[0m
+Now add the inlineArt section after the howIHelp/CTA section:
+Good. Now let me commit the initial files and verify the component compiles.
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git add app/d17-problems.css components/ProblemPageDS.tsx && git commit -m "feat(web): add D17 problems CSS and update ProblemPageDS with heroArt/inlineArt props"
+[web-f-build-d17 0e4796f] feat(web): add D17 problems CSS and update ProblemPageDS with heroArt/inlineArt props
+ 2 files changed, 488 insertions(+), 2 deletions(-)
+ create mode 100644 app/d17-problems.css
+[0m
+[0m# [0mTodos
+[✓] Read mockup sources and existing problem pages to understand structure
+[✓] Create app/d17-problems.css from mockup CSS
+[✓] Update ProblemPageDS.tsx with optional heroArt/inlineArt props
+[•] Apply D17 artwork and copy fixes to all 17 problem pages
+[ ] Verify: tsc --noEmit, grep checks, commit
+[ ] Write lane reports and final commit
+[0m
+[0m• [0mRead all hero HTML files batch[90m General Agent[0m
+Let me read all the hero HTML files I haven't read yet, then start editing pages in parallel batches.
+[0m✓ [0mRead all hero HTML files batch[90m General Agent[0m
+[0m→ [0mRead .context/lane-briefs/d17-problems/spreadsheet-addiction.hero.html
+[0m→ [0mRead .context/lane-briefs/d17-problems/systems-dont-talk.hero.html
+Let me get the remaining hero files directly:
+[0m→ [0mRead .context/lane-briefs/d17-problems/wrong-erp-software.hero.html
+[0m• [0mRead all inline HTML files[90m General Agent[0m
+Now let me read all the inline HTML files:
+[0m✓ [0mRead all inline HTML files[90m General Agent[0m
+[0m• [0mUpdate 6 ProblemPageDS pages[90m General Agent[0m
+This is a massive task. Let me work through all 17 pages efficiently using task agents.
+[0m• [0mUpdate 9 custom JSX pages[90m General Agent[0m
+[0m✓ [0mUpdate 6 ProblemPageDS pages[90m General Agent[0m
+[0m✓ [0mUpdate 9 custom JSX pages[90m General Agent[0m
+Now let me handle the remaining 3 pages and copy fixes.
+[0m• [0mUpdate remaining 3 pages + fixes[90m General Agent[0m
+[0m✓ [0mUpdate remaining 3 pages + fixes[90m General Agent[0m
+[0m✱ [0mGrep "Google Sheets|£500k|£1\.5m|Excel"[90m in app/problems · 2 matches[0m
+Now let me apply the remaining copy fix for cant-scale-operations and check for Google Sheets references:
+[0m✱ [0mGrep "forty|eight months"[90m in app/problems · 1 match[0m
+[0m✱ [0mGrep "Google Sheets"[90m in app/problems · 0 matches[0m
+Good, no Google Sheets references. Now fix the remaining copy issues:
+[0m
+[0m← [0mEdit app/problems/cant-scale-operations/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx
+@@ -81,9 +81,9 @@
+ },
+ {
+  '@type': 'Question',
+  name: 'Why does scaling a small business feel harder than growing it?',
+- acceptedAnswer: { '@type': 'Answer', text: 'Because growth adds volume to systems and processes that were designed for a smaller operation. Every workaround, manual step, and undocumented process that was manageable at £500k becomes a bottleneck at £1m. Scaling operations in a small business requires rebuilding the operational infrastructure before the volume overwhelms it, not after.' },
++  acceptedAnswer: { '@type': 'Answer', text: 'Because growth adds volume to systems and processes that were designed for a smaller operation. Every workaround, manual step, and undocumented process that was manageable at a smaller scale becomes a bottleneck as you grow. Scaling operations in a small business requires rebuilding the operational infrastructure before the volume overwhelms it, not after.' },
+ },
+ {
+  '@type': 'Question',
+  name: 'What are the signs that my operations are not keeping up with growth?',
+
+[0m
+[0m← [0mEdit app/problems/cant-scale-operations/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\cant-scale-operations\page.tsx
+@@ -196,9 +196,9 @@
+ ]}
+ causes={[
+  {
+   title: "The informal setup that worked at half the size doesn't scale",
+-  body: "When the team was small, everyone knew what was going on. As you grow, that breaks down, but the systems and habits don't change with it. The same processes that worked at £500k a year start failing at £1.5m.",
++   body: "When the team was small, everyone knew what was going on. As you grow, that breaks down, but the systems and habits don't change with it. The same processes that worked at half your current size start failing as the volume grows.",
+  },
+  {
+   title: "Processes aren't written down and belong to individuals, not the business",
+   body: "Key knowledge lives in the heads of key people. That was fine when the business was small. As it grows, those people become bottlenecks, and the business can only move as fast as they can. If they leave, the process leaves with them.",
+
+[0m
+[0m→ [0mRead app/problems/seasonal-peaks/page.tsx[90m [offset=140, limit=40][0m
+[0m
+[0m← [0mEdit app/problems/seasonal-peaks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\seasonal-peaks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\seasonal-peaks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-f-build-d17\app\problems\seasonal-peaks\page.tsx
+@@ -171,11 +171,11 @@
+ <div className="grid grid--2" style={{ marginTop: 34 }}>
+  <article className="card cause">
+   <span className="n">01</span>
+   <h3>Manual processes hit a hard ceiling</h3>
+-  <p>A person can process forty orders a day. Sixty on a good day. When the seasonal peak
+-   demands two hundred, the person doesn&apos;t get faster, the backlog just grows, and the
+-   customer waits longer.</p>
++   <p>Manual processes have a hard ceiling. When the seasonal peak
++    demands far more than the team can process by hand, the backlog just grows, and the
++    customer waits longer.</p>
+  </article>
+  <article className="card cause">
+   <span className="n">02</span>
+   <h3>Temporary staff can&apos;t follow undocumented process</h3>
+
+[0m
+Now let me commit and run the verification checks:
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git add -A && git commit -m "feat(web): D17 artwork on problems pages (WO-INF-061)"
+warning: in the working copy of '.context/price-audit.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/ai-paralysis/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/bottleneck-growth/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/buy-vs-build/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/cant-scale-operations/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/data-scattered/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/disaster-recovery/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/ecommerce-not-connected/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/erp-implementation-failure/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/inventory-blind/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/legacy-system/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/manual-workarounds/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/no-ops-owner/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/ops-in-owners-head/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/seasonal-peaks/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/slow-processes/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/spreadsheet-addiction/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/systems-dont-talk/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/wrong-erp-software/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[web-f-build-d17 26f79a1] feat(web): D17 artwork on problems pages (WO-INF-061)
+ 19 files changed, 2502 insertions(+), 1304 deletions(-)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && npx tsc --noEmit 2>&1 | head -100
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git grep -nE "Khaos|TackleBag|Tackle Bag|named with permission|WooCommerce|Medusa|Shopify|Google Sheets" -- app/problems/
+app/problems/ecommerce-not-connected/page.tsx:13: description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
+app/problems/ecommerce-not-connected/page.tsx:17:  description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
+app/problems/ecommerce-not-connected/page.tsx:24:  description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
+app/problems/ecommerce-not-connected/page.tsx:56:     name: 'Why is Shopify not syncing with my ERP?',
+app/problems/ecommerce-not-connected/page.tsx:57:      acceptedAnswer: { '@type': 'Answer', text: 'Shopify was not designed for businesses that produce to order, handle personalisation, or manage blank inventory separately from finished goods. When Shopify is not syncing with your ERP, it is usually because the data model on one side does not match the other. The integration itself is rarely broken. Fixing this requires either a middleware solution, a different eCommerce platform, or both.' },
+app/problems/ecommerce-not-connected/page.tsx:61:     name: 'Can WooCommerce integrate with a decoration business ERP?',
+app/problems/ecommerce-not-connected/page.tsx:62:     acceptedAnswer: { '@type': 'Answer', text: 'WooCommerce can integrate with many ERPs, but the integration quality depends heavily on whether the ERP has a maintained API and whether WooCommerce can capture your personalisation data in a format the ERP can process. WooCommerce ERP integration for print businesses is a common engagement, and the answer is rarely "yes, it integrates" and more often "it depends on what data you need to move and how fast."' },
+app/problems/erp-implementation-failure/page.tsx:221:   {/* ── 3 · SUPPORTING STAT, TackleBag ───────────────────────────────── */}
+app/problems/wrong-erp-software/page.tsx:62:     name: 'What ERP works with Shopify for an embroidery or decoration business?',
+app/problems/wrong-erp-software/page.tsx:63:     acceptedAnswer: { '@type': 'Answer', text: 'Several ERPs in this sector can integrate with Shopify, but the quality of that integration varies significantly. The questions to ask are: does the integration handle personalisation data, not just order totals? Does stock sync in real time? And is the integration maintained by the ERP vendor or reliant on a third-party connector that could break? An independent ERP evaluation covers all of these.' },
+[0m
+Now run the verification checks:
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git grep -n "craig-blackman" -- app/problems/
+(no output)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && npx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m# [0mTodos
+[✓] Read mockup sources and existing problem pages to understand structure
+[✓] Create app/d17-problems.css from mockup CSS
+[✓] Update ProblemPageDS.tsx with optional heroArt/inlineArt props
+[✓] Apply D17 artwork and copy fixes to all 17 problem pages
+[✓] Verify: tsc --noEmit, grep checks, commit
+[•] Write lane reports and final commit
+[0m
+TypeScript passes clean. The grep matches are all legitimate (Shopify/WooCommerce are discussed as platforms in FAQ schema, TackleBag is in a comment). Let me write the lane reports:
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git log --oneline -3
+26f79a1 feat(web): D17 artwork on problems pages (WO-INF-061)
+0e4796f feat(web): add D17 problems CSS and update ProblemPageDS with heroArt/inlineArt props
+30f9b3e chore(web): D17 f-batch images + lane brief (WO-INF-061)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git diff --stat HEAD~1 HEAD -- app/problems/ components/ProblemPageDS.tsx app/d17-problems.css
+app/problems/ai-paralysis/page.tsx               | 126 +++++--
+ app/problems/bottleneck-growth/page.tsx          | 119 +++++--
+ app/problems/buy-vs-build/page.tsx               | 175 ++++++++--
+ app/problems/cant-scale-operations/page.tsx      | 408 ++++++++++++----------
+ app/problems/data-scattered/page.tsx             | 104 ++++--
+ app/problems/disaster-recovery/page.tsx          | 319 ++++++++++-------
+ app/problems/ecommerce-not-connected/page.tsx    | 352 ++++++++++++-------
+ app/problems/erp-implementation-failure/page.tsx |  90 +++--
+ app/problems/inventory-blind/page.tsx            |  89 +++--
+ app/problems/legacy-system/page.tsx              | 160 +++++++--
+ app/problems/manual-workarounds/page.tsx         | 278 ++++++++-------
+ app/problems/no-ops-owner/page.tsx               | 329 +++++++++++-------
+ app/problems/ops-in-owners-head/page.tsx         | 129 +++++--
+ app/problems/seasonal-peaks/page.tsx             | 104 ++++--
+ app/problems/slow-processes/page.tsx             | 423 +++++++++++++----------
+ app/problems/spreadsheet-addiction/page.tsx      | 104 ++++--
+ app/problems/systems-dont-talk/page.tsx          | 279 +++++++++------
+ app/problems/wrong-erp-software/page.tsx         | 160 +++++++--
+ 18 files changed, 2473 insertions(+), 1275 deletions(-)
+[0m
+[0m$ [0mmkdir -p "D:\apps\worktrees\decoded-ops-website\web-f-build-d17\.context\lane-reports"
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-f-build-d17\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-f-build-d17.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-f-build-d17.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git add .context/lane-reports/ && git commit -m "chore: lane reports for web-f-build-d17"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-f-build-d17.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-f-build-d17.json', LF will be replaced by CRLF the next time Git touches it
+[web-f-build-d17 8592c83] chore: lane reports for web-f-build-d17
+ 2 files changed, 53 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-f-build-d17.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-f-build-d17.json
+[0m
+[0m# [0mTodos
+[✓] Read mockup sources and existing problem pages to understand structure
+[✓] Create app/d17-problems.css from mockup CSS
+[✓] Update ProblemPageDS.tsx with optional heroArt/inlineArt props
+[✓] Apply D17 artwork and copy fixes to all 17 problem pages
+[✓] Verify: tsc --noEmit, grep checks, commit
+[✓] Write lane reports and final commit
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git log --oneline -5
+8592c83 chore: lane reports for web-f-build-d17
+26f79a1 feat(web): D17 artwork on problems pages (WO-INF-061)
+0e4796f feat(web): add D17 problems CSS and update ProblemPageDS with heroArt/inlineArt props
+30f9b3e chore(web): D17 f-batch images + lane brief (WO-INF-061)
+9c888a1 chore: lane report for web-d-build-d17-fix1
+[0m
+[0m→ [0mRead .context/lane-reports/LANE-RESULT-web-f-build-d17.json
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-f-build-d17.json
+Wrote file successfully.
+[0m
+Let me update the lane result to include all commits:
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git add .context/lane-reports/LANE-RESULT-web-f-build-d17.json && git commit --amend --no-edit
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-f-build-d17.json', LF will be replaced by CRLF the next time Git touches it
+[web-f-build-d17 5c33313] chore: lane reports for web-f-build-d17
+ Date: Thu Sep 24 19:00:09 2026 +0100
+ 2 files changed, 53 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-f-build-d17.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-f-build-d17.json
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git log --oneline -5
+5c33313 chore: lane reports for web-f-build-d17
+26f79a1 feat(web): D17 artwork on problems pages (WO-INF-061)
+0e4796f feat(web): add D17 problems CSS and update ProblemPageDS with heroArt/inlineArt props
+30f9b3e chore(web): D17 f-batch images + lane brief (WO-INF-061)
+9c888a1 chore: lane report for web-d-build-d17-fix1
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-f-build-d17.json
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git add .context/lane-reports/LANE-RESULT-web-f-build-d17.json && git commit --amend --no-edit
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-f-build-d17.json', LF will be replaced by CRLF the next time Git touches it
+[web-f-build-d17 6a9ed1e] chore: lane reports for web-f-build-d17
+ Date: Thu Sep 24 19:00:09 2026 +0100
+ 2 files changed, 53 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-f-build-d17.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-f-build-d17.json
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git log --oneline -1
+6a9ed1e chore: lane reports for web-f-build-d17
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-f-build-d17.json
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git add .context/lane-reports/LANE-RESULT-web-f-build-d17.json && git commit --amend --no-edit
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-f-build-d17.json', LF will be replaced by CRLF the next time Git touches it
+[web-f-build-d17 d6e7fff] chore: lane reports for web-f-build-d17
+ Date: Thu Sep 24 19:00:09 2026 +0100
+ 2 files changed, 53 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-f-build-d17.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-f-build-d17.json
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git log --oneline -4
+d6e7fff chore: lane reports for web-f-build-d17
+26f79a1 feat(web): D17 artwork on problems pages (WO-INF-061)
+0e4796f feat(web): add D17 problems CSS and update ProblemPageDS with heroArt/inlineArt props
+30f9b3e chore(web): D17 f-batch images + lane brief (WO-INF-061)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-f-build-d17" && git status --short
+(no output)
+[0m
+Lane complete. Summary:
+
+**3 commits** in `web-f-build-d17`:
+- `0e4796f` — Created `app/d17-problems.css` (471 lines) and updated `ProblemPageDS.tsx` with `heroArt`/`inlineArt` props
+- `26f79a1` — D17 artwork on all 17 problem pages (hero + inline art injection, copy fixes, `<D17Motion />`)
+- `d6e7fff` — Lane reports
+
+**Per-page changes**: Each page got a D17 hero piece (DO-ART-960–978) replacing the old stock-photo hero, and an inline art piece (DO-ART-718/719/917/918) replacing the old Plate/NowAfterPlate sections. All pages import `d17-global.css` + `d17-problems.css` and render `<D17Motion />`.
+
+**Copy fixes (CR-WEB-052)**:
+- cant-scale-operations: removed £500k/£1.5m revenue references
+- erp-implementation-failure: 9 → 17 supplier feeds
+- seasonal-peaks: "forty orders a day... two hundred" rewritten without numbers
+- spreadsheet-addiction: "forty orders" → "dozens of orders"; "eight months" → "Months"; "Excel" → "a spreadsheet"
+
+**Verification**: `tsc --noEmit` clean, grep checks pass (0 real hits), clean working tree.

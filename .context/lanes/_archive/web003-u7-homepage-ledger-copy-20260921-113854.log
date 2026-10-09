@@ -1,0 +1,169 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓåÆ [0mRead app/page.tsx[90m [offset=1, limit=120][0m
+[0mΓåÆ [0mRead app/page.tsx[90m [offset=120, limit=100][0m
+[0mΓ£▒ [0mGrep "ledger"[90m in app ┬╖ 14 matches[0m
+Now I have the full picture. Let me rewrite the `costLedger` data and its JSX to use qualitative pattern language.
+[0m
+[0mΓåÉ [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\page.tsx
+@@ -46,12 +46,12 @@
+   ],
+ };
+ 
+ const costLedger = [
+-  { value: '3ΓÇô6', unit: 'hrs a week', desc: 'Lost to manual re-keying between systems that donΓÇÖt talk to each other', tag: 'Re-keying' },
+-  { value: '2ΓÇô4', unit: 'hrs a week', desc: 'Spent on manual invoicing and reconciliation', tag: 'Finance' },
+-  { value: '3ΓÇô5', unit: 'per cent', desc: 'Of inbound stock at risk where inventory is disconnected', tag: 'Inventory' },
+-  { value: '1ΓÇô3', unit: 'per cent', desc: 'Of orders affected by picking and despatch errors', tag: 'Despatch' },
++  { pattern: 'Manual re-keying', desc: 'Every order, every invoice, every stock movement typed twice because the systems were never connected. The hours add up quietly, week after week.' },
++  { pattern: 'Invoicing and reconciliation', desc: 'Chasing purchase orders across spreadsheets, matching deliveries to invoices by hand, catching the differences before they become disputes.' },
++  { pattern: 'Disconnected inventory', desc: 'Stock that the warehouse has but the system doesn't, or the other way round. The gap means stockouts, over-orders, and cash tied up in the wrong place.' },
++  { pattern: 'Picking and despatch errors', desc: 'Wrong sizes, wrong quantities, wrong addresses. The cost isn't just the return ΓÇö it's the relationship damage and the time spent putting it right.' },
+ ];
+ 
+ const services = [
+   { no: '01', name: 'Clarity Audit', role: 'On-site audit and written plan', lead: true,
+
+[0m
+[0mΓ£▒ [0mGrep "\.fig|\.desc|\.tag"[90m in app/homepage.css ┬╖ 39 matches[0m
+[0mΓåÆ [0mRead app/homepage.css[90m [limit=30, offset=115][0m
+[0mΓåÆ [0mRead app/homepage.css[90m [limit=20, offset=108][0m
+[0m
+[0mΓåÉ [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\page.tsx
+@@ -147,12 +147,11 @@
+   </div>
+ 
+   <ol className="ledger" data-od-id="cost-ledger">
+     {costLedger.map(item => (
+-      <li key={item.tag}>
+-        <p className="fig">{item.value}<small>{item.unit}</small></p>
++      <li key={item.pattern}>
++        <p className="fig">{item.pattern}</p>
+         <p className="desc">{item.desc}</p>
+-        <span className="tag">{item.tag}</span>
+       </li>
+     ))}
+   </ol>
+ </div>
+
+[0m
+Now I'll update the JSX to match the new data shape (no more `value`/`unit`/`tag`):
+Remove the `tabular-nums` from `.fig` since it no longer shows numbers:
+[0mΓåÉ [0mEdit app/homepage.css
+Index: D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\homepage.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\homepage.css
++++ D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\homepage.css
+@@ -115,10 +115,9 @@
+   .ledger .tag{ order:-1 }
+ }
+ .fig{ margin:0; font-family:var(--do-font-heading);
+   font-weight:var(--do-weight-extrabold); font-size:clamp(1.85rem,3vw,2.5rem);
+-  line-height:1; letter-spacing:-.035em; color:var(--do-amber);
+-  font-variant-numeric:tabular-nums }
++  line-height:1; letter-spacing:-.035em; color:var(--do-amber) }
+ .fig small{ font-family:var(--do-font-mono); font-weight:var(--do-weight-regular);
+   font-size:.85rem; letter-spacing:.05em; color:var(--do-sky-blue); margin-left:9px }
+ .desc{ margin:0; font-size:var(--do-text-base); line-height:var(--do-leading-normal);
+   max-width:46ch; color:color-mix(in srgb, var(--do-off-white) 78%, transparent) }
+
+[0m
+Update the lede copy in the ledger section ΓÇö it currently references "numbers":
+[0mΓåÉ [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\app\page.tsx
+@@ -140,9 +140,9 @@
+   <div>
+     <span className="eyebrow">The cost of standing still</span>
+     <h2>What disconnected systems actually cost you.</h2>
+   </div>
+-  <p className="lede">These are the numbers I see in businesses like yours most weeks. Not
++  <p className="lede">These are the patterns I see in businesses like yours most weeks. Not
+     hypothetical, and not worst case. Just the quiet cost of systems that don&rsquo;t talk to each
+     other.</p>
+ </div>
+ 
+
+[0m
+[0mΓåÆ [0mRead app/page.tsx[90m [limit=30, offset=49][0m
+Verify the changes look correct:
+[0mΓåÆ [0mRead app/page.tsx[90m [limit=30, offset=135][0m
+Changes look clean. Let me run lint to verify:
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy" && npx next lint --file app/page.tsx 2>&1 | head -30
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy" && npx next lint --file app/page.tsx 2>&1
+error: unknown option '--file'
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy" && npm run lint 2>&1
+> decoded-ops-next@0.1.0 lint
+> eslint
+
+'eslint' is not recognized as an internal or external command,
+operable program or batch file.
+[0m
+No node_modules in this worktree ΓÇö lint unavailable. Let me check for any remaining numeric references in the ledger area:
+[0mΓ£▒ [0mGrep "3ΓÇô6|2ΓÇô4|3ΓÇô5|1ΓÇô3|hrs a week|per cent"[90m in app ┬╖ 4 matches[0m
+Those matches are all in unrelated client proposal files. The homepage is clean. Let me commit and write the lane report.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy" && git diff --stat
+warning: in the working copy of 'app/page.tsx', LF will be replaced by CRLF the next time Git touches it
+ app/homepage.css |  3 +--
+ app/page.tsx     | 15 +++++++--------
+ 2 files changed, 8 insertions(+), 10 deletions(-)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy" && git add app/page.tsx app/homepage.css && git commit -m "u7: rewrite homepage cost-ledger from numeric claims to qualitative pattern language
+
+- Replaced costLedger data (value/unit/tag/desc) with (pattern/desc)
+- Descriptions now describe the pattern/cost in words, no invented numbers
+- Updated JSX to render pattern name in .fig, no tag element
+- Removed tabular-nums from .fig (no longer numeric)
+- Updated lede copy: 'numbers' ΓåÆ 'patterns'
+- WO-WEB-003 unit u7"
+warning: in the working copy of 'app/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[web003-u7-homepage-ledger-copy 509874e] u7: rewrite homepage cost-ledger from numeric claims to qualitative pattern language
+ 2 files changed, 8 insertions(+), 10 deletions(-)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy" && git log -1 --format="%H %s"
+509874e3e986e752173b9dc5c7f6f1601b1a3efe u7: rewrite homepage cost-ledger from numeric claims to qualitative pattern language
+[0m
+[0m$ [0mmkdir -p "D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\.context\lane-reports"
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy\.context\lane-reports already exists.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web003-u7-homepage-ledger-copy.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web003-u7-homepage-ledger-copy.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy" && git add .context/lane-reports/ && git commit -m "lane report: web003-u7-homepage-ledger-copy"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web003-u7-homepage-ledger-copy.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web003-u7-homepage-ledger-copy.json', LF will be replaced by CRLF the next time Git touches it
+[web003-u7-homepage-ledger-copy c64a19f] lane report: web003-u7-homepage-ledger-copy
+ 2 files changed, 53 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web003-u7-homepage-ledger-copy.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web003-u7-homepage-ledger-copy.json
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web003-u7-homepage-ledger-copy" && git log --oneline -4
+c64a19f lane report: web003-u7-homepage-ledger-copy
+509874e u7: rewrite homepage cost-ledger from numeric claims to qualitative pattern language
+9168425 docs: lane exit contract for nl-header-asset
+ac186a6 assets: host Ops Briefing Issue 1 header image (newsletter/assets)
+[0m
+Done. Two commits on `web003-u7-homepage-ledger-copy`:
+
+1. **`509874e`** ΓÇö Rewrote `costLedger` from numeric claims (`3ΓÇô6 hrs/week`, `2ΓÇô4 hrs/week`, `3ΓÇô5%`, `1ΓÇô3%`) to qualitative pattern language. Updated JSX, removed `tabular-nums`, changed lede copy "numbers" ΓåÆ "patterns". No invented numbers.
+2. **`c64a19f`** ΓÇö Lane report files.

@@ -1,0 +1,719 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-locations-build.md
+[0m→ [0mRead .context/lane-briefs/d17-locations
+[0m→ [0mRead app/locations
+[0m→ [0mRead app/privacy/page.tsx
+[0m→ [0mRead app/cookies/page.tsx
+[0m→ [0mRead .context/lane-briefs/d17-locations/fractional-cto.main.html
+[0m→ [0mRead .context/lane-briefs/d17-locations/tech-audit.main.html
+[0m→ [0mRead .context/lane-briefs/d17-locations/privacy.main.html
+[0m→ [0mRead .context/lane-briefs/d17-locations/cookies.main.html
+[0m→ [0mRead .context/lane-briefs/d17-locations/d17-locations-legal.css
+[0m→ [0mRead .context/lane-briefs/d17-locations/d17-art.css
+[0m→ [0mRead app/locations/fractional-cto
+Now let me examine the existing location pages and the sector pattern:
+[0m→ [0mRead app/locations/tech-audit
+[0m→ [0mRead app/locations/fractional-cto/page.tsx
+[0m→ [0mRead app/locations/tech-audit/page.tsx
+[0m→ [0mRead app/locations/fractional-cto/[location]/page.tsx
+[0m→ [0mRead app/locations/tech-audit/[location]/page.tsx
+[0m→ [0mRead components/LocationPage.tsx
+Let me look at the LocationPage component and a sector page for the pattern:
+[0m✱ [0mGlob "app/sectors/workwear/page.tsx"[90m 1 match[0m
+[0m→ [0mRead app/sectors/workwear/page.tsx[90m [limit=80][0m
+[0m→ [0mRead components/D17Motion.tsx
+[0m✱ [0mGlob "app/d17-*.css"[90m 2 matches[0m
+[0m→ [0mRead .context/lane-briefs/d17-locations/_1002-guildford.html
+[0m→ [0mRead .context/lane-briefs/d17-locations/_1002-brighton.html
+[0m→ [0mRead .context/lane-briefs/d17-locations/gen1002.py
+[0m
+[0m# [0mTodos
+[ ] Create app/d17-locations.css from d17-locations-legal.css
+[ ] Modify LocationPage.tsx to accept D17 art props and render them
+[ ] Update fractional-cto/page.tsx hub page with D17 art imports
+[ ] Update fractional-cto/[location]/page.tsx with D17 art props
+[ ] Update tech-audit/page.tsx hub page with D17 art imports
+[ ] Update tech-audit/[location]/page.tsx with D17 art props
+[ ] Rewrite privacy/page.tsx with D17 art (DO-ART-1006) + prose styling
+[ ] Rewrite cookies/page.tsx with D17 art (DO-ART-1007) + prose styling
+[ ] CR-WEB-054 copy fixes across all location pages
+[ ] Verify: npx tsc --noEmit, git grep craig-blackman
+[ ] Commit and write lane report files
+[0m
+[0m→ [0mRead app/d17-global.css
+[0m→ [0mRead data/locations.ts
+Let me check what's already in d17-global.css and the locations data:
+[0m
+[0m$ [0mls "D:\apps\worktrees\decoded-ops-website\web-h-build-d17\public\images\d17\locations" 2>&1
+Directory: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\public\images\d17\locations
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          24/09/2026    18:13          51216 gen-bench-flatlay-v2-fa6a3a.jpg
+-a---          24/09/2026    18:13         124024 gen-press-hall-82ca78.jpg
+-a---          24/09/2026    18:13          37243 hero-workshop-99888d.jpg
+-a---          24/09/2026    18:13         114111 hero-workshop-db78aa.jpg
+[0m
+[0m→ [0mRead .context/lane-briefs/d17-locations/genmap.py
+[0m
+[0m# [0mTodos
+[•] Create app/d17-locations.css from d17-locations-legal.css
+[ ] Modify LocationPage.tsx to accept D17 art props and render them
+[ ] Update fractional-cto/page.tsx hub page with D17 art imports
+[ ] Update fractional-cto/[location]/page.tsx with D17 art props
+[ ] Update tech-audit/page.tsx hub page with D17 art imports
+[ ] Update tech-audit/[location]/page.tsx with D17 art props
+[ ] Rewrite privacy/page.tsx with D17 art (DO-ART-1006) + prose styling
+[ ] Rewrite cookies/page.tsx with D17 art (DO-ART-1007) + prose styling
+[ ] CR-WEB-054 copy fixes across all location pages
+[ ] Verify: npx tsc --noEmit, git grep craig-blackman
+[ ] Commit and write lane report files
+[0m
+Now I have a complete picture. Let me execute the task. First, create the CSS file and update LocationPage.
+[0m$ [0mcp "D:\apps\worktrees\decoded-ops-website\web-h-build-d17\.context\lane-briefs\d17-locations\d17-locations-legal.css" "D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\d17-locations.css"
+(no output)
+[0m
+[0m# [0mTodos
+[✓] Create app/d17-locations.css from d17-locations-legal.css
+[•] Modify LocationPage.tsx to accept D17 art props and render them
+[ ] Update fractional-cto/page.tsx hub page with D17 art imports
+[ ] Update fractional-cto/[location]/page.tsx with D17 art props
+[ ] Update tech-audit/page.tsx hub page with D17 art imports
+[ ] Update tech-audit/[location]/page.tsx with D17 art props
+[ ] Rewrite privacy/page.tsx with D17 art (DO-ART-1006) + prose styling
+[ ] Rewrite cookies/page.tsx with D17 art (DO-ART-1007) + prose styling
+[ ] CR-WEB-054 copy fixes across all location pages
+[ ] Verify: npx tsc --noEmit, git grep craig-blackman
+[ ] Commit and write lane report files
+[0m
+Good. The CSS file has no selector clashes with globals.css - all selectors are already unique. Now let me update the LocationPage component to accept D17 art props:
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+@@ -25,8 +25,12 @@
+   whatIdo: string[];
+   cta: string;
+   serviceUrl: string;
+   serviceLabel: string;
++  heroArtHtml?: string;
++  coverageMapHtml?: string;
++  stepsArtHtml?: string;
++  trustLine?: string;
+ }
+ 
+ export function LocationPage({
+   town,
+
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+@@ -49,8 +49,12 @@
+   whatIdo,
+   cta,
+   serviceUrl,
+   serviceLabel,
++  heroArtHtml,
++  coverageMapHtml,
++  stepsArtHtml,
++  trustLine,
+ }: LocationPageProps) {
+   const parts = tagline.split('||');
+ 
+   const allCounties = ['West Sussex', 'East Sussex', 'Surrey', 'Greater London', 'Greater Manchester'];
+
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+@@ -90,13 +90,17 @@
+           </Link>
+         </div>
+         <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+       </div>
+-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+-        <div style={{ width: '100%', borderRadius: 'var(--do-radius-2xl)', overflow: 'hidden', boxShadow: 'var(--do-shadow-lg)' }}>
+-          <SystemsDisconnectedGraphic connected variant="light" />
++      {heroArtHtml ? (
++        <div dangerouslySetInnerHTML={{ __html: heroArtHtml }} />
++      ) : (
++        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
++          <div style={{ width: '100%', borderRadius: 'var(--do-radius-2xl)', overflow: 'hidden', boxShadow: 'var(--do-shadow-lg)' }}>
++            <SystemsDisconnectedGraphic connected variant="light" />
++          </div>
+         </div>
+-      </div>
++      )}
+     </div>
+   </div>
+ </section>
+ 
+
+[0m
+Now update the hero to use D17 art when provided:
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+@@ -150,12 +150,13 @@
+           </div>
+         )}
+       </div>
+     </div>
++    {coverageMapHtml && (
++      <div dangerouslySetInnerHTML={{ __html: coverageMapHtml }} />
++    )}
+   </div>
+ </section>
+-
+-{/* PAIN POINTS */}
+ <section className="g-tint">
+   <div className="wrap">
+     <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
+       <span className="eyebrow" style={{ marginBottom: 22 }}>Where the cost hides</span>
+
+[0m
+Now add coverage map after the local context section content:
+[0m→ [0mRead components/LocationPage.tsx[90m [offset=140, limit=30][0m
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+@@ -155,8 +155,10 @@
+       <div dangerouslySetInnerHTML={{ __html: coverageMapHtml }} />
+     )}
+   </div>
+ </section>
++
++{/* PAIN POINTS */}
+ <section className="g-tint">
+   <div className="wrap">
+     <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
+       <span className="eyebrow" style={{ marginBottom: 22 }}>Where the cost hides</span>
+
+[0m
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=40, offset=190][0m
+Now add the steps art to the How I Help section:
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+@@ -237,8 +237,11 @@
+           </p>
+         </div>
+       </div>
+     </div>
++    {stepsArtHtml && (
++      <div dangerouslySetInnerHTML={{ __html: stepsArtHtml }} />
++    )}
+   </div>
+ </section>
+ 
+ {/* NEARBY LOCATIONS */}
+
+[0m
+[0m← [0mEdit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\components\LocationPage.tsx
+@@ -219,9 +219,9 @@
+ {[
+   'No vendor relationships or commission',
+   'Worked at every level, warehouse floor to boardroom',
+   '3× Clarity Guarantee on audit work',
+-  'Based in the South East, on-site across Sussex and Surrey',
++  trustLine || 'Based in the South East, on-site across Sussex and Surrey',
+ ].map((item) => (
+   <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72 }}>
+     <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--do-cerulean)', marginTop: 7, flexShrink: 0 }} />
+     {item}
+
+[0m
+Now update the trust line to use the configurable prop:
+[0m# [0mTodos
+[✓] Create app/d17-locations.css from d17-locations-legal.css
+[✓] Modify LocationPage.tsx to accept D17 art props and render them
+[•] Create lib/coverage-map.ts for DO-ART-1002 SVG generation
+[ ] Update fractional-cto/[location]/page.tsx with D17 art props
+[ ] Update tech-audit/[location]/page.tsx with D17 art props
+[ ] Update fractional-cto/page.tsx hub page with D17 art imports
+[ ] Update tech-audit/page.tsx hub page with D17 art imports
+[ ] Rewrite privacy/page.tsx with D17 art (DO-ART-1006) + prose styling
+[ ] Rewrite cookies/page.tsx with D17 art (DO-ART-1007) + prose styling
+[ ] CR-WEB-054 copy fixes across all location pages
+[ ] Verify: npx tsc --noEmit, git grep craig-blackman
+[ ] Commit and write lane report files
+[0m
+Now I need to create the coverage map module and update the location pages. Let me create the TypeScript module first:
+[0m← [0mWrite lib/coverage-map.ts
+Wrote file successfully.
+[0m
+[0m# [0mTodos
+[✓] Create app/d17-locations.css from d17-locations-legal.css
+[✓] Modify LocationPage.tsx to accept D17 art props and render them
+[✓] Create lib/coverage-map.ts for DO-ART-1002 SVG generation
+[•] Update fractional-cto/[location]/page.tsx with D17 art props
+[ ] Update tech-audit/[location]/page.tsx with D17 art props
+[ ] Update fractional-cto/page.tsx hub page with D17 art imports
+[ ] Update tech-audit/page.tsx hub page with D17 art imports
+[ ] Rewrite privacy/page.tsx with D17 art (DO-ART-1006) + prose styling
+[ ] Rewrite cookies/page.tsx with D17 art (DO-ART-1007) + prose styling
+[ ] CR-WEB-054 copy fixes in locations.ts (third-party names, trust line)
+[ ] Verify: npx tsc --noEmit, git grep craig-blackman
+[ ] Commit and write lane report files
+[0m
+Now let me update the fractional-cto [location] page. I need to create the D17 art HTML and pass it as props. First, let me fix the CR-WEB-054 copy issues in locations data:
+Let me check for third-party names in the locations data:
+[0m✱ [0mGrep "(Bullfrog|American Express|Fresh Egg|Novartis|Roche|Butlin|Hastings Direct|Harvey|Unilever|ExxonMobil|CGI|McLaren|Rolls-Royce)"[90m in data/locations.ts · 11 matches[0m
+Let me fix the third-party names in locations.ts for CR-WEB-054:
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -18,9 +18,9 @@
+   county: 'West Sussex',
+   localContext:
+     'Chichester has a strong base of independent retailers, heritage tourism businesses, and professional services firms spread across the city and surrounding villages. Many are owner-managed businesses turning over £1m–£5m that have grown into technology they no longer fully control, systems that worked at smaller scale but now create daily friction they can\'t quite see the source of.',
+   driveTime: 'Around 30–45 minutes',
+-  localFact: 'Rolls-Royce Motor Cars\' global headquarters and only manufacturing plant sits at Goodwood, on Chichester\'s eastern edge, around 2,500 people work there.',
++  localFact: 'The global headquarters and manufacturing plant of a luxury automotive manufacturer sits at Goodwood, on Chichester\'s eastern edge, around 2,500 people work there.',
+   nearbyAreas: ['Bognor Regis', 'Midhurst', 'Petworth', 'Goodwood'],
+   businessSectors: ['Heritage tourism', 'Agriculture and food production', 'Independent retail', 'Marine services'],
+   regionalChallenge: 'Chichester\'s economy spans coastal hospitality, rural agriculture, and a luxury automotive cluster at Goodwood — three sectors that rarely share systems, creating fragmented operational infrastructure across the wider district.',
+ },
+
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -30,9 +30,9 @@
+   county: 'West Sussex',
+   localContext:
+     'Worthing has seen a wave of e-commerce businesses start locally and scale nationally, particularly in home goods, clothing, and niche retail. That transition from local to national brings a specific set of technology challenges: stock visibility, fulfilment integration, and customer data sitting in three or four different places with no single source of truth.',
+   driveTime: 'This is where I\'m based',
+-  localFact: 'Home to the Worthing Creative & Digital Hub and established digital agency Fresh Egg, part of the wider "Silicon Beach" tech corridor spilling out from Brighton.',
++  localFact: 'Home to the Worthing Creative & Digital Hub and a cluster of established digital agencies, part of the wider "Silicon Beach" tech corridor spilling out from Brighton.',
+   nearbyAreas: ['Shoreham-by-Sea', 'Littlehampton', 'Lancing', 'Steyning'],
+   businessSectors: ['E-commerce', 'Digital and creative agencies', 'Financial services', 'Healthcare'],
+   regionalChallenge: 'Worthing sits at the centre of a growing digital corridor between Brighton and Chichester, but the businesses that drive it — e-commerce, agencies, professional services — often scale their tech independently, creating duplicated systems across the town.',
+ },
+
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -42,9 +42,9 @@
+   county: 'West Sussex',
+   localContext:
+     'Horsham sits at the centre of a prosperous commuter belt, with a business base that mixes professional services, trade businesses, and light industrial operations. Many firms here are profitable and growing, but running on operational infrastructure that hasn\'t kept pace with their ambitions, and making technology decisions without anyone senior enough to make them well.',
+   driveTime: 'Under 30 minutes',
+-  localFact: 'The former Novartis pharmaceutical site on Wimblehurst Road, in continuous operation for 75 years until 2014, is being redeveloped into a life-sciences science park.',
++  localFact: 'The former pharmaceutical site on Wimblehurst Road, in continuous operation for 75 years until 2014, is being redeveloped into a life-sciences science park.',
+   nearbyAreas: ['Billingshurst', 'Henfield', 'Southwater', 'Steyning'],
+   businessSectors: ['Pharmaceutical and life sciences', 'Professional services', 'Trade and construction', 'Agriculture'],
+   regionalChallenge: 'Horsham\'s business community mixes established professional firms with trade and light industrial operations — sectors with very different technology maturity levels, making it harder to find shared solutions or benchmarks.',
+ },
+
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -66,9 +66,9 @@
+   county: 'West Sussex',
+   localContext:
+     'Bognor Regis has a mix of hospitality, retail, and light manufacturing businesses, many of which are owner-operated and have grown organically over many years. The systems challenge here is usually the same: the tools that got the business to its current size are now the main obstacle to going further, and no one inside the business has the time or the perspective to redesign them.',
+   driveTime: 'Under 30 minutes',
+-  localFact: 'Butlin\'s flagship post-war holiday camp opened here in 1960, continuing a brand presence in the town dating back to 1932.',
++  localFact: 'A flagship post-war holiday camp opened here in 1960, continuing a brand presence in the town dating back to 1932.',
+   nearbyAreas: ['Chichester', 'Littlehampton', 'Felpham', 'Aldwick'],
+   businessSectors: ['Hospitality and leisure', 'Light manufacturing', 'Retail', 'Marine and boat services'],
+   regionalChallenge: 'Bognor\'s hospitality-heavy economy means seasonal revenue swings that stress operational systems — the same technology that handles January volumes breaks under August demand, and nobody invested in scalability because the off-season felt safe.',
+ },
+
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -102,9 +102,9 @@
+   county: 'West Sussex',
+   localContext:
+     'Burgess Hill has a substantial light industrial and trade business base alongside retail and professional services. Operational efficiency is a constant priority for these businesses, and the technology gap between what they\'re running and what\'s available is often wider than owners realise until someone external maps it out clearly.',
+   driveTime: 'Under 30 minutes',
+-  localFact: 'The second-largest employment area in the Gatwick Diamond, around 300 companies and 8,000 jobs across four business parks, including Roche\'s UK HQ.',
++  localFact: 'The second-largest employment area in the Gatwick Diamond, around 300 companies and 8,000 jobs across four business parks, including a major pharmaceutical company\'s UK HQ.',
+   nearbyAreas: ['Haywards Heath', 'Hassocks', 'Hurstpierpoint', 'Ditchling'],
+   businessSectors: ['Light industrial', 'Pharmaceutical', 'Trade and construction', 'Technology'],
+   regionalChallenge: 'Burgess Hill sits in the Gatwick Diamond between two larger employment centres, which means businesses here compete for talent and customers while running lean operations — the technology overhead hits harder when margins are already tight.',
+ },
+
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -127,9 +127,9 @@
+   county: 'East Sussex',
+   localContext:
+     'Brighton has one of the most diverse and fast-moving business communities in the South East, from tech startups to creative agencies, independent retailers to e-commerce operations shipping nationally. Growth here tends to be fast, which means technology decisions get made quickly and often in the wrong order. The cost of that shows up later.',
+   driveTime: 'Around 30–45 minutes (A27 corridor can run slower at peak times)',
+-  localFact: 'American Express\'s European services HQ is one of the city\'s largest private-sector employers, part of the "Silicon Beach" cluster of over 1,500 tech and creative businesses.',
++  localFact: 'A major financial services company\'s European services HQ is one of the city\'s largest private-sector employers, part of the "Silicon Beach" cluster of over 1,500 tech and creative businesses.',
+   nearbyAreas: ['Hove', 'Lewes', 'Portslade', 'Rottingdean'],
+   businessSectors: ['Tech startups', 'Creative and digital agencies', 'E-commerce', 'Hospitality and nightlife'],
+   regionalChallenge: 'Brighton\'s Silicon Beach cluster means tech-literate businesses surrounded by tech-challenged ones — the gap between what the startups assume and what the independent retailers actually run is wider than the city\'s geography suggests.',
+ },
+
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -175,9 +175,9 @@
+   county: 'East Sussex',
+   localContext:
+     'Lewes has a strong independent business culture, retail, professional services, some manufacturing, with businesses that are deeply local but increasingly reaching customers further afield. Managing that transition without breaking your operations requires a clear picture of what your systems can actually support, and what they can\'t.',
+   driveTime: 'Around 30–45 minutes',
+-  localFact: 'County town of East Sussex and home to Harvey\'s Brewery, founded in 1790 and still family-owned, the oldest independent brewery in Sussex.',
++  localFact: 'County town of East Sussex and home to an independent brewery, founded in 1790 and still family-owned, the oldest independent brewery in Sussex.',
+   nearbyAreas: ['Brighton', 'Uckfield', 'Newhaven', 'Peacehaven'],
+   businessSectors: ['Independent retail', 'Food and drink production', 'Professional services', 'Artisan manufacturing'],
+   regionalChallenge: 'Lewes\' independent business culture means businesses are proud of doing things their own way — which is a strength until it becomes the reason they\'re running bespoke systems that nobody else understands and nobody can maintain.',
+ },
+
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -199,9 +199,9 @@
+   county: 'East Sussex',
+   localContext:
+     'Bexhill has a retail-heavy town centre, some light manufacturing, and a growing hospitality offer. Many businesses here are owner-managed with lean teams, which means every hour of manual administration and every system failure hits harder than it would in a larger organisation with more people to absorb the fallout.',
+   driveTime: 'Around 45–60 minutes',
+-  localFact: 'Hastings Direct, one of the UK\'s largest motor insurers, is headquartered here at Conquest House, not in Hastings itself.',
++  localFact: 'One of the UK\'s largest motor insurers is headquartered here, serving customers nationwide.',
+   nearbyAreas: ['Hastings', 'Eastbourne', 'Battle', 'Pevensey'],
+   businessSectors: ['Insurance', 'Retail', 'Light manufacturing', 'Hospitality'],
+   regionalChallenge: 'Bexhill hosts a major insurance employer alongside small independent businesses — two scales of operation with completely different technology needs, but the town\'s infrastructure and support networks tend to serve only one of them.',
+ },
+
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -236,9 +236,9 @@
+   county: 'Surrey',
+   localContext:
+     'Guildford is one of the South East\'s major commercial centres, professional services, retail, technology businesses, and a large university-linked ecosystem. The range of business types is broad, but the operational technology challenges follow familiar patterns: systems that don\'t integrate, data that lives in the wrong place, and decisions being made without the information needed to make them well.',
+   driveTime: 'Around 45–60 minutes',
+-  localFact: 'Known as the "Hollywood of Video Games", over 50 games studios and 3,000+ programmers, a cluster dating back to Bullfrog Productions in the 1980s.',
++  localFact: 'Known as the "Hollywood of Video Games", over 50 games studios and 3,000+ programmers, a cluster dating back to the 1980s.',
+   nearbyAreas: ['Godalming', 'Woking', 'Farnham', 'Ripley'],
+   businessSectors: ['Technology and gaming', 'Professional services', 'Retail', 'University and research'],
+   regionalChallenge: 'Guildford\'s games cluster and university ecosystem create a tech-savvy environment that can make traditional businesses feel behind — the gap between what the tech sector assumes everyone can do and what the average SME actually runs is particularly visible here.',
+ },
+
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -248,9 +248,9 @@
+   county: 'Surrey',
+   localContext:
+     'Woking has a strong commercial centre with a mix of professional services, retail, and corporate offices. Businesses here tend to be growth-oriented and well-resourced, but operational infrastructure often lags behind commercial ambition, particularly where technology is concerned. The cost of that gap is real, even if it\'s not yet visible on a spreadsheet.',
+   driveTime: 'Around 60–90 minutes',
+-  localFact: 'The McLaren Technology Centre, HQ of the McLaren Group, occupies a 50-hectare site here, opened by the Queen in 2004.',
++  localFact: 'A major motorsport and technology company\'s headquarters occupies a 50-hectare site here, opened in 2004.',
+   nearbyAreas: ['Guildford', 'Byfleet', 'West Byfleet', 'Old Woking'],
+   businessSectors: ['Corporate offices', 'Professional services', 'Motorsport and engineering', 'Retail'],
+   regionalChallenge: 'Woking\'s corporate-heavy economy means businesses operate at a scale where operational inefficiency costs real money — but the technology decisions are often made by finance or operations people without the technical depth to evaluate what they\'re buying.',
+ },
+
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -320,9 +320,9 @@
+   county: 'Surrey',
+   localContext:
+     'Leatherhead has a notable concentration of professional services, pharmaceutical, and technology-adjacent businesses. Operational complexity here tends to be higher than the average SME town, which means the cost of poor systems is also higher, and the upside from addressing them is significant.',
+   driveTime: 'Around 45–60 minutes',
+-  localFact: 'Unilever\'s UK headquarters sits at Leatherhead Office Park, alongside multinational occupiers including ExxonMobil and CGI.',
++  localFact: 'Major multinational companies sit at Leatherhead Office Park, a well-established business campus.',
+   nearbyAreas: ['Epsom', 'Dorking', 'Ashtead', 'Bookham'],
+   businessSectors: ['Pharmaceutical', 'Professional services', 'FMCG and consumer goods', 'Technology'],
+   regionalChallenge: 'Leatherhead\'s multinational corporate presence sits alongside SME-scale businesses — two completely different operational scales sharing the same town, with the SMEs often trying to match the systems sophistication of their larger neighbours.',
+ },
+
+[0m
+[0m✱ [0mGrep "Body Shop"[90m in data/locations.ts · 1 match[0m
+[0m
+[0m← [0mEdit data/locations.ts
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\data\locations.ts
+@@ -78,9 +78,9 @@
+   county: 'West Sussex',
+   localContext:
+     'Littlehampton\'s business base spans trade services, coastal hospitality, retail, and some light manufacturing. Growth tends to create operational complexity faster than businesses can adapt, and technology often becomes the bottleneck before owners realise what\'s happening. By the time it\'s visible, it\'s already costing more than it needs to.',
+   driveTime: 'Under 30 minutes',
+-  localFact: 'The Body Shop\'s historic Watersmead campus was based here for decades before the company relocated its HQ to Brighton in 2024.',
++  localFact: 'A major cosmetics company\'s historic campus was based here for decades before the company relocated its HQ to Brighton in 2024.',
+   nearbyAreas: ['Bognor Regis', 'Rustington', 'Arundel', 'East Preston'],
+   businessSectors: ['Trade services', 'Coastal hospitality', 'Retail', 'Light manufacturing'],
+   regionalChallenge: 'Littlehampton\'s mix of trade businesses and coastal hospitality creates a two-speed economy — trades need year-round operational efficiency while hospitality businesses wrestle with seasonal scaling, and neither sector has internal technology resource.',
+ },
+
+[0m
+[0m✱ [0mGrep "(Bullfrog|American Express|Fresh Egg|Novartis|Roche|Butlin|Hastings Direct|Harvey|Unilever|ExxonMobil|CGI|McLaren|Rolls-Royce|Body Shop)"[90m in data/locations.ts · 0 matches[0m
+All third-party names removed. Now let me update the fractional-cto [location] page with D17 art:
+[0m→ [0mRead app/locations/fractional-cto/[location]/page.tsx
+[0m
+[0m← [0mWrite app/locations/fractional-cto/[location]/page.tsx
+Wrote file successfully.
+[0m
+Now update the tech-audit [location] page:
+[0m→ [0mRead app/locations/tech-audit/[location]/page.tsx
+[0m
+[0m← [0mWrite app/locations/tech-audit/[location]/page.tsx
+Wrote file successfully.
+[0m
+[0m← [0mEdit app/locations/fractional-cto/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\fractional-cto\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\fractional-cto\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\fractional-cto\page.tsx
+@@ -4,8 +4,11 @@
+ import { BOOKING_URL } from '@/lib/constants';
+ import { locations } from '@/data/locations';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
++import { D17Motion } from '@/components/D17Motion';
++import '@/app/d17-global.css';
++import '@/app/d17-locations.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Hire a Fractional CTO: Decoded Ops, Print & Decoration Specialists',
+   description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership, not a vendor. Available UK-wide.',
+
+[0m
+Now update the hub pages. The hub pages are index pages listing locations - I'll add D17 imports and D17Motion:
+[0m← [0mEdit app/locations/fractional-cto/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\fractional-cto\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\fractional-cto\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\fractional-cto\page.tsx
+@@ -56,8 +56,9 @@
+ 
+ export default function FractionalCTOLocationsHub() {
+   return (
+     <>
++      <D17Motion />
+       <JsonLd data={locationSchema} />
+       <BreadcrumbSchema items={[
+         { name: 'Home', url: 'https://decodedops.co.uk/' },
+         { name: 'Fractional CTO Locations', url: 'https://decodedops.co.uk/locations/fractional-cto' },
+
+[0m
+[0m← [0mEdit app/locations/tech-audit/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\tech-audit\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\tech-audit\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\tech-audit\page.tsx
+@@ -3,8 +3,11 @@
+ import { ArrowRight, MapPin } from 'lucide-react';
+ import { BOOKING_URL } from '@/lib/constants';
+ import { locations } from '@/data/locations';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
++import { D17Motion } from '@/components/D17Motion';
++import '@/app/d17-global.css';
++import '@/app/d17-locations.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Technology Audit for Sussex & Surrey SMEs: Decoded Ops',
+   description:
+
+[0m
+[0m← [0mEdit app/locations/tech-audit/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\tech-audit\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\tech-audit\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-h-build-d17\app\locations\tech-audit\page.tsx
+@@ -32,8 +32,9 @@
+ 
+ export default function TechAuditLocationsHub() {
+   return (
+     <>
++      <D17Motion />
+       <BreadcrumbSchema items={[
+         { name: 'Home', url: 'https://decodedops.co.uk/' },
+         { name: 'Tech Audit Locations', url: 'https://decodedops.co.uk/locations/tech-audit' },
+       ]} />
+
+[0m
+Now rewrite the privacy page with D17 art:
+[0m← [0mWrite app/privacy/page.tsx
+Wrote file successfully.
+[0m
+Now rewrite the cookies page:
+[0m← [0mWrite app/cookies/page.tsx
+Wrote file successfully.
+[0m
+[0m# [0mTodos
+[✓] Create app/d17-locations.css from d17-locations-legal.css
+[✓] Modify LocationPage.tsx to accept D17 art props and render them
+[✓] Create lib/coverage-map.ts for DO-ART-1002 SVG generation
+[✓] Update fractional-cto/[location]/page.tsx with D17 art props
+[✓] Update tech-audit/[location]/page.tsx with D17 art props
+[✓] Update fractional-cto/page.tsx hub page with D17 art imports
+[✓] Update tech-audit/page.tsx hub page with D17 art imports
+[✓] Rewrite privacy/page.tsx with D17 art (DO-ART-1006) + prose styling
+[✓] Rewrite cookies/page.tsx with D17 art (DO-ART-1007) + prose styling
+[✓] CR-WEB-054 copy fixes in locations.ts (third-party names, trust line)
+[•] Verify: npx tsc --noEmit, git grep craig-blackman
+[ ] Commit and write lane report files
+[0m
+Now let me verify the build with tsc:
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\web-h-build-d17" && npx tsc --noEmit 2>&1 | head -50
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+tsc passes cleanly. Now check for craig-blackman in batch directories:
+[0m$ [0mgit grep -n "craig-blackman" -- app/locations/ app/privacy/ app/cookies/ lib/coverage-map.ts components/LocationPage.tsx 2>&1
+(no output)
+[0m
+No craig-blackman references. Let me check git status and commit:
+[0m$ [0mgit status --short 2>&1
+M app/cookies/page.tsx
+ M app/locations/fractional-cto/[location]/page.tsx
+ M app/locations/fractional-cto/page.tsx
+ M app/locations/tech-audit/[location]/page.tsx
+ M app/locations/tech-audit/page.tsx
+ M app/privacy/page.tsx
+ M components/LocationPage.tsx
+ M data/locations.ts
+?? app/d17-locations.css
+?? lib/coverage-map.ts
+[0m
+[0m✱ [0mGrep "£395"[90m in . · 0 matches[0m
+Good, no £395 prices found. Now commit and write lane reports:
+[0m
+[0m$ [0mgit add -A && git commit -m "feat(web): D17 artwork on locations pages (WO-INF-061)
+
+- Add d17-locations.css (full location + legal page art styles)
+- Modify LocationPage component to accept heroArtHtml, coverageMapHtml,
+  stepsArtHtml, trustLine props for D17 artwork injection
+- Add lib/coverage-map.ts: TypeScript module generating DO-ART-1002
+  coverage map SVG with per-town highlighting from genmap.py coordinates
+- fractional-cto [location]: DO-ART-1001 (monthly review pack hero),
+  DO-ART-1002 (coverage map), DO-ART-1003 (journey poster)
+- tech-audit [location]: DO-ART-1004 (findings report hero),
+  DO-ART-1002 (coverage map), DO-ART-1005 (day plan drawn plate)
+- Both hub pages: D17 CSS imports + D17Motion
+- privacy: DO-ART-1006 (what I keep cards), prose body styling
+- cookies: DO-ART-1007 (preference panel), prose body styling
+- CR-WEB-054: remove third-party company names from localFact panels
+  (Rolls-Royce, Fresh Egg, Novartis, Butlins, Roche, American Express,
+  Harvey's, Hastings Direct, Bullfrog, McLaren, Unilever/ExxonMobil/CGI,
+  Body Shop); location-aware trust line (Sussex/Surrey vs remote)
+- Verified: npx tsc --noEmit clean; git grep craig-blackman empty" 2>&1
+warning: in the working copy of 'app/cookies/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/locations/fractional-cto/[location]/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/locations/tech-audit/[location]/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/privacy/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'lib/coverage-map.ts', LF will be replaced by CRLF the next time Git touches it
+[web-h-build-d17 ac1ee9a] feat(web): D17 artwork on locations pages (WO-INF-061)
+ 10 files changed, 1070 insertions(+), 336 deletions(-)
+ create mode 100644 app/d17-locations.css
+ create mode 100644 lib/coverage-map.ts
+[0m
+[0m$ [0mgit log --oneline -1 2>&1
+ac1ee9a feat(web): D17 artwork on locations pages (WO-INF-061)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-h-build-d17\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-h-build-d17.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-h-build-d17.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane report for web-h-build-d17 locations batch" 2>&1
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-h-build-d17.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-h-build-d17.json', LF will be replaced by CRLF the next time Git touches it
+[web-h-build-d17 ffc6d67] chore: lane report for web-h-build-d17 locations batch
+ 2 files changed, 33 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-h-build-d17.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-h-build-d17.json
+[0m
+[0m# [0mTodos
+[✓] Create app/d17-locations.css from d17-locations-legal.css
+[✓] Modify LocationPage.tsx to accept D17 art props and render them
+[✓] Create lib/coverage-map.ts for DO-ART-1002 SVG generation
+[✓] Update fractional-cto/[location]/page.tsx with D17 art props
+[✓] Update tech-audit/[location]/page.tsx with D17 art props
+[✓] Update fractional-cto/page.tsx hub page with D17 art imports
+[✓] Update tech-audit/page.tsx hub page with D17 art imports
+[✓] Rewrite privacy/page.tsx with D17 art (DO-ART-1006) + prose styling
+[✓] Rewrite cookies/page.tsx with D17 art (DO-ART-1007) + prose styling
+[✓] CR-WEB-054 copy fixes in locations.ts (third-party names, trust line)
+[✓] Verify: npx tsc --noEmit, git grep craig-blackman
+[✓] Commit and write lane report files
+[0m
+Lane complete. Two commits landed:
+
+1. **`ac1ee9a`** — `feat(web): D17 artwork on locations pages (WO-INF-061)` — 10 files changed, 1070 insertions, 336 deletions
+2. **`ffc6d67`** — `chore: lane report for web-h-build-d17 locations batch` — lane report files
+
+**Per-page summary:**
+
+| Page | Slots replaced | Notes |
+|---|---|---|
+| `fractional-cto/[location]` | Hero (DO-ART-1001), local coverage (DO-ART-1002), steps (DO-ART-1003) | All 29 towns get per-town highlighted map + pin. Town substituted into {{town}} template vars. |
+| `tech-audit/[location]` | Hero (DO-ART-1004), local coverage (DO-ART-1002), steps (DO-ART-1005) | Same coverage map pattern, travel time injected into day plan label. |
+| `fractional-cto/page` | Imports only | Hub index page — D17 CSS + D17Motion added. |
+| `tech-audit/page` | Imports only | Hub index page — D17 CSS + D17Motion added. |
+| `privacy` | DO-ART-1006 (what I keep cards) above legal text | Rewritten with prose body styling matching mockup. |
+| `cookies` | DO-ART-1007 (preference panel) above legal text | Rewritten with prose body styling matching mockup. |
+
+**CR-WEB-054:** 12 third-party company names removed from `data/locations.ts`. Trust line is now location-aware (Sussex/Surrey vs remote). No £395 found anywhere.
+
+**Verification:** `npx tsc --noEmit` clean. `git grep craig-blackman` empty in batch dirs.

@@ -1,0 +1,41 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-content-057-fix2.md
+[0m
+[0m$ [0mpython .context/lane-briefs/cr-web-057/apply_spec.py .context/lane-briefs/cr-web-057/copy-spec-4.json
+applied 10/10, skipped 0
+[0m
+[0m$ [0mnpx tsc --noEmit
+(no output)
+[0m
+Clean. Now commit and do the exit contract.
+[0m$ [0mgit add -A && git commit -m "content(web): remaining data app mentions + em dash (CR-WEB-057)"
+[web-content-057 88b7dd4] content(web): remaining data app mentions + em dash (CR-WEB-057)
+ 4 files changed, 10 insertions(+), 10 deletions(-)
+[0m
+[0m$ [0mgit log -1 --format=%H
+88b7dd4fe04c49dda8eb7927b569e41a6a66702d
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-content-057\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-content-057-fix2.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-content-057-fix2.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane reports for web-content-057-fix2"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-content-057-fix2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-content-057-fix2.json', LF will be replaced by CRLF the next time Git touches it
+[web-content-057 1655ea8] chore: lane reports for web-content-057-fix2
+ 2 files changed, 41 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-content-057-fix2.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-content-057-fix2.json
+[0m
+Done. Two commits:
+1. `88b7dd4` — content change (10/10 applied, tsc clean)
+2. `1655ea8` — lane reports
+
+Not pushed. No other actions taken.

@@ -1,0 +1,543 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead D:/apps/decoded-ops-website/.context/lane-briefs/BRIEF-artwork-refresh-batch-b-fix1.md
+[0m→ [0mRead components/PhotoPiece.tsx
+[0m→ [0mRead components/Artwork.tsx
+[0m✱ [0mGrep "\.ev-piece"[90m in D:/apps/design-systems/decoded-ops-website/clarity.html · 51 matches[0m
+[0m✱ [0mGrep "evBand"[90m in app · 0 matches[0m
+[0m→ [0mRead D:/apps/design-systems/decoded-ops-website/clarity.html[90m [offset=2375, limit=50][0m
+[0m✱ [0mGrep "PhotoPiece"[90m in . · 19 matches[0m
+[0m✱ [0mGrep "ev-band|evBand|ev-band"[90m in app · 8 matches[0m
+[0m✱ [0mGlob "components/PhotoPiece*"[90m in . · 1 match[0m
+[0m→ [0mRead app/clarity/page.tsx[90m [offset=145, limit=30][0m
+[0m
+[0m$ [0mgit log --oneline -5
+3991e24 docs: lane result and notes for inf061-u6-batch-b
+607fb80 feat(CR-WEB-034): batch B — money pages re-bound to artwork family v4 (rev 02) + DO-ART-908–915 evidence photography
+f46d8cd merge(CR-WEB-030): Batch A artwork swaps staging -> main (Craig approved on staging 2026-09-18)
+83e5467 Add lane reports for web003-u5-location-pages (CR-WEB-016, BUG-WEB-019)
+350fd19 Fix 404s for london/manchester routes + per-town differentiation for all location pages
+[0m
+[0m→ [0mRead app/clarity/page.tsx[90m [limit=10][0m
+[0m
+[0m$ [0mTest-Path "node_modules" | Select-Object -First 1
+True
+[0m
+[0m# [0mTodos
+[•] Create components/PhotoPiece.module.css with .evBand, .evPiece, .evCap, .evEyebrow, .evLine rules
+[ ] Update components/PhotoPiece.tsx — restructure markup, use module classes, remove inline styles
+[ ] Fix components/Artwork.tsx — add data-no, data-rev, data-mode, data-sub attributes to SVG root
+[ ] Verify: npm run build + npx next lint on touched files
+[ ] Commit, write LANE-RESULT and LANE-NOTES files, commit those too
+[0m
+[0m← [0mWrite components/PhotoPiece.module.css
+Wrote file successfully.
+[0m
+[0m# [0mTodos
+[✓] Create components/PhotoPiece.module.css with .evBand, .evPiece, .evCap, .evEyebrow, .evLine rules
+[•] Update components/PhotoPiece.tsx — restructure markup, use module classes, remove inline styles
+[ ] Fix components/Artwork.tsx — add data-no, data-rev, data-mode, data-sub attributes to SVG root
+[ ] Verify: npm run build + npx next lint on touched files
+[ ] Commit, write LANE-RESULT and LANE-NOTES files, commit those too
+[0m
+[0m← [0mWrite components/PhotoPiece.tsx
+Wrote file successfully.
+[0m
+[0m# [0mTodos
+[✓] Create components/PhotoPiece.module.css with .evBand, .evPiece, .evCap, .evEyebrow, .evLine rules
+[✓] Update components/PhotoPiece.tsx — restructure markup, use module classes, remove inline styles
+[•] Fix components/Artwork.tsx — add data-no, data-rev, data-mode, data-sub attributes to SVG root
+[ ] Verify: npm run build + npx next lint on touched files
+[ ] Commit, write LANE-RESULT and LANE-NOTES files, commit those too
+[0m
+[0m← [0mEdit components/Artwork.tsx
+Index: D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\Artwork.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\Artwork.tsx
++++ D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\Artwork.tsx
+@@ -112,8 +112,12 @@
+ className={`art tx-frame tx-${mode}`}
+ data-artboard="page-1600x900"
+ data-tx="frame"
+ data-tone={tone}
++data-mode={mode}
++data-no={no}
++data-rev={rev}
++data-sub={sub}
+ data-p={prefix}
+ viewBox="0 0 1600 900"
+ role="img"
+ aria-label={`${title} · ${no} · REV ${rev}`}
+
+[0m
+[0m# [0mTodos
+[✓] Create components/PhotoPiece.module.css with .evBand, .evPiece, .evCap, .evEyebrow, .evLine rules
+[✓] Update components/PhotoPiece.tsx — restructure markup, use module classes, remove inline styles
+[✓] Fix components/Artwork.tsx — add data-no, data-rev, data-mode, data-sub attributes to SVG root
+[•] Verify: npm run build + npx next lint on touched files
+[ ] Commit, write LANE-RESULT and LANE-NOTES files, commit those too
+[0m
+[0m$ [0mnpm run build 2>&1 | Select-Object -Last 30
+├ ○ /retained
+├ ƒ /robots.txt
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/operations-consultant-print-embroidery
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ƒ /sitemap.xml
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/ai-readiness-check
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+[0m
+[0m$ [0mnpx next lint --file components/PhotoPiece.tsx --file components/Artwork.tsx 2>&1
+error: unknown option '--file'
+[0m
+[0m$ [0mnpx next lint 2>&1 | Select-Object -Last 20
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\lint
+[0m
+[0m$ [0mnpx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\lint
+[0m
+[0m$ [0mnpx next --help 2>&1 | head -30
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mnpm run lint 2>&1
+> decoded-ops-next@0.1.0 lint
+> eslint
+
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\.context\mockup-vs-app.mjs
+  5:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\.context\plate-audit.mjs
+   8:31  warning  'dirname' is defined but never used     @typescript-eslint/no-unused-vars
+  67:14  warning  'm' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\.context\slot-audit.mjs
+   7:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+  43:21  warning  't' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\.context\tools\verify-pages.js
+  5:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  6:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  7:22  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\about\page.tsx
+   50:16   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  103:160  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+  117:121  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+  152:116  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\api\auth\login\route.ts
+  81:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  82:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\apps\artwork-manager\page.tsx
+  44:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\apps\commerce\page.tsx
+   48:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  118:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\apps\data-app\page.tsx
+  145:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  152:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  159:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\blog\[slug]\page.tsx
+  46:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\blog\page.tsx
+  40:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  53:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\case-studies\eternal-fitness\page.tsx
+  156:123  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\clients\[clientId]\components\AcceptanceSection.tsx
+  101:84  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  256:39  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\clients\[clientId]\components\DemoSection.tsx
+  126:27  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  128:3   error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\clients\[clientId]\components\DemoSection.tsx:128:3
+  126 |   const chartRef = useRef<any>(null);
+  127 |   const stocksRef = useRef(stocks);
+> 128 |   stocksRef.current = stocks;
+      |   ^^^^^^^^^^^^^^^^^ Cannot update ref during render
+  129 |
+  130 |   function statusFor(stock: number, min: number) {
+  131 |     return stock === 0 ? 'out' : stock < min ? 'low' : 'ok';                                                                                                                                                                                                                                                          react-hooks/refs
+  245:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\clients\[clientId]\components\DemoSection.tsx:245:5
+  243 |
+  244 |   useEffect(() => {
+> 245 |     updateAlerts(stocks);
+      |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  246 |   }, []);
+  247 |
+  248 |   const filteredStocks = filter === 'all'  react-hooks/set-state-in-effect
+  246:6   warning  React Hook useEffect has missing dependencies: 'stocks' and 'updateAlerts'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\clients\[clientId]\components\PricingSection.tsx
+   83:19  warning  'isA' is assigned a value but never used                         @typescript-eslint/no-unused-vars
+  309:77  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\clients\[clientId]\components\SystemsDiagram.tsx
+  83:5  error    Error: Cannot access variable before it is declared
+
+`buildSVG` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\clients\[clientId]\components\SystemsDiagram.tsx:83:5
+  81 |
+  82 |   useEffect(() => {
+> 83 |     buildSVG(mode);
+     |     ^^^^^^^^ `buildSVG` accessed before it is declared
+  84 |   }, [mode, d]);
+  85 |
+  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\clients\[clientId]\components\SystemsDiagram.tsx:86:3
+   84 |   }, [mode, d]);
+   85 |
+>  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+      |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  87 |     const svg = svgRef.current;
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  88 |     if (!svg) return;
+      …
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 195 |     svg.appendChild(desc);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 196 |   }
+      | ^^^^ `buildSVG` is declared here
+  197 |
+  198 |   return (
+  199 |     <div className="bg-[#023047] rounded-2xl p-12 text-white">  react-hooks/immutability
+  84:6  warning  React Hook useEffect has a missing dependency: 'buildSVG'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\clients\[clientId]\layout.tsx
+  15:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\clients\[clientId]\page.tsx
+   34:33  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  117:36  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:47  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\contact\actions.ts
+  13:6  warning  'ContactFormInput' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\cookies\page.tsx
+  163:13  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\design-system\ds-plates.js
+  153:43  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+  179:76  warning  'err' is defined but never used                                        @typescript-eslint/no-unused-vars
+  189:13  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  189:85  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\layout.tsx
+  16:10  warning  'Header' is defined but never used  @typescript-eslint/no-unused-vars
+  17:10  warning  'Footer' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\ai-paralysis\page.tsx
+  113:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\bottleneck-growth\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\buy-vs-build\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\cant-scale-operations\page.tsx
+  101:7  warning  'scalingSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\data-scattered\page.tsx
+  97:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\inventory-blind\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\legacy-system\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\ops-in-owners-head\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\page.tsx
+  102:43  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  109:36  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:50  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\seasonal-peaks\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\slow-processes\page.tsx
+  101:7  warning  'workflowSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\spreadsheet-addiction\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\problems\wrong-erp-software\page.tsx
+  104:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\resources\5-warning-signs\page.tsx
+   71:199  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  157:23   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:25   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:287  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:307  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:318  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  167:128  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\resources\artwork-approval-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\resources\audit-checklist\page.tsx
+    2:36   warning  'Download' is defined but never used                             @typescript-eslint/no-unused-vars
+  232:81   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  232:124  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:129  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:134  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:139  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  235:32   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  235:69   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  271:29   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  277:35   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:47   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:53   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:63   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  283:38   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  283:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  297:25   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  299:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\resources\erp-selection-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\resources\page.tsx
+  3:53  warning  'Star' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\resources\seasonal-capacity\page.tsx
+  59:127  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\resources\sop-template\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\sectors\labels-packaging\page.tsx
+  81:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\sectors\signs-graphics\page.tsx
+  81:45   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  81:159  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\sitemap.ts
+  12:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\app\tools\ops-health-score\page.tsx
+  24:7  warning  'scoreLabels' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\auth.config.ts
+  13:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\Artwork.tsx
+  50:49  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+  61:53  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+  71:43  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+  75:9   warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  76:16  warning  '_' is defined but never used                                          @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\BlogList.tsx
+   55:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  148:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\CookieConsent.tsx
+  12:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\CookieConsent.tsx:12:5
+  10 |
+  11 |   useEffect(() => {
+> 12 |     setIsLoading(true);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  13 |     const consent = localStorage.getItem('cookie-consent');
+  14 |     if (!consent) {
+  15 |       setIsVisible(true);  react-hooks/set-state-in-effect
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\PhotoPiece.tsx
+  62:9  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\Plate.tsx
+  42:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  46:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  55:49  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  66:53  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  76:43  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  80:9   warning  Expected an assignment or function call and instead saw an expression                                                                                                                        @typescript-eslint/no-unused-expressions
+  81:16  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  91:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\RelatedPosts.tsx
+  34:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  43:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\graphics\AuditWheelGraphic.tsx
+  51:17  warning  'lx' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  52:17  warning  'ly' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  55:17  warning  'lines' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\schematics\problems\WrongErpSchematic.tsx
+  38:10  warning  'motion' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\components\schematics\sectors\PrintEmbroideryOpsConsultantSchematic.tsx
+   6:37  warning  'SKY' is defined but never used               @typescript-eslint/no-unused-vars
+  23:7   warning  'MID' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  24:7   warning  'SPINE_X' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\public\infographics\EcommerceBreakdownChart.tsx
+  117:42   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:102  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  142:74   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:79   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:234  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\public\infographics\VendorQuestionsGuide.tsx
+   56:34   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   59:59   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   59:63   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  120:26   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:92   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:131  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\scripts\hash-password.mjs
+  2:10  warning  'readFileSync' is defined but never used   @typescript-eslint/no-unused-vars
+  2:24  warning  'writeFileSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 147 problems (85 errors, 62 warnings)
+[0m
+Build is green. Lint has 147 problems, all pre-existing — none are new in my touched files. Now let me commit and write the lane reports.
+[0m$ [0mgit status --short
+M components/Artwork.tsx
+ M components/PhotoPiece.tsx
+ M data/route-slugs.json
+?? components/PhotoPiece.module.css
+[0m
+[0m$ [0mgit add components/Artwork.tsx components/PhotoPiece.tsx components/PhotoPiece.module.css && git commit -m "fix(CR-WEB-034): batch B — evidence piece fluid 16:9 in-page (mockup .ev-piece rules), Artwork root carries data-no/rev"
+warning: in the working copy of 'components/Artwork.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/PhotoPiece.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/PhotoPiece.module.css', LF will be replaced by CRLF the next time Git touches it
+[inf061-u6-batch-b fc8257e] fix(CR-WEB-034): batch B — evidence piece fluid 16:9 in-page (mockup .ev-piece rules), Artwork root carries data-no/rev
+ 3 files changed, 109 insertions(+), 60 deletions(-)
+ create mode 100644 components/PhotoPiece.module.css
+[0m
+[0m$ [0mgit log --oneline -1 --format="%H %s"
+fc8257e3070160270bef7e9f0bc94fcb3d196304 fix(CR-WEB-034): batch B — evidence piece fluid 16:9 in-page (mockup .ev-piece rules), Artwork root carries data-no/rev
+[0m
+[0m$ [0mgit diff --stat HEAD~1
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+ components/Artwork.tsx           |  4 ++
+ components/PhotoPiece.module.css | 78 +++++++++++++++++++++++++++++++++++
+ components/PhotoPiece.tsx        | 87 +++++++++++++---------------------------
+ 3 files changed, 109 insertions(+), 60 deletions(-)
+[0m
+[0m$ [0mrg '\\u[0-9a-fA-F]{4}' components/PhotoPiece.tsx components/Artwork.tsx 2>&1
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m✱ [0mGrep "\\u[0-9a-fA-F]{4}"[90m in components · 0 matches[0m
+[0m
+[0m# [0mTodos
+[✓] Create components/PhotoPiece.module.css with .evBand, .evPiece, .evCap, .evEyebrow, .evLine rules
+[✓] Update components/PhotoPiece.tsx — restructure markup, use module classes, remove inline styles
+[✓] Fix components/Artwork.tsx — add data-no, data-rev, data-mode, data-sub attributes to SVG root
+[✓] Verify: npm run build + npx next lint on touched files
+[•] Commit, write LANE-RESULT and LANE-NOTES files, commit those too
+[0m
+No unicode escapes in my files. Now writing lane reports.
+[0m$ [0mNew-Item -ItemType Directory -Force -Path .context/lane-reports
+Directory: D:\apps\worktrees\decoded-ops-website\inf061-u6-batch-b\.context
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          18/09/2026    15:31                lane-reports
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-inf061-u6-batch-b-fix1.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-inf061-u6-batch-b-fix1.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-inf061-u6-batch-b-fix1.json .context/lane-reports/LANE-NOTES-inf061-u6-batch-b-fix1.md && git commit -m "docs: lane result and notes for inf061-u6-batch-b-fix1"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-inf061-u6-batch-b-fix1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-inf061-u6-batch-b-fix1.json', LF will be replaced by CRLF the next time Git touches it
+[inf061-u6-batch-b 47e77dc] docs: lane result and notes for inf061-u6-batch-b-fix1
+ 2 files changed, 56 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-inf061-u6-batch-b-fix1.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-inf061-u6-batch-b-fix1.json
+[0m
+[0m# [0mTodos
+[✓] Create components/PhotoPiece.module.css with .evBand, .evPiece, .evCap, .evEyebrow, .evLine rules
+[✓] Update components/PhotoPiece.tsx — restructure markup, use module classes, remove inline styles
+[✓] Fix components/Artwork.tsx — add data-no, data-rev, data-mode, data-sub attributes to SVG root
+[✓] Verify: npm run build + npx next lint on touched files
+[✓] Commit, write LANE-RESULT and LANE-NOTES files, commit those too
+[0m
+Done. Two commits on `inf061-u6-batch-b`:
+
+**Commit 1** (`fc8257e`): Fix 1 + Fix 2
+- Created `components/PhotoPiece.module.css` — `.ev-piece` block ported verbatim from clarity.html. CSS modules are unlayered so they beat `layer(ds)` without touching ds-artwork.css.
+- Restructured `components/PhotoPiece.tsx` — `<figure>` now wraps a child `<div class="art tx-photo">` (module descendant selectors need this), removed all inline `style=` the module covers, kept `--ev-focus` inline.
+- Added `data-no`, `data-rev`, `data-mode`, `data-sub` to the root `<svg>` in `components/Artwork.tsx`.
+
+**Commit 2** (`47e77dc`): Lane reports.
+
+**Verify**: `npm run build` green. Lint 0 new errors in touched files. Unicode escape grep 0 hits. The 8 page files already had `ev-band` in classNames — no edits needed.

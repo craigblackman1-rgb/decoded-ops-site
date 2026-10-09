@@ -1,0 +1,84 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead lib/hub-fetch.ts
+[0m
+[0m$ [0mgit log --oneline -5
+81fe3a4 chore: lane reports for web003-u25-27-copy-bugs
+1c75e87 fix(web): BUG-WEB-042/043/044 copy consistency
+098d8f1 feat(web): quoting costs problem page with trade pricing vocabulary (GF13)
+e50262c chore: lane report for inf070-u3-fix-390c
+cfeb3c7 fix(web): DownloadOptIn uses module class for dlBtn; stop 390px overflow (CR-WEB-061)
+[0m
+[0m← [0mEdit lib/hub-fetch.ts
+Index: D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\lib\hub-fetch.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\lib\hub-fetch.ts
++++ D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\lib\hub-fetch.ts
+@@ -17,8 +17,10 @@
+  * quotes, contracts and invoices can no longer be read by anyone who guesses
+  * a clientId. This is SERVER-ONLY: HUB_PUBLIC_API_KEY is never exposed to the
+  * browser (no NEXT_PUBLIC_ prefix), so hubFetch must only be called from
+  * server components, route handlers, or server actions — never client code.
++ *
++ * Hub calls time out after 10s so a slow or redeploying hub can't stall `next build` (WO-INF-075 u8).
+  */
+ export function hubFetch(input: string, init: RequestInit = {}): Promise<Response> {
+   const key = process.env.HUB_PUBLIC_API_KEY;
+   return fetch(input, {
+@@ -27,6 +29,7 @@
+       'User-Agent': 'DecodedOpsSite/1.0 (+https://decodedops.co.uk)',
+       ...(key ? { 'x-hub-key': key } : {}),
+       ...init.headers,
+     },
++    signal: init.signal === undefined ? AbortSignal.timeout(10_000) : init.signal,
+   });
+ }
+
+[0m
+[0m$ [0mgit add lib/hub-fetch.ts && git commit -m "perf(site): 10s timeout on hub fetches so builds can't stall (WO-INF-075 u8)"
+[inf075-u8-build-speed 043c790] perf(site): 10s timeout on hub fetches so builds can't stall (WO-INF-075 u8)
+ 1 file changed, 3 insertions(+)
+[0m
+[0m$ [0mgit show --stat HEAD && git status --short && Test-Path node_modules
+commit 043c790b7a70359f21731e22b3faa889c142a92a
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Wed Sep 30 20:29:57 2026 +0100
+
+    perf(site): 10s timeout on hub fetches so builds can't stall (WO-INF-075 u8)
+
+ lib/hub-fetch.ts | 3 +++
+ 1 file changed, 3 insertions(+)
+False
+[0m
+[0m$ [0mrg -n "AbortSignal\.timeout" --glob '!node_modules' ; rg -n "WO-INF-075 u8" --glob '!node_modules'
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m✱ [0mGrep "signal:"[90m in lib · 1 match[0m
+[0m✱ [0mGrep "WO-INF-075 u8"[90m in . · 1 match[0m
+[0m✱ [0mGrep "AbortSignal\.timeout"[90m in . · 1 match[0m
+[0m
+[0m$ [0mmkdir -p .context/lane-reports && Test-Path .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\inf075-u8-build-speed\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-inf075-u8-site-hub-timeout.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-inf075-u8-site-hub-timeout.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports && git commit -m "chore: lane report for inf075-u8-site-hub-timeout" && git log --oneline -3 && git status --short
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-inf075-u8-site-hub-timeout.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-inf075-u8-site-hub-timeout.json', LF will be replaced by CRLF the next time Git touches it
+[inf075-u8-build-speed f4040ae] chore: lane report for inf075-u8-site-hub-timeout
+ 2 files changed, 21 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-inf075-u8-site-hub-timeout.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-inf075-u8-site-hub-timeout.json
+f4040ae chore: lane report for inf075-u8-site-hub-timeout
+043c790 perf(site): 10s timeout on hub fetches so builds can't stall (WO-INF-075 u8)
+81fe3a4 chore: lane reports for web003-u25-27-copy-bugs
+[0m
+Done. Committed `043c790` — `hubFetch` now defaults to `AbortSignal.timeout(10_000)` when `init.signal` is undefined; caller signals win; headers unchanged; one doc-comment sentence added. Lane report files committed in `f4040ae`. tsc skipped (no `node_modules`; task forbade builds).

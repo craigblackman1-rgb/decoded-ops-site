@@ -1,0 +1,308 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓåÆ [0mRead lib/hub-fetch.ts
+[0m
+[0m$ [0mgit status && git log --oneline -5
+On branch lane/inf075-u9-hubfetch-timeout
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+9f1caed chore: lane report for inf075-u8-site-fix1
+a05d454 fix(site): hub fetch timeout for GET only, uploads unaffected (WO-INF-075 u8)
+f4040ae chore: lane report for inf075-u8-site-hub-timeout
+043c790 perf(site): 10s timeout on hub fetches so builds can't stall (WO-INF-075 u8)
+81fe3a4 chore: lane reports for web003-u25-27-copy-bugs
+[0m
+[0mΓ£▒ [0mGrep "hubFetch"[90m in app/blog ┬╖ 5 matches[0m
+The file already has a GET-only timeout from u8. Task u9 wants a broader timeout that combines with caller signals via `AbortSignal.any`. Checking the blog page caller first.
+[0mΓ£▒ [0mGrep "from ['\"].*hub-fetch|hubFetch\("[90m in . ┬╖ 45 matches[0m
+[0mΓ£▒ [0mGlob "**/*hub-fetch*"[90m in . ┬╖ 1 match[0m
+The blog slug page uses GET (already covered by u8's timeout). u9's delta is signal combination via `AbortSignal.any`. Checking for an existing test setup.
+[0m
+[0m$ [0mGet-Content package.json | Select-String -Pattern '"test"|vitest|jest|node --test' -Context 0,2
+>     "test": "vitest run",
+      "sync:blog-index": "node scripts/sync-blog-index.mjs"
+    },
+>     "vitest": "^5.0.0"
+    }
+  }
+[0m
+[0mΓ£▒ [0mGlob "**/*.{test,spec}.{ts,tsx,js,mjs}"[90m in . ┬╖ 1 match[0m
+[0m
+[0m$ [0mGet-ChildItem -Filter vitest.config.* -ErrorAction SilentlyContinue; Get-ChildItem -Filter vitest.workspace.* -ErrorAction SilentlyContinue
+Directory: D:\apps\worktrees\decoded-ops-website\inf075-u9-hubfetch-timeout
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          30/09/2026    21:02            232 vitest.config.ts
+[0m
+[0mΓåÆ [0mRead app/blog/[slug]/page.tsx[90m [limit=50, offset=60][0m
+[0mΓåÆ [0mRead app/api/tools/capture/route.test.ts[90m [limit=40][0m
+[0mΓåÆ [0mRead vitest.config.ts
+[0m
+[0m$ [0mGet-Content tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": ["node_modules", "scripts"]
+}
+[0m
+[0mΓåÆ [0mRead app/api/clients/uploads/route.ts[90m [limit=20, offset=40][0m
+[0mΓ£ù [0mRead .context/lane-reports/LANE-RESULT-lane-inf075-u8-site-fix1.json failed
+[91m[1mError: [0mFile not found: D:\apps\worktrees\decoded-ops-website\inf075-u9-hubfetch-timeout\.context\lane-reports\LANE-RESULT-lane-inf075-u8-site-fix1.json
+Checking an existing lane report for the expected format, then implementing.
+[0mΓåÆ [0mRead .context/lane-reports/LANE-NOTES-inf075-u8-site-fix1.md
+[0mΓ£▒ [0mGlob ".context/lane-reports/*"[90m in . ┬╖ 0 matches[0m
+[0m
+[0m$ [0mgit show a05d454 --stat; git show a05d454 -- lib/hub-fetch.ts | Select-Object -First 80
+commit a05d454cdec3e6d21e8ca8782e15bb7022f222e3
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Wed Sep 30 20:32:48 2026 +0100
+
+    fix(site): hub fetch timeout for GET only, uploads unaffected (WO-INF-075 u8)
+
+ lib/hub-fetch.ts | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+commit a05d454cdec3e6d21e8ca8782e15bb7022f222e3
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Wed Sep 30 20:32:48 2026 +0100
+
+    fix(site): hub fetch timeout for GET only, uploads unaffected (WO-INF-075 u8)
+
+diff --git a/lib/hub-fetch.ts b/lib/hub-fetch.ts
+index d5487f1..72259a5 100644
+--- a/lib/hub-fetch.ts
++++ b/lib/hub-fetch.ts
+@@ -19,10 +19,20 @@
+  * browser (no NEXT_PUBLIC_ prefix), so hubFetch must only be called from
+  * server components, route handlers, or server actions ΓÇö never client code.
+  *
+- * Hub calls time out after 10s so a slow or redeploying hub can't stall `next build` (WO-INF-075 u8).
++ * GET hub calls time out after 10s so a slow or redeploying hub can't stall `next build` (WO-INF-075 u8).
++ * Writes (POST/PUT/PATCH/DELETE) are not given a default timeout ΓÇö client file uploads
++ * (e.g. app/api/clients/uploads/route.ts) can take longer than 10s. A caller-supplied
++ * `init.signal` always wins.
+  */
+ export function hubFetch(input: string, init: RequestInit = {}): Promise<Response> {
+   const key = process.env.HUB_PUBLIC_API_KEY;
++  const method = (init.method ?? 'GET').toUpperCase();
++  const signal =
++    init.signal !== undefined
++      ? init.signal
++      : method === 'GET'
++        ? AbortSignal.timeout(10_000)
++        : undefined;
+   return fetch(input, {
+     ...init,
+     headers: {
+@@ -30,6 +40,6 @@ export function hubFetch(input: string, init: RequestInit = {}): Promise<Respons
+       ...(key ? { 'x-hub-key': key } : {}),
+       ...init.headers,
+     },
+-    signal: init.signal === undefined ? AbortSignal.timeout(10_000) : init.signal,
++    ...(signal !== undefined ? { signal } : {}),
+   });
+ }
+[0m
+[0m$ [0mnode -e "console.log(process.version, typeof AbortSignal.timeout, typeof AbortSignal.any)"
+v24.21.0 function function
+[0m
+u8 already landed a GET-only timeout. u9's delta is `AbortSignal.any` combination. Implementing that, keeping the write exemption.
+[0m$ [0mTest-Path node_modules; Test-Path node_modules\vitest
+False
+False
+[0m
+[0mΓåÉ [0mEdit lib/hub-fetch.ts
+Index: D:\apps\worktrees\decoded-ops-website\inf075-u9-hubfetch-timeout\lib\hub-fetch.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf075-u9-hubfetch-timeout\lib\hub-fetch.ts
++++ D:\apps\worktrees\decoded-ops-website\inf075-u9-hubfetch-timeout\lib\hub-fetch.ts
+@@ -18,22 +18,31 @@
+  * a clientId. This is SERVER-ONLY: HUB_PUBLIC_API_KEY is never exposed to the
+  * browser (no NEXT_PUBLIC_ prefix), so hubFetch must only be called from
+  * server components, route handlers, or server actions ΓÇö never client code.
+  *
+- * GET hub calls time out after 10s so a slow or redeploying hub can't stall `next build` (WO-INF-075 u8).
++ * GET hub calls time out after 10s so a slow or redeploying hub can't stall `next build` (WO-INF-075 u8/u9).
+  * Writes (POST/PUT/PATCH/DELETE) are not given a default timeout ΓÇö client file uploads
+- * (e.g. app/api/clients/uploads/route.ts) can take longer than 10s. A caller-supplied
+- * `init.signal` always wins.
++ * (e.g. app/api/clients/uploads/route.ts) can take longer than 10s. When the caller
++ * supplies `init.signal`, it is combined with the 10s timeout via `AbortSignal.any`
++ * when available (either aborting aborts the fetch); otherwise only the caller signal
++ * is used and no default timeout is applied.
+  */
+ export function hubFetch(input: string, init: RequestInit = {}): Promise<Response> {
+   const key = process.env.HUB_PUBLIC_API_KEY;
+   const method = (init.method ?? 'GET').toUpperCase();
+-  const signal =
+-    init.signal !== undefined
+-      ? init.signal
+-      : method === 'GET'
+-        ? AbortSignal.timeout(10_000)
+-        : undefined;
++  const timeoutSignal = AbortSignal.timeout(10_000);
++  const callerSignal = init.signal ?? undefined;
++  let signal: AbortSignal | undefined;
++  if (callerSignal !== undefined) {
++    signal =
++      typeof AbortSignal.any === 'function'
++        ? AbortSignal.any([callerSignal, timeoutSignal])
++        : callerSignal;
++  } else if (method === 'GET') {
++    signal = timeoutSignal;
++  } else {
++    signal = undefined;
++  }
+   return fetch(input, {
+     ...init,
+     headers: {
+       'User-Agent': 'DecodedOpsSite/1.0 (+https://decodedops.co.uk)',
+
+[0m
+No `node_modules` in the worktree ΓÇö I'll junction from the main checkout after committing the code change.
+[0mΓåÉ [0mEdit lib/hub-fetch.ts
+Index: D:\apps\worktrees\decoded-ops-website\inf075-u9-hubfetch-timeout\lib\hub-fetch.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\inf075-u9-hubfetch-timeout\lib\hub-fetch.ts
++++ D:\apps\worktrees\decoded-ops-website\inf075-u9-hubfetch-timeout\lib\hub-fetch.ts
+@@ -31,9 +31,9 @@
+ const method = (init.method ?? 'GET').toUpperCase();
+ const timeoutSignal = AbortSignal.timeout(10_000);
+ const callerSignal = init.signal ?? undefined;
+ let signal: AbortSignal | undefined;
+-if (callerSignal !== undefined) {
++if (callerSignal != null) {
+   signal =
+     typeof AbortSignal.any === 'function'
+       ? AbortSignal.any([callerSignal, timeoutSignal])
+       : callerSignal;
+
+[0m
+[0mΓåÉ [0mWrite lib/hub-fetch.test.ts
+Wrote file successfully.
+[0m
+Now a tiny vitest test (setup already exists), then commit the code change.
+[0m$ [0mgit add lib/hub-fetch.ts lib/hub-fetch.test.ts && git commit -m "fix(website): 10s timeout on hubFetch (WO-INF-075 u9)"
+warning: in the working copy of 'lib/hub-fetch.test.ts', LF will be replaced by CRLF the next time Git touches it
+[lane/inf075-u9-hubfetch-timeout 09751a7] fix(website): 10s timeout on hubFetch (WO-INF-075 u9)
+ 2 files changed, 75 insertions(+), 9 deletions(-)
+ create mode 100644 lib/hub-fetch.test.ts
+[0m
+Code committed. Junctioning `node_modules` from the main checkout so `tsc` can run.
+[0m$ [0mif (-not (Test-Path "D:\apps\decoded-ops-website\node_modules")) { Write-Error "main checkout node_modules missing"; exit 1 }; New-Item -ItemType Junction -Path "node_modules" -Target "D:\apps\decoded-ops-website\node_modules" | Out-Null; npx tsc --noEmit 2>&1
+app/api/tools/capture/route.test.ts(1,54): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+lib/hub-fetch.test.ts(1,65): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+vitest.config.ts(1,30): error TS2307: Cannot find module 'vitest/config' or its corresponding type declarations.
+[0m
+[0m$ [0mTest-Path "D:\apps\decoded-ops-website\node_modules\vitest"; Get-Content "D:\apps\decoded-ops-website\package.json" | Select-String vitest
+False
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-String -Pattern "hub-fetch|lib/"
+lib/hub-fetch.test.ts(1,65): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+[0m
+[0mΓ£▒ [0mGrep "AbortSignal\.(timeout|any)"[90m in lib ┬╖ 8 matches[0m
+[0mΓ£▒ [0mGrep "hubFetch\([^)]*signal"[90m in . ┬╖ 2 matches[0m
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1; Write-Host "---"; npx tsc --noEmit 2>&1 | Measure-Object -Line | Select-Object -ExpandProperty Lines
+app/api/tools/capture/route.test.ts(1,54): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+lib/hub-fetch.test.ts(1,65): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+vitest.config.ts(1,30): error TS2307: Cannot find module 'vitest/config' or its corresponding type declarations.
+---
+3
+[0m
+[0m$ [0mRemove-Item -LiteralPath "node_modules" -Force; npm install --no-fund --no-audit 2>&1 | Select-Object -Last 20
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 440 packages in 11s
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mnpx vitest run lib/hub-fetch.test.ts 2>&1
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v5.0.0 D:/apps/worktrees/decoded-ops-website/inf075-u9-hubfetch-timeout
+
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  21:10:10
+   Duration  1.94s (worker 33%, import 31%, transform 20%, tests 16%)
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\inf075-u9-hubfetch-timeout\.context\lane-reports already exists.
+[0m
+`tsc` clean, 4/4 tests pass. Writing lane reports and committing.
+[0m$ [0mgit log -1 --format="%H %s"; git show --stat --format="" HEAD
+09751a7b8c26c18217a21ee8bc75cd3eeb9fa8e2 fix(website): 10s timeout on hubFetch (WO-INF-075 u9)
+ lib/hub-fetch.test.ts | 57 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ lib/hub-fetch.ts      | 27 ++++++++++++++++--------
+ 2 files changed, 75 insertions(+), 9 deletions(-)
+[0m
+[0m$ [0mgit status --short; git rev-parse HEAD
+09751a7b8c26c18217a21ee8bc75cd3eeb9fa8e2
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-lane-inf075-u9.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-lane-inf075-u9.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit status --short
+?? .context/lane-reports/LANE-NOTES-lane-inf075-u9.md
+?? .context/lane-reports/LANE-RESULT-lane-inf075-u9.json
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane report for inf075-u9-hubfetch-timeout" && git log --oneline -3 && git status --short
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-lane-inf075-u9.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-lane-inf075-u9.json', LF will be replaced by CRLF the next time Git touches it
+[lane/inf075-u9-hubfetch-timeout 1d9ef1f] chore: lane report for inf075-u9-hubfetch-timeout
+ 2 files changed, 61 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-lane-inf075-u9.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-lane-inf075-u9.json
+1d9ef1f chore: lane report for inf075-u9-hubfetch-timeout
+09751a7 fix(website): 10s timeout on hubFetch (WO-INF-075 u9)
+9f1caed chore: lane report for inf075-u8-site-fix1
+[0m
+Done. Committed on `lane/inf075-u9-hubfetch-timeout`, not pushed.
+
+- `09751a7` ΓÇö `fix(website): 10s timeout on hubFetch (WO-INF-075 u9)`: caller signals combined with the 10s timeout via `AbortSignal.any` when available; GET no-signal still gets `AbortSignal.timeout(10_000)`; non-GET uploads exemption from u8 preserved. Tiny vitest suite included.
+- `1d9ef1f` ΓÇö lane report commit.
+- Verify: `tsc --noEmit` clean; `vitest run lib/hub-fetch.test.ts` 4/4 pass.

@@ -1,0 +1,458 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓåÆ [0mRead app/sectors/labels-packaging/page.tsx[90m [offset=100, limit=15][0m
+[0mΓåÆ [0mRead app/sectors/signs-graphics/page.tsx[90m [offset=100, limit=15][0m
+[0m
+[0mΓåÉ [0mEdit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\sectors\labels-packaging\page.tsx
+@@ -101,9 +101,9 @@
+       : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+-  <p>Labels and packaging businesses sit where print, compliance, and the supply chain meet. There's no tolerance for error, and turnaround is always tight.</p>
++  <p>Labels and packaging businesses sit where print, compliance, and the supply chain meet. There&apos;s no tolerance for error, and turnaround is always tight.</p>
+ </div>
+ <div className="btn-row">
+   <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+   <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+
+[0m
+[0mΓåÉ [0mEdit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\sectors\signs-graphics\page.tsx
+@@ -101,9 +101,9 @@
+       : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+-  <p>Signs and graphics jobs don't fit generic ERP systems. So most businesses run on spreadsheets, whiteboards, and information carried in people's heads.</p>
++  <p>Signs and graphics jobs don&apos;t fit generic ERP systems. So most businesses run on spreadsheets, whiteboards, and information carried in people's heads.</p>
+ </div>
+ <div className="btn-row">
+   <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+   <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+
+[0m
+[0mΓåÉ [0mEdit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\sectors\signs-graphics\page.tsx
+@@ -101,9 +101,9 @@
+       : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+-  <p>Signs and graphics jobs don&apos;t fit generic ERP systems. So most businesses run on spreadsheets, whiteboards, and information carried in people's heads.</p>
++  <p>Signs and graphics jobs don&apos;t fit generic ERP systems. So most businesses run on spreadsheets, whiteboards, and information carried in people&apos;s heads.</p>
+ </div>
+ <div className="btn-row">
+   <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+   <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+
+[0m
+[0m$ [0mnpx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\lint
+[0m
+[0m$ [0mls node_modules/.bin/next* 2>&1; cat package.json | Select-String '"lint"' 2>&1
+Get-ChildItem: Cannot find path 'D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\node_modules\.bin' because it does not exist.
+
+    "lint": "eslint",
+[0m
+[0m$ [0mnpm install 2>&1
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 440 packages, and audited 441 packages in 15s
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+
+158 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+[0m
+[0m$ [0mnpx next lint 2>&1
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\lint
+[0m
+[0m$ [0mnpx next lint --dir app 2>&1
+error: unknown option '--dir'
+[0m
+[0m$ [0mnpx next lint --help 2>&1
+Usage: next [options] [command]
+
+The Next.js CLI allows you to develop, build, start your application, and more.
+
+Options:
+  -v, --version                                        Outputs the Next.js version.
+  -h, --help                                           Displays this message.
+
+Commands:
+  build [directory] [options]                          Creates an optimized production build of your application. The output displays information about each route.
+  experimental-analyze [options] [directory]           Analyze production bundle output with an interactive web ui. Does not produce an application build. Only compatible with Turbopack.
+  dev [directory] [options]                            Starts Next.js in development mode with hot-code reloading, error reporting, and more.
+  info [options]                                       Prints relevant details about the current system which can be used to report Next.js bugs.
+  start [directory] [options]                          Starts Next.js in production mode. The application should be compiled with `next build` first.
+  telemetry [options] [arg]                            Allows you to enable or disable Next.js' completely anonymous telemetry collection.
+  typegen [directory] [options]                        Generate TypeScript definitions for routes, pages, and layouts without running a full build.
+  upgrade [directory] [options]                        Upgrade Next.js apps to desired versions with a single command.
+  experimental-test [directory] [options]              Execute `next/experimental/testmode` tests using a specified test runner. The test runner defaults to 'playwright' if the `experimental.defaultTestRunner` configuration option or the `--test-runner` option are not set.
+  experimental-request-insights [directory] [options]  Inspect experimental Request Insights from a running Next.js dev server.
+  internal [options] [command]                         Internal debugging commands. Use with caution. Not covered by semver.
+[0m
+[0m$ [0mnpx eslint app/sectors/labels-packaging/page.tsx app/sectors/signs-graphics/page.tsx 2>&1
+(no output)
+[0m
+Zero errors on both files. Let me also run the full project lint to confirm no regressions:
+[0m$ [0mnpm run lint 2>&1
+> decoded-ops-next@0.1.0 lint
+> eslint
+
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\.context\mockup-vs-app.mjs
+  5:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\.context\plate-audit.mjs
+   8:31  warning  'dirname' is defined but never used     @typescript-eslint/no-unused-vars
+  67:14  warning  'm' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\.context\slot-audit.mjs
+   7:47  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+  43:21  warning  't' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\.context\tools\verify-pages.js
+  5:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  6:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  7:22  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\about\page.tsx
+   50:16   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  103:160  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+  117:121  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+  152:116  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\api\auth\login\route.ts
+  81:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  82:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\blog\[slug]\page.tsx
+  46:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\blog\page.tsx
+  40:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  53:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\case-studies\eternal-fitness\page.tsx
+  156:123  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\clients\[clientId]\components\AcceptanceSection.tsx
+  101:84  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  256:39  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\clients\[clientId]\components\DemoSection.tsx
+  126:27  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-explicit-any
+  128:3   error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\clients\[clientId]\components\DemoSection.tsx:128:3
+  126 |   const chartRef = useRef<any>(null);
+  127 |   const stocksRef = useRef(stocks);
+> 128 |   stocksRef.current = stocks;
+      |   ^^^^^^^^^^^^^^^^^ Cannot update ref during render
+  129 |
+  130 |   function statusFor(stock: number, min: number) {
+  131 |     return stock === 0 ? 'out' : stock < min ? 'low' : 'ok';                                                                                                                                                                                                                                                          react-hooks/refs
+  245:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\clients\[clientId]\components\DemoSection.tsx:245:5
+  243 |
+  244 |   useEffect(() => {
+> 245 |     updateAlerts(stocks);
+      |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  246 |   }, []);
+  247 |
+  248 |   const filteredStocks = filter === 'all'  react-hooks/set-state-in-effect
+  246:6   warning  React Hook useEffect has missing dependencies: 'stocks' and 'updateAlerts'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\clients\[clientId]\components\PricingSection.tsx
+   83:19  warning  'isA' is assigned a value but never used                         @typescript-eslint/no-unused-vars
+  309:77  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\clients\[clientId]\components\SystemsDiagram.tsx
+  83:5  error    Error: Cannot access variable before it is declared
+
+`buildSVG` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\clients\[clientId]\components\SystemsDiagram.tsx:83:5
+  81 |
+  82 |   useEffect(() => {
+> 83 |     buildSVG(mode);
+     |     ^^^^^^^^ `buildSVG` accessed before it is declared
+  84 |   }, [mode, d]);
+  85 |
+  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\clients\[clientId]\components\SystemsDiagram.tsx:86:3
+   84 |   }, [mode, d]);
+   85 |
+>  86 |   function buildSVG(currentMode: 'chaos' | 'clean') {
+      |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  87 |     const svg = svgRef.current;
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  88 |     if (!svg) return;
+      ΓÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 195 |     svg.appendChild(desc);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 196 |   }
+      | ^^^^ `buildSVG` is declared here
+  197 |
+  198 |   return (
+  199 |     <div className="bg-[#023047] rounded-2xl p-12 text-white">  react-hooks/immutability
+  84:6  warning  React Hook useEffect has a missing dependency: 'buildSVG'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          react-hooks/exhaustive-deps
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\clients\[clientId]\layout.tsx
+  15:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\clients\[clientId]\page.tsx
+   34:33  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  117:36  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:47  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\contact\actions.ts
+  13:6  warning  'ContactFormInput' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\cookies\page.tsx
+  163:13  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\design-system\ds-plates.js
+  153:43  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+  179:76  warning  'err' is defined but never used                                        @typescript-eslint/no-unused-vars
+  189:13  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  189:85  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\layout.tsx
+  16:10  warning  'Header' is defined but never used  @typescript-eslint/no-unused-vars
+  17:10  warning  'Footer' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\ai-paralysis\page.tsx
+  115:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\bottleneck-growth\page.tsx
+  95:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\buy-vs-build\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\cant-scale-operations\page.tsx
+  101:7  warning  'scalingSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\data-scattered\page.tsx
+  97:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\inventory-blind\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\legacy-system\page.tsx
+  98:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\ops-in-owners-head\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\page.tsx
+  102:43  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  109:36  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  118:50  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\seasonal-peaks\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\slow-processes\page.tsx
+  101:7  warning  'workflowSteps' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\spreadsheet-addiction\page.tsx
+  93:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\problems\wrong-erp-software\page.tsx
+  104:7  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\resources\5-warning-signs\page.tsx
+   71:199  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  157:23   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:25   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:287  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:307  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:318  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  167:128  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\resources\artwork-approval-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\resources\audit-checklist\page.tsx
+    2:36   warning  'Download' is defined but never used                             @typescript-eslint/no-unused-vars
+  232:81   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  232:124  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:129  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:134  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  232:139  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  235:32   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  235:69   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  271:29   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  277:35   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:47   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:53   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  277:63   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  283:38   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  283:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  297:25   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  299:55   error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\resources\erp-selection-playbook\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\resources\page.tsx
+  3:53  warning  'Star' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\resources\seasonal-capacity\page.tsx
+  59:127  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\resources\sop-template\page.tsx
+  2:36  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\sitemap.ts
+  12:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\app\tools\ops-health-score\page.tsx
+  24:7  warning  'scoreLabels' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\auth.config.ts
+  13:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\components\BlogList.tsx
+   55:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  148:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\components\CookieConsent.tsx
+  12:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\components\CookieConsent.tsx:12:5
+  10 |
+  11 |   useEffect(() => {
+> 12 |     setIsLoading(true);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  13 |     const consent = localStorage.getItem('cookie-consent');
+  14 |     if (!consent) {
+  15 |       setIsVisible(true);  react-hooks/set-state-in-effect
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\components\Plate.tsx
+  42:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  46:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  55:49  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  66:53  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  76:43  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  80:9   warning  Expected an assignment or function call and instead saw an expression                                                                                                                        @typescript-eslint/no-unused-expressions
+  81:16  warning  '_' is defined but never used                                                                                                                                                                @typescript-eslint/no-unused-vars
+  91:3   error    React Hook "useEffect" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\components\RelatedPosts.tsx
+  34:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  43:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\components\graphics\AuditWheelGraphic.tsx
+  51:17  warning  'lx' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  52:17  warning  'ly' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  55:17  warning  'lines' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\components\schematics\problems\WrongErpSchematic.tsx
+  38:10  warning  'motion' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\components\schematics\sectors\PrintEmbroideryOpsConsultantSchematic.tsx
+   6:37  warning  'SKY' is defined but never used               @typescript-eslint/no-unused-vars
+  23:7   warning  'MID' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  24:7   warning  'SPINE_X' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\public\infographics\EcommerceBreakdownChart.tsx
+  117:42   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  117:102  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  142:74   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:79   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:111  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:234  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\public\infographics\VendorQuestionsGuide.tsx
+   56:34   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   59:59   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   59:63   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  120:26   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:53   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:92   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  120:131  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\scripts\hash-password.mjs
+  2:10  warning  'readFileSync' is defined but never used   @typescript-eslint/no-unused-vars
+  2:24  warning  'writeFileSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 132 problems (82 errors, 50 warnings)
+[0m
+The full project lint has 132 pre-existing errors. Let me verify the two target files are now clean:
+[0m$ [0mnpx eslint app/sectors/labels-packaging/page.tsx app/sectors/signs-graphics/page.tsx 2>&1
+(no output)
+[0m
+Both files clean. Now commit and do lane exit contract:
+[0m$ [0mgit add app/sectors/labels-packaging/page.tsx app/sectors/signs-graphics/page.tsx && git commit -m "fix: escape unescaped entities in labels-packaging and signs-graphics sector pages" 2>&1
+[web003-u21-eslint-unescaped 1e1023a] fix: escape unescaped entities in labels-packaging and signs-graphics sector pages
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web003-u21-eslint-unescaped\.context\lane-reports already exists.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web003-u21-eslint-unescaped.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web003-u21-eslint-unescaped.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/ && git commit -m "chore: add lane reports for web003-u21-eslint-unescaped" 2>&1
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web003-u21-eslint-unescaped.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web003-u21-eslint-unescaped.json', LF will be replaced by CRLF the next time Git touches it
+[web003-u21-eslint-unescaped b3e3376] chore: add lane reports for web003-u21-eslint-unescaped
+ 2 files changed, 22 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web003-u21-eslint-unescaped.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web003-u21-eslint-unescaped.json
+[0m
+Done. Two commits on `web003-u21-eslint-unescaped`:
+
+1. **`1e1023a`** ΓÇö Fixed the 3 `react/no-unescaped-entities` errors by escaping apostrophes with `&apos;` in both sector pages. Both files now pass eslint cleanly.
+2. **`b3e3376`** ΓÇö Lane report files committed.

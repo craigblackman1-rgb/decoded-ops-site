@@ -1,0 +1,672 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/cr-web-050.md
+[0m→ [0mRead app/apps/commerce/page.tsx
+[0m→ [0mRead app/apps/data-app/page.tsx
+[0m→ [0mRead app/apps/page.tsx
+[0m→ [0mRead app/page.tsx
+[0m→ [0mRead app/problems/data-scattered/page.tsx
+[0m→ [0mRead app/problems/erp-implementation-failure/page.tsx
+[0m→ [0mRead app/sectors/garment-decoration/page.tsx
+Let me read all the files that need editing.
+[0m→ [0mRead app/transform/page.tsx
+[0m
+[0m← [0mEdit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\commerce\page.tsx
+@@ -38,10 +38,10 @@
+         acceptedAnswer: { '@type': 'Answer', text: 'It is built on the Medusa B2B open-source core with real foundations, not a from-scratch build. That is why it comes in well under the 8,000 to 20,000 pound bespoke range you will be quoted elsewhere for the same thing.' },
+       },
+       {
+         '@type': 'Question',
+-        name: 'Does it integrate with ERP systems like Khaos Control?',
+-        acceptedAnswer: { '@type': 'Answer', text: 'ERP integration, including Khaos Control sync, is part of the Extended tier. A full migration off an existing platform is scoped and quoted separately, not read off a tier list.' },
++        name: 'Does it integrate with ERP systems?',
++        acceptedAnswer: { '@type': 'Answer', text: 'ERP integration is part of the Extended tier. A full migration off an existing platform is scoped and quoted separately, not read off a tier list.' },
+       },
+     ],
+   },
+ ],
+
+[0m
+[0m← [0mEdit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\commerce\page.tsx
+@@ -131,9 +131,9 @@
+       </svg>
+     </div>
+     <h3>Extended</h3>
+     <p className="feature-meta">More than one of everything</p>
+-    <p>Multi-site storefronts, ERP integration (Khaos Control sync and similar), and bespoke
++    <p>Multi-site storefronts, ERP integration, and bespoke
+       checkout and pricing logic where the standard rules genuinely don&rsquo;t describe how you
+       price.</p>
+   </div>
+ </div>
+
+[0m
+[0m← [0mEdit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\commerce\page.tsx
+@@ -228,9 +228,9 @@
+ <div className="grid grid--2" style={{ marginTop: 40 }}>
+   <div className="panel">
+     <h3>The worked example</h3>
+     <p>A full migration off WooCommerce, a new storefront, and reintegration back
+-      into Khaos Control. That&rsquo;s scoped and quoted like any other full custom build, not read
++      into your ERP. That&rsquo;s scoped and quoted like any other full custom build, not read
+       off a tier list.</p>
+   </div>
+   <div className="panel">
+     <h3>How it starts</h3>
+
+[0m
+[0m✗ [0mEdit app/apps/data-app/page.tsx failed
+[91m[1mError: [0mCould not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+[0m
+[0m← [0mEdit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\data-app\page.tsx
+@@ -204,18 +204,18 @@
+ <h2>Real numbers from a real deployment.</h2>
+ 
+ <div className="grid grid--3" style={{ marginTop: 44 }}>
+   <div className="stat">
+-    <p className="stat-num num">164,752</p>
+-    <p className="stat-label">products imported from supplier feeds</p>
++    <p className="stat-num num">317,812</p>
++    <p className="stat-label">products brought in from supplier feeds</p>
+   </div>
+   <div className="stat">
+-    <p className="stat-num num">77%</p>
+-    <p className="stat-label">matched automatically on the first run</p>
++    <p className="stat-num num">154,518</p>
++    <p className="stat-label">matched to a supplier automatically</p>
+   </div>
+   <div className="stat">
+-    <p className="stat-num num">11,064</p>
+-    <p className="stat-label">matched and prepared for the Khaos Control catalogue within weeks</p>
++    <p className="stat-num num">40</p>
++    <p className="stat-label">active suppliers feeding in</p>
+   </div>
+ </div>
+ 
+ <p className="stat-caption">Case study 01, real production numbers. The platform didn&rsquo;t change. The layer
+
+[0m
+[0m← [0mEdit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\page.tsx
+@@ -65,9 +65,9 @@
+       <h3 style={{ marginTop: 14 }}>Decoded Commerce</h3>
+     </div>
+     <p>Storefront build and migration, scoped to what your customers actually need.
+       A full migration off WooCommerce, a new storefront, and reintegration back
+-      into Khaos Control is the worked example.</p>
++      into one clean, matched list is the worked example.</p>
+     <span className="go">See how it works</span>
+   </Link>
+ </div>
+ 
+
+[0m
+Now I'll make all edits systematically. Let me batch them.
+[0m✗ [0mEdit app/apps/page.tsx failed
+[91m[1mError: [0mCould not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+[0m→ [0mRead app/apps/data-app/page.tsx[90m [offset=125, limit=20][0m
+Let me re-read the files that failed and check the data-app page for the SVG label.
+[0m→ [0mRead app/apps/page.tsx[90m [offset=60, limit=20][0m
+The apps/page.tsx edit already worked. Now let me fix the data-app SVG label and the apps/page.tsx SVG label.
+[0m
+[0m← [0mEdit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\data-app\page.tsx
+@@ -127,10 +127,9 @@
+   <rect x="260" y="560" width="1180" height="120" rx="14" fill="url(#da-node)"
+         className="p-node" strokeWidth="1.4"/>
+   <text x="310" y="612" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">The platform you run today</text>
+-  <text x="310" y="646" className="p-mono" fontSize="18" opacity=".85">Khaos Control ·
+-    Symphony · or this system, once it has earned it</text>
++  <text x="310" y="646" className="p-mono" fontSize="18" opacity=".85">Your ERP · or this system, once it has earned it</text>
+   <text x="1400" y="628" textAnchor="end" className="p-mono" fontSize="17"
+         letterSpacing="1.5" opacity=".55">STAYS AS IT IS</text>
+ </g>
+ 
+
+[0m
+[0m→ [0mRead app/apps/page.tsx[90m [limit=10, offset=135][0m
+[0m
+[0m← [0mEdit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\apps\page.tsx
+@@ -137,9 +137,9 @@
+         className="p-node-a" strokeWidth="2"/>
+   <text x="800" y="442" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
+         fontWeight="800" fontSize="26">Your platform</text>
+   <text x="800" y="472" textAnchor="middle" className="p-accent-ink" fontSize="16"
+-        fontWeight="600">Khaos Control · Symphony · yours · or the Data App itself</text>
++        fontWeight="600">Your ERP · your website · or the Data App itself</text>
+ </g>
+ 
+ <g className="sk-dots">
+   <circle r="6" className="p-cyan"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#ap-l1"/></animateMotion></circle>
+
+[0m
+Now the homepage SVG stat plate edits.
+[0m→ [0mRead app/page.tsx[90m [limit=50, offset=262][0m
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -262,14 +262,14 @@
+ 
+ {/* 1 · rows imported */}
+ <g className="sk-fade sk-s2">
+   <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
+-        opacity=".55">ROWS IMPORTED</text>
+-  <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">supplier feeds</text>
++        opacity=".55">PRODUCTS BROUGHT IN</text>
++  <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">from supplier feeds</text>
+   <rect x="430" y="228" width="1080" height="62" rx="6" fill="url(#ms-bar)"
+         className="p-node" strokeWidth="1"/>
+   <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
+-        fontWeight="700" fontSize="30">164,752</text>
++        fontWeight="700" fontSize="30">317,812</text>
+ </g>
+ 
+ {/* 2 · matched automatically */}
+ <g className="sk-fade sk-s3">
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -274,16 +274,13 @@
+ {/* 2 · matched automatically */}
+ <g className="sk-fade sk-s3">
+   <text x="60" y="372" className="p-mono" fontSize="17" letterSpacing="1.6"
+         opacity=".55">MATCHED AUTOMATICALLY</text>
+-  <text x="60" y="402" className="p-mono" fontSize="16" opacity=".4">first run, no
+-    hand-matching</text>
+-  <rect x="430" y="348" width="833" height="62" rx="6" fill="url(#ms-bar)"
++  <text x="60" y="402" className="p-mono" fontSize="16" opacity=".4">matched to a supplier</text>
++  <rect x="430" y="348" width="797" height="62" rx="6" fill="url(#ms-bar)"
+         className="p-node" strokeWidth="1"/>
+   <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
+-        fontWeight="700" fontSize="30">127,135</text>
+-  <text x="1291" y="390" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+-        fontWeight="700" fontSize="30">77%</text>
++        fontWeight="700" fontSize="30">154,518</text>
+ </g>
+ 
+ {/* 3 · live. Amber lands once, on the figure that is the point. */}
+ <g className="sk-fade sk-s4">
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -284,16 +284,15 @@
+ 
+ {/* 3 · live. Amber lands once, on the figure that is the point. */}
+ <g className="sk-fade sk-s4">
+   <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
+-        opacity=".55">PREPARED</text>
+-  <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to their ERP</text>
++        opacity=".55">ACTIVE SUPPLIERS</text>
++  <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">feeding in</text>
+   <rect x="430" y="468" width="73" height="62" rx="6" fill="url(#ms-amber-b)"
+         className="p-node-a" strokeWidth="1.4"/>
+   <text x="527" y="510" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+-        fontWeight="700" fontSize="30">11,064</text>
+-  <text x="700" y="510" className="p-mono" fontSize="17" opacity=".5">in range, priced
+-    and published, within weeks</text>
++        fontWeight="700" fontSize="30">40</text>
++  <text x="570" y="510" className="p-mono" fontSize="17" opacity=".5">active suppliers</text>
+ </g>
+ 
+ {/* the lever */}
+ <g className="sk-fade sk-s5">
+
+[0m
+Let me check the current state of the third tile on the homepage plate.
+[0m→ [0mRead app/page.tsx[90m [limit=15, offset=288][0m
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -279,8 +279,9 @@
+   <rect x="430" y="348" width="797" height="62" rx="6" fill="url(#ms-bar)"
+         className="p-node" strokeWidth="1"/>
+   <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
+         fontWeight="700" fontSize="30">154,518</text>
++  <text x="1291" y="390" className="p-mono" fontSize="17" opacity=".5">active suppliers</text>
+ </g>
+ 
+ {/* 3 · live. Amber lands once, on the figure that is the point. */}
+ <g className="sk-fade sk-s4">
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -285,15 +285,15 @@
+ 
+ {/* 3 · live. Amber lands once, on the figure that is the point. */}
+ <g className="sk-fade sk-s4">
+   <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
+-        opacity=".55">ACTIVE SUPPLIERS</text>
+-  <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">feeding in</text>
++        opacity=".55">RE-OPTIMISED</text>
++  <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">Amazon listings</text>
+   <rect x="430" y="468" width="73" height="62" rx="6" fill="url(#ms-amber-b)"
+         className="p-node-a" strokeWidth="1.4"/>
+   <text x="527" y="510" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+-        fontWeight="700" fontSize="30">40</text>
+-  <text x="570" y="510" className="p-mono" fontSize="17" opacity=".5">active suppliers</text>
++        fontWeight="700" fontSize="30">3,844</text>
++  <text x="630" y="510" className="p-mono" fontSize="17" opacity=".5">ahead of a title-format deadline</text>
+ </g>
+ 
+ {/* the lever */}
+ <g className="sk-fade sk-s5">
+
+[0m
+I need to rethink the homepage plate. The brief specifies 4 tiles but the plate has 3 rows. Let me restore the matched automatic row with the 154,518 figure, and put 40 active suppliers in the third row with 3,844 Amazon listings.
+I accidentally added "active suppliers" to the matched automatic row. Let me fix that and add the 40 active suppliers properly.
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -279,9 +279,8 @@
+   <rect x="430" y="348" width="797" height="62" rx="6" fill="url(#ms-bar)"
+         className="p-node" strokeWidth="1"/>
+   <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
+         fontWeight="700" fontSize="30">154,518</text>
+-  <text x="1291" y="390" className="p-mono" fontSize="17" opacity=".5">active suppliers</text>
+ </g>
+ 
+ {/* 3 · live. Amber lands once, on the figure that is the point. */}
+ <g className="sk-fade sk-s4">
+
+[0m
+Now I need to add 40 active suppliers. The old 77% was in the matched automatic row next to 127,135. Let me add 40 there.
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -279,8 +279,10 @@
+   <rect x="430" y="348" width="797" height="62" rx="6" fill="url(#ms-bar)"
+         className="p-node" strokeWidth="1"/>
+   <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
+         fontWeight="700" fontSize="30">154,518</text>
++  <text x="1291" y="390" className="p-accent-ink" fontFamily="Outfit,sans-serif"
++        fontWeight="700" fontSize="30">40</text>
+ </g>
+ 
+ {/* 3 · live. Amber lands once, on the figure that is the point. */}
+ <g className="sk-fade sk-s4">
+
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -279,10 +279,8 @@
+   <rect x="430" y="348" width="797" height="62" rx="6" fill="url(#ms-bar)"
+         className="p-node" strokeWidth="1"/>
+   <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
+         fontWeight="700" fontSize="30">154,518</text>
+-  <text x="1291" y="390" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+-        fontWeight="700" fontSize="30">40</text>
+ </g>
+ 
+ {/* 3 · live. Amber lands once, on the figure that is the point. */}
+ <g className="sk-fade sk-s4">
+
+[0m
+Wait, I need to reconsider. The 40 is "active suppliers" not a metric of the matched automatic row. Let me remove it from there and adjust the third tile properly.
+[0m→ [0mRead app/page.tsx[90m [limit=15, offset=283][0m
+Let me re-read the third tile to update it to show 40 active suppliers instead.
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\page.tsx
+@@ -279,8 +279,10 @@
+   <rect x="430" y="348" width="797" height="62" rx="6" fill="url(#ms-bar)"
+         className="p-node" strokeWidth="1"/>
+   <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
+         fontWeight="700" fontSize="30">154,518</text>
++  <text x="1291" y="390" className="p-accent-ink" fontFamily="Outfit,sans-serif"
++        fontWeight="700" fontSize="30">40</text>
+ </g>
+ 
+ {/* 3 · live. Amber lands once, on the figure that is the point. */}
+ <g className="sk-fade sk-s4">
+
+[0m
+I need to add 40 active suppliers as a secondary stat in the matched automatic row (like the old 77% was). Let me add it.
+[0m← [0mEdit app/problems/data-scattered/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\data-scattered\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\data-scattered\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\data-scattered\page.tsx
+@@ -205,9 +205,9 @@
+    'Website: shows what was true last week',
+  ]}
+  after={[
+    'One matched catalogue, all sources reconciled',
+-   'Automated matching, 77%+ on first run',
++   'Automated matching against every supplier feed',
+    'Every channel reads the same live data',
+    '164,752 products → one version of the truth',
+  ]}
+ />
+
+[0m
+[0m← [0mEdit app/problems/data-scattered/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\data-scattered\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\data-scattered\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\data-scattered\page.tsx
+@@ -207,9 +207,9 @@
+     after={[
+       'One matched catalogue, all sources reconciled',
+       'Automated matching against every supplier feed',
+       'Every channel reads the same live data',
+-      '164,752 products → one version of the truth',
++      '317,812 products → one version of the truth',
+     ]}
+    />
+   </Plate>
+ </div>
+
+[0m
+[0m← [0mEdit app/problems/data-scattered/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\data-scattered\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\data-scattered\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\data-scattered\page.tsx
+@@ -224,11 +224,10 @@
+   <div className="answer">
+    <p>The Decoded Data App takes every supplier feed in, matches it against your existing
+     catalogue, and becomes <b>the single source every other system reads from</b>: the ERP,
+     the website, the warehouse.</p>
+-    <p>In one deployment, 164,752 products went in and 127,135 matched automatically on the first run,
+-    a 77% match rate, with 11,064 matched and prepared for the Khaos Control catalogue within weeks. Same principle,
+-    any supplier mix.</p>
++    <p>In one deployment, 317,812 products came in from supplier feeds and 154,518 were matched to a supplier automatically, before anyone had to touch them. Same principle,
++     any supplier mix.</p>
+   </div>
+  </div>
+ </section>
+ 
+
+[0m
+[0m← [0mEdit app/problems/erp-implementation-failure/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\erp-implementation-failure\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\erp-implementation-failure\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\erp-implementation-failure\page.tsx
+@@ -155,9 +155,9 @@
+ <div className="card">
+  <span className="kicker">Before</span>
+  <ul style={{ margin: '10px 0 0', padding: 0, listStyle: 'none' }}>
+   {[
+-   <>The <b>164,752</b> products scattered across supplier feeds</>,
++    <>The <b>317,812</b> products scattered across supplier feeds</>,
+    'No consistent SKU to match any of them against',
+    'No reliable stock picture for the warehouse or the website',
+    'A platform taking the blame for a data problem',
+   ].map((item, i) => (
+
+[0m
+[0m← [0mEdit app/problems/erp-implementation-failure/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\erp-implementation-failure\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\erp-implementation-failure\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\problems\erp-implementation-failure\page.tsx
+@@ -170,11 +170,11 @@
+ <div className="card">
+  <span className="kicker">After</span>
+  <ul style={{ margin: '10px 0 0', padding: 0, listStyle: 'none' }}>
+   {[
+-   <><b>127,135</b> matched automatically on the first run</>,
+-   <>A <b>77%</b> match rate, without anyone re-keying a row</>,
+-   <><b>11,064</b> matched and prepared for the Khaos Control catalogue within weeks</>,
++   <><b>154,518</b> matched to a supplier automatically</>,
++    <>40 active suppliers feeding in, without anyone re-keying a row</>,
++    <><b>3,844</b> Amazon listings re-optimised ahead of a title-format deadline</>,
+    'The platform stayed. The layer around it changed.',
+   ].map((item, i) => (
+    <li key={i} style={{ fontSize: 'var(--do-text-sm)', marginBottom: 10, color: 'color-mix(in srgb, var(--do-prussian-blue) 74%, transparent)' }}>
+      {item}
+
+[0m
+Now let me continue with items 5-8.
+[0m← [0mEdit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\sectors\garment-decoration\page.tsx
+@@ -287,9 +287,9 @@
+ <div className="wrap">
+   <span className="eyebrow">Case study</span>
+   <h2>ERP and supplier data integration for a decoration business</h2>
+   <div className="hair" />
+-  <p className="lede">Project-leading a Khaos Control ERP implementation alongside a custom Data App for supplier data, Amazon FBA, and channel automation.</p>
++  <p className="lede">Project-leading an ERP change alongside a custom Data App for supplier data, Amazon FBA, and channel automation.</p>
+   <div className="btn-row" style={{ marginTop: '24px' }}>
+     <Link className="btn btn--outline" href="/case-studies/case-study-01">Read the case study <ArrowRight size={16} aria-hidden="true" /></Link>
+   </div>
+ </div>
+
+[0m
+Now the transform page edits. Let me read the relevant sections.
+[0m→ [0mRead app/transform/page.tsx[90m [limit=10, offset=1][0m
+[0m→ [0mRead app/transform/page.tsx[90m [limit=25, offset=68][0m
+[0m
+[0m← [0mEdit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
+@@ -5,9 +5,9 @@
+ import s from '@/app/deco-page.module.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Transform: Decoded Ops',
+-  description: 'Transform is the programme that follows a Clarity Audit. The plan, executed. Measured results: 77% auto-matched, nine supplier feeds fully automated.',
++  description: 'Transform is the programme that follows a Clarity Audit. The plan, executed. Measured results: 154,518 products matched automatically, 17 supplier feeds fully automated.',
+   alternates: { canonical: '/transform' },
+   openGraph: {
+     type: 'website',
+     title: 'Transform: Decoded Ops',
+
+[0m
+[0m← [0mEdit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
+@@ -69,10 +69,10 @@
+ <section className="g-tint" data-od-id="transform-ba">
+   <div className="wrap">
+     <span className="eyebrow">Two live examples &middot; DO-ART-403</span>
+     <h2>Same approach, twice, in two different businesses.</h2>
+-    <p className="lede" style={{ marginTop: 16 }}>Case study 01: 164,752 products imported and 77% matched on
+-      the first run. Case study 02: nine supplier feeds automated, a projected saving of 20 to 40
++     <p className="lede" style={{ marginTop: 16 }}>Case study 01: 317,812 products brought in and 154,518 matched to a supplier automatically.
++      Case study 02: 17 supplier feeds automated, a projected saving of 20 to 40
+       hours a week. Same approach both times: fix the process and the data before automating
+       anything.</p>
+ 
+     <div className="plate-scroll" style={{ marginTop: 34 }}>
+
+[0m
+[0m→ [0mRead app/transform/page.tsx[90m [limit=35, offset=90][0m
+[0m
+[0m← [0mEdit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
+@@ -89,9 +89,9 @@
+   <text x="128" y="238" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
+         letterSpacing="2" fill="var(--do-prussian-blue)">NOW</text>
+ </g>
+ <g className="sk-fade sk-s3" fontSize="22">
+-  <text x="140" y="322" className="p-ink">164,752 rows, no consistent SKU</text>
++  <text x="140" y="322" className="p-ink">317,812 rows, no consistent SKU</text>
+   <text x="140" y="392" className="p-ink">Matching done by hand</text>
+   <text x="140" y="462" className="p-ink">Catalogue nobody trusted</text>
+   <text x="140" y="532" className="p-ink">Website and warehouse disagreed</text>
+   <g className="p-samber" strokeWidth="2.4" strokeLinecap="round">
+
+[0m
+[0m← [0mEdit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
+@@ -113,11 +113,11 @@
+   <text x="878" y="238" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
+         letterSpacing="2" fill="var(--do-prussian-blue)">AFTER</text>
+ </g>
+ <g className="sk-fade sk-s5" fontSize="22">
+-  <text x="890" y="322" className="p-ink">127,135 matched on the first run</text>
+-  <text x="890" y="392" className="p-ink">77% matched automatically</text>
+-   <text x="890" y="462" className="p-ink">11,064 prepared for Khaos Control</text>
++  <text x="890" y="322" className="p-ink">154,518 matched automatically</text>
++  <text x="890" y="392" className="p-ink">40 active suppliers feeding in</text>
++   <text x="890" y="462" className="p-ink">Data app (now the ERP)</text>
+   <text x="890" y="532" className="p-ink">One catalogue, every channel</text>
+   <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
+      strokeLinejoin="round" fill="none">
+     <path d="M856 315 L863 322 L876 308"/>
+
+[0m
+[0m→ [0mRead app/transform/page.tsx[90m [limit=15, offset=146][0m
+[0m
+[0m← [0mEdit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\app\transform\page.tsx
+@@ -148,11 +148,11 @@
+   </div>
+   <div className={`${s.baCol} ${s.baColAfter}`} data-od-id="ba-after">
+     <h3>After</h3>
+     <ul>
+-      <li>Case study 01: <strong>164,752</strong> imported, <strong>127,135</strong> matched on the first run</li>
+-       <li>Case study 01: <strong>77%</strong> matched automatically, <strong>11,064</strong> prepared for Khaos Control</li>
+-      <li>Case study 02: <strong>9</strong> supplier feeds fully automated</li>
++      <li>Case study 01: <strong>317,812</strong> brought in, <strong>154,518</strong> matched automatically</li>
++       <li>Case study 01: <strong>40</strong> active suppliers, <strong>3,844</strong> Amazon listings re-optimised</li>
++      <li>Case study 02: <strong>17</strong> supplier feeds fully automated</li>
+       <li>Case study 02: a projected saving of <strong>20–40 hours</strong> a week</li>
+     </ul>
+   </div>
+ </div>
+
+[0m
+Now let me verify all the forbidden patterns are gone. Let me run the grep.
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git grep -nE "Khaos|164,752|127,135|11,064|77%|nine supplier feeds|9 supplier feeds" -- app ':!app/clients' ':!app/case-studies'
+app/sectors/schoolwear/page.tsx:154:            body: 'The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: nine supplier feeds automated, a projected saving of 20 to 40 hours a week.',
+[0m
+There's one remaining match in schoolwear (not in my edit scope). Let me also check if there are other "nine supplier feeds" or "9 supplier feeds" in the transform page that I might have missed.
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git grep -n "nine supplier feeds\|9 supplier feeds" -- app/transform/page.tsx
+(no output)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git grep -n "nine supplier feeds\|9 supplier feeds" -- app/page.tsx app/problems/erp-implementation-failure/page.tsx app/problems/data-scattered/page.tsx app/apps/page.tsx app/apps/data-app/page.tsx app/apps/commerce/page.tsx app/sectors/garment-decoration/page.tsx
+(no output)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git grep -n "9\b" -- app/problems/erp-implementation-failure/page.tsx
+app/problems/erp-implementation-failure/page.tsx:213:       <div style={{ fontFamily: 'var(--do-font-heading)', fontWeight: 'var(--do-weight-extrabold)', fontSize: 'clamp(2rem,4vw,2.75rem)', color: 'var(--do-amber)', lineHeight: 1 }}>9</div>
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git grep -n "nine\|9 supplier" -- app/problems/data-scattered/page.tsx app/transform/page.tsx app/problems/erp-implementation-failure/page.tsx
+(no output)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git grep -nE "Khaos|164,752|127,135|11,064|77%" -- app ':!app/clients' ':!app/case-studies'
+(no output)
+[0m
+All Khaos, old numbers, and 77% are gone. One "nine supplier feeds" remains in schoolwear (not in my edit scope). Let me commit.
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git add -A && git commit -m "fix(site): 23 Sep figures, remove Khaos (CR-WEB-050)"
+warning: in the working copy of 'app/problems/data-scattered/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/erp-implementation-failure/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/transform/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-briefs/cr-web-050.md', LF will be replaced by CRLF the next time Git touches it
+[cr-web-site-figures 4292b30] fix(site): 23 Sep figures, remove Khaos (CR-WEB-050)
+ 9 files changed, 100 insertions(+), 47 deletions(-)
+ create mode 100644 .context/lane-briefs/cr-web-050.md
+[0m
+Now the lane reports.
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git log -1 --format="%H %s"
+4292b3033baed5aaf3a86ee8c645ecf79fe4283b fix(site): 23 Sep figures, remove Khaos (CR-WEB-050)
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && npx tsc --noEmit 2>&1 | head -20
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && npx tsc --noEmit 2>&1 | Select-Object -First 30
+(no output)
+[0m
+tsc clean. Let me also re-run the escape grep for the report.
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git grep -cE "Khaos|164,752|127,135|11,064|77%|nine supplier feeds|9 supplier feeds" -- app ':!app/clients' ':!app/case-studies' 2>&1
+app/sectors/schoolwear/page.tsx:1
+[0m
+Now let me write the lane reports.
+[0m$ [0mmkdir -p "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\.context\lane-reports"
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\cr-web-site-figures\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-cr-web-050-site-figures.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-cr-web-050-site-figures.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd "D:\apps\worktrees\decoded-ops-website\cr-web-site-figures" && git add -A && git commit -m "chore: lane report for CR-WEB-050"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-cr-web-050-site-figures.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-cr-web-050-site-figures.json', LF will be replaced by CRLF the next time Git touches it
+[cr-web-site-figures 677c7f2] chore: lane report for CR-WEB-050
+ 2 files changed, 29 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-cr-web-050-site-figures.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-cr-web-050-site-figures.json
+[0m
+Done. Two commits on `cr-web-site-figures`:
+
+1. **`4292b30`** — `fix(site): 23 Sep figures, remove Khaos (CR-WEB-050)` — 8 files changed, all numbered edits applied
+2. **`677c7f2`** — `chore: lane report for CR-WEB-050` — result JSON + notes
+
+**tsc**: clean. **Escape grep**: 1 hit — `schoolwear/page.tsx:154` has "nine supplier feeds" but was not in the brief's edit list.

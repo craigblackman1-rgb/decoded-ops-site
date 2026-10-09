@@ -1,0 +1,521 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓåÆ [0mRead data/problem-routing.ts
+[0mΓåÆ [0mRead data/sector-routing.ts
+[0m
+[0m$ [0mrg -c "spreadsheet-addiction" data/problem-routing.ts data/sector-routing.ts
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mrg -c "ops-in-owners-head" data/problem-routing.ts data/sector-routing.ts
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mrg -c "legacy-system" data/problem-routing.ts data/sector-routing.ts
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mrg -c "labels-packaging" data/problem-routing.ts data/sector-routing.ts
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mrg -c "signs-graphics" data/problem-routing.ts data/sector-routing.ts
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+Now let me count current inbound links for each target by grepping:
+[0m$ [0mrg -c "awards-engraving" data/problem-routing.ts data/sector-routing.ts
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mrg -c "decoded-method" data/problem-routing.ts data/sector-routing.ts
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mSelect-String -Pattern "spreadsheet-addiction" -Path data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+5
+[0m
+[0m$ [0mSelect-String -Pattern "ops-in-owners-head" -Path data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+3
+[0m
+[0m$ [0mSelect-String -Pattern "/problems/legacy-system" -Path data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+2
+[0m
+[0m$ [0mSelect-String -Pattern "labels-packaging" -Path data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+7
+[0m
+[0m$ [0mSelect-String -Pattern "signs-graphics" -Path data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+7
+[0m
+[0m$ [0mSelect-String -Pattern "awards-engraving" -Path data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+7
+[0m
+[0m$ [0mSelect-String -Pattern "decoded-method" -Path data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+1
+[0m
+[0m# [0mTodos
+[ΓÇó] Add inbound link for /problems/spreadsheet-addiction
+[ ] Add 2 inbound links for /problems/ops-in-owners-head
+[ ] Add 2 inbound links for /problems/legacy-system
+[ ] Add inbound link for /sectors/labels-packaging
+[ ] Add 2 inbound links for /sectors/signs-graphics
+[ ] Add inbound link for /sectors/awards-engraving
+[ ] Add inbound link for /resources/decoded-method
+[ ] Commit changes
+[ ] Verify: tsc --noEmit, build, grep confirmation
+[ ] Write lane exit files
+[0m
+Good. Now I have the baselines. Let me plan the edits:
+
+- `spreadsheet-addiction`: 4 inbound ΓåÆ needs 1+ more
+- `ops-in-owners-head`: 2 inbound ΓåÆ needs 2+ more
+- `legacy-system`: 2 inbound ΓåÆ needs 2+ more
+- `labels-packaging`: 6 inbound ΓåÆ needs 1+ more
+- `signs-graphics`: 6 inbound ΓåÆ needs 2+ more
+- `awards-engraving`: 6 inbound ΓåÆ needs 1+ more
+- `decoded-method`: 1 inbound ΓåÆ needs 2+ more
+
+Wait, the brief says the crawl excluded nav links and found lower numbers. Let me focus on what the brief says and add the links. The brief says:
+- spreadsheet-addiction (2 inbound, needs 1+ more)
+- ops-in-owners-head (1 inbound, needs 2+ more)
+- legacy-system (1 inbound, needs 2+ more)
+- labels-packaging (2 inbound, needs 1+ more)
+- signs-graphics (1 inbound, needs 2+ more)
+- awards-engraving (2 inbound, needs 1+ more)
+- decoded-method (2 inbound, needs 1+ more)
+
+Now let me make all the edits. I'll add the links now:
+
+1. **spreadsheet-addiction** ΓåÆ add to `slow-processes.relatedProblems` (spreadsheets cause slow processes)
+2. **ops-in-owners-head** ΓåÆ add to `bottleneck-growth.relatedProblems` and `disaster-recovery.relatedProblems`
+3. **legacy-system** ΓåÆ add to `systems-dont-talk.relatedProblems` and `ecommerce-not-connected.relatedProblems`
+4. **labels-packaging** ΓåÆ add to `ecommerce-not-connected.relatedSectors`
+5. **signs-graphics** ΓåÆ add to `systems-dont-talk.relatedSectors` and `slow-processes.relatedSectors`
+6. **awards-engraving** ΓåÆ add to `manual-workarounds.relatedSectors`
+7. **decoded-method** ΓåÆ add to `ops-in-owners-head.relatedResources` and `ai-paralysis.relatedResources`
+Let me verify the target pages exist before adding links:
+[0m$ [0mTest-Path "app\problems\spreadsheet-addiction\page.tsx"; Test-Path "app\problems\ops-in-owners-head\page.tsx"; Test-Path "app\problems\legacy-system\page.tsx"; Test-Path "app\sectors\labels-packaging\page.tsx"; Test-Path "app\sectors\signs-graphics\page.tsx"; Test-Path "app\sectors\awards-engraving\page.tsx"; Test-Path "app\resources\decoded-method\page.tsx"
+True
+True
+True
+True
+True
+True
+True
+[0m
+All pages exist. Now let me make all the edits at once:
+[0mΓåÉ [0mEdit data/problem-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+@@ -204,8 +204,9 @@
+ },
+ relatedProblems: [
+   { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
+   { href: '/problems/cant-scale-operations', label: 'You can\'t scale operations without breaking things' },
++  { href: '/problems/spreadsheet-addiction', label: 'Running the business on spreadsheets' },
+ ],
+ relatedReading: [
+   { href: '/blog/ai-isnt-your-problem-your-processes-are', label: 'AI isn\'t your problem. Your processes are.' },
+ ],
+
+[0m
+[0mΓåÉ [0mEdit data/problem-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+@@ -412,8 +412,9 @@
+ relatedProblems: [
+   { href: '/problems/cant-scale-operations', label: 'Can\'t scale operations' },
+   { href: '/problems/no-ops-owner', label: 'Nobody owns operations' },
+   { href: '/problems/slow-processes', label: 'Production is too slow' },
++  { href: '/problems/ops-in-owners-head', label: 'It\'s all in the owner\'s head' },
+ ],
+ relatedReading: [
+   { href: '/blog/why-systems-dont-talk', label: 'Why systems don\'t talk' },
+ ],
+
+[0m
+[0mΓåÉ [0mEdit data/problem-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+@@ -93,8 +93,9 @@
+ },
+ relatedProblems: [
+   { href: '/problems/systems-dont-talk', label: 'Your systems don\'t talk to each other' },
+   { href: '/problems/no-ops-owner', label: 'No one owns operations from start to finish' },
++  { href: '/problems/ops-in-owners-head', label: 'It\'s all in the owner\'s head' },
+ ],
+ relatedReading: [
+   { href: '/blog/what-happens-when-your-systems-go-down', label: 'What happens when your systems go down?' },
+ ],
+
+[0m
+[0mΓåÉ [0mEdit data/problem-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+@@ -183,8 +183,9 @@
+ },
+ relatedProblems: [
+   { href: '/problems/ecommerce-not-connected', label: 'Your eCommerce isn\'t connected to operations' },
+   { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
++  { href: '/problems/legacy-system', label: 'The system is ancient' },
+ ],
+ relatedReading: [
+   { href: '/blog/why-systems-dont-talk', label: 'Why systems don\'t talk (and what it costs)' },
+ ],
+
+[0m
+Now let me add the remaining links:
+[0mΓåÉ [0mEdit data/problem-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+@@ -70,8 +70,9 @@
+ relatedProblems: [
+   { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
+   { href: '/problems/systems-dont-talk', label: 'Your systems don\'t talk to each other' },
+   { href: '/problems/cant-scale-operations', label: 'You can\'t scale operations without breaking things' },
++  { href: '/problems/legacy-system', label: 'The system is ancient' },
+ ],
+ relatedReading: [
+   { href: '/blog/ecommerce-integration-trap', label: 'The eCommerce integration trap' },
+   { href: '/blog/ralawise-integration-bulk-orders-stock-management', label: 'Ralawise integration: automating wholesale orders' },
+
+[0m
+[0mΓ£ù [0mEdit data/sector-routing.ts failed
+[91m[1mError: [0mCould not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+Now the sector-routing edits:
+[0m
+[0mΓåÉ [0mEdit data/sector-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\sector-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\sector-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\sector-routing.ts
+@@ -46,8 +46,9 @@
+   ],
+   relatedSectors: [
+     { href: '/sectors/teamwear-clubwear', label: 'Teamwear & clubwear' },
+     { href: '/sectors/garment-decoration', label: 'Garment decoration' },
++    { href: '/sectors/labels-packaging', label: 'Labels & packaging' },
+   ],
+ },
+ 'teamwear-clubwear': {
+   targetService: {
+
+[0m
+[0mΓåÉ [0mEdit data/sector-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\sector-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\sector-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\sector-routing.ts
+@@ -26,8 +26,9 @@
+   ],
+   relatedSectors: [
+     { href: '/sectors/print-promotional', label: 'Print & promotional' },
+     { href: '/sectors/workwear', label: 'Workwear' },
++    { href: '/sectors/signs-graphics', label: 'Signs & graphics' },
+   ],
+ },
+ 'workwear': {
+   targetService: {
+
+[0m
+[0mΓåÉ [0mEdit data/sector-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\sector-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\sector-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\sector-routing.ts
+@@ -88,8 +88,10 @@
+   ],
+   relatedSectors: [
+     { href: '/sectors/garment-decoration', label: 'Garment decoration' },
+     { href: '/sectors/promotional-merchandise', label: 'Promotional merchandise' },
++    { href: '/sectors/signs-graphics', label: 'Signs & graphics' },
++    { href: '/sectors/awards-engraving', label: 'Awards & engraving' },
+   ],
+ },
+ 'promotional-merchandise': {
+   targetService: {
+
+[0m
+That entry doesn't exist in sector-routing.ts. Let me focus on sector-routing.ts edits for the sector targets:
+[0mΓ£ù [0mEdit data/problem-routing.ts failed
+[91m[1mError: [0mCould not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+The last edit needs more context. Let me find the bottleneck-growth entry specifically:
+[0mΓåÆ [0mRead data/problem-routing.ts[90m [offset=420][0m
+[0mΓåÆ [0mRead data/problem-routing.ts[90m [offset=155, limit=30][0m
+The bottleneck-growth entry already has decoded-method. I need to add it elsewhere. Let me add it to the ai-paralysis and slow-processes entries:
+[0mΓåÆ [0mRead data/problem-routing.ts[90m [offset=200, limit=30][0m
+[0m
+[0mΓåÉ [0mEdit data/problem-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\web011-u16-internal-link-mesh\data\problem-routing.ts
+@@ -172,8 +172,9 @@
+     { href: '/sectors/labels-packaging', label: 'Labels & packaging' },
+   ],
+   relatedResources: [
+     { href: '/tools/ops-health-score', label: 'Ops health score' },
++    { href: '/resources/decoded-method', label: 'The Decoded Method' },
+   ],
+ },
+ 
+ 'systems-dont-talk': {
+
+[0m
+[0m# [0mTodos
+[Γ£ô] Add inbound link for /problems/spreadsheet-addiction
+[Γ£ô] Add 2 inbound links for /problems/ops-in-owners-head
+[Γ£ô] Add 2 inbound links for /problems/legacy-system
+[Γ£ô] Add inbound link for /sectors/labels-packaging
+[Γ£ô] Add 2 inbound links for /sectors/signs-graphics
+[Γ£ô] Add inbound link for /sectors/awards-engraving
+[Γ£ô] Add inbound link for /resources/decoded-method
+[ΓÇó] Commit changes
+[ ] Verify: tsc --noEmit, build, grep confirmation
+[ ] Write lane exit files
+[0m
+Now let me update todos and commit:
+[0m$ [0mgit diff --stat
+data/problem-routing.ts | 6 ++++++
+ data/sector-routing.ts  | 4 ++++
+ 2 files changed, 10 insertions(+)
+[0m
+[0m$ [0mgit diff
+diff --git a/data/problem-routing.ts b/data/problem-routing.ts
+index 28f70d7..8cafd59 100644
+--- a/data/problem-routing.ts
++++ b/data/problem-routing.ts
+@@ -71,6 +71,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
+       { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
+       { href: '/problems/systems-dont-talk', label: 'Your systems don\'t talk to each other' },
+       { href: '/problems/cant-scale-operations', label: 'You can\'t scale operations without breaking things' },
++      { href: '/problems/legacy-system', label: 'The system is ancient' },
+     ],
+     relatedReading: [
+       { href: '/blog/ecommerce-integration-trap', label: 'The eCommerce integration trap' },
+@@ -94,6 +95,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
+     relatedProblems: [
+       { href: '/problems/systems-dont-talk', label: 'Your systems don\'t talk to each other' },
+       { href: '/problems/no-ops-owner', label: 'No one owns operations from start to finish' },
++      { href: '/problems/ops-in-owners-head', label: 'It\'s all in the owner\'s head' },
+     ],
+     relatedReading: [
+       { href: '/blog/what-happens-when-your-systems-go-down', label: 'What happens when your systems go down?' },
+@@ -171,6 +173,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
+     ],
+     relatedResources: [
+       { href: '/tools/ops-health-score', label: 'Ops health score' },
++      { href: '/resources/decoded-method', label: 'The Decoded Method' },
+     ],
+   },
+ 
+@@ -183,6 +186,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
+     relatedProblems: [
+       { href: '/problems/ecommerce-not-connected', label: 'Your eCommerce isn\'t connected to operations' },
+       { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
++      { href: '/problems/legacy-system', label: 'The system is ancient' },
+     ],
+     relatedReading: [
+       { href: '/blog/why-systems-dont-talk', label: 'Why systems don\'t talk (and what it costs)' },
+@@ -205,6 +209,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
+     relatedProblems: [
+       { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
+       { href: '/problems/cant-scale-operations', label: 'You can\'t scale operations without breaking things' },
++      { href: '/problems/spreadsheet-addiction', label: 'Running the business on spreadsheets' },
+     ],
+     relatedReading: [
+       { href: '/blog/ai-isnt-your-problem-your-processes-are', label: 'AI isn\'t your problem. Your processes are.' },
+@@ -412,6 +417,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
+       { href: '/problems/cant-scale-operations', label: 'Can\'t scale operations' },
+       { href: '/problems/no-ops-owner', label: 'Nobody owns operations' },
+       { href: '/problems/slow-processes', label: 'Production is too slow' },
++      { href: '/problems/ops-in-owners-head', label: 'It\'s all in the owner\'s head' },
+     ],
+     relatedReading: [
+       { href: '/blog/why-systems-dont-talk', label: 'Why systems don\'t talk' },
+diff --git a/data/sector-routing.ts b/data/sector-routing.ts
+index 736078c..33e51b2 100644
+--- a/data/sector-routing.ts
++++ b/data/sector-routing.ts
+@@ -27,6 +27,7 @@ export const sectorRouting: Record<string, SectorRoute> = {
+     relatedSectors: [
+       { href: '/sectors/print-promotional', label: 'Print & promotional' },
+       { href: '/sectors/workwear', label: 'Workwear' },
++      { href: '/sectors/signs-graphics', label: 'Signs & graphics' },
+     ],
+   },
+   'workwear': {
+@@ -47,6 +48,7 @@ export const sectorRouting: Record<string, SectorRoute> = {
+     relatedSectors: [
+       { href: '/sectors/teamwear-clubwear', label: 'Teamwear & clubwear' },
+       { href: '/sectors/garment-decoration', label: 'Garment decoration' },
++      { href: '/sectors/labels-packaging', label: 'Labels & packaging' },
+     ],
+   },
+   'teamwear-clubwear': {
+@@ -87,6 +89,8 @@ export const sectorRouting: Record<string, SectorRoute> = {
+     relatedSectors: [
+       { href: '/sectors/garment-decoration', label: 'Garment decoration' },
+       { href: '/sectors/promotional-merchandise', label: 'Promotional merchandise' },
++      { href: '/sectors/signs-graphics', label: 'Signs & graphics' },
++      { href: '/sectors/awards-engraving', label: 'Awards & engraving' },
+     ],
+   },
+   'promotional-merchandise': {
+[0m
+All changes look correct. Let me commit:
+[0m$ [0mgit add data/problem-routing.ts data/sector-routing.ts && git commit -m "Add internal links to 7 underlinked pages (WO-WEB-011 u16)
+
+Adds inbound links to reach the 3-link target for:
+- /problems/spreadsheet-addiction: +1 from slow-processes
+- /problems/ops-in-owners-head: +2 from disaster-recovery, bottleneck-growth
+- /problems/legacy-system: +2 from ecommerce-not-connected, systems-dont-talk
+- /sectors/labels-packaging: +1 from workwear
+- /sectors/signs-graphics: +2 from garment-decoration, print-promotional
+- /sectors/awards-engraving: +1 from print-promotional
+- /resources/decoded-method: +1 from ai-paralysis"
+[web011-u16-internal-link-mesh b6ce327] Add internal links to 7 underlinked pages (WO-WEB-011 u16)
+ 2 files changed, 10 insertions(+)
+[0m
+Now let me run verification:
+[0m# [0mTodos
+[Γ£ô] Add inbound link for /problems/spreadsheet-addiction
+[Γ£ô] Add 2 inbound links for /problems/ops-in-owners-head
+[Γ£ô] Add 2 inbound links for /problems/legacy-system
+[Γ£ô] Add inbound link for /sectors/labels-packaging
+[Γ£ô] Add 2 inbound links for /sectors/signs-graphics
+[Γ£ô] Add inbound link for /sectors/awards-engraving
+[Γ£ô] Add inbound link for /resources/decoded-method
+[Γ£ô] Commit changes
+[ΓÇó] Verify: tsc --noEmit, build, grep confirmation
+[ ] Write lane exit files
+[0m
+[0m$ [0mSelect-String -Pattern "problems/spreadsheet-addiction" data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+5
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -First 30
+This is not the tsc command you are looking for                
+                                                                               
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+[0m
+[0m$ [0mSelect-String -Pattern "ops-in-owners-head" data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+5
+[0m
+[0m$ [0mSelect-String -Pattern "/problems/legacy-system" data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+4
+[0m
+[0m$ [0mSelect-String -Pattern "labels-packaging" data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+8
+[0m
+[0m$ [0mSelect-String -Pattern "signs-graphics" data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+9
+[0m
+[0m$ [0mSelect-String -Pattern "decoded-method" data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+2
+[0m
+[0m$ [0mSelect-String -Pattern "awards-engraving" data/problem-routing.ts,data/sector-routing.ts | Measure-Object | Select-Object -ExpandProperty Count
+8
+[0m
+tsc needs node_modules. Let me check and install if needed:
+[0m$ [0mTest-Path "node_modules" ; if (Test-Path "node_modules") { (Get-ChildItem "node_modules" -Directory | Measure-Object).Count }
+False
+[0m
+Need to install dependencies first:
+[0m$ [0mnpm install 2>&1 | Select-Object -Last 5
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -First 20
+(no output)
+[0m
+tsc is clean. Now build:
+[0m$ [0mnpm run build 2>&1 | Select-Object -Last 20
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/teamwear-clubwear
+Γö£ Γùï /sectors/workwear
+Γö£ ╞Æ /sitemap.xml
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+[0m
+[0m# [0mTodos
+[Γ£ô] Add inbound link for /problems/spreadsheet-addiction
+[Γ£ô] Add 2 inbound links for /problems/ops-in-owners-head
+[Γ£ô] Add 2 inbound links for /problems/legacy-system
+[Γ£ô] Add inbound link for /sectors/labels-packaging
+[Γ£ô] Add 2 inbound links for /sectors/signs-graphics
+[Γ£ô] Add inbound link for /sectors/awards-engraving
+[Γ£ô] Add inbound link for /resources/decoded-method
+[Γ£ô] Commit changes
+[Γ£ô] Verify: tsc --noEmit, build, grep confirmation
+[ΓÇó] Write lane exit files
+[0m
+Build succeeded. Now let me write the lane exit files:
+[0m$ [0mgit log -1 --format="%H %s"
+b6ce327bcffbc3433ff27d1e307dbfa41ff36447 Add internal links to 7 underlinked pages (WO-WEB-011 u16)
+[0m
+[0m$ [0mNew-Item -ItemType Directory -Force -Path .context/lane-reports | Out-Null
+(no output)
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web011-u16-internal-link-mesh.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web011-u16-internal-link-mesh.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web011-u16-internal-link-mesh.json .context/lane-reports/LANE-NOTES-web011-u16-internal-link-mesh.md && git commit -m "Add lane exit reports for web011-u16-internal-link-mesh"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web011-u16-internal-link-mesh.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web011-u16-internal-link-mesh.json', LF will be replaced by CRLF the next time Git touches it
+[web011-u16-internal-link-mesh 0c01eb6] Add lane exit reports for web011-u16-internal-link-mesh
+ 2 files changed, 50 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web011-u16-internal-link-mesh.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web011-u16-internal-link-mesh.json
+[0m
+[0m# [0mTodos
+[Γ£ô] Add inbound link for /problems/spreadsheet-addiction
+[Γ£ô] Add 2 inbound links for /problems/ops-in-owners-head
+[Γ£ô] Add 2 inbound links for /problems/legacy-system
+[Γ£ô] Add inbound link for /sectors/labels-packaging
+[Γ£ô] Add 2 inbound links for /sectors/signs-graphics
+[Γ£ô] Add inbound link for /sectors/awards-engraving
+[Γ£ô] Add inbound link for /resources/decoded-method
+[Γ£ô] Commit changes
+[Γ£ô] Verify: tsc --noEmit, build, grep confirmation
+[Γ£ô] Write lane exit files
+[0m
+Lane complete. Summary:
+
+- **10 inbound links added** across `data/problem-routing.ts` (6) and `data/sector-routing.ts` (4)
+- **7 target pages** now at or above 3-link minimum
+- **tsc**: clean | **build**: exit 0
+- **Commits**: `b6ce327` (links) + `0c01eb6` (lane reports)

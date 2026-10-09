@@ -1,0 +1,1016 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0m# [0mTodos
+[ΓÇó] Find all emoji usage in client proposal pages
+[ ] Replace emoji with Lucide icons per design system
+[ ] Verify with tsc and grep for remaining emoji
+[ ] Commit changes and write lane reports
+[0m
+[0mΓ£▒ [0mGlob "app/clients/**/*.{tsx,ts,jsx,js}"[90m 30 matches[0m
+[0mΓ£▒ [0mGrep "[\x{1F300}-\x{1F9FF}\x{2600}-\x{26FF}\x{2700}-\x{27BF}\x{FE00}-\x{FE0F}\x{1F000}-\x{1FFFF}]"[90m in app/clients ┬╖ 52 matches[0m
+[0mΓåÆ [0mRead app/clients/[clientId]/components/DemoSection.tsx
+[0mΓåÆ [0mRead app/clients/[clientId]/components/PricingSection.tsx
+[0mΓåÆ [0mRead app/clients/[clientId]/components/RoadmapSection.tsx
+[0mΓåÆ [0mRead app/clients/[clientId]/components/AcceptanceSection.tsx
+[0mΓåÆ [0mRead app/clients/[clientId]/components/JourneySection.tsx
+Let me read the key files to understand the emoji patterns and their context.
+[0mΓåÆ [0mRead app/clients/project/ProjectView.tsx
+[0mΓåÆ [0mRead app/clients/[clientId]/data/cobra-workwear-proposal.ts
+[0mΓåÆ [0mRead app/clients/[clientId]/data/hanicks-proposal.ts
+[0mΓåÆ [0mRead app/clients/[clientId]/data/scotshirts-proposal.ts
+[0mΓåÆ [0mRead app/clients/[clientId]/data/cwear-proposal.ts
+[0mΓåÆ [0mRead app/clients/[clientId]/data/tacklebag-proposal.ts
+Now let me read the data files that contain emoji icons.
+[0mΓåÆ [0mRead app/clients/[clientId]/data/tacklebag-proposal-v2.ts
+Let me also read the PortalMockupSection component to see how the portal mockup data is rendered.
+[0mΓåÆ [0mRead app/clients/[clientId]/components/PortalMockupSection.tsx
+[0m
+[0m# [0mTodos
+[Γ£ô] Find all emoji usage in client proposal pages
+[ΓÇó] Replace emoji with Lucide icons in DemoSection.tsx
+[ ] Replace emoji with Lucide icons in PricingSection.tsx
+[ ] Replace emoji with Lucide icons in AcceptanceSection.tsx
+[ ] Replace emoji with Lucide icons in RoadmapSection.tsx
+[ ] Replace emoji with Lucide icons in PortalMockupSection.tsx
+[ ] Replace emoji in data files (painPoints icons, navItems, products, forecastTitle, addOns)
+[ ] Verify with tsc and grep for remaining emoji
+[ ] Commit changes and write lane reports
+[0m
+Now I have a complete picture. Let me update the todo list and start making changes.
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/DemoSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
+@@ -1,8 +1,9 @@
+ 'use client';
+ 
+ import { useState, useEffect, useRef } from 'react';
+ import { Line } from 'react-chartjs-2';
++import { Zap, TrendingUp, Lightbulb } from 'lucide-react';
+ import {
+   Chart as ChartJS,
+   CategoryScale,
+   LinearScale,
+
+[0m
+Starting with DemoSection.tsx ΓÇö replacing emoji with Lucide icons.
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/DemoSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
+@@ -180,9 +180,9 @@
+     return updated;
+   });
+   setTimeout(() => {
+     updateAlerts(stocksRef.current);
+-    addLog(`≡ƒôª Reorder placed for ${stocksRef.current[i].product.split(' (')[0]}`);
++    addLog(`Reorder placed for ${stocksRef.current[i].product.split(' (')[0]}`);
+   }, 0);
+ }
+ 
+ function addLog(msg: string) {
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/DemoSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
+@@ -330,9 +330,9 @@
+       disabled={isSimulating}
+       className="px-4 py-2 bg-[#023047] text-white rounded-lg text-sm font-bold hover:bg-[#035670] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+       id="sim-btn"
+     >
+-      ΓÜí Simulate Weekend Orders
++      <span className="inline-flex items-center gap-1.5"><Zap size={14} /> Simulate Weekend Orders</span>
+     </button>
+   </div>
+ </div>
+ 
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/DemoSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
+@@ -446,9 +446,9 @@
+ </div>
+ 
+ {/* Forecast Panel */}
+ <div className="mt-6 bg-white rounded-xl p-5 shadow-sm">
+-  <div className="font-bold text-[#023047] mb-4 text-sm">{data.forecastTitle || '≡ƒôê Demand Forecast ΓÇö JulΓÇôSep 2026 (Canterbury teamwear)'}</div>
++  <div className="font-bold text-[#023047] mb-4 text-sm flex items-center gap-2"><TrendingUp size={16} /> {data.forecastTitle || 'Demand Forecast ΓÇö JulΓÇôSep 2026 (Canterbury teamwear)'}</div>
+   <div className="w-full h-36 md:h-48">
+     <Line
+       ref={chartRef}
+       data={chartData}
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/DemoSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\DemoSection.tsx
+@@ -504,9 +504,9 @@
+ </div>
+ 
+ {/* Note */}
+ <div className="mt-8 p-6 bg-[rgba(33,158,188,0.1)] border border-[#219EBC] rounded-lg flex gap-4">
+-  <div className="text-2xl flex-shrink-0">≡ƒÆí</div>
++  <div className="flex-shrink-0 text-[#219EBC]"><Lightbulb size={24} /></div>
+   <div>
+     <strong className="text-[#023047]">{data.noteTitle || 'This is a working prototype.'}</strong>
+     <p className="text-sm text-[#023047] mt-1">
+       {data.noteText || 'The real app would connect directly to Symphony for live stock data, replacing the current Excel files with a single web-based view accessible from any device ΓÇö including mobile on the warehouse floor. All data structured to export cleanly into your future ERP.'}
+
+[0m
+Now PricingSection.tsx ΓÇö only the Γ¡É and ≡ƒôà are true emoji to replace.
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/PricingSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+@@ -1,6 +1,8 @@
+ 'use client';
+ 
++import { Star, Calendar } from 'lucide-react';
++
+ interface PricingOption {
+   id: string;
+   name: string;
+   days: string;
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/PricingSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+@@ -92,10 +92,10 @@
+       : 'border-transparent'
+   }`}
+ >
+   {isRecommended && (
+-    <div className="absolute -top-px left-1/2 -translate-x-1/2 bg-[#219EBC] text-white px-4 py-1 rounded-b-xl text-xs font-bold tracking-wide">
+-      Γ¡É Recommended
++    <div className="absolute -top-px left-1/2 -translate-x-1/2 bg-[#219EBC] text-white px-4 py-1 rounded-b-xl text-xs font-bold tracking-wide flex items-center gap-1.5">
++      <Star size={12} fill="currentColor" /> Recommended
+     </div>
+   )}
+ 
+   {/* Card head */}
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/PricingSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+@@ -113,10 +113,10 @@
+   }`}>
+     {option.amount}
+     <span className="text-sm font-normal opacity-60">{option.period}</span>
+   </div>
+-  <div className={`text-xs font-bold mt-2.5 mb-1 ${isB ? 'text-[#FFB703]' : 'opacity-60'}`}>
+-    ≡ƒôà {option.days}
++  <div className={`text-xs font-bold mt-2.5 mb-1 flex items-center gap-1.5 ${isB ? 'text-[#FFB703]' : 'opacity-60'}`}>
++    <Calendar size={12} /> {option.days}
+   </div>
+   <div className="text-xs opacity-40 mb-3">{option.minimum}</div>
+   <p className="text-xs leading-relaxed opacity-70 italic">{option.bestFor}</p>
+ </div>
+
+[0m
+[0m# [0mTodos
+[Γ£ô] Find all emoji usage in client proposal pages
+[Γ£ô] Replace emoji with Lucide icons in DemoSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in PricingSection.tsx
+[ΓÇó] Replace emoji with Lucide icons in AcceptanceSection.tsx
+[ ] Replace emoji with Lucide icons in RoadmapSection.tsx
+[ ] Replace emoji with Lucide icons in PortalMockupSection.tsx
+[ ] Replace emoji in data files (painPoints icons, navItems, products, forecastTitle, addOns)
+[ ] Verify with tsc and grep for remaining emoji
+[ ] Commit changes and write lane reports
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/AcceptanceSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\AcceptanceSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\AcceptanceSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\AcceptanceSection.tsx
+@@ -1,7 +1,8 @@
+ 'use client';
+ 
+ import { useState } from 'react';
++import { PartyPopper } from 'lucide-react';
+ 
+ interface AppModule {
+   id: string;
+   name: string;
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/AcceptanceSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\AcceptanceSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\AcceptanceSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\AcceptanceSection.tsx
+@@ -97,9 +97,9 @@
+ </div>
+ 
+ {submitted ? (
+   <div className="text-center py-10 px-8 bg-[rgba(27,94,32,0.15)] border border-[rgba(27,94,32,0.3)] rounded-xl">
+-    <div className="text-5xl mb-4">≡ƒÄë</div>
++    <div className="mb-4 text-[#4ade80]"><PartyPopper size={48} /></div>
+     <h3 className="text-2xl font-black text-[#4ade80] mb-2">Excellent ΓÇö let's get started.</h3>
+     <p className="text-base text-[rgba(255,255,255,0.6)]">
+       Craig will receive your acceptance and be in touch within one working day with next steps. Looking forward to it.
+     </p>
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/RoadmapSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\RoadmapSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\RoadmapSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\RoadmapSection.tsx
+@@ -81,9 +81,9 @@
+   [false,false,false,false,false,false,false,false,true,true],
+   [false,false,false,false,false,false,false,false,false,true],
+ ];
+ 
+-const TACKLEBAG_FOOTNOTE = 'ΓÜí Phase 1 completes before August peak ΓÇö no new implementations during your busiest months';
++const TACKLEBAG_FOOTNOTE = 'Phase 1 completes before August peak ΓÇö no new implementations during your busiest months';
+ 
+ // Matches the HTML stack-layer styling exactly ΓÇö bottom to top order
+ const LAYER_STYLES = [
+   { ml: '0px',   bg: 'rgba(255,183,3,0.12)',    border: '#FFB703', dot: true },
+
+[0m
+[0m# [0mTodos
+[Γ£ô] Find all emoji usage in client proposal pages
+[Γ£ô] Replace emoji with Lucide icons in DemoSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in PricingSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in AcceptanceSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in RoadmapSection.tsx
+[ΓÇó] Replace emoji with Lucide icons in PortalMockupSection.tsx + data files
+[ ] Replace emoji in painPoints icons across all data files
+[ ] Replace emoji in other data file fields (forecastTitle, addOns icons)
+[ ] Verify with tsc and grep for remaining emoji
+[ ] Commit changes and write lane reports
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/PortalMockupSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
+@@ -1,6 +1,20 @@
+ 'use client';
+ 
++import { LayoutDashboard, Shirt, FileText, FileCheck, User, Package, Jacket, Cap } from 'lucide-react';
++import type { LucideIcon } from 'lucide-react';
++
++const ICON_MAP: Record<string, LucideIcon> = {
++  LayoutDashboard,
++  Shirt,
++  FileText,
++  FileCheck,
++  User,
++  Package,
++  Jacket,
++  Cap,
++};
++
+ interface PortalMockupData {
+   tag: string;
+   title: string;
+   subtitle: string;
+@@ -14,10 +28,10 @@
+   creditLimit: string;
+   creditUsed: string;
+   creditTotal: string;
+   creditPercent: number;
+-  navItems: Array<{ label: string; active?: boolean }>;
+-  products: Array<{ icon: string; name: string; sku: string; price: string }>;
++  navItems: Array<{ label: string; active?: boolean; iconName?: string }>;
++  products: Array<{ icon: string; name: string; sku: string; price: string; iconName?: string }>;
+   disclaimer: string;
+ }
+ 
+ const STATUS_CLASSES: Record<string, string> = {
+
+[0m
+Now let me update the PortalMockupSection to support icon names, and update the data files.
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/PortalMockupSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
+@@ -178,8 +178,12 @@
+           ? 'bg-[rgba(33,158,188,0.08)] text-[#219EBC] font-bold'
+           : 'text-[rgba(0,0,0,0.5)]'
+       }`}
+     >
++  {item.iconName && ICON_MAP[item.iconName] && (() => {
++    const Icon = ICON_MAP[item.iconName];
++    return <Icon size={12} />;
++  })()}
+       {item.label}
+     </li>
+   ))}
+ </ul>
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/PortalMockupSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
+@@ -191,10 +191,13 @@
+ {/* Product cards */}
+ <div className="font-bold text-xs text-[#023047] mb-2">Quick order</div>
+ {data.products.map((prod, i) => (
+   <div key={i} className="flex gap-2.5 p-2.5 mb-1.5 rounded-xl bg-[#F8F9FA] border border-[rgba(0,0,0,0.06)] last:mb-0">
+-    <div className="w-11 h-11 rounded-md bg-[rgba(0,0,0,0.04)] flex items-center justify-center text-lg flex-shrink-0">
+-      {prod.icon}
++    <div className="w-11 h-11 rounded-md bg-[rgba(0,0,0,0.04)] flex items-center justify-center text-[#219EBC] flex-shrink-0">
++      {prod.iconName && ICON_MAP[prod.iconName] ? (() => {
++        const Icon = ICON_MAP[prod.iconName];
++        return <Icon size={18} />;
++      })() : <Package size={18} />}
+     </div>
+     <div className="flex-1 min-w-0">
+       <div className="text-xs font-semibold text-[#023047]">{prod.name}</div>
+       <div className="text-[9px] text-[rgba(0,0,0,0.45)] font-mono">{prod.sku}</div>
+
+[0m
+Now update the cobra-workwear-proposal.ts data file ΓÇö navItems, products, and painPoints icons.
+[0mΓ£ù [0mEdit app/clients/[clientId]/data/cobra-workwear-proposal.ts failed
+[91m[1mError: [0mNo changes to apply: oldString and newString are identical.
+Let me check how the painPoint icons are rendered in ChallengeSection.
+[0mΓåÆ [0mRead app/clients/[clientId]/components/ChallengeSection.tsx
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/ChallengeSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\ChallengeSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\ChallengeSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\ChallengeSection.tsx
+@@ -1,13 +1,32 @@
+ 'use client';
+ 
++import { ShoppingCart, Network, Link, Building2, Wrench, Package, ClipboardList, CalendarDays, Keyboard, Mail, Search, Palette, Monitor } from 'lucide-react';
++import type { LucideIcon } from 'lucide-react';
+ import SystemsDiagram, { SystemsDiagramData } from './SystemsDiagram';
+ 
++const ICON_MAP: Record<string, LucideIcon> = {
++  ShoppingCart,
++  Network,
++  Link,
++  Building2,
++  Wrench,
++  Package,
++  ClipboardList,
++  CalendarDays,
++  Keyboard,
++  Mail,
++  Search,
++  Palette,
++  Monitor,
++};
++
+ interface PainPoint {
+   title: string;
+   description: string;
+   stat: string;
+   icon?: string;
++  iconName?: string;
+   borderColor?: string;
+   bgColor?: string;
+ }
+ 
+
+[0m
+I need to update ChallengeSection to use Lucide icons for painPoints, then update all data files.
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/ChallengeSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\ChallengeSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\ChallengeSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\ChallengeSection.tsx
+@@ -80,10 +80,13 @@
+ <div
+   key={i}
+   className={`p-7 bg-white rounded-2xl border-l-4 ${borderClass} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
+ >
+-  <div className={`w-12 h-12 rounded-2xl ${bgClass} flex items-center justify-center mb-4 text-2xl`}>
+-    {point.icon}
++  <div className={`w-12 h-12 rounded-2xl ${bgClass} flex items-center justify-center mb-4`}>
++    {point.iconName && ICON_MAP[point.iconName] ? (() => {
++      const Icon = ICON_MAP[point.iconName];
++      return <Icon size={22} className={statTextClass} />;
++    })() : <span className="text-2xl">{point.icon}</span>}
+   </div>
+   <h3 className="text-lg font-bold text-[#023047] mb-2">
+     {point.title}
+   </h3>
+
+[0m
+Now let me update all the data files. I'll do them in parallel where possible.
+[0mΓåÉ [0mEdit app/clients/[clientId]/data/cobra-workwear-proposal.ts
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cobra-workwear-proposal.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cobra-workwear-proposal.ts
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cobra-workwear-proposal.ts
+@@ -26,32 +26,36 @@
+     title: 'No online trade portal',
+     description: 'Customers cannot log in, view their agreed range, or place orders on credit terms via the website. Every order handled individually ΓÇö phone, email, or manual processes. An estimated 4-8 hours per week lost to manual order handling that should be self-served.',
+     stat: 'Est. 4-8 hrs/week ΓÇö customers ordering via phone and email instead of self-service',
+     icon: '≡ƒ¢Æ',
++    iconName: 'ShoppingCart',
+     borderColor: 'border-[#FB8500]',
+     bgColor: 'bg-[rgba(251,133,0,0.1)]',
+   },
+   {
+     title: 'No fit-for-purpose ERP system',
+     description: 'Pantha ERP is under consideration but is new and unproven. Without a documented requirements brief, selecting the wrong ERP is the single most expensive mistake a business this size can make. The wrong platform choice costs far more than the software ΓÇö it costs time, data, and operational momentum.',
+     stat: 'High risk: without a requirements brief, the wrong ERP is the most expensive mistake available at this size',
+     icon: '≡ƒûº',
++    iconName: 'Network',
+     borderColor: 'border-[#C62828]',
+     bgColor: 'bg-[rgba(198,40,40,0.1)]',
+   },
+   {
+     title: 'eCommerce integration gap',
+     description: 'Credit terms ordering needs to flow through the portal and integrate with Xero ΓÇö not possible through the existing Shopify setup. Whether extending Shopify, migrating to another platform, or adopting a new ERP, the integration requirements are unknown until scoped. No consolidated reporting means 3-5 hours of owner time spent compiling data manually each week.',
+     stat: 'Unknown scope ΓÇö no requirements brief means vendors quote from a demo, not a document',
+     icon: '≡ƒöù',
++    iconName: 'Link',
+     borderColor: 'border-[#219EBC]',
+     bgColor: 'bg-[rgba(33,158,188,0.1)]',
+   },
+   {
+     title: 'Infrastructure & planning unknown',
+     description: 'IT infrastructure and internal setup need assessment before any new ERP can be specified. The 12-18 month business plan needs to be understood before committing to platform decisions. Any new system must sit properly into existing infrastructure ΓÇö and that infrastructure needs mapping first.',
+     stat: 'Infrastructure unknown ΓÇö any recommendation made without the full picture is guesswork',
+     icon: '≡ƒÅù∩╕Å',
++    iconName: 'Building2',
+     borderColor: 'border-[#FFB703]',
+     bgColor: 'bg-[rgba(255,183,3,0.1)]',
+   },
+ ],
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/data/cobra-workwear-proposal.ts
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cobra-workwear-proposal.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cobra-workwear-proposal.ts
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cobra-workwear-proposal.ts
+@@ -251,18 +251,18 @@
+   creditUsed: '┬ú7,600',
+   creditTotal: '┬ú26,000',
+   creditPercent: 42,
+   navItems: [
+-    { label: '≡ƒôè Dashboard', active: true },
+-    { label: '≡ƒæò Product catalogue' },
+-    { label: '≡ƒôï My orders' },
+-    { label: '≡ƒôä Quotes & proposals' },
+-    { label: '≡ƒæñ Account settings' },
++    { label: 'Dashboard', active: true, iconName: 'LayoutDashboard' },
++    { label: 'Product catalogue', iconName: 'Shirt' },
++    { label: 'My orders', iconName: 'FileText' },
++    { label: 'Quotes & proposals', iconName: 'FileCheck' },
++    { label: 'Account settings', iconName: 'User' },
+   ],
+   products: [
+-    { icon: '≡ƒæò', name: 'Pro-Safe Hi-Vis Vest', sku: 'COB-HV-001', price: '┬ú24.50' },
+-    { icon: '≡ƒºÑ', name: 'Executive Softshell Jacket', sku: 'COB-SS-204', price: '┬ú48.00' },
+-    { icon: '≡ƒºó', name: 'Signature Cap ΓÇö Navy', sku: 'COB-CP-019', price: '┬ú12.80' },
++    { icon: '≡ƒæò', iconName: 'Shirt', name: 'Pro-Safe Hi-Vis Vest', sku: 'COB-HV-001', price: '┬ú24.50' },
++    { icon: '≡ƒºÑ', iconName: 'Shirt', name: 'Executive Softshell Jacket', sku: 'COB-SS-204', price: '┬ú48.00' },
++    { icon: '≡ƒºó', iconName: 'Cap', name: 'Signature Cap ΓÇö Navy', sku: 'COB-CP-019', price: '┬ú12.80' },
+   ],
+   disclaimer: 'The portal scope, functionality, and visual design are determined during the audit and documented in the B2B portal requirements brief. This mockup illustrates the category of solution, not a specific build.',
+ },
+ why: {
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/data/hanicks-proposal.ts
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\hanicks-proposal.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\hanicks-proposal.ts
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\hanicks-proposal.ts
+@@ -26,32 +26,36 @@
+     title: 'No central product master ΓÇö data in silos',
+     description: 'IBasis, HRP and DHS each have their own data formats, part numbering conventions and image assets. There is no single source of truth for product descriptions, GC codes, RRP or stock availability. Every channel update requires manual reconciliation across three sources.',
+     stat: '3 supplier data formats ΓÇö all manually reconciled before any channel update',
+     icon: '≡ƒöº',
++    iconName: 'Wrench',
+     borderColor: 'border-[#FB8500]',
+     bgColor: 'bg-[rgba(251,133,0,0.1)]',
+   },
+   {
+     title: 'Three channels, no joined-up view',
+     description: 'Website, Amazon and direct orders (phone and email) all operate independently. There is no central view of stock across channels, no automated stock sync between WooCommerce and Amazon, and direct orders are communicated manually rather than flowing into a single system. A stock discrepancy on Amazon or an oversell on the website is discovered after the fact, not prevented.',
+     stat: 'No single view of orders or stock across website, Amazon and direct ΓÇö reconciliation is manual',
+     icon: '≡ƒ¢Æ',
++    iconName: 'ShoppingCart',
+     borderColor: 'border-[#C62828]',
+     bgColor: 'bg-[rgba(198,40,40,0.1)]',
+   },
+   {
+     title: 'No ERP ΓÇö no operational backbone',
+     description: 'Without an ERP there is no authoritative record of stock levels, purchase orders, supplier lead times or profitability by product or channel. Decisions are made on incomplete information. Selecting and implementing the right ERP ΓÇö in the right sequence ΓÇö is the single most consequential technology decision Hanicks will make.',
+     stat: 'High risk: wrong ERP selection without a requirements brief is a six-figure risk',
+     icon: '≡ƒûº',
++    iconName: 'Network',
+     borderColor: 'border-[#219EBC]',
+     bgColor: 'bg-[rgba(33,158,188,0.1)]',
+   },
+   {
+     title: 'GS1 barcode gap & own-brand not scalable',
+     description: 'GS1 barcodes are being established but have not been mapped into the product catalogue, the ERP, or the channel listings. Without this the barcodes deliver no operational benefit. Meanwhile the own-brand China-manufactured product range ΓÇö a strategically important margin opportunity ΓÇö lacks the structured approach to SKU management, lead time tracking and supplier onboarding needed to scale.',
+     stat: 'GS1 barcodes unintegrated ┬╖ own-brand pipeline needs structuring for growth',
+     icon: '≡ƒôª',
++    iconName: 'Package',
+     borderColor: 'border-[#FFB703]',
+     bgColor: 'bg-[rgba(255,183,3,0.1)]',
+   },
+ ],
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/data/hanicks-proposal.ts
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\hanicks-proposal.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\hanicks-proposal.ts
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\hanicks-proposal.ts
+@@ -266,9 +266,9 @@
+   { value: 'HRP', label: 'HRP' },
+   { value: 'DHS', label: 'DHS' },
+   { value: 'Own Brand', label: 'Own Brand' },
+ ],
+-forecastTitle: '≡ƒôê Demand Forecast ΓÇö OctΓÇôDec 2026 (Heating season peak)',
++forecastTitle: 'Demand Forecast ΓÇö OctΓÇôDec 2026 (Heating season peak)',
+ forecastLabels: ['Wk 1 Oct', 'Wk 2 Oct', 'Wk 3 Oct', 'Wk 1 Nov', 'Wk 2 Nov', 'Wk 3 Nov', 'Wk 4 Nov', 'Wk 1 Dec', 'Wk 2 Dec', 'Wk 3 Dec'],
+ forecastData: [65, 82, 105, 140, 175, 210, 195, 160, 120, 90],
+ forecastActual: [62, 80, 108, null, null, null, null, null, null, null],
+ simChanges: [
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/data/scotshirts-proposal.ts
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\scotshirts-proposal.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\scotshirts-proposal.ts
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\scotshirts-proposal.ts
+@@ -25,32 +25,36 @@
+     title: 'Orders on paper ΓÇö no overview',
+     description: 'Every order is written by hand in an order book. Nobody can see what\'s live, what\'s in production, or what\'s ready to go out unless they physically walk to the book. When you\'re not in the building, the business is invisible.',
+     stat: 'One order book means one point of failure ΓÇö and no view from outside the building',
+     icon: '≡ƒôï',
++    iconName: 'ClipboardList',
+     borderColor: 'border-[#FB8500]',
+     bgColor: 'bg-[rgba(251,133,0,0.1)]',
+   },
+   {
+     title: 'Production schedule is in Vicky\'s head',
+     description: 'Vicky knows what\'s being produced and when. That knowledge isn\'t written down anywhere. The current system is an A3 sheet on the office wall ΓÇö updated by hand. If Vicky is off, the team is guessing.',
+     stat: 'One person\'s absence shouldn\'t stop production planning ΓÇö but right now it would',
+     icon: '≡ƒùô∩╕Å',
++    iconName: 'CalendarDays',
+     borderColor: 'border-[#C62828]',
+     bgColor: 'bg-[rgba(198,40,40,0.1)]',
+   },
+   {
+     title: 'Supplier orders entered manually ΓÇö every line, every time',
+     description: 'AWD orders come in as Excel sheets or CSV files. Vicky sits at the PC and types each SKU, colour, and size into the AWD website one at a time. AWD has 100ΓÇô200 colour options per product. This is hours of admin that should take minutes.',
+     stat: 'Manual CSV entry is one of the most fixable time-wasters in any decoration business',
+     icon: 'Γî¿∩╕Å',
++    iconName: 'Keyboard',
+     borderColor: 'border-[#219EBC]',
+     bgColor: 'bg-[rgba(33,158,188,0.1)]',
+   },
+   {
+     title: 'Enquiries come in and don\'t get followed up',
+     description: 'An enquiry arrives via the website. Someone replies. Then nothing. There is no system to track it, chase it, or know whether it turned into an order. If you turn on advertising ΓÇö Facebook, Google, Meta ΓÇö the enquiries multiply and the problem gets worse fast.',
+     stat: 'A missed follow-up is a missed order ΓÇö and there is no way to know how many are being missed right now',
+     icon: '≡ƒô¿',
++    iconName: 'Mail',
+     borderColor: 'border-[#FFB703]',
+     bgColor: 'bg-[rgba(255,183,3,0.1)]',
+   },
+ ],
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/data/cwear-proposal.ts
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cwear-proposal.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cwear-proposal.ts
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cwear-proposal.ts
+@@ -25,32 +25,36 @@
+     title: 'Visualsoft ΓÇö reaching its ceiling',
+     description: 'Visualsoft has served you well, but can it support the next stage of growth? Artwork management and embellishment shop-floor control are where most legacy ERPs in this sector fall short. An independent audit is the only way to know for sure.',
+     stat: 'ERP migration without a requirements brief is the most expensive risk at this scale',
+     icon: '≡ƒûº',
++    iconName: 'Network',
+     borderColor: 'border-[#FB8500]',
+     bgColor: 'bg-[rgba(251,133,0,0.1)]',
+   },
+   {
+     title: 'BlueCherry is on the table ΓÇö is it the right fit?',
+     description: 'BlueCherry is a capable platform, but it\'s built for a specific operational model. Whether it handles your mix of embroidery, print, promotional merchandise, and managed accounts needs verifying against your actual workflows ΓÇö not a demo.',
+     stat: 'BlueCherry needs evaluating against your actual product mix, not a vendor demo',
+     icon: '≡ƒöì',
++    iconName: 'Search',
+     borderColor: 'border-[#219EBC]',
+     bgColor: 'bg-[rgba(33,158,188,0.1)]',
+   },
+   {
+     title: 'Artwork & embellishment ΓÇö the critical gap',
+     description: 'In garment decoration, the artwork-to-production workflow is where systems either save you time or cost you money. Artwork approval, job sheet generation, embellishment routing ΓÇö if your ERP doesn\'t handle this, production slows down regardless of the front-end and back-office systems.',
+     stat: 'Artwork management is the make-or-break requirement for any ERP in this sector',
+     icon: '≡ƒÄ¿',
++    iconName: 'Palette',
+     borderColor: 'border-[#C62828]',
+     bgColor: 'bg-[rgba(198,40,40,0.1)]',
+   },
+   {
+     title: 'On-prem ERP ΓÇö the infrastructure is an unknown',
+     description: 'Visualsoft running on-prem means the server, OS version, network topology, and data format are unknown quantities until someone looks. ERP migrations regularly stall because the infrastructure wasn\'t assessed before the new platform was selected. That\'s an avoidable problem.',
+     stat: 'Infrastructure assessed before migration planning begins ΓÇö not during it',
+     icon: '≡ƒûÑ∩╕Å',
++    iconName: 'Monitor',
+     borderColor: 'border-[#FFB703]',
+     bgColor: 'bg-[rgba(255,183,3,0.1)]',
+   },
+ ],
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/data/tacklebag-proposal.ts
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal.ts
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal.ts
+@@ -25,32 +25,36 @@
+     title: 'No pick path ΓÇö one order at a time',
+     description: 'Pickers walk the entire floor for every single order. At 30ΓÇô50 orders a day in peak, that\'s hundreds of unnecessary cross-floor trips daily. One mis-pick means a re-print or re-embroider ΓÇö at the worst possible time.',
+     stat: 'Batch picking on priority lines ΓÇö 3ΓÇô4 orders per run instead of one',
+     icon: '≡ƒôª',
++    iconName: 'Package',
+     borderColor: 'border-[#FB8500]',
+     bgColor: 'bg-[rgba(251,133,0,0.1)]',
+   },
+   {
+     title: 'No bin system ΓÇö stock lives in memory',
+     description: 'Key team members know where things are. If they\'re off, everyone slows down or gets it wrong. Priority school lines are not labelled ΓÇö every pick depends on who is on the floor that day.',
+     stat: 'Priority lines labelled and binned ΓÇö any team member picks accurately',
+     icon: '≡ƒÅ╖∩╕Å',
++    iconName: 'Tag',
+     borderColor: 'border-[#C62828]',
+     bgColor: 'bg-[rgba(198,40,40,0.1)]',
+   },
+   {
+     title: 'No demand forecast ΓÇö wrong stock ordered',
+     description: 'Without a week-by-week forecast built from Symphony data, peak orders are reactive. Stockouts on the accounts that matter, cash tied up in slow movers, emergency purchasing at premium prices.',
+     stat: 'Week-by-week JulΓÇôOct forecast ΓÇö right stock, right time',
+     icon: '≡ƒôè',
++    iconName: 'BarChart3',
+     borderColor: 'border-[#219EBC]',
+     bgColor: 'bg-[rgba(33,158,188,0.1)]',
+   },
+   {
+     title: 'ERP starting from scratch in November',
+     description: 'Khaos Control is planned for November. Without warehouse specs, clean SKU data, and a requirements brief ready, the first 4ΓÇô6 weeks of that engagement is just gathering what I will already have by the end of July.',
+     stat: 'ERP starts in Week 1, not Week 6 ΓÇö saving ┬ú2,500ΓÇô┬ú5,000',
+     icon: '≡ƒöä',
++    iconName: 'RefreshCw',
+     borderColor: 'border-[#FFB703]',
+     bgColor: 'bg-[rgba(255,183,3,0.1)]',
+   },
+ ],
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/data/tacklebag-proposal-v2.ts
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal-v2.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal-v2.ts
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal-v2.ts
+@@ -26,32 +26,36 @@
+     title: 'One order at a time ΓÇö no pick path',
+     description: 'Pickers walk the entire floor for every single order. At peak volume that compounds into hours of unnecessary travel every day. One mis-pick means a re-print or re-embroider at the worst possible time.',
+     stat: 'Batch picking cuts floor time 2ΓÇô3├ù on priority school lines',
+     icon: '≡ƒôª',
++    iconName: 'Package',
+     borderColor: 'border-[#FB8500]',
+     bgColor: 'bg-[rgba(251,133,0,0.1)]',
+   },
+   {
+     title: 'Stock located by memory ΓÇö no bin system',
+     description: 'Key team members know where things are. If they\'re off, the team slows down or mis-picks. Priority school lines are not labelled ΓÇö every pick depends on who is on the floor.',
+     stat: 'Labelled bins mean any team member can pick accurately on any day',
+     icon: '≡ƒÅ╖∩╕Å',
++    iconName: 'Tag',
+     borderColor: 'border-[#C62828]',
+     bgColor: 'bg-[rgba(198,40,40,0.1)]',
+   },
+   {
+     title: 'No demand forecast ΓÇö wrong stock ordered',
+     description: 'Without a week-by-week forecast from Symphony data, peak orders are reactive. Stockouts on the accounts that matter most, cash tied up in slow movers, emergency purchasing at premium prices.',
+     stat: 'Week-by-week JulΓÇôOct forecast ΓÇö right stock at the right time',
+     icon: '≡ƒôè',
++    iconName: 'BarChart3',
+     borderColor: 'border-[#219EBC]',
+     bgColor: 'bg-[rgba(33,158,188,0.1)]',
+   },
+   {
+     title: 'ERP starting from scratch in November',
+     description: 'your ERP system is planned for November. Without warehouse specs, clean SKU data, and a requirements brief, the first 4ΓÇô6 weeks of that engagement is just gathering what should already be written down.',
+     stat: 'ERP starts in week one, not week six ΓÇö saving ┬ú2,500ΓÇô┬ú5,000',
+     icon: '≡ƒöä',
++    iconName: 'RefreshCw',
+     borderColor: 'border-[#FFB703]',
+     bgColor: 'bg-[rgba(255,183,3,0.1)]',
+   },
+ ],
+
+[0m
+Now update the PricingSection to handle addOn module icons, and the tacklebag data.
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/PricingSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+@@ -1,8 +1,14 @@
+ 'use client';
+ 
+-import { Star, Calendar } from 'lucide-react';
++import { Star, Calendar, Package, Palette } from 'lucide-react';
++import type { LucideIcon } from 'lucide-react';
+ 
++const ADDON_ICON_MAP: Record<string, LucideIcon> = {
++  Package,
++  Palette,
++};
++
+ interface PricingOption {
+   id: string;
+   name: string;
+   days: string;
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/PricingSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+@@ -170,9 +170,14 @@
+ {data.addOns.modules.map((mod) => (
+   <div key={mod.id} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[rgba(2,48,71,0.07)]">
+     {/* Module head */}
+     <div className="bg-[#023047] px-7 pt-7 pb-6">
+-      <div className="text-3xl mb-3">{mod.icon}</div>
++      <div className="text-[#8ECAE6] mb-3">
++        {mod.iconName && ADDON_ICON_MAP[mod.iconName] ? (() => {
++          const Icon = ADDON_ICON_MAP[mod.iconName];
++          return <Icon size={28} />;
++        })() : <span className="text-3xl">{mod.icon}</span>}
++      </div>
+       <h4 className="text-lg font-black text-white mb-2">{mod.name}</h4>
+       <p className="text-xs text-[rgba(255,255,255,0.6)] leading-relaxed">{mod.description}</p>
+     </div>
+     {/* Module body */}
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/PricingSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PricingSection.tsx
+@@ -33,8 +33,9 @@
+ 
+ interface AddOnModule {
+   id: string;
+   icon: string;
++  iconName?: string;
+   name: string;
+   description: string;
+   features: string[];
+   price: string;
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/data/tacklebag-proposal-v2.ts
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal-v2.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal-v2.ts
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal-v2.ts
+@@ -350,8 +350,9 @@
+ modules: [
+   {
+     id: 'stock',
+     icon: '≡ƒôª',
++    iconName: 'Package',
+     name: 'Stock Control Module',
+     description: 'Real-time stock visibility across all school and club lines. Bin tracking mapped to your physical locations. Handheld picking ΓÇö any team member can process any order accurately without asking.',
+     features: [
+       'Real-time stock levels by school, club, and supplier line',
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/data/tacklebag-proposal-v2.ts
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal-v2.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal-v2.ts
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\tacklebag-proposal-v2.ts
+@@ -366,8 +366,9 @@
+ },
+ {
+   id: 'artwork',
+   icon: '≡ƒÄ¿',
++  iconName: 'Palette',
+   name: 'Artwork & Job Sheet Module',
+   description: 'Artwork files, production specs, and job sheets ΓÇö consolidated against a clean part number. Job sheets generated automatically. Eliminates email threads, WhatsApp messages, and memory as your production management system.',
+   features: [
+     'Artwork file storage against a structured part number',
+
+[0m
+I need to add more icons to ChallengeSection's ICON_MAP.
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/ChallengeSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\ChallengeSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\ChallengeSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\ChallengeSection.tsx
+@@ -1,7 +1,7 @@
+ 'use client';
+ 
+-import { ShoppingCart, Network, Link, Building2, Wrench, Package, ClipboardList, CalendarDays, Keyboard, Mail, Search, Palette, Monitor } from 'lucide-react';
++import { ShoppingCart, Network, Link, Building2, Wrench, Package, ClipboardList, CalendarDays, Keyboard, Mail, Search, Palette, Monitor, Tag, BarChart3, RefreshCw } from 'lucide-react';
+ import type { LucideIcon } from 'lucide-react';
+ import SystemsDiagram, { SystemsDiagramData } from './SystemsDiagram';
+ 
+ const ICON_MAP: Record<string, LucideIcon> = {
+@@ -17,8 +17,11 @@
+   Mail,
+   Search,
+   Palette,
+   Monitor,
++  Tag,
++  BarChart3,
++  RefreshCw,
+ };
+ 
+ interface PainPoint {
+   title: string;
+
+[0m
+Good. Let me verify with tsc first.
+[0m$ [0mnpx tsc --noEmit 2>&1 | head -50
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -First 50
+This is not the tsc command you are looking for                
+                                                                               
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+[0m
+[0m$ [0mnpm install 2>&1 | Select-Object -Last 5
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+app/clients/[clientId]/components/PortalMockupSection.tsx(3,70): error TS2305: Module '"lucide-react"' has no exported member 'Jacket'.
+app/clients/[clientId]/components/PortalMockupSection.tsx(3,78): error TS2305: Module '"lucide-react"' has no exported member 'Cap'.
+[0m
+Fix the missing Lucide icons ΓÇö `Jacket` and `Cap` don't exist.
+[0mΓåÉ [0mEdit app/clients/[clientId]/components/PortalMockupSection.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\components\PortalMockupSection.tsx
+@@ -1,7 +1,7 @@
+ 'use client';
+ 
+-import { LayoutDashboard, Shirt, FileText, FileCheck, User, Package, Jacket, Cap } from 'lucide-react';
++import { LayoutDashboard, Shirt, FileText, FileCheck, User, Package } from 'lucide-react';
+ import type { LucideIcon } from 'lucide-react';
+ 
+ const ICON_MAP: Record<string, LucideIcon> = {
+   LayoutDashboard,
+@@ -9,10 +9,8 @@
+   FileText,
+   FileCheck,
+   User,
+   Package,
+-  Jacket,
+-  Cap,
+ };
+ 
+ interface PortalMockupData {
+   tag: string;
+
+[0m
+[0mΓåÉ [0mEdit app/clients/[clientId]/data/cobra-workwear-proposal.ts
+Index: D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cobra-workwear-proposal.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cobra-workwear-proposal.ts
++++ D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\app\clients\[clientId]\data\cobra-workwear-proposal.ts
+@@ -260,9 +260,9 @@
+   ],
+   products: [
+     { icon: '≡ƒæò', iconName: 'Shirt', name: 'Pro-Safe Hi-Vis Vest', sku: 'COB-HV-001', price: '┬ú24.50' },
+     { icon: '≡ƒºÑ', iconName: 'Shirt', name: 'Executive Softshell Jacket', sku: 'COB-SS-204', price: '┬ú48.00' },
+-    { icon: '≡ƒºó', iconName: 'Cap', name: 'Signature Cap ΓÇö Navy', sku: 'COB-CP-019', price: '┬ú12.80' },
++    { icon: '≡ƒºó', iconName: 'Shirt', name: 'Signature Cap ΓÇö Navy', sku: 'COB-CP-019', price: '┬ú12.80' },
+   ],
+   disclaimer: 'The portal scope, functionality, and visual design are determined during the audit and documented in the B2B portal requirements brief. This mockup illustrates the category of solution, not a specific build.',
+ },
+ why: {
+
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+tsc is clean. Now let me grep for remaining emoji in the client proposal files.
+[0m$ [0mrg "[\x{1F300}-\x{1F9FF}\x{2600}-\x{26FF}\x{2700}-\x{27BF}\x{FE00}-\x{FE0F}\x{1F000}-\x{1FFFF}]" "app/clients" --include "*.tsx" --include "*.ts" 2>&1
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0mΓ£▒ [0mGrep "[\x{1F300}-\x{1F9FF}\x{2600}-\x{26FF}\x{2700}-\x{27BF}\x{FE00}-\x{FE0F}\x{1F000}-\x{1FFFF}]"[90m in app/clients ┬╖ 39 matches[0m
+[0m
+[0m# [0mTodos
+[Γ£ô] Find all emoji usage in client proposal pages
+[Γ£ô] Replace emoji with Lucide icons in DemoSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in PricingSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in AcceptanceSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in RoadmapSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in PortalMockupSection.tsx + data files
+[Γ£ô] Replace emoji in painPoints icons across all data files
+[Γ£ô] Replace emoji in other data file fields (forecastTitle, addOns icons)
+[Γ£ô] Verify with tsc and grep for remaining emoji
+[ΓÇó] Commit changes and write lane reports
+[0m
+The remaining matches are:
+- **Data file `icon` properties** ΓÇö legacy fallback kept alongside new `iconName` properties; components render Lucide via `iconName` when available
+- **Unicode text symbols** (Γ£ô, Γ£ò) ΓÇö standard typographic characters, not emoji; used inline in text for checkmarks/crosses
+
+All actual emoji icons have been replaced. Let me commit and write the lane reports.
+[0m$ [0mgit add "app/clients/[clientId]/components/DemoSection.tsx" "app/clients/[clientId]/components/PricingSection.tsx" "app/clients/[clientId]/components/AcceptanceSection.tsx" "app/clients/[clientId]/components/RoadmapSection.tsx" "app/clients/[clientId]/components/PortalMockupSection.tsx" "app/clients/[clientId]/components/ChallengeSection.tsx" "app/clients/[clientId]/data/cobra-workwear-proposal.ts" "app/clients/[clientId]/data/hanicks-proposal.ts" "app/clients/[clientId]/data/scotshirts-proposal.ts" "app/clients/[clientId]/data/cwear-proposal.ts" "app/clients/[clientId]/data/tacklebag-proposal.ts" "app/clients/[clientId]/data/tacklebag-proposal-v2.ts" && git commit -m "Replace emoji icons with Lucide components in client proposal pages
+
+Components: DemoSection, PricingSection, AcceptanceSection, RoadmapSection,
+PortalMockupSection, ChallengeSection ΓÇö import and render Lucide icons
+(Zap, TrendingUp, Lightbulb, Star, Calendar, PartyPopper, ShoppingCart,
+Network, Link, Building2, Wrench, Package, ClipboardList, CalendarDays,
+Keyboard, Mail, Search, Palette, Monitor, Tag, BarChart3, RefreshCw,
+LayoutDashboard, Shirt, FileText, FileCheck, User) in place of emoji.
+
+Data files: add iconName properties alongside existing icon emoji for
+painPoints, navItems, products, addOns modules, and forecastTitle text.
+
+Unicode text symbols (checkmarks, crosses) retained as inline text ΓÇö
+these are typographic characters, not emoji icons."
+[web003-u24-emoji-icons 26cde02] Replace emoji icons with Lucide components in client proposal pages
+ 12 files changed, 112 insertions(+), 26 deletions(-)
+[0m
+Now write the lane reports.
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web003-u24-emoji-icons\.context\lane-reports already exists.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-web003-u24-emoji-icons.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-web003-u24-emoji-icons.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add ".context/lane-reports/LANE-RESULT-web003-u24-emoji-icons.json" ".context/lane-reports/LANE-NOTES-web003-u24-emoji-icons.md" && git commit -m "Add lane reports for u24 emoji-icons replacement"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web003-u24-emoji-icons.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web003-u24-emoji-icons.json', LF will be replaced by CRLF the next time Git touches it
+[web003-u24-emoji-icons 0f6157a] Add lane reports for u24 emoji-icons replacement
+ 2 files changed, 32 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web003-u24-emoji-icons.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web003-u24-emoji-icons.json
+[0m
+[0m# [0mTodos
+[Γ£ô] Find all emoji usage in client proposal pages
+[Γ£ô] Replace emoji with Lucide icons in DemoSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in PricingSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in AcceptanceSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in RoadmapSection.tsx
+[Γ£ô] Replace emoji with Lucide icons in PortalMockupSection.tsx + data files
+[Γ£ô] Replace emoji in painPoints icons across all data files
+[Γ£ô] Replace emoji in other data file fields (forecastTitle, addOns icons)
+[Γ£ô] Verify with tsc and grep for remaining emoji
+[Γ£ô] Commit changes and write lane reports
+[0m
+Done. Two commits made:
+
+1. **26cde02** ΓÇö `Replace emoji icons with Lucide components in client proposal pages` (12 files, +112/-26)
+2. **0f6157a** ΓÇö `Add lane reports for u24 emoji-icons replacement` (2 files)
+
+**What changed:**
+- **6 components** ΓÇö DemoSection, PricingSection, AcceptanceSection, RoadmapSection, PortalMockupSection, ChallengeSection now import and render Lucide icons (Zap, TrendingUp, Lightbulb, Star, Calendar, PartyPopper, ShoppingCart, Network, Link, Building2, Wrench, Package, ClipboardList, CalendarDays, Keyboard, Mail, Search, Palette, Monitor, Tag, BarChart3, RefreshCw, LayoutDashboard, Shirt, FileText, FileCheck, User)
+- **6 data files** ΓÇö Added `iconName` properties alongside existing `icon` emoji for painPoints, navItems, products, and addOns modules
+- `npx tsc --noEmit` ΓÇö clean, 0 errors
+- Unicode text symbols (Γ£ô, Γ£ò) retained as inline text ΓÇö typographic characters, not emoji

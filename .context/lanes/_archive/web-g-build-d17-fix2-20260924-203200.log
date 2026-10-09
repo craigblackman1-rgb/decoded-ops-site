@@ -1,0 +1,466 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-g-build-d17-fix2.md
+[0m✱ [0mGrep "import '@/app/d17-resources\.css'"[90m in app · 16 matches[0m
+[0m✱ [0mGlob "app/resources/**/page.tsx"[90m in . · 10 matches[0m
+[0m✱ [0mGlob "app/tools/**/page.tsx"[90m in . · 6 matches[0m
+[0m✱ [0mGrep "d17-problems"[90m in app · 18 matches[0m
+[0m→ [0mRead app/resources/page.tsx[90m [limit=15][0m
+Let me check which already have the problems CSS, and read a sample of the files to understand the import context.
+[0m→ [0mRead app/tools/rto-calculator/page.tsx[90m [limit=15][0m
+[0m
+[0m# [0mTodos
+[•] Add d17-problems.css import to 16 resource/tools page.tsx files
+[ ] Fix seasonal-capacity page width at 390px viewport
+[ ] Run tsc --noEmit
+[ ] Commit changes
+[ ] Write lane reports
+[0m
+[0m← [0mEdit app/resources/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
+@@ -4,8 +4,9 @@
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { Plate } from '@/components/Plate';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Free Resources for Print & Embroidery Businesses: Decoded Ops',
+
+[0m
+[0m← [0mEdit app/resources/sop-template/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\sop-template\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\sop-template\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\sop-template\page.tsx
+@@ -3,8 +3,9 @@
+ import { BOOKING_URL } from '@/lib/constants';
+ import { JsonLd } from '@/components/JsonLd';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ const schema = {
+   '@context': 'https://schema.org',
+
+[0m
+[0m← [0mEdit app/resources/capacity-planner/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\capacity-planner\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\capacity-planner\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\capacity-planner\page.tsx
+@@ -4,8 +4,9 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { CapacityPlannerCalculator } from '@/components/calculators/CapacityPlannerCalculator';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ const jsonLd = {
+   '@context': 'https://schema.org',
+
+[0m
+[0m← [0mEdit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\six-sigma\page.tsx
+@@ -3,8 +3,9 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { SixSigmaSchematic } from '@/components/schematics/SixSigmaSchematic';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ const schema = {
+   '@context': 'https://schema.org',
+
+[0m
+[0m← [0mEdit app/resources/audit-checklist/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\audit-checklist\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\audit-checklist\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\audit-checklist\page.tsx
+@@ -4,8 +4,9 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { Plate } from '@/components/Plate';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ // Target keyword: "operational audit checklist" (secondary: "technology audit checklist small business")
+ const schema = {
+
+[0m
+[0m← [0mEdit app/resources/seasonal-capacity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\seasonal-capacity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\seasonal-capacity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\seasonal-capacity\page.tsx
+@@ -4,8 +4,9 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { SeasonalCapacityCalculator } from '@/components/calculators/SeasonalCapacityCalculator';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ const jsonLd = {
+   '@context': 'https://schema.org',
+
+[0m
+[0m← [0mEdit app/resources/artwork-approval-playbook/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\artwork-approval-playbook\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\artwork-approval-playbook\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\artwork-approval-playbook\page.tsx
+@@ -3,8 +3,9 @@
+ import { BOOKING_URL } from '@/lib/constants';
+ import { JsonLd } from '@/components/JsonLd';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ const schema = {
+   '@context': 'https://schema.org',
+
+[0m
+[0m← [0mEdit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\5-warning-signs\page.tsx
+@@ -4,8 +4,9 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { Plate } from '@/components/Plate';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ // Target keyword: "warning signs your business systems are failing" (secondary: "signs you need a technology audit")
+ export const metadata = {
+
+[0m
+[0m← [0mEdit app/resources/erp-selection-playbook/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\erp-selection-playbook\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\erp-selection-playbook\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\erp-selection-playbook\page.tsx
+@@ -3,8 +3,9 @@
+ import { BOOKING_URL } from '@/lib/constants';
+ import { JsonLd } from '@/components/JsonLd';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ const schema = {
+   '@context': 'https://schema.org',
+
+[0m
+[0m← [0mEdit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\decoded-method\page.tsx
+@@ -5,8 +5,9 @@
+ import { ThreeLayerSchematic } from '@/components/schematics/ThreeLayerSchematic';
+ import { SinglePointSchematic } from '@/components/schematics/SinglePointSchematic';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ const schema = {
+   '@context': 'https://schema.org',
+
+[0m
+[0m← [0mEdit app/tools/should-i-replace-erp/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\should-i-replace-erp\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\should-i-replace-erp\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\should-i-replace-erp\page.tsx
+@@ -5,8 +5,9 @@
+ import { ArrowRight, RotateCcw } from 'lucide-react';
+ import { ToolLeadCapture } from '@/components/ToolLeadCapture';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ const questions = [
+   { id: 1, text: 'Is your current system unable to handle your core business processes without significant workarounds?', weight: 2 },
+
+[0m
+[0m← [0mEdit app/tools/rto-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\rto-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\rto-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\rto-calculator\page.tsx
+@@ -1,8 +1,9 @@
+ import type { Metadata } from 'next';
+ import { RtoCalculator } from '@/components/calculators/RtoCalculator';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ const jsonLd = {
+   '@context': 'https://schema.org',
+
+[0m
+[0m← [0mEdit app/tools/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
+@@ -5,8 +5,9 @@
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { Plate } from '@/components/Plate';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Free Operational Tools: Decoded Ops',
+
+[0m
+[0m← [0mEdit app/tools/ops-health-score/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\ops-health-score\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\ops-health-score\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\ops-health-score\page.tsx
+@@ -5,8 +5,9 @@
+ import { ArrowRight, RotateCcw, Info } from 'lucide-react';
+ import { ToolLeadCapture } from '@/components/ToolLeadCapture';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ interface Dimension {
+   id: string;
+
+[0m
+[0m← [0mEdit app/tools/downtime-cost-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\downtime-cost-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\downtime-cost-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\downtime-cost-calculator\page.tsx
+@@ -2,8 +2,9 @@
+ import Link from 'next/link';
+ import { DowntimeCostCalculator } from '@/components/calculators/DowntimeCostCalculator';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ const jsonLd = {
+   '@context': 'https://schema.org',
+
+[0m
+[0m← [0mEdit app/tools/automation-roi-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\automation-roi-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\automation-roi-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\automation-roi-calculator\page.tsx
+@@ -1,8 +1,9 @@
+ import type { Metadata } from 'next';
+ import { AutomationRoiCalculator } from '@/components/calculators/AutomationRoiCalculator';
+ import { D17Motion } from '@/components/D17Motion';
+ import '@/app/d17-global.css';
++import '@/app/d17-problems.css';
+ import '@/app/d17-resources.css';
+ 
+ const jsonLd = {
+   '@context': 'https://schema.org',
+
+[0m
+All 16 files follow the same pattern: `d17-global.css` then `d17-resources.css`. I'll insert `d17-problems.css` between them.
+[0m# [0mTodos
+[✓] Add d17-problems.css import to 16 resource/tools page.tsx files
+[•] Fix seasonal-capacity page width at 390px viewport
+[ ] Run tsc --noEmit
+[ ] Commit changes
+[ ] Write lane reports
+[0m
+Now let me tackle task 2: the seasonal-capacity width issue.
+[0m→ [0mRead app/resources/seasonal-capacity/page.tsx
+[0m✱ [0mGlob "**/SeasonalCapacityCalculator*"[90m in . · 1 match[0m
+[0m→ [0mRead components/calculators/SeasonalCapacityCalculator.tsx
+[0m→ [0mRead components/calculators/calculators.css
+[0m✱ [0mGlob "app/d17-resources.css"[90m in . · 1 match[0m
+[0m✱ [0mGrep "seasonal|month-bar|bar-row"[90m in app/d17-resources.css · 50 matches[0m
+[0m✱ [0mGrep "\.wrap"[90m in app/d17-global.css · 11 matches[0m
+Let me check the page-level `.wrap` class and how the sections work:
+[0m✱ [0mGrep "\.wrap|calc-grid|calc-panel|calc-months|overflow"[90m in app/d17-resources.css · 100 matches[0m
+[0m→ [0mRead app/d17-global.css[90m [limit=30][0m
+[0m✱ [0mGrep "\.g-off|\.g-navy|section"[90m in app/d17-global.css · 100 matches[0m
+[0m✱ [0mGrep "\.g-off|\.g-navy|section|calc-bar|calc-month|overflow"[90m in app/d17-resources.css · 100 matches[0m
+Let me look at the section classes and how they affect width:
+[0m✱ [0mGrep "section|\.g-off|\.g-navy|\.g-white|\.g-tint"[90m in app/globals.css · 100 matches[0m
+[0m→ [0mRead components/calculators/calculators.css
+I need to understand the overflow. The monthly bar chart rows in the calculator have fixed-width flex children with `flexShrink: 0`. Let me add a CSS fix.
+[0m→ [0mRead components/calculators/SeasonalCapacityCalculator.tsx[90m [offset=176, limit=45][0m
+The monthly bar chart rows have fixed-width flex children with `flexShrink: 0` that can't shrink. I'll add a class to the rows and add responsive CSS. Let me also check if there's a legend row that might overflow.
+[0m
+[0m← [0mEdit components/calculators/SeasonalCapacityCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\components\calculators\SeasonalCapacityCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\components\calculators\SeasonalCapacityCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\components\calculators\SeasonalCapacityCalculator.tsx
+@@ -179,13 +179,13 @@
+ {demandVsCapacity.map((d) => {
+   const demandWidth = barMax > 0 ? (d.demand / barMax) * 100 : 0;
+   const capWidth = barMax > 0 ? (baseCapacity / barMax) * 100 : 0;
+   return (
+-    <div key={d.month} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+-      <span style={{ fontSize: 'var(--do-text-xs)', color: 'color-mix(in srgb, var(--do-text-on-dark) 70%, transparent)', width: 28, flexShrink: 0 }}>
++    <div key={d.month} className="calc-bar-row" style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
++      <span className="calc-bar-label" style={{ fontSize: 'var(--do-text-xs)', color: 'color-mix(in srgb, var(--do-text-on-dark) 70%, transparent)' }}>
+         {d.month}
+       </span>
+-      <div style={{ flex: 1, position: 'relative', height: 16, borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-text-on-dark) 8%, transparent)' }}>
++      <div style={{ flex: 1, minWidth: 0, position: 'relative', height: 16, borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-text-on-dark) 8%, transparent)' }}>
+         {/* Capacity line */}
+         <div style={{ position: 'absolute', left: `${capWidth}%`, top: -2, bottom: -2, width: 2, background: 'var(--do-sky-blue)', borderRadius: 1 }} />
+         {/* Demand bar */}
+         <div
+@@ -197,9 +197,9 @@
+             transition: 'width .2s',
+           }}
+         />
+       </div>
+-      <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 600, color: d.gap < 0 ? 'var(--do-orange)' : 'color-mix(in srgb, var(--do-text-on-dark) 70%, transparent)', width: 40, textAlign: 'right', flexShrink: 0 }}>
++      <span className="calc-bar-val" style={{ fontSize: 'var(--do-text-xs)', fontWeight: 600, color: d.gap < 0 ? 'var(--do-orange)' : 'color-mix(in srgb, var(--do-text-on-dark) 70%, transparent)', textAlign: 'right' }}>
+         {d.gap > 0 ? `+${d.gap}` : d.gap}
+       </span>
+     </div>
+   );
+
+[0m
+Now I understand the layout. The bar rows have fixed widths (28px month label, 40px gap label) with `flexShrink: 0`, and the legend row has `paddingLeft: 36` with no wrapping. I'll add a class to the bar rows and legend, then add responsive CSS.
+[0m← [0mEdit components/calculators/SeasonalCapacityCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\components\calculators\SeasonalCapacityCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\components\calculators\SeasonalCapacityCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\components\calculators\SeasonalCapacityCalculator.tsx
+@@ -203,9 +203,9 @@
+       </span>
+     </div>
+   );
+ })}
+-<div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 8, paddingLeft: 36 }}>
++<div className="calc-bar-legend" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 8, marginTop: 8, paddingLeft: 36 }}>
+   <div style={{ width: 10, height: 3, background: 'var(--do-cerulean)', borderRadius: 2 }} />
+   <span style={{ fontSize: 'var(--do-text-xs)', color: 'color-mix(in srgb, var(--do-text-on-dark) 60%, transparent)' }}>Demand</span>
+   <div style={{ width: 10, height: 3, background: 'var(--do-orange)', borderRadius: 2 }} />
+   <span style={{ fontSize: 'var(--do-text-xs)', color: 'color-mix(in srgb, var(--do-text-on-dark) 60%, transparent)' }}>Over capacity</span>
+
+[0m
+Now fix the legend row to wrap on small screens:
+[0m← [0mEdit components/calculators/calculators.css
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\components\calculators\calculators.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\components\calculators\calculators.css
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\components\calculators\calculators.css
+@@ -78,5 +78,8 @@
+ .calc-secondary-link:hover { color: var(--do-text-on-dark); }
+ 
+ @media (max-width: 639px) {
+   .calc-months-grid { grid-template-columns: repeat(2, 1fr) !important; }
++  .calc-bar-label { width: 24px; flex-shrink: 0; }
++  .calc-bar-val { width: 32px; flex-shrink: 0; }
++  .calc-bar-legend { padding-left: 0 !important; }
+ }
+
+[0m
+Now add the responsive CSS rules:
+Now run `tsc --noEmit` to verify:
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+Clean. Now commit and write lane reports.
+[0m# [0mTodos
+[✓] Add d17-problems.css import to 16 resource/tools page.tsx files
+[✓] Fix seasonal-capacity page width at 390px viewport
+[✓] Run tsc --noEmit
+[•] Commit changes
+[ ] Write lane reports
+[0m
+[0m$ [0mgit add -A && git status
+warning: in the working copy of '.context/lane-briefs/web-g-build-d17-fix2.md', LF will be replaced by CRLF the next time Git touches it
+On branch web-g-build-d17
+Your branch is ahead of 'origin/staging' by 12 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   app/resources/5-warning-signs/page.tsx
+	modified:   app/resources/artwork-approval-playbook/page.tsx
+	modified:   app/resources/audit-checklist/page.tsx
+	modified:   app/resources/capacity-planner/page.tsx
+	modified:   app/resources/decoded-method/page.tsx
+	modified:   app/resources/erp-selection-playbook/page.tsx
+	modified:   app/resources/page.tsx
+	modified:   app/resources/seasonal-capacity/page.tsx
+	modified:   app/resources/six-sigma/page.tsx
+	modified:   app/resources/sop-template/page.tsx
+	modified:   app/tools/automation-roi-calculator/page.tsx
+	modified:   app/tools/downtime-cost-calculator/page.tsx
+	modified:   app/tools/ops-health-score/page.tsx
+	modified:   app/tools/page.tsx
+	modified:   app/tools/rto-calculator/page.tsx
+	modified:   app/tools/should-i-replace-erp/page.tsx
+	modified:   components/calculators/SeasonalCapacityCalculator.tsx
+	modified:   components/calculators/calculators.css
+[0m
+[0m$ [0mgit commit -m "fix(web): load problems D17 css on resources/tools, seasonal chart on phones (WO-INF-061)"
+[web-g-build-d17 5c52123] fix(web): load problems D17 css on resources/tools, seasonal chart on phones (WO-INF-061)
+ 18 files changed, 24 insertions(+), 5 deletions(-)
+[0m
+Now write the lane reports:
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-g-build-d17\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-g-build-d17-fix2.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-g-build-d17-fix2.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane reports for web-g-build-d17-fix2"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-g-build-d17-fix2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-g-build-d17-fix2.json', LF will be replaced by CRLF the next time Git touches it
+[web-g-build-d17 249d482] chore: lane reports for web-g-build-d17-fix2
+ 2 files changed, 50 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-g-build-d17-fix2.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-g-build-d17-fix2.json
+[0m
+[0m# [0mTodos
+[✓] Add d17-problems.css import to 16 resource/tools page.tsx files
+[✓] Fix seasonal-capacity page width at 390px viewport
+[✓] Run tsc --noEmit
+[✓] Commit changes
+[✓] Write lane reports
+[0m
+Done. Two commits made:
+
+1. **`5c52123`** — Added `import '@/app/d17-problems.css';` to all 16 resource/tool page.tsx files (before `d17-resources.css`), and fixed the seasonal-capacity bar chart mobile overflow by adding responsive CSS classes and a media query that reduces fixed widths and wraps the legend row below 639px.
+
+2. **`249d482`** — Lane reports.
+
+tsc clean, no pushes, no dev servers.

@@ -1,0 +1,303 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/BRIEF-web065-fix5.md
+[0m
+[0m$ [0mls -la . | head -30
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m→ [0mRead app/sectors/awards-engraving/page.tsx[90m [offset=98, limit=6][0m
+[0m→ [0mRead app/sectors/garment-decoration/page.tsx[90m [offset=100, limit=6][0m
+[0m→ [0mRead app/sectors/labels-packaging/page.tsx[90m [offset=98, limit=6][0m
+[0m→ [0mRead app/sectors/operations-consultant-print-embroidery/page.tsx[90m [offset=100, limit=6][0m
+[0m→ [0mRead app/sectors/print-promotional/page.tsx[90m [offset=95, limit=6][0m
+[0m→ [0mRead app/sectors/signs-graphics/page.tsx[90m [offset=98, limit=6][0m
+Let me read the six files and make the edits.
+[0m✱ [0mGrep "--do-text-cerulean"[90m in app · 46 matches[0m
+[0m
+[0m← [0mEdit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\awards-engraving\page.tsx
+@@ -97,9 +97,9 @@
+ <h1>
+   {parts.map((p, i) =>
+     i % 2 === 0
+       ? <span key={i}>{p}</span>
+-      : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
++      : <span key={i} style={{ color: 'var(--do-text-cerulean)' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+   <p>Every award carries different names, titles, and dates, and every order is for a specific event with a hard deadline. That makes awards and engraving one of the most demanding corners of the decorated products sector.</p>
+
+[0m
+[0m← [0mEdit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\garment-decoration\page.tsx
+@@ -99,9 +99,9 @@
+ <h1>
+   {parts.map((p, i) =>
+     i % 2 === 0
+       ? <span key={i}>{p}</span>
+-      : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
++      : <span key={i} style={{ color: 'var(--do-text-cerulean)' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+   <p>Embroidery, screen print, DTF, and DTG each work in their own way. But the ERP and MIS systems sold to decoration businesses rarely account for that. Embroidery is not the same as screen print. Your systems should match how you actually work.</p>
+
+[0m
+[0m← [0mEdit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\labels-packaging\page.tsx
+@@ -97,9 +97,9 @@
+ <h1>
+   {parts.map((p, i) =>
+     i % 2 === 0
+       ? <span key={i}>{p}</span>
+-      : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
++      : <span key={i} style={{ color: 'var(--do-text-cerulean)' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+   <p>Labels and packaging businesses sit where print, compliance, and the supply chain meet. There&apos;s no tolerance for error, and turnaround is always tight.</p>
+
+[0m
+[0m← [0mEdit app/sectors/operations-consultant-print-embroidery/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\operations-consultant-print-embroidery\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\operations-consultant-print-embroidery\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\operations-consultant-print-embroidery\page.tsx
+@@ -99,9 +99,9 @@
+ <h1>
+   {parts.map((p, i) =>
+     i % 2 === 0
+       ? <span key={i}>{p}</span>
+-      : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
++      : <span key={i} style={{ color: 'var(--do-text-cerulean)' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+   <p>Embroidery and screen print under one roof means two production processes, two lead times, and two cost structures. The ERP and MIS systems sold to decoration businesses rarely account for that. I help UK print and embroidery businesses fix the systems that do not match how they actually work.</p>
+
+[0m
+[0m← [0mEdit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\print-promotional\page.tsx
+@@ -94,9 +94,9 @@
+ <h1>
+   {parts.map((p, i) =>
+     i % 2 === 0
+       ? <span key={i}>{p}</span>
+-      : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
++      : <span key={i} style={{ color: 'var(--do-text-cerulean)' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+   <p>Print and promotional businesses run short jobs on tight deadlines, with artwork approvals that eat time and scheduling software built for longer runs. The result is missed deadlines, rework, and complaints, even when the team is working hard.</p>
+
+[0m
+[0m← [0mEdit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web065-tech-seo\app\sectors\signs-graphics\page.tsx
+@@ -97,9 +97,9 @@
+ <h1>
+   {parts.map((p, i) =>
+     i % 2 === 0
+       ? <span key={i}>{p}</span>
+-      : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
++      : <span key={i} style={{ color: 'var(--do-text-cerulean)' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+   <p>Signs and graphics jobs don&apos;t fit generic ERP systems. So most businesses run on spreadsheets, whiteboards, and information carried in people&apos;s heads.</p>
+
+[0m
+All six files confirmed. Let me verify the CSS token exists, then make all six edits.
+Token `--do-text-cerulean` confirmed at `globals.css:41`. All six edits applied. Now tsc and build.
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+tsc clean. Now build.
+[0m$ [0mnpm run build 2>&1
+> decoded-ops-next@0.1.0 prebuild
+> node scripts/generate-route-slugs.mjs
+
+[route-slugs] 18 problems, 10 sectors, 5 tools
+
+> decoded-ops-next@0.1.0 build
+> next build
+
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 18ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.1s
+  Running TypeScript ...
+  Finished TypeScript in 1904ms ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/173) ...
+  Generating static pages using 15 workers (43/173) 
+  Generating static pages using 15 workers (86/173) 
+  Generating static pages using 15 workers (129/173) 
+✓ Generating static pages using 15 workers (173/173) in 885ms
+  Finalizing page optimization ...
+
+Route (app)                                          Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/auth/login
+├ ƒ /api/clients/documents/[id]/questionnaire
+├ ƒ /api/clients/documents/[id]/sign
+├ ƒ /api/clients/uploads
+├ ƒ /api/contact
+├ ƒ /api/tools/capture
+├ ○ /apps
+├ ○ /apps/commerce
+├ ○ /apps/proof
+├ ○ /apps/works
+├ ○ /blog                                                    5m      1y
+├ ƒ /blog/[slug]
+├ ○ /case-studies
+├ ○ /case-studies/case-study-01
+├ ○ /case-studies/case-study-02
+├ ○ /case-studies/case-study-03
+├ ○ /case-studies/eternal-fitness
+├ ○ /clarity
+├ ƒ /clients/[clientId]
+├ ƒ /clients/dashboard
+├ ƒ /clients/documents
+├ ƒ /clients/documents/view/[id]
+├ ○ /clients/login
+├ ƒ /clients/project
+├ ○ /contact
+├ ○ /cookies
+├ ○ /deliver
+├ ○ /how-i-build
+├ ○ /locations/fractional-cto
+├   /locations/fractional-cto/[location]
+│ ├ ● /locations/fractional-cto/chichester
+│ ├ ● /locations/fractional-cto/worthing
+│ ├ ● /locations/fractional-cto/horsham
+│ └ ● [+26 more paths]
+├ ○ /locations/tech-audit
+├   /locations/tech-audit/[location]
+│ ├ ● /locations/tech-audit/chichester
+│ ├ ● /locations/tech-audit/worthing
+│ ├ ● /locations/tech-audit/horsham
+│ └ ● [+26 more paths]
+├ ƒ /opengraph-image
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /problems
+├ ○ /problems/ai-paralysis
+├ ○ /problems/bottleneck-growth
+├ ○ /problems/buy-vs-build
+├ ○ /problems/cant-scale-operations
+├ ○ /problems/data-scattered
+├ ○ /problems/disaster-recovery
+├ ○ /problems/ecommerce-not-connected
+├ ○ /problems/erp-implementation-failure
+├ ○ /problems/inventory-blind
+├ ○ /problems/legacy-system
+├ ○ /problems/manual-workarounds
+├ ○ /problems/no-ops-owner
+├ ○ /problems/ops-in-owners-head
+├ ○ /problems/seasonal-peaks
+├ ○ /problems/slow-processes
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/artwork-approval-playbook
+├ ○ /resources/audit-checklist
+├ ○ /resources/capacity-planner
+├ ○ /resources/decoded-method
+├ ○ /resources/erp-selection-playbook
+├ ○ /resources/seasonal-capacity
+├ ○ /resources/six-sigma
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ƒ /robots.txt
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/operations-consultant-print-embroidery
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ƒ /sitemap.xml
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+[0m
+Build clean. Now commit and write the report files.
+[0m$ [0mgit add app/sectors/awards-engraving/page.tsx app/sectors/garment-decoration/page.tsx app/sectors/labels-packaging/page.tsx app/sectors/operations-consultant-print-embroidery/page.tsx app/sectors/print-promotional/page.tsx app/sectors/signs-graphics/page.tsx && git commit -m "fix(a11y): sector H1 accent text shade (CR-WEB-065)"
+[web065-tech-seo 2c3d584] fix(a11y): sector H1 accent text shade (CR-WEB-065)
+ 6 files changed, 6 insertions(+), 6 deletions(-)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context\lane-reports already exists.
+[0m
+Now write the report files.
+[0m$ [0mgit log --oneline -1
+2c3d584 fix(a11y): sector H1 accent text shade (CR-WEB-065)
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web065-fix5.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web065-fix5.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/ && git commit -m "chore: lane report for web065-fix5"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web065-fix5.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web065-fix5.json', LF will be replaced by CRLF the next time Git touches it
+[web065-tech-seo 6ed6b33] chore: lane report for web065-fix5
+ 2 files changed, 41 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web065-fix5.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web065-fix5.json
+[0m
+Done. Two commits made:
+
+1. `2c3d584` — `fix(a11y): sector H1 accent text shade (CR-WEB-065)` — 6 sector page files, changed `color: '#219EBC'` → `color: 'var(--do-text-cerulean)'` in the H1 accent span
+2. `6ed6b33` — lane report files
+
+tsc clean, build successful. The accent text now uses `--do-text-cerulean` (`#176f86`, 5.45:1) instead of the hardcoded `#219EBC` (2.98:1).

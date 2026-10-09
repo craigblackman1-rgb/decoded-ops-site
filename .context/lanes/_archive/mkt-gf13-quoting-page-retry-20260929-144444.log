@@ -1,0 +1,396 @@
+[0m
+> build ┬╖ mimo-v2.5
+[0m
+[0mΓåÆ [0mRead .context/lane-briefs/gf13.md
+[0m
+[0m# [0mTodos
+[ ] Create app/problems/quoting-takes-too-long/page.tsx
+[ ] Edit data/problem-routing.ts
+[ ] Edit app/problems/page.tsx (add entry + addendum)
+[ ] Regenerate data/route-slugs.json
+[ ] Edit components/Footer.tsx (addendum)
+[ ] tsc check
+[ ] Commit all files
+[ ] Write lane report files
+[0m
+[0mΓåÆ [0mRead data/problem-routing.ts[90m [offset=1, limit=30][0m
+[0mΓåÆ [0mRead app/problems/page.tsx
+[0mΓåÆ [0mRead components/Footer.tsx
+Let me read the files I need to edit first.
+[0mΓåÆ [0mRead data/route-slugs.json
+Now let me find the exact insertion point in problem-routing.ts:
+[0mΓ£▒ [0mGrep "'slow-processes': \{"[90m in data/problem-routing.ts ┬╖ 1 match[0m
+[0m
+[0m# [0mTodos
+[ΓÇó] Create app/problems/quoting-takes-too-long/page.tsx
+[ ] Edit data/problem-routing.ts
+[ ] Edit app/problems/page.tsx (add entry + addendum)
+[ ] Regenerate data/route-slugs.json
+[ ] Edit components/Footer.tsx (addendum)
+[ ] tsc check
+[ ] Commit all files
+[ ] Write lane report files
+[0m
+[0mΓåÆ [0mRead data/problem-routing.ts[90m [offset=200, limit=15][0m
+[0m
+[0mΓåÉ [0mWrite app/problems/quoting-takes-too-long/page.tsx
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mEdit data/problem-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\data\problem-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\data\problem-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\data\problem-routing.ts
+@@ -199,8 +199,32 @@
+     { href: '/resources/erp-selection-playbook', label: 'ERP selection playbook' },
+   ],
+ },
+ 
++'quoting-takes-too-long': {
++  targetService: {
++    href: '/clarity',
++    label: 'Operational audit',
++    anchor: 'A structured one-day audit that watches how quotes really get built, finds where setup charges and margin leak, and separates quick fixes from bigger projects.',
++  },
++  relatedProblems: [
++    { href: '/problems/spreadsheet-addiction', label: 'Running the business on spreadsheets' },
++    { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
++    { href: '/problems/slow-processes', label: 'Your processes are too slow' },
++  ],
++  relatedReading: [
++    { href: '/blog/ai-isnt-your-problem-your-processes-are', label: 'AI isn\'t your problem. Your processes are.' },
++  ],
++  relatedSectors: [
++    { href: '/sectors/print-promotional', label: 'Print & promotional' },
++    { href: '/sectors/garment-decoration', label: 'Garment decoration' },
++  ],
++  relatedResources: [
++    { href: '/tools/automation-roi-calculator', label: 'Automation ROI calculator' },
++    { href: '/clarity', label: 'The Clarity Audit' },
++  ],
++},
++
+ 'slow-processes': {
+   targetService: {
+     href: '/clarity',
+     label: 'Operational audit',
+
+[0m
+[0mΓåÉ [0mEdit app/problems/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+@@ -32,8 +32,9 @@
+ { title: 'Legacy system', href: '/problems/legacy-system', desc: 'The platform you bought ten years ago was not built for decoration, and it shows.' },
+ { title: 'Manual workarounds', href: '/problems/manual-workarounds', desc: 'Staff spend more time working around the system than the system saves them.' },
+ { title: 'No ops owner', href: '/problems/no-ops-owner', desc: 'Nobody in the business is responsible for operations, so nothing gets fixed until it breaks.' },
+ { title: "Ops in the owner's head", href: '/problems/ops-in-owners-head', desc: 'If you got hit by a bus tomorrow, nobody would know how to run your business.' },
++{ title: 'Quoting takes too long', href: '/problems/quoting-takes-too-long', desc: 'Every quote is rebuilt from scratch, setup charges get forgotten and margin leaks out of the price.' },
+ { title: 'Seasonal peaks', href: '/problems/seasonal-peaks', desc: 'Your busiest month is four times your quietest, and your systems cannot flex.' },
+ { title: 'Slow processes', href: '/problems/slow-processes', desc: 'A quote that should take ten minutes takes three days because the data is not where it needs to be.' },
+ { title: 'Spreadsheet addiction', href: '/problems/spreadsheet-addiction', desc: 'The spreadsheet that runs your business is one corrupted file away from disaster.' },
+ { title: "Systems don't talk", href: '/problems/systems-dont-talk', desc: 'The website, the accounts package, and the warehouse system all hold different versions of the truth.' },
+
+[0m
+[0mΓåÉ [0mEdit app/problems/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+@@ -46,9 +46,9 @@
+ <>
+  <section className="g-off">
+   <div className="wrap" style={{ maxWidth: 860 }}>
+    <span className="eyebrow">Problems</span>
+-   <h1>Eighteen problems every decorated-goods business recognises.</h1>
++   <h1>The problems every decorated-goods business recognises.</h1>
+    <p className="lede">Most of these growing pains in business are not technology problems. They are process problems that
+     technology was supposed to solve but did not. Each one has a page that explains what it
+     looks like, why it happens, and how to fix it.</p>
+   </div>
+
+[0m
+Now I'll create the new page and make all edits in parallel:
+[0mΓåÉ [0mEdit components/Footer.tsx
+Index: D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\components\Footer.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\components\Footer.tsx
++++ D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\components\Footer.tsx
+@@ -144,9 +144,9 @@
+     Browse by sector, problem, guide or location
+   </summary>
+   <div className="f-more-body">
+     <ChipRow label="Sectors" chips={sectorChips} />
+-    <ChipRow label="Problems" chips={problemChips} allLink={{ label: 'All 18 problems', href: '/problems' }} />
++    <ChipRow label="Problems" chips={problemChips} allLink={{ label: 'All problems', href: '/problems' }} />
+     <ChipRow label="Guides" chips={guideChips} allLink={{ label: 'All resources', href: '/resources' }} />
+     <ChipRow label="Locations" chips={locationChips} />
+   </div>
+ </details>
+
+[0m
+[0mΓ£ù [0mEdit app/problems/page.tsx failed
+[91m[1mError: [0mNo changes to apply: oldString and newString are identical.
+Now the remaining addendum edits on problems/page.tsx:
+[0m
+[0mΓåÉ [0mEdit app/problems/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+@@ -57,9 +57,9 @@
+ {/* PLATE ┬╖ DO-ART-118 */}
+ <section className="g-navy">
+  <div className="wrap">
+    <span className="eyebrow">Problem map &middot; DO-ART-118</span>
+-  <h2>Eighteen problems, four places they start.</h2>
++  <h2>The problems, and the four places they start.</h2>
+   <div className="hair"></div>
+   <p className="lede" style={{ marginTop: 16 }}>
+      Every problem page on the site, grouped by where these growing pains in business actually begin. Thirteen of eighteen are not technology problems, they are process problems technology was supposed to solve.
+   </p>
+
+[0m
+[0mΓåÉ [0mEdit app/problems/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+@@ -60,9 +60,9 @@
+  <span className="eyebrow">Problem map &middot; DO-ART-118</span>
+ <h2>The problems, and the four places they start.</h2>
+ <div className="hair"></div>
+ <p className="lede" style={{ marginTop: 16 }}>
+-   Every problem page on the site, grouped by where these growing pains in business actually begin. Thirteen of eighteen are not technology problems, they are process problems technology was supposed to solve.
++   Every problem page on the site, grouped by where these growing pains in business actually begin. Most of them are not technology problems, they are process problems technology was supposed to solve.
+ </p>
+ 
+ <div className="plate-scroll">
+  <div className="plate-frame" data-od-id="plate-problems">
+@@ -132,9 +132,9 @@
+ 
+    {/* footer */}
+    <g className="sk-fade sk-s6">
+      <rect x="60" y="676" width="1480" height="90" rx="10" fill="url(#pix-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
+-     <text x="86" y="714" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="25">Thirteen of eighteen are not technology problems.</text>
++     <text x="86" y="714" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="25">Most of them are not technology problems.</text>
+      <text x="86" y="746" className="p-mono" fontSize="17" opacity=".65">They are process problems technology was supposed to solve, and did not. Which is why the audit comes first.</text>
+    </g>
+   </Plate>
+  </div>
+
+[0m
+[0mΓåÆ [0mRead app/problems/page.tsx[90m [limit=25, offset=1][0m
+[0m
+[0mΓåÉ [0mEdit app/problems/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+@@ -2,20 +2,20 @@
+ import Link from 'next/link';
+ import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+- title: 'Growing Pains in Business, Eighteen Problems | Decoded Ops',
++ title: 'Growing Pains in Business | Decoded Ops',
+  description: 'Eighteen kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
+  alternates: { canonical: '/problems' },
+  openGraph: {
+-  title: 'Growing Pains in Business, Eighteen Problems | Decoded Ops',
++  title: 'Growing Pains in Business | Decoded Ops',
+   description: 'Eighteen kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
+   url: 'https://decodedops.co.uk/problems',
+   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+   card: 'summary_large_image',
+-  title: 'Growing Pains in Business, Eighteen Problems | Decoded Ops',
++  title: 'Growing Pains in Business | Decoded Ops',
+   description: 'Eighteen kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
+  },
+ };
+ 
+
+[0m
+[0mΓåÉ [0mEdit app/problems/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\app\problems\page.tsx
+@@ -3,20 +3,20 @@
+ import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+  title: 'Growing Pains in Business | Decoded Ops',
+- description: 'Eighteen kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
++ description: 'The kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
+  alternates: { canonical: '/problems' },
+  openGraph: {
+   title: 'Growing Pains in Business | Decoded Ops',
+-  description: 'Eighteen kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
++  description: 'The kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
+   url: 'https://decodedops.co.uk/problems',
+   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+   card: 'summary_large_image',
+   title: 'Growing Pains in Business | Decoded Ops',
+-  description: 'Eighteen kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
++  description: 'The kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
+  },
+ };
+ 
+ const problems = [
+
+[0m
+[0m$ [0mnode scripts/generate-route-slugs.mjs
+[route-slugs] 19 problems, 10 sectors, 5 tools
+[0m
+[0m$ [0mrg -n "\u2014" app/problems/quoting-takes-too-long/page.tsx 2>/dev/null || echo "no em dashes"
+no em dashes
+[0m
+Now regenerate route slugs and check for em dashes:
+[0m$ [0mgit diff data/route-slugs.json
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+diff --git a/data/route-slugs.json b/data/route-slugs.json
+index cfed5c2..580cda6 100644
+--- a/data/route-slugs.json
++++ b/data/route-slugs.json
+@@ -14,6 +14,7 @@
+     "manual-workarounds",
+     "no-ops-owner",
+     "ops-in-owners-head",
++    "quoting-takes-too-long",
+     "seasonal-peaks",
+     "slow-processes",
+     "spreadsheet-addiction",
+[0m
+[0m# [0mTodos
+[Γ£ô] Create app/problems/quoting-takes-too-long/page.tsx
+[Γ£ô] Edit data/problem-routing.ts
+[Γ£ô] Edit app/problems/page.tsx (add entry + addendum)
+[Γ£ô] Regenerate data/route-slugs.json
+[Γ£ô] Edit components/Footer.tsx (addendum)
+[ΓÇó] tsc check
+[ ] Commit all files
+[ ] Write lane report files
+[0m
+Route slugs diff is clean - just the one new entry. Now tsc:
+[0m$ [0mnpm install 2>&1 | tail -5
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mnpx tsc --noEmit -p . 2>&1
+(no output)
+[0m
+tsc clean. Let me verify the diff and commit:
+[0m$ [0mgit diff --stat && echo "---" && git diff --stat --cached && echo "---" && git status --short
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+ app/problems/page.tsx   | 21 +++++++++++----------
+ components/Footer.tsx   |  2 +-
+ data/problem-routing.ts | 24 ++++++++++++++++++++++++
+ data/route-slugs.json   |  1 +
+ 4 files changed, 37 insertions(+), 11 deletions(-)
+---
+---
+ M app/problems/page.tsx
+ M components/Footer.tsx
+ M data/problem-routing.ts
+ M data/route-slugs.json
+?? .context/lane-briefs/gf13.md
+?? app/problems/quoting-takes-too-long/
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+(no output)
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-RESULT-mkt-gf13-quoting-page-retry.json
+Wrote file successfully.
+[0m
+[0mΓåÉ [0mWrite .context/lane-reports/LANE-NOTES-mkt-gf13-quoting-page-retry.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add app/problems/quoting-takes-too-long/page.tsx app/problems/page.tsx components/Footer.tsx data/problem-routing.ts data/route-slugs.json .context/lane-reports/LANE-RESULT-mkt-gf13-quoting-page-retry.json .context/lane-reports/LANE-NOTES-mkt-gf13-quoting-page-retry.md && git commit -m "feat(web): quoting costs problem page with trade pricing vocabulary (GF13)"
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-mkt-gf13-quoting-page-retry.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-mkt-gf13-quoting-page-retry.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/quoting-takes-too-long/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[mkt-gf13-quoting-page 934d4b1] feat(web): quoting costs problem page with trade pricing vocabulary (GF13)
+ 7 files changed, 206 insertions(+), 11 deletions(-)
+ create mode 100644 .context/lane-reports/LANE-NOTES-mkt-gf13-quoting-page-retry.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-mkt-gf13-quoting-page-retry.json
+ create mode 100644 app/problems/quoting-takes-too-long/page.tsx
+[0m
+[0m$ [0mgit log -1 --format="%h"
+934d4b1
+[0m
+[0mΓåÆ [0mRead .context/lane-reports/LANE-RESULT-mkt-gf13-quoting-page-retry.json
+[0m
+[0mΓåÉ [0mEdit .context/lane-reports/LANE-RESULT-mkt-gf13-quoting-page-retry.json
+Index: D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\.context\lane-reports\LANE-RESULT-mkt-gf13-quoting-page-retry.json
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\.context\lane-reports\LANE-RESULT-mkt-gf13-quoting-page-retry.json
++++ D:\apps\worktrees\decoded-ops-website\mkt-gf13-quoting-page\.context\lane-reports\LANE-RESULT-mkt-gf13-quoting-page-retry.json
+@@ -3,9 +3,9 @@
+ "wo": "wo-marketing-sales-consolidated-2026-08-20",
+ "unit": "",
+ "commits": [
+   {
+-    "sha": "",
++    "sha": "934d4b1",
+     "subject": "feat(web): quoting costs problem page with trade pricing vocabulary (GF13)"
+   }
+ ],
+ "filesChanged": [
+
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-mkt-gf13-quoting-page-retry.json && git commit --amend --no-edit
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-mkt-gf13-quoting-page-retry.json', LF will be replaced by CRLF the next time Git touches it
+[mkt-gf13-quoting-page 23a0b9c] feat(web): quoting costs problem page with trade pricing vocabulary (GF13)
+ Date: Tue Sep 29 14:55:11 2026 +0100
+ 7 files changed, 206 insertions(+), 11 deletions(-)
+ create mode 100644 .context/lane-reports/LANE-NOTES-mkt-gf13-quoting-page-retry.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-mkt-gf13-quoting-page-retry.json
+ create mode 100644 app/problems/quoting-takes-too-long/page.tsx
+[0m
+[0m$ [0mgit log -1 --stat
+commit 23a0b9c56666317a26219ce6ab3eeaf10231054a
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Tue Sep 29 14:55:11 2026 +0100
+
+    feat(web): quoting costs problem page with trade pricing vocabulary (GF13)
+
+ .../LANE-NOTES-mkt-gf13-quoting-page-retry.md      |  30 ++++++
+ .../LANE-RESULT-mkt-gf13-quoting-page-retry.json   |  26 +++++
+ app/problems/page.tsx                              |  21 ++--
+ app/problems/quoting-takes-too-long/page.tsx       | 113 +++++++++++++++++++++
+ components/Footer.tsx                              |   2 +-
+ data/problem-routing.ts                            |  24 +++++
+ data/route-slugs.json                              |   1 +
+ 7 files changed, 206 insertions(+), 11 deletions(-)
+[0m
+[0m# [0mTodos
+[Γ£ô] Create app/problems/quoting-takes-too-long/page.tsx
+[Γ£ô] Edit data/problem-routing.ts
+[Γ£ô] Edit app/problems/page.tsx (add entry + addendum)
+[Γ£ô] Regenerate data/route-slugs.json
+[Γ£ô] Edit components/Footer.tsx (addendum)
+[Γ£ô] tsc check
+[Γ£ô] Commit all files
+[Γ£ô] Write lane report files
+[0m
+Done. Commit `23a0b9c`:
+
+- New page: `app/problems/quoting-takes-too-long/page.tsx` (ProblemPageDS + FAQPage JSON-LD + 4 FAQs)
+- Routing: `data/problem-routing.ts` (quoting-takes-too-long entry)
+- Index: `app/problems/page.tsx` (new list entry + count-free rewording per addendum)
+- Route slugs: `data/route-slugs.json` (regenerated, 19 problems)
+- Footer: `components/Footer.tsx` ("All 18 problems" ΓåÆ "All problems")
+- tsc: clean, 0 errors
+- Em dash grep: 0 hits
+
+**Addendum note:** The Plate SVG's internal amber counts (5/4/5/4 = 18) and the SVG item lists were not modified ΓÇö the addendum only covered the h2, lede, and title text. Reconciling the Plate artwork counts to 19 is a separate follow-up.

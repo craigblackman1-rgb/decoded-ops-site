@@ -1,0 +1,864 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m$ [0mGet-ChildItem -Force -Directory .context
+Directory: D:\apps\worktrees\decoded-ops-website\web065-tech-seo\.context
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          25/09/2026    14:59                _archive
+d----          25/09/2026    16:42                lane-briefs
+d----          25/09/2026    16:37                lane-reports
+d----          25/09/2026    14:59                lanes
+d----          25/09/2026    14:59                plate-batch-2026-08-07
+d----          25/09/2026    14:59                tools
+d----          25/09/2026    14:59                worktree-salvage
+[0m
+[0m→ [0mRead .context/lane-briefs/BRIEF-web065-fix2-contrast.md
+[0m
+[0m$ [0mgit grep -n "color:var(--do-cerulean)\|color: var(--do-cerulean)\|color: 'var(--do-cerulean)'\|text-cerulean\b\|--do-text-accent" -- app components lib 2>&1 | head -100
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m$ [0mgit grep -n "#a7b8c1\|#5c7d8c\|#678391\|#5a7d8f" -- app components lib 2>&1
+app/clients/[clientId]/components/DemoSection.tsx:280:            <div className="flex-1 mx-4 bg-white rounded px-3 py-1 text-xs text-[#5a7d8f] font-[family-name:var(--font-dm-sans)] border border-[#d4e8f0]">
+app/clients/[clientId]/components/DemoSection.tsx:303:                <div className="text-xs text-[#5a7d8f]">Last updated: just now</div>
+app/clients/[clientId]/components/PortalMockupSection.tsx:59:            <div className="flex-1 mx-4 bg-white rounded px-3 py-1 text-xs text-[#5a7d8f] font-mono border border-[#d4e8f0] text-center">
+app/clients/[clientId]/components/PricingSection.tsx:310:                <div className="text-sm text-[#5a7d8f] leading-loose">
+app/clients/dashboard/page.tsx:55:    engagement_letter: 'bg-[#5a7d8f]/10 text-[#023047] border-[#5a7d8f]/30',
+app/clients/dashboard/page.tsx:56:    terms: 'bg-[#5a7d8f]/10 text-[#023047] border-[#5a7d8f]/30',
+app/clients/dashboard/page.tsx:57:    other: 'bg-[#5a7d8f]/10 text-[#023047] border-[#5a7d8f]/30',
+app/clients/dashboard/page.tsx:124:          <p className="text-[#5a7d8f]">
+app/clients/dashboard/page.tsx:143:            <p className="text-sm text-[#5a7d8f] mb-3">
+app/clients/dashboard/page.tsx:163:            <p className="text-sm text-[#5a7d8f] mb-3">
+app/clients/dashboard/page.tsx:175:            <h2 className="text-sm font-semibold text-[#5a7d8f] uppercase tracking-wider mb-4">
+app/clients/dashboard/page.tsx:185:                    <div className="w-8 h-8 rounded-lg bg-[#F8F9FA] border border-[#d4e8f0] flex items-center justify-center shrink-0 mt-0.5 text-[#5a7d8f]">
+app/clients/dashboard/page.tsx:196:                      <p className="text-xs text-[#5a7d8f] mt-0.5">
+app/clients/dashboard/page.tsx:221:              <h2 className="text-sm font-semibold text-[#5a7d8f] uppercase tracking-wider">
+app/clients/dashboard/page.tsx:224:              <span className="text-xs text-[#5a7d8f]">
+app/clients/documents/page.tsx:47:    engagement_letter: 'bg-[#5a7d8f]/10 text-[#023047] border-[#5a7d8f]/30',
+app/clients/documents/page.tsx:48:    terms: 'bg-[#5a7d8f]/10 text-[#023047] border-[#5a7d8f]/30',
+app/clients/documents/page.tsx:49:    other: 'bg-[#5a7d8f]/10 text-[#023047] border-[#5a7d8f]/30',
+app/clients/documents/page.tsx:116:          className="inline-flex items-center gap-1.5 text-sm text-[#5a7d8f] hover:text-[#023047] transition-colors mb-8"
+app/clients/documents/page.tsx:124:          <p className="text-[#5a7d8f]">
+app/clients/documents/page.tsx:132:            <p className="text-[#5a7d8f] text-sm">No documents available yet.</p>
+app/clients/documents/page.tsx:142:                  <div className="w-8 h-8 rounded-lg bg-[#F8F9FA] border border-[#d4e8f0] flex items-center justify-center shrink-0 mt-0.5 text-[#5a7d8f]">
+app/clients/documents/page.tsx:154:                    <p className="text-xs text-[#5a7d8f] mt-0.5">
+app/clients/documents/view/[id]/QuestionnaireForm.tsx:23:const MUTED = "#5a7d8f";
+app/clients/documents/view/[id]/SignPanel.tsx:117:          <p style={{ fontSize: 12, color: "#5a7d8f", margin: 0 }}>
+app/clients/documents/view/[id]/page.tsx:133:              color: '#5a7d8f',
+app/clients/documents/view/[id]/page.tsx:143:          <span style={{ fontSize: 13, color: '#5a7d8f' }}>
+app/clients/login/page.tsx:32:        <p className="text-sm text-[#5a7d8f]">Loading...</p>
+app/clients/login/page.tsx:84:          <p className="text-sm text-[#5a7d8f]">Sign in to access your documents and proposals.</p>
+app/clients/login/page.tsx:100:              className="w-full px-4 py-3 bg-white border border-[#d4e8f0] rounded-lg text-[#023047] text-sm placeholder-[#5a7d8f] focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition"
+app/clients/login/page.tsx:116:              className="w-full px-4 py-3 bg-white border border-[#d4e8f0] rounded-lg text-[#023047] text-sm placeholder-[#5a7d8f] focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition"
+app/clients/login/page.tsx:151:          <p className="text-sm text-[#5a7d8f]">Loading...</p>
+app/clients/project/ProjectView.tsx:61:  upcoming:  { label: 'Upcoming',    color: '#5a7d8f', bg: 'rgba(90,125,143,0.1)'  },
+app/clients/project/ProjectView.tsx:121:        <Link href="/clients/dashboard" className="inline-flex items-center gap-1.5 text-sm text-[#5a7d8f] hover:text-[#023047] transition-colors mb-8">
+app/clients/project/ProjectView.tsx:127:          <p className="text-[#5a7d8f] text-sm">{fmtDate(startDate)} – {fmtDate(endDate)}</p>
+app/clients/project/ProjectView.tsx:137:              <p className="text-xs text-[#5a7d8f]">Complete these tasks to keep the project on track.</p>
+app/clients/project/ProjectView.tsx:161:                      <div className="text-xs text-[#5a7d8f] mt-0.5">
+app/clients/project/ProjectView.tsx:172:                    {isExpanded ? <ChevronDown size={16} className="text-[#5a7d8f]" /> : <ChevronRight size={16} className="text-[#5a7d8f]" />}
+app/clients/project/ProjectView.tsx:180:                        <div className="text-[10px] font-bold uppercase tracking-wider text-[#5a7d8f] mb-3">Milestone</div>
+app/clients/project/ProjectView.tsx:189:                                {m.target_date && <p className="text-xs text-[#5a7d8f] mt-0.5">Target: {fmtDate(m.target_date)}</p>}
+app/clients/project/ProjectView.tsx:200:                        <div className="text-[10px] font-bold uppercase tracking-wider text-[#5a7d8f] mb-3 mt-4">Your actions</div>
+app/clients/project/ProjectView.tsx:213:                                    <p className={`text-sm font-medium ${done ? 'text-[#5a7d8f] line-through' : 'text-[#023047]'}`}>{task.title}</p>
+app/clients/project/ProjectView.tsx:214:                                    {task.due_date && !done && <p className="text-xs text-[#5a7d8f] mt-0.5">Due: {fmtDate(task.due_date)}</p>}
+app/clients/project/ProjectView.tsx:218:                                          <div key={u.id} className="flex items-center gap-2 text-xs text-[#5a7d8f]">
+app/clients/project/ProjectView.tsx:229:                                            <span className="text-[#5a7d8f]">
+app/clients/project/ProjectView.tsx:246:                                        className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium border border-[#d4e8f0] rounded-lg text-[#5a7d8f] hover:border-[#219EBC]/40 hover:text-[#219EBC] transition-colors disabled:opacity-50"
+app/clients/project/ProjectView.tsx:262:                      <p className="text-sm text-[#5a7d8f] mt-4">No client actions for this phase.</p>
+app/clients/project/ProjectView.tsx:273:            <h2 className="text-sm font-semibold text-[#5a7d8f] uppercase tracking-wider mb-4">Your uploads</h2>
+app/clients/project/ProjectView.tsx:279:                  <span className="text-xs text-[#5a7d8f] shrink-0">{fmtBytes(u.file_size)}</span>
+app/clients/project/ProjectView.tsx:280:                  <span className="text-xs text-[#5a7d8f] shrink-0">{fmtDate(u.uploaded_at)}</span>
+app/clients/project/page.tsx:55:          <Link href="/clients/dashboard" className="inline-flex items-center gap-1.5 text-sm text-[#5a7d8f] hover:text-[#023047] mb-8">
+app/clients/project/page.tsx:59:          <p className="text-[#5a7d8f]">No project found. Contact Craig if you think this is an error.</p>
+components/LocationPage.tsx:193:                      <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: '#a7b8c1' }}>{String(i + 1).padStart(2, '0')}</span>
+components/LocationPage.tsx:195:                    <p style={{ fontSize: 'var(--do-text-sm)', color: '#a7b8c1', lineHeight: 1.75, marginBottom: 0 }}>{item}</p>
+[0m
+Let me explore the codebase to understand the scope of changes needed.
+[0m$ [0mgit grep -n "opacity.*0\.\(4\|5\)" -- components/LocationPage.tsx 2>&1
+components/LocationPage.tsx:225:                <p style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-text-on-dark)', opacity: 0.4, textAlign: 'center', marginTop: 16, marginBottom: 0 }}>
+[0m
+[0m$ [0mgit grep -n "color:var(--do-cerulean)\|color: var(--do-cerulean)\|color: 'var(--do-cerulean)'\|text-cerulean\b\|--do-text-accent" -- app components lib 2>&1
+app/apps/commerce/page.tsx:368:          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+app/apps/proof/page.tsx:287:          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+app/apps/works/page.tsx:344:          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+app/blog/page.tsx:98:                    <span className="text-xs font-semibold uppercase" style={{ color: 'var(--do-cerulean)' }}>Checklist</span>
+app/blog/page.tsx:108:                  <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" style={{ color: 'var(--do-cerulean)' }} />
+app/case-studies/eternal-fitness/page.tsx:141:                  <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: 'var(--do-cerulean)' }} />
+app/contact/ContactClient.tsx:96:                    <Mail size={20} style={{ color: 'var(--do-cerulean)' }} />
+app/contact/ContactClient.tsx:105:                    <Phone size={20} style={{ color: 'var(--do-cerulean)' }} />
+app/contact/ContactClient.tsx:246:                    <Icon size={20} style={{ color: 'var(--do-cerulean)' }} />
+app/d17-apps-cases.css:66:  letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean); margin-bottom:2px }
+app/d17-apps-cases.css:78:.tile .stock{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-apps-cases.css:148:.mq .r svg{ width:14px; height:14px; color:var(--do-cerulean) }
+app/d17-apps-cases.css:190:.a943 .ph-row .l{ font-family:var(--do-font-mono); font-size:max(7px, calc(8 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-apps-cases.css:327:.a946 .acct b{ font-family:var(--do-font-mono); font-weight:600; font-size:max(8px, calc(9 * var(--u))); letter-spacing:.12em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-apps-cases.css:334:.a946 .facets label.on i{ background:var(--do-cerulean); border-color:var(--do-cerulean) }
+app/d17-apps-cases.css:336:.a946 .tile .pr b{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-apps-cases.css:341:.a946 .quote .l{ font-family:var(--do-font-mono); font-size:max(8px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-apps-cases.css:364:.a948 .d17-doc li em{ font-style:normal; justify-self:end; font-family:var(--do-font-mono); font-size:max(6px, calc(9.5 * var(--u))); letter-spacing:.08em; color:var(--do-cerulean) }
+app/d17-apps-cases.css:386:.d17-doc .figs--none li b{ font-family:var(--do-font-mono); font-weight:600; font-size:max(7px, calc(10 * var(--u))); letter-spacing:.1em; min-width:0; color:var(--do-cerulean) }
+app/d17-apps-cases.css:461:[data-od-id="related"] .card .kicker{ display:block; font-family:var(--do-font-mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--do-cerulean); margin-bottom:10px }
+app/d17-apps-cases.css:521:.a954 .proj b{ display:block; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-apps-cases.css:536:.a955 .d17-doc li em{ font-style:normal; justify-self:end; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u))); letter-spacing:.08em; color:var(--do-cerulean) }
+app/d17-apps-cases.css:568:.a957 .ex em{ font-style:normal; font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); color:var(--do-cerulean) }
+app/d17-apps-cases.css:577:.a957 .lock{ margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-art.module.css:65:  font-size: max(6px, calc(10 * var(--u))); letter-spacing: .14em; text-transform: uppercase; color: var(--do-cerulean) }
+app/d17-art.module.css:295:.a920 .contactLink:hover { border-color: var(--do-cerulean); background: color-mix(in srgb, var(--do-cerulean) 18%, transparent) }
+app/d17-art.module.css:308:.a920 .note li::before { content: '0' counter(c); font-family: var(--do-font-mono); font-size: 10px; color: var(--do-cerulean); padding-top: 3px }
+app/d17-global.css:66:  font-size:max(6px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-global.css:330:.a920 .note li::before{ content:'0' counter(c); font-family:var(--do-font-mono); font-size:10px; color:var(--do-cerulean); padding-top:3px }
+app/d17-global.css:428:  letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean); margin-bottom:2px }
+app/d17-global.css:469:  color:var(--do-cerulean); letter-spacing:.08em }
+app/d17-global.css:679:.match .r svg{ width:18px; height:18px; color:var(--do-cerulean) }
+app/d17-global.css:747:.card-j .r{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); letter-spacing:.1em; color:var(--do-cerulean) }
+app/d17-global.css:865:  color:var(--do-cerulean) }
+app/d17-locations.css:48:  color:var(--do-text-cerulean); font-size:var(--do-text-sm); padding-top:2px }
+app/d17-locations.css:104:.pk li::before{ content:'0' counter(p); font-family:var(--do-font-mono); font-size:max(6px, calc(10 * var(--u))); color:var(--do-cerulean); padding-top:1px }
+app/d17-locations.css:119:  text-transform:uppercase; color:var(--do-cerulean); padding-bottom:calc(5 * var(--u));
+app/d17-locations.css:170:  letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-locations.css:294:.five .rep .ref{ font-family:var(--do-font-mono); font-size:max(8px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-locations.css:318:.keep .cd .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-locations.css:345:.ck .panel .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-locations.css:357:.sw-t.lock::before{ content:'ALWAYS'; position:absolute; right:54px; top:4px; font-family:var(--do-font-mono); font-size:9px; letter-spacing:.14em; color:var(--do-cerulean) }
+app/d17-problems.css:67:  letter-spacing:.12em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-problems.css:110:  text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-problems.css:149:.cols .j small{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.08em; color:var(--do-cerulean) }
+app/d17-problems.css:390:.reg td.s{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); color:var(--do-cerulean) }
+app/d17-problems.css:391:.sop .h{ margin:calc(9 * var(--u)) 0 0; font-family:var(--do-font-mono); font-weight:700; font-size:max(7px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+app/d17-resources.css:45:  letter-spacing:.06em; color:var(--do-cerulean); margin-left:.5em }
+app/d17-resources.css:194:.fld b{ display:block; margin-top:2px; font-size:max(8.5px, calc(12 * var(--u))); font-weight:700; color:var(--do-cerulean) }
+app/d17-resources.css:199:  padding:calc(3 * var(--u)) 0; border:0; font-size:max(8.5px, calc(11 * var(--u))); font-weight:600; color:var(--do-cerulean) }
+app/d17-resources.css:252:.vb th.us{ color:var(--do-cerulean) }
+app/d17-resources.css:343:.a996 .slip .ref{ display:block; font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+app/deco-page.module.css:59:  border-radius:var(--do-radius-lg); color:var(--do-cerulean); margin-bottom:20px;
+app/design-system/colors_and_type.css:176:     --do-text-accent is retained for large display type only.    */
+app/design-system/colors_and_type.css:183:  --do-text-accent:        var(--do-cerulean);       /* ≥24px display only */
+app/design-system/colors_and_type.css:184:  --do-text-cerulean:      #176f86;                  /* 5.45:1 on Off-White — cerulean for text/links */
+app/design-system/colors_and_type.css:249:  --do-eyebrow-color: var(--do-cerulean);
+app/design-system/colors_and_type.css:332:  --do-text-accent:        var(--do-cerulean);             /* 4.41:1 — large/UI only */
+app/design-system/ds-artwork.css:188:.p-bar1{ stop-color: var(--do-cerulean); stop-opacity: .28 }
+app/design-system/ds-artwork.css:394:.sp-panel--calm  li .mk{ color:var(--do-cerulean) }
+app/design-system/ds-marketing.css:79:.btn--outline{ border-color:var(--do-cerulean); color:var(--do-text-primary) }
+app/design-system/ds-marketing.css:92:.logo span{ color:var(--do-text-cerulean) }
+app/design-system/ds-marketing.css:337:.btn-ghost:hover{ color:var(--do-cerulean) }
+app/design-system/ds-marketing.css:346:  border-radius:var(--do-radius-lg); color:var(--do-cerulean); margin-bottom:20px;
+app/design-system/ds-nav.css:88:.btn--ghost:hover{ color:var(--do-text-primary); border-color:var(--do-cerulean);
+app/design-system/ds-nav.css:168:  border-color:var(--do-cerulean);
+app/design-system/ds-nav.css:173:  color:var(--do-cerulean); stroke-width:1.6 }
+app/design-system/ds-nav.css:283:.finder-close:hover{ color:var(--do-text-primary); border-color:var(--do-cerulean) }
+app/design-system/ds-nav.css:301:  border-color:var(--do-cerulean);
+app/design-system/ds-nav.css:335:.result-alts a:hover{ color:var(--do-text-primary); border-color:var(--do-cerulean);
+app/design-system/ds-plates.css:95:.p-bar1{ stop-color:var(--do-cerulean); stop-opacity:.28 }
+app/design-system/marketing-pages-extra.css:22:.btn--ghost:hover{ color:var(--do-cerulean) }
+app/design-system/marketing-pages-extra.css:44:  border-radius:var(--do-radius-lg); color:var(--do-cerulean); margin-bottom:20px;
+app/design-system/marketing-pages-extra.css:127:.log-row:hover h3{ color:var(--do-cerulean) }
+app/design-system/marketing-pages-extra.css:129:.log-row .go{ align-self:center; font-weight:var(--do-weight-semibold); font-size:var(--do-text-sm); color:var(--do-cerulean);
+app/globals.css:40:  --do-text-accent:         var(--do-cerulean);
+app/globals.css:41:  --do-text-cerulean:       #176f86;
+app/globals.css:162:.back-link:hover { color: var(--do-cerulean); }
+app/globals.css:199:.related-list a:hover { color: var(--do-cerulean); }
+app/globals.css:208:.blog-card:hover { border-color: var(--do-cerulean) !important; }
+app/globals.css:274:  color: var(--do-cerulean);
+app/globals.css:367:.blog-lead:hover { border-color: var(--do-cerulean); box-shadow: var(--do-shadow-md); }
+app/globals.css:404:  border-color: var(--do-cerulean);
+app/globals.css:426:.vid-len{ font-size:9px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--do-cerulean); border:1px solid color-mix(in srgb, var(--do-cerulean) 40%, transparent); border-radius:999px; padding:2px 8px }
+app/homepage.css:161:  text-decoration-color:var(--do-cerulean); text-decoration-thickness:2px }
+app/locations/fractional-cto/page.tsx:81:            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+app/locations/fractional-cto/page.tsx:108:                <MapPin size={18} style={{ color: 'var(--do-cerulean)' }} />
+app/locations/fractional-cto/page.tsx:125:                    <ArrowRight size={16} style={{ color: 'var(--do-cerulean)', opacity: 0, transition: 'opacity 0.2s' }} />
+app/locations/tech-audit/page.tsx:60:                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+app/locations/tech-audit/page.tsx:74:                <MapPin size={18} style={{ color: 'var(--do-cerulean)' }} />
+app/locations/tech-audit/page.tsx:91:                    <ArrowRight size={16} style={{ color: 'var(--do-cerulean)', opacity: 0, transition: 'opacity 0.2s' }} />
+app/pricing/page.tsx:236:              style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>small business services</Link> for details.</p>
+app/pricing/page.tsx:278:              style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>that&rsquo;s the whole of how I build</Link>.
+app/resources/artwork-approval-playbook/page.tsx:227:                  <CheckCircle2 size={18} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-cerulean)' }} />
+app/resources/artwork-approval-playbook/page.tsx:266:                  <CheckCircle2 size={18} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-cerulean)' }} />
+app/resources/artwork-approval-playbook/page.tsx:334:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/artwork-approval-playbook/page.tsx:340:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/artwork-approval-playbook/page.tsx:346:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/artwork-approval-playbook/page.tsx:352:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/artwork-approval-playbook/page.tsx:373:            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+app/resources/audit-checklist/page.tsx:276:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/audit-checklist/page.tsx:282:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/audit-checklist/page.tsx:288:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/audit-checklist/page.tsx:294:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/audit-checklist/page.tsx:316:            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+app/resources/capacity-planner/page.tsx:154:                <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 700, color: 'var(--do-cerulean)', letterSpacing: '0.06em' }}>{s.n}</span>
+app/resources/decoded-method/page.tsx:228:                      <Check size={16} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-cerulean)' }} />
+app/resources/decoded-method/page.tsx:249:                    <Icon size={20} style={{ color: 'var(--do-cerulean)' }} />
+app/resources/decoded-method/page.tsx:308:            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+app/resources/erp-selection-playbook/page.tsx:195:                  <CheckCircle2 size={18} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-cerulean)' }} />
+app/resources/erp-selection-playbook/page.tsx:216:                      <span style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-cerulean)' }}>-</span>
+app/resources/erp-selection-playbook/page.tsx:227:                      <CheckCircle2 size={16} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-cerulean)' }} />
+app/resources/erp-selection-playbook/page.tsx:273:                    <span style={{ color: 'var(--do-cerulean)' }}>{sys.strength}</span>
+app/resources/erp-selection-playbook/page.tsx:340:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/erp-selection-playbook/page.tsx:346:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/erp-selection-playbook/page.tsx:352:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/erp-selection-playbook/page.tsx:358:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/erp-selection-playbook/page.tsx:379:            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+app/resources/page.tsx:159:                    <Icon size={24} style={{ color: 'var(--do-cerulean)' }} />
+app/resources/page.tsx:163:                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)' }}>
+app/resources/seasonal-capacity/page.tsx:106:                <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 700, color: 'var(--do-cerulean)', letterSpacing: '0.06em' }}>{s.n}</span>
+app/resources/six-sigma/page.tsx:156:                  <div style={{ marginTop: 4, fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)' }}>{l.dpmo} DPMO</div>
+app/resources/sop-template/page.tsx:143:                  <CheckCircle2 size={18} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/sop-template/page.tsx:234:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/sop-template/page.tsx:240:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/sop-template/page.tsx:246:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/sop-template/page.tsx:252:                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+app/resources/sop-template/page.tsx:273:            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+app/sectors/awards-engraving/page.tsx:208:                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+app/sectors/awards-engraving/page.tsx:239:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/awards-engraving/page.tsx:255:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/garment-decoration/page.tsx:203:                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+app/sectors/garment-decoration/page.tsx:234:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/garment-decoration/page.tsx:250:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/garment-decoration/page.tsx:266:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/labels-packaging/page.tsx:245:                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+app/sectors/labels-packaging/page.tsx:276:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/labels-packaging/page.tsx:292:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/operations-consultant-print-embroidery/page.tsx:196:                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+app/sectors/operations-consultant-print-embroidery/page.tsx:227:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/operations-consultant-print-embroidery/page.tsx:243:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/print-promotional/page.tsx:272:                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+app/sectors/print-promotional/page.tsx:303:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/print-promotional/page.tsx:319:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/print-promotional/page.tsx:335:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/promotional-merchandise/page.tsx:220:                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+app/sectors/promotional-merchandise/page.tsx:240:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/promotional-merchandise/page.tsx:256:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/promotional-merchandise/page.tsx:272:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/schoolwear/page.tsx:206:                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+app/sectors/schoolwear/page.tsx:257:                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+app/sectors/schoolwear/page.tsx:277:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/schoolwear/page.tsx:293:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/schoolwear/page.tsx:309:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/signs-graphics/page.tsx:218:                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+app/sectors/signs-graphics/page.tsx:249:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/signs-graphics/page.tsx:265:                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/teamwear-clubwear/page.tsx:212:                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+app/sectors/teamwear-clubwear/page.tsx:232:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/teamwear-clubwear/page.tsx:248:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/teamwear-clubwear/page.tsx:264:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/workwear/page.tsx:209:                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+app/sectors/workwear/page.tsx:242:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/workwear/page.tsx:258:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/sectors/workwear/page.tsx:274:                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+app/small-business/page.tsx:146:                    <Icon size={24} style={{ color: 'var(--do-cerulean)' }} />
+app/small-business/page.tsx:157:                        <CheckCircle2 size={16} style={{ color: 'var(--do-cerulean)', marginTop: 2, flexShrink: 0 }} />
+app/small-business/page.tsx:171:            See <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>full pricing</Link> for details.
+app/tools/should-i-replace-erp/page.tsx:120:                <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', marginBottom: 16 }}>Question {currentQ + 1}</div>
+app/tools/should-i-replace-erp/page.tsx:154:                <Link href="/resources/erp-selection-playbook" style={{ color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)' }}>
+components/BlogList.tsx:63:                <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ alignSelf: 'flex-start', color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
+components/BlogList.tsx:157:                  <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
+components/LocationPage.tsx:72:                : <span key={i} className="h1 em" style={{ color: 'var(--do-cerulean)', fontFamily: 'var(--do-font-heading)', display: 'inline' }}>{part}</span>
+components/LocationPage.tsx:130:                      <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wide)', marginBottom: 4 }}>From Worthing</div>
+components/LocationPage.tsx:136:                      <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wide)', marginBottom: 4 }}>{town}</div>
+components/LocationPage.tsx:166:                <div style={{ fontSize: 'var(--do-text-3xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)', marginBottom: 16 }}>{String(i + 1).padStart(2, '0')}</div>
+components/LocationPage.tsx:251:            <Link href={serviceUrl} className="text-cerulean hover:underline">
+components/ScreenshotFrame.tsx:32:          <span className="text-[9px] font-semibold tracking-wider uppercase text-cerulean border border-cerulean/40 rounded-full px-2 py-0.5 shrink-0">
+components/SectorPageDS.module.css:66:  color: var(--do-cerulean);
+components/ToolLeadCapture.tsx:65:          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-cerulean hover:underline">
+components/calculators/SeasonalCapacityCalculator.tsx:90:                fontSize: 'var(--do-text-xs)', color: 'var(--do-cerulean)', background: 'none',
+components/graphics/CredentialsGraphic.tsx:31:            <div className="text-sm text-cerulean">Founder, Decoded Ops</div>
+components/graphics/ExpertiseTimelineGraphic.tsx:51:        <div className="mt-2 text-xs font-semibold text-cerulean">Craig Blackman</div>
+[0m
+[0m$ [0mgit grep -n "#486a7b" -- app components lib 2>&1
+app/design-system/colors_and_type.css:180:  --do-text-subtle:        #486a7b;                  /* placeholders/disabled ONLY */
+app/globals.css:42:  --do-text-muted:          #486a7b;
+[0m
+[0m$ [0mgit grep -n "#c3d0d6" -- app components lib 2>&1
+(no output)
+[0m
+[0m→ [0mRead app/globals.css[90m [offset=30, limit=30][0m
+[0m→ [0mRead components/LocationPage.tsx[90m [offset=60, limit=50][0m
+Let me read the key files to understand context for the changes.
+[0m→ [0mRead components/LocationPage.tsx[90m [offset=120, limit=120][0m
+[0m
+[0m$ [0mgit grep -n "docmini" -- app components lib 2>&1
+app/d17-global.css:854:.a1008 .docmini{ position:absolute; background:var(--do-white); color:var(--do-prussian-blue);
+app/d17-global.css:858:.a1008 .docmini .tag{ display:block; font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u)));
+app/d17-global.css:860:.a1008 .docmini .row{ display:flex; align-items:baseline; gap:calc(8 * var(--u)); margin-top:calc(9 * var(--u));
+app/d17-global.css:863:.a1008 .docmini .row:first-of-type{ border-top:0; padding-top:0; margin-top:calc(10 * var(--u)) }
+app/d17-global.css:864:.a1008 .docmini .row b{ font-family:var(--do-font-mono); font-weight:700; font-size:max(8px, calc(11 * var(--u)));
+app/d17-global.css:894:  .a1008 .docmini, .a1008 .photopin{ position:relative !important; left:auto !important; top:auto !important; width:48% !important;
+app/page.tsx:208:          <div class="docmini m-drop" style="left:calc(352 * var(--u)); top:calc(356 * var(--u)); width:calc(236 * var(--u)); transform:rotate(-3deg); animation-delay:.9s">
+[0m
+[0m$ [0mgit grep -n "table-foot" -- app components lib 2>&1
+app/apps/commerce/page.tsx:366:          <p className="table-foot">A full rebuild, like a migration off an existing platform, isn&rsquo;t on this table on
+app/apps/commerce/page.tsx:368:          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+app/apps/proof/page.tsx:284:          <p className="table-foot">There&rsquo;s no third tier for this product. If what you need is bigger
+app/apps/proof/page.tsx:287:          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+app/apps/works/page.tsx:344:          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+app/design-system/marketing-pages-extra.css:103:.table-foot{ margin:16px 0 0; font-size:var(--do-text-xs); color:var(--do-text-secondary); max-width:80ch }
+app/pricing/page.tsx:144:          <p className="table-foot" style={{ marginTop: 20 }}>Every price has three tiers (Essential, Recommended, Complete), set at the audit
+app/pricing/page.tsx:234:          <p className="table-foot" style={{ marginTop: 28 }}>Sub-£1m businesses use the same services at the &ldquo;from&rdquo; prices above.
+app/pricing/page.tsx:270:          <p className="table-foot" style={{ marginTop: 28 }}>Proof and Commerce sell on founding-client terms while the
+app/pricing/page.tsx:293:          <p className="table-foot">A full custom build is quoted the same way. If nothing on the market
+[0m
+[0m$ [0mgit grep -n "\.h1\.em\|\.h1 em" -- app globals.css components 2>&1
+(no output)
+[0m
+[0m→ [0mRead app/page.tsx[90m [limit=30, offset=200][0m
+[0m→ [0mRead app/d17-global.css[90m [limit=20, offset=854][0m
+[0m→ [0mRead app/resources/sop-template/page.tsx[90m [limit=40, offset=130][0m
+[0m
+[0m$ [0mgit grep -n "div.card.*>.*a\b\|card.*>.*>.*a" -- app/resources/sop-template/page.tsx 2>&1
+(no output)
+[0m
+[0m→ [0mRead app/resources/sop-template/page.tsx[90m [limit=30, offset=210][0m
+[0m→ [0mRead app/resources/sop-template/page.tsx[90m [limit=20, offset=260][0m
+[0m
+[0m$ [0mgit grep -n "card.*link\|Link.*card" -- app/resources/sop-template/page.tsx 2>&1
+(no output)
+[0m
+[0m$ [0mgit grep -n "text-cerulean" -- app globals.css 2>&1
+app/d17-locations.css:48:  color:var(--do-text-cerulean); font-size:var(--do-text-sm); padding-top:2px }
+app/design-system/colors_and_type.css:184:  --do-text-cerulean:      #176f86;                  /* 5.45:1 on Off-White — cerulean for text/links */
+app/design-system/ds-marketing.css:92:.logo span{ color:var(--do-text-cerulean) }
+app/globals.css:41:  --do-text-cerulean:       #176f86;
+[0m
+[0m→ [0mRead app/globals.css[90m [limit=30, offset=395][0m
+Now let me check the blog page and the existing `text-cerulean` Tailwind class usage:
+[0m→ [0mRead components/LocationPage.tsx[90m [limit=10, offset=245][0m
+[0m→ [0mRead app/blog/page.tsx[90m [limit=20, offset=93][0m
+[0m
+[0m$ [0mgit grep -n "hover:text-cerulean\|hover:text-\[#219EBC\]" -- app components lib 2>&1
+app/clients/dashboard/page.tsx:139:              <h2 className="text-lg font-bold text-[#023047] group-hover:text-[#219EBC] transition-colors">
+app/clients/dashboard/page.tsx:159:              <h2 className="text-lg font-bold text-[#023047] group-hover:text-[#219EBC] transition-colors">
+app/clients/project/ProjectView.tsx:246:                                        className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium border border-[#d4e8f0] rounded-lg text-[#5a7d8f] hover:border-[#219EBC]/40 hover:text-[#219EBC] transition-colors disabled:opacity-50"
+[0m
+Now I have a thorough understanding. Let me also check the `hover:text-cerulean` references and the ScreenshotFrame/graphics components:
+[0m→ [0mRead components/ScreenshotFrame.tsx[90m [limit=15, offset=27][0m
+[0m
+[0m$ [0mgit grep -n "ol.*li.*a.*span\|breadcrumb" -- app/homepage.css app/page.tsx components 2>&1
+app/page.tsx:306:                      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z" /></svg>Publish</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg>Insight</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" /></svg>Setup</span></nav>
+components/LocationPage.tsx:72:                : <span key={i} className="h1 em" style={{ color: 'var(--do-cerulean)', fontFamily: 'var(--do-font-heading)', display: 'inline' }}>{part}</span>
+components/ProblemPageDS.tsx:17:  /** Slug for breadcrumb URL (e.g. 'ai-paralysis') */
+components/calculators/CapacityPlannerCalculator.tsx:142:              <span className="calc-stat-label" style={{ color: 'var(--do-text-on-dark)' }}>{capacityUtilisation}%</span>
+[0m
+[0m→ [0mRead app/homepage.css[90m [limit=20, offset=155][0m
+Now I have a thorough understanding of all the changes needed. Let me check the current state of tsc and build:
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -Last 20
+(no output)
+[0m
+[0m$ [0mTest-Path node_modules
+True
+[0m
+[0m$ [0mgit grep -n "g-navy\|g-tint\|g-off\|g-white\|g-dark" -- app globals.css app/globals.css 2>&1
+app/about/page.tsx:32:      <section className="g-off" data-od-id="hero">
+app/about/page.tsx:70:      <section className="g-navy">
+app/about/page.tsx:129:      <section className="g-white" data-od-id="record">
+app/about/page.tsx:170:      <section className="g-navy set" data-od-id="software-origin">
+app/about/page.tsx:209:      <section className={`g-white ${s.ctaStrip}`} data-od-id="cta-strip">
+app/apps/commerce/page.tsx:59:      <section className="g-off" data-od-id="hero">
+app/apps/commerce/page.tsx:121:      <section className="g-white" data-od-id="tiers">
+app/apps/commerce/page.tsx:175:      <section className="g-tint" data-od-id="architecture">
+app/apps/commerce/page.tsx:264:      <section className="g-navy" data-od-id="custom-work">
+app/apps/commerce/page.tsx:329:      <section className="g-white" id="pricing" data-od-id="pricing">
+app/apps/commerce/page.tsx:383:      <section className="g-off" data-od-id="cta-strip">
+app/apps/page.tsx:31:      <section className="g-off">
+app/apps/page.tsx:94:      <section className="g-white">
+app/apps/page.tsx:140:      <section className="g-tint">
+app/apps/page.tsx:238:      <section className="g-navy">
+app/apps/page.tsx:254:      <section className="g-off cta-strip">
+app/apps/proof/page.tsx:59:      <section className="g-off">
+app/apps/proof/page.tsx:121:      <section className="g-white">
+app/apps/proof/page.tsx:180:      <section className="g-tint">
+app/apps/proof/page.tsx:232:      <section className="g-navy" id="terms">
+app/apps/proof/page.tsx:253:      <section className="g-white" id="pricing">
+app/apps/proof/page.tsx:292:      <section className="g-off cta-strip">
+app/apps/works/page.tsx:59:      <section className="g-off">
+app/apps/works/page.tsx:119:      <section className="g-tint">
+app/apps/works/page.tsx:226:      <section className="g-white">
+app/apps/works/page.tsx:281:      <section className="g-navy">
+app/apps/works/page.tsx:308:      <section className="g-white" id="pricing">
+app/apps/works/page.tsx:349:      <section className="g-off cta-strip">
+app/blog/[slug]/page.tsx:194:      <section className="g-off" data-od-id="header">
+app/blog/[slug]/page.tsx:212:        <section className="g-white" data-od-id="video-embed">
+app/blog/[slug]/page.tsx:225:        <section className="g-white">
+app/blog/[slug]/page.tsx:240:      <section className="g-white" data-od-id="article">
+app/case-studies/case-study-01/page.tsx:78:        <section className="g-off">
+app/case-studies/case-study-01/page.tsx:161:        <section className="g-tint">
+app/case-studies/case-study-01/page.tsx:205:        <section className="g-navy">
+app/case-studies/case-study-01/page.tsx:245:        <section className="g-white">
+app/case-studies/case-study-01/page.tsx:270:        <section className="g-tint">
+app/case-studies/case-study-01/page.tsx:299:        <section className="g-off cta-strip">
+app/case-studies/case-study-02/page.tsx:79:        <section className="g-off">
+app/case-studies/case-study-02/page.tsx:119:        <section className="g-tint">
+app/case-studies/case-study-02/page.tsx:165:        <section className="g-navy">
+app/case-studies/case-study-02/page.tsx:205:        <section className="g-white">
+app/case-studies/case-study-02/page.tsx:230:        <section className="g-off cta-strip">
+app/case-studies/case-study-03/page.tsx:74:        <section className="g-off">
+app/case-studies/case-study-03/page.tsx:122:        <section className="g-tint">
+app/case-studies/case-study-03/page.tsx:185:        <section className="g-white">
+app/case-studies/case-study-03/page.tsx:225:        <section className="g-tint">
+app/case-studies/case-study-03/page.tsx:254:        <section className="g-navy cta-strip">
+app/case-studies/eternal-fitness/page.tsx:78:        <section className="g-off">
+app/case-studies/eternal-fitness/page.tsx:125:        <section className="g-white">
+app/case-studies/eternal-fitness/page.tsx:227:        <section className="g-tint">
+app/case-studies/eternal-fitness/page.tsx:256:        <section className="g-navy cta-strip">
+app/case-studies/page.tsx:39:      <section className="g-off" data-od-id="hero">
+app/case-studies/page.tsx:82:      <section className="g-white" data-od-id="case-grid">
+app/case-studies/page.tsx:165:      <section className="g-navy cta-strip" data-od-id="cta-strip">
+app/clarity/page.tsx:59:      <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
+app/clarity/page.tsx:74:      <section className="g-tint" data-od-id="clarity-flow">
+app/clarity/page.tsx:181:      <section className="g-white ev-band" data-od-id="evidence">
+app/clarity/page.tsx:198:      <section className="g-white" data-od-id="areas">
+app/clarity/page.tsx:247:      <section className="g-navy" data-od-id="guarantee">
+app/clarity/page.tsx:260:      <section className={`g-white ${s.ctaStrip}`} data-od-id="cta-strip">
+app/clients/[clientId]/components/ChallengeSection.tsx:63:                className={`p-7 bg-white rounded-2xl border-l-4 ${borderClass} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
+app/clients/[clientId]/components/DemoSection.tsx:272:        <div className="bg-white rounded-2xl overflow-hidden shadow-xl border border-[rgba(0,0,0,0.08)]">
+app/clients/[clientId]/components/DemoSection.tsx:280:            <div className="flex-1 mx-4 bg-white rounded px-3 py-1 text-xs text-[#5a7d8f] font-[family-name:var(--font-dm-sans)] border border-[#d4e8f0]">
+app/clients/[clientId]/components/DemoSection.tsx:309:                  className="px-4 py-2 border border-[#e0e0e0] rounded-lg text-sm bg-white text-[#023047]"
+app/clients/[clientId]/components/DemoSection.tsx:323:                  className="px-4 py-2 border border-[#ddd] rounded-lg text-sm hover:bg-[#f0f0f0] bg-white"
+app/clients/[clientId]/components/DemoSection.tsx:343:                  <table className="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+app/clients/[clientId]/components/DemoSection.tsx:402:              <div className="bg-white rounded-xl p-5 shadow-sm border border-[#e0e0e0]">
+app/clients/[clientId]/components/DemoSection.tsx:448:            <div className="mt-6 bg-white rounded-xl p-5 shadow-sm">
+app/clients/[clientId]/components/DemoSection.tsx:482:              <div className="mt-6 bg-white rounded-xl p-5 shadow-sm">
+app/clients/[clientId]/components/PortalMockupSection.tsx:51:        <div className="bg-white rounded-2xl overflow-hidden shadow-xl border border-[rgba(0,0,0,0.08)]">
+app/clients/[clientId]/components/PortalMockupSection.tsx:59:            <div className="flex-1 mx-4 bg-white rounded px-3 py-1 text-xs text-[#5a7d8f] font-mono border border-[#d4e8f0] text-center">
+app/clients/[clientId]/components/PricingSection.tsx:123:                <div className="bg-white px-6 pb-7">
+app/clients/[clientId]/components/PricingSection.tsx:163:                <div key={mod.id} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[rgba(2,48,71,0.07)]">
+app/clients/[clientId]/components/PricingSection.tsx:225:                        : 'bg-white'
+app/clients/[clientId]/components/PricingSection.tsx:264:            <div className="bg-white rounded-xl overflow-hidden shadow-sm mb-12">
+app/clients/[clientId]/components/PricingSection.tsx:295:              <div className="bg-white rounded-xl p-7 shadow-sm">
+app/clients/[clientId]/components/PricingSection.tsx:308:              <div className="bg-white rounded-xl p-7 shadow-sm">
+app/clients/dashboard/page.tsx:133:            className="p-6 border border-[#d4e8f0] rounded-xl bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-md)] transition-all group"
+app/clients/dashboard/page.tsx:153:            className="p-6 border border-[#d4e8f0] rounded-xl bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-md)] transition-all group"
+app/clients/dashboard/page.tsx:182:                  className="flex items-center justify-between p-4 border border-[#d4e8f0] rounded-lg bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-sm)] transition-colors"
+app/clients/dashboard/page.tsx:235:                    className="p-4 border border-[#d4e8f0] rounded-lg bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-sm)] transition-colors"
+app/clients/documents/page.tsx:130:          <div className="p-10 border border-[#d4e8f0] rounded-xl bg-white text-center">
+app/clients/documents/page.tsx:139:                className="flex items-center justify-between p-4 border border-[#d4e8f0] rounded-lg bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-sm)] transition-colors"
+app/clients/login/page.tsx:100:              className="w-full px-4 py-3 bg-white border border-[#d4e8f0] rounded-lg text-[#023047] text-sm placeholder-[#5a7d8f] focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition"
+app/clients/login/page.tsx:116:              className="w-full px-4 py-3 bg-white border border-[#d4e8f0] rounded-lg text-[#023047] text-sm placeholder-[#5a7d8f] focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition"
+app/clients/project/ProjectView.tsx:150:              <div key={phase.id} className="rounded-xl overflow-hidden border border-[#d4e8f0] bg-white">
+app/clients/project/ProjectView.tsx:276:                <div key={u.id} className="flex items-center gap-3 p-3 bg-white border border-[#d4e8f0] rounded-lg">
+app/contact/ContactClient.tsx:72:      <section className="g-off">
+app/contact/ContactClient.tsx:229:      <section className="g-navy">
+app/contact/ContactClient.tsx:261:      <section className="g-navy cta-strip" data-od-id="cta-strip">
+app/cookies/page.tsx:53:      <section className="g-off">
+app/cookies/page.tsx:62:      <section className="g-white">
+app/deliver/page.tsx:31:      <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
+app/deliver/page.tsx:46:      <section className="g-white ev-band" data-od-id="evidence">
+app/deliver/page.tsx:63:      <section className="g-white" data-od-id="outputs">
+app/deliver/page.tsx:114:      <section className="g-tint" data-od-id="deliver-loop">
+app/deliver/page.tsx:224:      <section className={`g-navy ${s.ctaStrip}`} data-od-id="cta-strip">
+app/design-system/colors_and_type.css:200:  --do-focus-ring-offset: var(--do-off-white);
+app/design-system/colors_and_type.css:213:  --do-status-warning-tint: rgba(255, 183, 3, 0.14);
+app/design-system/colors_and_type.css:284:  --do-warning-tint: var(--do-status-warning-tint);
+app/design-system/ds-marketing.css:31:.g-off{ background:var(--do-surface-page) }
+app/design-system/ds-marketing.css:32:.g-white{ background:var(--do-white) }
+app/design-system/ds-marketing.css:33:.g-tint{ background:color-mix(in srgb, var(--do-prussian-blue) 5%, var(--do-off-white)) }
+app/design-system/ds-marketing.css:34:.g-navy{ background:var(--do-surface-dark); color:var(--do-text-on-dark) }
+app/design-system/ds-marketing.css:43:.g-navy .eyebrow{ background:color-mix(in srgb, var(--do-cerulean) 20%, transparent);
+app/design-system/ds-marketing.css:55:.g-off h1 em, .g-tint h1 em{ color:var(--do-text-primary) }
+app/design-system/ds-marketing.css:56:.g-navy h1 em{ color:var(--do-amber) }          /* 7.93:1 on Prussian Blue */
+app/design-system/ds-marketing.css:60:.g-navy h2{ color:var(--do-text-on-dark) }
+app/design-system/ds-marketing.css:64:.g-navy .lede{ color:var(--do-text-muted-on-dark) }
+app/design-system/ds-marketing.css:66:.g-navy .hair{ background:var(--do-amber) }
+app/design-system/ds-marketing.css:81:.g-navy .btn--outline{ color:var(--do-text-on-dark) }
+app/design-system/ds-marketing.css:97:footer .logo,.g-navy .logo{ color:var(--do-text-on-dark) }
+app/design-system/ds-marketing.css:98:footer .logo span,.g-navy .logo span{ color:var(--do-amber) }
+app/design-system/ds-marketing.css:199:.g-navy .card{ background:color-mix(in srgb, var(--do-off-white) 5%, transparent);
+app/design-system/ds-marketing.css:202:.g-navy .card:hover{ border-color:color-mix(in srgb, var(--do-cerulean) 45%, transparent);
+app/design-system/ds-marketing.css:204:.g-navy .card p{ color:color-mix(in srgb, var(--do-off-white) 72%, transparent) }
+app/design-system/ds-marketing.css:205:.g-navy .card .kicker{ color:var(--do-text-muted-on-dark) }
+app/design-system/ds-marketing.css:285:   .eyebrow, .g-off/.g-white/.g-navy/.g-tint, h1/h2/h3 with slightly
+app/design-system/ds-marketing.css:315:.g-navy .lead{ color:var(--do-text-muted-on-dark) }
+app/design-system/ds-marketing.css:333:.g-navy .btn-secondary{ color:var(--do-text-on-dark);
+app/design-system/ds-marketing.css:335:.g-navy .btn-secondary:hover{ border-color:var(--do-sky-blue) }
+app/design-system/ds-marketing.css:338:.g-navy .btn-ghost{ color:var(--do-sky-blue) }
+app/design-system/ds-marketing.css:339:.g-navy .btn-ghost:hover{ color:var(--do-text-on-dark) }
+app/design-system/ds-marketing.css:354:.g-navy .feature p{ color:color-mix(in srgb, var(--do-off-white) 78%, transparent) }
+app/design-system/ds-marketing.css:355:.g-navy .feature .feature-mark{ color:var(--do-sky-blue);
+app/design-system/ds-marketing.css:373:.g-navy .pull{ border-left-color:var(--do-amber) }
+app/design-system/ds-marketing.css:374:.g-navy .pull cite{ color:var(--do-text-muted-on-dark) }
+app/design-system/ds-plates.css:123:.g-navy .plate-head{ border-bottom-color:color-mix(in srgb, var(--do-sky-blue) 20%, transparent) }
+app/design-system/ds-plates.css:124:.g-navy .plate-head h3{ color:var(--do-text-on-dark) }
+app/design-system/ds-plates.css:125:.g-navy .plate-head .use{ color:var(--do-text-muted-on-dark) }
+app/design-system/ds-plates.css:133:.g-navy .plate-no{ color:var(--do-text-muted-on-dark) }
+app/design-system/ds-plates.css:167:  .g-navy .plate-scroll::after{ color:var(--do-text-muted-on-dark) }
+app/design-system/marketing-pages-extra.css:23:.g-navy .btn--ghost{ color:var(--do-sky-blue) }
+app/design-system/marketing-pages-extra.css:24:.g-navy .btn--ghost:hover{ color:var(--do-text-on-dark) }
+app/design-system/marketing-pages-extra.css:52:.g-navy .feature p{ color:color-mix(in srgb, var(--do-off-white) 78%, transparent) }
+app/design-system/marketing-pages-extra.css:53:.g-navy .feature .feature-mark{ color:var(--do-sky-blue);
+app/design-system/marketing-pages-extra.css:168:.g-navy .pull{ border-left-color:var(--do-amber) }
+app/design-system/marketing-pages-extra.css:169:.g-navy .pull cite{ color:var(--do-sky-blue) }
+app/how-i-build/page.tsx:58:      <section className="g-off">
+app/how-i-build/page.tsx:72:      <section className="g-tint ev-band" data-od-id="evidence">
+app/how-i-build/page.tsx:89:      <section className="g-tint">
+app/how-i-build/page.tsx:198:      <section className="g-white">
+app/how-i-build/page.tsx:257:      <section className="g-navy">
+app/how-i-build/page.tsx:282:      <section className="g-off cta-strip">
+app/layout.tsx:70:      <body className="min-h-full flex flex-col bg-off-white text-prussian-blue" style={{ fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif' }}>
+app/locations/fractional-cto/page.tsx:68:      <section className="g-off">
+app/locations/fractional-cto/page.tsx:87:      <section className="g-tint">
+app/locations/fractional-cto/page.tsx:105:          <section key={county} className="g-off" style={{ borderBottom: '1px solid var(--do-border-subtle)' }}>
+app/locations/fractional-cto/page.tsx:135:      <section className="g-navy">
+app/locations/tech-audit/page.tsx:43:      <section className="g-off">
+app/locations/tech-audit/page.tsx:71:          <section key={county} className="g-off" style={{ borderBottom: '1px solid var(--do-border-subtle)' }}>
+app/locations/tech-audit/page.tsx:101:      <section className="g-navy">
+app/page.tsx:82:        <section className="g-navy stage" id="s1" data-od-id="hero">
+app/page.tsx:152:        <section className="g-navy ledger-sec" id="s2" data-od-id="cost">
+app/page.tsx:178:        <section className="g-off" id="s3" data-od-id="how-i-help">
+app/page.tsx:238:        <section className="g-white" id="s4" data-od-id="guarantee">
+app/page.tsx:253:        <section className="g-tint" id="s5" data-od-id="approach">
+app/page.tsx:271:        <section className="g-navy set" id="s6" data-od-id="turns-up">
+app/page.tsx:341:        <section className="g-white origin" id="s7" data-od-id="origin">
+app/page.tsx:407:        <section className="g-off closer" id="s8" data-od-id="cta">
+app/pricing/page.tsx:68:      <section className="g-off">
+app/pricing/page.tsx:82:      <section className="g-white ev-band" data-od-id="evidence">
+app/pricing/page.tsx:99:      <section className="g-white">
+app/pricing/page.tsx:155:      <section className="g-tint">
+app/pricing/page.tsx:214:      <section className="g-off">
+app/pricing/page.tsx:241:      <section className="section--tight g-navy">
+app/pricing/page.tsx:250:      <section className="g-off">
+app/pricing/page.tsx:304:      <section className="g-white cta-strip">
+app/privacy/page.tsx:52:      <section className="g-off">
+app/privacy/page.tsx:61:      <section className="g-white">
+app/problems/ai-paralysis/page.tsx:101:   <section className="g-off">
+app/problems/ai-paralysis/page.tsx:146:   <section className="g-tint">
+app/problems/ai-paralysis/page.tsx:166:    <section className="g-off" data-od-id="video-embed">
+app/problems/ai-paralysis/page.tsx:181:   <section className="g-white">
+app/problems/ai-paralysis/page.tsx:227:   <section className="g-navy">
+app/problems/ai-paralysis/page.tsx:295:   <section className="g-off">
+app/problems/ai-paralysis/page.tsx:335:   <section className="g-navy">
+app/problems/ai-paralysis/page.tsx:352:     <section className="g-off">
+app/problems/ai-paralysis/page.tsx:406:   <section className="g-white cta-strip">
+app/problems/bottleneck-growth/page.tsx:82:   <section className="g-off">
+app/problems/bottleneck-growth/page.tsx:119:   <section className="g-tint">
+app/problems/bottleneck-growth/page.tsx:139:    <section className="g-off" data-od-id="video-embed">
+app/problems/bottleneck-growth/page.tsx:154:   <section className="g-white">
+app/problems/bottleneck-growth/page.tsx:195:   <section className="g-navy">
+app/problems/bottleneck-growth/page.tsx:263:   <section className="g-navy">
+app/problems/bottleneck-growth/page.tsx:281:     <section className="g-off">
+app/problems/bottleneck-growth/page.tsx:335:   <section className="g-white cta-strip">
+app/problems/buy-vs-build/page.tsx:85:   <section className="g-off">
+app/problems/buy-vs-build/page.tsx:144:   <section className="g-tint">
+app/problems/buy-vs-build/page.tsx:181:    <section className="g-off" data-od-id="video-embed">
+app/problems/buy-vs-build/page.tsx:196:   <section className="g-white">
+app/problems/buy-vs-build/page.tsx:233:   <section className="g-navy">
+app/problems/buy-vs-build/page.tsx:335:   <section className="g-navy">
+app/problems/buy-vs-build/page.tsx:353:   <section className="g-white cta-strip">
+app/problems/data-scattered/page.tsx:85:   <section className="g-off">
+app/problems/data-scattered/page.tsx:122:   <section className="g-tint">
+app/problems/data-scattered/page.tsx:163:   <section className="g-off">
+app/problems/data-scattered/page.tsx:199:    <section className="g-off" data-od-id="video-embed">
+app/problems/data-scattered/page.tsx:214:   <section className="g-navy">
+app/problems/data-scattered/page.tsx:266:   <section className="g-navy">
+app/problems/data-scattered/page.tsx:282:   <section className="g-white cta-strip">
+app/problems/erp-implementation-failure/page.tsx:94:   <section className="g-off">
+app/problems/erp-implementation-failure/page.tsx:111:   <section className="g-off">
+app/problems/erp-implementation-failure/page.tsx:155:   <section className="g-navy">
+app/problems/erp-implementation-failure/page.tsx:207:   <section className="g-tint">
+app/problems/erp-implementation-failure/page.tsx:251:    <section className="g-off" data-od-id="video-embed">
+app/problems/erp-implementation-failure/page.tsx:266:   <section className="g-navy">
+app/problems/erp-implementation-failure/page.tsx:290:   <section className="g-off">
+app/problems/erp-implementation-failure/page.tsx:316:   <section className="g-white">
+app/problems/inventory-blind/page.tsx:85:   <section className="g-off">
+app/problems/inventory-blind/page.tsx:132:   <section className="g-tint">
+app/problems/inventory-blind/page.tsx:152:    <section className="g-off" data-od-id="video-embed">
+app/problems/inventory-blind/page.tsx:167:   <section className="g-white">
+app/problems/inventory-blind/page.tsx:198:   <section className="g-navy">
+app/problems/inventory-blind/page.tsx:226:   <section className="g-navy">
+app/problems/inventory-blind/page.tsx:241:   <section className="g-white cta-strip">
+app/problems/legacy-system/page.tsx:85:   <section className="g-off">
+app/problems/legacy-system/page.tsx:129:   <section className="g-tint">
+app/problems/legacy-system/page.tsx:150:    <section className="g-off" data-od-id="video-embed">
+app/problems/legacy-system/page.tsx:165:   <section className="g-white">
+app/problems/legacy-system/page.tsx:194:   <section className="g-navy">
+app/problems/legacy-system/page.tsx:296:   <section className="g-navy">
+app/problems/legacy-system/page.tsx:312:   <section className="g-white cta-strip">
+app/problems/ops-in-owners-head/page.tsx:80:   <section className="g-off">
+app/problems/ops-in-owners-head/page.tsx:127:   <section className="g-tint">
+app/problems/ops-in-owners-head/page.tsx:147:    <section className="g-off" data-od-id="video-embed">
+app/problems/ops-in-owners-head/page.tsx:162:   <section className="g-white">
+app/problems/ops-in-owners-head/page.tsx:203:   <section className="g-navy">
+app/problems/ops-in-owners-head/page.tsx:271:   <section className="g-navy">
+app/problems/ops-in-owners-head/page.tsx:289:   <section className="g-white cta-strip">
+app/problems/page.tsx:46:   <section className="g-off">
+app/problems/page.tsx:57:   <section className="g-navy">
+app/problems/page.tsx:144:   <section className="g-white">
+app/problems/seasonal-peaks/page.tsx:80:   <section className="g-off">
+app/problems/seasonal-peaks/page.tsx:134:   <section className="g-tint">
+app/problems/seasonal-peaks/page.tsx:166:   <section className="g-off">
+app/problems/seasonal-peaks/page.tsx:205:    <section className="g-off" data-od-id="video-embed">
+app/problems/seasonal-peaks/page.tsx:220:   <section className="g-navy">
+app/problems/seasonal-peaks/page.tsx:248:   <section className="g-navy">
+app/problems/seasonal-peaks/page.tsx:266:   <section className="g-white cta-strip">
+app/problems/spreadsheet-addiction/page.tsx:143:   <section className="g-off">
+app/problems/spreadsheet-addiction/page.tsx:161:   <section className="g-tint">
+app/problems/spreadsheet-addiction/page.tsx:181:    <section className="g-off" data-od-id="video-embed">
+app/problems/spreadsheet-addiction/page.tsx:196:   <section className="g-white">
+app/problems/spreadsheet-addiction/page.tsx:238:   <section className="g-navy">
+app/problems/spreadsheet-addiction/page.tsx:245:   <section className="g-navy">
+app/problems/spreadsheet-addiction/page.tsx:264:   <section className="g-white cta-strip">
+app/problems/wrong-erp-software/page.tsx:217:   <section className="g-off">
+app/problems/wrong-erp-software/page.tsx:236:   <section className="g-tint">
+app/problems/wrong-erp-software/page.tsx:256:   <section className="g-off">
+app/problems/wrong-erp-software/page.tsx:295:    <section className="g-off" data-od-id="video-embed">
+app/problems/wrong-erp-software/page.tsx:310:   <section className="g-navy">
+app/problems/wrong-erp-software/page.tsx:317:   <section className="g-navy">
+app/problems/wrong-erp-software/page.tsx:336:   <section className="g-off">
+app/problems/wrong-erp-software/page.tsx:367:   <section className="g-white cta-strip">
+app/process-quality-system/page.tsx:36:      <section className="g-off">
+app/process-quality-system/page.tsx:50:      <section className="g-tint">
+app/process-quality-system/page.tsx:154:      <section className="g-white ev-band" data-od-id="evidence">
+app/process-quality-system/page.tsx:171:      <section className="g-navy cta-strip">
+app/resources/5-warning-signs/page.tsx:70:      <section className="g-off">
+app/resources/5-warning-signs/page.tsx:103:      <section className="g-off section--tight">
+app/resources/5-warning-signs/page.tsx:131:          <div className="g-tint" style={{ borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
+app/resources/artwork-approval-playbook/page.tsx:81:      <section className="g-off">
+app/resources/artwork-approval-playbook/page.tsx:129:      <section className="g-navy">
+app/resources/artwork-approval-playbook/page.tsx:200:      <section className="g-off section--tight">
+app/resources/artwork-approval-playbook/page.tsx:330:          <div className="g-tint" style={{ borderRadius: 'var(--do-radius-2xl)', padding: 32, marginBottom: 64 }}>
+app/resources/audit-checklist/page.tsx:125:      <section className="g-off">
+app/resources/audit-checklist/page.tsx:175:      <section className="g-navy">
+app/resources/audit-checklist/page.tsx:232:      <section className="g-off section--tight">
+app/resources/audit-checklist/page.tsx:272:          <div className="g-tint" style={{ marginTop: 64, borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
+app/resources/capacity-planner/page.tsx:49:      <section className="g-off">
+app/resources/capacity-planner/page.tsx:93:      <section className="g-navy">
+app/resources/capacity-planner/page.tsx:137:      <section className="g-navy">
+app/resources/capacity-planner/page.tsx:164:      <section className="g-off">
+app/resources/capacity-planner/page.tsx:171:      <section className="g-off" style={{ backgroundColor: '#F8F9FA' }}>
+app/resources/capacity-planner/page.tsx:191:      <section className="g-off">
+app/resources/decoded-method/page.tsx:114:      <section className="g-off">
+app/resources/decoded-method/page.tsx:140:      <section className="g-navy">
+app/resources/decoded-method/page.tsx:186:      <section className="g-off section--tight">
+app/resources/decoded-method/page.tsx:204:      <section className="g-off section--tight">
+app/resources/decoded-method/page.tsx:239:      <section className="g-tint">
+app/resources/decoded-method/page.tsx:262:      <section className="g-off section--tight">
+app/resources/decoded-method/page.tsx:293:      <section className="g-off section--tight">
+app/resources/erp-selection-playbook/page.tsx:127:      <section className="g-off">
+app/resources/erp-selection-playbook/page.tsx:178:      <section className="g-off section--tight">
+app/resources/erp-selection-playbook/page.tsx:253:          <div className="g-tint" style={{ borderRadius: 'var(--do-radius-2xl)', padding: 32, marginBottom: 64 }}>
+app/resources/erp-selection-playbook/page.tsx:336:          <div className="g-tint" style={{ borderRadius: 'var(--do-radius-2xl)', padding: 32, marginBottom: 64 }}>
+app/resources/page.tsx:93:      <section className="g-off">
+app/resources/page.tsx:151:      <section className="g-off">
+app/resources/seasonal-capacity/page.tsx:49:      <section className="g-off">
+app/resources/seasonal-capacity/page.tsx:91:      <section className="g-navy">
+app/resources/seasonal-capacity/page.tsx:116:      <section className="g-off">
+app/resources/seasonal-capacity/page.tsx:123:      <section className="g-off" style={{ backgroundColor: '#F8F9FA' }}>
+app/resources/seasonal-capacity/page.tsx:143:      <section className="g-off">
+app/resources/six-sigma/page.tsx:59:      <section className="g-off">
+app/resources/six-sigma/page.tsx:86:      <section className="g-navy">
+app/resources/six-sigma/page.tsx:131:      <section className="g-off section--tight">
+app/resources/six-sigma/page.tsx:165:      <section className="g-off section--tight">
+app/resources/six-sigma/page.tsx:180:      <section className="g-navy">
+app/resources/six-sigma/page.tsx:214:      <section className="g-white" style={{ textAlign: 'center' }}>
+app/resources/sop-template/page.tsx:81:      <section className="g-off">
+app/resources/sop-template/page.tsx:135:      <section className="g-off section--tight">
+app/resources/sop-template/page.tsx:230:          <div className="g-tint" style={{ borderRadius: 'var(--do-radius-2xl)', padding: 32, marginBottom: 64 }}>
+app/retained/page.tsx:78:      <section className="g-off">
+app/retained/page.tsx:91:      <section className="g-white ev-band" data-od-id="evidence">
+app/retained/page.tsx:109:      <section className="g-white">
+app/retained/page.tsx:164:      <section className="g-tint">
+app/retained/page.tsx:225:      <section className="g-navy">
+app/retained/page.tsx:257:      <section className="g-white cta-strip">
+app/sectors/awards-engraving/page.tsx:93:      <section className={`g-off ${styles.heroSection}`}>
+app/sectors/awards-engraving/page.tsx:152:      <section className="g-navy">
+app/sectors/awards-engraving/page.tsx:181:      <section className="g-white">
+app/sectors/awards-engraving/page.tsx:199:      <section className="g-navy">
+app/sectors/awards-engraving/page.tsx:218:        <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/sectors/awards-engraving/page.tsx:269:      <section className="g-off">
+app/sectors/garment-decoration/page.tsx:95:      <section className={`g-off ${styles.heroSection}`}>
+app/sectors/garment-decoration/page.tsx:139:      <section className="g-navy">
+app/sectors/garment-decoration/page.tsx:176:      <section className="g-white">
+app/sectors/garment-decoration/page.tsx:194:      <section className="g-navy">
+app/sectors/garment-decoration/page.tsx:213:        <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/sectors/garment-decoration/page.tsx:280:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/sectors/garment-decoration/page.tsx:293:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-off">
+app/sectors/garment-decoration/page.tsx:306:      <section className="g-off">
+app/sectors/labels-packaging/page.tsx:93:      <section className={`g-off ${styles.heroSection}`}>
+app/sectors/labels-packaging/page.tsx:171:      <section className="g-navy">
+app/sectors/labels-packaging/page.tsx:218:      <section className="g-white">
+app/sectors/labels-packaging/page.tsx:236:      <section className="g-navy">
+app/sectors/labels-packaging/page.tsx:255:        <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/sectors/labels-packaging/page.tsx:306:      <section className="g-off">
+app/sectors/operations-consultant-print-embroidery/page.tsx:95:      <section className={`g-off ${styles.heroSection}`}>
+app/sectors/operations-consultant-print-embroidery/page.tsx:121:      <section className="g-navy">
+app/sectors/operations-consultant-print-embroidery/page.tsx:169:      <section className="g-white">
+app/sectors/operations-consultant-print-embroidery/page.tsx:187:      <section className="g-navy">
+app/sectors/operations-consultant-print-embroidery/page.tsx:206:        <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/sectors/operations-consultant-print-embroidery/page.tsx:257:      <section className="g-off">
+app/sectors/print-promotional/page.tsx:90:      <section className={`g-off ${styles.heroSection}`}>
+app/sectors/print-promotional/page.tsx:134:      <section className="g-navy">
+app/sectors/print-promotional/page.tsx:162:      <section className="g-navy">
+app/sectors/print-promotional/page.tsx:245:      <section className="g-white">
+app/sectors/print-promotional/page.tsx:263:      <section className="g-navy">
+app/sectors/print-promotional/page.tsx:282:        <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/sectors/print-promotional/page.tsx:349:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/sectors/print-promotional/page.tsx:362:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-off">
+app/sectors/print-promotional/page.tsx:375:      <section className="g-off">
+app/sectors/promotional-merchandise/page.tsx:73:      <section className="g-off" style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }}>
+app/sectors/promotional-merchandise/page.tsx:129:      <section className="g-navy">
+app/sectors/promotional-merchandise/page.tsx:179:      <section className="g-white">
+app/sectors/promotional-merchandise/page.tsx:203:      <section className="g-navy">
+app/sectors/promotional-merchandise/page.tsx:229:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/sectors/promotional-merchandise/page.tsx:285:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-off">
+app/sectors/schoolwear/page.tsx:73:      <section className="g-off" style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }}>
+app/sectors/schoolwear/page.tsx:135:      <section className="g-navy">
+app/sectors/schoolwear/page.tsx:185:      <section className="g-white">
+app/sectors/schoolwear/page.tsx:218:      <section className="g-white">
+app/sectors/schoolwear/page.tsx:241:      <section className="g-navy">
+app/sectors/schoolwear/page.tsx:266:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/sectors/signs-graphics/page.tsx:93:      <section className={`g-off ${styles.heroSection}`}>
+app/sectors/signs-graphics/page.tsx:151:      <section className="g-navy">
+app/sectors/signs-graphics/page.tsx:191:      <section className="g-white">
+app/sectors/signs-graphics/page.tsx:209:      <section className="g-navy">
+app/sectors/signs-graphics/page.tsx:228:        <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/sectors/signs-graphics/page.tsx:279:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-off">
+app/sectors/signs-graphics/page.tsx:292:      <section className="g-off">
+app/sectors/teamwear-clubwear/page.tsx:73:      <section className="g-off" style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }}>
+app/sectors/teamwear-clubwear/page.tsx:122:      <section className="g-navy">
+app/sectors/teamwear-clubwear/page.tsx:172:      <section className="g-white">
+app/sectors/teamwear-clubwear/page.tsx:196:      <section className="g-navy">
+app/sectors/teamwear-clubwear/page.tsx:221:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/sectors/teamwear-clubwear/page.tsx:277:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-off">
+app/sectors/workwear/page.tsx:73:      <section className="g-off" style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }}>
+app/sectors/workwear/page.tsx:113:      <section className="g-navy">
+app/sectors/workwear/page.tsx:169:      <section className="g-white">
+app/sectors/workwear/page.tsx:193:      <section className="g-navy">
+app/sectors/workwear/page.tsx:218:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-off">
+app/sectors/workwear/page.tsx:231:      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+app/small-business/page.tsx:97:      <section className="g-off">
+app/small-business/page.tsx:117:      <section className="g-white ev-band" data-od-id="evidence">
+app/small-business/page.tsx:134:      <section className="g-off">
+app/small-business/page.tsx:177:      <section className="g-navy">
+app/tools/automation-roi-calculator/page.tsx:47:      <section className="g-off">
+app/tools/automation-roi-calculator/page.tsx:94:      <section className="g-off">
+app/tools/downtime-cost-calculator/page.tsx:48:      <section className="g-off">
+app/tools/downtime-cost-calculator/page.tsx:86:      <section className="py-12 lg:py-16 bg-white">
+app/tools/downtime-cost-calculator/page.tsx:111:      <section className="g-off">
+app/tools/downtime-cost-calculator/page.tsx:118:      <section className="py-12 lg:py-20 bg-white">
+app/tools/ops-health-score/page.tsx:69:      <section className="g-off">
+app/tools/ops-health-score/page.tsx:108:      <section className="g-off">
+app/tools/page.tsx:87:      <section className="g-off">
+app/tools/page.tsx:137:      <section className="g-off">
+app/tools/rto-calculator/page.tsx:47:      <section className="g-off">
+app/tools/rto-calculator/page.tsx:88:      <section className="g-off">
+app/tools/should-i-replace-erp/page.tsx:61:      <section className="g-off">
+app/tools/should-i-replace-erp/page.tsx:103:      <section className="g-off">
+app/transform/page.tsx:59:      <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
+app/transform/page.tsx:73:      <section className="g-tint ev-band" data-od-id="evidence">
+app/transform/page.tsx:90:      <section className="g-tint" data-od-id="transform-ba">
+app/transform/page.tsx:187:      <section className="g-white" data-od-id="dimensions">
+app/transform/page.tsx:236:      <section className={`g-navy ${s.ctaStrip}`} data-od-id="cta-strip">
+[0m
+[0m$ [0mgit grep -n "\.g-off\|\.g-navy\|\.g-tint\|\.g-white\|\.g-dark" -- app/globals.css 2>&1
+(no output)
+[0m
+[0m→ [0mRead app/d17-locations.css[90m [limit=10, offset=43][0m
+[0m→ [0mRead app/d17-global.css[90m [limit=5, offset=863][0m
+I now have a comprehensive understanding. Let me present the plan.
+
+---
+
+## Plan: CR-WEB-065 Fix 2 — Colour Contrast (WCAG AA)
+
+### Goal
+Replace cerulean `#219EBC` (2.98:1 on white, fails AA) with `--do-text-cerulean` `#176f86` (5.45:1) for text on light backgrounds, and fix remaining hard-coded grey contrast failures.
+
+### Changes by file
+
+**Part 1: Cerulean text on light backgrounds**
+
+| File | Lines | Change |
+|---|---|---|
+| `components/LocationPage.tsx` | 72, 130, 136 | `var(--do-cerulean)` → `var(--do-text-cerulean)` (h1 accent, labels on cards) |
+| `app/blog/page.tsx` | 98, 108 | Checklist label + arrow icon → `var(--do-text-cerulean)` |
+| `app/resources/capacity-planner/page.tsx` | 154 | Label text → `var(--do-text-cerulean)` |
+| `app/resources/seasonal-capacity/page.tsx` | 106 | Label text → `var(--do-text-cerulean)` |
+| `app/resources/six-sigma/page.tsx` | 156 | DPMO value → `var(--do-text-cerulean)` |
+| `app/resources/decoded-method/page.tsx` | 228, 249 | Check icon + icon → `var(--do-text-cerulean)` (icons ok, but brief says change) |
+| `app/resources/sop-template/page.tsx` | 143, 234, 240, 246, 252, 273 | Check icons + link → `var(--do-text-cerulean)` |
+| `app/resources/artwork-approval-playbook/page.tsx` | 227, 266, 334, 340, 346, 352, 373 | Check icons + link → `var(--do-text-cerulean)` |
+| `app/resources/audit-checklist/page.tsx` | 276, 282, 288, 294, 316 | Check icons + link → `var(--do-text-cerulean)` |
+| `app/resources/erp-selection-playbook/page.tsx` | 195, 216, 227, 273, 340, 346, 352, 358, 379 | Check icons + strength + link → `var(--do-text-cerulean)` |
+| `app/resources/page.tsx` | 159, 163 | Icon + link text → `var(--do-text-cerulean)` |
+| `app/pricing/page.tsx` | 236, 278 | Links → `var(--do-text-cerulean)` |
+| `app/apps/commerce/page.tsx` | 368 | Link → `var(--do-text-cerulean)` |
+| `app/apps/proof/page.tsx` | 287 | Link → `var(--do-text-cerulean)` |
+| `app/apps/works/page.tsx` | 344 | Link → `var(--do-text-cerulean)` |
+| `app/small-business/page.tsx` | 146, 157, 171 | Icons + link → `var(--do-text-cerulean)` |
+| `app/tools/should-i-replace-erp/page.tsx` | 120, 154 | Label + link → `var(--do-text-cerulean)` |
+| `app/locations/fractional-cto/page.tsx` | 81, 108, 125 | Link + icon + arrow → `var(--do-text-cerulean)` |
+| `app/locations/tech-audit/page.tsx` | 60, 74, 91 | Link + icon + arrow → `var(--do-text-cerulean)` |
+| `app/sectors/*/page.tsx` (9 files) | ~3 occurrences each | Step numbers + arrows → `var(--do-text-cerulean)` |
+| `app/case-studies/eternal-fitness/page.tsx` | 141 | Check icon → `var(--do-text-cerulean)` |
+| `app/contact/ContactClient.tsx` | 96, 105, 246 | Icons → `var(--do-text-cerulean)` |
+| `components/BlogList.tsx` | 63, 157 | Badge text → `var(--do-text-cerulean)` |
+| `components/ScreenshotFrame.tsx` | 32 | Live badge text → `var(--do-text-cerulean)` |
+| `components/graphics/CredentialsGraphic.tsx` | 31 | Text → `var(--do-text-cerulean)` |
+| `components/graphics/ExpertiseTimelineGraphic.tsx` | 51 | Text → `var(--do-text-cerulean)` |
+| `components/ToolLeadCapture.tsx` | 65 | Link → `var(--do-text-cerulean)` |
+| `components/calculators/SeasonalCapacityCalculator.tsx` | 90 | Label → `var(--do-text-cerulean)` |
+| `components/SectorPageDS.module.css` | 66 | Color → `var(--do-text-cerulean)` |
+| `app/deco-page.module.css` | 59 | Color → `var(--do-text-cerulean)` |
+| `app/design-system/ds-marketing.css` | 337, 346 | Ghost hover + icon label → `var(--do-text-cerulean)` |
+| `app/design-system/ds-nav.css` | 173 | Arrow → `var(--do-text-cerulean)` |
+| `app/design-system/marketing-pages-extra.css` | 22, 44, 127, 129 | Ghost hover + icon label + log row → `var(--do-text-cerulean)` |
+
+**d17 artwork CSS files** — many `color: var(--do-cerulean)` for tiny monospace labels on white. These are text on light backgrounds:
+- `app/d17-global.css`: lines 66, 428, 469, 747, 865, 330, 428, 679, 865
+- `app/d17-locations.css`: lines 104, 119, 170, 294, 318, 345, 357
+- `app/d17-art.module.css`: lines 65, 308
+- `app/d17-apps-cases.css`: lines 66, 78, 148, 190, 327, 336, 341, 364, 386, 461, 521, 536, 568, 577
+- `app/d17-problems.css`: lines 67, 110, 149, 390, 391
+- `app/d17-resources.css`: lines 45, 194, 199, 252, 343
+- `app/d17-global.css` line 865 (homepage `.docmini .row b`)
+
+**NOT changing** (dark backgrounds, backgrounds, borders, fills):
+- `app/design-system/colors_and_type.css` line 183 (definition of `--do-text-accent`)
+- `app/globals.css` lines 40-41 (token definitions)
+- All `background`, `border*`, `fill`, `stroke`, `outline` uses
+- `.g-navy` section text that uses cerulean on dark (these should stay or use sky-blue if they're text)
+- Icon-only uses (SVGs, Lucide icons) — unless brief explicitly says change them
+
+**Part 2: Hard-coded greys**
+
+| File:Line | Old | New | Context |
+|---|---|---|---|
+| `components/LocationPage.tsx:193` | `#a7b8c1` | `#c3d0d6` | Number on dark card |
+| `components/LocationPage.tsx:195` | `#a7b8c1` | `#c3d0d6` | Body text on dark card |
+| `components/LocationPage.tsx:225` | `opacity: 0.4` | remove opacity | Footer text on dark |
+| `app/clients/dashboard/page.tsx` (many) | `#5a7d8f` | `var(--do-text-muted)` | Portal text on white |
+| `app/clients/documents/page.tsx` (many) | `#5a7d8f` | `var(--do-text-muted)` | Portal text on white |
+| `app/clients/login/page.tsx` (many) | `#5a7d8f` | `var(--do-text-muted)` | Portal text on white |
+| `app/clients/project/ProjectView.tsx` (many) | `#5a7d8f` | `var(--do-text-muted)` | Portal text on white |
+| `app/clients/project/page.tsx` | `#5a7d8f` | `var(--do-text-muted)` | Portal text on white |
+| `app/clients/documents/view/[id]/QuestionnaireForm.tsx:23` | `#5a7d8f` | `var(--do-text-muted)` | Portal const |
+| `app/clients/documents/view/[id]/SignPanel.tsx:117` | `#5a7d8f` | `var(--do-text-muted)` | Portal text on white |
+| `app/clients/documents/view/[id]/page.tsx` | `#5a7d8f` | `var(--do-text-muted)` | Portal text on white |
+| `app/clients/[clientId]/components/DemoSection.tsx` | `#5a7d8f` | `var(--do-text-muted)` | Portal mockup |
+| `app/clients/[clientId]/components/PortalMockupSection.tsx` | `#5a7d8f` | `var(--do-text-muted)` | Portal mockup |
+| `app/clients/[clientId]/components/PricingSection.tsx` | `#5a7d8f` | `var(--do-text-muted)` | Portal mockup |
+
+**Part 3: Tailwind `text-cerulean` class**
+
+Need to add to `app/globals.css` (after Tailwind layers):
+```css
+.text-cerulean { color: var(--do-text-cerulean); }
+```
+This handles `components/LocationPage.tsx:251` and `components/ToolLeadCapture.tsx:65` which use the Tailwind class.
+
+**Part 4: Verification**
+1. `npx tsc --noEmit` — must pass clean
+2. `npm run build` — must pass
+3. `git add -A && git commit -m "fix(a11y): cerulean text shade + remaining low-contrast greys (CR-WEB-065)"`
+4. Write `.context/lane-reports/LANE-RESULT-web065-fix2.json`
+5. Write `.context/lane-reports/LANE-NOTES-web065-fix2.md`
+6. Commit report files
+
+### Scope notes
+- ~100+ individual edits across ~40+ files
+- The d17 artwork CSS files are the largest single group (~50 edits) but are straightforward find-replace
+- The client portal files (`app/clients/`) use Tailwind `text-[#5a7d8f]` inline — these need individual replacement with `text-[var(--do-text-muted)]` or a custom class
+- No changes to `app/design-system/colors_and_type.css` token definitions
+- No changes to dark-background text (`.g-navy` sections)
+
+Shall I proceed with execution?

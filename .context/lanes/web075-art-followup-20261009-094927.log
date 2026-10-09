@@ -1,0 +1,1065 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/cr-web-075/artwork-swap-map-2.md
+[0m
+[0m$ [0mgit status && git branch --show-current && git log --oneline -3
+On branch lane/web075-art-followup
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.context/cr-web-075/
+	.context/lane-briefs/web075-art-followup.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+lane/web075-art-followup
+4b98c02 chore: lane brief web074-fix1
+702bb9c docs: lane notes + exit files for web074-fix1 (CR-WEB-074)
+3a6795d fix(art): phone fit for DO-ART-943/917, drop duplicate swap exports (CR-WEB-074)
+[0m
+[0m$ [0mls .context/cr-web-075/ && ls public/images/d17/problems/ | Select-Object -First 40
+Directory: D:\apps\worktrees\decoded-ops-website\web075-art-followup\.context\cr-web-075
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          09/10/2026    09:48          30498 artwork-swap-map-2.md
+-a---          09/10/2026    09:36         230646 hero-garment-racking-219356.webp
+-a---          09/10/2026    09:36          38138 plate-cartons-packed-2fb0ae.webp
+
+    Directory: D:\apps\worktrees\decoded-ops-website\web075-art-followup\public\images\d17\problems
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          09/10/2026    09:49          94674 card-embroidery-heads-50b561.webp
+-a---          09/10/2026    09:49          30968 card-garment-shelf-724253.webp
+-a---          09/10/2026    09:49          92428 card-warehouse-floor-f1d62c.webp
+-a---          09/10/2026    09:49         111777 cat-awards-70dc2f.jpg
+-a---          09/10/2026    09:49          44496 cat-awards-70dc2f.webp
+-a---          09/10/2026    09:49          90250 cat-packaging-48f149.jpg
+-a---          09/10/2026    09:49          47140 cat-packaging-48f149.webp
+-a---          09/10/2026    09:49          17685 cat-promo-6d25d2.jpg
+-a---          09/10/2026    09:49           5468 cat-promo-6d25d2.webp
+-a---          09/10/2026    09:49          87938 cat-signage-58e48c.jpg
+-a---          09/10/2026    09:49          60962 cat-signage-58e48c.webp
+-a---          09/10/2026    09:49          10657 cat-workwear-12941c.jpg
+-a---          09/10/2026    09:49           6912 cat-workwear-12941c.webp
+-a---          09/10/2026    09:49          58108 cat-workwear-401e08.jpg
+-a---          09/10/2026    09:49          27478 cat-workwear-401e08.webp
+-a---          09/10/2026    09:49         125373 gen-bench-flatlay-v2-215572.jpg
+-a---          09/10/2026    09:49          86276 gen-bench-flatlay-v2-215572.webp
+-a---          09/10/2026    09:49         120268 gen-press-hall-3d9e01.jpg
+-a---          09/10/2026    09:49          59734 gen-press-hall-3d9e01.webp
+-a---          09/10/2026    09:49         128297 gen-press-hall-7c2764.jpg
+-a---          09/10/2026    09:49          62322 gen-press-hall-7c2764.webp
+-a---          09/10/2026    09:49         220888 hero-embroidery-floor-84216c.webp
+-a---          09/10/2026    09:49         240768 hero-embroidery-heads-b5b1fb.webp
+-a---          09/10/2026    09:49         124032 hero-office-paperwork-75fcd2.webp
+-a---          09/10/2026    09:49         190116 hero-racking-aisle-7d129e.webp
+-a---          09/10/2026    09:49         240826 hero-stockroom-mixed-fa24e6.webp
+-a---          09/10/2026    09:49         118046 hero-workshop-037adf.jpg
+-a---          09/10/2026    09:49          65264 hero-workshop-037adf.webp
+-a---          09/10/2026    09:49          36467 hero-workshop-783ec1.jpg
+-a---          09/10/2026    09:49          23282 hero-workshop-783ec1.webp
+-a---          09/10/2026    09:49         140085 hero-workshop-8bff06.jpg
+-a---          09/10/2026    09:49          73566 hero-workshop-8bff06.webp
+-a---          09/10/2026    09:49         248628 plate-crates-aisle-e843b7.webp
+-a---          09/10/2026    09:49         207998 plate-dtf-conveyor-a1f1d1.webp
+-a---          09/10/2026    09:49          22022 plate-job-sheets-63dd9c.webp
+-a---          09/10/2026    09:49         170908 plate-pallets-12eebd.webp
+-a---          09/10/2026    09:49         127174 plate-racking-bays-626a9b.webp
+-a---          09/10/2026    09:49          12878 prod-mailer-f70773.jpg
+-a---          09/10/2026    09:49           4850 prod-mailer-f70773.webp
+-a---          09/10/2026    09:49          62198 prod-polo-5947fe.jpg
+[0m
+[0m✱ [0mGrep "hero-garment-racking-219356|plate-cartons-packed-2fb0ae"[90m 7 matches[0m
+[0m
+[0m$ [0mCopy-Item .context/cr-web-075/hero-garment-racking-219356.webp public/images/d17/problems/ && Copy-Item .context/cr-web-075/plate-cartons-packed-2fb0ae.webp public/images/d17/problems/ && Remove-Item .context/cr-web-075/hero-garment-racking-219356.webp, .context/cr-web-075/plate-cartons-packed-2fb0ae.webp && ls .context/cr-web-075/ && git status --short
+Directory: D:\apps\worktrees\decoded-ops-website\web075-art-followup\.context\cr-web-075
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          09/10/2026    09:48          30498 artwork-swap-map-2.md
+?? .context/cr-web-075/
+?? .context/lane-briefs/web075-art-followup.md
+?? public/images/d17/problems/hero-garment-racking-219356.webp
+?? public/images/d17/problems/plate-cartons-packed-2fb0ae.webp
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -Last 5; echo "EXIT:$LASTEXITCODE"
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+EXIT:1
+[0m
+[0m$ [0mnpm install 2>&1 | Select-Object -Last 5
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -Last 5; echo "EXIT:$LASTEXITCODE"
+EXIT:0
+[0m
+[0m$ [0mgit status --short && git add .context/cr-web-075/artwork-swap-map-2.md .context/lane-briefs/web075-art-followup.md public/images/d17/problems/hero-garment-racking-219356.webp public/images/d17/problems/plate-cartons-packed-2fb0ae.webp && git commit -m "feat(art): install E16/E17 photo exports + CR-WEB-075 swap map (CR-WEB-075)" && git log --oneline -1
+?? .context/cr-web-075/
+?? .context/lane-briefs/web075-art-followup.md
+?? public/images/d17/problems/hero-garment-racking-219356.webp
+?? public/images/d17/problems/plate-cartons-packed-2fb0ae.webp
+warning: in the working copy of '.context/cr-web-075/artwork-swap-map-2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-briefs/web075-art-followup.md', LF will be replaced by CRLF the next time Git touches it
+[lane/web075-art-followup c15fe1a] feat(art): install E16/E17 photo exports + CR-WEB-075 swap map (CR-WEB-075)
+ 4 files changed, 259 insertions(+)
+ create mode 100644 .context/cr-web-075/artwork-swap-map-2.md
+ create mode 100644 .context/lane-briefs/web075-art-followup.md
+ create mode 100644 public/images/d17/problems/hero-garment-racking-219356.webp
+ create mode 100644 public/images/d17/problems/plate-cartons-packed-2fb0ae.webp
+c15fe1a feat(art): install E16/E17 photo exports + CR-WEB-075 swap map (CR-WEB-075)
+[0m
+Step 1 committed. Now step 2 — the 719 swaps. Reading the relevant sources:
+[0m✱ [0mGrep "inlineArt719|DO-ART-719"[90m in app/problems · 19 matches[0m
+[0m
+[0m$ [0mls lib/d17-figures/ && rg -n "a948|DO-ART-948" app/apps/commerce/page.tsx | Select-Object -First 10
+Directory: D:\apps\worktrees\decoded-ops-website\web075-art-followup\lib\d17-figures
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          09/10/2026    09:49           9223 a942.ts
+-a---          09/10/2026    09:49           3304 a943.ts
+-a---          09/10/2026    09:49          16335 a986.ts
+-a---          09/10/2026    09:49           3437 a991.ts
+-a---          09/10/2026    09:49           2457 a993.ts
+-a---          09/10/2026    09:49           2601 a997.ts
+-a---          09/10/2026    09:49           2694 a998.ts
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+[0m→ [0mRead lib/d17-figures/a991.ts
+[0m
+[0m$ [0mgit grep -n "a948" app/apps/commerce/page.tsx | Select-Object -First; echo ---; git grep -n "a999\|DO-ART-999" app/tools/should-i-replace-erp/page.tsx | Select-Object -First; echo ---; git grep -n "beforeRelated\|inlineArt\|heroArt" components/ProblemPageDS.tsx | Select-Object -First 20
+Select-Object: Missing an argument for parameter 'First'. Specify a parameter of type 'System.Int32' and try again.
+---
+Select-Object: Missing an argument for parameter 'First'. Specify a parameter of type 'System.Int32' and try again.
+---
+components/ProblemPageDS.tsx:32:  heroArt?: string;
+components/ProblemPageDS.tsx:34:  inlineArt?: string;
+components/ProblemPageDS.tsx:36:  beforeRelated?: React.ReactNode;
+components/ProblemPageDS.tsx:54:export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading, relatedSectors, relatedResources, video, heroArt, inlineArt, beforeRelated }: ProblemPageDSProps) {
+components/ProblemPageDS.tsx:94:          {heroArt ? (
+components/ProblemPageDS.tsx:95:            <div dangerouslySetInnerHTML={{ __html: heroArt }} />
+components/ProblemPageDS.tsx:184:      {beforeRelated}
+components/ProblemPageDS.tsx:265:      {inlineArt && (
+components/ProblemPageDS.tsx:268:            <div dangerouslySetInnerHTML={{ __html: inlineArt }} />
+[0m
+[0m$ [0mgit grep -n "a948\|DO-ART-948" app/apps/commerce/page.tsx | Select-Object -First 10; echo ---; git grep -n "a999\|DO-ART-999" app/tools/should-i-replace-erp/page.tsx | Select-Object -First 10
+app/apps/commerce/page.tsx:263:      {/* 4 · CUSTOM WORK · DO-ART-948 */}
+app/apps/commerce/page.tsx:269:          <figure className="d17 sw sw-doc a948" data-od-id="custom-visual" data-motion data-no="DO-ART-948" data-rev="01" data-tx="photo"
+app/apps/commerce/page.tsx:270:                  aria-label="Artwork DO-ART-948. Two documents over a graded photograph of packed kraft boxes. A scope sheet for a full rebuild in three parts: migrate products, customers and order history off the existing platform; build a new storefront; reintegrate orders and stock back into the ERP. And an options sheet: everything on the market goes on the table first, priced, including the options expected to be rejected, with the decision left to the client. Scoped and quoted like any full custom build.">
+app/apps/commerce/page.tsx:279:              <span className="d17-mark">decodedops.co.uk · DO-ART-948 · Rev 01</span>
+---
+app/tools/should-i-replace-erp/page.tsx:69:          {/* D17 hero art · DO-ART-999 */}
+app/tools/should-i-replace-erp/page.tsx:70:          <figure className="d17 sx a999" data-od-id="hero-art" data-motion data-no="DO-ART-999" data-rev="01" data-tx="photo"
+app/tools/should-i-replace-erp/page.tsx:71:                  aria-label="Artwork DO-ART-999. The should I replace my ERP scorecard over a graded photograph of a despatch box, answered as an example. Question 1: is your current system unable to handle your core business processes without significant workarounds? Yes. Questions 2 to 8 answered: no, no, yes, no, no, no, no. Two of eight yes. The verdict stamp: example, fixable. Fix it, or plan an exit: eight questions decide which.">
+app/tools/should-i-replace-erp/page.tsx:97:              <span className="d17-mark">decodedops.co.uk · DO-ART-999 · Rev 01</span>
+[0m
+[0m→ [0mRead app/apps/commerce/page.tsx[90m [offset=260, limit=30][0m
+[0m→ [0mRead app/tools/should-i-replace-erp/page.tsx[90m [offset=60, limit=45][0m
+[0m→ [0mRead app/apps/commerce/page.tsx[90m [limit=35, offset=289][0m
+[0m→ [0mRead app/problems/ecommerce-not-connected/page.tsx
+[0m→ [0mRead app/problems/wrong-erp-software/page.tsx[90m [limit=120, offset=290][0m
+[0m→ [0mRead app/problems/wrong-erp-software/page.tsx[90m [limit=30, offset=1][0m
+[0m→ [0mRead app/problems/buy-vs-build/page.tsx[90m [limit=10, offset=230][0m
+[0m→ [0mRead app/tools/should-i-replace-erp/page.tsx[90m [limit=12, offset=1][0m
+Now creating the figure library files:
+[0m
+[0m← [0mWrite lib/d17-figures/a948.ts
+Wrote file successfully.
+[0m
+[0m← [0mWrite lib/d17-figures/a999.ts
+Wrote file successfully.
+[0m
+Now editing the ecommerce-not-connected page:
+[0m← [0mEdit app/problems/ecommerce-not-connected/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\ecommerce-not-connected\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\ecommerce-not-connected\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\ecommerce-not-connected\page.tsx
+@@ -3,10 +3,12 @@
+ import { EcommerceNotConnectedSchematic } from '@/components/schematics/problems/EcommerceNotConnectedSchematic';
+ import { JsonLd } from '@/components/JsonLd';
+ import { problemRouting } from '@/data/problem-routing';
+ import { problemVideos } from '@/data/problem-videos';
++import { a948Problems } from '@/lib/d17-figures/a948';
+ import '@/app/d17-global.css';
+ import '@/app/d17-problems.css';
++import '@/app/d17-apps-cases.css';
+ import { D17Motion } from '@/components/D17Motion';
+ 
+ export const metadata: Metadata = {
+  title: "How to Fix Ecommerce Integration Issues | Decoded Ops",
+
+[0m
+[0m→ [0mRead app/problems/ecommerce-not-connected/page.tsx[90m [limit=10, offset=115][0m
+[0m→ [0mRead app/problems/ecommerce-not-connected/page.tsx[90m [limit=8, offset=208][0m
+[0m
+[0m$ [0m$f='app/problems/ecommerce-not-connected/page.tsx'; $lines = Get-Content -LiteralPath $f; $new = $lines[0..118] + $lines[214..($lines.Count-1)]; Set-Content -LiteralPath $f -Value $new -Encoding utf8NoBOM; git diff --stat -- $f
+app/problems/ecommerce-not-connected/page.tsx | 97 +--------------------------
+ 1 file changed, 2 insertions(+), 95 deletions(-)
+[0m
+[0m← [0mEdit app/problems/ecommerce-not-connected/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\ecommerce-not-connected\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\ecommerce-not-connected\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\ecommerce-not-connected\page.tsx
+@@ -150,9 +150,8 @@
+ relatedSectors={problemRouting['ecommerce-not-connected'].relatedSectors}
+ relatedResources={problemRouting['ecommerce-not-connected'].relatedResources}
+ video={problemVideos['ecommerce-not-connected']}
+ heroArt={heroArt966}
+-inlineArt={inlineArt719}
+ beforeRelated={<>
+  <section className="g-tint">
+   <div className="wrap">
+    <span className="eyebrow">Shopify</span>
+
+[0m
+[0m← [0mEdit app/problems/ecommerce-not-connected/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\ecommerce-not-connected\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\ecommerce-not-connected\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\ecommerce-not-connected\page.tsx
+@@ -214,8 +214,15 @@
+   </div>
+  </div>
+ </section>
+ 
++<section className="g-navy">
++ <div className="wrap">
++  <span className="eyebrow">Your options · DO-ART-948</span>
++  <div dangerouslySetInnerHTML={{ __html: a948Problems }} />
++ </div>
++</section>
++
+ <section className="g-tint">
+  <div className="wrap">
+   <span className="eyebrow">Questions</span>
+   <h2>Shopify, WooCommerce and your ERP</h2>
+
+[0m
+[0m← [0mEdit app/problems/wrong-erp-software/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\wrong-erp-software\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\wrong-erp-software\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\wrong-erp-software\page.tsx
+@@ -4,10 +4,12 @@
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { VideoEmbed } from '@/components/VideoEmbed';
+ import { VideoSchema } from '@/components/VideoSchema';
+ import { problemVideos } from '@/data/problem-videos';
++import { a999Solo } from '@/lib/d17-figures/a999';
+ import '@/app/d17-global.css';
+ import '@/app/d17-problems.css';
++import '@/app/d17-resources.css';
+ import { D17Motion } from '@/components/D17Motion';
+ 
+ export const metadata: Metadata = {
+  title: 'ERP for Small Business, Chosen Right | Decoded Ops',
+
+[0m
+[0m$ [0mTest-Path app/d17-resources.css; Test-Path app/d17-apps-cases.css; Test-Path app/d17-global.css; Test-Path app/d17-problems.css
+True
+True
+True
+True
+[0m
+[0m→ [0mRead app/problems/wrong-erp-software/page.tsx[90m [limit=12, offset=100][0m
+[0m→ [0mRead app/problems/wrong-erp-software/page.tsx[90m [limit=10, offset=192][0m
+[0m
+[0m$ [0m$f='app/problems/wrong-erp-software/page.tsx'; $lines = Get-Content -LiteralPath $f; $new = $lines[0..102] + $lines[198..($lines.Count-1)]; Set-Content -LiteralPath $f -Value $new -Encoding utf8NoBOM; git diff --stat -- $f
+app/problems/wrong-erp-software/page.tsx | 97 +-------------------------------
+ 1 file changed, 2 insertions(+), 95 deletions(-)
+[0m
+[0m← [0mEdit app/problems/wrong-erp-software/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\wrong-erp-software\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\wrong-erp-software\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\wrong-erp-software\page.tsx
+@@ -212,12 +212,13 @@
+   </div>
+  </section>
+ )}
+ 
+-{/* ── INLINE ARTWORK · DO-ART-719 ──────────────────────────────────── */}
++{/* ── INLINE ARTWORK · DO-ART-999 ──────────────────────────────────── */}
+ <section className="g-navy">
+  <div className="wrap">
+-  <div dangerouslySetInnerHTML={{ __html: inlineArt719 }} />
++  <span className="eyebrow">The decision · DO-ART-999</span>
++  <div dangerouslySetInnerHTML={{ __html: a999Solo }} />
+  </div>
+ </section>
+ 
+ {/* ── 4 · HOW I HELP ─────────────────────────────────────────────────── */}
+
+[0m
+[0m$ [0mgit grep -n "DO-ART-719" -- app lib | ForEach-Object { ($_ -split ':')[0..1] -join ':' } ; echo '--- 948:'; git grep -n "DO-ART-948" -- app lib | ForEach-Object { ($_ -split ':')[0..1] -join ':' }; echo '--- 999:'; git grep -n "DO-ART-999" -- app lib | ForEach-Object { ($_ -split ':')[0..1] -join ':' }
+app/about/page.tsx:169
+app/about/page.tsx:174
+app/about/page.tsx:190
+app/about/page.tsx:196
+app/d17-art.module.css:271
+app/d17-problems.css:414
+app/problems/buy-vs-build/page.tsx:232
+app/problems/buy-vs-build/page.tsx:235
+app/problems/buy-vs-build/page.tsx:237
+app/problems/buy-vs-build/page.tsx:238
+app/problems/buy-vs-build/page.tsx:329
+app/problems/legacy-system/page.tsx:191
+app/problems/legacy-system/page.tsx:194
+app/problems/legacy-system/page.tsx:196
+app/problems/legacy-system/page.tsx:197
+app/problems/legacy-system/page.tsx:288
+--- 948:
+app/apps/commerce/page.tsx:263
+app/apps/commerce/page.tsx:269
+app/apps/commerce/page.tsx:270
+app/apps/commerce/page.tsx:279
+app/d17-apps-cases.css:377
+app/problems/ecommerce-not-connected/page.tsx:220
+--- 999:
+app/d17-resources.css:395
+app/problems/wrong-erp-software/page.tsx:216
+app/problems/wrong-erp-software/page.tsx:219
+app/tools/should-i-replace-erp/page.tsx:69
+app/tools/should-i-replace-erp/page.tsx:70
+app/tools/should-i-replace-erp/page.tsx:71
+app/tools/should-i-replace-erp/page.tsx:97
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -Last 10; echo "TSC-EXIT:$LASTEXITCODE"
+TSC-EXIT:0
+[0m
+[0m$ [0mgit grep -n "inlineArt719" -- app; echo "grep-exit:$LASTEXITCODE"; npx eslint app/problems/ecommerce-not-connected/page.tsx app/problems/wrong-erp-software/page.tsx lib/d17-figures/a948.ts lib/d17-figures/a999.ts 2>&1 | Select-Object -Last 15
+grep-exit:1
+[0m
+[0m$ [0mgit grep -nE '\\u[0-9a-fA-F]{4}' -- app/problems/ecommerce-not-connected app/problems/wrong-erp-software lib/d17-figures; echo "escape-exit:$LASTEXITCODE"; git add app/problems/ecommerce-not-connected/page.tsx app/problems/wrong-erp-software/page.tsx lib/d17-figures/a948.ts lib/d17-figures/a999.ts && git commit -m "feat(art): swap DO-ART-719 on ecommerce/wrong-erp pages to 948/999 (CR-WEB-075)
+
+719 dedupe per artwork-swap-map-2 §1. ecommerce-not-connected gets the
+948 problem-page cut (E17 photo, connect/merge/replace caption) in a new
+beforeRelated section before the FAQ; wrong-erp-software gets the
+photo-less 999 solo cut with a decision eyebrow. 940/999 lifted into
+lib/d17-figures as string exports. Claude deviation: legacy-system keeps
+719 (940's 'grew into the full system' line contradicts the page's keep-
+the-platform message); 719 remains on buy-vs-build, about and legacy-
+system." && git log --oneline -1
+escape-exit:1
+warning: in the working copy of 'lib/d17-figures/a948.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'lib/d17-figures/a999.ts', LF will be replaced by CRLF the next time Git touches it
+[lane/web075-art-followup a939a88] feat(art): swap DO-ART-719 on ecommerce/wrong-erp pages to 948/999 (CR-WEB-075)
+ 4 files changed, 99 insertions(+), 193 deletions(-)
+ create mode 100644 lib/d17-figures/a948.ts
+ create mode 100644 lib/d17-figures/a999.ts
+a939a88 feat(art): swap DO-ART-719 on ecommerce/wrong-erp pages to 948/999 (CR-WEB-075)
+[0m
+Step 2 done. Now step 3 — the DO-ART-1014 hero:
+[0m→ [0mRead app/problems/quoting-takes-too-long/page.tsx
+[0m
+[0m← [0mEdit app/problems/quoting-takes-too-long/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\quoting-takes-too-long\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\quoting-takes-too-long\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\quoting-takes-too-long\page.tsx
+@@ -4,8 +4,9 @@
+ import { problemRouting } from '@/data/problem-routing';
+ import { problemVideos } from '@/data/problem-videos';
+ import '@/app/d17-global.css';
+ import '@/app/d17-problems.css';
++import '@/app/d17-resources.css';
+ import { D17Motion } from '@/components/D17Motion';
+ 
+ export const metadata: Metadata = {
+  title: 'Quoting Software for Printers: Fix Slow Quotes | Decoded Ops',
+
+[0m
+[0m← [0mEdit app/problems/quoting-takes-too-long/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\quoting-takes-too-long\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\quoting-takes-too-long\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\quoting-takes-too-long\page.tsx
+@@ -57,8 +57,45 @@
+   },
+  ],
+ };
+ 
++const heroArt1014 = `<figure class="d17 sx a991 a1014" data-od-id="hero-evidence" data-motion data-no="DO-ART-1014" data-rev="01" data-tx="photo"
++        aria-label="Artwork DO-ART-1014. Pricing rules written down once, over a graded photograph of bagged garments on racking with the bin labels blurred. A rate card cover for garments, positions, setup, quantity breaks and rush, and beside it a sheet of six pricing rules shown as an example: per-position pricing, setup charges and quantity breaks are applied differently today; customer-supplied garments, the reason a price was given and quote to order conversion have no record; every rule is written down on the rate card.">
++  <div class="d17-ph"><img src="/images/d17/problems/hero-garment-racking-219356.webp" alt="" width="1600" height="900"></div>
++  <div class="d17-scan" aria-hidden="true"></div>
++  <div class="sx-top d17-mono" aria-hidden="true"><span>Pricing rules</span><span>Written down once</span></div>
++  <div class="stage" aria-hidden="true">
++    <div class="d17-doc cov-dark doc-ec m-drop" style="animation-delay:.05s">
++      <span class="ref">Decoded Ops · rate card</span>
++      <h4>A rate card everyone quotes from</h4>
++      <p class="sub">Garments · positions · setup · quantity breaks · rush</p>
++      <div class="lines"><i style="width:84%"></i><i style="width:70%"></i><i style="width:52%"></i></div>
++    </div>
++    <div class="d17-doc doc-vb m-drop" style="animation-delay:.35s">
++      <span class="tab">EXAMPLE</span>
++      <span class="ref">Pricing rules · example</span>
++      <h4>Rules that aren't written down</h4>
++      <table class="vb">
++        <thead><tr><th>Rule</th><th>Today</th><th class="us">Rate card</th></tr></thead>
++        <tbody>
++          <tr><td>Per-position pricing</td><td><i class="p"></i></td><td><i class="y"></i></td></tr>
++          <tr><td>Setup charges</td><td><i class="p"></i></td><td><i class="y"></i></td></tr>
++          <tr><td>Quantity breaks</td><td><i class="p"></i></td><td><i class="y"></i></td></tr>
++          <tr><td>Customer-supplied garments</td><td><i class="n"></i></td><td><i class="y"></i></td></tr>
++          <tr><td>Why a price was given</td><td><i class="n"></i></td><td><i class="y"></i></td></tr>
++          <tr><td>Quote to order conversion</td><td><i class="n"></i></td><td><i class="y"></i></td></tr>
++        </tbody>
++      </table>
++      <p class="key"><span><i class="y"></i>Written down</span><span><i class="p"></i>Applied differently</span><span><i class="n"></i>No record</span></p>
++    </div>
++  </div>
++  <div class="sx-foot">
++    <div class="sx-bar" aria-hidden="true"></div>
++    <p class="sx-say">Write your pricing rules down once. <em>Then quote from them every time.</em></p>
++    <span class="d17-mark">decodedops.co.uk · DO-ART-1014 · Rev 01</span>
++  </div>
++</figure>`;
++
+ export default function QuotingTakesTooLongPage() {
+  return (
+   <>
+    <JsonLd data={quotingSchema} />
+
+[0m
+[0m← [0mEdit app/problems/quoting-takes-too-long/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\quoting-takes-too-long\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\quoting-takes-too-long\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\problems\quoting-takes-too-long\page.tsx
+@@ -125,8 +125,9 @@
+ relatedReading={problemRouting['quoting-takes-too-long'].relatedReading}
+ relatedSectors={problemRouting['quoting-takes-too-long'].relatedSectors}
+ relatedResources={problemRouting['quoting-takes-too-long'].relatedResources}
+ video={problemVideos['quoting-takes-too-long']}
++heroArt={heroArt1014}
+ beforeRelated={
+  <section className="g-tint">
+   <div className="wrap">
+    <span className="eyebrow">Common questions</span>
+
+[0m
+[0m$ [0mgit grep -n "DO-ART-10[01][0-9]" -- app lib | ForEach-Object { ($_ -split ':')[0..1] -join ':' }; echo '---'; npx tsc --noEmit 2>&1 | Select-Object -Last 5; echo "TSC-EXIT:$LASTEXITCODE"; git grep -nE '\\u[0-9a-fA-F]{4}' -- app/problems/quoting-takes-too-long; echo "escape-exit:$LASTEXITCODE"
+app/cookies/page.tsx:26
+app/cookies/page.tsx:27
+app/cookies/page.tsx:42
+app/cookies/page.tsx:52
+app/d17-global.css:843
+app/d17-locations.css:9
+app/d17-locations.css:78
+app/d17-locations.css:137
+app/d17-locations.css:184
+app/d17-locations.css:230
+app/d17-locations.css:267
+app/d17-locations.css:308
+app/d17-locations.css:341
+app/d17-problems.css:491
+app/d17-problems.css:502
+app/page.tsx:188
+app/page.tsx:189
+app/page.tsx:234
+app/privacy/page.tsx:26
+app/privacy/page.tsx:27
+app/privacy/page.tsx:43
+app/privacy/page.tsx:51
+app/problems/manual-workarounds/page.tsx:93
+app/problems/manual-workarounds/page.tsx:94
+app/problems/manual-workarounds/page.tsx:107
+app/problems/no-ops-owner/page.tsx:104
+app/problems/no-ops-owner/page.tsx:105
+app/problems/no-ops-owner/page.tsx:118
+app/problems/quoting-takes-too-long/page.tsx:61
+app/problems/quoting-takes-too-long/page.tsx:62
+app/problems/quoting-takes-too-long/page.tsx:94
+app/problems/seasonal-peaks/page.tsx:219
+app/problems/seasonal-peaks/page.tsx:222
+app/problems/seasonal-peaks/page.tsx:224
+app/problems/seasonal-peaks/page.tsx:225
+app/problems/seasonal-peaks/page.tsx:238
+app/problems/spreadsheet-addiction/page.tsx:85
+app/problems/spreadsheet-addiction/page.tsx:86
+app/problems/spreadsheet-addiction/page.tsx:119
+app/problems/spreadsheet-addiction/page.tsx:237
+app/problems/systems-dont-talk/page.tsx:94
+app/problems/systems-dont-talk/page.tsx:95
+app/problems/systems-dont-talk/page.tsx:131
+lib/coverage-map.ts:1
+lib/coverage-map.ts:152
+lib/coverage-map.ts:153
+lib/coverage-map.ts:167
+---
+TSC-EXIT:0
+escape-exit:1
+[0m
+[0m$ [0mgit grep -nE "DO-ART-10(1[0-9])" -- app lib
+app/d17-problems.css:502:/* ─── DO-ART-1012/1013 · renumbered drawn schematics (CR-WEB-074) ───
+app/problems/no-ops-owner/page.tsx:104:const inlineArt1011 = `<figure class="d17 sw sw-doc a718 a1011" data-od-id="plate-ownership" data-motion data-no="DO-ART-1011" data-rev="01" data-tx="photo"
+app/problems/no-ops-owner/page.tsx:105:        aria-label="Artwork DO-ART-1011, who owns operations. Three documents over a photograph of warehouse racking: a register of work nobody owns today, an options sheet for a hire, a part-time operations lead or a different structure, and a three-line decision log.">
+app/problems/no-ops-owner/page.tsx:118:    <span class="d17-mark">decodedops.co.uk · DO-ART-1011 · Rev 01</span>
+app/problems/quoting-takes-too-long/page.tsx:61:const heroArt1014 = `<figure class="d17 sx a991 a1014" data-od-id="hero-evidence" data-motion data-no="DO-ART-1014" data-rev="01" data-tx="photo"
+app/problems/quoting-takes-too-long/page.tsx:62:        aria-label="Artwork DO-ART-1014. Pricing rules written down once, over a graded photograph of bagged garments on racking with the bin labels blurred. A rate card cover for garments, positions, setup, quantity breaks and rush, and beside it a sheet of six pricing rules shown as an example: per-position pricing, setup charges and quantity breaks are applied differently today; customer-supplied garments, the reason a price was given and quote to order conversion have no record; every rule is written down on the rate card.">
+app/problems/quoting-takes-too-long/page.tsx:94:    <span class="d17-mark">decodedops.co.uk · DO-ART-1014 · Rev 01</span>
+app/problems/seasonal-peaks/page.tsx:219:   {/* ── INLINE ARTWORK · DO-ART-1010 ──────────────────────────────────── */}
+app/problems/seasonal-peaks/page.tsx:222:     <span className="eyebrow">Written down · DO-ART-1010</span>
+app/problems/seasonal-peaks/page.tsx:224:<figure class="d17 sw sw-doc a718 a1010" data-od-id="plate-peaks" data-motion data-no="DO-ART-1010" data-rev="01" data-tx="photo"
+app/problems/seasonal-peaks/page.tsx:225:        aria-label="Artwork DO-ART-1010, written down before the peak. Three documents over a photograph of stacked pallets: a peak calendar of schoolwear, teamwear and promotional rhythms; a one-page SOP for checking names and numbers that a seasonal worker can follow; and a three-line peak log.">
+app/problems/seasonal-peaks/page.tsx:238:    <span class="d17-mark">decodedops.co.uk · DO-ART-1010 · Rev 01</span>
+app/problems/spreadsheet-addiction/page.tsx:85:const inlineArt1013 = `<figure class="d17 sw sw-doc a1013" data-od-id="plate-product" data-motion data-no="DO-ART-1013" data-rev="01" data-tx="schematic"
+app/problems/spreadsheet-addiction/page.tsx:86:        aria-label="Drawn plate DO-ART-1013, a product screen replacing the spreadsheet. An order log that was a spreadsheet is now a named process with a documented workflow. Automated supplier price feeds replace stale manual entries. Standard tools anyone can use replace macros only one person understands. A full audit trail tracks every change.">
+app/problems/spreadsheet-addiction/page.tsx:119:    <span class="d17-mark">decodedops.co.uk · DO-ART-1013 · Rev 01</span>
+app/problems/spreadsheet-addiction/page.tsx:237:   {/* ── INLINE ARTWORK · DO-ART-1013 ─────────────────────────────────── */}
+app/problems/systems-dont-talk/page.tsx:94:const inlineArt1012 = `<figure class="d17 sw sw-doc a1012" data-od-id="plate-ledger" data-motion data-no="DO-ART-1012" data-rev="01" data-tx="schematic"
+app/problems/systems-dont-talk/page.tsx:95:        aria-label="Drawn plate DO-ART-1012, an evidence ledger. A table showing six systems, when they were bought, what they connect to, and what they don't. Most rows show no integration. The cost column adds up to a number nobody has ever added up before.">
+app/problems/systems-dont-talk/page.tsx:131:    <span class="d17-mark">decodedops.co.uk · DO-ART-1012 · Rev 01</span>
+[0m
+[0m$ [0mgit add app/problems/quoting-takes-too-long/page.tsx && git commit -m "feat(art): add DO-ART-1014 rate-card hero to quoting-takes-too-long (CR-WEB-075)
+
+New hero piece per artwork-swap-map-2 §2: rate-card cover + six-rule
+example sheet over the E16 garment-racking photo, 991 treatment with
+hook-only a1014 class. Copy quoted verbatim from the page's own symptoms,
+causes, howIHelp and FAQ 4; all rows labelled Example. Imports
+d17-resources.css for the .a991/.doc-vb/.vb rules." && git log --oneline -1
+[lane/web075-art-followup 3c4db31] feat(art): add DO-ART-1014 rate-card hero to quoting-takes-too-long (CR-WEB-075)
+ 1 file changed, 39 insertions(+)
+3c4db31 feat(art): add DO-ART-1014 rate-card hero to quoting-takes-too-long (CR-WEB-075)
+[0m
+Now step 4 — height polish. Locating the rules to edit:
+[0m$ [0mgit grep -n -- "--pu:" -- app | Select-Object -First 5; echo '--- sx-foot block:'; git grep -n "\.sx-foot" app/d17-global.css | Select-Object -First 8; echo '--- a964 stage:'; git grep -n "a964 .stage\|a964 .stage" app/d17-problems.css; echo '--- a970:'; git grep -n "a970" app/d17-problems.css; echo '--- rt li:'; git grep -n "\.rt li" app/d17-problems.css; echo '--- a972:'; git grep -n "a972" app/d17-problems.css; echo '--- a991 stage:'; git grep -n "a991" app/d17-resources.css; echo '--- a999:'; git grep -n "a999\|st-999" app/d17-resources.css; echo '--- a1008:'; git grep -n "a1008" app/d17-global.css app/page.tsx; echo '--- a718:'; git grep -n "a718" app/d17-problems.css
+app/d17-apps-cases.css:84:.a939{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); display:flex; flex-direction:column }
+app/d17-apps-cases.css:121:.a940{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(40 * var(--pu)) calc(30 * var(--pu)) }
+app/d17-apps-cases.css:164:.a942{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(40 * var(--pu)) calc(30 * var(--pu)) }
+app/d17-apps-cases.css:169:.a943{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); aspect-ratio:1152 / 600 }
+app/d17-apps-cases.css:267:.a945{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(44 * var(--pu)) calc(30 * var(--pu));
+--- sx-foot block:
+app/d17-global.css:388:.sx-foot{ position:relative; z-index:5; margin-top:auto; padding:calc(18 * var(--u)) calc(26 * var(--u)) calc(22 * var(--u)) }
+app/d17-global.css:591:.a925 .sx-foot{ position:relative; left:auto; right:auto; bottom:auto; padding:0 calc(26 * var(--u)) calc(22 * var(--u)) }
+app/d17-global.css:698:.a931 .sx-foot{ position:relative; left:auto; right:auto; bottom:auto; padding:0 calc(26 * var(--u)) calc(22 * var(--u)) }
+app/d17-global.css:783:.a935 .sx-foot{ position:relative; left:auto; right:auto; bottom:auto; margin-top:calc(22 * var(--u)) }
+--- a964 stage:
+app/d17-problems.css:119:.a964 .stage{ aspect-ratio:560 / 540 }
+app/d17-problems.css:428:  .a961 .stage{ aspect-ratio:560 / 540 } .a964 .stage{ aspect-ratio:560 / 620 } .a977 .stage{ aspect-ratio:560 / 580 }
+--- a970:
+app/d17-problems.css:238:.a970 .d17-ph{ bottom:auto; height:calc(250 * var(--u)) }
+app/d17-problems.css:239:.a970 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.55) contrast(1.06) brightness(.8) }
+app/d17-problems.css:240:.a970::before{ content:''; position:absolute; inset:0; z-index:-1;
+app/d17-problems.css:243:.a970 .body{ padding-top:calc(120 * var(--u)) }
+app/d17-problems.css:256:.a970 .print{ position:absolute; z-index:5; right:calc(24 * var(--u)); top:calc(58 * var(--u)); width:calc(170 * var(--u)); transform:rotate(3deg);
+app/d17-problems.css:259:.a970 .print .ref{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
+app/d17-problems.css:260:.a970 .print b{ display:block; margin-top:3px; font-family:var(--do-font-heading); font-size:max(12px, calc(17 * var(--u))) }
+app/d17-problems.css:261:.a970 .print i{ display:block; height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(7 * var(--u)); background:color-mix(in srgb, var(--do-prussian-blue) 14%, transparent) }
+app/d17-problems.css:457:.a970 .print{ top:calc(40 * var(--u)) }
+app/d17-problems.css:458:.a970 .body{ padding-top:calc(150 * var(--u)) }
+app/d17-problems.css:463:  .a970 .print{ width:118px; right:12px; top:34px }
+app/d17-problems.css:464:  .a970 .body{ padding-top:150px }
+--- rt li:
+app/d17-problems.css:247:.rt li{ position:relative; display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; padding:calc(7 * var(--u)) 0;
+app/d17-problems.css:249:.rt li::before{ content:''; position:absolute; left:calc(-34 * var(--u) + 2px); top:50%; margin-top:-8px; width:16px; height:16px; border-radius:50%; box-sizing:border-box;
+app/d17-problems.css:251:.rt li b{ display:block; font-family:var(--do-font-heading); font-weight:700; font-size:max(13px, calc(17 * var(--u))); color:var(--do-white); line-height:1.2 }
+app/d17-problems.css:252:.rt li small{ display:block; font-size:max(11px, calc(12.5 * var(--u))); color:color-mix(in srgb, var(--do-off-white) 70%, transparent) }
+app/d17-problems.css:253:.rt li em{ font-style:normal; font-family:var(--do-font-mono); font-weight:700; font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
+app/d17-problems.css:255:.rt li em.k{ background:transparent; color:var(--do-sky-blue); box-shadow:inset 0 0 0 1.2px color-mix(in srgb, var(--do-sky-blue) 60%, transparent) }
+--- a972:
+app/d17-problems.css:267:.a972 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.5) contrast(1.05) brightness(.7) }
+app/d17-problems.css:268:.a972 .win{ margin:calc(16 * var(--u)) calc(22 * var(--u)) 0 }
+app/d17-problems.css:269:.a972 .tbl td.o{ color:var(--do-prussian-blue) }
+app/d17-problems.css:270:.a972 .tbl td.o span{ display:inline-flex; align-items:center; gap:6px }
+app/d17-problems.css:271:.a972 .tbl td.o span::before{ content:''; width:max(14px, calc(18 * var(--u))); height:max(14px, calc(18 * var(--u))); border-radius:50%;
+--- a991 stage:
+app/d17-resources.css:68:.a991::before, .a994::before, .a996::before, .a999::before{ content:''; position:absolute; inset:0; z-index:-1;
+app/d17-resources.css:245:.a991 .stage{ aspect-ratio:560 / 500 }
+app/d17-resources.css:246:.a991 .d17-ph{ bottom:18% }
+app/d17-resources.css:247:.a991 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.65) contrast(1.05) brightness(.8) }
+app/d17-resources.css:248:.a991 .doc-ec{ left:calc(22 * var(--u)); top:calc(60 * var(--u)); width:calc(186 * var(--u)); min-height:calc(260 * var(--u)); transform:rotate(-5deg) }
+app/d17-resources.css:249:.a991 .doc-ec h4{ margin-top:calc(40 * var(--u)); font-size:max(11px, calc(18 * var(--u))); max-width:8.5em }
+app/d17-resources.css:250:.a991 .doc-vb{ left:calc(198 * var(--u)); top:calc(84 * var(--u)); width:calc(340 * var(--u)); transform:rotate(2deg); z-index:2 }
+app/d17-resources.css:431:  .a991 .stage{ aspect-ratio:560 / 720 } .a991 .doc-vb{ left:calc(18 * var(--u)); top:calc(260 * var(--u)); width:calc(520 * var(--u)) }
+app/d17-resources.css:432:  .a991 .doc-ec{ width:calc(280 * var(--u)); min-height:calc(200 * var(--u)) } .a991 .doc-ec h4{ margin-top:calc(16 * var(--u)) }
+--- a999:
+app/d17-resources.css:68:.a991::before, .a994::before, .a996::before, .a999::before{ content:''; position:absolute; inset:0; z-index:-1;
+app/d17-resources.css:396:.a999 .stage{ aspect-ratio:560 / 560 }
+app/d17-resources.css:397:.a999 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.6) contrast(1.05) brightness(.66) }
+app/d17-resources.css:398:.a999 .doc-qz{ left:calc(40 * var(--u)); top:calc(58 * var(--u)); width:calc(400 * var(--u)); transform:rotate(-2deg) }
+app/d17-resources.css:411:.a999 .st-999{ right:calc(34 * var(--u)); top:calc(452 * var(--u)) }
+app/d17-resources.css:436:  .a999 .stage{ aspect-ratio:560 / 760 } .a999 .doc-qz{ left:calc(16 * var(--u)); width:calc(528 * var(--u)) }
+app/d17-resources.css:437:  .a999 .st-999{ top:calc(640 * var(--u)) }
+--- a1008:
+app/d17-global.css:844:.a1008{ --u:calc(100cqw / 1600); aspect-ratio:1600 / 900; margin-top:44px;
+app/d17-global.css:849:.a1008 .gridl{ position:absolute; inset:0; pointer-events:none; opacity:.55;
+app/d17-global.css:853:.a1008 .eb{ position:absolute; left:calc(96 * var(--u)); top:calc(78 * var(--u)); margin:0;
+app/d17-global.css:855:.a1008 .stand{ position:absolute; left:calc(96 * var(--u)); top:calc(122 * var(--u)); width:calc(560 * var(--u)); margin:0;
+app/d17-global.css:858:.a1008 svg.route{ position:absolute; inset:0; width:100%; height:100% }
+app/d17-global.css:859:.a1008 .fan{ position:absolute; inset:0 }
+app/d17-global.css:860:.a1008 .docmini{ position:absolute; background:var(--do-white); color:var(--do-prussian-blue);
+app/d17-global.css:864:.a1008 .docmini .tag{ display:block; font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u)));
+app/d17-global.css:866:.a1008 .docmini .row{ display:flex; align-items:baseline; gap:calc(8 * var(--u)); margin-top:calc(9 * var(--u));
+app/d17-global.css:869:.a1008 .docmini .row:first-of-type{ border-top:0; padding-top:0; margin-top:calc(10 * var(--u)) }
+app/d17-global.css:870:.a1008 .docmini .row b{ font-family:var(--do-font-mono); font-weight:700; font-size:max(8px, calc(11 * var(--u)));
+app/d17-global.css:872:.a1008 .photopin{ position:absolute; padding:calc(9 * var(--u)) calc(9 * var(--u)) calc(34 * var(--u));
+app/d17-global.css:874:.a1008 .photopin img{ display:block; width:100%; height:100%; object-fit:cover;
+app/d17-global.css:876:.a1008 .photopin .tint{ position:absolute; inset:calc(9 * var(--u)) calc(9 * var(--u)) calc(34 * var(--u));
+app/d17-global.css:878:.a1008 .photopin span{ position:absolute; left:calc(11 * var(--u)); right:calc(9 * var(--u)); bottom:calc(8 * var(--u));
+app/d17-global.css:881:.a1008 .st{ position:absolute; margin:0 }
+app/d17-global.css:882:.a1008 .st .n{ display:block; font-family:var(--do-font-mono); font-size:max(9px, calc(14 * var(--u))); letter-spacing:.16em;
+app/d17-global.css:884:.a1008 .st h3{ margin:calc(6 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:max(17px, calc(28 * var(--u)));
+app/d17-global.css:886:.a1008 .st p{ margin:calc(8 * var(--u)) 0 0; font-size:max(12px, calc(15 * var(--u))); line-height:1.4;
+app/d17-global.css:888:.a1008 .st a{ display:inline-block; margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); font-weight:700;
+app/d17-global.css:891:.a1008 .st--end h3{ color:var(--do-amber); font-size:max(19px, calc(34 * var(--u))) }
+app/d17-global.css:892:.a1008 .st--end .n{ color:var(--do-amber) }
+app/d17-global.css:893:.a1008 .d17-mark--abs{ left:calc(26 * var(--u)); bottom:calc(24 * var(--u)); font-size:max(9px, calc(13 * var(--u))) }
+app/d17-global.css:895:  .a1008{ aspect-ratio:auto; padding:26px 20px 30px }
+app/d17-global.css:896:  .a1008 .eb, .a1008 .stand{ position:static; width:auto }
+app/d17-global.css:897:  .a1008 .stand{ font-size:16px; margin-top:8px }
+app/d17-global.css:898:  .a1008 svg.route{ display:none }
+app/d17-global.css:899:  .a1008 .fan{ position:relative; display:flex; align-items:flex-start; gap:14px; margin:22px 0 6px }
+app/d17-global.css:900:  .a1008 .docmini, .a1008 .photopin{ position:relative !important; left:auto !important; top:auto !important; width:48% !important;
+app/d17-global.css:902:  .a1008 .photopin{ height:150px !important; padding:6px 6px 32px }
+app/d17-global.css:903:  .a1008 .photopin .tint{ inset:6px 6px 32px } .a1008 .photopin span{ font-size:8.5px; left:7px; right:6px; bottom:5px }
+app/d17-global.css:904:  .a1008 .stations{ position:relative; margin-top:20px; padding-left:34px }
+app/d17-global.css:905:  .a1008 .stations::before{ content:''; position:absolute; left:8px; top:8px; bottom:36px; width:8px; border-radius:6px;
+app/d17-global.css:907:  .a1008 .st{ position:relative !important; left:auto !important; top:auto !important; width:auto !important; padding:10px 0 14px }
+app/d17-global.css:908:  .a1008 .st::before{ content:''; position:absolute; left:-33px; top:14px; width:18px; height:18px; border-radius:50%;
+app/d17-global.css:910:  .a1008 .st--end::before{ background:var(--do-amber); left:-35px; width:22px; height:22px }
+app/d17-global.css:911:  .a1008 .st .n{ font-size:11px } .a1008 .st h3{ font-size:20px } .a1008 .st--end h3{ font-size:24px } .a1008 .st p{ font-size:14px }
+app/d17-global.css:912:  .a1008 .d17-mark--abs{ position:static; display:inline-block; margin-top:16px; left:auto; bottom:auto }
+app/d17-global.css:920:  .a1008 .photopin{ display:none }
+app/page.tsx:188:            <div dangerouslySetInnerHTML={{ __html: `<figure class="d17 a1008" data-od-id="services-route" data-motion data-no="DO-ART-1008" data-rev="01" data-tx="poster"
+--- a718:
+app/d17-problems.css:380:.a718 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.55) contrast(1.06) brightness(.78) }
+app/d17-problems.css:381:.a718 .stage{ min-height:calc(500 * var(--u)) }
+app/d17-problems.css:382:.a718 .doc-r{ left:calc(10 * var(--u)); top:calc(0 * var(--u)); width:calc(380 * var(--u)); transform:rotate(-2.5deg) }
+app/d17-problems.css:383:.a718 .doc-s{ left:calc(420 * var(--u)); top:calc(34 * var(--u)); width:calc(270 * var(--u)); transform:rotate(2.8deg) }
+app/d17-problems.css:384:.a718 .doc-l{ left:calc(90 * var(--u)); top:calc(316 * var(--u)); width:calc(470 * var(--u)); transform:rotate(-1deg) }
+app/d17-problems.css:402:.a718 .keys{ list-style:none; margin:calc(22 * var(--u)) 0 0; padding:0 }
+app/d17-problems.css:403:.a718 .keys li{ display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:calc(10 * var(--u)) 0;
+app/d17-problems.css:405:.a718 .keys li:last-child{ border-bottom:1px solid color-mix(in srgb, var(--do-sky-blue) 22%, transparent) }
+app/d17-problems.css:406:.a718 .keys b{ font-family:var(--do-font-mono); color:var(--do-amber); font-size:max(11px, calc(14 * var(--u))) }
+app/d17-problems.css:407:.a718 .keys span{ font-family:var(--do-font-heading); font-weight:800; font-size:max(15px, calc(21 * var(--u))); color:var(--do-white); letter-spacing:-.01em }
+app/d17-problems.css:408:.a718 .keys small{ font-family:var(--do-font-mono); font-size:max(9px, calc(11 * var(--u))); letter-spacing:.12em; color:var(--do-sky-blue) }
+app/d17-problems.css:410:  .a718 .il .e{ grid-template-columns:1fr; gap:4px } .a718 .il .t span{ grid-template-columns:64px 1fr }
+app/d17-problems.css:460:.a718 .doc-l{ left:calc(150 * var(--u)); top:calc(384 * var(--u)); width:calc(460 * var(--u)) }
+app/d17-problems.css:461:.a718 .stage{ min-height:calc(580 * var(--u)) }
+app/d17-problems.css:465:  .a718 .stage .d17-doc{ --u:.82px }
+app/d17-problems.css:474:  .a718 .stage .d17-doc:nth-child(3){ display:none }
+app/d17-problems.css:482:  .a718 .stage .d17-doc{ --u:.74px }
+app/d17-problems.css:483:  .a718 .keys{ margin-top:14px }
+app/d17-problems.css:484:  .a718 .keys li{ padding:6px 0 }
+app/d17-problems.css:485:  .a718 .sop .line{ display:none }
+app/d17-problems.css:486:  .a718 .reg td{ padding:3.5px 6px 3.5px 0 }
+app/d17-problems.css:487:  .a718 .sw-cap .d17-mark{ margin-top:10px }
+app/d17-problems.css:488:  .a718 .stage{ gap:12px }
+app/d17-problems.css:492:   Same recipe as a718, tightened so the plate stays ≤ ~610px at 1152 wide
+[0m
+[0m→ [0mRead app/d17-global.css[90m [limit=30, offset=384][0m
+[0m→ [0mRead app/d17-resources.css[90m [limit=60, offset=388][0m
+[0m
+[0m← [0mEdit app/d17-global.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-global.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-global.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-global.css
+@@ -389,8 +389,13 @@
+ .sx-bar{ width:calc(56 * var(--u)); height:5px; border-radius:3px; background:var(--do-amber); margin-bottom:calc(14 * var(--u)) }
+ .sx-say{ margin:0 0 calc(16 * var(--u)); font-family:var(--do-font-heading); font-weight:700;
+   font-size:max(16px, calc(25 * var(--u))); line-height:1.16; letter-spacing:-.018em; color:var(--do-white); max-width:21ch }
+ .sx-say em{ font-style:normal; color:var(--do-amber) }
++/* CR-WEB-074 fix2 / CR-WEB-075: tighter flow foot on the heroes flagged over 630px at 1440x900 */
++:is(.a941,.a963,.a964,.a970,.a972,.a973,.a976,.a978,.a991,.a1014) .sx-foot{ padding:calc(12 * var(--u)) calc(26 * var(--u)) calc(14 * var(--u)) }
++:is(.a941,.a963,.a964,.a970,.a972,.a973,.a976,.a978,.a991,.a1014) .sx-bar{ margin-bottom:calc(10 * var(--u)) }
++:is(.a941,.a963,.a964,.a970,.a972,.a973,.a976,.a978,.a991,.a1014) .sx-say{ margin-bottom:calc(10 * var(--u)); font-size:max(16px, calc(23 * var(--u))); max-width:24ch }
++:is(.a941,.a963,.a964,.a970,.a972,.a973,.a976,.a978,.a991,.a1014) .sx-foot .d17-mark{ padding:.4em .75em }
+ 
+ /* caption column of a wide piece */
+ .sw-cap .k{ font-size:max(10px, calc(13 * var(--u))); color:var(--do-off-white) }
+ .sw-cap .k span{ color:var(--do-sky-blue) }
+
+[0m
+[0m→ [0mRead app/d17-global.css[90m [limit=18, offset=890][0m
+[0m
+[0m← [0mEdit app/d17-global.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-global.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-global.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-global.css
+@@ -895,8 +895,13 @@
+   text-decoration:none; border-bottom:1px solid color-mix(in srgb, var(--do-amber) 55%, transparent) }
+ .a1008 .st--end h3{ color:var(--do-amber); font-size:max(19px, calc(34 * var(--u))) }
+ .a1008 .st--end .n{ color:var(--do-amber) }
+ .a1008 .d17-mark--abs{ left:calc(26 * var(--u)); bottom:calc(24 * var(--u)); font-size:max(9px, calc(13 * var(--u))) }
++/* CR-WEB-074 fix2: shorter route plate — nothing is drawn below y≈800 of the 900 viewBox */
++@media (min-width:761px){
++  .a1008{ aspect-ratio:1600 / 864 }
++  .a1008 svg.route, .a1008 .fan, .a1008 .stations{ transform:translateY(calc(-36 * var(--u))) }
++}
+ @media (max-width: 760px){
+   .a1008{ aspect-ratio:auto; padding:26px 20px 30px }
+   .a1008 .eb, .a1008 .stand{ position:static; width:auto }
+   .a1008 .stand{ font-size:16px; margin-top:8px }
+
+[0m
+[0m$ [0mgit grep -n 'viewBox="0 0 1600 900"' app/page.tsx
+app/page.tsx:193:        <svg class="route" viewBox="0 0 1600 900" aria-hidden="true">
+[0m
+[0m→ [0mRead app/page.tsx[90m [limit=4, offset=192][0m
+[0m
+[0m← [0mEdit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\page.tsx
+@@ -189,9 +189,9 @@
+       aria-label="Journey plate DO-ART-1008, four services on one route. 01 Clarity Audit, start here: a full day on site, six areas followed from start to finish, then a written assessment and roadmap inside five working days. 02 Deliver: independent vendor brief, procurement and project oversight. 03 Transform: ERP, eCommerce and process redesign run together as one programme, scoped only once an audit has shown what it needs to cover. 04 Retained, the amber terminus, fractional CTO: monthly strategic and operational leadership, roadmap ownership, vendor management, a direct line to me.">
+ <div class="gridl" aria-hidden="true"></div>
+ <p class="eb d17-mono">The route</p>
+ <p class="stand">Four services, each a natural next step from the one before.</p>
+-<svg class="route" viewBox="0 0 1600 900" aria-hidden="true">
++<svg class="route" viewBox="0 0 1600 864" aria-hidden="true">
+   <defs><filter id="rt-glow2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter></defs>
+   <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="rgba(33,158,188,.5)" stroke-width="30" stroke-linejoin="round" stroke-linecap="round" filter="url(#rt-glow2)" class="m-draw"/>
+   <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#01263a" stroke-width="24" stroke-linejoin="round" stroke-linecap="round" class="m-draw"/>
+   <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#8ECAE6" stroke-width="14" stroke-linejoin="round" stroke-linecap="round" class="m-draw"/>
+
+[0m
+[0m→ [0mRead app/d17-problems.css[90m [limit=10, offset=115][0m
+[0m→ [0mRead app/d17-problems.css[90m [limit=25, offset=243][0m
+[0m→ [0mRead app/d17-problems.css[90m [limit=45, offset=450][0m
+[0m
+[0m← [0mEdit app/d17-problems.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+@@ -115,9 +115,9 @@
+ svg.q .qb{ fill:color-mix(in srgb, var(--do-sky-blue) 30%, var(--do-prussian-blue)); stroke:color-mix(in srgb, var(--do-sky-blue) 65%, transparent); stroke-width:1.2 }
+ svg.q .qb-a{ fill:color-mix(in srgb, var(--do-amber) 70%, var(--do-prussian-blue)); stroke:var(--do-amber); stroke-width:1.2 }
+ 
+ /* ─── DO-ART-964 · data-scattered hero · one polo, six answers (photo-led, pinned tags) ─── */
+-.a964 .stage{ aspect-ratio:560 / 540 }
++.a964 .stage{ aspect-ratio:560 / 510 }
+ .a964 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.7) contrast(1.06) brightness(.86) }
+ .a964::before{ content:''; position:absolute; inset:0; z-index:-1;
+   background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) 18%,
+     color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) 55%, color-mix(in srgb, var(--do-prussian-blue) 92%, transparent) 84%, var(--do-prussian-blue) 100%) }
+
+[0m
+[0m← [0mEdit app/d17-problems.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+@@ -243,9 +243,9 @@
+ .a970 .body{ padding-top:calc(120 * var(--u)) }
+ .rt{ list-style:none; margin:0; padding:0 0 0 calc(34 * var(--u)); position:relative }
+ .rt::before{ content:''; position:absolute; left:calc(9 * var(--u)); top:calc(12 * var(--u)); bottom:calc(14 * var(--u)); width:5px; border-radius:5px;
+   background:linear-gradient(180deg, var(--do-sky-blue), var(--do-sky-blue) 88%, var(--do-amber)); transform-origin:top }
+-.rt li{ position:relative; display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; padding:calc(7 * var(--u)) 0;
++.rt li{ position:relative; display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; padding:calc(4 * var(--u)) 0;
+   border-bottom:1px dashed color-mix(in srgb, var(--do-sky-blue) 22%, transparent) }
+ .rt li::before{ content:''; position:absolute; left:calc(-34 * var(--u) + 2px); top:50%; margin-top:-8px; width:16px; height:16px; border-radius:50%; box-sizing:border-box;
+   background:var(--do-off-white); border:4px solid var(--do-prussian-blue); box-shadow:0 0 0 2px var(--do-sky-blue) }
+ .rt li b{ display:block; font-family:var(--do-font-heading); font-weight:700; font-size:max(13px, calc(17 * var(--u))); color:var(--do-white); line-height:1.2 }
+
+[0m
+[0m← [0mEdit app/d17-problems.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+@@ -252,9 +252,9 @@
+ .rt li small{ display:block; font-size:max(11px, calc(12.5 * var(--u))); color:color-mix(in srgb, var(--do-off-white) 70%, transparent) }
+ .rt li em{ font-style:normal; font-family:var(--do-font-mono); font-weight:700; font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
+   color:var(--do-prussian-blue); background:var(--do-amber); padding:2px 7px; border-radius:3px; white-space:nowrap }
+ .rt li em.k{ background:transparent; color:var(--do-sky-blue); box-shadow:inset 0 0 0 1.2px color-mix(in srgb, var(--do-sky-blue) 60%, transparent) }
+-.a970 .print{ position:absolute; z-index:5; right:calc(24 * var(--u)); top:calc(58 * var(--u)); width:calc(170 * var(--u)); transform:rotate(3deg);
++.a970 .print{ position:absolute; z-index:5; right:calc(24 * var(--u)); top:calc(58 * var(--u)); width:calc(214 * var(--u)); transform:rotate(3deg);
+   background:var(--do-white); color:var(--do-prussian-blue); padding:calc(12 * var(--u)) calc(14 * var(--u)); border-radius:calc(3 * var(--u));
+   box-shadow:0 calc(18 * var(--u)) calc(36 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
+ .a970 .print .ref{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
+ .a970 .print b{ display:block; margin-top:3px; font-family:var(--do-font-heading); font-size:max(12px, calc(17 * var(--u))) }
+
+[0m
+[0m← [0mEdit app/d17-problems.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+@@ -258,8 +258,9 @@
+   box-shadow:0 calc(18 * var(--u)) calc(36 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
+ .a970 .print .ref{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
+ .a970 .print b{ display:block; margin-top:3px; font-family:var(--do-font-heading); font-size:max(12px, calc(17 * var(--u))) }
+ .a970 .print i{ display:block; height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(7 * var(--u)); background:color-mix(in srgb, var(--do-prussian-blue) 14%, transparent) }
++.a970 .print i:nth-of-type(3){ display:none }
+ 
+ /* ─── DO-ART-971 · no-ops-owner hero · the org chart with the operations seat empty (drawn plate) ─── */
+ svg.q .vac{ fill:url(#q-hatch-o); stroke:var(--do-amber); stroke-width:2.2; stroke-dasharray:8 6 }
+ 
+
+[0m
+[0m← [0mEdit app/d17-problems.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+@@ -455,9 +455,9 @@
+ .xl-b{ left:calc(328 * var(--u)); top:calc(40 * var(--u)); width:calc(216 * var(--u)) }
+ .xl-c{ left:calc(70 * var(--u)); top:calc(236 * var(--u)); width:calc(260 * var(--u)) }
+ .dlg{ top:calc(214 * var(--u)) }
+ .a970 .print{ top:calc(40 * var(--u)) }
+-.a970 .body{ padding-top:calc(150 * var(--u)) }
++.a970 .body{ padding-top:calc(122 * var(--u)) }
+ .chart .cap span{ right:auto; left:4px }
+ .a718 .doc-l{ left:calc(150 * var(--u)); top:calc(384 * var(--u)); width:calc(460 * var(--u)) }
+ .a718 .stage{ min-height:calc(580 * var(--u)) }
+ @media (max-width: 760px){
+
+[0m
+[0m← [0mEdit app/d17-problems.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-problems.css
+@@ -459,8 +459,19 @@
+ .a970 .body{ padding-top:calc(122 * var(--u)) }
+ .chart .cap span{ right:auto; left:4px }
+ .a718 .doc-l{ left:calc(150 * var(--u)); top:calc(384 * var(--u)); width:calc(460 * var(--u)) }
+ .a718 .stage{ min-height:calc(580 * var(--u)) }
++/* CR-WEB-074 fix2: tighter desktop cuts (scoped — .tbl is shared with 973; 718 scoped
++   by data-no because 1009/1010/1011 wear a718 too) */
++@media (min-width:761px){
++  .a972 .tbl td{ padding:calc(4.5 * var(--u)) calc(6 * var(--u)) calc(4.5 * var(--u)) 0 }
++  .a972 .win{ margin-top:calc(10 * var(--u)) }
++  figure[data-no="DO-ART-718"]{ padding-block:calc(40 * var(--pu)) calc(36 * var(--pu)) }
++  figure[data-no="DO-ART-718"] .reg td{ padding:calc(3.5 * var(--u)) calc(8 * var(--u)) calc(3.5 * var(--u)) 0 }
++  figure[data-no="DO-ART-718"] .sop .h{ margin-top:calc(6 * var(--u)) }
++  figure[data-no="DO-ART-718"] .doc-l{ top:calc(372 * var(--u)) }
++  figure[data-no="DO-ART-718"] .stage{ min-height:calc(590 * var(--u)) }
++}
+ @media (max-width: 760px){
+   .a970 .print{ width:118px; right:12px; top:34px }
+   .a970 .body{ padding-top:150px }
+   .a718 .stage .d17-doc{ --u:.82px }
+
+[0m
+[0m$ [0mgit grep -n "^\.a718{" app/d17-problems.css; git grep -n "figure\[data-no" app/d17-problems.css app/d17-global.css | Select-Object -First 5
+app/d17-problems.css:468:  figure[data-no="DO-ART-718"]{ padding-block:calc(40 * var(--pu)) calc(36 * var(--pu)) }
+app/d17-problems.css:469:  figure[data-no="DO-ART-718"] .reg td{ padding:calc(3.5 * var(--u)) calc(8 * var(--u)) calc(3.5 * var(--u)) 0 }
+app/d17-problems.css:470:  figure[data-no="DO-ART-718"] .sop .h{ margin-top:calc(6 * var(--u)) }
+app/d17-problems.css:471:  figure[data-no="DO-ART-718"] .doc-l{ top:calc(372 * var(--u)) }
+app/d17-problems.css:472:  figure[data-no="DO-ART-718"] .stage{ min-height:calc(590 * var(--u)) }
+[0m
+[0m$ [0mgit grep -n "a718" app/d17-problems.css app/d17-global.css | Select-Object -First 20
+app/d17-problems.css:381:.a718 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.55) contrast(1.06) brightness(.78) }
+app/d17-problems.css:382:.a718 .stage{ min-height:calc(500 * var(--u)) }
+app/d17-problems.css:383:.a718 .doc-r{ left:calc(10 * var(--u)); top:calc(0 * var(--u)); width:calc(380 * var(--u)); transform:rotate(-2.5deg) }
+app/d17-problems.css:384:.a718 .doc-s{ left:calc(420 * var(--u)); top:calc(34 * var(--u)); width:calc(270 * var(--u)); transform:rotate(2.8deg) }
+app/d17-problems.css:385:.a718 .doc-l{ left:calc(90 * var(--u)); top:calc(316 * var(--u)); width:calc(470 * var(--u)); transform:rotate(-1deg) }
+app/d17-problems.css:403:.a718 .keys{ list-style:none; margin:calc(22 * var(--u)) 0 0; padding:0 }
+app/d17-problems.css:404:.a718 .keys li{ display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:calc(10 * var(--u)) 0;
+app/d17-problems.css:406:.a718 .keys li:last-child{ border-bottom:1px solid color-mix(in srgb, var(--do-sky-blue) 22%, transparent) }
+app/d17-problems.css:407:.a718 .keys b{ font-family:var(--do-font-mono); color:var(--do-amber); font-size:max(11px, calc(14 * var(--u))) }
+app/d17-problems.css:408:.a718 .keys span{ font-family:var(--do-font-heading); font-weight:800; font-size:max(15px, calc(21 * var(--u))); color:var(--do-white); letter-spacing:-.01em }
+app/d17-problems.css:409:.a718 .keys small{ font-family:var(--do-font-mono); font-size:max(9px, calc(11 * var(--u))); letter-spacing:.12em; color:var(--do-sky-blue) }
+app/d17-problems.css:411:  .a718 .il .e{ grid-template-columns:1fr; gap:4px } .a718 .il .t span{ grid-template-columns:64px 1fr }
+app/d17-problems.css:461:.a718 .doc-l{ left:calc(150 * var(--u)); top:calc(384 * var(--u)); width:calc(460 * var(--u)) }
+app/d17-problems.css:462:.a718 .stage{ min-height:calc(580 * var(--u)) }
+app/d17-problems.css:464:   by data-no because 1009/1010/1011 wear a718 too) */
+app/d17-problems.css:477:  .a718 .stage .d17-doc{ --u:.82px }
+app/d17-problems.css:486:  .a718 .stage .d17-doc:nth-child(3){ display:none }
+app/d17-problems.css:494:  .a718 .stage .d17-doc{ --u:.74px }
+app/d17-problems.css:495:  .a718 .keys{ margin-top:14px }
+app/d17-problems.css:496:  .a718 .keys li{ padding:6px 0 }
+[0m
+[0m$ [0mgit grep -n "^\.\(d17\|sw\|sx\)\b\|\.d17{\|\.sw{\|\.sx{\|--pu" app/d17-global.css | Select-Object -First 20; echo ---; git grep -n -- "--u:" app/d17-problems.css | Select-Object -First 10
+app/d17-global.css:14:.d17{ position:relative; container-type:inline-size; overflow:hidden; isolation:isolate;
+app/d17-global.css:22:.d17 *{ box-sizing:border-box }
+app/d17-global.css:23:.d17-ph{ position:absolute; inset:0; z-index:-2; margin:0 }
+app/d17-global.css:24:.d17-ph img{ width:100%; height:100%; object-fit:cover; display:block;
+app/d17-global.css:26:.d17-scan{ position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.55;
+app/d17-global.css:28:.d17-dots{ position:absolute; inset:0; z-index:-1; pointer-events:none;
+app/d17-global.css:31:.d17-mono{ font-family:var(--do-font-mono); text-transform:uppercase; letter-spacing:.18em }
+app/d17-global.css:33:.d17-mark{ display:inline-block; font-family:var(--do-font-mono); font-weight:600;
+app/d17-global.css:37:.d17-mark--abs{ position:absolute; left:calc(22 * var(--u)); bottom:calc(20 * var(--u)); z-index:6 }
+app/d17-global.css:40:.d17-doc{ position:absolute; background:var(--do-white); color:var(--do-prussian-blue);
+app/d17-global.css:44:.d17-doc .tab{ position:absolute; top:calc(-9 * var(--u)); right:calc(22 * var(--u));
+app/d17-global.css:48:.d17-doc .ref{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u)));
+app/d17-global.css:50:.d17-doc h4{ margin:calc(6 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800;
+app/d17-global.css:52:.d17-doc .sub{ margin:calc(4 * var(--u)) 0 0; font-family:var(--do-font-mono);
+app/d17-global.css:54:.d17-doc ol{ list-style:none; margin:calc(12 * var(--u)) 0 0; padding:0 }
+app/d17-global.css:55:.d17-doc li{ display:grid; grid-template-columns:calc(20 * var(--u)) auto 1fr; gap:calc(8 * var(--u)); white-space:nowrap;
+app/d17-global.css:59:.d17-doc li b{ font-family:var(--do-font-mono); font-weight:600; font-size:max(6px, calc(9.5 * var(--u)));
+app/d17-global.css:61:.d17-doc li i{ display:block; height:calc(5 * var(--u)); border-radius:9px;
+app/d17-global.css:63:.d17-doc .lines i{ display:block; height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(7 * var(--u));
+app/d17-global.css:65:.d17-doc .phase{ margin-top:calc(11 * var(--u)); font-family:var(--do-font-mono); font-weight:700;
+---
+app/d17-problems.css:26:.sx .win{ --u:calc(100cqw / 560) }
+app/d17-problems.css:156:.a967{ --u:calc(100cqw / 1600); aspect-ratio:1600 / 760; margin-top:34px }
+app/d17-problems.css:477:  .a718 .stage .d17-doc{ --u:.82px }
+app/d17-problems.css:494:  .a718 .stage .d17-doc{ --u:.74px }
+app/d17-problems.css:511:  .a1009 .stage .d17-doc, .a1010 .stage .d17-doc, .a1011 .stage .d17-doc{ --u:.74px }
+[0m
+[0m$ [0mgit grep -n "\.sw{\|\.sx{\|\.sw--solo\|d17 sw" app/d17-global.css | Select-Object -First 10; echo ---; git grep -n 'class="d17 sw a718\|--u:\|--pu:' app/problems/bottleneck-growth/page.tsx | Select-Object -First 6
+app/d17-global.css:377:.sx{ --u:calc(100cqw / 560); --pu:calc(100% / 560); margin:0; display:flex; flex-direction:column }
+app/d17-global.css:381:.sw{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); margin:34px 0 0 }
+app/d17-global.css:458:  .sw{ margin-top:26px }
+---
+[0m
+[0m← [0mEdit app/d17-resources.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-resources.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-resources.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-resources.css
+@@ -241,9 +241,9 @@
+ .a990{ display:grid; grid-template-columns:30% 1fr; gap:calc(40 * var(--pu)); align-items:center;
+   padding:calc(52 * var(--pu)) calc(46 * var(--pu)) calc(48 * var(--pu)) calc(52 * var(--pu)) }
+ 
+ /* ─── DO-ART-991 · ERP selection · cover and vendor brief ─── */
+-.a991 .stage{ aspect-ratio:560 / 500 }
++.a991 .stage{ aspect-ratio:560 / 480 }
+ .a991 .d17-ph{ bottom:18% }
+ .a991 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.65) contrast(1.05) brightness(.8) }
+ .a991 .doc-ec{ left:calc(22 * var(--u)); top:calc(60 * var(--u)); width:calc(186 * var(--u)); min-height:calc(260 * var(--u)); transform:rotate(-5deg) }
+ .a991 .doc-ec h4{ margin-top:calc(40 * var(--u)); font-size:max(11px, calc(18 * var(--u))); max-width:8.5em }
+
+[0m
+[0m← [0mEdit app/d17-resources.css
+Index: D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-resources.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-resources.css
++++ D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\d17-resources.css
+@@ -408,8 +408,20 @@
+ .tally{ display:flex; justify-content:space-between; align-items:baseline; margin-top:calc(8 * var(--u)); padding-top:calc(7 * var(--u)); border-top:2px solid var(--do-prussian-blue);
+   font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase }
+ .tally b{ font-family:var(--do-font-heading); font-size:max(11px, calc(18 * var(--u))); letter-spacing:0 }
+ .a999 .st-999{ right:calc(34 * var(--u)); top:calc(452 * var(--u)) }
++/* CR-WEB-074 fix2: photo-less solo cut (problem page) — desktop only, scoped to the
++   capped cut so the tools page keeps the full-height piece */
++@media (min-width:761px){
++  .a999.sx--solo .stage{ aspect-ratio:560 / 478 }
++  .a999.sx--solo .qz div{ padding:calc(3 * var(--u)) 0 }
++  .a999.sx--solo .doc-qz{ top:calc(52 * var(--u)) }
++  .a999.sx--solo .st-999{ top:calc(372 * var(--u)); right:calc(30 * var(--u)) }
++  .a999.sx--solo .sx-foot{ padding:calc(12 * var(--u)) calc(26 * var(--u)) calc(14 * var(--u)) }
++  .a999.sx--solo .sx-bar{ margin-bottom:calc(10 * var(--u)) }
++  .a999.sx--solo .sx-say{ margin-bottom:calc(10 * var(--u)); font-size:max(16px, calc(23 * var(--u))); max-width:24ch }
++  .a999.sx--solo .sx-foot .d17-mark{ padding:.4em .75em }
++}
+ 
+ /* ─── phone width: stages get taller so the paper keeps its floor sizes ─── */
+ @media (max-width: 760px){
+   .a981 .stage{ aspect-ratio:560 / 560 }
+
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -Last 5; echo "TSC-EXIT:$LASTEXITCODE"; npx eslint app/page.tsx app/problems/quoting-takes-too-long/page.tsx 2>&1 | Select-Object -Last 8; echo "LINT-DONE"
+TSC-EXIT:0
+D:\apps\worktrees\decoded-ops-website\web075-art-followup\app\page.tsx
+    3:8   warning  'Image' is defined but never used                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  109:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  293:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  384:44  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 4 problems (0 errors, 4 warnings)
+
+LINT-DONE
+[0m
+[0m$ [0mgit add app/d17-global.css app/d17-problems.css app/d17-resources.css app/page.tsx && git commit -m "feat(art): height polish for 11 D17 pieces to <=630px at 1440x900 (CR-WEB-075)
+
+Per artwork-swap-map-2 §4: shared tighter .sx-foot scoped to the flagged
+hook classes (a941/a963/a964/a970/a972/a973/a976/a978/a991/a1014);
+964 stage 560/510; 970 final-override body padding 122u, print card
+214u wide with third line hidden, .rt row padding 4u; 972 table padding
+and win margin desktop-scoped (tbl shared with 973); 991 stage 560/480
+(also moves the playbook hero and 1014); 999 solo cut desktop block for
+the new problem-page cut; 1008 route viewBox 1600x864 + >=761px aspect
+and station translate; 718 desktop block scoped by data-no so
+1009/1010/1011 are untouched. Harness-measured all pieces <=630px at
+1440 wide; no argument text hidden." && git log --oneline -1
+[lane/web075-art-followup ac180ab] feat(art): height polish for 11 D17 pieces to <=630px at 1440x900 (CR-WEB-075)
+ 4 files changed, 40 insertions(+), 6 deletions(-)
+ac180ab feat(art): height polish for 11 D17 pieces to <=630px at 1440x900 (CR-WEB-075)
+[0m
+All four steps committed. Final verification pass:
+[0m$ [0mnpx tsc --noEmit 2>&1 | Select-Object -Last 3; echo "TSC-EXIT:$LASTEXITCODE"; echo '--- escape grep (changed files):'; git diff origin/main --name-only | ForEach-Object { if (Test-Path $_ -PathType Leaf) { git grep -nE '\\u[0-9a-fA-F]{4}' -- $_ 2>$null } }; echo "escape-done"; echo '--- git status:'; git status --short; echo '--- commits:'; git log --oneline origin/main..HEAD
+TSC-EXIT:0
+--- escape grep (changed files):
+escape-done
+--- git status:
+--- commits:
+ac180ab feat(art): height polish for 11 D17 pieces to <=630px at 1440x900 (CR-WEB-075)
+3c4db31 feat(art): add DO-ART-1014 rate-card hero to quoting-takes-too-long (CR-WEB-075)
+a939a88 feat(art): swap DO-ART-719 on ecommerce/wrong-erp pages to 948/999 (CR-WEB-075)
+c15fe1a feat(art): install E16/E17 photo exports + CR-WEB-075 swap map (CR-WEB-075)
+[0m
+[0m$ [0mnode .context/price-audit.mjs --check 2>&1 | Select-Object -Last 5; echo "AUDIT-EXIT:$LASTEXITCODE"; echo '--- photo reuse across problems:'; git grep -ohE 'src="/images/d17/problems/[^"]+"' -- app/problems | Sort-Object | Group-Object | Where-Object Count -gt 1 | ForEach-Object { $_.Name + ' x' + $_.Count }
+FAIL app/case-studies/page.tsx:125  forbidden word "vest"  aria-label="Case index head DO-ART-950, case study 03 cut. A graded photograph of a hi-vis
+  FAIL app/how-i-build/page.tsx:78  forbidden word "vest"  alt="A worker in a grey T-shirt wearing an orange hi-vis vest with two reflective bands, p
+  FAIL app/problems/ecommerce-not-connected/page.tsx:108  forbidden word "vest"  <div class="c"><span>Ready</span><div class="j"><small>1031</small>Hi-vis vests</div></div
+  FAIL app/sectors/workwear/page.tsx:90  forbidden word "vest"  aria-label="Artwork DO-ART-937. A graded photograph of a worker in a hi-vis vest, tagged t
+  FAIL app/sectors/workwear/page.tsx:99  forbidden word "vest"  <div class="sx-tag m-pop" style="left:4.5%;top:22%;animation-delay:.1s"><small>01 · Plain 
+AUDIT-EXIT:1
+--- photo reuse across problems:
+[0m
+[0m$ [0mgit stash list; git -c core.quotepath=false grep -n "Hi-vis vests" origin/main -- app/problems/ecommerce-not-connected/page.tsx | Select-Object -First 2; node .context/price-audit.mjs --check 2>&1 | Select-String "FAIL" | Measure-Object | ForEach-Object { "total FAIL lines: $($_.Count)" }
+stash@{0}: WIP on lane/web074-art-swaps: 2388a65 feat(art): height polish — home DO-ART-917 to ~630px at 1152w, tighten 917/718 phone stacks to ≤820px (CR-WEB-074)
+stash@{1}: WIP on web011-u5-faq-schema: 2c81a02 CR-WEB-043: add lane-result and lane-notes for FAQPage schema work
+origin/main:app/problems/ecommerce-not-connected/page.tsx:106:          <div class="c"><span>Ready</span><div class="j"><small>1031</small>Hi-vis vests</div></div>
+total FAIL lines: 31
+[0m
+[0m$ [0mnode .context/price-audit.mjs --check 2>&1 | Select-String "a948Problems|a999Solo|heroArt1014|DO-ART-1014|DO-ART-948|DO-ART-999|rate card|pricing rules" | Select-Object -First 10; echo "done"
+done
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web075-art-followup.md
+Wrote file successfully.
+[0m
+All checks done. Writing the lane report files:
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web075-art-followup.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web075-art-followup.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit status --short
+M .context/price-audit.md
+?? .context/lane-reports/LANE-NOTES-web075-art-followup.md
+?? .context/lane-reports/LANE-RESULT-web075-art-followup.json
+?? .context/lane-reports/LANE-RESULT-web075-art-followup.md
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web075-art-followup.md .context/lane-reports/LANE-RESULT-web075-art-followup.json .context/lane-reports/LANE-NOTES-web075-art-followup.md && git commit -m "docs: lane notes + exit files for web075-art-followup (CR-WEB-075)" && git status --short && git log --oneline -6
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web075-art-followup.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web075-art-followup.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web075-art-followup.md', LF will be replaced by CRLF the next time Git touches it
+[lane/web075-art-followup 147a84e] docs: lane notes + exit files for web075-art-followup (CR-WEB-075)
+ 3 files changed, 158 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web075-art-followup.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web075-art-followup.json
+ create mode 100644 .context/lane-reports/LANE-RESULT-web075-art-followup.md
+ M .context/price-audit.md
+147a84e docs: lane notes + exit files for web075-art-followup (CR-WEB-075)
+ac180ab feat(art): height polish for 11 D17 pieces to <=630px at 1440x900 (CR-WEB-075)
+3c4db31 feat(art): add DO-ART-1014 rate-card hero to quoting-takes-too-long (CR-WEB-075)
+a939a88 feat(art): swap DO-ART-719 on ecommerce/wrong-erp pages to 948/999 (CR-WEB-075)
+c15fe1a feat(art): install E16/E17 photo exports + CR-WEB-075 swap map (CR-WEB-075)
+4b98c02 chore: lane brief web074-fix1
+[0m
+Lane complete on `lane/web075-art-followup` — 5 commits, all work committed:
+
+| Commit | Step |
+|---|---|
+| `c15fe1a` | E16/E17 photos installed to `public/images/d17/problems/` (new filenames); source copies deleted from `.context` |
+| `a939a88` | 719 dedupe: ecommerce-not-connected → 948 (E17 cut, `beforeRelated` before the FAQ), wrong-erp-software → 999 (photo-less solo cut + eyebrow); figures lifted to `lib/d17-figures/a948.ts`/`a999.ts`; **legacy-system keeps 719** per Claude's deviation |
+| `3c4db31` | DO-ART-1014 hero on `/problems/quoting-takes-too-long` — verbatim from spec §2, E16 photo, `a991` treatment + hook-only `a1014` |
+| `ac180ab` | Height polish: scoped shared foot (9 hook classes), 964/970/972/991 piece edits in the final-override blocks, 999-solo desktop block, 1008 viewBox 864 + ≥761px lift, 718 block scoped by `data-no` |
+| `147a84e` | Lane result md + json + notes |
+
+Verified: `tsc --noEmit` clean before every commit, eslint 0 errors, 0 `\uXXXX` hits, grep-confirmed counts (719 on buy-vs-build/about/legacy-system; 948 and 999 on exactly 2 pages each; 1014 unique; 1015–1019 free). Not verified and flagged in the report: rendered heights and visual overlap checks — Playwright/dev-servers are hard-forbidden in this lane, so the ≤630px claims ride on the spec's harness numbers for Claude's/Craig's review. `price-audit --check` exits non-zero on 31 pre-existing `origin/main` "vest" word hits, none on lines this lane touched.

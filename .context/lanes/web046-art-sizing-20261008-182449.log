@@ -1,0 +1,2001 @@
+2026-10-08 21:08:49 [truncated to last 2000 lines]
+@@ -86,10 +86,14 @@
+ .a916 .d17Mark { align-self: flex-start }
+ .a916 .stage { position: relative; aspect-ratio: 560 / 380 }
+ 
+ /* ─── DO-ART-917 · home figures · product screen with the live Hanicks figures ─── */
+-.a917 { --u: calc(100cqw / 1152); display: grid; grid-template-columns: 31% 1fr; gap: calc(40 * var(--u));
+-  padding: calc(56 * var(--u)) calc(48 * var(--u)) calc(64 * var(--u)) calc(52 * var(--u)); margin-top: 38px }
++/* BUG-WEB-046: self-sizing on the .d17 figure itself must not use cqw — the figure IS the
++   container, so cqw on it falls back to viewport width. % padding resolves against the
++   containing block (= the figure's own width); the % gap resolves against the grid content
++   box (W − 100/1152 W), so 40/1052 = 40u of full width. */
++.a917 { --u: calc(100cqw / 1152); --pu: calc(100% / 1152); display: grid; grid-template-columns: 31% 1fr; gap: calc(40 / 1052 * 100%);
++  padding: calc(56 * var(--pu)) calc(48 * var(--pu)) calc(64 * var(--pu)) calc(52 * var(--pu)); margin-top: 38px }
+ .a917 .d17Ph img { object-position: 80% 50%; opacity: .75 }
+ .a917::before { content: ''; position: absolute; inset: 0; z-index: -1;
+   background: linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 30%,
+     color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) 60%, color-mix(in srgb, var(--do-prussian-blue) 45%, transparent) 100%) }
+
+[0m
+[0m← [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+@@ -168,9 +168,9 @@
+ .feeds .more { padding-top: calc(8 * var(--u)); border-top: 1px solid color-mix(in srgb, var(--do-prussian-blue) 9%, transparent);
+   font-size: max(11px, calc(13 * var(--u))); color: color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+ 
+ /* ─── DO-ART-918 · home evidence · teamwear figures on a graded stock photo ─── */
+-.a918 { --u: calc(100cqw / 1152); display: grid; grid-template-columns: 50% 1fr; min-height: calc(600 * var(--u)); margin-top: 38px }
++.a918 { --u: calc(100cqw / 1152); display: grid; grid-template-columns: 50% 1fr; aspect-ratio: 1152 / 600; margin-top: 38px }
+ .a918 .d17Ph { left: 36% }
+ .a918 .d17Ph img { object-position: 55% 50%; --d17Grade: saturate(.7) contrast(1.05) brightness(.84) }
+ .a918::before { content: ''; position: absolute; inset: 0; z-index: -1;
+   background: linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 36%,
+
+[0m
+[0m← [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+@@ -277,9 +277,9 @@
+ .docket .issued { padding: 4px 11px; border-radius: var(--do-radius-sm); color: var(--do-amber);
+   border: 1px solid color-mix(in srgb, var(--do-amber) 55%, transparent) }
+ 
+ /* ─── DO-ART-920 · Contact · warm photo-led panel ─── */
+-.a920 { --u: calc(100cqw / 1100); display: grid; grid-template-columns: 54% 1fr; min-height: calc(460 * var(--u)); text-align: left }
++.a920 { --u: calc(100cqw / 1100); display: grid; grid-template-columns: 54% 1fr; aspect-ratio: 1100 / 460; text-align: left }
+ .a920 .d17Ph { left: 38% }
+ .a920 .d17Ph img { object-position: 50% 40%; --d17Grade: sepia(.22) saturate(1.08) contrast(1.04) brightness(1.02) }
+ .a920::before { content: ''; position: absolute; inset: 0; z-index: -1;
+   background: linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 40%,
+
+[0m
+[0m← [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+@@ -355,9 +355,9 @@
+   .kpi { padding: 12px 14px }
+   .feeds .r { grid-template-columns: 1fr auto } .feeds .r span:nth-child(2) { display: none }
+ }
+ @media (max-width: 760px) {
+-  .a918 { grid-template-columns: 1fr; min-height: 0 }
++  .a918 { grid-template-columns: 1fr; min-height: 0; aspect-ratio: auto }
+   .a918 .d17Ph { left: 0; bottom: auto; height: 230px }
+   .a918::before { background: linear-gradient(180deg, transparent 0, transparent 120px, var(--do-prussian-blue) 230px) }
+   .a918 .copy { padding: 200px 20px 24px }
+   .a918 .print { right: 16px; top: 24px; bottom: auto; width: 150px }
+
+[0m
+Audit complete — I have the full picture. Executing fix 1 now (container-unit self-sizing on `.d17` figures), converting to percentage padding / aspect-ratio equivalents.
+[0m← [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+@@ -383,9 +383,9 @@
+   .a831 .st .n { font-size: 11px } .a831 .st h3 { font-size: 21px } .a831 .stEnd h3 { font-size: 26px } .a831 .st p { font-size: 14px }
+   .a831 .d17Mark { left: 20px; bottom: 20px; font-size: 10px }
+ }
+ @media (max-width: 760px) {
+-  .a920 { grid-template-columns: 1fr; min-height: 0 }
++  .a920 { grid-template-columns: 1fr; min-height: 0; aspect-ratio: auto }
+   .a920 .d17Ph { left: 0; bottom: auto; height: 250px }
+   .a920::before { background: linear-gradient(180deg, transparent 0, transparent 130px, var(--do-prussian-blue) 250px) }
+   .a920 .note { right: 16px; top: 18px; width: 190px }
+   .a920 .copy { padding: 230px 20px 76px }
+
+[0m
+[0m← [0mEdit app/d17-global.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+@@ -86,10 +86,14 @@
+   font-size:max(10px, calc(11.5 * var(--u))); letter-spacing:.18em; text-transform:uppercase; color:var(--do-sky-blue) }
+ .a916 .d17-mark{ align-self:flex-start }
+ 
+ /* ─── DO-ART-917 · home figures · product screen with the live Hanicks figures ─── */
+-.a917{ --u:calc(100cqw / 1152); display:grid; grid-template-columns:31% 1fr; gap:calc(40 * var(--u));
+-  padding:calc(56 * var(--u)) calc(48 * var(--u)) calc(64 * var(--u)) calc(52 * var(--u)); margin-top:38px }
++/* BUG-WEB-046: self-sizing on the .d17 figure itself must not use cqw — the figure IS the
++   container, so cqw on it falls back to viewport width. % padding resolves against the
++   containing block (= the figure's own width); the % gap resolves against the grid content
++   box (W − 100/1152 W), so 40/1052 = 40u of full width. */
++.a917{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); display:grid; grid-template-columns:31% 1fr; gap:calc(40 / 1052 * 100%);
++  padding:calc(56 * var(--pu)) calc(48 * var(--pu)) calc(64 * var(--pu)) calc(52 * var(--pu)); margin-top:38px }
+ .a917 .d17-ph img{ object-position:80% 50%; opacity:.75 }
+ .a917::before{ content:''; position:absolute; inset:0; z-index:-1;
+   background:linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 30%,
+     color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) 60%, color-mix(in srgb, var(--do-prussian-blue) 45%, transparent) 100%) }
+
+[0m
+[0m← [0mEdit app/d17-global.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+@@ -177,9 +177,9 @@
+   .feeds .r{ grid-template-columns:1fr auto } .feeds .r span:nth-child(2){ display:none }
+ }
+ 
+ /* ─── DO-ART-918 · home evidence · teamwear figures on a graded stock photo ─── */
+-.a918{ --u:calc(100cqw / 1152); display:grid; grid-template-columns:50% 1fr; min-height:calc(600 * var(--u)); margin-top:38px }
++.a918{ --u:calc(100cqw / 1152); display:grid; grid-template-columns:50% 1fr; aspect-ratio:1152 / 600; margin-top:38px }
+ .a918 .d17-ph{ left:36% }
+ .a918 .d17-ph img{ object-position:55% 50%; --d17-grade:saturate(.7) contrast(1.05) brightness(.84) }
+ .a918::before{ content:''; position:absolute; inset:0; z-index:-1;
+   background:linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 36%,
+
+[0m
+[0m← [0mEdit app/d17-global.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+@@ -210,9 +210,9 @@
+ .a918 .print .bc{ margin-top:calc(8 * var(--u)); height:calc(34 * var(--u));
+   background:repeating-linear-gradient(90deg, var(--do-prussian-blue) 0 2px, transparent 2px 4px, var(--do-prussian-blue) 4px 5px, transparent 5px 8px, var(--do-prussian-blue) 8px 11px, transparent 11px 12px) }
+ .a918 .print .s{ margin-top:calc(6 * var(--u)); font-family:var(--do-font-mono); font-size:max(7px, calc(9.5 * var(--u))); letter-spacing:.12em; text-transform:uppercase }
+ @media (max-width: 760px){
+-  .a918{ grid-template-columns:1fr; min-height:0 }
++  .a918{ grid-template-columns:1fr; min-height:0; aspect-ratio:auto }
+   .a918 .d17-ph{ left:0; bottom:auto; height:230px }
+   .a918::before{ background:linear-gradient(180deg, transparent 0, transparent 120px, var(--do-prussian-blue) 230px) }
+   .a918 .copy{ padding:200px 20px 24px }
+   .a918 .print{ right:16px; top:24px; bottom:auto; width:150px }
+
+[0m
+[0m← [0mEdit app/d17-global.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+@@ -302,9 +302,9 @@
+ .fact-head.a919 .fm{ position:absolute; right:14px; top:14px; font-family:var(--do-font-mono); font-size:10px;
+   letter-spacing:.16em; color:var(--do-amber); background:var(--do-prussian-blue); padding:5px 8px; border-radius:var(--do-radius-sm) }
+ 
+ /* ─── DO-ART-920 · Contact · warm photo-led panel ─── */
+-.a920{ --u:calc(100cqw / 1100); display:grid; grid-template-columns:54% 1fr; min-height:calc(460 * var(--u)); text-align:left }
++.a920{ --u:calc(100cqw / 1100); display:grid; grid-template-columns:54% 1fr; aspect-ratio:1100 / 460; text-align:left }
+ .a920 .d17-ph{ left:38% }
+ .a920 .d17-ph img{ object-position:50% 40%; --d17-grade:sepia(.22) saturate(1.08) contrast(1.04) brightness(1.02) }
+ .a920::before{ content:''; position:absolute; inset:0; z-index:-1;
+   background:linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 40%,
+
+[0m
+Now the same fixes in the global CSS copy:
+[0m← [0mEdit app/d17-global.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+@@ -333,9 +333,9 @@
+   font-size:max(12px, calc(14 * var(--u))); line-height:1.35; font-weight:600 }
+ .a920 .note li::before{ content:'0' counter(c); font-family:var(--do-font-mono); font-size:10px; color:var(--do-text-cerulean); padding-top:3px }
+ .a920 .d17-mark--abs{ left:calc(56 * var(--u)); bottom:calc(28 * var(--u)) }
+ @media (max-width: 760px){
+-  .a920{ grid-template-columns:1fr; min-height:0 }
++  .a920{ grid-template-columns:1fr; min-height:0; aspect-ratio:auto }
+   .a920 .d17-ph{ left:0; bottom:auto; height:250px }
+   .a920::before{ background:linear-gradient(180deg, transparent 0, transparent 130px, var(--do-prussian-blue) 250px) }
+   .a920 .note{ right:16px; top:18px; width:190px }
+   .a920 .copy{ padding:230px 20px 76px }
+
+[0m
+Now the apps-cases and locations rules. First let me check how `.a920` is placed on the contact page to choose the right min-height conversion:
+[0m→ [0mRead app/contact/ContactClient.tsx[90m [limit=40, offset=240][0m
+[0m
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+@@ -76,10 +76,13 @@
+   font-size:max(8.5px, calc(9.5 * var(--u))); font-weight:700; border:1.5px solid var(--do-cerulean); color:var(--do-prussian-blue) }
+ .tile .act span+span{ background:var(--do-amber); border-color:var(--do-amber) }
+ .tile .stock{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:var(--do-text-cerulean) }
+ 
+-/* ─── DO-ART-939 · apps hero · the three apps, three real screens over the floor ─── */
+-.a939{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); min-height:calc(640 * var(--u)); display:flex; flex-direction:column }
++/* ─── DO-ART-939 · apps hero · the three apps, three real screens over the floor ───
++   BUG-WEB-046: no self min-height — the in-flow content (top + 560u screens + under + base)
++   already exceeds 640u at every width, so a correctly-resolved min-height never bound; the
++   cqw copy only inflated the piece against viewport width. Content defines the height. */
++.a939{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); display:flex; flex-direction:column }
+ .a939 .d17-ph img{ object-position:50% 58%; --d17-grade:saturate(.6) contrast(1.06) brightness(.78) }
+ .a939::before{ content:''; position:absolute; inset:0; z-index:-1;
+   background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 35%, transparent) 30%,
+     color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) 70%, var(--do-prussian-blue) 100%) }
+
+[0m
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+@@ -165,9 +165,9 @@
+ .a942 .v-tall{ display:none }
+ @media (max-width: 760px){ .a942{ padding:22px 14px 20px } .a942 .v-wide{ display:none } .a942 .v-tall{ display:block } }
+ 
+ /* ─── DO-ART-943 · data app screens · catalogue on the desk, bins on the phone (photo-led) ─── */
+-.a943{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); min-height:calc(600 * var(--u)) }
++.a943{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); aspect-ratio:1152 / 600 }
+ .a943 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.62) contrast(1.08) brightness(.72) }
+ .a943::before{ content:''; position:absolute; inset:0; z-index:-1;
+   background:linear-gradient(90deg, color-mix(in srgb, var(--do-prussian-blue) 20%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 40%, transparent) 60%,
+     var(--do-prussian-blue) 100%) }
+
+[0m
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+@@ -213,9 +213,9 @@
+ .vg td:first-child{ font-family:var(--do-font-mono); font-size:max(9px, calc(11 * var(--u))) }
+ .vg .st{ font-family:var(--do-font-mono); font-size:max(8px, calc(9 * var(--u))); letter-spacing:.1em; padding:2px 8px; border-radius:99px;
+   background:color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
+ @media (max-width: 760px){
+-  .a943{ min-height:0; padding:18px 14px 70px; display:flex; flex-direction:column; gap:22px }
++  .a943{ aspect-ratio:auto; min-height:0; padding:18px 14px 70px; display:flex; flex-direction:column; gap:22px }
+   .a943::before{ background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent), var(--do-prussian-blue) 70%) }
+   .a943 .desk, .a943 .phone, .a943 .cap3{ position:relative; left:auto; top:auto; right:auto; width:auto }
+   .a943 .desk .mw{ --u:.62px }
+   .a943 .phone{ width:210px; align-self:center; transform:rotate(2deg); --u:1px }
+
+[0m
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+@@ -248,9 +248,9 @@
+   .a944 .ver--old{ display:none }
+ }
+ 
+ /* ─── DO-ART-945 · artwork manager inline · vault to floor, one tracked path (route poster) ─── */
+-.a945{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--u)) calc(44 * var(--u)) calc(30 * var(--u));
++.a945{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(44 * var(--pu)) calc(30 * var(--pu));
+   background:
+     radial-gradient(60% 70% at 88% 18%, color-mix(in srgb, var(--do-cerulean) 20%, transparent), transparent 70%),
+     linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 80%, var(--do-cerulean)) 0%, var(--do-prussian-blue) 55%,
+       color-mix(in srgb, var(--do-prussian-blue) 78%, #000) 100%) }
+
+[0m
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+@@ -467,9 +467,9 @@
+ [data-od-id="related"] .card .readmore{ font-size:var(--do-text-sm); font-weight:700; color:var(--do-text-primary); text-decoration:none }
+ [data-od-id="related"] .card .readmore::after{ content:' →' }
+ 
+ /* ─── DO-ART-953 · case study 02 hero · the warehouse floor on a phone (photo-led) ─── */
+-.a953{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); min-height:calc(520 * var(--u)) }
++.a953{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); aspect-ratio:1152 / 520 }
+ .a953 .d17-ph img{ object-position:30% 50%; --d17-grade:saturate(.78) contrast(1.06) brightness(.8) }
+ .a953::before{ content:''; position:absolute; inset:0; z-index:-1;
+   background:linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 26%, color-mix(in srgb, var(--do-prussian-blue) 45%, transparent) 46%,
+     color-mix(in srgb, var(--do-prussian-blue) 10%, transparent) 70%, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 100%) }
+
+[0m
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+@@ -499,9 +499,9 @@
+ .a953 .t1{ left:calc(470 * var(--u)); top:calc(120 * var(--u)) }
+ .a953 .t2{ left:calc(520 * var(--u)); top:calc(330 * var(--u)) }
+ .a953 .t3{ left:calc(930 * var(--u)); top:calc(456 * var(--u)) }
+ @media (max-width: 760px){
+-  .a953{ min-height:0; padding:22px 18px 26px; display:flex; flex-direction:column; gap:18px }
++  .a953{ aspect-ratio:auto; min-height:0; padding:22px 18px 26px; display:flex; flex-direction:column; gap:18px }
+   .a953::before{ background:linear-gradient(180deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 40%, color-mix(in srgb, var(--do-prussian-blue) 40%, transparent) 70%, var(--do-prussian-blue) 100%) }
+   .a953 .cap{ position:relative; left:auto; top:auto; width:auto }
+   .a953 .phone2{ position:relative; left:auto; top:auto; width:230px; align-self:center; --u:1px; transform:rotate(-2deg) }
+   .a953 .sx-tag{ position:relative; left:auto !important; top:auto !important; align-self:flex-start; --u:1px }
+
+[0m
+[0m← [0mEdit app/d17-apps-cases.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-apps-cases.css
+@@ -552,9 +552,9 @@
+ .a956 .v-tall{ display:none }
+ @media (max-width: 760px){ .a956{ padding:22px 14px 20px } .a956 .v-wide{ display:none } .a956 .v-tall{ display:block } }
+ 
+ /* ─── DO-ART-957 · Eternal Fitness exhibit · the draft plan and the one person who signs it off (product screen) ─── */
+-.a957{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(44 * var(--u)) calc(44 * var(--u)) calc(30 * var(--u)) }
++.a957{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(44 * var(--pu)) calc(44 * var(--pu)) calc(30 * var(--pu)) }
+ .a957 .d17-dots{ opacity:.8 }
+ .a957 .hd{ display:flex; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:calc(22 * var(--u)) }
+ .a957 .hd .k{ font-size:max(10px, calc(13 * var(--u))); color:var(--do-sky-blue) }
+ .a957 .hd h3{ margin:calc(8 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; color:var(--do-white); font-size:max(22px, calc(36 * var(--u))); line-height:1.06; letter-spacing:-.03em; max-width:24ch }
+
+[0m
+Now the locations CSS `.a1006/.a1007` self-padding:
+[0m← [0mEdit app/d17-locations.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-locations.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-locations.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-locations.css
+@@ -306,9 +306,9 @@
+ }
+ 
+ /* ─── DO-ART-1006 · privacy header · what I keep, and for how long (drawn) ─── */
+ .legal-art{ max-width:880px; margin:34px auto 0 }
+-.a1006, .a1007{ --u:calc(100cqw / 880); text-align:left; padding:calc(30 * var(--u)) calc(32 * var(--u)) calc(26 * var(--u)) }
++.a1006, .a1007{ --u:calc(100cqw / 880); --pu:calc(100% / 880); text-align:left; padding:calc(30 * var(--pu)) calc(32 * var(--pu)) calc(26 * var(--pu)) }
+ .lg-k{ display:flex; justify-content:space-between; gap:10px; font-size:max(10px, calc(12 * var(--u))); color:var(--do-off-white) }
+ .lg-k span+span{ color:var(--do-sky-blue) }
+ .keep{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:calc(34 * var(--u)); margin-top:calc(20 * var(--u)); position:relative }
+ .keep .cd{ position:relative; background:var(--do-off-white); color:var(--do-prussian-blue); border-radius:calc(6 * var(--u));
+
+[0m
+Now let me sweep for any remaining self-sizing `var(--u)` on figure-level selectors I may have missed:
+[0m$ [0mSelect-String -Path app\d17-global.css,app\d17-art.module.css,app\d17-apps-cases.css,app\d17-problems.css,app\d17-locations.css,app\d17-resources.css -Pattern '^\.(a\d+|sx|sw|sw-doc|chd|px)[\s,{][^{]*\{[^}]*' | ForEach-Object { $_.Line } | Select-String -Pattern 'var\(--u\)'
+...output truncated...
+
+Full output saved to: C:\Users\CraigBlackman\.local\share\opencode\tool-output\tool_11cbef664001awqVYlanH0pk5F
+
+color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
+.a918 .print b{ display:block; margin-top:calc(4 * var(--u)); font-family:var(--do-font-heading); font-size:max(14px, 
+calc(26 * var(--u))); letter-spacing:.02em }
+.a918 .print .bc{ margin-top:calc(8 * var(--u)); height:calc(34 * var(--u));
+.a918 .print .s{ margin-top:calc(6 * var(--u)); font-family:var(--do-font-mono); font-size:max(7px, calc(9.5 * 
+var(--u))); letter-spacing:.12em; text-transform:uppercase }
+.a831 .eb{ position:absolute; left:calc(96 * var(--u)); top:calc(78 * var(--u)); margin:0;
+.a831 .hd{ position:absolute; left:calc(92 * var(--u)); top:calc(112 * var(--u)); margin:0; 
+font-family:var(--do-font-heading);
+.a831 .stand{ position:absolute; left:calc(96 * var(--u)); top:calc(222 * var(--u)); width:calc(600 * var(--u)); 
+margin:0;
+.a831 .st{ position:absolute; margin:0; width:calc(250 * var(--u)) }
+.a831 .st .n{ display:block; font-family:var(--do-font-mono); font-size:calc(18 * var(--u)); letter-spacing:.18em;
+.a831 .st h3{ margin:calc(6 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:calc(33 * 
+var(--u));
+.a831 .st p{ margin:calc(9 * var(--u)) 0 0; font-size:calc(20 * var(--u)); line-height:1.34; color:color-mix(in srgb, 
+var(--do-off-white) 80%, transparent) }
+.a831 .st--end h3{ color:var(--do-amber); font-size:calc(44 * var(--u)) }
+.a831 .print{ position:absolute; background:var(--do-off-white); padding:calc(9 * var(--u)) calc(9 * var(--u)) calc(44 
+* var(--u));
+.a831 .print .tint{ position:absolute; inset:calc(9 * var(--u)) calc(9 * var(--u)) calc(44 * var(--u));
+.a831 .print span{ position:absolute; left:calc(12 * var(--u)); right:calc(10 * var(--u)); bottom:calc(7 * var(--u));
+.a831 .d17-mark{ left:calc(26 * var(--u)); bottom:calc(24 * var(--u)); font-size:calc(18 * var(--u)) }
+.a904 .top{ position:absolute; left:calc(28 * var(--u)); right:calc(28 * var(--u)); top:calc(24 * var(--u));
+.a904 .note{ position:absolute; left:calc(28 * var(--u)); right:calc(28 * var(--u)); bottom:calc(70 * var(--u)); 
+margin:0;
+.a904 .d17-mark{ left:calc(28 * var(--u)); bottom:calc(24 * var(--u)) }
+.a920 .copy{ padding:calc(56 * var(--u)) calc(24 * var(--u)) calc(96 * var(--u)) calc(56 * var(--u)) }
+.a920 .k{ font-size:max(10px, calc(13 * var(--u))); color:var(--do-off-white) }
+.a920 .note{ position:absolute; right:calc(40 * var(--u)); top:calc(40 * var(--u)); width:calc(250 * var(--u));
+.a920 .note .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10.5 * var(--u))); letter-spacing:.16em;
+.a920 .note ol{ margin:calc(10 * var(--u)) 0 0; padding:0; list-style:none; counter-reset:c }
+.a920 .note li{ counter-increment:c; display:grid; grid-template-columns:22px 1fr; gap:6px; padding:calc(6 * var(--u)) 
+0;
+.a920 .d17-mark--abs{ left:calc(56 * var(--u)); bottom:calc(28 * var(--u)) }
+.sw-doc .stage{ position:relative; min-height:calc(460 * var(--u)) }
+.a921 .doc-t{ left:calc(24 * var(--u)); top:calc(74 * var(--u)); width:calc(270 * var(--u)); transform:rotate(-3deg) }
+.a921 .doc-p{ left:calc(292 * var(--u)); top:calc(120 * var(--u)); width:calc(238 * var(--u)); 
+transform:rotate(3.5deg) }
+.a921 li{ grid-template-columns:calc(20 * var(--u)) auto 1fr }
+.a921 li em{ font-style:normal; justify-self:end; font-family:var(--do-font-mono); font-size:max(6px, calc(9.5 * 
+var(--u)));
+.a922 .track{ position:relative; margin-top:calc(30 * var(--u)); padding-top:calc(24 * var(--u)) }
+.a922 .track::before{ content:''; position:absolute; left:0; right:0; top:calc(8 * var(--u)); height:3px; 
+border-radius:3px;
+.a922 .track li{ position:relative; font-size:max(12px, calc(15 * var(--u))); line-height:1.3; color:color-mix(in 
+srgb, var(--do-off-white) 82%, transparent) }
+.a922 .track li::before{ content:''; position:absolute; left:0; top:calc(-24 * var(--u) + 1px); width:13px; 
+height:13px; border-radius:50%;
+.a922 .track li b{ display:block; font-family:var(--do-font-mono); font-weight:600; font-size:max(9px, calc(11 * 
+var(--u)));
+.a923 .d17-ph{ bottom:auto; height:calc(430 * var(--u)) }
+.a923 .runs{ position:relative; padding:0 calc(26 * var(--u)) }
+.a924 .hd{ position:absolute; left:calc(84 * var(--u)); top:calc(70 * var(--u)); margin:0; width:calc(560 * var(--u));
+.a924 .eb{ position:absolute; left:calc(86 * var(--u)); top:calc(40 * var(--u)); margin:0; font-size:max(10px, calc(17 
+* var(--u))); color:var(--do-sky-blue) }
+.a924 .st{ position:absolute; margin:0; width:calc(270 * var(--u)) }
+.a924 .st .n{ display:block; font-family:var(--do-font-mono); font-size:calc(17 * var(--u)); letter-spacing:.18em; 
+text-transform:uppercase; color:var(--do-sky-blue) }
+.a924 .st h3{ margin:calc(6 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:calc(32 * 
+var(--u));
+.a924 .st p{ margin:calc(8 * var(--u)) 0 0; font-size:calc(19 * var(--u)); line-height:1.35; color:color-mix(in srgb, 
+var(--do-off-white) 80%, transparent) }
+.a924 .print{ position:absolute; background:var(--do-off-white); padding:calc(9 * var(--u)) calc(9 * var(--u)) calc(42 
+* var(--u));
+.a924 .print .tint{ position:absolute; inset:calc(9 * var(--u)) calc(9 * var(--u)) calc(42 * var(--u));
+.a924 .print span{ position:absolute; left:calc(12 * var(--u)); right:calc(10 * var(--u)); bottom:calc(8 * var(--u));
+.a924 .methods span{ position:absolute; transform:translate(-50%, -135%); font-size:calc(14 * var(--u)); 
+color:var(--do-sky-blue);
+.a924 .d17-mark{ left:calc(26 * var(--u)); bottom:calc(24 * var(--u)); font-size:max(10px, calc(17 * var(--u))) }
+.a925 .sx-top{ position:relative; left:auto; right:auto; top:auto; padding:0 calc(26 * var(--u)) }
+.a925 svg.q{ margin-top:calc(6 * var(--u)) }
+.a925 .sx-foot{ position:relative; left:auto; right:auto; bottom:auto; padding:0 calc(26 * var(--u)) calc(22 * 
+var(--u)) }
+.a926 .doc-s{ left:calc(40 * var(--u)); top:calc(14 * var(--u)); width:calc(360 * var(--u)); transform:rotate(-2.5deg) 
+}
+.a926 .doc-v{ left:calc(346 * var(--u)); top:calc(120 * var(--u)); width:calc(276 * var(--u)); transform:rotate(3deg) }
+.a927 .sheet{ position:absolute; z-index:4; right:calc(26 * var(--u)); top:calc(68 * var(--u)); width:calc(300 * 
+var(--u));
+.a927 .sheet .ref{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); letter-spacing:.16em; 
+text-transform:uppercase;
+.a927 .sheet h4{ margin:calc(4 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; 
+font-size:max(11px, calc(17 * var(--u))); letter-spacing:-.015em }
+.a927 .sheet .note{ margin-top:calc(10 * var(--u)); font-size:max(8px, calc(11 * var(--u))); line-height:1.35;
+.a928 .foot{ display:flex; justify-content:space-between; align-items:center; gap:14px; margin-top:calc(8 * var(--u)) }
+.a929 .doc-o{ left:calc(30 * var(--u)); top:calc(96 * var(--u)); width:calc(360 * var(--u)); transform:rotate(-2deg) }
+.a929 .doc-o li{ grid-template-columns:calc(20 * var(--u)) 1.3fr 1fr auto; white-space:nowrap }
+.a929 .doc-o li em{ font-style:normal; font-family:var(--do-font-mono); font-size:max(6.5px, calc(9.5 * var(--u))); 
+letter-spacing:.06em;
+.a929 .doc-o .ship{ margin-top:calc(10 * var(--u)); padding-top:calc(9 * var(--u)); border-top:2px solid 
+var(--do-prussian-blue);
+.a929 .doc-o .ship span{ font-family:var(--do-font-mono); font-weight:600; font-size:max(6.5px, calc(9.5 * var(--u))); 
+letter-spacing:.1em }
+.a929 .doc-m{ left:calc(350 * var(--u)); top:calc(66 * var(--u)); width:calc(180 * var(--u)); transform:rotate(4deg) }
+.a930 .live{ margin-top:calc(24 * var(--u)); display:flex; align-items:center; gap:10px; font-size:max(10px, calc(12 * 
+var(--u))); color:var(--do-sky-blue) }
+.a931 .sx-top{ position:relative; left:auto; right:auto; top:auto; padding:0 calc(26 * var(--u)) }
+.a931 .sx-foot{ position:relative; left:auto; right:auto; bottom:auto; padding:0 calc(26 * var(--u)) calc(22 * 
+var(--u)) }
+.a932 .doc-b{ left:calc(30 * var(--u)); top:calc(20 * var(--u)); width:calc(350 * var(--u)); transform:rotate(-3deg) }
+.a932 .doc-r{ left:calc(390 * var(--u)); top:calc(120 * var(--u)); width:calc(290 * var(--u)); 
+transform:rotate(2.5deg) }
+.a933 .doc-s{ left:calc(210 * var(--u)); top:calc(222 * var(--u)); width:calc(326 * var(--u)); 
+transform:rotate(-2.5deg) }
+.a933 .sx-say{ font-size:max(15px, calc(22 * var(--u))) }
+.a934 .head{ display:flex; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:calc(24 * 
+var(--u)) }
+.a934 .head h3{ margin:calc(10 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; 
+color:var(--do-white);
+.a935 .win-main{ padding:calc(20 * var(--u)) calc(20 * var(--u)) calc(20 * var(--u)) }
+.a935 .win-main h5{ font-size:max(15px, calc(22 * var(--u))) }
+.a935 .kpis{ grid-template-columns:repeat(3, 1fr); gap:calc(8 * var(--u)); margin-top:calc(14 * var(--u)) }
+.a935 .kpi{ padding:calc(11 * var(--u)) calc(11 * var(--u)) }
+.a935 .kpi .l{ font-size:max(6.5px, calc(8.5 * var(--u))); letter-spacing:.12em }
+.a935 .kpi .n{ font-size:max(15px, calc(25 * var(--u))) }
+.a935 .kpi .d{ font-size:max(8px, calc(10.5 * var(--u))) }
+.a935 .meter{ margin-top:calc(10 * var(--u)); padding:calc(11 * var(--u)) calc(14 * var(--u)) }
+.a935 .meter .row{ font-size:max(9.5px, calc(12 * var(--u))) }
+.a935 .meter .row b{ font-size:max(10.5px, calc(13 * var(--u))) }
+.a935 .sx-foot{ position:relative; left:auto; right:auto; bottom:auto; margin-top:calc(22 * var(--u)) }
+.a936 .doc-q{ left:calc(24 * var(--u)); top:calc(8 * var(--u)); width:calc(360 * var(--u)); transform:rotate(-2.5deg) }
+.a936 .doc-sp{ left:calc(400 * var(--u)); top:calc(150 * var(--u)); width:calc(270 * var(--u)); transform:rotate(3deg) 
+}
+.a937 .ways{ display:flex; gap:calc(5 * var(--u)); margin:0 0 calc(12 * var(--u)) }
+.a937 .ways i{ width:calc(22 * var(--u)); height:calc(22 * var(--u)); border-radius:calc(4 * var(--u));
+.a938 .foot{ display:flex; justify-content:space-between; align-items:center; gap:14px; margin-top:calc(8 * var(--u)) }
+.a928 .foot .k, .a938 .foot .k{ font-size:max(9px, calc(12 * var(--u))); color:var(--do-sky-blue) }
+.a1008 .eb{ position:absolute; left:calc(96 * var(--u)); top:calc(78 * var(--u)); margin:0;
+.a1008 .stand{ position:absolute; left:calc(96 * var(--u)); top:calc(122 * var(--u)); width:calc(560 * var(--u)); 
+margin:0;
+.a1008 .docmini .tag{ display:block; font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u)));
+.a1008 .docmini .row{ display:flex; align-items:baseline; gap:calc(8 * var(--u)); margin-top:calc(9 * var(--u));
+.a1008 .docmini .row:first-of-type{ border-top:0; padding-top:0; margin-top:calc(10 * var(--u)) }
+.a1008 .docmini .row b{ font-family:var(--do-font-mono); font-weight:700; font-size:max(8px, calc(11 * var(--u)));
+.a1008 .photopin{ position:absolute; padding:calc(9 * var(--u)) calc(9 * var(--u)) calc(34 * var(--u));
+.a1008 .photopin .tint{ position:absolute; inset:calc(9 * var(--u)) calc(9 * var(--u)) calc(34 * var(--u));
+.a1008 .photopin span{ position:absolute; left:calc(11 * var(--u)); right:calc(9 * var(--u)); bottom:calc(8 * 
+var(--u));
+.a1008 .st .n{ display:block; font-family:var(--do-font-mono); font-size:max(9px, calc(14 * var(--u))); 
+letter-spacing:.16em;
+.a1008 .st h3{ margin:calc(6 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:max(17px, 
+calc(28 * var(--u)));
+.a1008 .st p{ margin:calc(8 * var(--u)) 0 0; font-size:max(12px, calc(15 * var(--u))); line-height:1.4;
+.a1008 .st a{ display:inline-block; margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); font-weight:700;
+.a1008 .st--end h3{ color:var(--do-amber); font-size:max(19px, calc(34 * var(--u))) }
+.a1008 .d17-mark--abs{ left:calc(26 * var(--u)); bottom:calc(24 * var(--u)); font-size:max(9px, calc(13 * var(--u))) }
+.a916 .top { display: flex; justify-content: space-between; gap: 12px; padding: calc(22 * var(--u)) calc(28 * 
+var(--u)) 0;
+.a916 .docA { left: calc(292 * var(--u)); top: calc(30 * var(--u)); width: calc(244 * var(--u)); transform: 
+rotate(3.5deg) }
+.a916 .docB { left: calc(56 * var(--u)); top: calc(118 * var(--u)); width: calc(222 * var(--u)); transform: 
+rotate(-4deg) }
+.a916 .askBody { padding: calc(8 * var(--u)) calc(30 * var(--u)) calc(26 * var(--u)) }
+.a916 .bar { width: calc(56 * var(--u)); height: 5px; border-radius: 3px; background: var(--do-amber); margin-bottom: 
+16px }
+.a917 .cap .k { font-size: max(10px, calc(13 * var(--u))); color: var(--do-off-white) }
+.a917 .cap .bar { width: calc(64 * var(--u)); height: 5px; border-radius: 3px; background: var(--do-amber); margin: 
+calc(20 * var(--u)) 0 }
+.a917 .cap p { margin: calc(18 * var(--u)) 0 0; font-size: max(14px, calc(18 * var(--u))); line-height: 1.45;
+.a917 .live { margin-top: calc(26 * var(--u)); display: flex; align-items: center; gap: 10px;
+.a917 .d17Mark { margin-top: calc(34 * var(--u)) }
+.a918 .copy { padding: calc(50 * var(--u)) calc(20 * var(--u)) calc(40 * var(--u)) calc(52 * var(--u)) }
+.a918 .k { font-size: max(10px, calc(13 * var(--u))); color: var(--do-off-white) }
+.a918 h3 { margin: calc(16 * var(--u)) 0 0; font-family: var(--do-font-heading); font-weight: 800; color: 
+var(--do-white);
+.a918 .print { position: absolute; right: calc(46 * var(--u)); bottom: calc(46 * var(--u)); width: calc(230 * 
+var(--u));
+.a918 .print .ref { font-family: var(--do-font-mono); font-size: max(8px, calc(10 * var(--u))); letter-spacing: .16em; 
+color: color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.a918 .print b { display: block; margin-top: calc(4 * var(--u)); font-family: var(--do-font-heading); font-size: 
+max(14px, calc(26 * var(--u))); letter-spacing: .02em }
+.a918 .print .bc { margin-top: calc(8 * var(--u)); height: calc(34 * var(--u));
+.a918 .print .s { margin-top: calc(6 * var(--u)); font-family: var(--do-font-mono); font-size: max(7px, calc(9.5 * 
+var(--u))); letter-spacing: .12em; text-transform: uppercase }
+.a831 .eb { position: absolute; left: calc(96 * var(--u)); top: calc(78 * var(--u)); margin: 0;
+.a831 .hd { position: absolute; left: calc(92 * var(--u)); top: calc(112 * var(--u)); margin: 0; font-family: 
+var(--do-font-heading);
+.a831 .stand { position: absolute; left: calc(96 * var(--u)); top: calc(222 * var(--u)); width: calc(600 * var(--u)); 
+margin: 0;
+.a831 .st { position: absolute; margin: 0; width: calc(250 * var(--u)) }
+.a831 .st .n { display: block; font-family: var(--do-font-mono); font-size: calc(18 * var(--u)); letter-spacing: .18em;
+.a831 .st h3 { margin: calc(6 * var(--u)) 0 0; font-family: var(--do-font-heading); font-weight: 800; font-size: 
+calc(33 * var(--u));
+.a831 .st p { margin: calc(9 * var(--u)) 0 0; font-size: calc(20 * var(--u)); line-height: 1.34; color: color-mix(in 
+srgb, var(--do-off-white) 80%, transparent) }
+.a831 .stEnd h3 { color: var(--do-amber); font-size: calc(44 * var(--u)) }
+.a831 .print { position: absolute; background: var(--do-off-white); padding: calc(9 * var(--u)) calc(9 * var(--u)) 
+calc(44 * var(--u));
+.a831 .print .tint { position: absolute; inset: calc(9 * var(--u)) calc(9 * var(--u)) calc(44 * var(--u));
+.a831 .print span { position: absolute; left: calc(12 * var(--u)); right: calc(10 * var(--u)); bottom: calc(7 * 
+var(--u));
+.a831 .d17Mark { left: calc(26 * var(--u)); bottom: calc(24 * var(--u)); font-size: calc(18 * var(--u)) }
+.a904 .top { position: absolute; left: calc(28 * var(--u)); right: calc(28 * var(--u)); top: calc(24 * var(--u));
+.a904 .note { position: absolute; left: calc(28 * var(--u)); right: calc(28 * var(--u)); bottom: calc(70 * var(--u)); 
+margin: 0;
+.a904 .d17Mark { left: calc(28 * var(--u)); bottom: calc(24 * var(--u)) }
+.a920 .copy { padding: calc(56 * var(--u)) calc(24 * var(--u)) calc(96 * var(--u)) calc(56 * var(--u)) }
+.a920 .k { font-size: max(10px, calc(13 * var(--u))); color: var(--do-off-white) }
+.a920 .note { position: absolute; right: calc(40 * var(--u)); top: calc(40 * var(--u)); width: calc(250 * var(--u));
+.a920 .note .ref { font-family: var(--do-font-mono); font-size: max(9px, calc(10.5 * var(--u))); letter-spacing: .16em;
+.a920 .note ol { margin: calc(10 * var(--u)) 0 0; padding: 0; list-style: none; counter-reset: c }
+.a920 .note li { counter-increment: c; display: grid; grid-template-columns: 22px 1fr; gap: 6px; padding: calc(6 * 
+var(--u)) 0;
+.a920 .d17MarkAbs { left: calc(56 * var(--u)); bottom: calc(28 * var(--u)) }
+.a939 .top{ display:flex; justify-content:space-between; gap:12px; padding:calc(26 * var(--u)) calc(40 * var(--u)) 0;
+.a939 .screens{ position:relative; height:calc(560 * var(--u)); margin-top:calc(14 * var(--u)) }
+.a939 .mw{ position:absolute; width:calc(356 * var(--u)) }
+.a939 .s1{ left:calc(44 * var(--u)); top:calc(26 * var(--u)); transform:rotate(-2.2deg) }
+.a939 .s2{ left:calc(398 * var(--u)); top:0; z-index:2 }
+.a939 .s3{ left:calc(752 * var(--u)); top:calc(26 * var(--u)); transform:rotate(2.2deg) }
+.a939 .under{ display:grid; grid-template-columns:repeat(3, calc(356 * var(--u))); margin-top:calc(22 * var(--u));
+.a939 .under span{ font-size:max(9px, calc(11.5 * var(--u))); color:var(--do-sky-blue); text-align:center }
+.a939 .under span b{ display:block; font-family:var(--do-font-heading); font-size:max(13px, calc(19 * var(--u))); 
+letter-spacing:-.01em;
+.a939 .base .bar{ width:calc(56 * var(--u)); height:5px; border-radius:3px; background:var(--do-amber); 
+margin-bottom:calc(14 * var(--u)) }
+.a939 .base p{ margin:0; font-family:var(--do-font-heading); font-weight:700; font-size:max(17px, calc(30 * 
+var(--u))); line-height:1.12;
+.a941 .stage{ position:relative; padding:calc(64 * var(--u)) calc(22 * var(--u)) 0 calc(40 * var(--u)) }
+.a941 .kp3{ display:grid; grid-template-columns:1fr 1.15fr .9fr; gap:calc(8 * var(--u)) }
+.a941 .kp3 .mw-card{ padding:calc(9 * var(--u)) calc(10 * var(--u)) }
+.a941 .kp3 .n{ font-size:max(15px, calc(24 * var(--u))) }
+.a943 .desk{ position:absolute; left:calc(44 * var(--u)); top:calc(64 * var(--u)); width:calc(590 * var(--u)) }
+.a943 .phone{ position:absolute; left:calc(596 * var(--u)); top:calc(150 * var(--u)); width:calc(214 * var(--u)); 
+z-index:3;
+.a943 .phone .scr{ border-radius:calc(22 * var(--u)); overflow:hidden; background:var(--do-off-white); 
+color:var(--do-prussian-blue) }
+.a943 .phone .ph-bar{ padding:calc(16 * var(--u)) calc(14 * var(--u)) calc(10 * var(--u)); 
+background:var(--do-prussian-blue); color:var(--do-off-white);
+.a943 .phone .ph-bar small{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(7.5px, 
+calc(8.5 * var(--u))); letter-spacing:.14em; color:var(--do-sky-blue) }
+.a943 .cam{ position:relative; margin:calc(10 * var(--u)); aspect-ratio:1.3; border-radius:calc(10 * var(--u)); 
+overflow:hidden;
+.a943 .ph-row{ margin:0 calc(10 * var(--u)) calc(8 * var(--u)); padding:calc(8 * var(--u)) calc(10 * var(--u)); 
+border-radius:calc(8 * var(--u));
+.a943 .ph-row b{ display:block; font-family:var(--do-font-heading); font-size:max(11px, calc(14 * var(--u))) }
+.a943 .ph-row .l{ font-family:var(--do-font-mono); font-size:max(7px, calc(8 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-text-cerulean) }
+.a943 .cap3{ position:absolute; right:calc(44 * var(--u)); top:calc(56 * var(--u)); width:calc(250 * var(--u)) }
+.a943 .cap3 li{ counter-increment:c; padding:calc(14 * var(--u)) 0; border-top:1px solid color-mix(in srgb, 
+var(--do-sky-blue) 25%, transparent);
+.a943 .cap3 li::before{ content:'0' counter(c); font-family:var(--do-font-mono); font-size:max(9px, calc(11 * 
+var(--u))); letter-spacing:.14em; color:var(--do-sky-blue) }
+.a943 .cap3 li b{ display:block; font-family:var(--do-font-heading); font-size:max(15px, calc(22 * var(--u))); 
+color:var(--do-white); margin:2px 0 3px; letter-spacing:-.01em }
+.a943 .d17-mark--abs{ left:calc(44 * var(--u)); bottom:calc(26 * var(--u)) }
+.a944 .stage{ position:relative; padding:calc(70 * var(--u)) calc(26 * var(--u)) 0 }
+.a944 .d17-ph{ bottom:auto; height:calc(360 * var(--u)) }
+.a944 .ver .file{ display:flex; gap:6px; flex-wrap:wrap; margin-top:calc(6 * var(--u)) }
+.a944 .ver .file span{ font-family:var(--do-font-mono); font-size:max(8px, calc(9 * var(--u))); letter-spacing:.08em; 
+padding:2px 7px; border-radius:4px;
+.a944 .apv{ position:absolute; right:calc(34 * var(--u)); top:calc(392 * var(--u)); z-index:3; transform:rotate(-8deg);
+.a945 .hd .k{ font-size:max(10px, calc(13 * var(--u))); color:var(--do-sky-blue) }
+.a945 .hd h3{ margin:calc(10 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; 
+color:var(--do-white);
+.a945 .cols{ position:relative; display:grid; grid-template-columns:repeat(3, 1fr); gap:calc(40 * var(--u)); 
+margin-top:calc(34 * var(--u)) }
+.a945 .pin{ position:relative; height:calc(210 * var(--u)); margin:0 calc(20 * var(--u)) }
+.a945 .print{ position:absolute; inset:0; background:var(--do-off-white); padding:calc(9 * var(--u)) calc(9 * 
+var(--u)) calc(40 * var(--u));
+.a945 .print span{ position:absolute; left:calc(12 * var(--u)); right:calc(10 * var(--u)); bottom:calc(10 * var(--u));
+.a945 .pin .tack{ position:absolute; left:50%; top:calc(-8 * var(--u)); z-index:2; width:max(12px, calc(16 * 
+var(--u))); aspect-ratio:1; margin-left:-8px; border-radius:50%;
+.a945 .proof{ position:absolute; inset:0; background:var(--do-white); color:var(--do-prussian-blue); 
+border-radius:calc(4 * var(--u));
+.a945 .proof .ref{ font-family:var(--do-font-mono); font-size:max(8px, calc(10 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.a945 .proof h4{ margin:calc(4 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; 
+font-size:max(12px, calc(18 * var(--u))) }
+.a945 .proof .crest{ display:flex; gap:calc(12 * var(--u)); align-items:center; margin-top:calc(10 * var(--u)) }
+.a945 .proof .crest svg{ width:calc(78 * var(--u)); height:calc(78 * var(--u)); flex:none }
+.a945 .proof dl{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:calc(3 * var(--u)) calc(10 * var(--u)); 
+font-size:max(9px, calc(11.5 * var(--u))) }
+.a945 .proof dt{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.1em; 
+text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+.a945 .rline{ position:relative; grid-column:1 / -1; height:calc(64 * var(--u)); margin:calc(-18 * var(--u)) 0 
+calc(-24 * var(--u)) }
+.a945 .rline .nomail svg{ position:static; width:max(14px, calc(18 * var(--u))); height:max(14px, calc(18 * var(--u))) 
+}
+.a945 .st{ margin:calc(4 * var(--u)) calc(20 * var(--u)) 0 }
+.a945 .st .n{ font-family:var(--do-font-mono); font-size:max(9px, calc(12 * var(--u))); letter-spacing:.18em; 
+text-transform:uppercase; color:var(--do-sky-blue) }
+.a945 .st h4{ margin:calc(6 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:max(18px, 
+calc(28 * var(--u))); line-height:1.05;
+.a945 .st p{ margin:calc(8 * var(--u)) 0 0; font-size:max(13px, calc(15.5 * var(--u))); line-height:1.4; 
+color:color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+.a945 .foot{ margin-top:calc(26 * var(--u)) }
+.a946 .stage{ position:relative; padding:calc(64 * var(--u)) calc(22 * var(--u)) 0 }
+.a946 .d17-ph{ bottom:auto; height:calc(300 * var(--u)) }
+.a946 .acct{ display:flex; justify-content:space-between; align-items:center; gap:10px; padding:calc(7 * var(--u)) 
+calc(14 * var(--u));
+.a946 .acct b{ font-family:var(--do-font-mono); font-weight:600; font-size:max(8px, calc(9 * var(--u))); 
+letter-spacing:.12em; text-transform:uppercase; color:var(--do-text-cerulean) }
+.a946 .shop{ display:grid; grid-template-columns:calc(118 * var(--u)) 1fr; gap:calc(14 * var(--u)) }
+.a946 .facets{ font-size:max(9.5px, calc(11 * var(--u))) }
+.a946 .facets .fh{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase;
+.a946 .facets label{ display:flex; align-items:center; gap:6px; padding:calc(3 * var(--u)) 0 }
+.a946 .tile .pr{ display:flex; justify-content:space-between; align-items:baseline; margin-top:calc(5 * var(--u)); 
+font-size:max(9px, calc(10 * var(--u))) }
+.a946 .tile .pr b{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.1em; 
+text-transform:uppercase; color:var(--do-text-cerulean) }
+.a946 .quote{ position:absolute; right:calc(4 * var(--u)); bottom:calc(-26 * var(--u)); z-index:3; width:calc(210 * 
+var(--u));
+.a946 .quote .l{ font-family:var(--do-font-mono); font-size:max(8px, calc(9 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:var(--do-text-cerulean) }
+.a946 .quote b{ display:block; margin-top:2px; font-family:var(--do-font-heading); font-size:max(12px, calc(15 * 
+var(--u))) }
+.a946 .quote p{ margin:3px 0 0; font-size:max(10px, calc(11 * var(--u))); line-height:1.35; color:color-mix(in srgb, 
+var(--do-prussian-blue) 72%, transparent) }
+.a946 .sx-foot{ padding-top:calc(44 * var(--u)) }
+.a948 .doc-s{ left:calc(0 * var(--u)); top:calc(20 * var(--u)); width:calc(380 * var(--u)); transform:rotate(-2.5deg) }
+.a948 .doc-o{ left:calc(390 * var(--u)); top:calc(150 * var(--u)); width:calc(300 * var(--u)); transform:rotate(3deg) }
+.a948 .d17-doc ol li{ grid-template-columns:calc(24 * var(--u)) 1fr auto; white-space:normal }
+.a948 .d17-doc li em{ font-style:normal; justify-self:end; font-family:var(--do-font-mono); font-size:max(6px, 
+calc(9.5 * var(--u))); letter-spacing:.08em; color:var(--do-text-cerulean) }
+.a948 .opt{ display:grid; grid-template-columns:1fr auto; gap:calc(4 * var(--u)) calc(12 * var(--u)); 
+margin-top:calc(10 * var(--u)); font-size:max(7px, calc(11.5 * var(--u))) }
+.a948 .opt span{ padding:calc(6 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, 
+transparent); font-weight:600 }
+.a948 .opt span:nth-child(even){ font-family:var(--do-font-mono); font-weight:500; font-size:max(6px, calc(9.5 * 
+var(--u))); letter-spacing:.08em; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent); text-align:right 
+}
+.a948 .opt .you{ grid-column:1 / -1; margin-top:calc(8 * var(--u)); padding:calc(8 * var(--u)) calc(10 * var(--u)); 
+border:1.5px dashed var(--do-cerulean); border-radius:calc(4 * var(--u));
+.a949 .stage{ min-height:calc(520 * var(--u)) }
+.a949 .d17-doc{ width:calc(330 * var(--u)) }
+.a949 .f1{ left:calc(10 * var(--u)); top:calc(8 * var(--u)); transform:rotate(-2.5deg) }
+.a949 .f2{ left:calc(356 * var(--u)); top:calc(0 * var(--u)); transform:rotate(2deg) }
+.a949 .f3{ left:calc(30 * var(--u)); top:calc(270 * var(--u)); transform:rotate(1.5deg) }
+.a949 .f4{ left:calc(376 * var(--u)); top:calc(262 * var(--u)); transform:rotate(-2deg) }
+.a949 .d17-doc h4{ font-size:max(11px, calc(17 * var(--u))) }
+.chd .k{ position:absolute; left:calc(22 * var(--u)); top:calc(18 * var(--u)); z-index:4; font-size:max(9px, calc(12 * 
+var(--u))); color:var(--do-off-white) }
+.chd .mk{ position:absolute; text-transform:uppercase; right:calc(14 * var(--u)); bottom:calc(12 * var(--u)); 
+z-index:5; font-family:var(--do-font-mono); font-size:max(8.5px, calc(10 * var(--u)));
+.chd .sx-tag{ left:calc(22 * var(--u)); bottom:calc(20 * var(--u)) }
+.chd .sx-tag b{ display:block; font-family:var(--do-font-heading); font-size:max(15px, calc(24 * var(--u))); 
+letter-spacing:-.02em; line-height:1.05 }
+.a951 .live{ margin-top:calc(22 * var(--u)); display:flex; align-items:center; gap:10px; font-size:max(10px, calc(12 * 
+var(--u))); color:var(--do-sky-blue) }
+.a951 .kpi .n{ font-size:max(22px, calc(38 * var(--u))) }
+.a951 .kpis{ row-gap:calc(14 * var(--u)) }
+.a951 .open{ margin-top:calc(14 * var(--u)); display:flex; justify-content:space-between; align-items:center; gap:12px;
+.a951 .open span{ font-family:var(--do-font-mono); font-size:max(8px, calc(10 * var(--u))); letter-spacing:.12em; 
+padding:3px 9px; border-radius:99px;
+.a952 .sx-top{ position:relative; left:auto; right:auto; top:auto; padding:0 calc(26 * var(--u)) }
+.a952 svg.q{ margin-top:calc(14 * var(--u)) }
+.a952 .sx-foot{ padding-top:calc(4 * var(--u)) }
+.a953 .cap{ position:absolute; left:calc(52 * var(--u)); top:calc(56 * var(--u)); width:calc(330 * var(--u)) }
+.a953 .cap .k{ font-size:max(10px, calc(13 * var(--u))); color:var(--do-off-white) } .a953 .cap .k span{ 
+color:var(--do-sky-blue) }
+.a953 .cap .bar{ width:calc(64 * var(--u)); height:5px; border-radius:3px; background:var(--do-amber); margin:calc(20 
+* var(--u)) 0 }
+.a953 .cap h3{ margin:0; font-family:var(--do-font-heading); font-weight:800; color:var(--do-white); 
+font-size:max(24px, calc(40 * var(--u))); line-height:1.05; letter-spacing:-.03em }
+.a953 .cap p{ margin:calc(14 * var(--u)) 0 0; font-size:max(14px, calc(16.5 * var(--u))); line-height:1.45; 
+color:color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+.a953 .cap .d17-mark{ margin-top:calc(26 * var(--u)) }
+.a953 .phone2{ position:absolute; left:calc(760 * var(--u)); top:calc(40 * var(--u)); width:calc(250 * var(--u)); 
+z-index:3;
+.a953 .phone2 .scr{ border-radius:calc(25 * var(--u)); overflow:hidden; background:var(--do-off-white); 
+color:var(--do-prussian-blue); padding-bottom:calc(10 * var(--u)) }
+.a953 .phone2 .ph-bar{ padding:calc(18 * var(--u)) calc(16 * var(--u)) calc(12 * var(--u)); 
+background:var(--do-prussian-blue); color:var(--do-off-white);
+.a953 .phone2 .ph-bar small{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(7.5px, 
+calc(9 * var(--u))); letter-spacing:.14em; color:var(--do-sky-blue) }
+.a953 .pick{ margin:calc(9 * var(--u)) calc(10 * var(--u)) 0; padding:calc(9 * var(--u)) calc(11 * var(--u)); 
+border-radius:calc(9 * var(--u));
+.a953 .pick b{ font-family:var(--do-font-heading); font-size:max(11px, calc(14 * var(--u))) }
+.a953 .pick .bin{ grid-row:span 2; align-self:center; font-family:var(--do-font-mono); font-weight:700; 
+font-size:max(9px, calc(11 * var(--u)));
+.a953 .scanbtn{ margin:calc(10 * var(--u)) calc(10 * var(--u)) 0; padding:calc(9 * var(--u)); border-radius:calc(9 * 
+var(--u)); text-align:center;
+.a953 .t1{ left:calc(470 * var(--u)); top:calc(120 * var(--u)) }
+.a953 .t2{ left:calc(520 * var(--u)); top:calc(330 * var(--u)) }
+.a953 .t3{ left:calc(930 * var(--u)); top:calc(456 * var(--u)) }
+.a954 .stage{ min-height:calc(500 * var(--u)) }
+.a954 .doc-b{ left:0; top:calc(18 * var(--u)); width:calc(320 * var(--u)); transform:rotate(-2.5deg) }
+.a954 .doc-a{ left:calc(340 * var(--u)); top:calc(0 * var(--u)); width:calc(350 * var(--u)); transform:rotate(2deg) }
+.a954 .proj{ margin-top:calc(10 * var(--u)); padding:calc(8 * var(--u)) calc(10 * var(--u)); border:1.5px dashed 
+var(--do-cerulean); border-radius:calc(4 * var(--u));
+.a954 .proj b{ display:block; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u))); 
+letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
+.a955 .doc-r{ left:calc(24 * var(--u)); top:calc(62 * var(--u)); width:calc(290 * var(--u)); transform:rotate(-3deg) }
+.a955 .doc-e{ left:calc(262 * var(--u)); top:calc(120 * var(--u)); width:calc(274 * var(--u)); 
+transform:rotate(2.5deg) }
+.a955 .d17-doc li{ grid-template-columns:calc(34 * var(--u)) 1fr auto; white-space:normal }
+.a955 .d17-doc li em{ font-style:normal; justify-self:end; font-family:var(--do-font-mono); font-size:max(6px, calc(9 
+* var(--u))); letter-spacing:.08em; color:var(--do-text-cerulean) }
+.a955 dl.shape{ margin:calc(10 * var(--u)) 0 0; display:grid; gap:calc(8 * var(--u)) }
+.a955 dl.shape div{ border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); 
+padding-top:calc(6 * var(--u)) }
+.a955 dl.shape dt{ font-family:var(--do-font-mono); font-size:max(7px, calc(9.5 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+.a955 dl.shape dd{ margin:2px 0 0; font-weight:700; font-size:max(9px, calc(13 * var(--u))); line-height:1.3 }
+.a957 .hd{ display:flex; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:calc(22 * 
+var(--u)) }
+.a957 .hd .k{ font-size:max(10px, calc(13 * var(--u))); color:var(--do-sky-blue) }
+.a957 .hd h3{ margin:calc(8 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; 
+color:var(--do-white); font-size:max(22px, calc(36 * var(--u))); line-height:1.06; letter-spacing:-.03em; 
+max-width:24ch }
+.a957 .win-main{ display:grid; grid-template-columns:.9fr 1.3fr 1fr; gap:calc(18 * var(--u)) }
+.a957 .col h6{ margin:0 0 calc(10 * var(--u)); font-family:var(--do-font-mono); font-weight:600; font-size:max(8.5px, 
+calc(10.5 * var(--u))); letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, 
+var(--do-prussian-blue) 60%, transparent) }
+.a957 .box{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); 
+border-radius:calc(9 * var(--u)); padding:calc(12 * var(--u)) calc(14 * var(--u)); font-size:max(11px, calc(13 * 
+var(--u))) }
+.a957 .box + .box{ margin-top:calc(10 * var(--u)) }
+.a957 .box b{ display:block; font-family:var(--do-font-heading); font-size:max(12px, calc(15 * var(--u))); 
+margin-bottom:4px }
+.a957 .chips{ display:flex; flex-wrap:wrap; gap:6px } .a957 .chips span{ padding:3px 9px; border-radius:99px; 
+font-size:max(10px, calc(11.5 * var(--u))); background:color-mix(in srgb, var(--do-sky-blue) 22%, transparent) }
+.a957 .ex{ display:grid; grid-template-columns:calc(26 * var(--u)) 1fr auto; gap:10px; align-items:center; 
+padding:calc(8 * var(--u)) 0;
+.a957 .ex b{ margin:0; font-family:var(--do-font-mono); font-weight:500; font-size:max(9px, calc(10.5 * var(--u))); 
+color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+.a957 .ex em{ font-style:normal; font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); 
+color:var(--do-text-cerulean) }
+.a957 .draft{ display:inline-block; margin-top:calc(10 * var(--u)); padding:3px 10px; border-radius:99px; 
+font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.12em;
+.a957 .gate .who{ font-family:var(--do-font-heading); font-weight:800; font-size:max(14px, calc(19 * var(--u))) }
+.a957 .btns{ display:flex; gap:8px; margin-top:calc(12 * var(--u)) }
+.a957 .btns span{ flex:1; text-align:center; padding:calc(7 * var(--u)) 0; border-radius:calc(6 * var(--u)); 
+font-weight:700; font-size:max(10.5px, calc(12 * var(--u))); border:1.5px solid var(--do-cerulean) }
+.a957 .lock{ margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); 
+letter-spacing:.1em; text-transform:uppercase; color:var(--do-text-cerulean) }
+.px .sx-top{ position:relative; left:auto; right:auto; top:auto; padding:calc(22 * var(--u)) calc(26 * var(--u)) 0 }
+.px .body{ position:relative; z-index:4; padding:calc(18 * var(--u)) calc(26 * var(--u)) 0 }
+.a960 .win{ margin:0 calc(22 * var(--u)) }
+.a961 .sx-tag b{ display:block; margin-top:3px; font-family:var(--do-font-mono); font-weight:600; font-size:max(8px, 
+calc(10 * var(--u)));
+.a962 .doc-c{ left:calc(24 * var(--u)); top:calc(64 * var(--u)); width:calc(330 * var(--u)); transform:rotate(-2.5deg) 
+}
+.a962 .doc-g{ left:calc(338 * var(--u)); top:calc(150 * var(--u)); width:calc(200 * var(--u)); 
+transform:rotate(3.5deg) }
+.a963 svg.q{ margin-top:calc(4 * var(--u)) }
+.a964 .sx-tag{ min-width:calc(150 * var(--u)) }
+.a964 .sx-tag .v{ display:block; margin-top:2px; font-family:var(--do-font-heading); font-weight:800; 
+font-size:max(14px, calc(22 * var(--u))); letter-spacing:-.02em }
+.a964 .sx-tag .v--t{ font-size:max(12px, calc(17 * var(--u))) }
+.a964 .sku{ position:absolute; z-index:4; left:50%; top:47%; transform:translate(-50%, -50%); padding:calc(8 * 
+var(--u)) calc(12 * var(--u));
+.a966 .pair{ position:relative; z-index:4; padding:calc(16 * var(--u)) calc(22 * var(--u)) 0; display:grid; 
+gap:calc(34 * var(--u)) }
+.a966 .win-bar{ height:max(30px, calc(40 * var(--u))) }
+.a966 .ord p{ margin:0; font-size:max(11px, calc(13 * var(--u))); line-height:1.35; color:color-mix(in srgb, 
+var(--do-prussian-blue) 80%, transparent) }
+.a967 .eb{ position:absolute; left:calc(70 * var(--u)); top:calc(52 * var(--u)); margin:0; font-size:max(10px, calc(18 
+* var(--u))); color:var(--do-sky-blue) }
+.a967 .st{ position:absolute; margin:0; width:calc(240 * var(--u)) }
+.a967 .st .n{ display:block; font-family:var(--do-font-mono); font-size:calc(15 * var(--u)); letter-spacing:.16em; 
+text-transform:uppercase; color:var(--do-sky-blue) }
+.a967 .st h4{ margin:calc(4 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:calc(27 * 
+var(--u));
+.a967 .st p{ margin:calc(6 * var(--u)) 0 0; font-size:calc(17 * var(--u)); line-height:1.35; color:color-mix(in srgb, 
+var(--do-off-white) 76%, transparent) }
+.a967 .st--start h4{ font-size:calc(40 * var(--u)); color:var(--do-white) }
+.a967 .res{ position:absolute; width:calc(290 * var(--u)); padding:calc(16 * var(--u)) calc(18 * var(--u)); 
+border-radius:calc(10 * var(--u)) }
+.a967 .res .n{ display:block; font-family:var(--do-font-mono); font-size:calc(14 * var(--u)); letter-spacing:.16em; 
+text-transform:uppercase }
+.a967 .res b{ display:block; margin-top:calc(4 * var(--u)); font-family:var(--do-font-heading); font-weight:800; 
+font-size:calc(28 * var(--u)); line-height:1.05; letter-spacing:-.02em }
+.a967 .res p{ margin:calc(6 * var(--u)) 0 0; font-size:calc(16 * var(--u)); line-height:1.35 }
+.a967 .print{ position:absolute; background:var(--do-off-white); padding:calc(8 * var(--u)) calc(8 * var(--u)) calc(38 
+* var(--u));
+.a967 .print .tint{ position:absolute; inset:calc(8 * var(--u)) calc(8 * var(--u)) calc(38 * var(--u)); 
+background:var(--do-prussian-blue); mix-blend-mode:multiply; opacity:.36 }
+.a967 .print span{ position:absolute; left:calc(11 * var(--u)); right:calc(9 * var(--u)); bottom:calc(8 * var(--u)); 
+font-family:var(--do-font-mono);
+.a967 .d17-mark{ left:calc(26 * var(--u)); bottom:calc(22 * var(--u)); font-size:max(10px, calc(16 * var(--u))) }
+.a968 .win{ margin:calc(16 * var(--u)) calc(22 * var(--u)) 0 }
+.a968 .shelf{ display:flex; gap:calc(12 * var(--u)); align-items:center; margin-top:calc(12 * var(--u)); 
+padding:calc(10 * var(--u)) calc(12 * var(--u));
+.a968 .shelf img{ width:calc(78 * var(--u)); min-width:52px; aspect-ratio:1; object-fit:cover; border-radius:calc(5 * 
+var(--u)); filter:saturate(.8) }
+.a968 .shelf p{ margin:0; font-size:max(11px, calc(13 * var(--u))); line-height:1.35; font-weight:600 }
+.a968 .shelf p span{ display:block; font-family:var(--do-font-mono); font-weight:600; font-size:max(8.5px, calc(10 * 
+var(--u))); letter-spacing:.12em;
+.a970 .d17-ph{ bottom:auto; height:calc(250 * var(--u)) }
+.a970 .body{ padding-top:calc(120 * var(--u)) }
+.a970 .print{ position:absolute; z-index:5; right:calc(24 * var(--u)); top:calc(58 * var(--u)); width:calc(170 * 
+var(--u)); transform:rotate(3deg);
+.a970 .print .ref{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.14em; 
+text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
+.a970 .print b{ display:block; margin-top:3px; font-family:var(--do-font-heading); font-size:max(12px, calc(17 * 
+var(--u))) }
+.a970 .print i{ display:block; height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(7 * var(--u)); 
+background:color-mix(in srgb, var(--do-prussian-blue) 14%, transparent) }
+.a972 .win{ margin:calc(16 * var(--u)) calc(22 * var(--u)) 0 }
+.a972 .tbl td.o span::before{ content:''; width:max(14px, calc(18 * var(--u))); height:max(14px, calc(18 * var(--u))); 
+border-radius:50%;
+.a973 .win{ margin:calc(16 * var(--u)) calc(22 * var(--u)) 0 }
+.a977 .sx-tag span{ display:block; font-weight:500; font-size:max(9.5px, calc(11.5 * var(--u))); color:color-mix(in 
+srgb, var(--do-prussian-blue) 75%, transparent) }
+.a977 .who{ position:absolute; z-index:5; left:50%; top:52%; transform:translate(-50%, -50%); text-align:center; 
+padding:calc(10 * var(--u)) calc(14 * var(--u));
+.a977 .who small{ display:block; font-family:var(--do-font-mono); font-weight:600; font-size:max(8px, calc(9.5 * 
+var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-amber); margin-bottom:3px }
+.a978 .doc-d{ left:calc(26 * var(--u)); top:calc(66 * var(--u)); width:calc(240 * var(--u)); transform:rotate(-3deg) }
+.a978 .doc-t{ left:calc(262 * var(--u)); top:calc(96 * var(--u)); width:calc(276 * var(--u)); transform:rotate(2.5deg) 
+}
+.a718 .stage{ min-height:calc(500 * var(--u)) }
+.a718 .doc-r{ left:calc(10 * var(--u)); top:calc(0 * var(--u)); width:calc(380 * var(--u)); transform:rotate(-2.5deg) }
+.a718 .doc-s{ left:calc(420 * var(--u)); top:calc(34 * var(--u)); width:calc(270 * var(--u)); transform:rotate(2.8deg) 
+}
+.a718 .doc-l{ left:calc(90 * var(--u)); top:calc(316 * var(--u)); width:calc(470 * var(--u)); transform:rotate(-1deg) }
+.a718 .keys{ list-style:none; margin:calc(22 * var(--u)) 0 0; padding:0 }
+.a718 .keys li{ display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:calc(10 * 
+var(--u)) 0;
+.a718 .keys b{ font-family:var(--do-font-mono); color:var(--do-amber); font-size:max(11px, calc(14 * var(--u))) }
+.a718 .keys span{ font-family:var(--do-font-heading); font-weight:800; font-size:max(15px, calc(21 * var(--u))); 
+color:var(--do-white); letter-spacing:-.01em }
+.a718 .keys small{ font-family:var(--do-font-mono); font-size:max(9px, calc(11 * var(--u))); letter-spacing:.12em; 
+color:var(--do-sky-blue) }
+.a719 .foot{ display:flex; justify-content:space-between; align-items:center; gap:14px; margin-top:calc(8 * var(--u)) }
+.a719 .foot .k{ font-size:max(9px, calc(12 * var(--u))); color:var(--do-sky-blue) }
+.a966 .pair{ gap:calc(6 * var(--u)) }
+.a966 .gapr{ position:relative; display:flex; justify-content:center; padding:calc(10 * var(--u)) 0 }
+.a966 .gapr span{ position:relative; font-family:var(--do-font-mono); font-weight:700; font-size:max(9px, calc(10.5 * 
+var(--u))); letter-spacing:.14em;
+.a969 .lp .hd, .a969 .lp .row{ min-height:calc(22 * var(--u)); align-items:center }
+.a970 .print{ top:calc(40 * var(--u)) }
+.a970 .body{ padding-top:calc(150 * var(--u)) }
+.a718 .doc-l{ left:calc(150 * var(--u)); top:calc(384 * var(--u)); width:calc(460 * var(--u)) }
+.a718 .stage{ min-height:calc(580 * var(--u)) }
+.a1001 .doc-c{ left:calc(96 * var(--u)); top:calc(74 * var(--u)); width:calc(300 * var(--u)); transform:rotate(-5deg) }
+.a1001 .doc-d{ left:calc(392 * var(--u)); top:calc(48 * var(--u)); width:calc(380 * var(--u)); 
+transform:rotate(-.8deg); z-index:2 }
+.a1001 .doc-r{ left:calc(760 * var(--u)); top:calc(96 * var(--u)); width:calc(316 * var(--u)); transform:rotate(4deg) }
+.a1001 .foot{ display:grid; grid-template-columns:1.1fr 1fr; gap:calc(40 * var(--u)); align-items:end;
+.a1001 .foot .k{ font-size:max(10px, calc(13 * var(--u))); color:var(--do-off-white) }
+.a1001 .foot .bar{ width:calc(64 * var(--u)); height:5px; border-radius:3px; background:var(--do-amber); 
+margin:calc(16 * var(--u)) 0 }
+.a1001 .foot p{ margin:0 0 calc(18 * var(--u)); font-size:max(14px, calc(17 * var(--u))); line-height:1.45;
+.a1001 .t1{ left:calc(150 * var(--u)); top:calc(430 * var(--u)) }
+.a1001 .t2{ right:calc(110 * var(--u)); top:calc(400 * var(--u)) }
+.a1002 .legend{ list-style:none; margin:calc(22 * var(--u)) 0 0; padding:0 }
+.a1002 .legend li{ display:grid; grid-template-columns:22px 1fr; gap:10px; align-items:center; padding:calc(7 * 
+var(--u)) 0;
+.a1002 .pin small{ display:block; font-family:var(--do-font-mono); font-weight:600; font-size:max(9px, calc(10 * 
+var(--u)));
+.a1002 .pin b{ display:block; margin-top:2px; font-family:var(--do-font-heading); font-weight:800; font-size:max(15px, 
+calc(20 * var(--u))) }
+.a1002 .pin > span{ display:block; margin-top:3px; font-size:max(11px, calc(13 * var(--u))) }
+.a1003 .eb{ position:absolute; left:calc(60 * var(--u)); top:calc(48 * var(--u)); margin:0; font-size:max(10px, 
+calc(13 * var(--u))); color:var(--do-sky-blue) }
+.a1003 .hd{ position:absolute; left:calc(58 * var(--u)); top:calc(74 * var(--u)); width:calc(520 * var(--u)); margin:0;
+.a1003 .stand{ position:absolute; left:calc(60 * var(--u)); top:calc(186 * var(--u)); width:calc(470 * var(--u)); 
+margin:0;
+.a1003 .st{ position:absolute; margin:0; width:calc(196 * var(--u)) }
+.a1003 .st .n{ display:block; font-family:var(--do-font-mono); font-size:calc(12.5 * var(--u)); letter-spacing:.18em; 
+text-transform:uppercase; color:var(--do-sky-blue) }
+.a1003 .st h4{ margin:calc(5 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:calc(23 * 
+var(--u));
+.a1003 .st p{ margin:calc(7 * var(--u)) 0 0; font-size:calc(14.5 * var(--u)); line-height:1.36; color:color-mix(in 
+srgb, var(--do-off-white) 80%, transparent) }
+.a1003 .print{ position:absolute; background:var(--do-off-white); padding:calc(8 * var(--u)) calc(8 * var(--u)) 
+calc(38 * var(--u));
+.a1003 .print .tint{ position:absolute; inset:calc(8 * var(--u)) calc(8 * var(--u)) calc(38 * var(--u));
+.a1003 .print span{ position:absolute; left:calc(11 * var(--u)); right:calc(9 * var(--u)); bottom:calc(8 * var(--u));
+.a1003 .d17-mark{ left:calc(24 * var(--u)); bottom:calc(20 * var(--u)) }
+.a1004 .stage{ min-height:calc(500 * var(--u)) }
+.a1004 .doc-f{ left:calc(8 * var(--u)); top:calc(20 * var(--u)); width:calc(390 * var(--u)); transform:rotate(-2.4deg) 
+}
+.a1004 .doc-m{ left:calc(396 * var(--u)); top:calc(206 * var(--u)); width:calc(292 * var(--u)); 
+transform:rotate(3.2deg); z-index:2 }
+.a1004 .t5{ left:calc(40 * var(--u)); bottom:calc(10 * var(--u)) }
+.a1005 .lbl{ display:flex; justify-content:space-between; gap:10px; font-family:var(--do-font-mono); 
+font-size:max(10px, calc(12 * var(--u)));
+.a1006 .d17-mark, .a1007 .d17-mark{ margin-top:calc(18 * var(--u)) }
+.sx .win-flat .s{ font-size:max(10px, calc(12.5 * var(--u))) }
+.a980 .pr{ position:relative; width:calc(172 * var(--u)); padding:calc(14 * var(--u)) calc(14 * var(--u)) calc(14 * 
+var(--u)) }
+.a980 .pr + .pr{ margin-left:calc(-4 * var(--u)) }
+.a980 .pr{ width:calc(168 * var(--u)) }
+.a980 .pr-1{ transform:rotate(-5deg); margin-top:calc(12 * var(--u)) }
+.a980 .pr-3{ transform:rotate(5.5deg); margin-top:calc(18 * var(--u)) }
+.a980 .pr h4{ font-size:max(9px, calc(15 * var(--u))) }
+.a980 .pr .tl li{ font-size:max(7px, calc(10 * var(--u))); padding:calc(4 * var(--u)) 0; grid-template-columns:calc(13 
+* var(--u)) 1fr; gap:calc(6 * var(--u)) }
+.a980 .pr .tl li i{ width:calc(12 * var(--u)); height:calc(12 * var(--u)) }
+.a980 .sx-foot{ margin-top:calc(8 * var(--u)) }
+.a981 .scr .win-bar{ height:max(24px, calc(34 * var(--u))); font-size:max(8px, calc(12 * var(--u))) }
+.a981 .scr .win-bar .pill{ font-size:max(7px, calc(9 * var(--u))); padding:1px 8px }
+.a983 .doc-k{ left:calc(40 * var(--u)); top:calc(58 * var(--u)); width:calc(360 * var(--u)); transform:rotate(-2deg); 
+padding-top:calc(30 * var(--u)) }
+.a983 .doc-k .phase{ margin-top:calc(10 * var(--u)) }
+.a983 .clip{ position:absolute; z-index:4; left:calc(170 * var(--u)); top:calc(44 * var(--u)); width:calc(100 * 
+var(--u)); height:calc(30 * var(--u));
+.a983 .clip i{ position:absolute; left:50%; top:calc(-9 * var(--u)); width:calc(26 * var(--u)); height:calc(16 * 
+var(--u)); margin-left:calc(-13 * var(--u));
+.a983 .note-y{ right:calc(26 * var(--u)); top:calc(300 * var(--u)); width:calc(150 * var(--u)) }
+.a985 .doc-cv{ left:calc(26 * var(--u)); top:calc(62 * var(--u)); width:calc(210 * var(--u)); min-height:calc(290 * 
+var(--u)); transform:rotate(-4deg) }
+.a985 .doc-sp{ left:calc(222 * var(--u)); top:calc(92 * var(--u)); width:calc(312 * var(--u)); 
+transform:rotate(2.5deg) }
+.a987 .doc-rg{ left:calc(318 * var(--u)); top:calc(50 * var(--u)); width:calc(218 * var(--u)); transform:rotate(4deg) }
+.a987 .doc-sop{ left:calc(24 * var(--u)); top:calc(70 * var(--u)); width:calc(318 * var(--u)); 
+transform:rotate(-2deg); z-index:2 }
+.a987 .nt-987{ left:calc(356 * var(--u)); top:calc(318 * var(--u)); width:calc(170 * var(--u)) }
+.a988 .doc-mc{ left:calc(22 * var(--u)); top:calc(60 * var(--u)); width:calc(200 * var(--u)); min-height:calc(270 * 
+var(--u)); transform:rotate(-6deg) }
+.a988 .doc-ml{ left:calc(248 * var(--u)); top:calc(46 * var(--u)); width:calc(288 * var(--u)); transform:rotate(2deg) }
+.a988 .doc-ms{ left:calc(168 * var(--u)); top:calc(196 * var(--u)); width:calc(268 * var(--u)); 
+transform:rotate(-2.5deg); z-index:2 }
+.a989 .doc-br{ left:calc(24 * var(--u)); top:calc(64 * var(--u)); width:calc(236 * var(--u)); transform:rotate(-4deg) }
+.a989 .doc-pf{ left:calc(244 * var(--u)); top:calc(84 * var(--u)); width:calc(292 * var(--u)); transform:rotate(3deg); 
+z-index:2 }
+.a989 .ask{ margin:calc(8 * var(--u)) 0 0; font-size:max(7px, calc(11.5 * var(--u))); line-height:1.35 }
+.a989 .opts{ display:flex; gap:calc(6 * var(--u)); margin-top:calc(8 * var(--u)) }
+.a989 .opts span{ flex:1; text-align:center; padding:calc(6 * var(--u)) 4px; border-radius:calc(4 * var(--u)); 
+font-size:max(6.5px, calc(10 * var(--u))); font-weight:700;
+.a989 .rt-stamp{ right:calc(26 * var(--u)); top:calc(432 * var(--u)) }
+.a991 .doc-ec{ left:calc(22 * var(--u)); top:calc(60 * var(--u)); width:calc(186 * var(--u)); min-height:calc(260 * 
+var(--u)); transform:rotate(-5deg) }
+.a991 .doc-ec h4{ margin-top:calc(40 * var(--u)); font-size:max(11px, calc(18 * var(--u))); max-width:8.5em }
+.a991 .doc-vb{ left:calc(198 * var(--u)); top:calc(84 * var(--u)); width:calc(340 * var(--u)); transform:rotate(2deg); 
+z-index:2 }
+.a992 .win, .a995 .win, .a997 .win{ margin:0 calc(4 * var(--u)) }
+.a994 .doc-yp{ left:calc(24 * var(--u)); top:calc(62 * var(--u)); width:calc(512 * var(--u)); 
+transform:rotate(-1.5deg) }
+.a994 .nt-a{ right:calc(22 * var(--u)); top:calc(412 * var(--u)); width:calc(190 * var(--u)) }
+.a994 .nt-b{ left:calc(40 * var(--u)); top:calc(420 * var(--u)); width:calc(170 * var(--u)); transform:rotate(-3deg) }
+.a996 .slip{ position:absolute; z-index:5; right:calc(28 * var(--u)); bottom:calc(10 * var(--u)); width:calc(220 * 
+var(--u));
+.a996 .slip .ref{ display:block; font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); 
+letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
+.a996 .slip b{ display:inline-block; margin-top:4px; font-family:var(--do-font-heading); font-weight:800; 
+font-size:max(22px, calc(40 * var(--u))); line-height:1;
+.a996 .slip .s{ display:block; margin-top:4px; font-size:max(10px, calc(12 * var(--u))); font-weight:600 }
+.a998 .body{ padding-top:calc(24 * var(--u)) }
+.a999 .doc-qz{ left:calc(40 * var(--u)); top:calc(58 * var(--u)); width:calc(400 * var(--u)); transform:rotate(-2deg) }
+.a999 .st-999{ right:calc(34 * var(--u)); top:calc(452 * var(--u)) }
+[0m
+All figure-level self-sizing swept — remaining `var(--u)` hits are child elements, which correctly resolve against the `.d17` container. Committing fix 1:
+[0m$ [0mgit add app/d17-art.module.css app/d17-global.css app/d17-apps-cases.css app/d17-locations.css && git commit -m "fix(art): replace cqw self-sizing on .d17 figures with aspect-ratio/percent equivalents (BUG-WEB-046)"
+[lane/web046-art-sizing de21eb3] fix(art): replace cqw self-sizing on .d17 figures with aspect-ratio/percent equivalents (BUG-WEB-046)
+ 4 files changed, 32 insertions(+), 21 deletions(-)
+[0m
+Fix 1 committed. Now fix 2 — the `.sx` solo modifier. Let me check the imports on the two pages first:
+[0m$ [0mSelect-String -Path app\resources\decoded-method\page.tsx,app\resources\six-sigma\page.tsx -Pattern "import.*d17" | ForEach-Object { "$($_.Filename): $($_.Line.Trim())" }
+page.tsx: import { D17Motion } from '@/components/D17Motion';
+page.tsx: import '@/app/d17-global.css';
+page.tsx: import '@/app/d17-problems.css';
+page.tsx: import '@/app/d17-resources.css';
+page.tsx: import { D17Motion } from '@/components/D17Motion';
+page.tsx: import '@/app/d17-global.css';
+page.tsx: import '@/app/d17-problems.css';
+page.tsx: import '@/app/d17-resources.css';
+[0m
+[0m← [0mEdit app/d17-global.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-global.css
+@@ -374,8 +374,10 @@
+    one side of the argument). Resting state is the still, as everywhere in D17.
+    ══════════════════════════════════════════════════════════════════════ */
+ 
+ .sx{ --u:calc(100cqw / 560); --pu:calc(100% / 560); margin:0; display:flex; flex-direction:column }
++/* BUG-WEB-046: an .sx piece authored for the ~537px hero column, placed full width — cap it */
++.sx--solo{ max-width:560px; margin-inline:auto }
+ .sx .stage{ position:relative; flex:none }
+ .sw{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); margin:34px 0 0 }
+ .d17 svg .m-pop, .d17 svg .m-rise, .d17 svg .m-fade{ transform-box:fill-box; transform-origin:center }
+ 
+
+[0m
+[0m← [0mEdit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\resources\decoded-method\page.tsx
+@@ -138,9 +138,9 @@
+ </section>
+ 
+ <section className="g-navy">
+   <div className="wrap" dangerouslySetInnerHTML={{ __html: `
+-<figure class="d17 sx a988" data-od-id="hero-art" data-motion data-no="DO-ART-988" data-rev="01" data-tx="photo"
++<figure class="d17 sx sx--solo a988" data-od-id="hero-art" data-motion data-no="DO-ART-988" data-rev="01" data-tx="photo"
+         aria-label="Artwork DO-ART-988. The Decoded Method playbook, seven pages, three of them fanned over a graded photograph of a workbench. The cover. The three layers: process register, one-page SOPs, improvement log. And the self-assessment scorecard, scored as an example against the six principles: plain English, one page per process, owner on everything, reviewed regularly, delivery-linked, ISO-ready. The lowest score, owner on everything, is marked in amber. Handed over, not held in one head.">
+   <div class="d17-ph"><img src="/images/d17/resources/gen-bench-flatlay-v2-79b455.webp" alt="" width="900" height="742"></div>
+   <div class="d17-scan" aria-hidden="true"></div>
+   <div class="sx-top d17-mono" aria-hidden="true"><span>Free playbook</span><span>7 pages · no email</span></div>
+
+[0m
+Both load `d17-global.css` where `.sx` is defined — I'll add the modifier there:
+[0m← [0mEdit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\resources\six-sigma\page.tsx
+@@ -84,9 +84,9 @@
+ </section>
+ 
+ <section className="g-navy">
+   <div className="wrap" dangerouslySetInnerHTML={{ __html: `
+-<figure class="d17 sx a985" data-od-id="hero-art" data-motion data-no="DO-ART-985" data-rev="01" data-tx="photo"
++<figure class="d17 sx sx--solo a985" data-od-id="hero-art" data-motion data-no="DO-ART-985" data-rev="01" data-tx="photo"
+         aria-label="Artwork DO-ART-985. The 5 and 6 Sigma decoration playbook over a graded photograph of an embroidery machine's thread spools: the cover, seven pages, and an open spread with the scale. Three sigma, industry baseline, 93.3 per cent yield, 66,807 defects per million. Four sigma, controlled, 99.4 per cent, 6,210. Five sigma, high performance, in amber, 99.98 per cent, 233. Six sigma, world class, 99.9997 per cent, 3.4. The gap is process, not machinery.">
+   <div class="d17-ph"><img src="/images/d17/resources/thread-spools-a145a8.webp" alt="" width="900" height="873"></div>
+   <div class="d17-scan" aria-hidden="true"></div>
+   <div class="sx-top d17-mono" aria-hidden="true"><span>Free playbook</span><span>7 pages · no email</span></div>
+
+[0m
+[0m← [0mEdit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\sectors\print-promotional\page.tsx
+@@ -130,35 +130,8 @@
+ </figure>` }} />
+         </div>
+       </section>
+ 
+-      <section className="g-navy">
+-        <div className="wrap">
+-          <div dangerouslySetInnerHTML={{ __html: `
+-<figure class="d17 sx a927" data-od-id="hero-evidence" data-motion data-no="DO-ART-927" data-rev="01" data-tx="photo"
+-        aria-label="Artwork DO-ART-927. A graded photograph of a screen-print press hall with a run sheet pinned over it. The press slot was planned as one long run; what arrived was several short runs and one gap waiting on artwork sign-off. Short runs, a schedule built for long ones.">
+-  <div class="d17-ph"><img src="/images/d17/sectors/gen-press-hall-7c2764.webp" alt="" width="1000" height="1000"></div>
+-  <div class="d17-scan" aria-hidden="true"></div>
+-  <div class="sx-top d17-mono" aria-hidden="true"><span>Print &amp; promotional</span><span>Press 2 · today</span></div>
+-  <div class="stage" aria-hidden="true">
+-    <div class="sheet m-drop" style="animation-delay:.1s">
+-      <span class="ref">RS-02 · Run sheet</span>
+-      <h4>One slot, as planned and as run</h4>
+-      <div class="slot"><span class="lab">Planned · one long run</span><div class="long"></div></div>
+-      <div class="slot"><span class="lab">Run · short jobs</span>
+-        <div class="short m-fill" style="animation-delay:.6s"><i style="--g:1.4"></i><i style="--g:.8"></i><i style="--g:1.1"></i><i class="gap" style="--g:1.6"></i><i style="--g:.7"></i><i style="--g:1"></i></div></div>
+-      <p class="note">Every change of job is a set-up. The dashed slot is a job waiting on artwork sign-off: time on the press nobody could plan.</p>
+-    </div>
+-  </div>
+-  <div class="sx-foot">
+-    <div class="sx-bar" aria-hidden="true"></div>
+-    <p class="sx-say">Short runs, <em>a schedule built for long ones.</em></p>
+-    <span class="d17-mark">decodedops.co.uk · DO-ART-927 · Rev 01</span>
+-  </div>
+-</figure>` }} />
+-        </div>
+-      </section>
+-
+       {/* D17 INLINE ARTWORK · DO-ART-928 */}
+       <section className="g-navy">
+         <div className="wrap">
+           <div dangerouslySetInnerHTML={{ __html: `
+
+[0m
+Now delete the duplicate DO-ART-927 section on print-promotional:
+[0m→ [0mRead app/sectors/print-promotional/page.tsx[90m [limit=40, offset=75][0m
+Let me verify the first a927 instance sits in a hero column (so it doesn't need the solo cap):
+First instance is in the hero split column — correct as-is. Committing fix 2:
+[0m
+[0m$ [0mgit add app/d17-global.css app/resources/decoded-method/page.tsx app/resources/six-sigma/page.tsx app/sectors/print-promotional/page.tsx && git commit -m "fix(art): cap full-width .sx hero pieces at 560px, delete duplicate DO-ART-927 (BUG-WEB-046)"
+[lane/web046-art-sizing 8d58901] fix(art): cap full-width .sx hero pieces at 560px, delete duplicate DO-ART-927 (BUG-WEB-046)
+ 4 files changed, 4 insertions(+), 29 deletions(-)
+[0m
+[0m→ [0mRead app/problems/bottleneck-growth/page.tsx[90m [limit=75, offset=199][0m
+[0m→ [0mRead app/case-studies/page.tsx[90m [limit=50, offset=40][0m
+Fix 2 committed. Now fix 3 — mobile ceiling. Let me look at the 718 markup and the other targets to decide what's a secondary layer:
+[0m
+[0m$ [0mGet-Content app\d17-resources.css | Select-Object -Skip 144 -First 8; Write-Host '=== 180'; Get-Content app\d17-resources.css | Select-Object -Skip 178 -First 8; Write-Host '=== 455'; Get-Content app\d17-resources.css | Select-Object -Skip 453 -First 14
+.dw .v-tall{ display:none }
+@media (max-width: 760px){
+  .a984, .a990{ grid-template-columns:1fr; padding:26px 18px 24px; gap:22px }
+  .dw .v-wide{ display:none } .dw .v-tall{ display:block }
+  .a984 svg.q .t, .a990 svg.q .t{ font-size:19px } .a984 svg.q .t-d, .a990 svg.q .t-d{ font-size:15px }
+}
+
+/* ��� DO-ART-985 � six sigma � the playbook, cover and spread ��� */
+=== 180
+.fl .f b{ font-family:var(--do-font-heading); font-size:1.3em; color:var(--do-white) }
+.fl-3 .f b{ color:var(--do-amber) }
+@media (max-width: 760px){
+  .a986{ grid-template-columns:1fr; padding:26px 18px 24px; gap:22px }
+  .floors{ grid-template-columns:1fr; gap:24px }
+}
+
+/* ��� DO-ART-987 � SOP template � the template, filled in ��� */
+=== 455
+.strk li span{ text-decoration:line-through; text-decoration-color:var(--do-amber); text-decoration-thickness:3px }
+@media (max-width: 760px){
+  .a981 .stage{ aspect-ratio:560 / 640 }
+  .scr-a{ left:calc(16 * var(--u)); top:calc(70 * var(--u)); width:calc(300 * var(--u)) }
+  .scr-b2{ left:calc(250 * var(--u)); top:calc(40 * var(--u)); width:calc(294 * var(--u)) }
+  .scr-c{ left:calc(40 * var(--u)); top:calc(330 * var(--u)); width:calc(480 * var(--u)) }
+  .a994 .stage{ aspect-ratio:560 / 600 }
+  .a994 .nt-a{ top:calc(448 * var(--u)) } .a994 .nt-b{ top:calc(462 * var(--u)) }
+}
+@media (max-width: 760px){ .a990{ grid-template-columns:1fr; padding:26px 18px 24px; gap:22px } }
+[0m
+Now fix 3. Let me check the existing mobile overrides for the listed targets in resources.css and the six-sigma/a953 markup:
+[0m$ [0mSelect-String -Path app\d17-resources.css,app\d17-problems.css,app\d17-global.css -Pattern 'a986|a930|a967' | ForEach-Object { "$($_.Filename):$($_.LineNumber): $($_.Line.Trim())" }
+d17-resources.css:168: .a986{ display:grid; grid-template-columns:30% 1fr; gap:calc(40 * var(--pu)); align-items:center;
+d17-resources.css:182: .a986{ grid-template-columns:1fr; padding:26px 18px 24px; gap:22px }
+d17-problems.css:156: .a967{ --u:calc(100cqw / 1600); aspect-ratio:1600 / 760; margin-top:34px }
+d17-problems.css:157: .a967 .gridl{ position:absolute; inset:0; pointer-events:none; opacity:.55;
+d17-problems.css:161: .a967 svg.route{ position:absolute; inset:0; width:100%; height:100% }
+d17-problems.css:162: .a967 .eb{ position:absolute; left:calc(70 * var(--u)); top:calc(52 * var(--u)); margin:0; font-size:max(10px, calc(18 * var(--u))); color:var(--do-sky-blue) }
+d17-problems.css:163: .a967 .st{ position:absolute; margin:0; width:calc(240 * var(--u)) }
+d17-problems.css:164: .a967 .st .n{ display:block; font-family:var(--do-font-mono); font-size:calc(15 * var(--u)); letter-spacing:.16em; text-transform:uppercase; color:var(--do-sky-blue) }
+d17-problems.css:165: .a967 .st h4{ margin:calc(4 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:calc(27 * var(--u));
+d17-problems.css:167: .a967 .st p{ margin:calc(6 * var(--u)) 0 0; font-size:calc(17 * var(--u)); line-height:1.35; color:color-mix(in srgb, var(--do-off-white) 76%, transparent) }
+d17-problems.css:168: .a967 .st--v h4{ color:color-mix(in srgb, var(--do-off-white) 70%, transparent) }
+d17-problems.css:169: .a967 .st--a .n, .a967 .st--a h4{ color:var(--do-amber) }
+d17-problems.css:170: .a967 .st--start h4{ font-size:calc(40 * var(--u)); color:var(--do-white) }
+d17-problems.css:171: .a967 .res{ position:absolute; width:calc(290 * var(--u)); padding:calc(16 * var(--u)) calc(18 * var(--u)); border-radius:calc(10 * var(--u)) }
+d17-problems.css:172: .a967 .res .n{ display:block; font-family:var(--do-font-mono); font-size:calc(14 * var(--u)); letter-spacing:.16em; text-transform:uppercase }
+d17-problems.css:173: .a967 .res b{ display:block; margin-top:calc(4 * var(--u)); font-family:var(--do-font-heading); font-weight:800; font-size:calc(28 * var(--u)); line-height:1.05; letter-spacing:-.02em }
+d17-problems.css:174: .a967 .res p{ margin:calc(6 * var(--u)) 0 0; font-size:calc(16 * var(--u)); line-height:1.35 }
+d17-problems.css:175: .a967 .res--v{ border:1.5px dashed color-mix(in srgb, var(--do-sky-blue) 55%, transparent); background:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent);
+d17-problems.css:177: .a967 .res--v .n{ color:var(--do-sky-blue) }
+d17-problems.css:178: .a967 .res--a{ border:2.5px solid var(--do-amber); background:color-mix(in srgb, var(--do-amber) 14%, var(--do-prussian-blue)); color:var(--do-off-white) }
+d17-problems.css:179: .a967 .res--a .n, .a967 .res--a b{ color:var(--do-amber) }
+d17-problems.css:180: .a967 .print{ position:absolute; background:var(--do-off-white); padding:calc(8 * var(--u)) calc(8 * var(--u)) calc(38 * var(--u));
+d17-problems.css:182: .a967 .print img{ display:block; width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.12) brightness(.98) }
+d17-problems.css:183: .a967 .print .tint{ position:absolute; inset:calc(8 * var(--u)) calc(8 * var(--u)) calc(38 * var(--u)); background:var(--do-prussian-blue); mix-blend-mode:multiply; opacity:.36 }
+d17-problems.css:184: .a967 .print span{ position:absolute; left:calc(11 * var(--u)); right:calc(9 * var(--u)); bottom:calc(8 * var(--u)); font-family:var(--do-font-mono);
+d17-problems.css:186: .a967 .d17-mark{ left:calc(26 * var(--u)); bottom:calc(22 * var(--u)); font-size:max(10px, calc(16 * var(--u))) }
+d17-problems.css:188: .a967{ aspect-ratio:auto; padding:22px 18px 70px }
+d17-problems.css:189: .a967 svg.route, .a967 .prints{ display:none }
+d17-problems.css:190: .a967 .eb, .a967 .st, .a967 .res{ position:static !important; width:auto !important }
+d17-problems.css:191: .a967 .st--start{ margin-top:8px } .a967 .st--start h4{ font-size:24px }
+d17-problems.css:192: .a967 .lane{ position:relative; margin-top:18px; padding-left:28px }
+d17-problems.css:193: .a967 .lane::before{ content:''; position:absolute; left:7px; top:6px; bottom:6px; width:4px; border-radius:4px }
+d17-problems.css:194: .a967 .lane--v::before{ background:repeating-linear-gradient(180deg, var(--do-sky-blue) 0 7px, transparent 7px 13px) }
+d17-problems.css:195: .a967 .lane--a::before{ background:var(--do-amber) }
+d17-problems.css:196: .a967 .lane .st{ padding:6px 0 8px } .a967 .lane .st .n{ font-size:10px } .a967 .lane .st h4{ font-size:17px } .a967 .lane .st p{ font-size:13px }
+d17-problems.css:197: .a967 .lane .res{ margin-top:6px; padding:12px 14px } .a967 .res .n{ font-size:10px } .a967 .res b{ font-size:19px } .a967 .res p{ font-size:13px }
+d17-problems.css:198: .a967 .d17-mark{ left:18px; bottom:20px }
+d17-problems.css:469: .a967 .st .n{ font-size:10px } .a967 .st p{ font-size:13px } .a967 .st h4{ font-size:17px }
+d17-problems.css:470: .a967 .st--start h4{ font-size:24px }
+d17-global.css:666: .a930{ display:grid; grid-template-columns:31% 1fr; gap:calc(40 * var(--pu));
+d17-global.css:668: .a930 .d17-ph{ left:28% }
+d17-global.css:669: .a930 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.7) contrast(1.08) brightness(.8) }
+d17-global.css:670: .a930::before{ content:''; position:absolute; inset:0; z-index:-1;
+d17-global.css:673: .a930 .sw-cap{ align-self:center }
+d17-global.css:674: .a930 .live{ margin-top:calc(24 * var(--u)); display:flex; align-items:center; gap:10px; font-size:max(10px, calc(12 * var(--u))); color:var(--do-sky-blue) }
+d17-global.css:675: .a930 .live::before{ content:''; width:9px; height:9px; border-radius:50%; background:var(--do-sky-blue);
+d17-global.css:690: .a930{ grid-template-columns:1fr; padding:28px 18px 26px; gap:24px }
+d17-global.css:691: .a930::before{ background:linear-gradient(180deg, var(--do-prussian-blue) 0%, color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) 100%) }
+[0m
+[0m→ [0mRead app/sectors/promotional-merchandise/page.tsx[90m [limit=45, offset=132][0m
+[0m→ [0mRead app/resources/six-sigma/page.tsx[90m [limit=45, offset=186][0m
+Now let me look at the 930 and 986 markup to decide the mobile reduction levers:
+[0m
+[0m$ [0mSelect-String -Path app\d17-resources.css -Pattern '\.g1k|\.fl ' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }; Write-Host '==='; Select-String -Path app\d17-apps-cases.css -Pattern 'g1k' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }
+171: .fl .h{ display:flex; align-items:baseline; gap:10px; margin:0 0 10px }
+172: .fl .h b{ font-family:var(--do-font-heading); font-weight:800; font-size:max(22px, calc(34 * var(--u))); color:var(--do-white); letter-spacing:-.02em }
+173: .fl .h span{ font-family:var(--do-font-mono); font-size:max(10px, calc(12 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-sky-blue) }
+175: .g1k{ display:grid; grid-template-columns:repeat(40, 1fr); gap:2px }
+176: .g1k i{ aspect-ratio:1; border-radius:1.5px; background:color-mix(in srgb, var(--do-sky-blue) 34%, transparent) }
+177: .g1k i.x{ background:var(--do-amber); box-shadow:0 0 0 1px color-mix(in srgb, var(--do-amber) 50%, transparent) }
+178: .fl .f{ margin:12px 0 0; font-size:max(13px, calc(15 * var(--u))); line-height:1.35; color:color-mix(in srgb, var(--do-off-white) 82%, transparent) }
+179: .fl .f b{ font-family:var(--do-font-heading); font-size:1.3em; color:var(--do-white) }
+445: .d17.play .g1k i.x{ animation:d17-pop .45s cubic-bezier(.3,1.6,.5,1) both; animation-delay:calc(var(--d, 0) * 1s + .3s) }
+===
+[0m
+Let me check the `.g1k` CSS for the six-sigma plate and the a953 tags markup:
+[0m$ [0mSelect-String -Path app\case-studies\case-study-02\page.tsx -Pattern 'sx-tag|class="t[123]' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim().Substring(0, [Math]::Min(150, $_.Line.Trim().Length)))" }
+111: <div class="sx-tag sx-tag--a t1 m-pop" style="animation-delay:.6s" aria-hidden="true"><small>Binned</small>100% of stock has a bin</div>
+112: <div class="sx-tag t2 m-pop" style="animation-delay:.8s" aria-hidden="true"><small>On their website</small>952 products live</div>
+113: <div class="sx-tag t3 m-pop" style="animation-delay:1s" aria-hidden="true"><small>Automated</small>17 supplier feeds</div>
+[0m
+[0m$ [0mAdd-Content -Path app\d17-global.css -Value @'
+
+/* ── BUG-WEB-046 · phone ceiling (≤640px): reduce internal stacking on embedded
+   artwork so stages stop reaching 1000px+. Hide secondary decorative layers only;
+   the caption/station text that carries each argument stays. ── */
+@media (max-width: 640px){
+  .a831 .prints{ display:none }
+  .a930 .match{ display:none }
+  .a1008 .photopin{ display:none }
+}
+'@
+(no output)
+[0m
+[0m$ [0mAdd-Content -Path app\d17-apps-cases.css -Value @'
+
+/* ── BUG-WEB-046 · phone ceiling (≤640px): trim secondary layers on stacked pieces ── */
+@media (max-width: 640px){
+  .a945 .pin{ display:none }
+  .a949 .stage .d17-doc.f3, .a949 .stage .d17-doc.f4{ display:none }
+  .a953 .sx-tag{ display:none }
+  .a953 .phone2{ width:200px; --u:.8px }
+  .a954 .stage .d17-doc{ --u:.58px }
+  .a957 .win-main .col:first-child{ display:none }
+  .a957 .win-main{ --u:.85px }
+}
+'@
+(no output)
+[0m
+[0m$ [0mAdd-Content -Path app\d17-problems.css -Value @'
+
+/* ── BUG-WEB-046 · phone ceiling (≤640px): trim secondary layers on stacked pieces ── */
+@media (max-width: 640px){
+  .a718 .stage .d17-doc:nth-child(3){ display:none }
+  .a967{ padding:22px 18px 44px }
+  .a967 .lane{ margin-top:12px }
+}
+'@
+(no output)
+[0m
+I have the full picture for fix 3. Adding ≤640px reduction rules to each CSS file — hiding secondary decorative layers, not clipping:
+[0m$ [0mAdd-Content -Path app\d17-resources.css -Value @'
+
+/* ── BUG-WEB-046 · phone ceiling (≤640px): tighten the six-sigma plate stack ── */
+@media (max-width: 640px){
+  .a986{ padding:22px 16px 20px; gap:16px }
+  .floors{ gap:16px }
+}
+'@
+(no output)
+[0m
+Wait — the about page (DO-ART-831) uses the CSS module, not the global file. Let me check its imports and add the rule to the module too:
+[0m$ [0mSelect-String -Path app\about\page.tsx -Pattern "^import" | ForEach-Object { $_.Line.Trim() }
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import s from '@/app/deco-page.module.css';
+import { D17Motion } from '@/components/D17Motion';
+import d17 from '@/app/d17-art.module.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
+[0m
+[0m← [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+@@ -345,8 +345,13 @@
+   .contactFormRow { grid-template-columns: 1fr 1fr }
+ }
+ 
+ /* ─── responsive ─── */
++/* BUG-WEB-046 · phone ceiling (≤640px): drop the secondary print row so the stacked
++   route stops short of 1000px; the station text keeps the argument. */
++@media (max-width: 640px) {
++  .a831 .prints { display: none }
++}
+ @media (max-width: 760px) {
+   .a917 { grid-template-columns: 1fr; padding: 28px 18px 26px; gap: 26px }
+   .a917::before { background: linear-gradient(180deg, var(--do-prussian-blue) 0%, color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) 100%) }
+   .winBody { grid-template-columns: 1fr } .winNav { display: none }
+
+[0m
+The about page uses hashed module classes, so my global rule won't reach it. Adding the rule to the module too:
+[0m← [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+@@ -345,13 +345,8 @@
+   .contactFormRow { grid-template-columns: 1fr 1fr }
+ }
+ 
+ /* ─── responsive ─── */
+-/* BUG-WEB-046 · phone ceiling (≤640px): drop the secondary print row so the stacked
+-   route stops short of 1000px; the station text keeps the argument. */
+-@media (max-width: 640px) {
+-  .a831 .prints { display: none }
+-}
+ @media (max-width: 760px) {
+   .a917 { grid-template-columns: 1fr; padding: 28px 18px 26px; gap: 26px }
+   .a917::before { background: linear-gradient(180deg, var(--do-prussian-blue) 0%, color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) 100%) }
+   .winBody { grid-template-columns: 1fr } .winNav { display: none }
+
+[0m
+[0m← [0mEdit app/d17-art.module.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-art.module.css
+@@ -382,8 +382,14 @@
+   .a831 .stEnd::before { background: var(--do-amber); left: -35px; width: 22px; height: 22px }
+   .a831 .st .n { font-size: 11px } .a831 .st h3 { font-size: 21px } .a831 .stEnd h3 { font-size: 26px } .a831 .st p { font-size: 14px }
+   .a831 .d17Mark { left: 20px; bottom: 20px; font-size: 10px }
+ }
++/* BUG-WEB-046 · phone ceiling (≤640px): drop the secondary print row so the stacked
++   route stops short of 1000px; the station text keeps the argument. After the 700px
++   block so it wins at ≤640. */
++@media (max-width: 640px) {
++  .a831 .prints { display: none }
++}
+ @media (max-width: 760px) {
+   .a920 { grid-template-columns: 1fr; min-height: 0; aspect-ratio: auto }
+   .a920 .d17Ph { left: 0; bottom: auto; height: 250px }
+   .a920::before { background: linear-gradient(180deg, transparent 0, transparent 130px, var(--do-prussian-blue) 250px) }
+
+[0m
+Wait — the module's existing `@media (max-width:700px)` block (`.a831 .prints{ display:flex }`) comes after my 640px rule and would override it. Moving my rule after that block:
+All rules appended at file ends, so they win over the earlier ≤760/≤700 blocks. Committing fix 3:
+[0m$ [0mgit add app/d17-global.css app/d17-art.module.css app/d17-apps-cases.css app/d17-problems.css app/d17-resources.css && git commit -m "fix(art): cap mobile artwork stacking by hiding secondary layers at <=640px (BUG-WEB-046)"
+warning: in the working copy of 'app/d17-apps-cases.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/d17-global.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/d17-problems.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/d17-resources.css', LF will be replaced by CRLF the next time Git touches it
+[lane/web046-art-sizing fe3d26c] fix(art): cap mobile artwork stacking by hiding secondary layers at <=640px (BUG-WEB-046)
+ 5 files changed, 39 insertions(+), 3 deletions(-)
+[0m
+[0m→ [0mRead app/case-studies/eternal-fitness/page.tsx[90m [limit=60, offset=1][0m
+[0m✱ [0mGlob "components/calculators/SeasonalCapacityCalculator.tsx"[90m 1 match[0m
+Fix 3 committed. Now fix 4 — the horizontal overflows. Let me inspect the suspect page content:
+[0m
+[0m$ [0mSelect-String -Path app\globals.css -Pattern '^\.wrap|\.wrap\{' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }; Select-String -Path app\globals.css -Pattern 'rt-split' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }
+(no output)
+[0m
+Let me check the `.wrap` definition and any fixed widths on these pages:
+[0m$ [0mSelect-String -Path app\case-studies\eternal-fitness\page.tsx -Pattern 'width|grid-template|min-width|max-width' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim().Substring(0,[Math]::Min(160,$_.Line.Trim().Length)))" }
+39: logo: { '@type': 'ImageObject', url: 'https://decodedops.co.uk/logo.png', width: 512, height: 512 },
+53: .hero-center{ text-align:center; max-width:760px; margin-inline:auto }
+54: .hero-center h1{ max-width:none; margin-inline:auto }
+57: .prose{ max-width:72ch; margin-inline:auto }
+70: .cta-strip h2{ max-width:none; margin-inline:auto }
+71: .cta-strip .lede{ margin:18px auto 32px; max-width:52ch }
+105: <div class="box"><b>This client&apos;s situation</b>Condition and notes on file<i class="bar2" style="width:80%"></i><i class="bar2" style="width:56%"></i></div
+152: <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+153: <marker id="q-ah958" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker>
+154: <marker id="q-ah958a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#FFB703"/></marker
+160: <path d="M1000 44 H1580 M1000 38 V50 M1580 38 V50" fill="none" stroke="#FFB703" stroke-opacity=".7" stroke-width="1.6"/>
+161: <g class="m-rise" style="animation-delay:.05s"><rect class="bx" x="20" y="110" width="300" height="220" rx="14"/>
+168: <g class="m-rise" style="animation-delay:.4s"><rect class="bx" x="400" y="110" width="320" height="220" rx="14"/>
+176: <g class="m-pop" style="animation-delay:1.1s"><rect class="bx-a" x="1000" y="90" width="300" height="260" rx="14"/>
+182: <rect x="1024" y="296" width="118" height="36" rx="7" fill="#FFB703"/><text x="1083" y="320" text-anchor="middle" style="font-size:16px;font-weight:700;fill:#02
+183: <rect x="1154" y="296" width="122" height="36" rx="7" fill="none" stroke="#8ECAE6" stroke-width="1.6"/><text class="t" x="1215" y="320" text-anchor="middle" sty
+187: <g class="m-rise" style="animation-delay:1.6s"><rect class="bx" x="1370" y="140" width="210" height="160" rx="14"/>
+193: <rect class="bx" x="10" y="10" width="680" height="170" rx="14"/><text class="t-m" x="34" y="52" style="font-size:21px">01 � Constraints in</text>
+196: <rect class="bx" x="10" y="244" width="680" height="170" rx="14"/><text class="t-m" x="34" y="286" style="font-size:21px">02 � The tool drafts</text>
+199: <rect class="bx-a" x="10" y="478" width="680" height="260" rx="14"/><text class="t-m t-a" x="34" y="520" style="font-size:21px">03 � The review gate</text>
+201: <rect x="34" y="650" width="190" height="52" rx="8" fill="#FFB703"/><text x="129" y="684" text-anchor="middle" style="font-size:22px;font-weight:700;fill:#02304
+202: <rect x="240" y="650" width="190" height="52" rx="8" fill="none" stroke="#8ECAE6" stroke-width="2"/><text class="t" x="335" y="684" text-anchor="middle" style="
+205: <rect class="bx" x="10" y="870" width="680" height="150" rx="14"/><text class="t-m" x="34" y="912" style="font-size:21px">04 � Client</text>
+228: <div className="wrap" style={{ maxWidth: 900 }}>
+257: <div className="wrap" style={{ maxWidth: 760 }}>
+[0m
+The `.wrap` class wasn't found in globals.css — let me locate it and check the site CSS for overflow sources:
+[0m$ [0mGet-ChildItem app\*.css | ForEach-Object { $_.Name }; Select-String -Path app\*.css -Pattern '\.wrap\s*\{' | ForEach-Object { "$($_.Filename):$($_.LineNumber): $($_.Line.Trim())" }
+d17-apps-cases.css
+d17-art.module.css
+d17-global.css
+d17-locations.css
+d17-problems.css
+d17-resources.css
+deco-page.module.css
+globals.css
+homepage.css
+homepage.css:57: .stage .wrap{ position:relative; z-index:1 }
+homepage.css:102: .ledger-sec .wrap{ position:relative; z-index:1 }
+homepage.css:210: .set .wrap{ position:relative; z-index:1 }
+[0m
+[0m$ [0mSelect-String -Path app\globals.css -Pattern 'wrap' | Select-Object -First 8 | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }
+4: to 0 on every element via `*`. DS component classes like .wrap
+9: broke the .wrap centering on every DS-ported page even after the nav
+435: .vid-cta{ display:flex; flex-wrap:wrap; align-items:center; gap:14px 22px; margin:22px 0 0 }
+[0m
+[0m$ [0mGet-ChildItem -Recurse -Include *.css -Path app,components,styles -ErrorAction SilentlyContinue | Select-String -Pattern '^\s*\.wrap\s*\{' | Select-Object -First 5 | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" }
+D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\design-system\ds-marketing.css:26: .wrap{ max-width:1200px; margin:0 auto; padding:0 24px }
+[0m
+[0m$ [0mSelect-String -Path components\calculators\SeasonalCapacityCalculator.tsx -Pattern 'width|min-width|overflow|grid-template' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim().Substring(0,[Math]::Min(150,$_.Line.Trim().Length)))" } | Select-Object -First 20
+114: style={{ flex: 1, minWidth: 0, accentColor: 'var(--do-cerulean)' }}
+116: <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 600, color: 'var(--do-text-primary)', minWidth: 36, textAlign: 'right' }}>
+180: const demandWidth = barMax > 0 ? (d.demand / barMax) * 100 : 0;
+181: const capWidth = barMax > 0 ? (baseCapacity / barMax) * 100 : 0;
+187: <div style={{ flex: 1, minWidth: 0, position: 'relative', height: 16, borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-
+189: <div style={{ position: 'absolute', left: `${capWidth}%`, top: -2, bottom: -2, width: 2, background: 'var(--do-sky-blue)', borderRadius: 1 }} />
+194: width: `${Math.min(demandWidth, 100)}%`,
+197: transition: 'width .2s',
+208: <div style={{ width: 10, height: 3, background: 'var(--do-cerulean)', borderRadius: 2 }} />
+210: <div style={{ width: 10, height: 3, background: 'var(--do-orange)', borderRadius: 2 }} />
+212: <div style={{ width: 10, height: 2, background: 'var(--do-sky-blue)', borderRadius: 1 }} />
+[0m
+The overflows might come from page components, not the artwork. Let me check the calculator and remaining page sections:
+[0m$ [0mSelect-String -Path app\case-studies\eternal-fitness\page.tsx -Pattern 'style=\{\{' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim().Substring(0,[Math]::Min(170,$_.Line.Trim().Length)))" } | Select-Object -First 25
+85: <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', fontStyle: 'italic', marginTop: '12px' }}>
+89: <div className="wrap" style={{ marginTop: 'clamp(24px, 3vw, 48px)' }}>
+133: <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+140: <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+141: <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: 'var(--do-text-cerulean)' }} />
+220: <p style={{ marginBottom: '32px' }}>
+228: <div className="wrap" style={{ maxWidth: 900 }}>
+232: <div className="grid grid--3" style={{ marginTop: 24 }}>
+237: <Link href="/problems/buy-vs-build" className="btn btn--outline" style={{ marginTop: 12 }}>Read about buy vs build</Link>
+243: <Link href="/sectors/signs-graphics" className="btn btn--outline" style={{ marginTop: 12 }}>See the signs &amp; graphics page</Link>
+249: <Link href="/sectors/awards-engraving" className="btn btn--outline" style={{ marginTop: 12 }}>See the awards &amp; engraving page</Link>
+257: <div className="wrap" style={{ maxWidth: 760 }}>
+270: <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted-on-dark)', fontWeight: 500, display: '
+[0m
+[0m→ [0mRead app/case-studies/eternal-fitness/page.tsx[90m [offset=215][0m
+The figure has `overflow:hidden`, so the page-level overflow likely comes from other content. Let me check the page tails and grid definitions:
+[0m
+[0m$ [0mSelect-String -Path app\design-system\ds-marketing.css -Pattern '\.grid--3|\.grid\s*\{|\.grid--2' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }
+183: .grid{ display:grid; gap:20px; margin-top:38px }
+185: .grid--3{ grid-template-columns:repeat(3,1fr) }
+186: .grid--2{ grid-template-columns:repeat(2,1fr) }
+188: @media(max-width:760px){ .grid--4,.grid--3,.grid--2{ grid-template-columns:1fr } }
+[0m
+[0m$ [0mSelect-String -Path components\calculators\SeasonalCapacityCalculator.tsx -Pattern 'nowrap|whiteSpace|width:\s*\d|minWidth:\s*\d|gridTemplate|overflow' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim().Substring(0,[Math]::Min(160,$_.Line.Trim().Length)))" }
+101: <div className="calc-months-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+114: style={{ flex: 1, minWidth: 0, accentColor: 'var(--do-cerulean)' }}
+116: <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 600, color: 'var(--do-text-primary)', minWidth: 36, textAlign: 'right' }}>
+187: <div style={{ flex: 1, minWidth: 0, position: 'relative', height: 16, borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-text-on-da
+189: <div style={{ position: 'absolute', left: `${capWidth}%`, top: -2, bottom: -2, width: 2, background: 'var(--do-sky-blue)', borderRadius: 1 }} />
+208: <div style={{ width: 10, height: 3, background: 'var(--do-cerulean)', borderRadius: 2 }} />
+210: <div style={{ width: 10, height: 3, background: 'var(--do-orange)', borderRadius: 2 }} />
+212: <div style={{ width: 10, height: 2, background: 'var(--do-sky-blue)', borderRadius: 1 }} />
+[0m
+Let me read the calculator component for overflow candidates:
+[0m$ [0mSelect-String -Path app\design-system\ds-marketing.css -Pattern 'rt-split|\.strip' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }; Select-String -Path app\globals.css -Pattern 'rt-split|\.strip' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }; Select-String -Path app\d17-resources.css -Pattern 'rt-split' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }
+175: .strip{ padding:22px 0; background:var(--do-cerulean); color:var(--do-prussian-blue) }
+176: .strip p{ margin:0; font-family:var(--do-font-heading); font-weight:var(--do-weight-bold);
+178: .strip .kick{ font-size:11px; font-weight:var(--do-weight-bold);
+12: .rt-split{ display:grid; grid-template-columns:1.02fr .98fr; gap:56px; align-items:center }
+13: @media(max-width:980px){ .rt-split{ grid-template-columns:1fr; gap:34px } }
+14: .rt-split .lede{ margin:18px 0 0; max-width:56ch }
+15: .rt-split .hero-cta{ justify-content:flex-start; margin-top:26px }
+16: .rt-split .meta{ margin:12px 0 0; font-size:var(--do-text-sm); color:var(--do-text-muted) }
+[0m
+[0m→ [0mRead components/calculators/SeasonalCapacityCalculator.tsx[90m [limit=120, offset=85][0m
+The figures have `overflow:hidden`, so the page-level overflow must come from other content. Let me examine the calculator component more closely — it's unique to the seasonal-capacity page:
+[0m→ [0mRead components/calculators/SeasonalCapacityCalculator.tsx[90m [limit=84][0m
+[0m
+[0m$ [0mSelect-String -Path components\calculators\calculators.css -Pattern 'calc-grid|calc-bar|calc-panel|calc-months' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }
+6: .calc-grid { display: grid; gap: 32px; }
+7: .calc-grid > * { min-width: 0; }
+9: .calc-grid { grid-template-columns: 1fr 1fr; }
+29: .calc-panel {
+33: .calc-panel h2 {
+51: .calc-bar-track {
+55: .calc-bar-fill { height: 100%; border-radius: var(--do-radius-full); transition: width .3s; }
+81: .calc-months-grid { grid-template-columns: repeat(2, 1fr) !important; }
+82: .calc-bar-label { width: 24px; flex-shrink: 0; }
+83: .calc-bar-val { width: 32px; flex-shrink: 0; }
+84: .calc-bar-legend { padding-left: 0 !important; }
+[0m
+Let me check the a958 SVG viewBoxes on the eternal-fitness page — `svg.q` has `overflow:visible`, so content past the viewBox can widen the page:
+[0m$ [0mSelect-String -Path app\case-studies\eternal-fitness\page.tsx -Pattern 'viewBox|v-tall|v-wide' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim().Substring(0,[Math]::Min(140,$_.Line.Trim().Length)))" }
+153: <marker id="q-ah958" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill=
+154: <marker id="q-ah958a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill
+156: <svg class="q v-wide" viewBox="0 0 1600 520" aria-hidden="true">
+192: <svg class="q v-tall" viewBox="0 0 700 1150" aria-hidden="true">
+[0m
+Let me check globals.css for the box-sizing reset and any `nowrap` elements that could cause the 4px/24px overflows:
+[0m$ [0mSelect-String -Path app\globals.css -Pattern 'box-sizing|overflow-x|body\s*\{' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }; Write-Host '==='; Select-String -Path app\design-system\ds-marketing.css -Pattern 'box-sizing|\.btn\s*\{|white-space' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" } | Select-Object -First 12
+96: * { box-sizing: border-box; }
+100: body {
+141: body {
+302: overflow-x: auto;
+376: .blog-lead .lead-body {
+384: .blog-lead .lead-body { padding: 28px 26px; }
+===
+69: .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px;
+72: white-space:nowrap;
+103: .site-nav .btn{ padding:10px 20px; font-size:var(--do-text-sm) }
+131: .site-nav .btn{ margin-top:14px; justify-content:center }
+180: opacity:.85; margin-right:14px; white-space:nowrap }
+217: color:var(--do-text-subtle); overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+[0m
+[0m$ [0mSelect-String -Path app\d17-global.css,app\d17-resources.css,app\d17-problems.css,app\d17-apps-cases.css,app\d17-art.module.css -Pattern 'overflow' | ForEach-Object { "$($_.Filename):$($_.LineNumber): $($_.Line.Trim().Substring(0,[Math]::Min(120,$_.Line.Trim().Length)))" }
+d17-global.css:14: .d17{ position:relative; container-type:inline-size; overflow:hidden; isolation:isolate;
+d17-global.css:114: .win{ position:relative; border-radius:calc(12 * var(--u)); overflow:hidden; background:var(--do-off-white);
+d17-global.css:153: background:color-mix(in srgb, var(--do-prussian-blue) 9%, transparent); overflow:hidden }
+d17-global.css:295: .fact-head.a919{ position:relative; overflow:hidden; isolation:isolate; background:var(--do-prussian-blue);
+d17-global.css:409: svg.q{ display:block; width:100%; height:auto; font-family:var(--do-font-body); overflow:visible }
+d17-global.css:542: color:var(--do-off-white); white-space:nowrap; overflow:hidden; text-overflow:clip }
+d17-global.css:839: @media (max-width: 480px){ .hero-split h1{ font-size:clamp(1.85rem, 8.6vw, 2.3rem); overflow-wrap:break-word } }
+d17-resources.css:161: .sg .tr{ height:calc(9 * var(--u)); border-radius:9px; background:color-mix(in srgb, var(--do-prussian-blue) 9%, transpa
+d17-resources.css:294: .bar8{ display:flex; height:max(46px, calc(64 * var(--u))); border-radius:8px; overflow:hidden; box-shadow:0 0 0 1.5px c
+d17-resources.css:358: .hs em{ height:max(7px, calc(10 * var(--u))); border-radius:9px; background:color-mix(in srgb, var(--do-prussian-blue) 9
+d17-resources.css:450: .scr .crumb{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+d17-problems.css:100: .cov-bar{ display:flex; height:calc(12 * var(--u)); margin-top:calc(10 * var(--u)); border-radius:99px; overflow:hidden;
+d17-problems.css:318: .xl{ position:absolute; background:var(--do-white); color:var(--do-prussian-blue); border-radius:calc(4 * var(--u)); ove
+d17-problems.css:330: font-family:var(--do-font-mono); font-size:max(6.5px, calc(8.5 * var(--u))); white-space:nowrap; overflow:hidden }
+d17-problems.css:444: padding:2px 0; border-radius:99px; background:color-mix(in srgb, var(--do-sky-blue) 26%, transparent); color:var(--do-pr
+d17-apps-cases.css:18: .mw{ position:relative; border-radius:calc(10 * var(--u)); overflow:hidden; background:var(--do-off-white);
+d17-apps-cases.css:26: .mw-bar .crumb{ overflow:hidden; text-overflow:ellipsis } .mw-bar .crumb span{ color:var(--do-sky-blue) }
+d17-apps-cases.css:43: .mw .track{ margin-top:calc(8 * var(--u)); height:max(6px, calc(8 * var(--u))); border-radius:9px; overflow:hidden;
+d17-apps-cases.css:69: .tile{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent); border
+d17-apps-cases.css:179: .a943 .phone .scr{ border-radius:calc(22 * var(--u)); overflow:hidden; background:var(--do-off-white); color:var(--do-pr
+d17-apps-cases.css:183: .a943 .cam{ position:relative; margin:calc(10 * var(--u)); aspect-ratio:1.3; border-radius:calc(10 * var(--u)); overflow
+d17-apps-cases.css:204: .pv .img{ aspect-ratio:1; border-radius:calc(8 * var(--u)); overflow:hidden; background:var(--do-white); border:1px soli
+d17-apps-cases.css:422: .chd--h .mini .tr{ grid-column:1 / -1; height:max(6px, calc(8 * var(--u))); border-radius:9px; background:color-mix(in s
+d17-apps-cases.css:485: .a953 .phone2 .scr{ border-radius:calc(25 * var(--u)); overflow:hidden; background:var(--do-off-white); color:var(--do-p
+d17-art.module.css:13: .d17 { position: relative; container-type: inline-size; overflow: hidden; isolation: isolate;
+d17-art.module.css:114: .win { position: relative; border-radius: calc(12 * var(--u)); overflow: hidden; background: var(--do-off-white);
+d17-art.module.css:153: background: color-mix(in srgb, var(--do-prussian-blue) 9%, transparent); overflow: hidden }
+d17-art.module.css:257: .factHeadA919 { position: relative; overflow: hidden; isolation: isolate; background: var(--do-prussian-blue);
+d17-art.module.css:337: /* ��� contact page mobile overflow fix ��� */
+d17-art.module.css:340: .contactFormCard { background: var(--do-white); border-radius: var(--do-radius-2xl); border: 1px solid var(--do-border-s
+[0m
+Let me check what CSS the root layout loads and how `.wrap` reaches these pages:
+[0m$ [0mSelect-String -Path app\layout.tsx -Pattern "import|\.css" | ForEach-Object { $_.Line.Trim() } | Select-Object -First 15; Write-Host '==='; Select-String -Path app\globals.css -Pattern "@import|ds-marketing" | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }
+import type { Metadata } from 'next';
+import Script from 'next/script';
+import { Outfit, DM_Sans } from 'next/font/google';
+import './globals.css';
+// imported through ds-layer.css which assigns them to the `ds` cascade
+// layer registered in globals.css (ordered before Tailwind's own layers).
+// Importing them unlayered, as the first staging deploy did, made every
+// work order touched. Fixed 2026-07-31. Do not revert to a plain import.
+import './design-system/ds-layer.css';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { CookieConsent } from '@/components/CookieConsent';
+import { JsonLd } from '@/components/JsonLd';
+import { AppShell } from '@/components/AppShell';
+import { SessionProvider } from '@/components/SessionProvider';
+===
+16: @import "tailwindcss";
+[0m
+[0m→ [0mRead components/calculators/calculators.css
+Let me check the calculator CSS for fixed widths and the inputs:
+[0m→ [0mRead components/calculators/SeasonalCapacityCalculator.tsx[90m [offset=205][0m
+Let me check the rest of the calculator and the ToolLeadCapture component:
+[0m
+[0m$ [0mSelect-String -Path components\ToolLeadCapture.tsx -Pattern 'width|minWidth|nowrap|grid-template' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim().Substring(0,[Math]::Min(150,$_.Line.Trim().Length)))" } | Select-Object -First 12
+(no output)
+[0m
+Let me look at the ToolLeadCapture component — it's on both the seasonal-capacity page and could be the overflow source:
+[0m→ [0mRead components/ToolLeadCapture.tsx
+[0m
+[0m$ [0mSelect-String -Path app\design-system\ds-marketing.css,app\globals.css -Pattern '\.d17|figure' | ForEach-Object { "$($_.Filename):$($_.LineNumber): $($_.Line.Trim().Substring(0,[Math]::Min(130,$_.Line.Trim().Length)))" } | Select-Object -First 15
+(no output)
+[0m
+[0m→ [0mRead components/D17Motion.tsx
+Let me check for any global overrides of `.d17` or `figure` and read the D17Motion component:
+Let me check `.card` and `.btn` in ds-marketing.css and body overflow rules — the figures clip their contents, so the page-level overflow must come from outside them:
+[0m
+[0m$ [0mSelect-String -Path app\design-system\ds-marketing.css -Pattern '\.card\s*\{|\.card,|\.card\s*>|\.hero-cta|\.btn-row|\.btn\s*\{|\.btn--' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }; Write-Host '=== body'; Get-Content app\globals.css | Select-Object -Skip 95 -First 55
+69: .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px;
+76: .btn--primary{ background:var(--do-action-primary); color:var(--do-action-primary-text);
+78: .btn--primary:hover{ background:var(--do-action-primary-hover) }
+79: .btn--outline{ border-color:var(--do-cerulean); color:var(--do-text-primary) }
+80: .btn--outline:hover{ background:color-mix(in srgb, var(--do-cerulean) 10%, transparent) }
+81: .g-navy .btn--outline{ color:var(--do-text-on-dark) }
+82: .btn-row{ display:flex; flex-wrap:wrap; gap:14px; margin:30px 0 }
+103: .site-nav .btn{ padding:10px 20px; font-size:var(--do-text-sm) }
+131: .site-nav .btn{ margin-top:14px; justify-content:center }
+190: .card{ background:var(--do-surface-raised); border:1px solid var(--do-border-subtle);
+199: .g-navy .card{ background:color-mix(in srgb, var(--do-off-white) 5%, transparent);
+291: different name (.lead/.lede, .hero-cta/.btn-row, .container/.wrap),
+304: .hero-center .hero-cta,.hero-center .btn-row{ justify-content:center; margin-top:32px }
+317: /* .hero-cta is site.css's name for this file's .btn-row */
+318: .hero-cta{ display:flex; flex-wrap:wrap; gap:14px; margin:30px 0 }
+322: .cta-strip .hero-cta,.cta-strip .btn-row{ justify-content:center }
+325: .btn--primary / .btn--outline (double dash) - both pair with the same
+=== body
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--do-surface-page);
+  color: var(--do-text-primary);
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system,
+               BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.2;
+}
+
+/* �� Focus rings �� */
+:focus-visible {
+  outline: 2px solid var(--do-cerulean);
+  outline-offset: 2px;
+  border-radius: var(--do-radius-sm);
+}
+
+/* �� Dot-grid pattern utility �� */
+.do-dot-grid {
+  background-image: radial-gradient(var(--do-pattern-color) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* �� Accent bar �� */
+.do-accent-bar-left {
+  border-left: 4px solid var(--do-amber);
+}
+
+/* �� Print (Download PDF fallback via window.print) �� */
+@media print {
+  header, footer, nav {
+    display: none !important;
+  }
+  @page {
+    margin: 16mm;
+  }
+  body {
+    background: #fff;
+  }
+}
+
+/* �� Reduced motion �� */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+[0m
+Let me read the `.btn` and `.card` definitions fully:
+[0m$ [0mGet-Content app\design-system\ds-marketing.css | Select-Object -Skip 67 -First 20; Write-Host '=== card'; Get-Content app\design-system\ds-marketing.css | Select-Object -Skip 188 -First 15; Write-Host '=== body 300'; Get-Content app\globals.css | Select-Object -Skip 296 -First 12
+/* �� buttons - pills are the marketing signature �� */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:14px 26px; border-radius:var(--do-radius-full); font-size:var(--do-text-base);
+  font-weight:var(--do-weight-semibold); text-decoration:none; border:2px solid transparent;
+  white-space:nowrap;
+  transition:background var(--do-duration-normal) var(--do-ease-default),
+             border-color var(--do-duration-normal) var(--do-ease-default),
+             color var(--do-duration-normal) var(--do-ease-default) }
+.btn--primary{ background:var(--do-action-primary); color:var(--do-action-primary-text);
+  box-shadow:var(--do-shadow-amber) }                       /* 7.93:1 */
+.btn--primary:hover{ background:var(--do-action-primary-hover) }
+.btn--outline{ border-color:var(--do-cerulean); color:var(--do-text-primary) }
+.btn--outline:hover{ background:color-mix(in srgb, var(--do-cerulean) 10%, transparent) }
+.g-navy .btn--outline{ color:var(--do-text-on-dark) }
+.btn-row{ display:flex; flex-wrap:wrap; gap:14px; margin:30px 0 }
+
+/* �� site header �� */
+.site-head{ position:sticky; top:0; z-index:var(--do-z-sticky);
+  background:color-mix(in srgb, var(--do-off-white) 94%, transparent);
+  backdrop-filter:saturate(150%) blur(10px);
+=== card
+
+.card{ background:var(--do-surface-raised); border:1px solid var(--do-border-subtle);
+  border-radius:var(--do-radius-2xl); padding:26px;
+  transition:border-color var(--do-duration-normal), box-shadow var(--do-duration-normal) }
+.card:hover{ border-color:var(--do-border-strong); box-shadow:var(--do-shadow-md) }
+.card p{ font-size:var(--do-text-sm); margin-bottom:0;
+  color:color-mix(in srgb, var(--do-prussian-blue) 74%, transparent) }
+.card .kicker{ display:block; font-size:var(--do-text-xs); font-weight:var(--do-weight-bold);
+  letter-spacing:var(--do-tracking-wider); text-transform:uppercase;
+  color:var(--do-text-secondary); margin-bottom:10px }    /* D11 - was Cerulean, 2.98:1 */
+.g-navy .card{ background:color-mix(in srgb, var(--do-off-white) 5%, transparent);
+  border-color:color-mix(in srgb, var(--do-sky-blue) 18%, transparent);
+  color:var(--do-text-on-dark) }
+.g-navy .card:hover{ border-color:color-mix(in srgb, var(--do-cerulean) 45%, transparent);
+  box-shadow:none }
+=== body 300
+.do-blog-prose pre {
+  background: var(--do-prussian-blue);
+  color: var(--do-off-white);
+  padding: 1.25rem;
+  border-radius: var(--do-radius-lg);
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.do-blog-prose pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+[0m
+Let me check for `100vw` and other overflow suspects in the relevant CSS:
+[0m$ [0mSelect-String -Path app\d17-resources.css,app\d17-global.css,app\d17-problems.css,app\d17-apps-cases.css -Pattern '100vw|calc\(100%' | ForEach-Object { "$($_.Filename):$($_.LineNumber): $($_.Line.Trim().Substring(0,[Math]::Min(140,$_.Line.Trim().Length)))" } | Select-Object -First 20
+d17-global.css:94: .a917{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); display:grid; grid-template-columns:31% 1fr; gap:calc(40 / 1052 * 100%);
+d17-global.css:377: .sx{ --u:calc(100cqw / 560); --pu:calc(100% / 560); margin:0; display:flex; flex-direction:column }
+d17-global.css:381: .sw{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); margin:34px 0 0 }
+d17-problems.css:223: radial-gradient(circle at calc(100% - 12 * var(--u)) 50%, color-mix(in srgb, var(--do-prussian-blue) 40%, #000) calc(3.5 * var(--u)), transp
+d17-problems.css:282: .chart i.over{ background:linear-gradient(180deg, var(--do-amber) 0, var(--do-amber) calc(100% - var(--cap)), color-mix(in srgb, var(--do-ce
+d17-apps-cases.css:84: .a939{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); display:flex; flex-direction:column }
+d17-apps-cases.css:121: .a940{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(40 * var(--pu)) calc(30 * var(--pu)) }
+d17-apps-cases.css:164: .a942{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(40 * var(--pu)) calc(30 * var(--pu)) }
+d17-apps-cases.css:169: .a943{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); aspect-ratio:1152 / 600 }
+d17-apps-cases.css:252: .a945{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(44 * var(--pu)) calc(30 * var(--pu));
+d17-apps-cases.css:358: .a947{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(40 * var(--pu)) calc(30 * var(--pu)) }
+d17-apps-cases.css:436: .a951{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); display:grid; grid-template-columns:29% 1fr; gap:calc(38 * var(--pu));
+d17-apps-cases.css:471: .a953{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); aspect-ratio:1152 / 520 }
+d17-apps-cases.css:551: .a956{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(40 * var(--pu)) calc(30 * var(--pu)) }
+d17-apps-cases.css:556: .a957{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(44 * var(--pu)) calc(44 * var(--pu)) calc(30 * var(--pu)) }
+d17-apps-cases.css:588: .a958{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(40 * var(--pu)) calc(30 * var(--pu)); margin:36px
+[0m
+Let me search for `100vw` and other suspicious widths across the app:
+[0m$ [0mGet-ChildItem -Recurse -Include *.tsx,*.css -Path app,components | Select-String -Pattern '100vw' | ForEach-Object { "$($_.Path.Replace((Get-Location).Path + '\', '')):$($_.LineNumber): $($_.Line.Trim().Substring(0,[Math]::Min(120,$_.Line.Trim().Length)))" } | Select-Object -First 20
+app\design-system\colors_and_type.css:428: --do-cv-panel-width: min(640px, 100vw);
+app\deco-page.module.css:94: .heroShot{ margin-right:calc(-1 * min(88px, max(0px, (100vw - 1200px) / 2))) }
+app\homepage.css:73: margin-right:calc(-1 * (max(0px, (100vw - 1200px) / 2) + 24px)) }
+app\page.tsx:111: sizes="(max-width: 1200px) 100vw, 1100px"
+app\page.tsx:295: sizes="(max-width: 1200px) 100vw, 1300px"
+components\HeroVisual.tsx:20: sizes="(max-width: 1024px) 100vw, 50vw"
+components\SectorCredibilityPhoto.tsx:25: sizes="(max-width: 1024px) 100vw, 50vw"
+[0m
+[0m→ [0mRead app/d17-resources.css[90m [limit=70, offset=30][0m
+Let me read the full `.note-y` rule and surrounding a994 styles in d17-resources.css:
+[0m
+[0m← [0mEdit app/case-studies/eternal-fitness/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\case-studies\eternal-fitness\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\case-studies\eternal-fitness\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\case-studies\eternal-fitness\page.tsx
+@@ -57,8 +57,12 @@
+ .prose{ max-width:72ch; margin-inline:auto }
+ .prose h2{ font-size:var(--do-text-xl); margin:36px 0 14px }
+ .prose h2:first-child{ margin-top:0 }
+ .prose p{ color:var(--do-text-secondary); line-height:var(--do-leading-relaxed); margin-bottom:14px }
++/* BUG-WEB-046: grid items default to min-width:auto, so the nowrap .btn
++   inside each related card stretched the 1fr track past the column at 390px. */
++.grid--3 > *{ min-width:0 }
++.grid .card .btn{ white-space:normal; text-align:center }
+ .progress-note{ background:color-mix(in srgb, var(--do-amber) 10%, transparent);
+   border:1px solid color-mix(in srgb, var(--do-amber) 30%, transparent);
+   border-radius:var(--do-radius-2xl); padding:24px 28px; margin-top:36px }
+ .progress-note h3{ font-size:var(--do-text-base); margin-bottom:8px }
+
+[0m
+[0m← [0mEdit components/calculators/calculators.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\components\calculators\calculators.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\components\calculators\calculators.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\components\calculators\calculators.css
+@@ -4,8 +4,11 @@
+    only, no new hex, no component redefinitions of ds-marketing.css's own classes. */
+ 
+ .calc-grid { display: grid; gap: 32px; }
+ .calc-grid > * { min-width: 0; }
++/* BUG-WEB-046: grid items default to min-width:auto — clamp the month cells so
+The figures clip their contents (`overflow:hidden` on `.d17`), so page-level overflow must come from the surrounding layout — grid items with `min-width:auto` and `white-space:nowrap` buttons. Let me apply targeted clamps:
++   the range input's intrinsic width can't stretch a track past the column. */
++.calc-months-grid > * { min-width: 0; }
+ @media (min-width: 1024px) {
+   .calc-grid { grid-template-columns: 1fr 1fr; }
+ }
+ 
+
+[0m
+Let me check globals.css line ~175-185 for that nowrap rule:
+[0m$ [0mGet-Content app\globals.css | Select-Object -Skip 168 -First 22
+font-size: var(--do-text-sm); color: var(--do-text-muted); margin-top: 22px;
+}
+.post-meta span:not(:last-child)::after { content: '�'; margin-left: 10px; opacity: .5; }
+
+.prose { max-width: 72ch; margin-inline: auto; }
+
+.post-cta {
+  border-radius: var(--do-radius-2xl); padding: 32px;
+  background: color-mix(in srgb, var(--do-cerulean) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--do-cerulean) 22%, transparent);
+  margin-top: 44px;
+}
+.post-cta h3 { font-size: var(--do-text-lg); margin-bottom: 10px; }
+.post-cta p {
+  color: var(--do-text-secondary); line-height: var(--do-leading-relaxed);
+  margin-bottom: 18px;
+}
+
+.related { margin-top: 48px; }
+.related h3 {
+  font-size: var(--do-text-base); margin-bottom: 16px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--do-border-subtle);
+[0m
+Let me check the `.eyebrow` class — it may have nowrap and be the grid-item min-width culprit:
+[0m$ [0mSelect-String -Path app\design-system\ds-marketing.css -Pattern 'eyebrow' | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }
+37: .eyebrow{ display:inline-flex; align-items:center; padding:6px 13px;
+43: .g-navy .eyebrow{ background:color-mix(in srgb, var(--do-cerulean) 20%, transparent);
+46: .eyebrow--amber{ background:color-mix(in srgb, var(--do-amber) 12%, transparent);
+285: .eyebrow, .g-off/.g-white/.g-navy/.g-tint, h1/h2/h3 with slightly
+303: .hero-center .eyebrow{ margin-inline:auto }
+[0m
+[0m← [0mEdit app/d17-resources.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-resources.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-resources.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-resources.css
+@@ -310,9 +310,9 @@
+ /* ─── DO-ART-994 · seasonal capacity · the year planner ─── */
+ .a994 .stage{ aspect-ratio:560 / 540 }
+ .a994 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.5) contrast(1.05) brightness(.7) }
+ .a994 .doc-yp{ left:calc(24 * var(--u)); top:calc(62 * var(--u)); width:calc(512 * var(--u)); transform:rotate(-1.5deg) }
+-.yp{ position:relative; display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(7 * var(--u)); align-items:end; height:calc(190 * var(--u));
++.yp{ position:relative; display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:calc(7 * var(--u)); align-items:end; height:calc(190 * var(--u));
+   margin-top:calc(12 * var(--u)); padding:0 2px; border-bottom:1.5px solid color-mix(in srgb, var(--do-prussian-blue) 45%, transparent);
+   background:repeating-linear-gradient(0deg, color-mix(in srgb, var(--do-prussian-blue) 7%, transparent) 0 1px, transparent 1px calc(19 * var(--u))) }
+ .yp i{ position:relative; height:var(--h); border-radius:2px 2px 0 0; transform-origin:bottom;
+   background:repeating-linear-gradient(160deg, color-mix(in srgb, var(--do-cerulean) 55%, var(--do-white)) 0 2px, color-mix(in srgb, var(--do-cerulean) 30%, var(--do-white)) 2px 4px) }
+
+[0m
+[0m← [0mEdit app/d17-resources.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-resources.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-resources.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-resources.css
+@@ -321,9 +321,9 @@
+   font-size:max(6px, calc(9 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
+ .yp .capl{ position:absolute; left:0; right:0; bottom:var(--c); border-top:2px dashed var(--do-prussian-blue) }
+ .yp .capl span{ position:absolute; left:0; top:3px; font-family:var(--do-font-mono); font-weight:700; font-size:max(6px, calc(9 * var(--u))); letter-spacing:.12em;
+   text-transform:uppercase; background:var(--do-white); padding:0 4px }
+-.ym{ display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(7 * var(--u)); margin-top:4px; text-align:center;
++.ym{ display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:calc(7 * var(--u)); margin-top:4px; text-align:center;
+   font-family:var(--do-font-mono); font-size:max(6.5px, calc(10 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
+ .a994 .nt-a{ right:calc(22 * var(--u)); top:calc(412 * var(--u)); width:calc(190 * var(--u)) }
+ .a994 .nt-b{ left:calc(40 * var(--u)); top:calc(420 * var(--u)); width:calc(170 * var(--u)); transform:rotate(-3deg) }
+ 
+
+[0m
+The figures clip their contents, so the page-level overflow on eternal-fitness comes from the `grid--3` related cards (clamp already applied). For seasonal-capacity, the brief points at the a994 chart — I'll clamp its `1fr` grid tracks (the canonical fix for grid-track overflow):
+Now add the `min-width:0` clamp to the rt-split grid children where the figure lives:
+[0m← [0mEdit app/d17-resources.css
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-resources.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-resources.css
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\d17-resources.css
+@@ -9,8 +9,11 @@
+    ══════════════════════════════════════════════════════════════════════ */
+ 
+ /* hero layout: copy left, the piece right */
+ .rt-split{ display:grid; grid-template-columns:1.02fr .98fr; gap:56px; align-items:center }
++/* BUG-WEB-046: grid children default to min-width:auto — let both columns shrink so
++   wide artwork/copy can't stretch a track past the wrap at small viewports */
++.rt-split > *{ min-width:0 }
+ @media(max-width:980px){ .rt-split{ grid-template-columns:1fr; gap:34px } }
+ .rt-split .lede{ margin:18px 0 0; max-width:56ch }
+ .rt-split .hero-cta{ justify-content:flex-start; margin-top:26px }
+ .rt-split .meta{ margin:12px 0 0; font-size:var(--do-text-sm); color:var(--do-text-muted) }
+
+[0m
+Now commit fix 4:
+[0m$ [0mgit add app\case-studies\eternal-fitness\page.tsx components\calculators\calculators.css app\d17-resources.css && git commit -m "fix(art): clamp grid children and chart tracks causing mobile horizontal overflow (BUG-WEB-046)"
+warning: in the working copy of 'app/d17-resources.css', LF will be replaced by CRLF the next time Git touches it
+[lane/web046-art-sizing f8cff48] fix(art): clamp grid children and chart tracks causing mobile horizontal overflow (BUG-WEB-046)
+ 3 files changed, 12 insertions(+), 2 deletions(-)
+[0m
+Fix 4 committed with the clamps the brief suggested. Now fix 5 — the blog hero image cap. The blog post template renders `item.images[0]` as the hero:
+[0m← [0mEdit app/blog/[slug]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\blog\[slug]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\blog\[slug]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\blog\[slug]\page.tsx
+@@ -227,10 +227,19 @@
+     {/* eslint-disable-next-line @next/next/no-img-element */}
+     <img
+       src={item.images[0]}
+       alt=""
+-      className="rounded-2xl shadow-sm w-full"
+-      style={{ border: '1px solid var(--do-border-subtle)' }}
++      width={1200}
++      height={675}
++      className="rounded-2xl shadow-sm"
++      style={{
++        border: '1px solid var(--do-border-subtle)',
++        maxWidth: 960,
++        marginInline: 'auto',
++        aspectRatio: '16 / 9',
++        objectFit: 'cover',
++        height: 'auto',
++      }}
+       loading="lazy"
+     />
+   </div>
+ </section>
+
+[0m
+[0m$ [0mgit add "app/blog/[slug]/page.tsx" && git commit -m "fix(art): cap blog post hero image at 960px centred with explicit dimensions (BUG-WEB-046)"
+[lane/web046-art-sizing 5ee13c2] fix(art): cap blog post hero image at 960px centred with explicit dimensions (BUG-WEB-046)
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+[0m
+All five fixes committed. Now verification — `npx tsc --noEmit` and lint:
+[0m$ [0mif (Test-Path node_modules) { npx tsc --noEmit } else { Write-Host 'NO node_modules' }
+NO node_modules
+[0m
+Fresh worktree — installing dependencies first (per AGENTS.md):
+[0m$ [0mnpm install --no-audit --no-fund 2>&1 | Select-Object -Last 5
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mif (Test-Path node_modules\typescript) { npx tsc --noEmit } else { Write-Host 'typescript missing'; Get-ChildItem node_modules | Select-Object -First 5 }
+(no output)
+[0m
+`tsc` clean. Now lint:
+[0m$ [0mnpx next lint 2>&1 | Select-Object -Last 15
+Invalid project directory provided, no such directory: D:\apps\worktrees\decoded-ops-website\web046-art-sizing\lint
+[0m
+[0m$ [0mnode -e "const p=require('./package.json'); console.log(JSON.stringify(p.scripts,null,1))"
+{
+ "dev": "node scripts/generate-route-slugs.mjs && next dev -p 8765",
+ "prebuild": "node scripts/generate-route-slugs.mjs",
+ "build": "next build",
+ "start": "next start",
+ "lint": "eslint",
+ "check:nav": "node .context/check-nav-coverage.mjs",
+ "check:price": "node .context/price-audit.mjs",
+ "copy:extract": "node .context/extract-copy.mjs",
+ "check:premerge": "npm run check:nav && npm run check:price",
+ "test": "vitest run",
+ "sync:blog-index": "node scripts/sync-blog-index.mjs"
+}
+[0m
+[0m$ [0mnpx eslint "app/blog/[slug]/page.tsx" app/case-studies/eternal-fitness/page.tsx app/resources/decoded-method/page.tsx app/resources/six-sigma/page.tsx app/sectors/print-promotional/page.tsx components/calculators/SeasonalCapacityCalculator.tsx 2>&1 | Select-Object -Last 15
+D:\apps\worktrees\decoded-ops-website\web046-art-sizing\app\blog\[slug]\page.tsx
+  46:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  96:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 3 problems (3 errors, 0 warnings)
+[0m
+The 3 errors are pre-existing (`item: any` at lines 46/93/96, untouched by my edit). Confirming against origin/main:
+[0m$ [0mgit show origin/main:"app/blog/[slug]/page.tsx" | Select-String -Pattern ': any' | ForEach-Object { $_.Line.Trim().Substring(0,[Math]::Min(80,$_.Line.Trim().Length)) }
+function buildArticleSchema(item: any, slug: string, pubDate: string) {
+return (data.items || []).map((item: any) => ({ slug: item.slug }));
+return (localBlogPosts.items || []).map((item: any) => ({ slug: item.slug }));
+[0m
+Pre-existing. Running the price audit (gate before any push) and the escape grep for the lane report:
+[0m$ [0mnode .context/price-audit.mjs --check 2>&1 | Select-Object -Last 5; Write-Host "EXIT=$LASTEXITCODE"
+FAIL app/case-studies/page.tsx:125  forbidden word "vest"  aria-label="Case index head DO-ART-950, case study 03 cut. A graded photograph of a hi-vis
+  FAIL app/how-i-build/page.tsx:78  forbidden word "vest"  alt="A worker in a grey T-shirt wearing an orange hi-vis vest with two reflective bands, p
+  FAIL app/problems/ecommerce-not-connected/page.tsx:106  forbidden word "vest"  <div class="c"><span>Ready</span><div class="j"><small>1031</small>Hi-vis vests</div></div
+  FAIL app/sectors/workwear/page.tsx:90  forbidden word "vest"  aria-label="Artwork DO-ART-937. A graded photograph of a worker in a hi-vis vest, tagged t
+  FAIL app/sectors/workwear/page.tsx:99  forbidden word "vest"  <div class="sx-tag m-pop" style="left:4.5%;top:22%;animation-delay:.1s"><small>01 · Plain 
+EXIT=1
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web046-art-sizing.json
+Wrote file successfully.
+[0m
+Price-audit failures are pre-existing "vest" word hits in files I didn't touch (all five failing files are unmodified by this lane). Now writing the lane report files:
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web046-art-sizing.md
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web046-art-sizing.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add .context/lane-reports/LANE-RESULT-web046-art-sizing.json .context/lane-reports/LANE-RESULT-web046-art-sizing.md .context/lane-reports/LANE-NOTES-web046-art-sizing.md .context/lane-briefs/web046-art-sizing.md && git commit -m "chore: lane report for web046-art-sizing" && git log --oneline -7
+warning: in the working copy of '.context/lane-briefs/web046-art-sizing.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web046-art-sizing.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web046-art-sizing.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web046-art-sizing.md', LF will be replaced by CRLF the next time Git touches it
+[lane/web046-art-sizing 19c150e] chore: lane report for web046-art-sizing
+ 4 files changed, 204 insertions(+)
+ create mode 100644 .context/lane-briefs/web046-art-sizing.md
+ create mode 100644 .context/lane-reports/LANE-NOTES-web046-art-sizing.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web046-art-sizing.json
+ create mode 100644 .context/lane-reports/LANE-RESULT-web046-art-sizing.md
+19c150e chore: lane report for web046-art-sizing
+5ee13c2 fix(art): cap blog post hero image at 960px centred with explicit dimensions (BUG-WEB-046)
+f8cff48 fix(art): clamp grid children and chart tracks causing mobile horizontal overflow (BUG-WEB-046)
+fe3d26c fix(art): cap mobile artwork stacking by hiding secondary layers at <=640px (BUG-WEB-046)
+8d58901 fix(art): cap full-width .sx hero pieces at 560px, delete duplicate DO-ART-927 (BUG-WEB-046)
+de21eb3 fix(art): replace cqw self-sizing on .d17 figures with aspect-ratio/percent equivalents (BUG-WEB-046)
+9f1caed chore: lane report for inf075-u8-site-fix1
+[0m
+Lane complete. All five fixes committed on `lane/web046-art-sizing` with tsc clean and lane reports filed:
+
+1. **Fix 1** (`de21eb3`) — replaced cqw self-sizing on `.d17` figures with aspect-ratio/percentage equivalents across `.a917`, `.a918`, `.a920`, `.a939`, `.a943`, `.a945`, `.a953`, `.a957`, `.a1006/.a1007` in five D17 CSS files; sweep confirmed every remaining `var(--u)` use is on child elements (correct).
+2. **Fix 2** (`8d58901`) — added `.sx--solo` (max-width 560px, centred) to DO-ART-988 and DO-ART-985; deleted the duplicate DO-ART-927 section on print-promotional.
+3. **Fix 3** (`fe3d26c`) — ≤640px reduction rules hiding secondary decorative layers on 718/831/930/945/949/953/954/957/986/1008; heights are content-driven, not browser-measured (no dev server per contract — flagged for reviewer spot-check).
+4. **Fix 4** (`f8cff48`) — traced the overflows to grid `min-width:auto` (related-card nowrap buttons on eternal-fitness; rt-split/chart/calc tracks on seasonal-capacity — the figures themselves clip via `overflow:hidden`) and clamped with `min-width:0`/`minmax(0,1fr)`.
+5. **Fix 5** (`5ee13c2`) — blog hero capped at 960px centred, 16:9, explicit 1200×675 dimensions.
+
+Deviations (approach choice, unverified fix-3 heights, pre-existing eslint/price-audit failures) are documented truthfully in `.context/lane-reports/LANE-RESULT-web046-art-sizing.md`.

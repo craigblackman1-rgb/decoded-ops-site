@@ -1,0 +1,794 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead .context/lane-briefs/web-resources-build.md
+[0m
+[0m# [0mTodos
+[•] Explore mockup sources and current page files
+[ ] Create app/d17-resources.css from mockup source
+[ ] Port D17 artwork to resources pages (9 resource pages + 5 tool pages + 2 index pages)
+[ ] Apply copy fixes (CR-WEB-055)
+[ ] Verify: tsc --noEmit and grep craig-blackman
+[ ] Commit and write lane report
+[0m
+[0m✱ [0mGlob ".context/lane-briefs/d17-resources/*"[90m in . · 0 matches[0m
+[0m✱ [0mGlob "app/resources/**/*.tsx"[90m in . · 10 matches[0m
+[0m✱ [0mGlob "app/tools/**/*.tsx"[90m in . · 8 matches[0m
+[0m✱ [0mGlob "app/d17-global.css"[90m in . · 1 match[0m
+[0m✱ [0mGlob "components/D17Motion.tsx"[90m in . · 1 match[0m
+[0m
+[0m$ [0mgit log --oneline -5
+6f9adbe chore(web): D17 g-batch images + lane brief (WO-INF-061)
+9c888a1 chore: lane report for web-d-build-d17-fix1
+f16dc21 fix(web): sector D17 art uses a global stylesheet (injected markup)
+e5c106f chore: lane brief web-d-build-d17-fix1
+c4ec818 chore(web): lane reports for web-d-build-d17 (WO-INF-061 u14)
+[0m
+[0m$ [0mgit branch -a | head -20
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[0m
+The mockup sources directory doesn't exist locally. Let me check if it's on staging and also look at a sector page for the reference pattern.
+[0m✱ [0mGlob "app/sectors/workwear/page.tsx"[90m in . · 1 match[0m
+[0m
+[0m$ [0mgit branch -a
+artwork-refresh-batch-a
+  artwork-refresh-u1-staging-ff
++ bug-web-015-016-schema-fixes
+  chore/premerge-gates
+  claude/decoded-ops-seo-content-review-9727b8
+  claude/implement-design-plates-20a617
+  claude/staging-design-review-2d366a
+  cr-web-025-pricing-hotfix
+  docs/about-roi-benchmarks-audit
+  docs/wo-final-close
+  ds-impl/integration
+  ds-impl/lane-0-foundation
+  ds-impl/lane-a
+  ds-impl/lane-b
+  ds-impl/lane-c
+  ds-impl/lane-d
+  ds-impl/lane-e
+  ds-impl/lane-f
+  ds-impl2/integration2
+  ds-impl2/lane-blog-tpl
+  ds-impl2/lane-cs-fix
+  ds-impl2/lane-homepage
+  ds-impl2/lane-prob-fix
+  ds-impl2/lane-prob-new
+  ds-impl2/lane-svc
+  final-check-2026-08-02
+  finish-website-2026-08-01
+  fix-case-studies-2026-08-02
+  fix-cs-voice-2026-08-02
+  fix-proposals-2026-08-02
+  fix-schematics-voice-2026-08-02
+  fix-sectors-2026-08-02
+  footer-a-2026-08-06
+  footer-restructure-2026-08-06
+  full-audit-2026-08-02
+  gf2-pillar-page-ops-consultant
+  hero-clarity-first
+  hotfix/case-studies-ds-regression
+  hotfix/tools-calculators-ds
+  implement-homepage-v2-plate
+  inf061-u6-batch-b
+  lane-b1-rediff
+  lane-b2b3b6b14-copy-2026-08-10
+  lane-b4-homepage-restructure-2026-08-10
+  lane-b7b9-fixes-voice
+  lane-b8b10-cta-seo
+  lane-lead-alert
+  lane-tool-lead-capture
+  lane/about-hero-404
+  lane/gf1-resources-port-2026-09-02
+  lane/gf12-vocab-strings-2026-09-02
+  lane/gf12b-overclaim-sweep-2026-09-02
+  lane/gf1b-resources-discovery-2026-09-02
+  lane/give-first-magnets
+  lane/inf024-u2-gf2-pillar-page
+  lane/meta-title-separator
+  lane/meta-title-spacing
+  lane/mobile-nav-fix
+  lane/portal-hub-key
+  lane/sr0-staging-sync-2026-09-02
+  lane/staging-merge-b5-2026-08-25
+  lane/supabase-tier1-2026-09-02
++ main
+  merge-ds-integration-2026-08-01
+  nav-mega-menu-2026-08-06
+  nav-mega-menu-staging-2026-08-06
+  plate-case-studies-2026-08-02
+  plate-core-pages-2026-08-02
+  plate-foundation-2026-08-02
+  plate-problems-2026-08-02
+  plate-sectors-2026-08-02
+  port-direction-a-2026-08-01
+  questionnaire-save-feature
+  salvage/decoded-ops-seo-content-review-9727b8
+  sb-products-2026-08-06
+  sec-auth-critical
+  sec-dockerfile
+  sec-hub-api-key
+  sec-next-bump
+  sec-npmrc
+  sec-staging
+  staging
+  task/about-fabricated-stats-2026-09-01
+  task/hex-tokens-core-2026-09-01
+  task/hex-tokens-core-v2-2026-09-02
+  task/hex-tokens-core-v3-2026-09-04
+  task/hex-tokens-unit-b-2026-09-04
+  task/lane-a-proof-2026-07-30
+  task/remove-supabase-secrets-2026-09-02
+  task/tools-ds-tokens-2026-08-27
+  voice-core-2026-08-02
+  voice-legal-2026-08-02
+  voice-misc-2026-08-02
+  voice-problems-2026-08-02
+  voice-sectors-2026-08-02
++ web-e-build-d17
++ web-f-build-d17
+* web-g-build-d17
++ web-h-build-d17
+  web003-u15-rail-breakpoint
+  web003-u20-case-study-copy
+  web003-u21-eslint-unescaped
+  web003-u7-homepage-ledger-copy
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/claude/decoded-ops-seo-content-review-9727b8
+  remotes/origin/claude/staging-design-review-2d366a
+  remotes/origin/ds-impl/lane-0-foundation
+  remotes/origin/ds-impl/lane-a
+  remotes/origin/ds-impl/lane-b
+  remotes/origin/ds-impl/lane-c
+  remotes/origin/ds-impl/lane-d
+  remotes/origin/ds-impl/lane-e
+  remotes/origin/ds-impl/lane-f
+  remotes/origin/gf2-pillar-page-ops-consultant
+  remotes/origin/main
+  remotes/origin/nav-mega-menu-2026-08-06
+  remotes/origin/staging
+[0m
+[0m→ [0mRead app/sectors/workwear/page.tsx
+[0m→ [0mRead app/d17-global.css
+[0m→ [0mRead components/D17Motion.tsx
+[0m
+[0m$ [0mgit ls-tree -r origin/staging --name-only -- .context/lane-briefs/d17-resources/ 2>$null
+(no output)
+[0m
+[0m$ [0mgit ls-tree -r web-e-build-d17 --name-only -- .context/lane-briefs/d17-resources/ 2>$null
+(no output)
+[0m
+[0m$ [0mgit ls-tree -r web-f-build-d17 --name-only -- .context/lane-briefs/d17-resources/ 2>$null
+(no output)
+[0m
+[0m$ [0mgit ls-tree -r web-h-build-d17 --name-only -- .context/lane-briefs/d17-resources/ 2>$null
+(no output)
+[0m
+[0m✱ [0mGlob "public/images/d17/**/*"[90m in . · 38 matches[0m
+[0m
+[0m$ [0mgit log --all --oneline -- "app/resources/*/page.tsx" "app/tools/*/page.tsx" | Select-Object -First 20
+58730fd CR-WEB-039: retire /tools/ai-readiness-check (301 → ops-health-score)
+e1024db fix(CR-WEB-030): responsive hero-split on playbook covers; accurate about portrait alt
+1ac7251 feat(CR-WEB-030): batch A photo swaps — about portrait, 4 sector heros, decoded-method cover, data-app hero, commerce product photo
+acd5c4f fix: remove space before colon in meta title separator
+44e44f1 chore(seo): standardise meta title separator to colon
+fd8a2fc Remove benchmark numbers from capacity planner prose
+3aa6680 feat: add capacity planning and seasonal capacity calculators to resources
+f001903 Promote to production: ERP positioning sweep + pricing Systems restructure
+45b9407 CR-WEB-021: disclosure set — neutrality claims scoped, own-software disclosure added
+17acda2 hex-to-token: swap 5 arbitrary hex colour classes for DS tokens in /resources/decoded-method
+808176c fix: tighten post-hero section padding on resource pages (BUG-WEB-009)
+0862680 refactor(CR-WEB-015): rename Discovery Day references to Clarity Audit
+b4c83ec feat(CR-WEB-012): wire ERP selection playbook into buying-intent pages
+19111cb Retire /resources/software-reviews (B12, GF6 triage)
+e1024fa Restore Decoded Method resource page in staging pattern
+6840cfb Port three give-first resource pages to staging pattern
+2e731c3 merge: origin/main into sr0-staging-sync — resolve 16 conflicts
+20bea5d Add three ungated resource pages from published blog content
+e112d7b feat: add lead capture to all six interactive tools
+a1a4f61 Replace arbitrary hex color classes with DS token in /tools pages
+[0m
+[0m$ [0mgit log web-f-build-d17 --oneline -10
+0e4796f feat(web): add D17 problems CSS and update ProblemPageDS with heroArt/inlineArt props
+30f9b3e chore(web): D17 f-batch images + lane brief (WO-INF-061)
+9c888a1 chore: lane report for web-d-build-d17-fix1
+f16dc21 fix(web): sector D17 art uses a global stylesheet (injected markup)
+e5c106f chore: lane brief web-d-build-d17-fix1
+c4ec818 chore(web): lane reports for web-d-build-d17 (WO-INF-061 u14)
+098906a feat(web): D17 artwork on sector pages + CR-WEB-051 copy (WO-INF-061 u14)
+6d1cf15 feat(web): add d17-sectors.css module (WO-INF-061 u14 D-build)
+a1820ed chore(web): D17 sector images + lane brief (WO-INF-061 u14)
+d61e136 chore(web): add D17 images for Home/About/Contact (were untracked)
+[0m
+[0m$ [0mgit log web-h-build-d17 --oneline -10
+c8db524 chore(web): D17 h-batch images + lane brief (WO-INF-061)
+9c888a1 chore: lane report for web-d-build-d17-fix1
+f16dc21 fix(web): sector D17 art uses a global stylesheet (injected markup)
+e5c106f chore: lane brief web-d-build-d17-fix1
+c4ec818 chore(web): lane reports for web-d-build-d17 (WO-INF-061 u14)
+098906a feat(web): D17 artwork on sector pages + CR-WEB-051 copy (WO-INF-061 u14)
+6d1cf15 feat(web): add d17-sectors.css module (WO-INF-061 u14 D-build)
+a1820ed chore(web): D17 sector images + lane brief (WO-INF-061 u14)
+d61e136 chore(web): add D17 images for Home/About/Contact (were untracked)
+54f6fa6 docs: lane report for web-c-build-d17-fix2
+[0m
+[0m$ [0mgit ls-tree -r web-h-build-d17 --name-only -- .context/lane-briefs/ 2>$null | Select-Object -First 30
+.context/lane-briefs/CASE_STUDIES_COPY_2026-09-23.md
+.context/lane-briefs/cr-web-048-fix1.md
+.context/lane-briefs/cr-web-048-fix2.md
+.context/lane-briefs/cr-web-048.md
+.context/lane-briefs/cr-web-050-fix1.md
+.context/lane-briefs/cr-web-050-fix2.md
+.context/lane-briefs/cr-web-050-fix3.md
+.context/lane-briefs/cr-web-050.md
+.context/lane-briefs/d17-locations/_1002-brighton.html
+.context/lane-briefs/d17-locations/_1002-guildford.html
+.context/lane-briefs/d17-locations/cookies-1440.png
+.context/lane-briefs/d17-locations/cookies.main.html
+.context/lane-briefs/d17-locations/d17-art.css
+.context/lane-briefs/d17-locations/d17-locations-legal.css
+.context/lane-briefs/d17-locations/fractional-cto.main.html
+.context/lane-briefs/d17-locations/gen1002.py
+.context/lane-briefs/d17-locations/genmap.py
+.context/lane-briefs/d17-locations/locations-fractional-cto-1440.png
+.context/lane-briefs/d17-locations/locations-tech-audit-1440.png
+.context/lane-briefs/d17-locations/privacy-1440.png
+.context/lane-briefs/d17-locations/privacy.main.html
+.context/lane-briefs/d17-locations/tech-audit.main.html
+.context/lane-briefs/d17-sectors/awards-engraving.hero.html
+.context/lane-briefs/d17-sectors/awards-engraving.inline.html
+.context/lane-briefs/d17-sectors/d17-art.css
+.context/lane-briefs/d17-sectors/d17-sectors.css
+.context/lane-briefs/d17-sectors/garment-decoration.hero.html
+.context/lane-briefs/d17-sectors/garment-decoration.inline.html
+.context/lane-briefs/d17-sectors/labels-packaging.hero.html
+.context/lane-briefs/d17-sectors/labels-packaging.inline.html
+[0m
+[0m$ [0mgit ls-tree -r web-f-build-d17 --name-only -- .context/lane-briefs/ 2>$null | Select-Object -First 30
+.context/lane-briefs/CASE_STUDIES_COPY_2026-09-23.md
+.context/lane-briefs/cr-web-048-fix1.md
+.context/lane-briefs/cr-web-048-fix2.md
+.context/lane-briefs/cr-web-048.md
+.context/lane-briefs/cr-web-050-fix1.md
+.context/lane-briefs/cr-web-050-fix2.md
+.context/lane-briefs/cr-web-050-fix3.md
+.context/lane-briefs/cr-web-050.md
+.context/lane-briefs/d17-problems/_reuse-718.html
+.context/lane-briefs/d17-problems/_reuse-719.html
+.context/lane-briefs/d17-problems/_reuse-917.html
+.context/lane-briefs/d17-problems/_reuse-918.html
+.context/lane-briefs/d17-problems/ai-paralysis.hero.html
+.context/lane-briefs/d17-problems/ai-paralysis.inline.html
+.context/lane-briefs/d17-problems/bottleneck-growth.hero.html
+.context/lane-briefs/d17-problems/bottleneck-growth.inline.html
+.context/lane-briefs/d17-problems/buy-vs-build.hero.html
+.context/lane-briefs/d17-problems/buy-vs-build.inline.html
+.context/lane-briefs/d17-problems/cant-scale-operations.hero.html
+.context/lane-briefs/d17-problems/cant-scale-operations.inline.html
+.context/lane-briefs/d17-problems/d17-art.css
+.context/lane-briefs/d17-problems/d17-problems.css
+.context/lane-briefs/d17-problems/data-scattered.hero.html
+.context/lane-briefs/d17-problems/data-scattered.inline.html
+.context/lane-briefs/d17-problems/disaster-recovery.hero.html
+.context/lane-briefs/d17-problems/disaster-recovery.inline.html
+.context/lane-briefs/d17-problems/ecommerce-not-connected.hero.html
+.context/lane-briefs/d17-problems/ecommerce-not-connected.inline.html
+.context/lane-briefs/d17-problems/erp-implementation-failure.hero.html
+.context/lane-briefs/d17-problems/erp-implementation-failure.inline.html
+[0m
+[0m$ [0mgit ls-tree -r web-h-build-d17 --name-only -- .context/lane-briefs/ | Select-String "resources"
+(no output)
+[0m
+[0m$ [0mgit ls-tree -r web-h-build-d17 --name-only -- "app/resources/" "app/tools/"
+app/resources/5-warning-signs/page.tsx
+app/resources/artwork-approval-playbook/page.tsx
+app/resources/audit-checklist/page.tsx
+app/resources/capacity-planner/page.tsx
+app/resources/decoded-method/page.tsx
+app/resources/erp-selection-playbook/page.tsx
+app/resources/page.tsx
+app/resources/seasonal-capacity/page.tsx
+app/resources/six-sigma/page.tsx
+app/resources/sop-template/page.tsx
+app/tools/automation-roi-calculator/page.tsx
+app/tools/downtime-cost-calculator/page.tsx
+app/tools/ops-health-score/layout.tsx
+app/tools/ops-health-score/page.tsx
+app/tools/page.tsx
+app/tools/rto-calculator/page.tsx
+app/tools/should-i-replace-erp/layout.tsx
+app/tools/should-i-replace-erp/page.tsx
+[0m
+[0m$ [0mgit show web-h-build-d17:app/resources/page.tsx | Select-Object -First 30
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowRight, ClipboardCheck, AlertTriangle, Star, Workflow, Gauge, FileText, Palette, ListChecks, Calculator } from 'lucide-react';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { Plate } from '@/components/Plate';
+
+export const metadata: Metadata = {
+  title: 'Free Resources for Print & Embroidery Businesses: Decoded Ops',
+  description: 'Free operational resources for print, embroidery, and decoration businesses. Audit checklist, warning signs, SOP templates, and process guides.',
+  alternates: { canonical: '/resources' },
+  openGraph: {
+    type: 'website',
+    title: 'Free Resources: Decoded Ops',
+    description: 'Free operational resources for print and decoration businesses. Audit checklists, warning signs, SOP templates, and process guides.',
+    url: 'https://decodedops.co.uk/resources',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Resources: Decoded Ops',
+    description: 'Free operational resources for print and decoration businesses.',
+  },
+};
+
+const resources = [
+  {
+    icon: ClipboardCheck,
+    title: 'Operational Audit Checklist',
+    desc: 'A practical checklist to evaluate your operations, technology, and processes. Use this before you hire a consultant.',
+    href: '/resources/audit-checklist',
+[0m
+[0m→ [0mRead app/resources/page.tsx
+[0m→ [0mRead app/resources/page.tsx
+[0m→ [0mRead app/tools/page.tsx
+[0m→ [0mRead app/resources/erp-selection-playbook/page.tsx
+[0m→ [0mRead app/resources/audit-checklist/page.tsx
+[0m→ [0mRead app/resources/sop-template/page.tsx
+[0m→ [0mRead app/resources/artwork-approval-playbook/page.tsx
+[0m→ [0mRead app/resources/decoded-method/page.tsx
+[0m→ [0mRead app/resources/six-sigma/page.tsx
+The mockup sources directory `.context/lane-briefs/d17-resources/` doesn't exist in any branch. Let me read all the resource and tool pages to understand the current state and do the copy fixes that don't depend on mockups.
+[0m→ [0mRead app/resources/5-warning-signs/page.tsx
+[0m→ [0mRead app/resources/capacity-planner/page.tsx
+[0m→ [0mRead app/resources/seasonal-capacity/page.tsx
+[0m→ [0mRead app/tools/downtime-cost-calculator/page.tsx
+[0m→ [0mRead app/tools/automation-roi-calculator/page.tsx
+[0m→ [0mRead app/tools/rto-calculator/page.tsx
+[0m→ [0mRead app/tools/ops-health-score/page.tsx
+Now let me read the downtime page and the tool pages:
+[0m→ [0mRead app/tools/should-i-replace-erp/page.tsx
+[0m
+[0m# [0mTodos
+[✓] Explore mockup sources and current page files
+[ ] Create app/d17-resources.css from mockup source — BLOCKED: no sources exist
+[ ] Port D17 artwork to resource/tool pages — BLOCKED: no sources exist
+[•] Copy fix: ERP playbook vendor names → anonymised descriptions
+[ ] Copy fix: resources index 'Seven free resources' → actual count
+[ ] Copy fix: tools index 'six calculators' → actual count + remove AI readiness ref
+[ ] Copy fix: Decoded Method TB-PR-001 → PR-001
+[ ] Copy fix: SOP page office manager years + remove 40%
+[ ] Copy fix: audit checklist '20 questions' → real count + remove unsourced %
+[ ] Copy fix: artwork approval remove '3-5 rounds to 1'
+[ ] Copy fix: downtime page em dashes → commas/full stops
+[ ] Verify: tsc --noEmit and grep craig-blackman
+[ ] Commit and write lane report
+[0m
+Now I have a clear picture. Let me analyze the copy fixes needed and do what's possible. The D17 artwork is **blocked** — the mockup sources `.context/lane-briefs/d17-resources/` don't exist on any branch. Let me do the copy fixes now.
+First, ERP playbook vendor names:
+[0m← [0mEdit app/resources/erp-selection-playbook/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\erp-selection-playbook\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\erp-selection-playbook\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\erp-selection-playbook\page.tsx
+@@ -64,13 +64,13 @@
+   { label: 'Underestimating data migration', detail: 'Most implementation failures trace back to data quality, not software capability.' },
+ ];
+ 
+ const systems = [
+-  { name: 'OrderWise', strength: 'Strong for wholesale and distribution', weakness: 'Gaps in mixed decoration methods' },
+-  { name: 'Panta ERP', strength: 'Built for garment decoration, strong on production workflow', weakness: 'Limited eCommerce integration' },
+-  { name: 'DecoNetwork', strength: 'Strong on eCommerce and decoration management', weakness: 'Weaker on financial controls' },
+-  { name: 'ShirtWorks', strength: 'Sector-specific MIS, strong on screen print workflow', weakness: '' },
+-  { name: 'Cin7', strength: 'Inventory-focused', weakness: 'Requires middleware for decoration-specific workflows' },
++  { name: 'A generic print ERP', strength: 'Strong for wholesale and distribution', weakness: 'Gaps in mixed decoration methods' },
++  { name: 'A decoration-specific order system', strength: 'Built for garment decoration, strong on production workflow', weakness: 'Limited eCommerce integration' },
++  { name: 'An eCommerce-first decoration platform', strength: 'Strong on eCommerce and decoration management', weakness: 'Weaker on financial controls' },
++  { name: 'A sector-specific MIS', strength: 'Sector-specific, strong on screen print workflow', weakness: '' },
++  { name: 'An inventory-focused platform', strength: 'Inventory-focused', weakness: 'Requires middleware for decoration-specific workflows' },
+ ];
+ 
+ const selectionSteps = [
+   { n: '1', title: 'Audit first', body: 'Understand your current processes and costs before specifying requirements.' },
+
+[0m
+[0m← [0mEdit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\decoded-method\page.tsx
+@@ -63,9 +63,9 @@
+ {
+   n: '01', name: 'The Process Register', accent: '#219EBC',
+   blurb: "The spine. One row per process: what it's called, who owns it, and when it was last looked at. Often the first time a business has everything it does written down in one place.",
+   fields: [
+-    ['Ref', 'a short code, e.g. TB-PR-001'],
++    ['Ref', 'a short code, e.g. PR-001'],
+     ['Owner', 'one named person, never "the team"'],
+     ['Category', 'Delivery, Sales, Admin, Finance, Marketing, or Tech'],
+     ['Status', 'active, draft, review, or archived'],
+     ['Last reviewed', 'the month it was last checked'],
+
+[0m
+Now Decoded Method TB-PR-001 → PR-001:
+Resources index "Seven free resources" → 9:
+[0m← [0mEdit app/resources/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
+@@ -99,9 +99,9 @@
+ {/* PLATE · DO-ART-308 */}
+ <section className="g-navy">
+   <div className="wrap">
+     <span className="eyebrow">Resource sequence &middot; DO-ART-308</span>
+-    <h2>Seven free resources, one order that makes them worth anything.</h2>
++    <h2>Nine free resources, one order that makes them worth anything.</h2>
+     <div className="hair"></div>
+     <p className="lede" style={{ marginTop: 16 }}>
+       They are a sequence, not a menu. Using them out of order wastes most of them. Choosing the platform first is step five done first, which is warning sign five.
+     </p>
+
+[0m
+[0m← [0mEdit app/resources/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
+@@ -107,9 +107,9 @@
+ </p>
+ 
+ <div className="plate-scroll">
+   <div className="plate-frame" data-od-id="plate-resources">
+-    <Plate tone="dark" p="rsx" title="Seven resources, one order"
++    <Plate tone="dark" p="rsx" title="Nine resources, one order"
+            sub="They are a sequence, not a menu &middot; using them out of order wastes most of them"
+            no="DO-ART-308" rev="02" cls="DECODED OPS &middot; ISSUED">
+ 
+       <g className="sk-fade sk-s2">
+
+[0m
+[0m← [0mEdit app/resources/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\page.tsx
+@@ -168,9 +168,9 @@
+       <g className="sk-fade sk-s6">
+         <rect x="55" y="620" width="1490" height="120" rx="10" fill="url(#rsx-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
+         <text x="81" y="660" className="p-amber" fontSize="14" letterSpacing="2.4" fontWeight="600">THE ORDER MATTERS</text>
+         <text x="81" y="698" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="25">Choosing the platform first is step five done first, which is warning sign five.</text>
+-        <text x="81" y="728" className="p-mono" fontSize="17" opacity=".62">The seven resources are free. Doing them in this order is what makes them worth anything.</text>
++        <text x="81" y="728" className="p-mono" fontSize="17" opacity=".62">The nine resources are free. Doing them in this order is what makes them worth anything.</text>
+       </g>
+     </Plate>
+   </div>
+ </div>
+
+[0m
+Tools index "six calculators" → 5, remove AI Readiness Check:
+[0m← [0mEdit app/tools/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
+@@ -90,9 +90,9 @@
+ {/* PLATE · DO-ART-210 */}
+ <section className="g-navy">
+   <div className="wrap">
+     <span className="eyebrow">Tool overview &middot; DO-ART-210</span>
+-    <h2>Six calculators, six numbers you can actually use.</h2>
++    <h2>Five calculators, five numbers you can actually use.</h2>
+     <div className="hair"></div>
+     <p className="lede" style={{ marginTop: 16 }}>
+       What each tool hands back, so you can pick the one that answers your question. Every calculator returns a real number, not a vague suggestion.
+     </p>
+
+[0m
+[0m← [0mEdit app/tools/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
+@@ -98,9 +98,9 @@
+ </p>
+ 
+ <div className="plate-scroll">
+   <div className="plate-frame" data-od-id="plate-tools">
+-    <Plate tone="dark" p="tlx" title="Six calculators, six numbers"
++    <Plate tone="dark" p="tlx" title="Five calculators, five numbers"
+            sub="What each tool actually hands back, so you can pick the one that answers your question"
+            no="DO-ART-210" rev="01" cls="DECODED OPS · ISSUED">
+ 
+       <g className="sk-fade sk-s2" filter="url(#tlx-shadow)">
+
+[0m
+[0m→ [0mRead app/tools/page.tsx[90m [offset=100, limit=60][0m
+Now I need to remove the AI Readiness Check from the Plate SVG and renumber. Let me read the full Plate SVG section:
+[0m
+[0m← [0mEdit app/tools/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\tools\page.tsx
+@@ -107,49 +107,45 @@
+       <rect x="50" y="180" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
+       <rect x="820" y="180" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
+       <rect x="50" y="380" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
+       <rect x="820" y="380" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
+-      <rect x="50" y="580" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
+-      <rect x="820" y="580" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
++      <rect x="410" y="580" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
+     </g>
+ 
+     <g className="sk-fade sk-s3">
+       <g className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".42">
+         <text x="80" y="216">01</text><text x="850" y="216">02</text>
+         <text x="80" y="416">03</text><text x="850" y="416">04</text>
+-        <text x="80" y="616">05</text><text x="850" y="616">06</text>
++        <text x="440" y="616">05</text>
+       </g>
+       <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">
+         <text x="80" y="262">Should I replace my ERP?</text>
+-        <text x="850" y="262">AI Readiness Check</text>
+-        <text x="80" y="462">Ops Health Score</text>
+-        <text x="850" y="462">Downtime Cost Calculator</text>
+-        <text x="80" y="662">RTO Calculator</text>
+-        <text x="850" y="662">Automation ROI Calculator</text>
++        <text x="850" y="262">Ops Health Score</text>
++        <text x="80" y="462">Downtime Cost Calculator</text>
++        <text x="850" y="462">RTO Calculator</text>
++        <text x="440" y="662">Automation ROI Calculator</text>
+       </g>
+       <g className="p-mono" fontSize="16" opacity=".55">
+         <text x="80" y="292">Eight yes/no questions</text>
+-        <text x="850" y="292">Six questions</text>
+-        <text x="80" y="492">Five operational dimensions</text>
+-        <text x="850" y="492">Your outage hours and headcount</text>
+-        <text x="80" y="692">Your current recovery time</text>
+-        <text x="850" y="692">One manual process, costed</text>
++        <text x="850" y="292">Five operational dimensions</text>
++        <text x="80" y="492">Your outage hours and headcount</text>
++        <text x="850" y="492">Your current recovery time</text>
++        <text x="440" y="692">One manual process, costed</text>
+       </g>
+     </g>
+ 
+     <g className="sk-fade sk-s4">
+       <g className="p-mono" fontSize="13" letterSpacing="2.4" opacity=".4">
+         <text x="80" y="322">HANDS BACK</text><text x="850" y="322">HANDS BACK</text>
+         <text x="80" y="522">HANDS BACK</text><text x="850" y="522">HANDS BACK</text>
+-        <text x="80" y="722">HANDS BACK</text><text x="850" y="722">HANDS BACK</text>
++        <text x="440" y="722">HANDS BACK</text>
+       </g>
+       <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="19">
+         <text x="230" y="322">Fixable, or plan an exit</text>
+-        <text x="1000" y="322">Ready, or fix the foundation first</text>
+-        <text x="230" y="522">Where you stand, and where to start</text>
+-        <text x="1000" y="522">The annual cost of outages, in £</text>
+-        <text x="230" y="722">What faster recovery is worth, in £</text>
+-        <text x="1000" y="722">Payback month, and the 3-year return</text>
++        <text x="1000" y="322">Where you stand, and where to start</text>
++        <text x="230" y="522">The annual cost of outages, in £</text>
++        <text x="1000" y="522">What faster recovery is worth, in £</text>
++        <text x="590" y="722">Payback month, and the 3-year return</text>
+       </g>
+     </g>
+   </Plate>
+ </div>
+
+[0m
+[0m← [0mEdit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\5-warning-signs\page.tsx
+@@ -43,9 +43,9 @@
+   body: "Ask most business owners in this sector what their disconnected systems cost them a month and you'll get a shrug, not a number. The cost is real. It's in re-keyed orders, stock that doesn't match, and hours spent reconciling data by hand. It's just never been added up. If you can't put a figure on it, you can't decide whether fixing it is worth the money, and that's usually the point where a proper audit pays for itself before you've spent a penny on anything else.",
+ },
+ {
+   title: '2. Your business runs on what\'s in one or two people\'s heads',
+-  body: "I've seen this at every scale, not just small operations. One business I spoke to had their entire production schedule sitting in their office manager's head. She'd been there sixteen years. Nothing written down. When she was off, the business was exposed. If losing one person for a fortnight would genuinely hurt, that's not a people problem. It's an operational risk, and it's fixable with documentation and process, not by hiring more people.",
++  body: "I've seen this at every scale, not just small operations. One business I spoke to had their entire production schedule sitting in their office manager's head. She'd been there eighteen years. Nothing written down. When she was off, the business was exposed. If losing one person for a fortnight would genuinely hurt, that's not a people problem. It's an operational risk, and it's fixable with documentation and process, not by hiring more people.",
+ },
+ {
+   title: '3. Everyone has their own workaround',
+   body: 'A spreadsheet here. A sticky note system there. A "just email me and I\'ll sort it" arrangement between two departments. Workarounds exist because the system doesn\'t fit how the job actually gets done. Every workaround is data living outside the system that\'s supposed to be the source of truth, and every one of them is a small, silent failure of the last implementation.',
+
+[0m
+Now fix the 5-warning-signs page (sixteen → eighteen years) and SOP page (18 years → eighteen years, remove 40%):
+[0m← [0mEdit app/resources/sop-template/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\sop-template\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\sop-template\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\sop-template\page.tsx
+@@ -121,9 +121,9 @@
+   <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
+     Generic technology advice or off-the-shelf procedures do not help here because your operation is not generic. It is built around the specific combination of machines, materials, supplier relationships, and customer expectations that make your business work.
+   </p>
+   <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
+-    I worked with a decorated goods business where the entire production schedule lived in the office manager&apos;s head. That person had been there 18 years. When they went on holiday, production slowed by 40%. Nobody knew why. The knowledge was not documented anywhere. The cost of that single undocumented role showed up every time they took leave. The cost of documenting the key processes was about two days of my time.
++    I worked with a decorated goods business where the entire production schedule lived in the office manager&apos;s head. That person had been there eighteen years. When they went on holiday, production slowed noticeably. Nobody knew why. The knowledge was not documented anywhere. The cost of that single undocumented role showed up every time they took leave. The cost of documenting the key processes was about two days of my time.
+   </p>
+ </div>
+ 
+ <div style={{ marginBottom: 64 }}>
+
+[0m
+Audit checklist headline "20 questions" → 36, remove unsourced percentages:
+[0m← [0mEdit app/resources/audit-checklist/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\audit-checklist\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\audit-checklist\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\audit-checklist\page.tsx
+@@ -118,11 +118,11 @@
+ <section className="g-off">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+     <span className="eyebrow">Free resource</span>
+     <h1>Operational audit checklist</h1>
+-    <p className="lede">
+-      20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
+-    </p>
++      <p className="lede">
++        36 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
++      </p>
+   </div>
+ </section>
+ 
+ {/* PLATE · DO-ART-307 */}
+
+[0m
+[0m← [0mEdit app/resources/audit-checklist/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\audit-checklist\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\audit-checklist\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\audit-checklist\page.tsx
+@@ -279,15 +279,15 @@
+     </div>
+     <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+       <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+       <p style={{ marginBottom: 0 }}>
+-        If your systems don't integrate, you're paying 3-5% of revenue in manual workarounds.
++        If your systems don&apos;t integrate, you are paying a significant amount in manual workarounds.
+       </p>
+     </div>
+     <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+       <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+       <p style={{ marginBottom: 0 }}>
+-        Inventory accuracy problems typically cost 1-3% of stock value per year.
++        Inventory accuracy problems cost more than most businesses realise.
+       </p>
+     </div>
+   </div>
+ </div>
+
+[0m
+[0m← [0mEdit app/resources/artwork-approval-playbook/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\artwork-approval-playbook\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\artwork-approval-playbook\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\web-g-build-d17\app\resources\artwork-approval-playbook\page.tsx
+@@ -52,9 +52,9 @@
+ 
+ const faqs = [
+   {
+     q: 'Why does artwork approval take so long?',
+-    a: 'Almost always because the brief at the start was incomplete. When colours, file format, placement, or sizing are not confirmed before artwork is created, the revision cycle begins. A brief template that collects all requirements upfront reduces revision rounds from 3-5 to 1 in most cases.',
++    a: 'Almost always because the brief at the start was incomplete. When colours, file format, placement, or sizing are not confirmed before artwork is created, the revision cycle begins. A brief template that collects all requirements upfront dramatically reduces revision rounds.',
+   },
+   {
+     q: 'What should an artwork approval proof include?',
+     a: 'The design as it will appear on the garment, a clear approval request with a deadline, and two simple actions: approve as shown, or request specific changes. Ambiguous proofs generate ambiguous responses.',
+
+[0m
+Artwork approval playbook remove "3-5 rounds to 1":
+[0m✱ [0mGrep "—"[90m in app/tools/downtime-cost-calculator · 0 matches[0m
+Now search for em dashes in the downtime page:
+[0m✱ [0mGrep "–"[90m in app/tools/downtime-cost-calculator · 0 matches[0m
+[0m
+[0m# [0mTodos
+[✓] Explore mockup sources and current page files
+[ ] Create app/d17-resources.css from mockup source — BLOCKED: no sources exist
+[ ] Port D17 artwork to resource/tool pages — BLOCKED: no sources exist
+[✓] Copy fix: ERP playbook vendor names → anonymised descriptions
+[✓] Copy fix: resources index 'Seven free resources' → actual count
+[✓] Copy fix: tools index 'six calculators' → actual count + remove AI readiness ref
+[✓] Copy fix: Decoded Method TB-PR-001 → PR-001
+[✓] Copy fix: SOP page office manager years + remove 40%
+[✓] Copy fix: audit checklist '20 questions' → real count + remove unsourced %
+[✓] Copy fix: artwork approval remove '3-5 rounds to 1'
+[✓] Copy fix: downtime page em dashes — none found, already clean
+[•] Verify: tsc --noEmit and grep craig-blackman
+[ ] Commit and write lane report
+[0m
+No em dashes found in the downtime page — already clean. Let me update todos and run verification:
+[0m$ [0mnpm install 2>&1 | Select-Object -Last 5
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+[0m
+[0m$ [0mnpx tsc --noEmit 2>&1
+(no output)
+[0m
+[0m$ [0mgit grep -n "craig-blackman" -- "app/resources/" "app/tools/" 2>&1
+(no output)
+[0m
+Both checks pass. Now commit and write lane report:
+[0m$ [0mgit add -A && git commit -m "fix(web): CR-WEB-055 copy fixes on resources/tools pages (WO-INF-061)
+
+- ERP playbook: vendor names replaced with anonymised type descriptions
+- Resources index: 'Seven free resources' → 'Nine free resources' (actual count)
+- Tools index: 'Six calculators' → 'Five calculators'; removed stale AI Readiness Check from Plate SVG
+- Decoded Method: TB-PR-001 → PR-001 in example ref
+- SOP page: office manager story 'sixteen years' → 'eighteen years' (consistent); removed unsourced '40%'
+- Audit checklist: headline '20 questions' → '36 questions' (actual count); removed unsourced '3-5% of revenue' and '1-3% of stock value'
+- Artwork approval: removed unsourced '3-5 rounds to 1' claim
+
+D17 artwork BLOCKED: .context/lane-briefs/d17-resources/ does not exist on any branch.
+Without the HTML mockup sources (hero.html, inline.html, d17-resources.css),
+no artwork can be injected. This unit needs the mockup sources created before
+the artwork pass can proceed."
+warning: in the working copy of 'app/resources/audit-checklist/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[web-g-build-d17 b44c3ab] fix(web): CR-WEB-055 copy fixes on resources/tools pages (WO-INF-061)
+ 8 files changed, 34 insertions(+), 38 deletions(-)
+[0m
+[0m$ [0mmkdir -p .context/lane-reports
+New-Item: An item with the specified name D:\apps\worktrees\decoded-ops-website\web-g-build-d17\.context\lane-reports already exists.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-RESULT-web-g-build-d17.json
+Wrote file successfully.
+[0m
+[0m← [0mWrite .context/lane-reports/LANE-NOTES-web-g-build-d17.md
+Wrote file successfully.
+[0m
+[0m$ [0mgit add -A && git commit -m "chore: lane report for web-g-build-d17 (WO-INF-061)"
+warning: in the working copy of '.context/lane-reports/LANE-NOTES-web-g-build-d17.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/lane-reports/LANE-RESULT-web-g-build-d17.json', LF will be replaced by CRLF the next time Git touches it
+[web-g-build-d17 139d1ac] chore: lane report for web-g-build-d17 (WO-INF-061)
+ 2 files changed, 57 insertions(+)
+ create mode 100644 .context/lane-reports/LANE-NOTES-web-g-build-d17.md
+ create mode 100644 .context/lane-reports/LANE-RESULT-web-g-build-d17.json
+[0m
+[0m$ [0mgit log --oneline -3
+139d1ac chore: lane report for web-g-build-d17 (WO-INF-061)
+b44c3ab fix(web): CR-WEB-055 copy fixes on resources/tools pages (WO-INF-061)
+6f9adbe chore(web): D17 g-batch images + lane brief (WO-INF-061)
+[0m
+[0m# [0mTodos
+[✓] Explore mockup sources and current page files
+[ ] Create app/d17-resources.css from mockup source — BLOCKED: no sources exist
+[ ] Port D17 artwork to resource/tool pages — BLOCKED: no sources exist
+[✓] Copy fix: ERP playbook vendor names → anonymised descriptions
+[✓] Copy fix: resources index 'Seven free resources' → actual count
+[✓] Copy fix: tools index 'six calculators' → actual count + remove AI readiness ref
+[✓] Copy fix: Decoded Method TB-PR-001 → PR-001
+[✓] Copy fix: SOP page office manager years + remove 40%
+[✓] Copy fix: audit checklist '20 questions' → real count + remove unsourced %
+[✓] Copy fix: artwork approval remove '3-5 rounds to 1'
+[✓] Copy fix: downtime page em dashes — none found, already clean
+[✓] Verify: tsc --noEmit and grep craig-blackman
+[✓] Commit and write lane report
+[0m
+**Lane complete.** Two commits made:
+
+1. **`b44c3ab`** — CR-WEB-055 copy fixes (8 files):
+   - ERP playbook: 5 vendor names anonymised to type descriptions
+   - Resources index: "Seven" → "Nine" (actual count)
+   - Tools index: "Six" → "Five"; removed stale AI Readiness Check from Plate SVG, renumbered 01–05
+   - Decoded Method: TB-PR-001 → PR-001
+   - SOP: "sixteen years" → "eighteen years"; removed unsourced 40%
+   - Audit checklist: "20 questions" → "36 questions"; removed unsourced 3–5% and 1–3%
+   - Artwork approval: removed unsourced "3–5 rounds to 1"
+   - Downtime: no em dashes found (already clean)
+
+2. **`139d1ac`** — lane report + notes
+
+**BLOCKED:** D17 artwork cannot be ported. The mockup sources directory `.context/lane-briefs/d17-resources/` does not exist on any branch (checked staging, web-e/f/g/h). Without the HTML snippets (`<slug>.hero.html`, `<slug>.inline.html`), `d17-resources.css`, and `*-1440.png` renders referenced by the brief, there is nothing to inject. The images under `public/images/d17/resources/` are committed but have no matching artwork definitions.
+
+**Verification:** `npx tsc --noEmit` clean, `git grep "craig-blackman"` 0 hits in batch dirs. `done: false` in the lane report.
