@@ -202,8 +202,11 @@
   background: repeating-linear-gradient(90deg, var(--do-prussian-blue) 0 2px, transparent 2px 4px, var(--do-prussian-blue) 4px 5px, transparent 5px 8px, var(--do-prussian-blue) 8px 11px, transparent 11px 12px) }
 .a918 .print .s { margin-top: calc(6 * var(--u)); font-family: var(--do-font-mono); font-size: max(7px, calc(9.5 * var(--u))); letter-spacing: .12em; text-transform: uppercase }
 
-/* ─── DO-ART-831 · About · the route, website cut + in-page draw ─── */
-.a831 { --u: calc(100cqw / 1600); aspect-ratio: 1600 / 900; margin-top: 44px;
+/* ─── DO-ART-831 · About · the route, website cut + in-page draw ───
+   CR-WEB-075 fix1: artboard height 900 → 860 units so the piece lands ≤630px
+   at 1152 wide; the route svg viewBox follows (see about/page.tsx) so the
+   drawing keeps its uniform scale against the u-positioned stations. */
+.a831 { --u: calc(100cqw / 1600); aspect-ratio: 1600 / 860; margin-top: 44px;
   background:
     radial-gradient(60% 70% at 88% 18%, color-mix(in srgb, var(--do-cerulean) 20%, transparent), transparent 70%),
     linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 80%, var(--do-cerulean)) 0%, var(--do-prussian-blue) 55%,
@@ -237,8 +240,9 @@
   color: color-mix(in srgb, var(--do-prussian-blue) 85%, transparent) }
 .a831 .d17Mark { left: calc(26 * var(--u)); bottom: calc(24 * var(--u)); font-size: calc(18 * var(--u)) }
 
-/* ─── DO-ART-904 r03 · About hero portrait, photo-led ─── */
-.a904 { --u: calc(100cqw / 560); aspect-ratio: 14 / 15 }
+/* ─── DO-ART-904 r03 · About hero portrait, photo-led ───
+   CR-WEB-075 fix1: 14/15 → 1/1 so the plate lands ≤630px at its 625px column. */
+.a904 { --u: calc(100cqw / 560); aspect-ratio: 1 / 1 }
 .a904 .d17Ph img { object-position: 44% 30%; --d17Grade: saturate(.9) contrast(1.04) brightness(.97) }
 .a904::before { content: ''; position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 0%, transparent 22%,

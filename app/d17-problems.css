@@ -439,6 +439,16 @@ svg.q .vac{ fill:url(#q-hatch-o); stroke:var(--do-amber); stroke-width:2.2; stro
 .a966 .gapr::before{ content:''; position:absolute; left:50%; top:0; bottom:0; border-left:2px dashed var(--do-amber) }
 .a966 .gapr span{ position:relative; font-family:var(--do-font-mono); font-weight:700; font-size:max(9px, calc(10.5 * var(--u))); letter-spacing:.14em;
   text-transform:uppercase; color:var(--do-prussian-blue); background:var(--do-amber); padding:calc(4 * var(--u)) calc(10 * var(--u)); border-radius:99px; white-space:nowrap }
+/* CR-WEB-075 fix1 · tighten the flow stack (pair padding, window bodies, the gap
+   strip, column gutters and the foot) to bring the hero ≤630px at 1440; every
+   figure, job card and label stays. */
+.a966 .pair{ padding:calc(8 * var(--u)) calc(22 * var(--u)) 0 }
+.a966 .win-flat{ padding:calc(12 * var(--u)) calc(20 * var(--u)) calc(14 * var(--u)) }
+.a966 .gapr{ padding:calc(6 * var(--u)) 0 }
+.a966 .cols{ margin-top:calc(6 * var(--u)) }
+.a966 .sx-foot{ padding:calc(12 * var(--u)) calc(26 * var(--u)) calc(14 * var(--u)) }
+.a966 .sx-bar{ margin-bottom:calc(10 * var(--u)) }
+.a966 .sx-say{ margin-bottom:calc(10 * var(--u)) }
 /* 973: season bands over the chart */
 .seasons{ display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(6 * var(--u)); margin-top:calc(12 * var(--u)) }
 .seasons span{ text-align:center; font-family:var(--do-font-mono); font-weight:600; font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase;

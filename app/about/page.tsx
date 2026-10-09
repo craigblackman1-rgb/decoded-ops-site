@@ -87,7 +87,7 @@ export default function AboutPage() {
             <p className={`${d17.eb} ${d17.d17Mono}`}>The route</p>
             <p className={d17.hd}>How I got here</p>
             <p className={d17.stand}>Every level of these businesses, one stop at a time.</p>
-            <svg className="route" viewBox="0 0 1600 900" aria-hidden="true">
+            <svg className="route" viewBox="0 0 1600 860" aria-hidden="true">
               <defs><filter id="rt-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10" /></filter></defs>
               <g stroke="rgba(142,202,230,.55)" strokeWidth="2" strokeDasharray="4 6" fill="none" className={d17.mFade} style={{ animationDelay: '1.6s' }}>
                 <path d="M470 572 V 596" /><path d="M1080 392 V 436" /></g>

@@ -78,43 +78,57 @@
 .tile .stock{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:var(--do-text-cerulean) }
 
 /* ─── DO-ART-939 · apps hero · the three apps, three real screens over the floor ───
-   BUG-WEB-046: no self min-height — the in-flow content (top + 560u screens + under + base)
-   already exceeds 640u at every width, so a correctly-resolved min-height never bound; the
-   cqw copy only inflated the piece against viewport width. Content defines the height. */
-.a939{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); display:flex; flex-direction:column }
+   BUG-WEB-046: no self min-height — content defines the height. CR-WEB-075 fix1:
+   the screens band, its labels and the base now run on a tighter scale (--v =
+   100cqw / 1400, re-centred) so the piece lands ≤630px at 1152 wide; tile images
+   crop 2:1. Figure-level spacing stays in --u / percent. */
+.a939{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); --v:calc(100cqw / 1400); display:flex; flex-direction:column }
 .a939 .d17-ph img{ object-position:50% 58%; --d17-grade:saturate(.6) contrast(1.06) brightness(.78) }
 .a939::before{ content:''; position:absolute; inset:0; z-index:-1;
   background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 35%, transparent) 30%,
     color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) 70%, var(--do-prussian-blue) 100%) }
-.a939 .top{ display:flex; justify-content:space-between; gap:12px; padding:calc(26 * var(--u)) calc(40 * var(--u)) 0;
+.a939 .top{ display:flex; justify-content:space-between; gap:12px; padding:calc(16 * var(--u)) calc(40 * var(--u)) 0;
   font-size:max(9px, calc(12 * var(--u))); color:var(--do-off-white) }
 .a939 .top span+span{ color:var(--do-sky-blue) }
-.a939 .screens{ position:relative; height:calc(560 * var(--u)); margin-top:calc(14 * var(--u)) }
+.a939 .screens{ --u:var(--v); position:relative; height:calc(490 * var(--u)); margin-top:calc(10 * var(--u)) }
 .a939 .mw{ position:absolute; width:calc(356 * var(--u)) }
-.a939 .s1{ left:calc(44 * var(--u)); top:calc(26 * var(--u)); transform:rotate(-2.2deg) }
-.a939 .s2{ left:calc(398 * var(--u)); top:0; z-index:2 }
-.a939 .s3{ left:calc(752 * var(--u)); top:calc(26 * var(--u)); transform:rotate(2.2deg) }
-.a939 .under{ display:grid; grid-template-columns:repeat(3, calc(356 * var(--u))); margin-top:calc(22 * var(--u));
-  padding:0 0 0 calc(44 * var(--u)); gap:0 calc(-2 * var(--u)) }
+.a939 .s1{ left:calc(168 * var(--u)); top:calc(22 * var(--u)); transform:rotate(-2.2deg) }
+.a939 .s2{ left:calc(522 * var(--u)); top:0; z-index:2 }
+.a939 .s3{ left:calc(876 * var(--u)); top:calc(22 * var(--u)); transform:rotate(2.2deg) }
+.a939 .tile img{ aspect-ratio:2 / 1 }
+.a939 .under{ --u:var(--v); display:grid; grid-template-columns:repeat(3, calc(356 * var(--u))); margin-top:calc(14 * var(--u));
+  padding:0 0 0 calc(168 * var(--u)); gap:0 calc(-2 * var(--u)) }
 .a939 .under span{ font-size:max(9px, calc(11.5 * var(--u))); color:var(--do-sky-blue); text-align:center }
 .a939 .under span b{ display:block; font-family:var(--do-font-heading); font-size:max(13px, calc(19 * var(--u))); letter-spacing:-.01em;
   text-transform:none; color:var(--do-white); margin-top:4px }
 .a939 .base{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; gap:20px;
-  padding:calc(10 * var(--u)) calc(44 * var(--u)) calc(30 * var(--u)) }
-.a939 .base .bar{ width:calc(56 * var(--u)); height:5px; border-radius:3px; background:var(--do-amber); margin-bottom:calc(14 * var(--u)) }
-.a939 .base p{ margin:0; font-family:var(--do-font-heading); font-weight:700; font-size:max(17px, calc(30 * var(--u))); line-height:1.12;
+  padding:calc(8 * var(--u)) calc(44 * var(--u)) calc(22 * var(--u)) }
+.a939 .base .bar{ width:calc(56 * var(--u)); height:5px; border-radius:3px; background:var(--do-amber); margin-bottom:calc(10 * var(--u)) }
+.a939 .base p{ margin:0; font-family:var(--do-font-heading); font-weight:700; font-size:max(17px, calc(26 * var(--u))); line-height:1.12;
   letter-spacing:-.02em; color:var(--do-white); max-width:26ch }
 .a939 .base p em{ font-style:normal; color:var(--do-amber) }
 @media (max-width: 760px){
   .a939{ --u:.9px; min-height:0 }
   .a939 .top{ padding:18px 18px 0; flex-direction:column; gap:4px }
-  .a939 .screens{ height:auto; margin-top:16px; padding:0 16px; display:flex; flex-direction:column; gap:26px }
+  .a939 .screens{ --u:.9px; height:auto; margin-top:16px; padding:0 16px; display:flex; flex-direction:column; gap:26px }
   .a939 .mw{ position:relative; left:auto; top:auto; width:auto; transform:none }
   .a939 .s1 .mw-hide, .a939 .s2 .mw-hide, .a939 .s3 .mw-hide{ display:none }
   .a939 .under{ display:none }
   .a939 .mw::after{ content:attr(data-cap); display:block; padding:9px 14px; background:var(--do-prussian-blue); color:var(--do-sky-blue);
     font-family:var(--do-font-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase }
   .a939 .base{ padding:26px 18px 20px; flex-direction:column; align-items:flex-start }
+}
+/* CR-WEB-075 fix1 · ≤640px ceiling for DO-ART-939: smaller screen scale, tighter
+   stack, and the storefront tile grid drops out (the data-cap line under each
+   window keeps the three-apps argument; no claim text is hidden) so the stacked
+   piece lands ≤800px at 342px wide. */
+@media (max-width: 640px){
+  .a939{ --u:.72px }
+  .a939 .top{ padding:14px 14px 0 }
+  .a939 .screens{ --u:.72px; gap:12px; margin-top:12px; padding:0 14px }
+  .a939 .s3 .tiles{ display:none }
+  .a939 .mw::after{ padding:7px 12px }
+  .a939 .base{ padding:18px 14px 16px }
 }
 
 /* ─── DO-ART-940 · apps inline · three gaps, one platform (drawn plate) ─── */
