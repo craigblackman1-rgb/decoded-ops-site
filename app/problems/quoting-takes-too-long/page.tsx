@@ -5,6 +5,7 @@ import { problemRouting } from '@/data/problem-routing';
 import { problemVideos } from '@/data/problem-videos';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
+import '@/app/d17-resources.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
@@ -57,6 +58,43 @@ const quotingSchema = {
  ],
 };
 
+const heroArt1014 = `<figure class="d17 sx a991 a1014" data-od-id="hero-evidence" data-motion data-no="DO-ART-1014" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-1014. Pricing rules written down once, over a graded photograph of bagged garments on racking with the bin labels blurred. A rate card cover for garments, positions, setup, quantity breaks and rush, and beside it a sheet of six pricing rules shown as an example: per-position pricing, setup charges and quantity breaks are applied differently today; customer-supplied garments, the reason a price was given and quote to order conversion have no record; every rule is written down on the rate card.">
+  <div class="d17-ph"><img src="/images/d17/problems/hero-garment-racking-219356.webp" alt="" width="1600" height="900"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Pricing rules</span><span>Written down once</span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc cov-dark doc-ec m-drop" style="animation-delay:.05s">
+      <span class="ref">Decoded Ops · rate card</span>
+      <h4>A rate card everyone quotes from</h4>
+      <p class="sub">Garments · positions · setup · quantity breaks · rush</p>
+      <div class="lines"><i style="width:84%"></i><i style="width:70%"></i><i style="width:52%"></i></div>
+    </div>
+    <div class="d17-doc doc-vb m-drop" style="animation-delay:.35s">
+      <span class="tab">EXAMPLE</span>
+      <span class="ref">Pricing rules · example</span>
+      <h4>Rules that aren't written down</h4>
+      <table class="vb">
+        <thead><tr><th>Rule</th><th>Today</th><th class="us">Rate card</th></tr></thead>
+        <tbody>
+          <tr><td>Per-position pricing</td><td><i class="p"></i></td><td><i class="y"></i></td></tr>
+          <tr><td>Setup charges</td><td><i class="p"></i></td><td><i class="y"></i></td></tr>
+          <tr><td>Quantity breaks</td><td><i class="p"></i></td><td><i class="y"></i></td></tr>
+          <tr><td>Customer-supplied garments</td><td><i class="n"></i></td><td><i class="y"></i></td></tr>
+          <tr><td>Why a price was given</td><td><i class="n"></i></td><td><i class="y"></i></td></tr>
+          <tr><td>Quote to order conversion</td><td><i class="n"></i></td><td><i class="y"></i></td></tr>
+        </tbody>
+      </table>
+      <p class="key"><span><i class="y"></i>Written down</span><span><i class="p"></i>Applied differently</span><span><i class="n"></i>No record</span></p>
+    </div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Write your pricing rules down once. <em>Then quote from them every time.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-1014 · Rev 01</span>
+  </div>
+</figure>`;
+
 export default function QuotingTakesTooLongPage() {
  return (
   <>
@@ -88,6 +126,7 @@ export default function QuotingTakesTooLongPage() {
    relatedSectors={problemRouting['quoting-takes-too-long'].relatedSectors}
    relatedResources={problemRouting['quoting-takes-too-long'].relatedResources}
    video={problemVideos['quoting-takes-too-long']}
+   heroArt={heroArt1014}
    beforeRelated={
     <section className="g-tint">
      <div className="wrap">
