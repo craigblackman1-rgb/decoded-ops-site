@@ -190,7 +190,7 @@ export default function HomePage() {
         <div class="gridl" aria-hidden="true"></div>
         <p class="eb d17-mono">The route</p>
         <p class="stand">Four services, each a natural next step from the one before.</p>
-        <svg class="route" viewBox="0 0 1600 900" aria-hidden="true">
+        <svg class="route" viewBox="0 0 1600 864" aria-hidden="true">
           <defs><filter id="rt-glow2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter></defs>
           <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="rgba(33,158,188,.5)" stroke-width="30" stroke-linejoin="round" stroke-linecap="round" filter="url(#rt-glow2)" class="m-draw"/>
           <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#01263a" stroke-width="24" stroke-linejoin="round" stroke-linecap="round" class="m-draw"/>

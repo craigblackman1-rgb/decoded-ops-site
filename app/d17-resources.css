@@ -242,7 +242,7 @@
   padding:calc(52 * var(--pu)) calc(46 * var(--pu)) calc(48 * var(--pu)) calc(52 * var(--pu)) }
 
 /* ─── DO-ART-991 · ERP selection · cover and vendor brief ─── */
-.a991 .stage{ aspect-ratio:560 / 500 }
+.a991 .stage{ aspect-ratio:560 / 480 }
 .a991 .d17-ph{ bottom:18% }
 .a991 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.65) contrast(1.05) brightness(.8) }
 .a991 .doc-ec{ left:calc(22 * var(--u)); top:calc(60 * var(--u)); width:calc(186 * var(--u)); min-height:calc(260 * var(--u)); transform:rotate(-5deg) }
@@ -409,6 +409,18 @@
   font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase }
 .tally b{ font-family:var(--do-font-heading); font-size:max(11px, calc(18 * var(--u))); letter-spacing:0 }
 .a999 .st-999{ right:calc(34 * var(--u)); top:calc(452 * var(--u)) }
+/* CR-WEB-074 fix2: photo-less solo cut (problem page) — desktop only, scoped to the
+   capped cut so the tools page keeps the full-height piece */
+@media (min-width:761px){
+  .a999.sx--solo .stage{ aspect-ratio:560 / 478 }
+  .a999.sx--solo .qz div{ padding:calc(3 * var(--u)) 0 }
+  .a999.sx--solo .doc-qz{ top:calc(52 * var(--u)) }
+  .a999.sx--solo .st-999{ top:calc(372 * var(--u)); right:calc(30 * var(--u)) }
+  .a999.sx--solo .sx-foot{ padding:calc(12 * var(--u)) calc(26 * var(--u)) calc(14 * var(--u)) }
+  .a999.sx--solo .sx-bar{ margin-bottom:calc(10 * var(--u)) }
+  .a999.sx--solo .sx-say{ margin-bottom:calc(10 * var(--u)); font-size:max(16px, calc(23 * var(--u))); max-width:24ch }
+  .a999.sx--solo .sx-foot .d17-mark{ padding:.4em .75em }
+}
 
 /* ─── phone width: stages get taller so the paper keeps its floor sizes ─── */
 @media (max-width: 760px){

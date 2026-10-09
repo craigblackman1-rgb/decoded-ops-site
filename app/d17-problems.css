@@ -116,7 +116,7 @@ svg.q .qb{ fill:color-mix(in srgb, var(--do-sky-blue) 30%, var(--do-prussian-blu
 svg.q .qb-a{ fill:color-mix(in srgb, var(--do-amber) 70%, var(--do-prussian-blue)); stroke:var(--do-amber); stroke-width:1.2 }
 
 /* ─── DO-ART-964 · data-scattered hero · one polo, six answers (photo-led, pinned tags) ─── */
-.a964 .stage{ aspect-ratio:560 / 540 }
+.a964 .stage{ aspect-ratio:560 / 510 }
 .a964 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.7) contrast(1.06) brightness(.86) }
 .a964::before{ content:''; position:absolute; inset:0; z-index:-1;
   background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) 18%,
@@ -244,7 +244,7 @@ svg.q .crack{ fill:none; stroke:var(--do-amber); stroke-width:3.2; stroke-linejo
 .rt{ list-style:none; margin:0; padding:0 0 0 calc(34 * var(--u)); position:relative }
 .rt::before{ content:''; position:absolute; left:calc(9 * var(--u)); top:calc(12 * var(--u)); bottom:calc(14 * var(--u)); width:5px; border-radius:5px;
   background:linear-gradient(180deg, var(--do-sky-blue), var(--do-sky-blue) 88%, var(--do-amber)); transform-origin:top }
-.rt li{ position:relative; display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; padding:calc(7 * var(--u)) 0;
+.rt li{ position:relative; display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; padding:calc(4 * var(--u)) 0;
   border-bottom:1px dashed color-mix(in srgb, var(--do-sky-blue) 22%, transparent) }
 .rt li::before{ content:''; position:absolute; left:calc(-34 * var(--u) + 2px); top:50%; margin-top:-8px; width:16px; height:16px; border-radius:50%; box-sizing:border-box;
   background:var(--do-off-white); border:4px solid var(--do-prussian-blue); box-shadow:0 0 0 2px var(--do-sky-blue) }
@@ -253,12 +253,13 @@ svg.q .crack{ fill:none; stroke:var(--do-amber); stroke-width:3.2; stroke-linejo
 .rt li em{ font-style:normal; font-family:var(--do-font-mono); font-weight:700; font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
   color:var(--do-prussian-blue); background:var(--do-amber); padding:2px 7px; border-radius:3px; white-space:nowrap }
 .rt li em.k{ background:transparent; color:var(--do-sky-blue); box-shadow:inset 0 0 0 1.2px color-mix(in srgb, var(--do-sky-blue) 60%, transparent) }
-.a970 .print{ position:absolute; z-index:5; right:calc(24 * var(--u)); top:calc(58 * var(--u)); width:calc(170 * var(--u)); transform:rotate(3deg);
+.a970 .print{ position:absolute; z-index:5; right:calc(24 * var(--u)); top:calc(58 * var(--u)); width:calc(214 * var(--u)); transform:rotate(3deg);
   background:var(--do-white); color:var(--do-prussian-blue); padding:calc(12 * var(--u)) calc(14 * var(--u)); border-radius:calc(3 * var(--u));
   box-shadow:0 calc(18 * var(--u)) calc(36 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
 .a970 .print .ref{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .a970 .print b{ display:block; margin-top:3px; font-family:var(--do-font-heading); font-size:max(12px, calc(17 * var(--u))) }
 .a970 .print i{ display:block; height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(7 * var(--u)); background:color-mix(in srgb, var(--do-prussian-blue) 14%, transparent) }
+.a970 .print i:nth-of-type(3){ display:none }
 
 /* ─── DO-ART-971 · no-ops-owner hero · the org chart with the operations seat empty (drawn plate) ─── */
 svg.q .vac{ fill:url(#q-hatch-o); stroke:var(--do-amber); stroke-width:2.2; stroke-dasharray:8 6 }
@@ -455,10 +456,21 @@ svg.q .vac{ fill:url(#q-hatch-o); stroke:var(--do-amber); stroke-width:2.2; stro
 .xl-c{ left:calc(70 * var(--u)); top:calc(236 * var(--u)); width:calc(260 * var(--u)) }
 .dlg{ top:calc(214 * var(--u)) }
 .a970 .print{ top:calc(40 * var(--u)) }
-.a970 .body{ padding-top:calc(150 * var(--u)) }
+.a970 .body{ padding-top:calc(122 * var(--u)) }
 .chart .cap span{ right:auto; left:4px }
 .a718 .doc-l{ left:calc(150 * var(--u)); top:calc(384 * var(--u)); width:calc(460 * var(--u)) }
 .a718 .stage{ min-height:calc(580 * var(--u)) }
+/* CR-WEB-074 fix2: tighter desktop cuts (scoped — .tbl is shared with 973; 718 scoped
+   by data-no because 1009/1010/1011 wear a718 too) */
+@media (min-width:761px){
+  .a972 .tbl td{ padding:calc(4.5 * var(--u)) calc(6 * var(--u)) calc(4.5 * var(--u)) 0 }
+  .a972 .win{ margin-top:calc(10 * var(--u)) }
+  figure[data-no="DO-ART-718"]{ padding-block:calc(40 * var(--pu)) calc(36 * var(--pu)) }
+  figure[data-no="DO-ART-718"] .reg td{ padding:calc(3.5 * var(--u)) calc(8 * var(--u)) calc(3.5 * var(--u)) 0 }
+  figure[data-no="DO-ART-718"] .sop .h{ margin-top:calc(6 * var(--u)) }
+  figure[data-no="DO-ART-718"] .doc-l{ top:calc(372 * var(--u)) }
+  figure[data-no="DO-ART-718"] .stage{ min-height:calc(590 * var(--u)) }
+}
 @media (max-width: 760px){
   .a970 .print{ width:118px; right:12px; top:34px }
   .a970 .body{ padding-top:150px }

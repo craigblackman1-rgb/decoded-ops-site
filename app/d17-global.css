@@ -390,6 +390,11 @@
 .sx-say{ margin:0 0 calc(16 * var(--u)); font-family:var(--do-font-heading); font-weight:700;
   font-size:max(16px, calc(25 * var(--u))); line-height:1.16; letter-spacing:-.018em; color:var(--do-white); max-width:21ch }
 .sx-say em{ font-style:normal; color:var(--do-amber) }
+/* CR-WEB-074 fix2 / CR-WEB-075: tighter flow foot on the heroes flagged over 630px at 1440x900 */
+:is(.a941,.a963,.a964,.a970,.a972,.a973,.a976,.a978,.a991,.a1014) .sx-foot{ padding:calc(12 * var(--u)) calc(26 * var(--u)) calc(14 * var(--u)) }
+:is(.a941,.a963,.a964,.a970,.a972,.a973,.a976,.a978,.a991,.a1014) .sx-bar{ margin-bottom:calc(10 * var(--u)) }
+:is(.a941,.a963,.a964,.a970,.a972,.a973,.a976,.a978,.a991,.a1014) .sx-say{ margin-bottom:calc(10 * var(--u)); font-size:max(16px, calc(23 * var(--u))); max-width:24ch }
+:is(.a941,.a963,.a964,.a970,.a972,.a973,.a976,.a978,.a991,.a1014) .sx-foot .d17-mark{ padding:.4em .75em }
 
 /* caption column of a wide piece */
 .sw-cap .k{ font-size:max(10px, calc(13 * var(--u))); color:var(--do-off-white) }
@@ -891,6 +896,11 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
 .a1008 .st--end h3{ color:var(--do-amber); font-size:max(19px, calc(34 * var(--u))) }
 .a1008 .st--end .n{ color:var(--do-amber) }
 .a1008 .d17-mark--abs{ left:calc(26 * var(--u)); bottom:calc(24 * var(--u)); font-size:max(9px, calc(13 * var(--u))) }
+/* CR-WEB-074 fix2: shorter route plate — nothing is drawn below y≈800 of the 900 viewBox */
+@media (min-width:761px){
+  .a1008{ aspect-ratio:1600 / 864 }
+  .a1008 svg.route, .a1008 .fan, .a1008 .stations{ transform:translateY(calc(-36 * var(--u))) }
+}
 @media (max-width: 760px){
   .a1008{ aspect-ratio:auto; padding:26px 20px 30px }
   .a1008 .eb, .a1008 .stand{ position:static; width:auto }
